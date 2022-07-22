@@ -1,0 +1,139 @@
+[gd_scene load_steps=17 format=3 uid="uid://dq6mys81fg3pj"]
+
+[ext_resource type="Material" uid="uid://ddugennqxrxpp" path="res://new_standard_material_3d.tres" id="1_1idsq"]
+[ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://crosshair.png" id="1_epwcq"]
+[ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
+[ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
+[ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://sun.png" id="4_auhxw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3csnp"]
+noise_type = 3
+
+[sub_resource type="VoxelGeneratorNoise" id="VoxelGeneratorNoise_rl5fc"]
+channel = 0
+noise = SubResource("FastNoiseLite_3csnp")
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4e7cf"]
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_6qjqm"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(0, 0)
+cube_tiles_right = Vector2(0, 0)
+cube_tiles_bottom = Vector2(0, 0)
+cube_tiles_top = Vector2(0, 0)
+cube_tiles_back = Vector2(0, 0)
+cube_tiles_front = Vector2(0, 0)
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_qtsb8"]
+voxels/0 = SubResource("VoxelBlockyModel_4e7cf")
+voxels/1 = SubResource("VoxelBlockyModel_6qjqm")
+
+[sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_h45n1"]
+library = SubResource("VoxelBlockyLibrary_qtsb8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
+size = Vector3(0.7, 1.8, 0.7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r7udb"]
+size = Vector3(0.1, 0.4, 0.1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_33x21"]
+sky_top_color = Color(0.541176, 0.713726, 0.862745, 1)
+sky_horizon_color = Color(0.776471, 0.866667, 0.941176, 1)
+ground_bottom_color = Color(0.776471, 0.866667, 0.941176, 1)
+ground_horizon_color = Color(0.776471, 0.866667, 0.941176, 1)
+sun_angle_max = 59.46
+
+[sub_resource type="Sky" id="Sky_2uhy8"]
+sky_material = SubResource("ProceduralSkyMaterial_33x21")
+
+[sub_resource type="Environment" id="Environment_n6xcg"]
+background_mode = 2
+sky = SubResource("Sky_2uhy8")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.02
+ambient_light_energy = 0.05
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer"]
+texture_filter = 1
+offset_left = 504.0
+offset_top = 292.0
+offset_right = 519.0
+offset_bottom = 307.0
+texture = ExtResource("1_epwcq")
+
+[node name="Label" type="Label" parent="Control"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("2_yvkcu")
+metadata/_edit_layout_mode = 1
+
+[node name="VoxelTerrain" type="VoxelTerrain" parent="."]
+generator = SubResource("VoxelGeneratorNoise_rl5fc")
+mesher = SubResource("VoxelMesherBlocky_h45n1")
+material_override = ExtResource("1_1idsq")
+
+[node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502024, 124.832, -32.3555)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("2_tcydh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
+shape = SubResource("BoxShape3D_0d76e")
+
+[node name="head" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688957, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player/head"]
+
+[node name="AudioListener3D" type="AudioListener3D" parent="player/head/Camera3D"]
+
+[node name="VoxelViewer" type="VoxelViewer" parent="player/head/Camera3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
+light_bake_mode = 0
+omni_range = 30.0365
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="player"]
+transform = Transform3D(0.105167, -0.87148, 0.479023, 0.316413, 0.485984, 0.814679, -0.942774, 0.0658922, 0.326857, 0, 0.689, 0)
+light_bake_mode = 0
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_pancake_size = 0.4
+
+[node name="Sprite3D" type="Sprite3D" parent="player/DirectionalLight3D"]
+transform = Transform3D(264.525, 300.044, 2.28882e-05, -300.044, 264.525, -9.53674e-06, 0, -5.34058e-05, 400, 3.8147e-05, -4.19617e-05, 600)
+texture = ExtResource("4_auhxw")
+
+[node name="armpointy" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
+
+[node name="armpointx" type="Node3D" parent="player/armpointy"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player/armpointy/armpointx"]
+transform = Transform3D(-0.137804, -0.0687234, -0.988072, 0.822333, 0.548103, -0.152811, 0.552068, -0.833583, -0.0190175, 0.191177, -0.207489, -0.132832)
+mesh = SubResource("BoxMesh_r7udb")
+skeleton = NodePath("../../../head/Camera3D")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n6xcg")
