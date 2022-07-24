@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ccv16e2be3hls"]
+
+[ext_resource type="Texture2D" uid="uid://b8nw4yoyrgct7" path="res://mods/clonecraft/clonecraftBaseBlocks.png" id="1_odsbc"]
+
+[resource]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_odsbc")
+texture_filter = 0

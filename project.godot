@@ -8,12 +8,26 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node",
+"class": &"blockManager",
+"language": &"GDScript",
+"path": "res://scripts/blockManager.gd"
+}]
+_global_script_class_icons={
+"blockManager": ""
+}
+
 [application]
 
 config/name="clonecraft"
 run/main_scene="res://node_3d.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.png"
+
+[autoload]
+
+BlockManager="*res://scripts/blockManager.gd"
 
 [input]
 

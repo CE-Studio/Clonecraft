@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=18 format=3 uid="uid://dq6mys81fg3pj"]
 
-[ext_resource type="Material" uid="uid://ddugennqxrxpp" path="res://new_standard_material_3d.tres" id="1_1idsq"]
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
 [ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
+[ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
+[ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://sun.png" id="4_auhxw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3csnp"]
@@ -25,9 +26,11 @@ cube_tiles_bottom = Vector2(0, 0)
 cube_tiles_top = Vector2(0, 0)
 cube_tiles_back = Vector2(0, 0)
 cube_tiles_front = Vector2(0, 0)
+material_override_0 = ExtResource("3_cx0vp")
 collision_enabled_0 = true
 
 [sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_qtsb8"]
+atlas_size = 5
 voxels/0 = SubResource("VoxelBlockyModel_4e7cf")
 voxels/1 = SubResource("VoxelBlockyModel_6qjqm")
 
@@ -88,7 +91,7 @@ metadata/_edit_layout_mode = 1
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 generator = SubResource("VoxelGeneratorNoise_rl5fc")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
-material_override = ExtResource("1_1idsq")
+script = ExtResource("4_828ak")
 
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502024, 124.832, -32.3555)
