@@ -26,10 +26,11 @@ class BlockInfo:
     var unbreakable:bool
     var scripted:bool
     var script:Callable
+    var toolClass:String
     
     func _init(fmodID:String, fnameID:String, fnameReadable:String, fblockModel:VoxelBlockyModel,
                fbreakStrength:float, fexplStrength:float, funbreakable:bool, fscripted:bool,
-               fscript:Callable):
+               fscript:Callable, ftoolClass:String):
         modID = fmodID
         nameID = fnameID
         fullID = fmodID + ":" + fnameID
@@ -41,11 +42,12 @@ class BlockInfo:
         scripted = fscripted
         if scripted:
             script = fscript
+        toolClass = ftoolClass
     
-func startBlockRegister(name:String):
+func startBlockRegister(blockID:String):
     idc += 1
     blockLibrary.voxel_count = idc
-    var hhh = blockLibrary.create_voxel(idc - 1, name)
+    var hhh = blockLibrary.create_voxel(idc - 1, blockID)
     return(hhh)
     
 func endBlockRegister(blockInfo:BlockInfo):
@@ -54,11 +56,11 @@ func endBlockRegister(blockInfo:BlockInfo):
 
 # Called when the node enters the scene tree for the first time.
 func setup():
-    blockLibrary.atlas_size = 5
+    blockLibrary.atlas_size = 6
     
     var airModel = startBlockRegister("clonecraft:air")
     airModel.geometry_type = VoxelBlockyModel.GEOMETRY_NONE
-    var airBlock := BlockInfo.new("clonecraft", "air", "Air", airModel, 0, 0, true, false, ns)
+    var airBlock := BlockInfo.new("clonecraft", "air", "Air", airModel, 0, 0, true, false, ns, "shovel")
     endBlockRegister(airBlock)
     
     #TODO: actual mod loading logic
