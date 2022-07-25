@@ -13,6 +13,10 @@ var armpointx
 var armpointy
 var movedist = 0
 var animcurspeed = 0
+var bm
+var vt:VoxelTool
+var lookingAt
+var bo
 
 func _ready():
     head = get_child(1)
@@ -20,6 +24,9 @@ func _ready():
     armpointy = get_child(4)
     armpointx = armpointy.get_child(0)
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+    bm = $"/root/BlockManager"
+    vt = $"/root/Node3D/VoxelTerrain".get_voxel_tool()
+    bo = $"/root/Node3D/blockOutline"
     
 func _process(delta):
     armpointy.rotation.y = lerp_angle(armpointy.rotation.y, head.rotation.y, delta * 20)
@@ -62,3 +69,10 @@ func _physics_process(delta):
     move_and_slide()
     movedist += (abs(velocity.x) + abs(velocity.z)) * delta
     animcurspeed = lerp(animcurspeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)
+    
+    lookingAt = vt.raycast(cam.global_position, -1 * cam.global_transform.basis.z.normalized(), 5)
+    if lookingAt != null:
+        bo.show()
+        bo.position = Vector3(lookingAt.position) + Vector3(0.5, 0.5, 0.5)
+    else:
+        bo.hide()

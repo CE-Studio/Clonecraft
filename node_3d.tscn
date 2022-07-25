@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=20 format=3 uid="uid://dq6mys81fg3pj"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://sun.png" id="4_auhxw"]
+[ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3csnp"]
 noise_type = 3
@@ -36,6 +37,11 @@ voxels/1 = SubResource("VoxelBlockyModel_6qjqm")
 
 [sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_h45n1"]
 library = SubResource("VoxelBlockyLibrary_qtsb8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxvjf"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 0.529412)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
 size = Vector3(0.7, 1.8, 0.7)
@@ -92,6 +98,11 @@ metadata/_edit_layout_mode = 1
 generator = SubResource("VoxelGeneratorNoise_rl5fc")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
 script = ExtResource("4_828ak")
+
+[node name="blockOutline" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.83, 0, 0, 0, 0.83, 0, 0, 0, 0.83, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_oxvjf")
+mesh = ExtResource("5_1o3wh")
 
 [node name="player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502024, 124.832, -32.3555)

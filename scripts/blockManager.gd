@@ -1,9 +1,11 @@
 extends Node
 class_name blockManager
 
+var modsToLoad := ["clonecraft", "debugtools"]
 var mods = []
 var blockList = []
 var blockIDlist = {}
+var inplist = []
 var blockLibrary := VoxelBlockyLibrary.new()
 var terrain:VoxelTerrain
 var testname = "it worked!"
@@ -54,7 +56,9 @@ func endBlockRegister(blockInfo:BlockInfo):
     blockList.append(blockInfo)
     blockIDlist[blockInfo.fullID] = blockList.size() - 1
 
-# Called when the node enters the scene tree for the first time.
+func inputRegister(callback:Callable):
+    inplist.append(callback)
+
 func setup():
     blockLibrary.atlas_size = 6
     
@@ -64,10 +68,12 @@ func setup():
     endBlockRegister(airBlock)
     
     #TODO: actual mod loading logic
-    mods.append(load("res://mods/clonecraft/clonecraft.gd").new())
+    for i in modsToLoad:
+        mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
     for i in mods:
         i.refman(self)
-        i.registerPhase()
+        if i.has_method("registerPhase"):
+            i.registerPhase()
     
     blockLibrary.bake()
     print(blockLibrary.get_voxel(1).get_material_override(0))
@@ -77,3 +83,7 @@ func setup():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
     pass
+    
+func _input(event):
+    for i in inplist:
+        i.call(event)
