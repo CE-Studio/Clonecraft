@@ -2,6 +2,7 @@ extends Node
 
 var man
 var mat1 = load("res://mods/clonecraft/baseblocks.tres")
+var mat2 = load("res://mods/clonecraft/baseblocksTransparent.tres")
 
 func refman(ref):
     man = ref
@@ -25,7 +26,10 @@ func quickBlock(bname:String, rname:String, tpos:Vector2, b := 3.0, e := 5.0, t 
     model.cube_tiles_top    = tpos
     model.cube_tiles_back   = tpos
     model.cube_tiles_front  = tpos
-    model.set_material_override(0, mat1)
+    if ac == 0:
+        model.set_material_override(0, mat1)
+    else:
+        model.set_material_override(0, mat2)
     var bi = BlockManager.BlockInfo.new("clonecraft", bname, rname, model, b, e, false, false, ns, t)
     man.endBlockRegister(bi)
 
@@ -115,7 +119,19 @@ func registerPhase():
     quickBlock("oreCopper", "Copper Ore", Vector2(4, 1))
     quickBlock("tileStone", "Stone Tile", Vector2(5, 1))
     quickBlock("brickStone", "Stone Bricks", Vector2(0, 2))
-    quickBlock("plankOak", "Oak Planks", Vector2(1, 2))
-    quickBlock("tileOak", "Oak Plank Tile", Vector2(2, 2))
+    quickBlock("plankOak", "Oak Planks", Vector2(1, 2), 3, 6, "axe")
+    quickBlock("tileOak", "Oak Plank Tile", Vector2(2, 2), 3, 6, "axe")
     makeCT()
     makeOL()
+    quickBlock("leavesOak", "Oak Leaves", Vector2(2, 3), 1, 1, "shears", 1)
+    quickBlock("gravel", "Gravel", Vector2(3, 3), 1, 1, "shovel")
+    quickBlock("sand", "Sand", Vector2(4, 3), 1, 1, "shovel")
+    quickBlock("glass", "Glass", Vector2(5, 3), 1, 1, "pickaxe", 2)
+    quickBlock("brick", "Brick", Vector2(0, 4))
+    quickBlock("clay", "Clay", Vector2(1, 4), 1, 1, "shovel")
+    quickBlock("blockCoal", "Coal Block", Vector2(2, 4))
+    quickBlock("blockIron", "Coal Block", Vector2(3, 4))
+    quickBlock("blockGold", "Coal Block", Vector2(4, 4))
+    quickBlock("blockDiamond", "Coal Block", Vector2(5, 4), 3, 5, "pickaxe", 2)
+    quickBlock("blockEnerstone", "EnerStone Crate", Vector2(0, 5))
+    quickBlock("blockCopper", "Copper Block", Vector2(1, 5))
