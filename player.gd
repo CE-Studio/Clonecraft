@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+var SPEED = 5.0
 const JUMP_VELOCITY = 8
 const SENSITIVITY = 200
 
@@ -54,6 +54,25 @@ func _physics_process(delta):
     # Handle Jump.
     if Input.is_action_pressed("ui_accept") and is_on_floor():
         velocity.y = JUMP_VELOCITY
+        
+    if Input.is_action_pressed("ui_up"):
+        if Input.is_action_pressed("game_sprint"):
+            if Input.is_action_pressed("ui_accept"):
+                SPEED = 9
+            else:
+                SPEED = 8
+        else:
+            SPEED = 5
+    else:
+        SPEED = 5
+            
+    if Input.is_action_pressed("game_sneak"):
+        SPEED = 2
+        head.position.y = 0.58
+        armpointy.position.y = 0.6
+    else:
+        head.position.y = 0.689
+        armpointy.position.y = 0.689
 
     # Get the input direction and handle the movement/deceleration.
     # As good practice, you should replace UI actions with custom gameplay actions.

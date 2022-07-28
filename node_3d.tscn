@@ -1,19 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=19 format=3 uid="uid://dq6mys81fg3pj"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
 [ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
+[ext_resource type="VoxelGeneratorGraph" uid="uid://b3odtwoui0u6g" path="res://mods/clonecraft/default terrain.tres" id="3_64oxk"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://sun.png" id="4_auhxw"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_3csnp"]
-noise_type = 3
-
-[sub_resource type="VoxelGeneratorNoise" id="VoxelGeneratorNoise_rl5fc"]
-channel = 0
-noise = SubResource("FastNoiseLite_3csnp")
 
 [sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4e7cf"]
 
@@ -21,17 +15,17 @@ noise = SubResource("FastNoiseLite_3csnp")
 geometry_type = 1
 collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
 cube_geometry_padding_y = null
-cube_tiles_left = Vector2(0, 0)
-cube_tiles_right = Vector2(0, 0)
-cube_tiles_bottom = Vector2(0, 0)
-cube_tiles_top = Vector2(0, 0)
-cube_tiles_back = Vector2(0, 0)
-cube_tiles_front = Vector2(0, 0)
+cube_tiles_left = Vector2(5, 5)
+cube_tiles_right = Vector2(5, 5)
+cube_tiles_bottom = Vector2(5, 5)
+cube_tiles_top = Vector2(5, 5)
+cube_tiles_back = Vector2(5, 5)
+cube_tiles_front = Vector2(5, 5)
 material_override_0 = ExtResource("3_cx0vp")
 collision_enabled_0 = true
 
 [sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_qtsb8"]
-atlas_size = 5
+atlas_size = 6
 voxels/0 = SubResource("VoxelBlockyModel_4e7cf")
 voxels/1 = SubResource("VoxelBlockyModel_6qjqm")
 
@@ -95,7 +89,7 @@ script = ExtResource("2_yvkcu")
 metadata/_edit_layout_mode = 1
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
-generator = SubResource("VoxelGeneratorNoise_rl5fc")
+generator = ExtResource("3_64oxk")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
 script = ExtResource("4_828ak")
 

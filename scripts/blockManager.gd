@@ -15,6 +15,9 @@ func noscript(_pos, _meta) -> void:
     pass
     
 var ns := Callable(self, "noscript")
+
+func runRandomTicks():
+    pass
     
 class BlockInfo:
     
@@ -29,6 +32,9 @@ class BlockInfo:
     var scripted:bool
     var script:Callable
     var toolClass:String
+    var tickable := false
+    var tickcb:Callable
+    var isAir := false
     
     func _init(fmodID:String, fnameID:String, fnameReadable:String, fblockModel:VoxelBlockyModel,
                fbreakStrength:float, fexplStrength:float, funbreakable:bool, fscripted:bool,
@@ -45,6 +51,10 @@ class BlockInfo:
         if scripted:
             script = fscript
         toolClass = ftoolClass
+        
+    func setTickable(ftickcb:Callable):
+        tickable = true
+        tickcb = ftickcb
     
 func startBlockRegister(blockID:String):
     idc += 1
@@ -65,6 +75,7 @@ func setup():
     var airModel = startBlockRegister("clonecraft:air")
     airModel.geometry_type = VoxelBlockyModel.GEOMETRY_NONE
     var airBlock := BlockInfo.new("clonecraft", "air", "Air", airModel, 0, 0, true, false, ns, "shovel")
+    airBlock.isAir = true
     endBlockRegister(airBlock)
     
     #TODO: actual mod loading logic

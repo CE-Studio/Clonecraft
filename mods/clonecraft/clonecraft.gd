@@ -123,6 +123,8 @@ func registerPhase():
     quickBlock("tileOak", "Oak Plank Tile", Vector2(2, 2), 3, 6, "axe")
     makeCT()
     makeOL()
+    quickBlock("barkOak", "Oak Bark", Vector2(5, 2), 3, 6, "axe")
+    quickBlock("knotOak", "Oak Knot", Vector2(1, 3), 3, 6, "axe")
     quickBlock("leavesOak", "Oak Leaves", Vector2(2, 3), 1, 1, "shears", 1)
     quickBlock("gravel", "Gravel", Vector2(3, 3), 1, 1, "shovel")
     quickBlock("sand", "Sand", Vector2(4, 3), 1, 1, "shovel")
