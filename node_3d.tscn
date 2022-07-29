@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=20 format=3 uid="uid://dq6mys81fg3pj"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://sun.png" id="4_auhxw"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
+[ext_resource type="Material" uid="uid://ch3gc7qbfoest" path="res://handmat.tres" id="9_dfanb"]
+[ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
 
 [sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4e7cf"]
 
@@ -39,9 +41,6 @@ albedo_color = Color(0, 0, 0, 0.529412)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
 size = Vector3(0.7, 1.8, 0.7)
-
-[sub_resource type="BoxMesh" id="BoxMesh_r7udb"]
-size = Vector3(0.1, 0.4, 0.1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_33x21"]
 sky_top_color = Color(0.541176, 0.713726, 0.862745, 1)
@@ -119,6 +118,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688957, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
+visible = false
 light_bake_mode = 0
 omni_range = 30.0365
 
@@ -139,8 +139,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
 [node name="armpointx" type="Node3D" parent="player/armpointy"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player/armpointy/armpointx"]
-transform = Transform3D(-0.137804, -0.0687234, -0.988072, 0.822333, 0.548103, -0.152811, 0.552068, -0.833583, -0.0190175, 0.191177, -0.207489, -0.132832)
-mesh = SubResource("BoxMesh_r7udb")
+transform = Transform3D(-0.0551216, -0.0274894, -0.395229, 0.328933, 0.219241, -0.0611244, 0.220827, -0.333433, -0.00760687, 0.24, -0.265, -0.055)
+material_override = ExtResource("9_dfanb")
+mesh = ExtResource("9_no3b2")
 skeleton = NodePath("../../../head/Camera3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
