@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://q7yo5wvdhu8y"]
+
+[ext_resource type="PackedScene" uid="uid://dpqcfde084cke" path="res://titlescreen/derg.gltf" id="1_pvmwc"]
+[ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="2_e3lrw"]
+
+[node name="derg" instance=ExtResource("1_pvmwc")]
+
+[node name="cube" parent="Node2/bone2" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube2" parent="Node2/bone2" index="1"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube3" parent="Node2/bone2/head" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube4" parent="Node2/bone2/head" index="1"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube5" parent="Node2/bone2/head" index="2"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube6" parent="Node2/bone2/head" index="3"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube7" parent="Node2/bone2/head" index="4"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube8" parent="Node2/bone2/head" index="5"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube9" parent="Node2/bone2/head" index="6"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube10" parent="Node2/bone2/larm" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube11" parent="Node2/bone2/larm/bone6" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube12" parent="Node2/bone2/rarm" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube13" parent="Node2/bone2/rarm/bone4" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube14" parent="Node2/bone2/rleg" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube15" parent="Node2/bone2/rleg/bone8" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube16" parent="Node2/bone2/rleg/bone8/bone9" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube17" parent="Node2/bone2/rleg/bone8/bone9/bone10" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube18" parent="Node2/bone2/lleg" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube19" parent="Node2/bone2/lleg/bone12" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube20" parent="Node2/bone2/lleg/bone12/bone13" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube21" parent="Node2/bone2/lleg/bone12/bone13/bone14" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube22" parent="Node2/bone2/tail" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube23" parent="Node2/bone2/tail" index="1"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube24" parent="Node2/bone2/tail/tail2" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube25" parent="Node2/bone2/tail/tail2" index="1"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube26" parent="Node2/bone2/tail/tail2/tail3" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube27" parent="Node2/bone2/tail/tail2/tail3" index="1"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube28" parent="Node2/bone2/tail/tail2/tail3/tail4" index="0"]
+material_override = ExtResource("2_e3lrw")
+
+[node name="cube29" parent="Node2/bone2/tail/tail2/tail3/tail4" index="1"]
+material_override = ExtResource("2_e3lrw")

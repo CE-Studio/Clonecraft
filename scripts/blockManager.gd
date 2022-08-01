@@ -16,8 +16,12 @@ func noscript(_pos, _meta) -> void:
     
 var ns := Callable(self, "noscript")
 
-func runRandomTicks():
-    pass
+func runRandomTicks(pos, rawID):
+    var block:BlockInfo = blockList[rawID]
+    if block.tickable:
+        block.tickcb.call(pos)
+    
+var rt := Callable(self, "runRandomTicks")
     
 class BlockInfo:
     
@@ -55,6 +59,7 @@ class BlockInfo:
     func setTickable(ftickcb:Callable):
         tickable = true
         tickcb = ftickcb
+        blockModel.random_tickable = true
     
 func startBlockRegister(blockID:String):
     idc += 1

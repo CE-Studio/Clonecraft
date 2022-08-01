@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://blu8to0ma63w2"]
+
+[ext_resource type="Texture2D" uid="uid://bgs8kgw0vx0iq" path="res://titlescreen/logo.png" id="1_8x0ju"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_8x0ju")
+texture_filter = 0

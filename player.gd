@@ -14,9 +14,13 @@ var armpointy
 var movedist = 0
 var animcurspeed = 0
 var bm
-var vt:VoxelTool
+var vt:VoxelToolTerrain
 var lookingAt
 var bo
+var cloudmat
+
+var tickrange := 100
+var ticknumber := 512
 
 func _ready():
     head = get_child(1)
@@ -27,11 +31,14 @@ func _ready():
     bm = $"/root/BlockManager"
     vt = $"/root/Node3D/VoxelTerrain".get_voxel_tool()
     bo = $"/root/Node3D/blockOutline"
+    cloudmat = $"./clouds"
+    cloudmat = cloudmat.material_override
     
 func _process(delta):
     armpointy.rotation.y = lerp_angle(armpointy.rotation.y, head.rotation.y, delta * 20)
     armpointx.rotation.x = lerp_angle(armpointx.rotation.x, cam.rotation.x, delta * 20)
     armpointx.position = Vector3(lerp(armpointx.position.x, sin(movedist) / 40, delta * 20) * animcurspeed, lerp(armpointx.position.y, ((1 - abs(cos(movedist))) / 80)  * animcurspeed, delta * 20), 0)
+    cloudmat.uv1_offset.z += delta / 900
     
 func _input(event):
     if event.is_action_pressed("ui_cancel"):
@@ -45,6 +52,11 @@ func _input(event):
         head.rotate_y(mx)
         cam.rotate_x(my)
         cam.rotation.x = clamp(cam.rotation.x, -1.5708, 1.5708)
+        
+func ticks():
+    var center = position.floor()
+    var area = AABB(center - Vector3(tickrange, tickrange, tickrange), 2 * Vector3(tickrange, tickrange, tickrange))
+    vt.run_blocky_random_tick(area, ticknumber, bm.rt)
 
 func _physics_process(delta):
     # Add the gravity.
@@ -95,3 +107,5 @@ func _physics_process(delta):
         bo.position = Vector3(lookingAt.position) + Vector3(0.5, 0.5, 0.5)
     else:
         bo.hide()
+        
+    ticks()

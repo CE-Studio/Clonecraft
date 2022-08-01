@@ -1,11 +1,14 @@
 extends Node
 
-var man
+var man:blockManager
+var tool:VoxelToolTerrain
 var mat1 = load("res://mods/clonecraft/baseblocks.tres")
 var mat2 = load("res://mods/clonecraft/baseblocksTransparent.tres")
+var canGrass = []
 
 func refman(ref):
     man = ref
+    tool = man.get_node("/root/Node3D/VoxelTerrain").get_voxel_tool()
 
 func _ready():
     pass
@@ -14,6 +17,22 @@ func noscript(_pos, _meta) -> void:
     pass
     
 var ns := Callable(self, "noscript")
+
+func runGrass(pos):
+    var dirs = [[-1, 1],  [0, 1],  [1, 1],
+                [-1, 0],           [1, 0],
+                [-1, -1], [0, -1], [1, -1]]
+    dirs.shuffle()
+    for i in [1, 0 -1]:
+        var rpos = (pos - Vector3i(dirs[0][0], i, dirs[0][1]))
+        var vt = man.blockList[tool.get_voxel(rpos)]
+        if vt.fullID in canGrass:
+            if man.blockList[tool.get_voxel(rpos + Vector3i.UP)].isAir:
+                tool.set_voxel(rpos, man.blockIDlist["clonecraft:grassBlock"])
+    if not(man.blockList[tool.get_voxel(pos + Vector3i.UP)].isAir):
+        tool.set_voxel(pos, man.blockIDlist["clonecraft:dirt"])
+    
+var rg := Callable(self, "runGrass")
 
 func quickBlock(bname:String, rname:String, tpos:Vector2, b := 3.0, e := 5.0, t := "pickaxe", ac := 0):
     var model = man.startBlockRegister("clonecraft:" + bname)
@@ -45,7 +64,8 @@ func makeGB():
     model.cube_tiles_back   = Vector2(2, 0)
     model.cube_tiles_front  = Vector2(2, 0)
     model.set_material_override(0, mat1)
-    var bi = BlockManager.BlockInfo.new("clonecraft", "grassBlock", "Grass Block", model, 1, 1, false, false, ns, "shovel")
+    var bi := BlockManager.BlockInfo.new("clonecraft", "grassBlock", "Grass Block", model, 1, 1, false, false, ns, "shovel")
+    bi.setTickable(rg)
     man.endBlockRegister(bi)
     
 func makeCT():
@@ -109,6 +129,7 @@ func makeOL():
 func registerPhase():
     quickBlock("stone", "Stone", Vector2(0, 0))
     quickBlock("dirt", "Dirt", Vector2(1, 0), 1, 1, "shovel")
+    canGrass.append("clonecraft:dirt")
     makeGB()
     quickBlock("cobblestone", "Cobblestone", Vector2(4, 0))
     quickBlock("oreCoal", "Coal Ore", Vector2(5, 0))

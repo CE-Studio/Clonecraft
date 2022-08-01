@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="clonecraft"
-run/main_scene="res://node_3d.tscn"
+run/main_scene="res://titlescreen/title.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.png"
 

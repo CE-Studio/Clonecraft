@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn8eraqtcv6j2"]
+
+[ext_resource type="PackedScene" uid="uid://dpqcfde084cke" path="res://titlescreen/derg.gltf" id="1_rpfu4"]
+
+[node name="derg" instance=ExtResource("1_rpfu4")]

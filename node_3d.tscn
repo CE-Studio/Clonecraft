@@ -10,6 +10,8 @@
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
 [ext_resource type="Material" uid="uid://ch3gc7qbfoest" path="res://handmat.tres" id="9_dfanb"]
 [ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
+[ext_resource type="Material" uid="uid://d1ef7shnw0ef8" path="res://bettercloudmat.tres" id="11_dq7n1"]
+[ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 
 [sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4e7cf"]
 
@@ -42,22 +44,7 @@ albedo_color = Color(0, 0, 0, 0.529412)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
 size = Vector3(0.7, 1.8, 0.7)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_33x21"]
-sky_top_color = Color(0.541176, 0.713726, 0.862745, 1)
-sky_horizon_color = Color(0.776471, 0.866667, 0.941176, 1)
-ground_bottom_color = Color(0.776471, 0.866667, 0.941176, 1)
-ground_horizon_color = Color(0.776471, 0.866667, 0.941176, 1)
-sun_angle_max = 59.46
-
-[sub_resource type="Sky" id="Sky_2uhy8"]
-sky_material = SubResource("ProceduralSkyMaterial_33x21")
-
-[sub_resource type="Environment" id="Environment_n6xcg"]
-background_mode = 2
-sky = SubResource("Sky_2uhy8")
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_sky_contribution = 0.02
-ambient_light_energy = 0.05
+[sub_resource type="PlaneMesh" id="PlaneMesh_5tc7k"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -141,8 +128,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="player/armpointy/armpointx"]
 transform = Transform3D(-0.0551216, -0.0274894, -0.395229, 0.328933, 0.219241, -0.0611244, 0.220827, -0.333433, -0.00760687, 0.24, -0.265, -0.055)
 material_override = ExtResource("9_dfanb")
+cast_shadow = 0
 mesh = ExtResource("9_no3b2")
 skeleton = NodePath("../../../head/Camera3D")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_n6xcg")
+[node name="clouds" type="MeshInstance3D" parent="player"]
+transform = Transform3D(500, 0, 0, 0, -500, 7.54979e-05, 0, -7.54979e-05, -500, 0, 215.917, 0)
+material_override = ExtResource("11_dq7n1")
+mesh = SubResource("PlaneMesh_5tc7k")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("12_8tndb")]

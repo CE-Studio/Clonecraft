@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bqpe3hjxnvlja"]
+
+[ext_resource type="Texture2D" uid="uid://b0j231ew5vyc1" path="res://titlescreen/derg.png" id="1_7ne20"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_7ne20")
+texture_filter = 0
