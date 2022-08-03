@@ -1,29 +1,20 @@
-extends Node
+extends Mod
 
-var man:blockManager
-var tool:VoxelToolTerrain
+const MODID = "clonecraft"
 var mat1 = load("res://mods/clonecraft/baseblocks.tres")
 var mat2 = load("res://mods/clonecraft/baseblocksTransparent.tres")
 var canGrass = []
 
-func refman(ref):
-    man = ref
-    tool = man.get_node("/root/Node3D/VoxelTerrain").get_voxel_tool()
-
 func _ready():
     pass
 
-func noscript(_pos, _meta) -> void:
-    pass
-    
-var ns := Callable(self, "noscript")
-
 func runGrass(pos):
+    man.log(MODID, "trying to grass")
     var dirs = [[-1, 1],  [0, 1],  [1, 1],
                 [-1, 0],           [1, 0],
                 [-1, -1], [0, -1], [1, -1]]
     dirs.shuffle()
-    for i in [1, 0 -1]:
+    for i in [1, 0, -1]:
         var rpos = (pos - Vector3i(dirs[0][0], i, dirs[0][1]))
         var vt = man.blockList[tool.get_voxel(rpos)]
         if vt.fullID in canGrass:

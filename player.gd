@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+class_name Player
 
 var SPEED = 5.0
 const JUMP_VELOCITY = 8
@@ -22,6 +23,9 @@ var cloudmat
 var tickrange := 100
 var ticknumber := 512
 
+var abillities := {"allowFlight":false, "isFlying":false}
+var fcheck = 1.0
+
 func _ready():
     head = get_child(1)
     cam = head.get_child(0)
@@ -39,9 +43,15 @@ func _process(delta):
     armpointx.rotation.x = lerp_angle(armpointx.rotation.x, cam.rotation.x, delta * 20)
     armpointx.position = Vector3(lerp(armpointx.position.x, sin(movedist) / 40, delta * 20) * animcurspeed, lerp(armpointx.position.y, ((1 - abs(cos(movedist))) / 80)  * animcurspeed, delta * 20), 0)
     cloudmat.uv1_offset.z += delta / 900
+    fcheck += delta
     
 func _input(event):
-    if event.is_action_pressed("ui_cancel"):
+    if event.is_action_pressed("ui_accept"):
+        if fcheck <= 0.2:
+            if abillities["allowFlight"] || abillities["isFlying"]:
+                abillities["isFlying"] = not abillities["isFlying"]
+        fcheck = 0
+    elif event.is_action_pressed("ui_cancel"):
         if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
             Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
         else:
@@ -60,12 +70,22 @@ func ticks():
 
 func _physics_process(delta):
     # Add the gravity.
-    if not is_on_floor():
+    if (not abillities["isFlying"]) && (not is_on_floor()):
         velocity.y -= gravity * delta
 
     # Handle Jump.
-    if Input.is_action_pressed("ui_accept") and is_on_floor():
-        velocity.y = JUMP_VELOCITY
+    if abillities["isFlying"]:
+        if Input.is_action_pressed("ui_accept") and not Input.is_action_pressed("game_sneak"):
+            velocity.y = JUMP_VELOCITY
+        elif Input.is_action_pressed("game_sneak") and not Input.is_action_pressed("ui_accept"):
+            velocity.y = -JUMP_VELOCITY
+            if is_on_floor():
+                abillities["isFlying"] = false
+        else:
+            velocity.y = 0
+    else:
+        if Input.is_action_pressed("ui_accept") and is_on_floor():
+            velocity.y = JUMP_VELOCITY
         
     if Input.is_action_pressed("ui_up"):
         if Input.is_action_pressed("game_sprint"):

@@ -1,17 +1,7 @@
-extends Node
+extends Mod
 
-var man:blockManager
 var tlabel:Label
 var bid:int
-var terrain:VoxelTerrain
-var tool:VoxelTool
-var player
-
-func refman(ref):
-    man = ref
-    terrain = man.get_node("/root/Node3D/VoxelTerrain")
-    player = man.get_node("/root/Node3D/player")
-    tool = terrain.get_voxel_tool()
 
 func input(event):
     if event is InputEventMouseButton:
@@ -39,3 +29,5 @@ func registerPhase():
     tlabel.text = man.blockList[bid].fullID
     man.get_node("/root/Node3D/Control").add_child(tlabel)
     man.inputRegister(Callable(self, "input"))
+    player.abillities["allowFlight"] = true
+    man.log("debugtools", "This world is in debug mode! A lot of default features are overridden!")

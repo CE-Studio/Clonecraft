@@ -4,7 +4,6 @@ extends VoxelTerrain
 # Called when the node enters the scene tree for the first time.
 func _ready():
     var bm = $/root/BlockManager
-    print(bm.testname)
     bm.setup()
 
 

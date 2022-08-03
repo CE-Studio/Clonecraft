@@ -10,11 +10,23 @@ config_version=5
 
 _global_script_classes=[{
 "base": "Node",
+"class": &"Mod",
+"language": &"GDScript",
+"path": "res://scripts/mod.gd"
+}, {
+"base": "CharacterBody3D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://player.gd"
+}, {
+"base": "Node",
 "class": &"blockManager",
 "language": &"GDScript",
 "path": "res://scripts/blockManager.gd"
 }]
 _global_script_class_icons={
+"Mod": "",
+"Player": "",
 "blockManager": ""
 }
 

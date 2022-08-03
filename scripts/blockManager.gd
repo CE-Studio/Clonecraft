@@ -8,7 +8,6 @@ var blockIDlist = {}
 var inplist = []
 var blockLibrary := VoxelBlockyLibrary.new()
 var terrain:VoxelTerrain
-var testname = "it worked!"
 var idc := 0
 
 func noscript(_pos, _meta) -> void:
@@ -60,7 +59,10 @@ class BlockInfo:
         tickable = true
         tickcb = ftickcb
         blockModel.random_tickable = true
-    
+
+func log(id:String, message:String):
+    print("[Mod] [" + id + "] " + message)
+   
 func startBlockRegister(blockID:String):
     idc += 1
     blockLibrary.voxel_count = idc
@@ -70,6 +72,7 @@ func startBlockRegister(blockID:String):
 func endBlockRegister(blockInfo:BlockInfo):
     blockList.append(blockInfo)
     blockIDlist[blockInfo.fullID] = blockList.size() - 1
+    print("[BlockManager] Registered block '" + blockInfo.fullID + "'")
 
 func inputRegister(callback:Callable):
     inplist.append(callback)
@@ -85,14 +88,24 @@ func setup():
     
     #TODO: actual mod loading logic
     for i in modsToLoad:
+        print("[BlockManager] Fetching script for mod '" + i + "'...")
         mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
     for i in mods:
-        i.refman(self)
-        if i.has_method("registerPhase"):
-            i.registerPhase()
+        if i.get("MODID") == null:
+            print("[BlockManager] One of your mods has no mod ID! It can still load, but this is bad practice. Register phase starting...")
+            i.refman(self)
+            if i.has_method("registerPhase"):
+                i.registerPhase()
+            print("[BlockManager] Register phase done!")
+        else:
+            print("[BlockManager] Beginning register phase for mod '" + i.MODID + "'...")
+            i.refman(self)
+            if i.has_method("registerPhase"):
+                i.registerPhase()
+            print("[BlockManager] Register phase for '" + i.MODID + "' done!")
+    print("[BlockManager] Register phase completed for all mods!")
     
     blockLibrary.bake()
-    print(blockLibrary.get_voxel(1).get_material_override(0))
     terrain = $/root/Node3D/VoxelTerrain
     terrain.mesher.library = blockLibrary
 
