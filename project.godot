@@ -18,16 +18,10 @@ _global_script_classes=[{
 "class": &"Player",
 "language": &"GDScript",
 "path": "res://player.gd"
-}, {
-"base": "Node",
-"class": &"blockManager",
-"language": &"GDScript",
-"path": "res://scripts/blockManager.gd"
 }]
 _global_script_class_icons={
 "Mod": "",
-"Player": "",
-"blockManager": ""
+"Player": ""
 }
 
 [application]
@@ -40,6 +34,10 @@ config/icon="res://icon.png"
 [autoload]
 
 BlockManager="*res://scripts/blockManager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [input]
 
