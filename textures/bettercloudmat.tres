@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b6aqoa1o4711r"]
+
+[ext_resource type="Texture2D" uid="uid://bqxounwy5i3s4" path="res://textures/clouds.png" id="1_cn8ff"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("1_cn8ff")
+uv1_scale = Vector3(0.001, 0.001, 0.001)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

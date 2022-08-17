@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy41aig1tiywf"
-path.s3tc="res://.godot/imported/sun.png-e62fe3feb5105d23317a950a0cdcce15.s3tc.ctex"
-path.etc2="res://.godot/imported/sun.png-e62fe3feb5105d23317a950a0cdcce15.etc2.ctex"
+path.s3tc="res://.godot/imported/sun.png-6d6049ffdf123a47441d6f966914b59c.s3tc.ctex"
+path.etc2="res://.godot/imported/sun.png-6d6049ffdf123a47441d6f966914b59c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://sun.png"
-dest_files=["res://.godot/imported/sun.png-e62fe3feb5105d23317a950a0cdcce15.s3tc.ctex", "res://.godot/imported/sun.png-e62fe3feb5105d23317a950a0cdcce15.etc2.ctex"]
+source_file="res://textures/sun.png"
+dest_files=["res://.godot/imported/sun.png-6d6049ffdf123a47441d6f966914b59c.s3tc.ctex", "res://.godot/imported/sun.png-6d6049ffdf123a47441d6f966914b59c.etc2.ctex"]
 
 [params]
 

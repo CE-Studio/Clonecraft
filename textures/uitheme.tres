@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://eikvg3smmp6t"]
+
+[ext_resource type="StyleBox" uid="uid://d2168jgf71u6p" path="res://textures/buttonDisabled.tres" id="1_qfc4k"]
+[ext_resource type="Texture2D" uid="uid://qdn3gww1o4nt" path="res://textures/button4.png" id="1_y287y"]
+[ext_resource type="FontFile" uid="uid://bnl115joa8yxl" path="res://ClarenceOS_Terminal_Mono.ttf" id="2_0wk78"]
+[ext_resource type="StyleBox" uid="uid://dd6alv6631mim" path="res://textures/buttonHover.tres" id="2_vbr7h"]
+[ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="3_y8rvq"]
+[ext_resource type="StyleBox" uid="uid://cebgf2dlcyhmf" path="res://textures/buttonPressed.tres" id="4_7wnnr"]
+[ext_resource type="Texture2D" uid="uid://kcvovhm6s1qv" path="res://textures/button1.png" id="5_gra7t"]
+
+[resource]
+default_font = ExtResource("2_0wk78")
+Button/font_sizes/font_sizee = 7
+Button/styles/disabled = ExtResource("1_qfc4k")
+Button/styles/hover = ExtResource("2_vbr7h")
+Button/styles/normal = ExtResource("3_y8rvq")
+Button/styles/pressed = ExtResource("4_7wnnr")
+CheckBox/icons/checked = ExtResource("5_gra7t")
+CheckBox/icons/checked_disabled = ExtResource("5_gra7t")
+CheckBox/icons/unchecked = ExtResource("1_y287y")
+CheckBox/icons/unchecked_disabled = ExtResource("5_gra7t")
+HScrollBar/styles/grabber = ExtResource("3_y8rvq")
+HScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
+HScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
+HScrollBar/styles/scroll = ExtResource("1_qfc4k")
+VScrollBar/styles/grabber = ExtResource("3_y8rvq")
+VScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
+VScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
+VScrollBar/styles/scroll = ExtResource("1_qfc4k")

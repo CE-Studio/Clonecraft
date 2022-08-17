@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqxounwy5i3s4"
-path="res://.godot/imported/clouds.png-fc13879e527516f791221521df7d71e4.ctex"
+uid="uid://kcvovhm6s1qv"
+path="res://.godot/imported/button1.png-c00a101ca0a9f8bd1aa1870733bad5e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://clouds.png"
-dest_files=["res://.godot/imported/clouds.png-fc13879e527516f791221521df7d71e4.ctex"]
+source_file="res://textures/button1.png"
+dest_files=["res://.godot/imported/button1.png-c00a101ca0a9f8bd1aa1870733bad5e9.ctex"]
 
 [params]
 
@@ -19,9 +19,9 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/bptc_ldr=0
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

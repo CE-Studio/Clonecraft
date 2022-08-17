@@ -34,10 +34,21 @@ config/icon="res://icon.png"
 [autoload]
 
 BlockManager="*res://scripts/blockManager.gd"
+ItemManager="*res://scripts/itemManager.gd"
+UiManager="*res://scripts/uiManager.gd"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
+[importer_defaults]
+
+texture={
+"detect_3d/compress_to": 0
+}
+oggvorbisstr={
+"loop": false
+}
 
 [input]
 
