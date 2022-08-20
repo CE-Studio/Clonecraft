@@ -1,17 +1,26 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://eikvg3smmp6t"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://eikvg3smmp6t"]
 
 [ext_resource type="StyleBox" uid="uid://d2168jgf71u6p" path="res://textures/buttonDisabled.tres" id="1_qfc4k"]
 [ext_resource type="Texture2D" uid="uid://qdn3gww1o4nt" path="res://textures/button4.png" id="1_y287y"]
 [ext_resource type="FontFile" uid="uid://bnl115joa8yxl" path="res://ClarenceOS_Terminal_Mono.ttf" id="2_0wk78"]
+[ext_resource type="StyleBox" uid="uid://bsg8aq0vtexuk" path="res://textures/focus.tres" id="2_3x48p"]
 [ext_resource type="StyleBox" uid="uid://dd6alv6631mim" path="res://textures/buttonHover.tres" id="2_vbr7h"]
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="3_y8rvq"]
 [ext_resource type="StyleBox" uid="uid://cebgf2dlcyhmf" path="res://textures/buttonPressed.tres" id="4_7wnnr"]
 [ext_resource type="Texture2D" uid="uid://kcvovhm6s1qv" path="res://textures/button1.png" id="5_gra7t"]
+[ext_resource type="Texture2D" uid="uid://co2wk0prsvefr" path="res://textures/button2.png" id="8_ut5b0"]
+[ext_resource type="StyleBox" uid="uid://blngadnrnv1r3" path="res://textures/textAxtive.tres" id="9_q5b1f"]
+[ext_resource type="StyleBox" uid="uid://b74iwbbde0bo6" path="res://textures/textDisabled.tres" id="10_iu1qr"]
+[ext_resource type="Texture2D" uid="uid://8fksokekjexj" path="res://textures/radio2.png" id="12_h4iw6"]
+[ext_resource type="Texture2D" uid="uid://oscnea5y3sh4" path="res://textures/radio1.png" id="13_71ett"]
+[ext_resource type="StyleBox" uid="uid://cnjonn6th6shm" path="res://textures/efbar0.tres" id="14_mkweh"]
+[ext_resource type="StyleBox" uid="uid://fanrvrspafel" path="res://textures/efbar1.tres" id="15_yk7w6"]
 
 [resource]
 default_font = ExtResource("2_0wk78")
 Button/font_sizes/font_sizee = 7
 Button/styles/disabled = ExtResource("1_qfc4k")
+Button/styles/focus = ExtResource("2_3x48p")
 Button/styles/hover = ExtResource("2_vbr7h")
 Button/styles/normal = ExtResource("3_y8rvq")
 Button/styles/pressed = ExtResource("4_7wnnr")
@@ -19,11 +28,47 @@ CheckBox/icons/checked = ExtResource("5_gra7t")
 CheckBox/icons/checked_disabled = ExtResource("5_gra7t")
 CheckBox/icons/unchecked = ExtResource("1_y287y")
 CheckBox/icons/unchecked_disabled = ExtResource("5_gra7t")
+CheckBox/styles/hover_pressed = ExtResource("4_7wnnr")
+CheckButton/styles/hover_pressed = ExtResource("4_7wnnr")
 HScrollBar/styles/grabber = ExtResource("3_y8rvq")
 HScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
 HScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
 HScrollBar/styles/scroll = ExtResource("1_qfc4k")
+HSlider/icons/grabber = ExtResource("5_gra7t")
+HSlider/icons/grabber_disabled = ExtResource("1_y287y")
+HSlider/icons/grabber_highlight = ExtResource("8_ut5b0")
+HSlider/styles/grabber_area = ExtResource("2_3x48p")
+HSlider/styles/grabber_area_highlight = ExtResource("2_3x48p")
+HSlider/styles/slider = ExtResource("1_qfc4k")
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/shadow_offset_x = 2
+Label/constants/shadow_offset_y = 2
+Label/constants/shadow_outline_size = 0
+Label/fonts/font = ExtResource("2_0wk78")
+LineEdit/styles/focus = ExtResource("2_3x48p")
+LineEdit/styles/normal = ExtResource("9_q5b1f")
+LineEdit/styles/read_only = ExtResource("10_iu1qr")
+Panel/styles/panel = ExtResource("1_qfc4k")
+Panel/styles/panel_fg = ExtResource("3_y8rvq")
+PopupMenu/icons/checked = ExtResource("5_gra7t")
+PopupMenu/icons/radio_checked = ExtResource("12_h4iw6")
+PopupMenu/icons/radio_unchecked = ExtResource("13_71ett")
+PopupMenu/icons/unchecked = ExtResource("1_y287y")
+PopupMenu/styles/hover = ExtResource("2_vbr7h")
+PopupMenu/styles/panel = ExtResource("1_qfc4k")
+ProgressBar/styles/bg = ExtResource("14_mkweh")
+ProgressBar/styles/fg = ExtResource("15_yk7w6")
+TabContainer/styles/panel = ExtResource("1_qfc4k")
+TextEdit/styles/focus = ExtResource("2_3x48p")
+TextEdit/styles/normal = ExtResource("9_q5b1f")
+TextEdit/styles/read_only = ExtResource("10_iu1qr")
 VScrollBar/styles/grabber = ExtResource("3_y8rvq")
 VScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
 VScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
 VScrollBar/styles/scroll = ExtResource("1_qfc4k")
+VSlider/icons/grabber = ExtResource("5_gra7t")
+VSlider/icons/grabber_disabled = ExtResource("1_y287y")
+VSlider/icons/grabber_highlight = ExtResource("8_ut5b0")
+VSlider/styles/grabber_area = ExtResource("2_3x48p")
+VSlider/styles/grabber_area_highlight = ExtResource("2_3x48p")
+VSlider/styles/slider = ExtResource("1_qfc4k")

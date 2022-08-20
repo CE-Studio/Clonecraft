@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=21 format=3 uid="uid://dq6mys81fg3pj"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
+[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
 [ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
 [ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
 [ext_resource type="VoxelGeneratorGraph" uid="uid://b3odtwoui0u6g" path="res://mods/clonecraft/default terrain.tres" id="3_64oxk"]
@@ -47,10 +48,13 @@ size = Vector3(0.7, 1.8, 0.7)
 [sub_resource type="PlaneMesh" id="PlaneMesh_5tc7k"]
 
 [node name="Node3D" type="Node3D"]
+process_mode = 1
 
 [node name="Control" type="Control" parent="."]
+process_mode = 3
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource("1_tpx33")
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 anchor_right = 1.0

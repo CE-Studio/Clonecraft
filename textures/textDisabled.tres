@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b74iwbbde0bo6"]
+
+[ext_resource type="Texture2D" uid="uid://bgmntvdevgi6n" path="res://textures/textboxDisabled.png" id="1_evr5q"]
+
+[resource]
+texture = ExtResource("1_evr5q")
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 5.0
+margin_bottom = 5.0
+region_rect = Rect2(0, 0, 16, 16)

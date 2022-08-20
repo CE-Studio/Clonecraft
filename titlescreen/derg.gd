@@ -2,4 +2,4 @@ extends AnimationPlayer
 
 
 func _ready():
-	set_autoplay("titlelean")
+    set_autoplay("titlelean")

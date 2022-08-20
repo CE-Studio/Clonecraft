@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cnjonn6th6shm"]
+
+[ext_resource type="Texture2D" uid="uid://brof66yt0u5x2" path="res://textures/ef0.png" id="1_lwlob"]
+
+[resource]
+texture = ExtResource("1_lwlob")
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 4.0
+margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 16, 16)
