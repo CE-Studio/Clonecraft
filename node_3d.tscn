@@ -137,7 +137,7 @@ mesh = ExtResource("9_no3b2")
 skeleton = NodePath("../../../head/Camera3D")
 
 [node name="clouds" type="MeshInstance3D" parent="player"]
-transform = Transform3D(500, 0, 0, 0, -500, 7.54979e-05, 0, -7.54979e-05, -500, 0, 215.917, 0)
+transform = Transform3D(2000, 0, 0, 0, -2000, 0.000301992, 0, -0.000301992, -2000, 0, 215.917, 0)
 material_override = ExtResource("11_dq7n1")
 mesh = SubResource("PlaneMesh_5tc7k")
 
