@@ -64,6 +64,7 @@ func _input(event):
             Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
         else:
             Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+            $"/root/Node3D/VoxelTerrain".save_modified_blocks()
     elif event is InputEventMouseMotion:
         var mx = -(event.relative.x / SENSITIVITY)
         var my = -(event.relative.y / (SENSITIVITY / 2))

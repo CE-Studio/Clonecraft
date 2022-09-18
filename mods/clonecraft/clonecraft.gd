@@ -11,7 +11,6 @@ func _ready():
 
 
 func runGrass(pos):
-    man.log(MODID, "trying to grass")
     var dirs = [
         [-1, 1],  [0, 1],  [1, 1],
         [-1, 0],           [1, 0],

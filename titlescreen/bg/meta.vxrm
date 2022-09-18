@@ -1,0 +1,17 @@
+{
+	"block_size_po2": 4,
+	"channel_depths": [
+		1,
+		1,
+		0,
+		1,
+		1,
+		0,
+		0,
+		0
+	],
+	"lod_count": 1,
+	"region_size_po2": 4,
+	"sector_size": 512,
+	"version": 3
+}

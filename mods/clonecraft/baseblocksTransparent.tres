@@ -3,7 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://b8nw4yoyrgct7" path="res://mods/clonecraft/clonecraftBaseBlocks.png" id="1_20tnd"]
 
 [resource]
-transparency = 4
+transparency = 2
+alpha_scissor_threshold = 0.05
+alpha_antialiasing_mode = 0
+shading_mode = 2
+specular_mode = 1
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_20tnd")
 texture_filter = 0
