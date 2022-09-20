@@ -1,5 +1,7 @@
 extends Node
 
+#TODO better version system
+const VERSION = "Alpha 0.0.1"
 const DEFAULT_SETTINGS := {
     #TODO renderDistance
     "renderDistance": 128,

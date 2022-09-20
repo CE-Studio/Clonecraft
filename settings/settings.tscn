@@ -25,7 +25,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="settings" type="GridContainer" parent="GridContainer/ScrollContainer"]
-offset_right = 470.0
+offset_right = 1014.0
 offset_bottom = 206.0
 size_flags_horizontal = 3
 
