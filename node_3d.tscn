@@ -4,10 +4,10 @@
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
 [ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
 [ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
-[ext_resource type="VoxelGeneratorGraph" uid="uid://b3odtwoui0u6g" path="res://mods/clonecraft/default terrain.tres" id="3_64oxk"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="4_auhxw"]
+[ext_resource type="VoxelGeneratorGraph" uid="uid://b3odtwoui0u6g" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
 [ext_resource type="Material" path="res://textures/handmat.tres" id="9_dfanb"]
 [ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
@@ -79,7 +79,7 @@ script = ExtResource("2_yvkcu")
 metadata/_edit_layout_mode = 1
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
-generator = ExtResource("3_64oxk")
+generator = ExtResource("4_brcpd")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
 script = ExtResource("4_828ak")
 
@@ -137,7 +137,7 @@ mesh = ExtResource("9_no3b2")
 skeleton = NodePath("../../../head/Camera3D")
 
 [node name="clouds" type="MeshInstance3D" parent="player"]
-transform = Transform3D(500, 0, 0, 0, -500, 7.54979e-05, 0, -7.54979e-05, -500, 0, 215.917, 0)
+transform = Transform3D(2000, 0, 0, 0, -2000, 0.000301992, 0, -0.000301992, -2000, 0, 215.917, 0)
 material_override = ExtResource("11_dq7n1")
 mesh = SubResource("PlaneMesh_5tc7k")
 

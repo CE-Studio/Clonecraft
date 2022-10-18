@@ -1,6 +1,12 @@
 extends Label
 
-const LABEL_TEXT := "FPS: %s\nX/Y/Z: %s, %s, %s\nRotation: %s, %s\nLooking at: %s, %s, %s: %s"
+const LABEL_TEXT := (
+    "Clonecraft %s" +
+    "\nFPS: %s" + 
+    "\nX/Y/Z: %s, %s, %s" +
+    "\nRotation: %s, %s" +
+    "\nLooking at: %s, %s, %s: %s"
+)
 var player:Player
 var head:Node3D
 var cam:Camera3D
@@ -21,6 +27,7 @@ func _process(delta):
         pl = player.lookingAt.get_position()
         v = blockManager.blockList[player.voxelTool.get_voxel(pl)].fullID
     text = LABEL_TEXT % [
+        SettingManager.VERSION,
         Engine.get_frames_per_second(),
         snapped(player.position.x, 0.01),
         snapped(player.position.y, 0.01),

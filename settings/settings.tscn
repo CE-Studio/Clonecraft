@@ -1,0 +1,209 @@
+[gd_scene load_steps=3 format=3 uid="uid://c40i5qh6ohkoh"]
+
+[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_hctrn"]
+[ext_resource type="Script" path="res://settings/settings.gd" id="2_xdlem"]
+
+[node name="settings" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hctrn")
+script = ExtResource("2_xdlem")
+metadata/_edit_use_custom_anchors = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 1019.0
+offset_bottom = 595.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GridContainer"]
+offset_right = 1014.0
+offset_bottom = 555.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="settings" type="GridContainer" parent="GridContainer/ScrollContainer"]
+offset_right = 1014.0
+offset_bottom = 206.0
+size_flags_horizontal = 3
+
+[node name="RD" type="GridContainer" parent="GridContainer/ScrollContainer/settings"]
+offset_right = 1014.0
+offset_bottom = 24.0
+size_flags_horizontal = 3
+columns = 3
+
+[node name="RDlabel" type="Label" parent="GridContainer/ScrollContainer/settings/RD"]
+offset_right = 211.0
+offset_bottom = 24.0
+text = "Render Distance
+"
+
+[node name="RDslide" type="HSlider" parent="GridContainer/ScrollContainer/settings/RD"]
+offset_left = 215.0
+offset_top = 4.0
+offset_right = 950.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 10.0
+max_value = 1000.0
+value = 450.0
+
+[node name="RDnum" type="Label" parent="GridContainer/ScrollContainer/settings/RD"]
+offset_left = 954.0
+offset_right = 1014.0
+offset_bottom = 24.0
+text = "0000"
+
+[node name="SD" type="GridContainer" parent="GridContainer/ScrollContainer/settings"]
+offset_top = 28.0
+offset_right = 1014.0
+offset_bottom = 52.0
+size_flags_horizontal = 3
+columns = 3
+
+[node name="SDlabel" type="Label" parent="GridContainer/ScrollContainer/settings/SD"]
+offset_right = 211.0
+offset_bottom = 24.0
+text = "Shadow Distance"
+
+[node name="SDslide" type="HSlider" parent="GridContainer/ScrollContainer/settings/SD"]
+offset_left = 215.0
+offset_top = 4.0
+offset_right = 950.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 10.0
+max_value = 1000.0
+value = 450.0
+
+[node name="SDnum" type="Label" parent="GridContainer/ScrollContainer/settings/SD"]
+offset_left = 954.0
+offset_right = 1014.0
+offset_bottom = 24.0
+text = "0000"
+
+[node name="FOV" type="GridContainer" parent="GridContainer/ScrollContainer/settings"]
+offset_top = 56.0
+offset_right = 1014.0
+offset_bottom = 80.0
+size_flags_horizontal = 3
+columns = 3
+
+[node name="FOVlabel" type="Label" parent="GridContainer/ScrollContainer/settings/FOV"]
+offset_right = 174.0
+offset_bottom = 24.0
+text = "Feild of Veiw"
+
+[node name="FOVslide" type="HSlider" parent="GridContainer/ScrollContainer/settings/FOV"]
+offset_left = 178.0
+offset_top = 4.0
+offset_right = 950.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 1000.0
+value = 450.0
+
+[node name="FOVnum" type="Label" parent="GridContainer/ScrollContainer/settings/FOV"]
+offset_left = 954.0
+offset_right = 1014.0
+offset_bottom = 24.0
+text = "0000"
+
+[node name="CheckBox" type="CheckBox" parent="GridContainer/ScrollContainer/settings"]
+offset_top = 84.0
+offset_right = 1014.0
+offset_bottom = 115.0
+button_pressed = true
+text = "Use VSYNC"
+
+[node name="FPS" type="GridContainer" parent="GridContainer/ScrollContainer/settings"]
+offset_top = 119.0
+offset_right = 1014.0
+offset_bottom = 143.0
+size_flags_horizontal = 3
+columns = 3
+
+[node name="FPSlabel" type="Label" parent="GridContainer/ScrollContainer/settings/FPS"]
+offset_right = 116.0
+offset_bottom = 24.0
+text = "FPS Limit"
+
+[node name="FPSslide" type="HSlider" parent="GridContainer/ScrollContainer/settings/FPS"]
+offset_left = 120.0
+offset_top = 4.0
+offset_right = 950.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 121.0
+value = 60.0
+editable = false
+
+[node name="FPSnum" type="Label" parent="GridContainer/ScrollContainer/settings/FPS"]
+offset_left = 954.0
+offset_right = 1014.0
+offset_bottom = 24.0
+text = "0000"
+
+[node name="MI" type="GridContainer" parent="GridContainer/ScrollContainer/settings"]
+offset_top = 147.0
+offset_right = 1014.0
+offset_bottom = 178.0
+size_flags_horizontal = 3
+columns = 2
+
+[node name="MIX" type="CheckBox" parent="GridContainer/ScrollContainer/settings/MI"]
+offset_right = 505.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+text = "Invert Mouse X"
+
+[node name="MIY" type="CheckBox" parent="GridContainer/ScrollContainer/settings/MI"]
+offset_left = 509.0
+offset_right = 1014.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+text = "Invert Mouse Y"
+
+[node name="SEN" type="GridContainer" parent="GridContainer/ScrollContainer/settings"]
+offset_top = 182.0
+offset_right = 1014.0
+offset_bottom = 206.0
+size_flags_horizontal = 3
+columns = 3
+
+[node name="SENlabel" type="Label" parent="GridContainer/ScrollContainer/settings/SEN"]
+offset_right = 224.0
+offset_bottom = 24.0
+text = "Mouse Sensitivity"
+
+[node name="SENslide" type="HSlider" parent="GridContainer/ScrollContainer/settings/SEN"]
+offset_left = 228.0
+offset_top = 4.0
+offset_right = 950.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 400.0
+value = 200.0
+
+[node name="SENnum" type="Label" parent="GridContainer/ScrollContainer/settings/SEN"]
+offset_left = 954.0
+offset_right = 1014.0
+offset_bottom = 24.0
+text = "0000"
+
+[node name="Close" type="Button" parent="GridContainer"]
+offset_top = 559.0
+offset_right = 1014.0
+offset_bottom = 590.0
+text = "Back to game"

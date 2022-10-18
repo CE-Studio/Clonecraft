@@ -21,6 +21,12 @@ func input(event):
         elif (event.button_index == 1) && (event.pressed):
             if player.lookingAt != null:
                 tool.set_voxel(player.lookingAt.position, 0)
+        elif (event.button_index == 3) && (event.pressed):
+            if player.lookingAt != null:
+                var pl := player.lookingAt.position
+                bid = player.voxelTool.get_voxel(pl)
+                tlabel.text = man.blockList[bid].fullID
+                man.log("debugtools", "Block " + str(bid))
 
 
 func registerPhase():

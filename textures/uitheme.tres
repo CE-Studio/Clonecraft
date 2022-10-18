@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://eikvg3smmp6t"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://eikvg3smmp6t"]
 
 [ext_resource type="StyleBox" uid="uid://d2168jgf71u6p" path="res://textures/buttonDisabled.tres" id="1_qfc4k"]
+[ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="1_spyui"]
 [ext_resource type="Texture2D" uid="uid://qdn3gww1o4nt" path="res://textures/button4.png" id="1_y287y"]
 [ext_resource type="FontFile" uid="uid://bnl115joa8yxl" path="res://ClarenceOS_Terminal_Mono.ttf" id="2_0wk78"]
 [ext_resource type="StyleBox" uid="uid://bsg8aq0vtexuk" path="res://textures/focus.tres" id="2_3x48p"]
@@ -17,7 +18,7 @@
 [ext_resource type="StyleBox" uid="uid://fanrvrspafel" path="res://textures/efbar1.tres" id="15_yk7w6"]
 
 [resource]
-default_font = ExtResource("2_0wk78")
+default_font = ExtResource("1_spyui")
 Button/font_sizes/font_sizee = 7
 Button/styles/disabled = ExtResource("1_qfc4k")
 Button/styles/focus = ExtResource("2_3x48p")
@@ -30,6 +31,7 @@ CheckBox/icons/unchecked = ExtResource("1_y287y")
 CheckBox/icons/unchecked_disabled = ExtResource("5_gra7t")
 CheckBox/styles/hover_pressed = ExtResource("4_7wnnr")
 CheckButton/styles/hover_pressed = ExtResource("4_7wnnr")
+CodeEdit/fonts/font = ExtResource("2_0wk78")
 HScrollBar/styles/grabber = ExtResource("3_y8rvq")
 HScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
 HScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
@@ -44,12 +46,12 @@ Label/colors/font_shadow_color = Color(0, 0, 0, 1)
 Label/constants/shadow_offset_x = 2
 Label/constants/shadow_offset_y = 2
 Label/constants/shadow_outline_size = 0
-Label/fonts/font = ExtResource("2_0wk78")
 LineEdit/styles/focus = ExtResource("2_3x48p")
 LineEdit/styles/normal = ExtResource("9_q5b1f")
 LineEdit/styles/read_only = ExtResource("10_iu1qr")
 Panel/styles/panel = ExtResource("1_qfc4k")
 Panel/styles/panel_fg = ExtResource("3_y8rvq")
+PanelContainer/styles/panel = ExtResource("1_qfc4k")
 PopupMenu/icons/checked = ExtResource("5_gra7t")
 PopupMenu/icons/radio_checked = ExtResource("12_h4iw6")
 PopupMenu/icons/radio_unchecked = ExtResource("13_71ett")

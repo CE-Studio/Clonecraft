@@ -1,0 +1,5 @@
+[gd_resource type="VoxelStreamRegionFiles" format=3 uid="uid://c4sbfwi5j12ve"]
+
+[resource]
+save_generator_output = true
+directory = "res://titlescreen/bg"

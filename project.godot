@@ -26,7 +26,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="clonecraft"
+config/name="Clonecraft"
+config/name_localized={
+"en_US": "Clonecraft"
+}
 run/main_scene="res://titlescreen/title.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.png"
@@ -36,6 +39,7 @@ config/icon="res://icon.png"
 BlockManager="*res://scripts/blockManager.gd"
 ItemManager="*res://scripts/itemManager.gd"
 UiManager="*res://scripts/uiManager.gd"
+SettingManager="*res://scripts/settingManager.gd"
 
 [editor_plugins]
 
@@ -48,6 +52,12 @@ texture={
 }
 oggvorbisstr={
 "loop": false
+}
+2d_array_texture={
+"compress/mode": 0
+}
+3d_texture={
+"compress/mode": 0
 }
 
 [input]
