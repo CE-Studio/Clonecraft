@@ -1169,7 +1169,482 @@ _data = {
 "titlelean": SubResource("Animation_cp1hy")
 }
 
-[sub_resource type="Image" id="Image_0pj70"]
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_t3s43"]
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_8fijb"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(0, 0)
+cube_tiles_right = Vector2(0, 0)
+cube_tiles_bottom = Vector2(0, 0)
+cube_tiles_top = Vector2(0, 0)
+cube_tiles_back = Vector2(0, 0)
+cube_tiles_front = Vector2(0, 0)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_vbuan"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(4, 1)
+cube_tiles_right = Vector2(4, 1)
+cube_tiles_bottom = Vector2(4, 1)
+cube_tiles_top = Vector2(4, 1)
+cube_tiles_back = Vector2(4, 1)
+cube_tiles_front = Vector2(4, 1)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4y15w"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(5, 1)
+cube_tiles_right = Vector2(5, 1)
+cube_tiles_bottom = Vector2(5, 1)
+cube_tiles_top = Vector2(5, 1)
+cube_tiles_back = Vector2(5, 1)
+cube_tiles_front = Vector2(5, 1)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4f46l"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(0, 2)
+cube_tiles_right = Vector2(0, 2)
+cube_tiles_bottom = Vector2(0, 2)
+cube_tiles_top = Vector2(0, 2)
+cube_tiles_back = Vector2(0, 2)
+cube_tiles_front = Vector2(0, 2)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_qfpt6"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(1, 2)
+cube_tiles_right = Vector2(1, 2)
+cube_tiles_bottom = Vector2(1, 2)
+cube_tiles_top = Vector2(1, 2)
+cube_tiles_back = Vector2(1, 2)
+cube_tiles_front = Vector2(1, 2)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_xsqt2"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(2, 2)
+cube_tiles_right = Vector2(2, 2)
+cube_tiles_bottom = Vector2(2, 2)
+cube_tiles_top = Vector2(2, 2)
+cube_tiles_back = Vector2(2, 2)
+cube_tiles_front = Vector2(2, 2)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_70e6g"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(3, 2)
+cube_tiles_right = Vector2(3, 2)
+cube_tiles_bottom = Vector2(2, 2)
+cube_tiles_top = Vector2(4, 2)
+cube_tiles_back = Vector2(3, 2)
+cube_tiles_front = Vector2(3, 2)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_odnpo"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(5, 2)
+cube_tiles_right = Vector2(5, 2)
+cube_tiles_bottom = Vector2(1, 3)
+cube_tiles_top = Vector2(1, 3)
+cube_tiles_back = Vector2(5, 2)
+cube_tiles_front = Vector2(5, 2)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_ctxtr"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(0, 3)
+cube_tiles_right = Vector2(0, 3)
+cube_tiles_bottom = Vector2(5, 2)
+cube_tiles_top = Vector2(5, 2)
+cube_tiles_back = Vector2(1, 3)
+cube_tiles_front = Vector2(1, 3)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_6dncw"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(1, 3)
+cube_tiles_right = Vector2(1, 3)
+cube_tiles_bottom = Vector2(0, 3)
+cube_tiles_top = Vector2(0, 3)
+cube_tiles_back = Vector2(0, 3)
+cube_tiles_front = Vector2(0, 3)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_wubiu"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(5, 2)
+cube_tiles_right = Vector2(5, 2)
+cube_tiles_bottom = Vector2(5, 2)
+cube_tiles_top = Vector2(5, 2)
+cube_tiles_back = Vector2(5, 2)
+cube_tiles_front = Vector2(5, 2)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_ewmfd"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(1, 0)
+cube_tiles_right = Vector2(1, 0)
+cube_tiles_bottom = Vector2(1, 0)
+cube_tiles_top = Vector2(1, 0)
+cube_tiles_back = Vector2(1, 0)
+cube_tiles_front = Vector2(1, 0)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_s66jn"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(1, 3)
+cube_tiles_right = Vector2(1, 3)
+cube_tiles_bottom = Vector2(1, 3)
+cube_tiles_top = Vector2(1, 3)
+cube_tiles_back = Vector2(1, 3)
+cube_tiles_front = Vector2(1, 3)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_3l0ys"]
+transparent = true
+transparency_index = 1
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(2, 3)
+cube_tiles_right = Vector2(2, 3)
+cube_tiles_bottom = Vector2(2, 3)
+cube_tiles_top = Vector2(2, 3)
+cube_tiles_back = Vector2(2, 3)
+cube_tiles_front = Vector2(2, 3)
+material_override_0 = ExtResource("13_2nbak")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_lolkw"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(3, 3)
+cube_tiles_right = Vector2(3, 3)
+cube_tiles_bottom = Vector2(3, 3)
+cube_tiles_top = Vector2(3, 3)
+cube_tiles_back = Vector2(3, 3)
+cube_tiles_front = Vector2(3, 3)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_vn10p"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(4, 3)
+cube_tiles_right = Vector2(4, 3)
+cube_tiles_bottom = Vector2(4, 3)
+cube_tiles_top = Vector2(4, 3)
+cube_tiles_back = Vector2(4, 3)
+cube_tiles_front = Vector2(4, 3)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_q7y3k"]
+transparent = true
+transparency_index = 1
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(5, 3)
+cube_tiles_right = Vector2(5, 3)
+cube_tiles_bottom = Vector2(5, 3)
+cube_tiles_top = Vector2(5, 3)
+cube_tiles_back = Vector2(5, 3)
+cube_tiles_front = Vector2(5, 3)
+material_override_0 = ExtResource("13_2nbak")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_58qot"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(0, 4)
+cube_tiles_right = Vector2(0, 4)
+cube_tiles_bottom = Vector2(0, 4)
+cube_tiles_top = Vector2(0, 4)
+cube_tiles_back = Vector2(0, 4)
+cube_tiles_front = Vector2(0, 4)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_weyfm"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(1, 4)
+cube_tiles_right = Vector2(1, 4)
+cube_tiles_bottom = Vector2(1, 4)
+cube_tiles_top = Vector2(1, 4)
+cube_tiles_back = Vector2(1, 4)
+cube_tiles_front = Vector2(1, 4)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_38t4o"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(2, 4)
+cube_tiles_right = Vector2(2, 4)
+cube_tiles_bottom = Vector2(2, 4)
+cube_tiles_top = Vector2(2, 4)
+cube_tiles_back = Vector2(2, 4)
+cube_tiles_front = Vector2(2, 4)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_5nmu6"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(3, 4)
+cube_tiles_right = Vector2(3, 4)
+cube_tiles_bottom = Vector2(3, 4)
+cube_tiles_top = Vector2(3, 4)
+cube_tiles_back = Vector2(3, 4)
+cube_tiles_front = Vector2(3, 4)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_y75rs"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(4, 4)
+cube_tiles_right = Vector2(4, 4)
+cube_tiles_bottom = Vector2(4, 4)
+cube_tiles_top = Vector2(4, 4)
+cube_tiles_back = Vector2(4, 4)
+cube_tiles_front = Vector2(4, 4)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_pmgae"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(2, 0)
+cube_tiles_right = Vector2(2, 0)
+cube_tiles_bottom = Vector2(1, 0)
+cube_tiles_top = Vector2(3, 0)
+cube_tiles_back = Vector2(2, 0)
+cube_tiles_front = Vector2(2, 0)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_qb3ou"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(5, 4)
+cube_tiles_right = Vector2(5, 4)
+cube_tiles_bottom = Vector2(5, 4)
+cube_tiles_top = Vector2(5, 4)
+cube_tiles_back = Vector2(5, 4)
+cube_tiles_front = Vector2(5, 4)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_i0yy3"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(0, 5)
+cube_tiles_right = Vector2(0, 5)
+cube_tiles_bottom = Vector2(0, 5)
+cube_tiles_top = Vector2(0, 5)
+cube_tiles_back = Vector2(0, 5)
+cube_tiles_front = Vector2(0, 5)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_m4et7"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(1, 5)
+cube_tiles_right = Vector2(1, 5)
+cube_tiles_bottom = Vector2(1, 5)
+cube_tiles_top = Vector2(1, 5)
+cube_tiles_back = Vector2(1, 5)
+cube_tiles_front = Vector2(1, 5)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_p65sv"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(5, 5)
+cube_tiles_right = Vector2(5, 5)
+cube_tiles_bottom = Vector2(5, 5)
+cube_tiles_top = Vector2(5, 5)
+cube_tiles_back = Vector2(5, 5)
+cube_tiles_front = Vector2(5, 5)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_oao7i"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(4, 0)
+cube_tiles_right = Vector2(4, 0)
+cube_tiles_bottom = Vector2(4, 0)
+cube_tiles_top = Vector2(4, 0)
+cube_tiles_back = Vector2(4, 0)
+cube_tiles_front = Vector2(4, 0)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_e6s6j"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(5, 0)
+cube_tiles_right = Vector2(5, 0)
+cube_tiles_bottom = Vector2(5, 0)
+cube_tiles_top = Vector2(5, 0)
+cube_tiles_back = Vector2(5, 0)
+cube_tiles_front = Vector2(5, 0)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_5e82p"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(0, 1)
+cube_tiles_right = Vector2(0, 1)
+cube_tiles_bottom = Vector2(0, 1)
+cube_tiles_top = Vector2(0, 1)
+cube_tiles_back = Vector2(0, 1)
+cube_tiles_front = Vector2(0, 1)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_k5i4a"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(1, 1)
+cube_tiles_right = Vector2(1, 1)
+cube_tiles_bottom = Vector2(1, 1)
+cube_tiles_top = Vector2(1, 1)
+cube_tiles_back = Vector2(1, 1)
+cube_tiles_front = Vector2(1, 1)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_xh1oh"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(2, 1)
+cube_tiles_right = Vector2(2, 1)
+cube_tiles_bottom = Vector2(2, 1)
+cube_tiles_top = Vector2(2, 1)
+cube_tiles_back = Vector2(2, 1)
+cube_tiles_front = Vector2(2, 1)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_6riqs"]
+geometry_type = 1
+collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+cube_geometry_padding_y = null
+cube_tiles_left = Vector2(3, 1)
+cube_tiles_right = Vector2(3, 1)
+cube_tiles_bottom = Vector2(3, 1)
+cube_tiles_top = Vector2(3, 1)
+cube_tiles_back = Vector2(3, 1)
+cube_tiles_front = Vector2(3, 1)
+material_override_0 = ExtResource("13_8qgxy")
+collision_enabled_0 = true
+
+[sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_ludbs"]
+atlas_size = 6
+voxels/0 = SubResource("VoxelBlockyModel_t3s43")
+voxels/1 = SubResource("VoxelBlockyModel_8fijb")
+voxels/2 = SubResource("VoxelBlockyModel_ewmfd")
+voxels/3 = SubResource("VoxelBlockyModel_pmgae")
+voxels/4 = SubResource("VoxelBlockyModel_oao7i")
+voxels/5 = SubResource("VoxelBlockyModel_e6s6j")
+voxels/6 = SubResource("VoxelBlockyModel_5e82p")
+voxels/7 = SubResource("VoxelBlockyModel_k5i4a")
+voxels/8 = SubResource("VoxelBlockyModel_xh1oh")
+voxels/9 = SubResource("VoxelBlockyModel_6riqs")
+voxels/10 = SubResource("VoxelBlockyModel_vbuan")
+voxels/11 = SubResource("VoxelBlockyModel_4y15w")
+voxels/12 = SubResource("VoxelBlockyModel_4f46l")
+voxels/13 = SubResource("VoxelBlockyModel_qfpt6")
+voxels/14 = SubResource("VoxelBlockyModel_xsqt2")
+voxels/15 = SubResource("VoxelBlockyModel_70e6g")
+voxels/16 = SubResource("VoxelBlockyModel_odnpo")
+voxels/17 = SubResource("VoxelBlockyModel_ctxtr")
+voxels/18 = SubResource("VoxelBlockyModel_6dncw")
+voxels/19 = SubResource("VoxelBlockyModel_wubiu")
+voxels/20 = SubResource("VoxelBlockyModel_s66jn")
+voxels/21 = SubResource("VoxelBlockyModel_3l0ys")
+voxels/22 = SubResource("VoxelBlockyModel_lolkw")
+voxels/23 = SubResource("VoxelBlockyModel_vn10p")
+voxels/24 = SubResource("VoxelBlockyModel_q7y3k")
+voxels/25 = SubResource("VoxelBlockyModel_58qot")
+voxels/26 = SubResource("VoxelBlockyModel_weyfm")
+voxels/27 = SubResource("VoxelBlockyModel_38t4o")
+voxels/28 = SubResource("VoxelBlockyModel_5nmu6")
+voxels/29 = SubResource("VoxelBlockyModel_y75rs")
+voxels/30 = SubResource("VoxelBlockyModel_qb3ou")
+voxels/31 = SubResource("VoxelBlockyModel_i0yy3")
+voxels/32 = SubResource("VoxelBlockyModel_m4et7")
+voxels/33 = SubResource("VoxelBlockyModel_p65sv")
+
+[sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_gy3dk"]
+library = SubResource("VoxelBlockyLibrary_ludbs")
+
+[sub_resource type="Image" id="Image_o618k"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 226, 142, 142, 255, 209, 119, 119, 255, 209, 119, 119, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 135, 111, 111, 255, 135, 111, 111, 255, 135, 111, 111, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 135, 111, 111, 255, 135, 111, 111, 255, 135, 111, 111, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 255, 255, 255, 255, 187, 0, 0, 255, 0, 0, 0, 255, 135, 111, 111, 255, 182, 162, 162, 255, 171, 145, 145, 255, 135, 111, 111, 255, 0, 0, 0, 255, 187, 0, 0, 255, 255, 255, 255, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 255, 255, 255, 255, 158, 3, 3, 255, 158, 3, 3, 255, 23, 23, 23, 255, 125, 102, 102, 255, 171, 145, 145, 255, 182, 162, 162, 255, 125, 102, 102, 255, 23, 23, 23, 255, 158, 3, 3, 255, 158, 3, 3, 255, 255, 255, 255, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 85, 85, 85, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 255, 255, 255, 255, 187, 0, 0, 255, 187, 0, 0, 255, 44, 44, 44, 255, 119, 90, 90, 255, 182, 162, 162, 255, 182, 162, 162, 255, 119, 90, 90, 255, 44, 44, 44, 255, 187, 0, 0, 255, 187, 0, 0, 255, 255, 255, 255, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 125, 102, 102, 255, 119, 90, 90, 255, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 85, 85, 85, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 119, 90, 90, 255, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 119, 90, 90, 255, 119, 90, 90, 255, 119, 90, 90, 255, 119, 90, 90, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 119, 90, 90, 255, 119, 90, 90, 255, 119, 90, 90, 255, 119, 90, 90, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 135, 111, 111, 255, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 135, 111, 111, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 119, 90, 90, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 119, 90, 90, 255, 182, 162, 162, 255, 209, 119, 119, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 209, 119, 119, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 226, 142, 142, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 119, 90, 90, 255, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 119, 90, 90, 255, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 209, 119, 119, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 111, 111, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 111, 111, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 119, 90, 90, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 119, 90, 90, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 135, 111, 111, 255, 135, 111, 111, 255, 0, 0, 0, 0, 119, 90, 90, 255, 135, 111, 111, 255, 0, 0, 0, 0, 119, 90, 90, 255, 135, 111, 111, 255, 135, 111, 111, 255, 119, 90, 90, 255, 0, 0, 0, 0, 135, 111, 111, 255, 119, 90, 90, 255, 0, 0, 0, 0, 135, 111, 111, 255, 135, 111, 111, 255, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 59, 59, 59, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 209, 119, 119, 255, 226, 142, 142, 255, 209, 119, 119, 255, 125, 102, 102, 255, 125, 102, 102, 255, 226, 142, 142, 255, 226, 142, 142, 255, 125, 102, 102, 255, 125, 102, 102, 255, 209, 119, 119, 255, 226, 142, 142, 255, 209, 119, 119, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 85, 85, 85, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 209, 119, 119, 255, 125, 102, 102, 255, 125, 102, 102, 255, 182, 162, 162, 255, 182, 162, 162, 255, 125, 102, 102, 255, 125, 102, 102, 255, 182, 162, 162, 255, 182, 162, 162, 255, 125, 102, 102, 255, 125, 102, 102, 255, 209, 119, 119, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 85, 85, 85, 255, 182, 162, 162, 255, 85, 85, 85, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 59, 59, 59, 255, 59, 59, 59, 255, 182, 162, 162, 255, 182, 162, 162, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 0, 0, 0, 0, 125, 102, 102, 255, 0, 0, 0, 0, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 0, 0, 0, 0, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 85, 85, 85, 255, 59, 59, 59, 255, 59, 59, 59, 255, 85, 85, 85, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 59, 59, 59, 255, 182, 162, 162, 255, 59, 59, 59, 255, 182, 162, 162, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 59, 59, 59, 255, 85, 85, 85, 255, 182, 162, 162, 255, 85, 85, 85, 255, 85, 85, 85, 255, 59, 59, 59, 255, 85, 85, 85, 255, 59, 59, 59, 255, 59, 59, 59, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 182, 162, 162, 255, 171, 145, 145, 255, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 226, 142, 142, 255, 125, 102, 102, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 125, 102, 102, 255, 226, 142, 142, 255, 0, 0, 0, 0, 0, 0, 0, 0, 85, 85, 85, 255, 59, 59, 59, 255, 59, 59, 59, 255, 85, 85, 85, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 59, 59, 59, 255, 171, 145, 145, 255, 59, 59, 59, 255, 182, 162, 162, 255, 85, 85, 85, 255, 182, 162, 162, 255, 85, 85, 85, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 59, 59, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 182, 162, 162, 255, 182, 162, 162, 255, 125, 102, 102, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 125, 102, 102, 255, 226, 142, 142, 255, 226, 142, 142, 255, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 226, 142, 142, 255, 226, 142, 142, 255, 125, 102, 102, 255, 0, 0, 0, 0, 85, 85, 85, 255, 59, 59, 59, 255, 59, 59, 59, 255, 85, 85, 85, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 209, 119, 119, 255, 182, 162, 162, 255, 209, 119, 119, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 0, 0, 0, 0, 125, 102, 102, 255, 125, 102, 102, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 125, 102, 102, 255, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 85, 85, 85, 255, 59, 59, 59, 255, 59, 59, 59, 255, 85, 85, 85, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 226, 142, 142, 255, 209, 119, 119, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 85, 85, 85, 255, 85, 85, 85, 255, 85, 85, 85, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 171, 145, 145, 255, 182, 162, 162, 255, 171, 145, 145, 255, 182, 162, 162, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 226, 142, 142, 255, 0, 0, 0, 0, 226, 142, 142, 255, 226, 142, 142, 255, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 226, 142, 142, 255, 226, 142, 142, 255, 0, 0, 0, 0, 0, 0, 0, 0, 85, 85, 85, 255, 59, 59, 59, 255, 59, 59, 59, 255, 85, 85, 85, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 226, 142, 142, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 59, 59, 59, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 209, 119, 119, 255, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 125, 102, 102, 255, 125, 102, 102, 255, 125, 102, 102, 255, 0, 0, 0, 0, 85, 85, 85, 255, 59, 59, 59, 255, 59, 59, 59, 255, 85, 85, 85, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 182, 162, 162, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "format": "RGBA8",
@@ -1179,7 +1654,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_ck746"]
-image = SubResource("Image_0pj70")
+image = SubResource("Image_o618k")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pl5rj"]
 resource_name = "material_0"
@@ -2062,758 +2537,16 @@ shadow_mesh = SubResource("ArrayMesh_yv3uk")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cn1w4"]
 
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_t3s43"]
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_8fijb"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(0, 0)
-cube_tiles_right = Vector2(0, 0)
-cube_tiles_bottom = Vector2(0, 0)
-cube_tiles_top = Vector2(0, 0)
-cube_tiles_back = Vector2(0, 0)
-cube_tiles_front = Vector2(0, 0)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_vbuan"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(4, 1)
-cube_tiles_right = Vector2(4, 1)
-cube_tiles_bottom = Vector2(4, 1)
-cube_tiles_top = Vector2(4, 1)
-cube_tiles_back = Vector2(4, 1)
-cube_tiles_front = Vector2(4, 1)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4y15w"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(5, 1)
-cube_tiles_right = Vector2(5, 1)
-cube_tiles_bottom = Vector2(5, 1)
-cube_tiles_top = Vector2(5, 1)
-cube_tiles_back = Vector2(5, 1)
-cube_tiles_front = Vector2(5, 1)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4f46l"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(0, 2)
-cube_tiles_right = Vector2(0, 2)
-cube_tiles_bottom = Vector2(0, 2)
-cube_tiles_top = Vector2(0, 2)
-cube_tiles_back = Vector2(0, 2)
-cube_tiles_front = Vector2(0, 2)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_qfpt6"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(1, 2)
-cube_tiles_right = Vector2(1, 2)
-cube_tiles_bottom = Vector2(1, 2)
-cube_tiles_top = Vector2(1, 2)
-cube_tiles_back = Vector2(1, 2)
-cube_tiles_front = Vector2(1, 2)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_xsqt2"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(2, 2)
-cube_tiles_right = Vector2(2, 2)
-cube_tiles_bottom = Vector2(2, 2)
-cube_tiles_top = Vector2(2, 2)
-cube_tiles_back = Vector2(2, 2)
-cube_tiles_front = Vector2(2, 2)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_70e6g"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(3, 2)
-cube_tiles_right = Vector2(3, 2)
-cube_tiles_bottom = Vector2(2, 2)
-cube_tiles_top = Vector2(4, 2)
-cube_tiles_back = Vector2(3, 2)
-cube_tiles_front = Vector2(3, 2)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_odnpo"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(5, 2)
-cube_tiles_right = Vector2(5, 2)
-cube_tiles_bottom = Vector2(1, 3)
-cube_tiles_top = Vector2(1, 3)
-cube_tiles_back = Vector2(5, 2)
-cube_tiles_front = Vector2(5, 2)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_ctxtr"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(0, 3)
-cube_tiles_right = Vector2(0, 3)
-cube_tiles_bottom = Vector2(5, 2)
-cube_tiles_top = Vector2(5, 2)
-cube_tiles_back = Vector2(1, 3)
-cube_tiles_front = Vector2(1, 3)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_6dncw"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(1, 3)
-cube_tiles_right = Vector2(1, 3)
-cube_tiles_bottom = Vector2(0, 3)
-cube_tiles_top = Vector2(0, 3)
-cube_tiles_back = Vector2(0, 3)
-cube_tiles_front = Vector2(0, 3)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_wubiu"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(5, 2)
-cube_tiles_right = Vector2(5, 2)
-cube_tiles_bottom = Vector2(5, 2)
-cube_tiles_top = Vector2(5, 2)
-cube_tiles_back = Vector2(5, 2)
-cube_tiles_front = Vector2(5, 2)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_ewmfd"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(1, 0)
-cube_tiles_right = Vector2(1, 0)
-cube_tiles_bottom = Vector2(1, 0)
-cube_tiles_top = Vector2(1, 0)
-cube_tiles_back = Vector2(1, 0)
-cube_tiles_front = Vector2(1, 0)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_s66jn"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(1, 3)
-cube_tiles_right = Vector2(1, 3)
-cube_tiles_bottom = Vector2(1, 3)
-cube_tiles_top = Vector2(1, 3)
-cube_tiles_back = Vector2(1, 3)
-cube_tiles_front = Vector2(1, 3)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_3l0ys"]
-transparent = true
-transparency_index = 1
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(2, 3)
-cube_tiles_right = Vector2(2, 3)
-cube_tiles_bottom = Vector2(2, 3)
-cube_tiles_top = Vector2(2, 3)
-cube_tiles_back = Vector2(2, 3)
-cube_tiles_front = Vector2(2, 3)
-material_override_0 = ExtResource("13_2nbak")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_lolkw"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(3, 3)
-cube_tiles_right = Vector2(3, 3)
-cube_tiles_bottom = Vector2(3, 3)
-cube_tiles_top = Vector2(3, 3)
-cube_tiles_back = Vector2(3, 3)
-cube_tiles_front = Vector2(3, 3)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_vn10p"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(4, 3)
-cube_tiles_right = Vector2(4, 3)
-cube_tiles_bottom = Vector2(4, 3)
-cube_tiles_top = Vector2(4, 3)
-cube_tiles_back = Vector2(4, 3)
-cube_tiles_front = Vector2(4, 3)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_q7y3k"]
-transparent = true
-transparency_index = 1
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(5, 3)
-cube_tiles_right = Vector2(5, 3)
-cube_tiles_bottom = Vector2(5, 3)
-cube_tiles_top = Vector2(5, 3)
-cube_tiles_back = Vector2(5, 3)
-cube_tiles_front = Vector2(5, 3)
-material_override_0 = ExtResource("13_2nbak")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_58qot"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(0, 4)
-cube_tiles_right = Vector2(0, 4)
-cube_tiles_bottom = Vector2(0, 4)
-cube_tiles_top = Vector2(0, 4)
-cube_tiles_back = Vector2(0, 4)
-cube_tiles_front = Vector2(0, 4)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_weyfm"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(1, 4)
-cube_tiles_right = Vector2(1, 4)
-cube_tiles_bottom = Vector2(1, 4)
-cube_tiles_top = Vector2(1, 4)
-cube_tiles_back = Vector2(1, 4)
-cube_tiles_front = Vector2(1, 4)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_38t4o"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(2, 4)
-cube_tiles_right = Vector2(2, 4)
-cube_tiles_bottom = Vector2(2, 4)
-cube_tiles_top = Vector2(2, 4)
-cube_tiles_back = Vector2(2, 4)
-cube_tiles_front = Vector2(2, 4)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_5nmu6"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(3, 4)
-cube_tiles_right = Vector2(3, 4)
-cube_tiles_bottom = Vector2(3, 4)
-cube_tiles_top = Vector2(3, 4)
-cube_tiles_back = Vector2(3, 4)
-cube_tiles_front = Vector2(3, 4)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_y75rs"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(4, 4)
-cube_tiles_right = Vector2(4, 4)
-cube_tiles_bottom = Vector2(4, 4)
-cube_tiles_top = Vector2(4, 4)
-cube_tiles_back = Vector2(4, 4)
-cube_tiles_front = Vector2(4, 4)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_pmgae"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(2, 0)
-cube_tiles_right = Vector2(2, 0)
-cube_tiles_bottom = Vector2(1, 0)
-cube_tiles_top = Vector2(3, 0)
-cube_tiles_back = Vector2(2, 0)
-cube_tiles_front = Vector2(2, 0)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_qb3ou"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(5, 4)
-cube_tiles_right = Vector2(5, 4)
-cube_tiles_bottom = Vector2(5, 4)
-cube_tiles_top = Vector2(5, 4)
-cube_tiles_back = Vector2(5, 4)
-cube_tiles_front = Vector2(5, 4)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_i0yy3"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(0, 5)
-cube_tiles_right = Vector2(0, 5)
-cube_tiles_bottom = Vector2(0, 5)
-cube_tiles_top = Vector2(0, 5)
-cube_tiles_back = Vector2(0, 5)
-cube_tiles_front = Vector2(0, 5)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_m4et7"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(1, 5)
-cube_tiles_right = Vector2(1, 5)
-cube_tiles_bottom = Vector2(1, 5)
-cube_tiles_top = Vector2(1, 5)
-cube_tiles_back = Vector2(1, 5)
-cube_tiles_front = Vector2(1, 5)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_p65sv"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(5, 5)
-cube_tiles_right = Vector2(5, 5)
-cube_tiles_bottom = Vector2(5, 5)
-cube_tiles_top = Vector2(5, 5)
-cube_tiles_back = Vector2(5, 5)
-cube_tiles_front = Vector2(5, 5)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_oao7i"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(4, 0)
-cube_tiles_right = Vector2(4, 0)
-cube_tiles_bottom = Vector2(4, 0)
-cube_tiles_top = Vector2(4, 0)
-cube_tiles_back = Vector2(4, 0)
-cube_tiles_front = Vector2(4, 0)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_e6s6j"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(5, 0)
-cube_tiles_right = Vector2(5, 0)
-cube_tiles_bottom = Vector2(5, 0)
-cube_tiles_top = Vector2(5, 0)
-cube_tiles_back = Vector2(5, 0)
-cube_tiles_front = Vector2(5, 0)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_5e82p"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(0, 1)
-cube_tiles_right = Vector2(0, 1)
-cube_tiles_bottom = Vector2(0, 1)
-cube_tiles_top = Vector2(0, 1)
-cube_tiles_back = Vector2(0, 1)
-cube_tiles_front = Vector2(0, 1)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_k5i4a"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(1, 1)
-cube_tiles_right = Vector2(1, 1)
-cube_tiles_bottom = Vector2(1, 1)
-cube_tiles_top = Vector2(1, 1)
-cube_tiles_back = Vector2(1, 1)
-cube_tiles_front = Vector2(1, 1)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_xh1oh"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(2, 1)
-cube_tiles_right = Vector2(2, 1)
-cube_tiles_bottom = Vector2(2, 1)
-cube_tiles_top = Vector2(2, 1)
-cube_tiles_back = Vector2(2, 1)
-cube_tiles_front = Vector2(2, 1)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_6riqs"]
-geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(3, 1)
-cube_tiles_right = Vector2(3, 1)
-cube_tiles_bottom = Vector2(3, 1)
-cube_tiles_top = Vector2(3, 1)
-cube_tiles_back = Vector2(3, 1)
-cube_tiles_front = Vector2(3, 1)
-material_override_0 = ExtResource("13_8qgxy")
-collision_enabled_0 = true
-
-[sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_ludbs"]
-atlas_size = 6
-voxels/0 = SubResource("VoxelBlockyModel_t3s43")
-voxels/1 = SubResource("VoxelBlockyModel_8fijb")
-voxels/2 = SubResource("VoxelBlockyModel_ewmfd")
-voxels/3 = SubResource("VoxelBlockyModel_pmgae")
-voxels/4 = SubResource("VoxelBlockyModel_oao7i")
-voxels/5 = SubResource("VoxelBlockyModel_e6s6j")
-voxels/6 = SubResource("VoxelBlockyModel_5e82p")
-voxels/7 = SubResource("VoxelBlockyModel_k5i4a")
-voxels/8 = SubResource("VoxelBlockyModel_xh1oh")
-voxels/9 = SubResource("VoxelBlockyModel_6riqs")
-voxels/10 = SubResource("VoxelBlockyModel_vbuan")
-voxels/11 = SubResource("VoxelBlockyModel_4y15w")
-voxels/12 = SubResource("VoxelBlockyModel_4f46l")
-voxels/13 = SubResource("VoxelBlockyModel_qfpt6")
-voxels/14 = SubResource("VoxelBlockyModel_xsqt2")
-voxels/15 = SubResource("VoxelBlockyModel_70e6g")
-voxels/16 = SubResource("VoxelBlockyModel_odnpo")
-voxels/17 = SubResource("VoxelBlockyModel_ctxtr")
-voxels/18 = SubResource("VoxelBlockyModel_6dncw")
-voxels/19 = SubResource("VoxelBlockyModel_wubiu")
-voxels/20 = SubResource("VoxelBlockyModel_s66jn")
-voxels/21 = SubResource("VoxelBlockyModel_3l0ys")
-voxels/22 = SubResource("VoxelBlockyModel_lolkw")
-voxels/23 = SubResource("VoxelBlockyModel_vn10p")
-voxels/24 = SubResource("VoxelBlockyModel_q7y3k")
-voxels/25 = SubResource("VoxelBlockyModel_58qot")
-voxels/26 = SubResource("VoxelBlockyModel_weyfm")
-voxels/27 = SubResource("VoxelBlockyModel_38t4o")
-voxels/28 = SubResource("VoxelBlockyModel_5nmu6")
-voxels/29 = SubResource("VoxelBlockyModel_y75rs")
-voxels/30 = SubResource("VoxelBlockyModel_qb3ou")
-voxels/31 = SubResource("VoxelBlockyModel_i0yy3")
-voxels/32 = SubResource("VoxelBlockyModel_m4et7")
-voxels/33 = SubResource("VoxelBlockyModel_p65sv")
-
-[sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_gy3dk"]
-library = SubResource("VoxelBlockyLibrary_ludbs")
-
 [node name="title" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.153, 1.4899e-08, 9.96913e-08, 0, 1.14034, -0.170424, -1.00798e-07, -0.170424, -1.14034, 0, 2.261, 0)
-material_override = ExtResource("1_1krtb")
-mesh = ExtResource("2_dxce3")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("3_7yac3")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.193)
-
-[node name="VoxelViewer" type="VoxelViewer" parent="Camera3D"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.877732, -0.29425, 0.378158, -0.0626745, 0.711937, 0.699441, -0.475035, -0.637623, 0.606448, 0, 0, 0)
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.812338, 0.146472, -0.564494, -0.583187, 0.204025, -0.7863, 0, 0.967946, 0.251157, 0, 0, 0)
-light_energy = 0.125
-light_indirect_energy = 1.875
-
-[node name="derg" type="AnimationPlayer" parent="."]
+[node name="derganim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../spinpoint")
 libraries = {
 "": SubResource("AnimationLibrary_i0ybq")
 }
 script = ExtResource("4_m3okf")
-
-[node name="Node2" type="Node3D" parent="derg"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.52652, 1.93859, 0.586375)
-
-[node name="bone2" type="Node3D" parent="derg/Node2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
-
-[node name="cube" type="MeshInstance3D" parent="derg/Node2/bone2"]
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_jgh8c")
-skeleton = NodePath("")
-
-[node name="cube2" type="MeshInstance3D" parent="derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.3125, 0.25)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_x2obd")
-skeleton = NodePath("")
-
-[node name="head" type="Node3D" parent="derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.625, 0)
-
-[node name="cube3" type="MeshInstance3D" parent="derg/Node2/bone2/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_xf1sw")
-skeleton = NodePath("")
-
-[node name="cube4" type="MeshInstance3D" parent="derg/Node2/bone2/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_m5qdm")
-skeleton = NodePath("")
-
-[node name="cube5" type="MeshInstance3D" parent="derg/Node2/bone2/head"]
-transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0.25, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_715oc")
-skeleton = NodePath("")
-
-[node name="cube6" type="MeshInstance3D" parent="derg/Node2/bone2/head"]
-transform = Transform3D(0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, -0.25, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_anvro")
-skeleton = NodePath("")
-
-[node name="cube7" type="MeshInstance3D" parent="derg/Node2/bone2/head"]
-transform = Transform3D(0.92388, 7.45058e-09, -0.382683, 0.146447, 0.92388, 0.353553, 0.353553, -0.382683, 0.853553, -0.25, 0.5, -0.0625)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_4n0hi")
-skeleton = NodePath("")
-
-[node name="cube8" type="MeshInstance3D" parent="derg/Node2/bone2/head"]
-transform = Transform3D(0.92388, -7.45058e-09, 0.382683, -0.146447, 0.92388, 0.353553, -0.353553, -0.382683, 0.853553, 0.25, 0.5, -0.0625)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_x5anj")
-skeleton = NodePath("")
-
-[node name="cube9" type="MeshInstance3D" parent="derg/Node2/bone2/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_umqg1")
-skeleton = NodePath("")
-
-[node name="larm" type="Node3D" parent="derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.625, 0)
-
-[node name="cube10" type="MeshInstance3D" parent="derg/Node2/bone2/larm"]
-transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.25, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_cfc8m")
-skeleton = NodePath("")
-
-[node name="bone6" type="Node3D" parent="derg/Node2/bone2/larm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, -0.375, 0.125)
-
-[node name="cube11" type="MeshInstance3D" parent="derg/Node2/bone2/larm/bone6"]
-transform = Transform3D(0, 1.82121e-17, -1, 8.27181e-25, -1, -1.82121e-17, -1, 0, 0, 0, 0.375, -0.125)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_k6lca")
-skeleton = NodePath("")
-
-[node name="rarm" type="Node3D" parent="derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249999, 0.625, 0)
-
-[node name="cube12" type="MeshInstance3D" parent="derg/Node2/bone2/rarm"]
-transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, 0, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_tbl1c")
-skeleton = NodePath("")
-
-[node name="bone4" type="Node3D" parent="derg/Node2/bone2/rarm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -0.375, 0.125)
-
-[node name="cube13" type="MeshInstance3D" parent="derg/Node2/bone2/rarm/bone4"]
-transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.125, 0.375, -0.125)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_ox2qg")
-skeleton = NodePath("")
-
-[node name="rleg" type="Node3D" parent="derg/Node2/bone2"]
-transform = Transform3D(0.996195, -0.0188639, -0.0850897, 0, 0.976296, -0.216439, 0.0871557, 0.215616, 0.972581, 0.125, 0, 0)
-
-[node name="cube14" type="MeshInstance3D" parent="derg/Node2/bone2/rleg"]
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_pc16k")
-skeleton = NodePath("")
-
-[node name="bone8" type="Node3D" parent="derg/Node2/bone2/rleg"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
-
-[node name="cube15" type="MeshInstance3D" parent="derg/Node2/bone2/rleg/bone8"]
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_n3pki")
-skeleton = NodePath("")
-
-[node name="bone9" type="Node3D" parent="derg/Node2/bone2/rleg/bone8"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
-
-[node name="cube16" type="MeshInstance3D" parent="derg/Node2/bone2/rleg/bone8/bone9"]
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_cpm37")
-skeleton = NodePath("")
-
-[node name="bone10" type="Node3D" parent="derg/Node2/bone2/rleg/bone8/bone9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
-
-[node name="cube17" type="MeshInstance3D" parent="derg/Node2/bone2/rleg/bone8/bone9/bone10"]
-transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_6q04a")
-skeleton = NodePath("")
-
-[node name="lleg" type="Node3D" parent="derg/Node2/bone2"]
-transform = Transform3D(0.996195, 0.0188639, 0.0850897, 0, 0.976296, -0.216439, -0.0871557, 0.215616, 0.972581, -0.125, 0, 0)
-
-[node name="cube18" type="MeshInstance3D" parent="derg/Node2/bone2/lleg"]
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_2tm8u")
-skeleton = NodePath("")
-
-[node name="bone12" type="Node3D" parent="derg/Node2/bone2/lleg"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
-
-[node name="cube19" type="MeshInstance3D" parent="derg/Node2/bone2/lleg/bone12"]
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_ogc8p")
-skeleton = NodePath("")
-
-[node name="bone13" type="Node3D" parent="derg/Node2/bone2/lleg/bone12"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
-
-[node name="cube20" type="MeshInstance3D" parent="derg/Node2/bone2/lleg/bone12/bone13"]
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_mocik")
-skeleton = NodePath("")
-
-[node name="bone14" type="Node3D" parent="derg/Node2/bone2/lleg/bone12/bone13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
-
-[node name="cube21" type="MeshInstance3D" parent="derg/Node2/bone2/lleg/bone12/bone13/bone14"]
-transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_g7va5")
-skeleton = NodePath("")
-
-[node name="tail" type="Node3D" parent="derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.25, 0.125)
-
-[node name="cube22" type="MeshInstance3D" parent="derg/Node2/bone2/tail"]
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_7e0lc")
-skeleton = NodePath("")
-
-[node name="cube23" type="MeshInstance3D" parent="derg/Node2/bone2/tail"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_elp2t")
-skeleton = NodePath("")
-
-[node name="tail2" type="Node3D" parent="derg/Node2/bone2/tail"]
-transform = Transform3D(1, 0, 0, 0, 0.965927, 0.258819, 0, -0.258819, 0.965927, -7.62939e-06, -0.499999, -0.250001)
-
-[node name="cube24" type="MeshInstance3D" parent="derg/Node2/bone2/tail/tail2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_da7hw")
-skeleton = NodePath("")
-
-[node name="cube25" type="MeshInstance3D" parent="derg/Node2/bone2/tail/tail2"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_snl6l")
-skeleton = NodePath("")
-
-[node name="tail3" type="Node3D" parent="derg/Node2/bone2/tail/tail2"]
-transform = Transform3D(1, 0, 0, 0, 0.923879, 0.382683, 0, -0.382683, 0.923879, -9.53674e-07, -0.500001, -4.76837e-07)
-
-[node name="cube26" type="MeshInstance3D" parent="derg/Node2/bone2/tail/tail2/tail3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_q8qp6")
-skeleton = NodePath("")
-
-[node name="cube27" type="MeshInstance3D" parent="derg/Node2/bone2/tail/tail2/tail3"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_h8od7")
-skeleton = NodePath("")
-
-[node name="tail4" type="Node3D" parent="derg/Node2/bone2/tail/tail2/tail3"]
-transform = Transform3D(0.999998, 0, 0, 0, 0.923878, 0.382683, 0, -0.382683, 0.923878, -2.38419e-07, -0.499999, -4.76837e-07)
-
-[node name="cube28" type="MeshInstance3D" parent="derg/Node2/bone2/tail/tail2/tail3/tail4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_inp2k")
-skeleton = NodePath("")
-
-[node name="cube29" type="MeshInstance3D" parent="derg/Node2/bone2/tail/tail2/tail3/tail4"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
-material_override = ExtResource("4_q133x")
-mesh = SubResource("ArrayMesh_6u51a")
-skeleton = NodePath("")
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(0.957319, -0.289032, 0, 0.289032, 0.957319, 0, 0, 0, 1, 4.208, 2.168, 0.644)
-pixel_size = 0.0151
-alpha_scissor_threshold = 0.0
-texture_filter = 0
-modulate = Color(1, 1, 0, 1)
-text = "No megacorps involved!"
-font = ExtResource("6_site2")
-font_size = 15
-script = ExtResource("6_nhbko")
-
-[node name="Label3D2" type="Label3D" parent="Label3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042, -0.027, -0.02)
-pixel_size = 0.0151
-alpha_scissor_threshold = 0.0
-texture_filter = 0
-modulate = Color(0.494118, 0.494118, 0, 1)
-text = "No megacorps involved!"
-font = ExtResource("6_site2")
-font_size = 15
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1000, 0, 0, 0, -1000, 0.000150996, 0, -0.000150996, -1000, 0, 157.358, -977.339)
-material_override = ExtResource("7_qty17")
-mesh = SubResource("PlaneMesh_cn1w4")
-script = ExtResource("8_xt62g")
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -2879,4 +2612,279 @@ metadata/_edit_layout_mode = 1
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)
 stream = ExtResource("12_n2dnj")
 mesher = SubResource("VoxelMesherBlocky_gy3dk")
+
+[node name="spinpoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.193)
 script = ExtResource("15_wlk0w")
+
+[node name="derg" type="Node3D" parent="spinpoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.193)
+
+[node name="Node2" type="Node3D" parent="spinpoint/derg"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.52652, 1.93859, 0.586375)
+
+[node name="bone2" type="Node3D" parent="spinpoint/derg/Node2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+
+[node name="cube" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2"]
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_jgh8c")
+skeleton = NodePath("")
+
+[node name="cube2" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.3125, 0.25)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_x2obd")
+skeleton = NodePath("")
+
+[node name="head" type="Node3D" parent="spinpoint/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.625, 0)
+
+[node name="cube3" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_xf1sw")
+skeleton = NodePath("")
+
+[node name="cube4" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_m5qdm")
+skeleton = NodePath("")
+
+[node name="cube5" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/head"]
+transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0.25, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_715oc")
+skeleton = NodePath("")
+
+[node name="cube6" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/head"]
+transform = Transform3D(0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, -0.25, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_anvro")
+skeleton = NodePath("")
+
+[node name="cube7" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/head"]
+transform = Transform3D(0.92388, 7.45058e-09, -0.382683, 0.146447, 0.92388, 0.353553, 0.353553, -0.382683, 0.853553, -0.25, 0.5, -0.0625)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_4n0hi")
+skeleton = NodePath("")
+
+[node name="cube8" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/head"]
+transform = Transform3D(0.92388, -7.45058e-09, 0.382683, -0.146447, 0.92388, 0.353553, -0.353553, -0.382683, 0.853553, 0.25, 0.5, -0.0625)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_x5anj")
+skeleton = NodePath("")
+
+[node name="cube9" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_umqg1")
+skeleton = NodePath("")
+
+[node name="larm" type="Node3D" parent="spinpoint/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.625, 0)
+
+[node name="cube10" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/larm"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.25, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_cfc8m")
+skeleton = NodePath("")
+
+[node name="bone6" type="Node3D" parent="spinpoint/derg/Node2/bone2/larm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, -0.375, 0.125)
+
+[node name="cube11" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/larm/bone6"]
+transform = Transform3D(0, 1.82121e-17, -1, 8.27181e-25, -1, -1.82121e-17, -1, 0, 0, 0, 0.375, -0.125)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_k6lca")
+skeleton = NodePath("")
+
+[node name="rarm" type="Node3D" parent="spinpoint/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249999, 0.625, 0)
+
+[node name="cube12" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/rarm"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, 0, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_tbl1c")
+skeleton = NodePath("")
+
+[node name="bone4" type="Node3D" parent="spinpoint/derg/Node2/bone2/rarm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -0.375, 0.125)
+
+[node name="cube13" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/rarm/bone4"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.125, 0.375, -0.125)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_ox2qg")
+skeleton = NodePath("")
+
+[node name="rleg" type="Node3D" parent="spinpoint/derg/Node2/bone2"]
+transform = Transform3D(0.996195, -0.0188639, -0.0850897, 0, 0.976296, -0.216439, 0.0871557, 0.215616, 0.972581, 0.125, 0, 0)
+
+[node name="cube14" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/rleg"]
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_pc16k")
+skeleton = NodePath("")
+
+[node name="bone8" type="Node3D" parent="spinpoint/derg/Node2/bone2/rleg"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
+
+[node name="cube15" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/rleg/bone8"]
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_n3pki")
+skeleton = NodePath("")
+
+[node name="bone9" type="Node3D" parent="spinpoint/derg/Node2/bone2/rleg/bone8"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
+
+[node name="cube16" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/rleg/bone8/bone9"]
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_cpm37")
+skeleton = NodePath("")
+
+[node name="bone10" type="Node3D" parent="spinpoint/derg/Node2/bone2/rleg/bone8/bone9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
+
+[node name="cube17" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/rleg/bone8/bone9/bone10"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_6q04a")
+skeleton = NodePath("")
+
+[node name="lleg" type="Node3D" parent="spinpoint/derg/Node2/bone2"]
+transform = Transform3D(0.996195, 0.0188639, 0.0850897, 0, 0.976296, -0.216439, -0.0871557, 0.215616, 0.972581, -0.125, 0, 0)
+
+[node name="cube18" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/lleg"]
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_2tm8u")
+skeleton = NodePath("")
+
+[node name="bone12" type="Node3D" parent="spinpoint/derg/Node2/bone2/lleg"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
+
+[node name="cube19" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/lleg/bone12"]
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_ogc8p")
+skeleton = NodePath("")
+
+[node name="bone13" type="Node3D" parent="spinpoint/derg/Node2/bone2/lleg/bone12"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
+
+[node name="cube20" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/lleg/bone12/bone13"]
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_mocik")
+skeleton = NodePath("")
+
+[node name="bone14" type="Node3D" parent="spinpoint/derg/Node2/bone2/lleg/bone12/bone13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
+
+[node name="cube21" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/lleg/bone12/bone13/bone14"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_g7va5")
+skeleton = NodePath("")
+
+[node name="tail" type="Node3D" parent="spinpoint/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.25, 0.125)
+
+[node name="cube22" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/tail"]
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_7e0lc")
+skeleton = NodePath("")
+
+[node name="cube23" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/tail"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_elp2t")
+skeleton = NodePath("")
+
+[node name="tail2" type="Node3D" parent="spinpoint/derg/Node2/bone2/tail"]
+transform = Transform3D(1, 0, 0, 0, 0.965927, 0.258819, 0, -0.258819, 0.965927, -7.62939e-06, -0.499999, -0.250001)
+
+[node name="cube24" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_da7hw")
+skeleton = NodePath("")
+
+[node name="cube25" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_snl6l")
+skeleton = NodePath("")
+
+[node name="tail3" type="Node3D" parent="spinpoint/derg/Node2/bone2/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 0.923879, 0.382683, 0, -0.382683, 0.923879, -9.53674e-07, -0.500001, -4.76837e-07)
+
+[node name="cube26" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/tail/tail2/tail3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_q8qp6")
+skeleton = NodePath("")
+
+[node name="cube27" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/tail/tail2/tail3"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_h8od7")
+skeleton = NodePath("")
+
+[node name="tail4" type="Node3D" parent="spinpoint/derg/Node2/bone2/tail/tail2/tail3"]
+transform = Transform3D(0.999998, 0, 0, 0, 0.923878, 0.382683, 0, -0.382683, 0.923878, -2.38419e-07, -0.499999, -4.76837e-07)
+
+[node name="cube28" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/tail/tail2/tail3/tail4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_inp2k")
+skeleton = NodePath("")
+
+[node name="cube29" type="MeshInstance3D" parent="spinpoint/derg/Node2/bone2/tail/tail2/tail3/tail4"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("4_q133x")
+mesh = SubResource("ArrayMesh_6u51a")
+skeleton = NodePath("")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="spinpoint"]
+transform = Transform3D(0.812338, 0.146472, -0.564494, -0.583187, 0.204025, -0.786299, 0, 0.967946, 0.251158, 0, 0, -6.193)
+light_energy = 0.125
+light_indirect_energy = 1.875
+
+[node name="Camera3D" type="Camera3D" parent="spinpoint"]
+
+[node name="VoxelViewer" type="VoxelViewer" parent="spinpoint/Camera3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="spinpoint"]
+transform = Transform3D(0.877732, -0.29425, 0.378158, -0.0626745, 0.711937, 0.699441, -0.475035, -0.637623, 0.606448, 0, 0, -6.193)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="spinpoint"]
+transform = Transform3D(1000, 0, 0, 0, -1000, 0.000150996, 0, -0.000150996, -1000, 0, 157.358, -983.532)
+material_override = ExtResource("7_qty17")
+mesh = SubResource("PlaneMesh_cn1w4")
+skeleton = NodePath("../..")
+script = ExtResource("8_xt62g")
+
+[node name="Label3D" type="Label3D" parent="spinpoint"]
+transform = Transform3D(0.957319, -0.289032, 0, 0.289032, 0.957319, 0, 0, 0, 1, 4.208, 2.168, -5.549)
+pixel_size = 0.0151
+alpha_scissor_threshold = 0.0
+texture_filter = 0
+modulate = Color(1, 1, 0, 1)
+text = "No megacorps involved!"
+font = ExtResource("6_site2")
+font_size = 15
+script = ExtResource("6_nhbko")
+
+[node name="Label3D2" type="Label3D" parent="spinpoint/Label3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042, -0.027, -0.02)
+pixel_size = 0.0151
+alpha_scissor_threshold = 0.0
+texture_filter = 0
+modulate = Color(0.494118, 0.494118, 0, 1)
+text = "No megacorps involved!"
+font = ExtResource("6_site2")
+font_size = 15
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="spinpoint"]
+transform = Transform3D(-1.153, 1.4899e-08, 9.96913e-08, 0, 1.14034, -0.170424, -1.00798e-07, -0.170424, -1.14034, 0, 2.261, -6.193)
+material_override = ExtResource("1_1krtb")
+mesh = ExtResource("2_dxce3")
+skeleton = NodePath("../..")
