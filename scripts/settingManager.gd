@@ -1,5 +1,6 @@
 extends Node
 
+#TODO swap to godot's builtin settings system
 #TODO better version system
 const VERSION = "Alpha 0.0.1"
 const DEFAULT_SETTINGS := {
