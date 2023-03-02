@@ -102,11 +102,13 @@ graph_data = {
 "type": "Select"
 },
 "61": {
+"auto_connect": true,
 "gui_position": Vector2(400, 320),
 "noise": SubResource("FastNoise2_njilm"),
 "type": "FastNoise2_2D"
 },
 "62": {
+"auto_connect": true,
 "gui_position": Vector2(404.977, 29.9533),
 "noise": SubResource("FastNoise2_of5i1"),
 "type": "FastNoise2_3D"

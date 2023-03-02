@@ -32,7 +32,7 @@ class BlockInfo:
     var explStrength:float
     var unbreakable:bool
     var scripted:bool
-    var script:Callable
+    var blockScript:Callable
     var toolClass:String
     var tickable := false
     var tickCB:Callable
@@ -66,7 +66,7 @@ class BlockInfo:
         unbreakable = funbreakable
         scripted = fscripted
         if scripted:
-            script = fscript
+            blockScript = fscript
         toolClass = ftoolClass
 
 
@@ -76,7 +76,6 @@ class BlockInfo:
         blockModel.random_tickable = true
 
 
-@warning_ignore(shadowed_global_identifier)
 func log(id:String, message:String):
     print("[Mod] [" + id + "] " + message)
 
@@ -115,7 +114,7 @@ func setup():
             "shovel",
             "null",
             "null",
-            "null" 
+            "null"
     )
     airBlock.isAir = true
     endBlockRegister(airBlock)

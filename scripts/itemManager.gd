@@ -3,7 +3,7 @@ extends Node
 
 class item:
     var model:Node3D
-    
+
     func _init():
         pass
 

@@ -45,8 +45,8 @@ func _process(delta):
     armPointY.rotation.y = lerp_angle(armPointY.rotation.y, head.rotation.y, delta * 20)
     armPointX.rotation.x = lerp_angle(armPointX.rotation.x, cam.rotation.x, delta * 20)
     armPointX.position = Vector3(
-        lerp(armPointX.position.x, sin(moveDist) / 40, delta * 20) * animCurSpeed,
-        lerp(armPointX.position.y, ((1 - abs(cos(moveDist))) / 80)  * animCurSpeed, delta * 20),
+        lerpf(armPointX.position.x, sin(moveDist) / 40, delta * 20) * animCurSpeed,
+        lerpf(armPointX.position.y, ((1 - abs(cos(moveDist))) / 80)  * animCurSpeed, delta * 20),
         0
     )
     cloudmat.uv1_offset.z += delta / 900
@@ -133,7 +133,7 @@ func _physics_process(delta):
 
     move_and_slide()
     moveDist += (abs(velocity.x) + abs(velocity.z)) * delta
-    animCurSpeed = lerp(animCurSpeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)
+    animCurSpeed = lerpf(animCurSpeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)
 
     lookingAt = voxelTool.raycast(cam.global_position, -1 * cam.global_transform.basis.z.normalized(), 5)
     if lookingAt != null:

@@ -8,9 +8,9 @@ func _ready():
 
 
 func play():
-    get_tree().change_scene("res://node_3d.tscn")
-    
-    
+    get_tree().change_scene_to_file("res://node_3d.tscn")
+
+
 func openOptions():
     var op = load("res://settings/settings.tscn").instantiate()
     $"/root".add_child(op)

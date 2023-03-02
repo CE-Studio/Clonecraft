@@ -18,7 +18,7 @@
 
 [sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_6qjqm"]
 geometry_type = 1
-collision_aabbs = [AABB(0, 0, 0, 1, 1, 1)]
+collision_aabbs = Array[AABB]([AABB(0, 0, 0, 1, 1, 1)])
 cube_geometry_padding_y = null
 cube_tiles_left = Vector2(5, 5)
 cube_tiles_right = Vector2(5, 5)
@@ -52,11 +52,14 @@ process_mode = 1
 
 [node name="Control" type="Control" parent="."]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource("1_tpx33")
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -66,13 +69,11 @@ metadata/_edit_use_custom_anchors = true
 
 [node name="TextureRect" type="TextureRect" parent="Control/CenterContainer"]
 texture_filter = 1
-offset_left = 504.0
-offset_top = 292.0
-offset_right = 519.0
-offset_bottom = 307.0
+layout_mode = 2
 texture = ExtResource("1_epwcq")
 
 [node name="Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("2_yvkcu")

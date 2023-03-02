@@ -2,7 +2,7 @@ extends Label
 
 const LABEL_TEXT := (
     "Clonecraft %s" +
-    "\nFPS: %s" + 
+    "\nFPS: %s" +
     "\nX/Y/Z: %s, %s, %s" +
     "\nRotation: %s, %s" +
     "\nLooking at: %s, %s, %s: %s"
@@ -32,8 +32,8 @@ func _process(delta):
         snapped(player.position.x, 0.01),
         snapped(player.position.y, 0.01),
         snapped(player.position.z, 0.01),
-        snapped(rad2deg(cam.rotation.x), 0.01),
-        snapped(rad2deg(head.rotation.y), 0.01),
+        snapped(rad_to_deg(cam.rotation.x), 0.01),
+        snapped(rad_to_deg(head.rotation.y), 0.01),
         pl[0],
         pl[1],
         pl[2],
