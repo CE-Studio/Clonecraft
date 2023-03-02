@@ -5,33 +5,19 @@ var rng := RandomNumberGenerator.new()
 var ch
 
 # TODO: make this load from a file
-var splashes := [
-    "No megacorps involved!",
-    "owo",
-    "uwu",
-    "<w<;;",
-    "Totally (un)original!",
-    "I go up and I go down!",
-    "He he he, yup!",
-    "lolwut",
-    "I don't make the rules.\n(Except for when I do)",
-    "derg",
-    "Also try Minetest!",
-    "Meet hot singles in\n{{location.state}} today!",
-    "ver good 11/10 best game",
-    "ai';gr.h;ldajkosae4-04ww",
-    "Weh!",
-    "Pipis room!",
-    "Get it and I'll\nthrow in a free\nL I G H T S W I T C H E S !",
-    "Kersnoozle!",
-    "Shoo be doo\nshoo-shoo be doo!",
-    "That's right!",
-    "Press the <any>\nkey to continue!",
-    "Llamas around the walk!",
-]
+var splashes:Array[String]
 
 
 func _ready():
+    var j := JSON.new()
+    var f := File.new()
+    f.open("res://titlescreen/splashes.json", File.READ)
+    var stat := j.parse(f.get_as_text())
+    f.close()
+    if stat == OK:
+        splashes = j.get_data()
+    else:
+        splashes = ["Splash error!"]
     ch = get_child(0)
     rng.randomize()
     text = splashes[rng.randi_range(0, splashes.size() - 1)]

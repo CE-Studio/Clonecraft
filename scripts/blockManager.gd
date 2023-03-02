@@ -37,6 +37,9 @@ class BlockInfo:
     var tickable := false
     var tickCB:Callable
     var isAir := false
+    var stepsound:String
+    var placesound:String
+    var breaksound:String
 
 
     func _init(
@@ -49,7 +52,10 @@ class BlockInfo:
             funbreakable:bool,
             fscripted:bool,
             fscript:Callable,
-            ftoolClass:String):
+            ftoolClass:String,
+            fstepsound:String,
+            fplacesound:String,
+            fbreaksound:String):
         modID = fmodID
         nameID = fnameID
         fullID = fmodID + ":" + fnameID
@@ -106,7 +112,10 @@ func setup():
             true,
             false,
             noScript,
-            "shovel"
+            "shovel",
+            "null",
+            "null",
+            "null" 
     )
     airBlock.isAir = true
     endBlockRegister(airBlock)

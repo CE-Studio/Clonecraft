@@ -59,7 +59,10 @@ func quickBlock(
             false,
             false,
             noScript,
-            tool
+            tool,
+            "default",
+            "default",
+            "default"
     )
     man.endBlockRegister(bi)
 
@@ -86,7 +89,10 @@ func makeGB():
             false,
             false,
             noScript,
-            "shovel"
+            "shovel",
+            "plant",
+            "plant",
+            "plant"
     )
     bi.setTickable(runGrass)
     man.endBlockRegister(bi)
@@ -114,7 +120,10 @@ func makeCT():
             false,
             false,
             noScript,
-            "axe"
+            "axe",
+            "wood",
+            "wood",
+            "wood"
     )
     man.endBlockRegister(bi)
 
@@ -141,7 +150,10 @@ func makeOL():
             false,
             false,
             noScript,
-            "axe"
+            "axe",
+            "wood",
+            "wood",
+            "wood"
     )
     man.endBlockRegister(bi1)
 
@@ -166,7 +178,10 @@ func makeOL():
             false,
             false,
             noScript,
-            "axe"
+            "axe",
+            "wood",
+            "wood",
+            "wood"
     )
     man.endBlockRegister(bi2)
 
@@ -191,7 +206,10 @@ func makeOL():
             false,
             false,
             noScript,
-            "axe"
+            "axe",
+            "wood",
+            "wood",
+            "wood"
     )
     man.endBlockRegister(bi3)
 
