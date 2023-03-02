@@ -26,8 +26,8 @@ tracks/0/path = NodePath("derg/Node2:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-6.52652, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-6.52652, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -37,8 +37,8 @@ tracks/1/path = NodePath("derg/Node2:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(1.93859, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.93859, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
@@ -48,8 +48,8 @@ tracks/2/path = NodePath("derg/Node2:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.586375, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.586375, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
@@ -59,8 +59,8 @@ tracks/3/path = NodePath("derg/Node2/bone2:rotation:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/4/type = "bezier"
@@ -70,8 +70,8 @@ tracks/4/path = NodePath("derg/Node2/bone2:rotation:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/5/type = "bezier"
@@ -81,8 +81,8 @@ tracks/5/path = NodePath("derg/Node2/bone2:rotation:z")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/6/type = "bezier"
@@ -92,8 +92,8 @@ tracks/6/path = NodePath("derg/Node2/bone2/head:rotation:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/7/type = "bezier"
@@ -103,8 +103,8 @@ tracks/7/path = NodePath("derg/Node2/bone2/head:rotation:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/8/type = "bezier"
@@ -114,8 +114,8 @@ tracks/8/path = NodePath("derg/Node2/bone2/head:rotation:z")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/9/type = "bezier"
@@ -125,8 +125,8 @@ tracks/9/path = NodePath("derg/Node2/bone2/larm:rotation:x")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/10/type = "bezier"
@@ -136,8 +136,8 @@ tracks/10/path = NodePath("derg/Node2/bone2/larm:rotation:y")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/11/type = "bezier"
@@ -147,8 +147,8 @@ tracks/11/path = NodePath("derg/Node2/bone2/larm:rotation:z")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/12/type = "bezier"
@@ -158,8 +158,8 @@ tracks/12/path = NodePath("derg/Node2/bone2/larm:position:x")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.25, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.25, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/13/type = "bezier"
@@ -169,8 +169,8 @@ tracks/13/path = NodePath("derg/Node2/bone2/larm:position:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.625, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.625, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/14/type = "bezier"
@@ -180,8 +180,8 @@ tracks/14/path = NodePath("derg/Node2/bone2/larm:position:z")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/15/type = "bezier"
@@ -191,8 +191,8 @@ tracks/15/path = NodePath("derg/Node2/bone2/larm/bone6:rotation:x")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/16/type = "bezier"
@@ -202,8 +202,8 @@ tracks/16/path = NodePath("derg/Node2/bone2/larm/bone6:rotation:y")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/17/type = "bezier"
@@ -213,8 +213,8 @@ tracks/17/path = NodePath("derg/Node2/bone2/larm/bone6:rotation:z")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/18/type = "bezier"
@@ -224,8 +224,8 @@ tracks/18/path = NodePath("derg/Node2/bone2/rarm:rotation:x")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/19/type = "bezier"
@@ -235,8 +235,8 @@ tracks/19/path = NodePath("derg/Node2/bone2/rarm:rotation:y")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/20/type = "bezier"
@@ -246,8 +246,8 @@ tracks/20/path = NodePath("derg/Node2/bone2/rarm:rotation:z")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/21/type = "bezier"
@@ -257,8 +257,8 @@ tracks/21/path = NodePath("derg/Node2/bone2/rarm/bone4:rotation:x")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/22/type = "bezier"
@@ -268,8 +268,8 @@ tracks/22/path = NodePath("derg/Node2/bone2/rarm/bone4:rotation:y")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/23/type = "bezier"
@@ -279,8 +279,8 @@ tracks/23/path = NodePath("derg/Node2/bone2/rarm/bone4:rotation:z")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/24/type = "bezier"
@@ -290,8 +290,8 @@ tracks/24/path = NodePath("derg/Node2/bone2/lleg:rotation:x")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.218166, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.218166, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/25/type = "bezier"
@@ -301,8 +301,8 @@ tracks/25/path = NodePath("derg/Node2/bone2/lleg:rotation:y")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.0872664, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.0872664, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/26/type = "bezier"
@@ -312,8 +312,8 @@ tracks/26/path = NodePath("derg/Node2/bone2/lleg:rotation:z")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/27/type = "bezier"
@@ -323,8 +323,8 @@ tracks/27/path = NodePath("derg/Node2/bone2/lleg/bone12:rotation:x")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.349066, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.349066, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/28/type = "bezier"
@@ -334,8 +334,8 @@ tracks/28/path = NodePath("derg/Node2/bone2/lleg/bone12:rotation:y")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/29/type = "bezier"
@@ -345,8 +345,8 @@ tracks/29/path = NodePath("derg/Node2/bone2/lleg/bone12:rotation:z")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/30/type = "bezier"
@@ -356,8 +356,8 @@ tracks/30/path = NodePath("derg/Node2/bone2/lleg/bone12/bone13:rotation:x")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.349066, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.349066, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/31/type = "bezier"
@@ -367,8 +367,8 @@ tracks/31/path = NodePath("derg/Node2/bone2/lleg/bone12/bone13:rotation:y")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/32/type = "bezier"
@@ -378,8 +378,8 @@ tracks/32/path = NodePath("derg/Node2/bone2/lleg/bone12/bone13:rotation:z")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/33/type = "bezier"
@@ -389,8 +389,8 @@ tracks/33/path = NodePath("derg/Node2/bone2/rleg:rotation:x")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.218166, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.218166, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/34/type = "bezier"
@@ -400,8 +400,8 @@ tracks/34/path = NodePath("derg/Node2/bone2/rleg:rotation:y")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.0872664, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.0872664, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/35/type = "bezier"
@@ -411,8 +411,8 @@ tracks/35/path = NodePath("derg/Node2/bone2/rleg:rotation:z")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/36/type = "bezier"
@@ -422,8 +422,8 @@ tracks/36/path = NodePath("derg/Node2/bone2/rleg/bone8:rotation:x")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.349066, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.349066, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/37/type = "bezier"
@@ -433,8 +433,8 @@ tracks/37/path = NodePath("derg/Node2/bone2/rleg/bone8:rotation:y")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/38/type = "bezier"
@@ -444,8 +444,8 @@ tracks/38/path = NodePath("derg/Node2/bone2/rleg/bone8:rotation:z")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/39/type = "bezier"
@@ -455,8 +455,8 @@ tracks/39/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9:rotation:x")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.349066, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.349066, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/40/type = "bezier"
@@ -466,8 +466,8 @@ tracks/40/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9:rotation:y")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/41/type = "bezier"
@@ -477,8 +477,8 @@ tracks/41/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9:rotation:z")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/42/type = "bezier"
@@ -488,8 +488,8 @@ tracks/42/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9/bone10:rotation:x")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/43/type = "bezier"
@@ -499,8 +499,8 @@ tracks/43/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9/bone10:rotation:y")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/44/type = "bezier"
@@ -510,8 +510,8 @@ tracks/44/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9/bone10:rotation:z")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/45/type = "bezier"
@@ -521,8 +521,8 @@ tracks/45/path = NodePath("derg/Node2/bone2/tail:rotation:x")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.523599, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.523599, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/46/type = "bezier"
@@ -532,8 +532,8 @@ tracks/46/path = NodePath("derg/Node2/bone2/tail:rotation:y")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/47/type = "bezier"
@@ -543,8 +543,8 @@ tracks/47/path = NodePath("derg/Node2/bone2/tail:rotation:z")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/48/type = "bezier"
@@ -554,8 +554,8 @@ tracks/48/path = NodePath("derg/Node2/bone2/tail/tail2:rotation:x")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.261799, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.261799, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/49/type = "bezier"
@@ -565,8 +565,8 @@ tracks/49/path = NodePath("derg/Node2/bone2/tail/tail2:rotation:y")
 tracks/49/interp = 1
 tracks/49/loop_wrap = true
 tracks/49/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/50/type = "bezier"
@@ -576,8 +576,8 @@ tracks/50/path = NodePath("derg/Node2/bone2/tail/tail2:rotation:z")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/51/type = "bezier"
@@ -587,8 +587,8 @@ tracks/51/path = NodePath("derg/Node2/bone2/tail/tail2/tail3:rotation:x")
 tracks/51/interp = 1
 tracks/51/loop_wrap = true
 tracks/51/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.392699, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.392699, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/52/type = "bezier"
@@ -598,8 +598,8 @@ tracks/52/path = NodePath("derg/Node2/bone2/tail/tail2/tail3:rotation:y")
 tracks/52/interp = 1
 tracks/52/loop_wrap = true
 tracks/52/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/53/type = "bezier"
@@ -609,8 +609,8 @@ tracks/53/path = NodePath("derg/Node2/bone2/tail/tail2/tail3:rotation:z")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/54/type = "bezier"
@@ -620,8 +620,8 @@ tracks/54/path = NodePath("derg/Node2/bone2/tail/tail2/tail3/tail4:rotation:x")
 tracks/54/interp = 1
 tracks/54/loop_wrap = true
 tracks/54/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.392699, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.392699, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/55/type = "bezier"
@@ -631,8 +631,8 @@ tracks/55/path = NodePath("derg/Node2/bone2/tail/tail2/tail3/tail4:rotation:y")
 tracks/55/interp = 1
 tracks/55/loop_wrap = true
 tracks/55/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/56/type = "bezier"
@@ -642,8 +642,8 @@ tracks/56/path = NodePath("derg/Node2/bone2/tail/tail2/tail3/tail4:rotation:z")
 tracks/56/interp = 1
 tracks/56/loop_wrap = true
 tracks/56/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -656,8 +656,8 @@ tracks/0/path = NodePath("derg/Node2:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-6.527, -0.25, 0, 0.25, 0, 1, -6.108, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-6.527, -0.25, 0, 0.25, 0, -6.108, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
@@ -667,8 +667,8 @@ tracks/1/path = NodePath("derg/Node2:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(1.759, -0.25, 0, 0.25, 0, 1, 2.012, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.759, -0.25, 0, 0.25, 0, 2.012, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/2/type = "bezier"
@@ -678,8 +678,8 @@ tracks/2/path = NodePath("derg/Node2:position:z")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.586, -0.25, 0, 0.25, 0, 1, 0.343, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.586, -0.25, 0, 0.25, 0, 0.343, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/3/type = "bezier"
@@ -689,8 +689,8 @@ tracks/3/path = NodePath("derg/Node2/bone2:rotation:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.221657, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.221657, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/4/type = "bezier"
@@ -700,8 +700,8 @@ tracks/4/path = NodePath("derg/Node2/bone2:rotation:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.181514, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.181514, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/5/type = "bezier"
@@ -711,8 +711,8 @@ tracks/5/path = NodePath("derg/Node2/bone2:rotation:z")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.0139626, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0139626, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/6/type = "bezier"
@@ -722,8 +722,8 @@ tracks/6/path = NodePath("derg/Node2/bone2/head:rotation:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.272271, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.272271, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/7/type = "bezier"
@@ -733,8 +733,8 @@ tracks/7/path = NodePath("derg/Node2/bone2/head:rotation:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 1.17286, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.17286, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/8/type = "bezier"
@@ -744,8 +744,8 @@ tracks/8/path = NodePath("derg/Node2/bone2/head:rotation:z")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.253073, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.253073, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/9/type = "bezier"
@@ -755,8 +755,8 @@ tracks/9/path = NodePath("derg/Node2/bone2/larm:rotation:x")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.526036, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.526036, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/10/type = "bezier"
@@ -766,8 +766,8 @@ tracks/10/path = NodePath("derg/Node2/bone2/larm:rotation:y")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -1.03586, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.03586, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/11/type = "bezier"
@@ -777,8 +777,8 @@ tracks/11/path = NodePath("derg/Node2/bone2/larm:rotation:z")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.0418252, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0418252, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/12/type = "bezier"
@@ -788,8 +788,8 @@ tracks/12/path = NodePath("derg/Node2/bone2/larm:position:x")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.25, -0.25, 0, 0.25, 0, 1, -0.251538, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.25, -0.25, 0, 0.25, 0, -0.251538, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/13/type = "bezier"
@@ -799,8 +799,8 @@ tracks/13/path = NodePath("derg/Node2/bone2/larm:position:y")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.625, -0.25, 0, 0.25, 0, 1, 0.512328, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.625, -0.25, 0, 0.25, 0, 0.512328, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/14/type = "bezier"
@@ -810,8 +810,8 @@ tracks/14/path = NodePath("derg/Node2/bone2/larm:position:z")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.0253577, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0253577, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/15/type = "bezier"
@@ -821,8 +821,8 @@ tracks/15/path = NodePath("derg/Node2/bone2/larm/bone6:rotation:x")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 1.01404, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.01404, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/16/type = "bezier"
@@ -832,8 +832,8 @@ tracks/16/path = NodePath("derg/Node2/bone2/larm/bone6:rotation:y")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/17/type = "bezier"
@@ -843,8 +843,8 @@ tracks/17/path = NodePath("derg/Node2/bone2/larm/bone6:rotation:z")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/18/type = "bezier"
@@ -854,8 +854,8 @@ tracks/18/path = NodePath("derg/Node2/bone2/rarm:rotation:x")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.535816, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.535816, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/19/type = "bezier"
@@ -865,8 +865,8 @@ tracks/19/path = NodePath("derg/Node2/bone2/rarm:rotation:y")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 1.0088, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.0088, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/20/type = "bezier"
@@ -876,8 +876,8 @@ tracks/20/path = NodePath("derg/Node2/bone2/rarm:rotation:z")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.0331613, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.0331613, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/21/type = "bezier"
@@ -887,8 +887,8 @@ tracks/21/path = NodePath("derg/Node2/bone2/rarm/bone4:rotation:x")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 1.00531, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.00531, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/22/type = "bezier"
@@ -898,8 +898,8 @@ tracks/22/path = NodePath("derg/Node2/bone2/rarm/bone4:rotation:y")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/23/type = "bezier"
@@ -909,8 +909,8 @@ tracks/23/path = NodePath("derg/Node2/bone2/rarm/bone4:rotation:z")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/24/type = "bezier"
@@ -920,8 +920,8 @@ tracks/24/path = NodePath("derg/Node2/bone2/lleg:rotation:x")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.218166, -0.25, 0, 0.25, 0, 1, -0.0820305, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.218166, -0.25, 0, 0.25, 0, -0.0820305, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/25/type = "bezier"
@@ -931,8 +931,8 @@ tracks/25/path = NodePath("derg/Node2/bone2/lleg:rotation:y")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.0872664, -0.25, 0, 0.25, 0, 1, 0.0872665, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.0872664, -0.25, 0, 0.25, 0, 0.0872665, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/26/type = "bezier"
@@ -942,8 +942,8 @@ tracks/26/path = NodePath("derg/Node2/bone2/lleg:rotation:z")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/27/type = "bezier"
@@ -953,8 +953,8 @@ tracks/27/path = NodePath("derg/Node2/bone2/lleg/bone12:rotation:x")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.349066, -0.25, 0, 0.25, 0, 1, 0.804597, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.349066, -0.25, 0, 0.25, 0, 0.804597, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/28/type = "bezier"
@@ -964,8 +964,8 @@ tracks/28/path = NodePath("derg/Node2/bone2/lleg/bone12:rotation:y")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/29/type = "bezier"
@@ -975,8 +975,8 @@ tracks/29/path = NodePath("derg/Node2/bone2/lleg/bone12:rotation:z")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/30/type = "bezier"
@@ -986,8 +986,8 @@ tracks/30/path = NodePath("derg/Node2/bone2/lleg/bone12/bone13:rotation:x")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.349066, -0.25, 0, 0.25, 0, 1, -0.804597, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.349066, -0.25, 0, 0.25, 0, -0.804597, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/31/type = "bezier"
@@ -997,8 +997,8 @@ tracks/31/path = NodePath("derg/Node2/bone2/lleg/bone12/bone13:rotation:y")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/32/type = "bezier"
@@ -1008,8 +1008,8 @@ tracks/32/path = NodePath("derg/Node2/bone2/lleg/bone12/bone13:rotation:z")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/33/type = "bezier"
@@ -1019,8 +1019,8 @@ tracks/33/path = NodePath("derg/Node2/bone2/rleg:rotation:x")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.218166, -0.25, 0, 0.25, 0, 1, 0.226893, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.218166, -0.25, 0, 0.25, 0, 0.226893, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/34/type = "bezier"
@@ -1030,8 +1030,8 @@ tracks/34/path = NodePath("derg/Node2/bone2/rleg:rotation:y")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.0872664, -0.25, 0, 0.25, 0, 1, -0.818559, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.0872664, -0.25, 0, 0.25, 0, -0.818559, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/35/type = "bezier"
@@ -1041,8 +1041,8 @@ tracks/35/path = NodePath("derg/Node2/bone2/rleg:rotation:z")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.682424, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.682424, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/36/type = "bezier"
@@ -1052,8 +1052,8 @@ tracks/36/path = NodePath("derg/Node2/bone2/rleg/bone8:rotation:x")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0.349066, -0.25, 0, 0.25, 0, 1, 0.436332, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.349066, -0.25, 0, 0.25, 0, 0.436332, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/37/type = "bezier"
@@ -1063,8 +1063,8 @@ tracks/37/path = NodePath("derg/Node2/bone2/rleg/bone8:rotation:y")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/38/type = "bezier"
@@ -1074,8 +1074,8 @@ tracks/38/path = NodePath("derg/Node2/bone2/rleg/bone8:rotation:z")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/39/type = "bezier"
@@ -1085,8 +1085,8 @@ tracks/39/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9:rotation:x")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.349066, -0.25, 0, 0.25, 0, 1, -0.830777, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.349066, -0.25, 0, 0.25, 0, -0.830777, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/40/type = "bezier"
@@ -1096,8 +1096,8 @@ tracks/40/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9:rotation:y")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/41/type = "bezier"
@@ -1107,8 +1107,8 @@ tracks/41/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9:rotation:z")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/42/type = "bezier"
@@ -1118,8 +1118,8 @@ tracks/42/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9/bone10:rotation:x")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.47822, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.47822, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/43/type = "bezier"
@@ -1129,8 +1129,8 @@ tracks/43/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9/bone10:rotation:y")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.216421, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.216421, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/44/type = "bezier"
@@ -1140,8 +1140,8 @@ tracks/44/path = NodePath("derg/Node2/bone2/rleg/bone8/bone9/bone10:rotation:z")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.200713, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.200713, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/45/type = "bezier"
@@ -1151,8 +1151,8 @@ tracks/45/path = NodePath("derg/Node2/bone2/tail:rotation:x")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.523599, -0.25, 0, 0.25, 0, 1, -0.522029, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.523599, -0.25, 0, 0.25, 0, -0.522029, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/46/type = "bezier"
@@ -1162,8 +1162,8 @@ tracks/46/path = NodePath("derg/Node2/bone2/tail:rotation:y")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.213507, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.213507, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/47/type = "bezier"
@@ -1173,8 +1173,8 @@ tracks/47/path = NodePath("derg/Node2/bone2/tail:rotation:z")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.132661, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.132661, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/48/type = "bezier"
@@ -1184,8 +1184,8 @@ tracks/48/path = NodePath("derg/Node2/bone2/tail/tail2:rotation:x")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.261799, -0.25, 0, 0.25, 0, 1, -0.0829841, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.261799, -0.25, 0, 0.25, 0, -0.0829841, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/49/type = "bezier"
@@ -1195,8 +1195,8 @@ tracks/49/path = NodePath("derg/Node2/bone2/tail/tail2:rotation:y")
 tracks/49/interp = 1
 tracks/49/loop_wrap = true
 tracks/49/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.208054, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.208054, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/50/type = "bezier"
@@ -1206,8 +1206,8 @@ tracks/50/path = NodePath("derg/Node2/bone2/tail/tail2:rotation:z")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.456343, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.456343, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/51/type = "bezier"
@@ -1217,8 +1217,8 @@ tracks/51/path = NodePath("derg/Node2/bone2/tail/tail2/tail3:rotation:x")
 tracks/51/interp = 1
 tracks/51/loop_wrap = true
 tracks/51/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.392699, -0.25, 0, 0.25, 0, 1, 0.108109, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.392699, -0.25, 0, 0.25, 0, 0.108109, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/52/type = "bezier"
@@ -1228,8 +1228,8 @@ tracks/52/path = NodePath("derg/Node2/bone2/tail/tail2/tail3:rotation:y")
 tracks/52/interp = 1
 tracks/52/loop_wrap = true
 tracks/52/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.415409, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.415409, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/53/type = "bezier"
@@ -1239,8 +1239,8 @@ tracks/53/path = NodePath("derg/Node2/bone2/tail/tail2/tail3:rotation:z")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.610967, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.610967, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/54/type = "bezier"
@@ -1250,8 +1250,8 @@ tracks/54/path = NodePath("derg/Node2/bone2/tail/tail2/tail3/tail4:rotation:x")
 tracks/54/interp = 1
 tracks/54/loop_wrap = true
 tracks/54/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(-0.392699, -0.25, 0, 0.25, 0, 1, -0.26925, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.392699, -0.25, 0, 0.25, 0, -0.26925, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/55/type = "bezier"
@@ -1261,8 +1261,8 @@ tracks/55/path = NodePath("derg/Node2/bone2/tail/tail2/tail3/tail4:rotation:y")
 tracks/55/interp = 1
 tracks/55/loop_wrap = true
 tracks/55/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.250648, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.250648, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/56/type = "bezier"
@@ -1272,8 +1272,8 @@ tracks/56/path = NodePath("derg/Node2/bone2/tail/tail2/tail3/tail4:rotation:z")
 tracks/56/interp = 1
 tracks/56/loop_wrap = true
 tracks/56/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, 0.366953, -0.25, 0, 0.25, 0, 1),
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.366953, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 
