@@ -2712,13 +2712,30 @@ text = "Quit to Desktop"
 layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -48.0
-offset_right = 463.0
+offset_left = 3.0
+offset_top = -72.0
+offset_right = 466.0
 grow_vertical = 0
 text = "Clonecraft {version}
+Engine {version}
 GPLv3 CE Studio. Please distribute!"
 script = ExtResource("12_bmkwy")
 metadata/_edit_layout_mode = 1
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -34.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Support devs!"
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)
