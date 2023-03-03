@@ -17,7 +17,7 @@ var cloudmat:StandardMaterial3D
 
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
-var moveDist := 0
+var moveDist := 0.0
 var animCurSpeed := 0.0
 var tickRange := 100
 var tickNumber := 512
@@ -132,7 +132,7 @@ func _physics_process(delta):
         velocity.z = move_toward(velocity.z, 0, SPEED)
 
     move_and_slide()
-    moveDist += (abs(velocity.x) + abs(velocity.z)) * delta
+    moveDist += ((abs(velocity.x) + abs(velocity.z)) * delta)
     animCurSpeed = lerpf(animCurSpeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)
 
     lookingAt = voxelTool.raycast(cam.global_position, -1 * cam.global_transform.basis.z.normalized(), 5)

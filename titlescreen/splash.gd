@@ -4,7 +4,6 @@ var timer := 0.0
 var rng := RandomNumberGenerator.new()
 var ch
 
-# TODO: make this load from a file
 var splashes:Array[String]
 
 
