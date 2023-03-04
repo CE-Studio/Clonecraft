@@ -9,4 +9,6 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 specular_mode = 1
 albedo_texture = ExtResource("1_8x0ju")
+clearcoat = 0.0
+clearcoat_roughness = 0.67
 texture_filter = 0

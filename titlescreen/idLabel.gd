@@ -7,3 +7,4 @@ func _ready():
     text = "Clonecraft "+ SettingManager.VERSION + "
 Engine version " + vinfo["string"] + ", " + str(vinfo["year"]) + "
 GPLv3 CE Studio. Please distribute!"
+    print(vinfo["hash"])
