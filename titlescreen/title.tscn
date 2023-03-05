@@ -1,10 +1,11 @@
-[gd_scene load_steps=80 format=3 uid="uid://bskwsbaeexgu8"]
+[gd_scene load_steps=81 format=3 uid="uid://bskwsbaeexgu8"]
 
 [ext_resource type="Material" uid="uid://blu8to0ma63w2" path="res://titlescreen/title.tres" id="1_1krtb"]
 [ext_resource type="ArrayMesh" uid="uid://6u66lelyo5fc" path="res://titlescreen/cclogo.obj" id="2_dxce3"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="3_7yac3"]
 [ext_resource type="Script" path="res://titlescreen/derg.gd" id="4_m3okf"]
 [ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="4_q133x"]
+[ext_resource type="Script" path="res://titlescreen/supportButton.gd" id="6_4woye"]
 [ext_resource type="Script" path="res://titlescreen/splash.gd" id="6_nhbko"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="6_site2"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="7_qty17"]
@@ -1868,6 +1869,7 @@ offset_bottom = -3.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Support devs!"
+script = ExtResource("6_4woye")
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)
