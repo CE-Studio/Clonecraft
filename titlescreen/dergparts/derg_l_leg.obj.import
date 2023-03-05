@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnv2d6yr1hv76"
+path="res://.godot/imported/derg_l_leg.obj-79050141772b7d143a8227b45778a30f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_l_leg.obj-79050141772b7d143a8227b45778a30f.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_l_leg.obj"
+dest_files=["res://.godot/imported/derg_l_leg.obj-79050141772b7d143a8227b45778a30f.mesh", "res://.godot/imported/derg_l_leg.obj-79050141772b7d143a8227b45778a30f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

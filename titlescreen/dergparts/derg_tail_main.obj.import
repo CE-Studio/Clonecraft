@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://htxvn0t1v5aj"
+path="res://.godot/imported/derg_tail_main.obj-19f798aa56fb4c5322fee6994273bb5d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_tail_main.obj-19f798aa56fb4c5322fee6994273bb5d.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_tail_main.obj"
+dest_files=["res://.godot/imported/derg_tail_main.obj-19f798aa56fb4c5322fee6994273bb5d.mesh", "res://.godot/imported/derg_tail_main.obj-19f798aa56fb4c5322fee6994273bb5d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

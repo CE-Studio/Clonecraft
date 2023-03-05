@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://deacr6m1xpo37"
+path="res://.godot/imported/derg_r_foot.obj-ada5a2a3ae74b6dcca95510079526d1d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_r_foot.obj-ada5a2a3ae74b6dcca95510079526d1d.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_r_foot.obj"
+dest_files=["res://.godot/imported/derg_r_foot.obj-ada5a2a3ae74b6dcca95510079526d1d.mesh", "res://.godot/imported/derg_r_foot.obj-ada5a2a3ae74b6dcca95510079526d1d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

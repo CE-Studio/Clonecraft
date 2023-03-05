@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dxebovctbox0s"
+path="res://.godot/imported/derg_body.obj-784d4f7fc0a7a03c9af952a3f1851f65.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_body.obj-784d4f7fc0a7a03c9af952a3f1851f65.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_body.obj"
+dest_files=["res://.godot/imported/derg_body.obj-784d4f7fc0a7a03c9af952a3f1851f65.mesh", "res://.godot/imported/derg_body.obj-784d4f7fc0a7a03c9af952a3f1851f65.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

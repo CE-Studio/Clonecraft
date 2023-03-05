@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cf4xq17wmuklp"
+path="res://.godot/imported/derg_head_frill.obj-a2fad31bb5e00d24124b6a521bb75295.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_head_frill.obj-a2fad31bb5e00d24124b6a521bb75295.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_head_frill.obj"
+dest_files=["res://.godot/imported/derg_head_frill.obj-a2fad31bb5e00d24124b6a521bb75295.mesh", "res://.godot/imported/derg_head_frill.obj-a2fad31bb5e00d24124b6a521bb75295.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

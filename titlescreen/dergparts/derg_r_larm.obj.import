@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dykveklokhs4v"
+path="res://.godot/imported/derg_r_larm.obj-eeb61053976adc88b501ba5f1c0c90ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_r_larm.obj-eeb61053976adc88b501ba5f1c0c90ef.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_r_larm.obj"
+dest_files=["res://.godot/imported/derg_r_larm.obj-eeb61053976adc88b501ba5f1c0c90ef.mesh", "res://.godot/imported/derg_r_larm.obj-eeb61053976adc88b501ba5f1c0c90ef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://codei873rk6ta"
+path="res://.godot/imported/derg_l_horn.obj-7bec7caef5462405a4909b956e634dca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_l_horn.obj-7bec7caef5462405a4909b956e634dca.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_l_horn.obj"
+dest_files=["res://.godot/imported/derg_l_horn.obj-7bec7caef5462405a4909b956e634dca.mesh", "res://.godot/imported/derg_l_horn.obj-7bec7caef5462405a4909b956e634dca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

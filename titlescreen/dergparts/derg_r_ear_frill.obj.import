@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctt7g2gdeea1p"
+path="res://.godot/imported/derg_r_ear_frill.obj-8fd8c338e45d4e22988182091264235e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_r_ear_frill.obj-8fd8c338e45d4e22988182091264235e.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_r_ear_frill.obj"
+dest_files=["res://.godot/imported/derg_r_ear_frill.obj-8fd8c338e45d4e22988182091264235e.mesh", "res://.godot/imported/derg_r_ear_frill.obj-8fd8c338e45d4e22988182091264235e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

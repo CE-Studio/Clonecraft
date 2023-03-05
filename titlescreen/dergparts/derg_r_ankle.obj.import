@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dtdgt12xie76b"
+path="res://.godot/imported/derg_r_ankle.obj-b55852fcf834333445c7b9785ea46f7b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/derg_r_ankle.obj-b55852fcf834333445c7b9785ea46f7b.mesh"]
+
+source_file="res://titlescreen/dergparts/derg_r_ankle.obj"
+dest_files=["res://.godot/imported/derg_r_ankle.obj-b55852fcf834333445c7b9785ea46f7b.mesh", "res://.godot/imported/derg_r_ankle.obj-b55852fcf834333445c7b9785ea46f7b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
