@@ -2,9 +2,10 @@ extends Button
 
 var credcontent := {}
 @onready var dp := load("res://gui/devpanel.tscn")
+var op:Node
 
 func _pressed() -> void:
-    var op = load("res://gui/backingpanel.tscn").instantiate()
+    op = load("res://gui/backingpanel.tscn").instantiate()
     $"/root".add_child(op)
     disabled = true
     
@@ -23,3 +24,7 @@ func _pressed() -> void:
         var k = dp.instantiate()
         op.addItem(k)
         k.populate(h)
+        
+        
+func _process(delta):
+    disabled = is_instance_valid(op)

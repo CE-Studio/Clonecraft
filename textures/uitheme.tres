@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://eikvg3smmp6t"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://eikvg3smmp6t"]
 
 [ext_resource type="StyleBox" uid="uid://d2168jgf71u6p" path="res://textures/buttonDisabled.tres" id="1_qfc4k"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="1_spyui"]
@@ -16,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://oscnea5y3sh4" path="res://textures/radio1.png" id="13_71ett"]
 [ext_resource type="StyleBox" uid="uid://cnjonn6th6shm" path="res://textures/efbar0.tres" id="14_mkweh"]
 [ext_resource type="StyleBox" uid="uid://fanrvrspafel" path="res://textures/efbar1.tres" id="15_yk7w6"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_m5jno"]
+color = Color(0.364706, 0.364706, 0.364706, 1)
+thickness = 2
 
 [resource]
 default_font = ExtResource("1_spyui")
@@ -36,6 +40,7 @@ HScrollBar/styles/grabber = ExtResource("3_y8rvq")
 HScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
 HScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
 HScrollBar/styles/scroll = ExtResource("1_qfc4k")
+HSeparator/styles/separator = SubResource("StyleBoxLine_m5jno")
 HSlider/icons/grabber = ExtResource("5_gra7t")
 HSlider/icons/grabber_disabled = ExtResource("1_y287y")
 HSlider/icons/grabber_highlight = ExtResource("8_ut5b0")

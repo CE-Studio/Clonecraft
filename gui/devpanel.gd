@@ -14,12 +14,15 @@ func populate(data:Dictionary) -> void:
     content[-1].stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
     content[-1].size_flags_horizontal = Control.SIZE_EXPAND_FILL
     content[-1].texture = load(dat["author_banner"])
+    content.append(HSeparator.new())
     content.append(Label.new())
     content[-1].autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
     content[-1].text = dat["author_name"]
+    content.append(HSeparator.new())
     content.append(Label.new())
     content[-1].autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
     content[-1].text = dat["author_desc"]
+    content.append(HSeparator.new())
     for i in dat["support_links"]:
         content.append(LinkButton.new())
         content[-1].text = i
