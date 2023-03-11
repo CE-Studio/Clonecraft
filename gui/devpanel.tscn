@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ban3yil1lsv1b"]
+[gd_scene load_steps=4 format=3 uid="uid://ban3yil1lsv1b"]
 
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="1_wxxlo"]
+[ext_resource type="Script" path="res://gui/devpanel.gd" id="2_dwc44"]
 [ext_resource type="Texture2D" uid="uid://dg33uhl5m1o60" path="res://textures/missing.png" id="2_dxrxv"]
 
 [node name="devpanel" type="Panel"]
 custom_minimum_size = Vector2(1.45519e-11, 76)
 theme_override_styles/panel = ExtResource("1_wxxlo")
+script = ExtResource("2_dwc44")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(64, 64)
@@ -39,3 +41,5 @@ offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "More info"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
