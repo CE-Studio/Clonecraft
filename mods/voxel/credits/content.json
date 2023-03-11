@@ -1,0 +1,11 @@
+{
+  "author_name": "Zylann",
+  "author_id": "Zylann-0000",
+  "author_logo": "res://textures/missing.png",
+  "author_banner": "res://textures/missing.png",
+  "author_desc": "Creator of the Godot-Voxel plugin.",
+  "support_links": [
+    "https://github.com/Zylann/godot_voxel/",
+    "https://github.com/sponsors/Zylann"
+  ]
+}
