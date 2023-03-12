@@ -42,4 +42,14 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "More info"
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 27.0
+offset_right = 113.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+text = "Note
+"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

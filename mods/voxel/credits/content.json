@@ -1,9 +1,10 @@
 {
   "author_name": "Zylann",
   "author_id": "Zylann-0000",
+  "author_note": "Unaffiliated with Clonecraft",
   "author_logo": "res://textures/missing.png",
   "author_banner": "res://textures/missing.png",
-  "author_desc": "Creator of the Godot-Voxel plugin.",
+  "author_desc": "Creator of the Godot_Voxel engine module.",
   "support_links": [
     "https://github.com/Zylann/godot_voxel/",
     "https://github.com/sponsors/Zylann"

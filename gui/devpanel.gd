@@ -9,6 +9,7 @@ func populate(data:Dictionary) -> void:
     dat = data
     $TextureRect.texture = load(dat["author_logo"])
     $Label.text = dat["author_name"]
+    $Label2.text = dat["author_note"]
     content.append(TextureRect.new())
     content[-1].expand_mode = TextureRect.EXPAND_KEEP_SIZE
     content[-1].stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
