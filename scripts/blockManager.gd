@@ -140,6 +140,11 @@ func setup():
     blockLibrary.bake()
     terrain = $/root/Node3D/VoxelTerrain
     terrain.mesher.library = blockLibrary
+    
+    #Ensure every block has an item
+    ItemManager.getReady()
+    for i in blockList:
+        ItemManager.simpleBlockItem(i)
 
 
 func _process(delta):

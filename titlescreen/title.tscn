@@ -1836,6 +1836,12 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("10_2gb0e")
 text = "Options..."
 
+[node name="ModOpts" type="Button" parent="Control/CenterContainer/GridContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("10_2gb0e")
+text = "Mod Manager..."
+
 [node name="Quit" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2

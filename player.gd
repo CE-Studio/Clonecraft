@@ -25,6 +25,7 @@ var tickNumber := 512
 var abillities := {
     "allowFlight":false,
     "isFlying":false,
+    "allowBuild":false
 }
 var fcheck := 1.0
 
@@ -134,8 +135,12 @@ func _physics_process(delta):
     move_and_slide()
     moveDist += ((abs(velocity.x) + abs(velocity.z)) * delta)
     animCurSpeed = lerpf(animCurSpeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)
-
-    lookingAt = voxelTool.raycast(cam.global_position, -1 * cam.global_transform.basis.z.normalized(), 5)
+    
+    if abillities["allowBuild"]:
+        lookingAt = voxelTool.raycast(cam.global_position, -1 * cam.global_transform.basis.z.normalized(), 5)
+    else:
+        lookingAt = null
+        
     if lookingAt != null:
         blockOutline.show()
         blockOutline.position = Vector3(lookingAt.position) + Vector3(0.5, 0.5, 0.5)
