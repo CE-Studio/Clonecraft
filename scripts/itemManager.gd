@@ -11,6 +11,12 @@ class item:
     func _init(itemMesh:Mesh):
         model = itemMesh
 
+
+func addToItemLayer(obj:Node) -> Node:
+    $/root/Node3D/itemRenderLayer/Camera3D/itemParent.add_child(obj)
+    return obj
+
+
 func getReady() -> void:
     _buf.create(3, 3, 3)
     _mesh.library = BlockManager.blockLibrary

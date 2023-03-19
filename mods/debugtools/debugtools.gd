@@ -44,9 +44,10 @@ func registerPhase():
     player.abillities["allowFlight"] = true
     player.abillities["allowBuild"] = true
     itemDisp = MeshInstance3D.new()
-    man.get_node("/root/Node3D/player/head/Camera3D").add_child(itemDisp)
-    itemDisp.scale = Vector3(0.01, 0.01, 0.01)
-    itemDisp.position = Vector3(-0.1, -0.05, -0.1)
-    itemDisp.rotation_degrees = Vector3(0, 0, 0)
+    #man.get_node("/root/Node3D/player/head/Camera3D").add_child(itemDisp)
+    ItemManager.addToItemLayer(itemDisp)
+    #itemDisp.scale = Vector3(0.01, 0.01, 0.01)
+    #itemDisp.position = Vector3(-0.1, -0.05, -0.1)
+    itemDisp.rotation_degrees = Vector3(10.5, -46, -10.7)
     
     

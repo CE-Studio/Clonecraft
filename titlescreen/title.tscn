@@ -1881,6 +1881,7 @@ script = ExtResource("6_4woye")
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)
 stream = ExtResource("12_n2dnj")
 mesher = SubResource("VoxelMesherBlocky_gy3dk")
+generate_collisions = false
 
 [node name="spinpoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.193)
