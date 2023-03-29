@@ -13,3 +13,4 @@ extends SubViewport
 func _process(delta):
     size = vp.get_visible_rect().size
     cam.size = (size.y)
+    ItemManager.screenSize = size

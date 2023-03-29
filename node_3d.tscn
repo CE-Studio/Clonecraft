@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=26 format=3 uid="uid://dq6mys81fg3pj"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="11_dq7n1"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="Script" path="res://scripts/itemRenderLayerSize.gd" id="14_wt5ed"]
+[ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yoru6"]
 viewport_path = NodePath("itemRenderLayer")
@@ -50,6 +51,12 @@ albedo_color = Color(0, 0, 0, 0.529412)
 size = Vector3(0.7, 1.8, 0.7)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5tc7k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ydc0p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iabes"]
+render_priority = 0
+shader = ExtResource("15_ji8mt")
 
 [node name="Node3D" type="Node3D"]
 process_mode = 1
@@ -177,3 +184,9 @@ transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, -50)
 transform = Transform3D(0.449017, -0.84685, 0.285006, 0.559327, 0.515138, 0.649451, -0.696805, -0.132202, 0.704972, 0, 0, 0)
 directional_shadow_mode = 0
 sky_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ydc0p")
+surface_material_override/0 = SubResource("ShaderMaterial_iabes")

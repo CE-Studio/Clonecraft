@@ -10,6 +10,12 @@ var inplist := []
 var blockLibrary := VoxelBlockyLibrary.new()
 var terrain:VoxelTerrain
 var idCounter := 0
+var loadDone := false
+var updates:Array[Callable] = []
+
+
+func addUpdate(c:Callable) -> void:
+    updates.append(c)
 
 
 func noScript(_pos, _meta) -> void:
@@ -145,10 +151,14 @@ func setup():
     ItemManager.getReady()
     for i in blockList:
         ItemManager.simpleBlockItem(i)
+        
+    loadDone = true
 
 
 func _process(delta):
-    pass
+    if loadDone:
+        for i in updates:
+            i.call(delta)
 
 
 func _input(event):

@@ -33,6 +33,11 @@ func input(event):
                 man.log("debugtools", "Block " + str(bid))
 
 
+func update(delta):
+    var ssize := ItemManager.screenSize / 60
+    itemDisp.position = Vector3(-ssize.x + 1, -ssize.y + 1, 0)
+
+
 func registerPhase():
     man.log("debugtools", "This world is in debug mode! A lot of default features are overridden!")
     tlabel = Label.new()
@@ -49,5 +54,4 @@ func registerPhase():
     #itemDisp.scale = Vector3(0.01, 0.01, 0.01)
     #itemDisp.position = Vector3(-0.1, -0.05, -0.1)
     itemDisp.rotation_degrees = Vector3(10.5, -46, -10.7)
-    
-    
+    man.addUpdate(update)

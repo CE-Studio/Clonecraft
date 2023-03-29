@@ -4,6 +4,7 @@ var items := {}
 
 var _buf := VoxelBuffer.new()
 var _mesh := VoxelMesherBlocky.new()
+var screenSize := Vector2(100, 100)
 
 class item:
     var model:Mesh
