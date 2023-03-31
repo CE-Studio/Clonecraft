@@ -1743,7 +1743,7 @@ material_override_0 = ExtResource("13_8qgxy")
 collision_enabled_0 = true
 
 [sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_ludbs"]
-atlas_size = 6
+atlas_size = 10
 voxels/0 = SubResource("VoxelBlockyModel_t3s43")
 voxels/1 = SubResource("VoxelBlockyModel_8fijb")
 voxels/2 = SubResource("VoxelBlockyModel_ewmfd")

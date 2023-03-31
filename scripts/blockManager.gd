@@ -104,7 +104,7 @@ func inputRegister(callback:Callable):
 
 
 func setup():
-    blockLibrary.atlas_size = 6
+    blockLibrary.atlas_size = 10
     var airModel = startBlockRegister("clonecraft:air")
     airModel.geometry_type = VoxelBlockyModel.GEOMETRY_NONE
     var airBlock := BlockInfo.new(
