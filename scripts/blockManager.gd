@@ -164,3 +164,41 @@ func _process(delta):
 func _input(event):
     for i in inplist:
         i.call(event)
+        
+func quickUniformBlock(
+        modID:String,
+        blockName:String,
+        readableName:String,
+        texturePos:Vector2,
+        mat:Material,
+        breakStrength := 3.0,
+        explStrength := 5.0,
+        tool := "pickaxe",
+        alphaChannel := 0):
+    var model = startBlockRegister(modID + blockName)
+    model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
+    model.collision_enabled_0 = true
+    model.transparency_index = alphaChannel
+    model.cube_tiles_left   = texturePos
+    model.cube_tiles_right  = texturePos
+    model.cube_tiles_bottom = texturePos
+    model.cube_tiles_top    = texturePos
+    model.cube_tiles_back   = texturePos
+    model.cube_tiles_front  = texturePos
+    model.set_material_override(0, mat)
+    var bi = BlockManager.BlockInfo.new(
+            modID,
+            blockName,
+            readableName,
+            model,
+            breakStrength,
+            explStrength,
+            false,
+            false,
+            noScript,
+            tool,
+            "default",
+            "default",
+            "default"
+    )
+    endBlockRegister(bi)
