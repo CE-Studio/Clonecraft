@@ -1,6 +1,8 @@
 #class_name BlockManager already setup by autoload
 extends Node
 
+## Manages the setup of mods, voxels, and the world.
+
 # TODO: actual mod selection
 var modsToLoad := ["clonecraft", "debugtools"]
 var mods := []
@@ -164,6 +166,7 @@ func _process(delta):
 func _input(event):
     for i in inplist:
         i.call(event)
+        
         
 func quickUniformBlock(
         modID:String,

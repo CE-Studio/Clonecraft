@@ -5,20 +5,21 @@ var mat1 = load("res://mods/clonecraft/baseblocks.tres")
 var mat2 = load("res://mods/clonecraft/baseblocksTransparent.tres")
 var canGrass = []
 
+var grassDirs = [
+    [-1, 1],  [0, 1],  [1, 1],
+    [-1, 0],           [1, 0],
+    [-1, -1], [0, -1], [1, -1]
+]
+
 
 func _ready():
     pass
 
 
 func runGrass(pos):
-    var dirs = [
-        [-1, 1],  [0, 1],  [1, 1],
-        [-1, 0],           [1, 0],
-        [-1, -1], [0, -1], [1, -1]
-    ]
-    dirs.shuffle()
+    grassDirs.shuffle()
     for i in [1, 0, -1]:
-        var rpos = (pos - Vector3i(dirs[0][0], i, dirs[0][1]))
+        var rpos = (pos - Vector3i(grassDirs[0][0], i, grassDirs[0][1]))
         var vt = man.blockList[tool.get_voxel(rpos)]
         if vt.fullID in canGrass:
             if man.blockList[tool.get_voxel(rpos + Vector3i.UP)].isAir:
@@ -27,7 +28,7 @@ func runGrass(pos):
         tool.set_voxel(pos, man.blockIDlist["clonecraft:dirt"])
 
 
-func makeGB():
+func _makeGB():
     var model = man.startBlockRegister("clonecraft:grassBlock")
     model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
     model.collision_enabled_0 = true
@@ -58,7 +59,7 @@ func makeGB():
     man.endBlockRegister(bi)
 
 
-func makeCT():
+func _makeCT():
     var model = man.startBlockRegister("clonecraft:craftingBench")
     model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
     model.collision_enabled_0 = true
@@ -88,7 +89,7 @@ func makeCT():
     man.endBlockRegister(bi)
 
 
-func makeOL():
+func _makeOL():
     var model1 = man.startBlockRegister("clonecraft:logVertOak")
     model1.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
     model1.collision_enabled_0 = true
@@ -178,7 +179,7 @@ func registerPhase():
     man.quickUniformBlock(MODID, "stone", "Stone", Vector2(0, 0), mat1)
     man.quickUniformBlock(MODID, "dirt", "Dirt", Vector2(1, 0), mat1, 1, 1, "shovel")
     canGrass.append("clonecraft:dirt")
-    makeGB()
+    _makeGB()
     man.quickUniformBlock(MODID, "cobblestone", "Cobblestone", Vector2(4, 0), mat1)
     man.quickUniformBlock(MODID, "oreCoal", "Coal Ore", Vector2(5, 0), mat1)
     man.quickUniformBlock(MODID, "oreIron", "Iron Ore", Vector2(0, 1), mat1)
@@ -190,8 +191,8 @@ func registerPhase():
     man.quickUniformBlock(MODID, "brickStone", "Stone Bricks", Vector2(0, 2), mat1)
     man.quickUniformBlock(MODID, "plankOak", "Oak Planks", Vector2(1, 2), mat1, 3, 6, "axe")
     man.quickUniformBlock(MODID, "tileOak", "Oak Plank Tile", Vector2(2, 2), mat1, 3, 6, "axe")
-    makeCT()
-    makeOL()
+    _makeCT()
+    _makeOL()
     man.quickUniformBlock(MODID, "barkOak", "Oak Bark", Vector2(5, 2), mat1, 3, 6, "axe")
     man.quickUniformBlock(MODID, "knotOak", "Oak Knot", Vector2(1, 3), mat1, 3, 6, "axe")
     man.quickUniformBlock(MODID, "leavesOak", "Oak Leaves", Vector2(2, 3), mat2, 1, 1, "shears", 1)
