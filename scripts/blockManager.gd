@@ -4,27 +4,34 @@ extends Node
 ## Manages the setup of mods, voxels, and the world.
 
 # TODO: actual mod selection
-var modsToLoad := ["clonecraft", "debugtools"]
+## The list of mods to load when the world starts.
+var modsToLoad:Array[String] = ["clonecraft", "debugtools"]
+## The list of loaded mods. Populates automatically.
 var mods := []
-var blockList := []
+## The list of loaded voxels. Populates automatically as voxels are declared.
+var blockList:Array[BlockInfo] = []
+## A dictionary to translate between a voxel's string name and numerical ID.[br]
+## Numerical IDs will vary from world to world. Do not hardcode them.
 var blockIDlist := {}
-var inplist := []
 var blockLibrary := VoxelBlockyLibrary.new()
 var terrain:VoxelTerrain
 var idCounter := 0
 var loadDone := false
-var updates:Array[Callable] = []
+
+var _updates:Array[Callable] = []
+var _inputList := []
+var _addingBlock := false
 
 
 func addUpdate(c:Callable) -> void:
-    updates.append(c)
+    _updates.append(c)
 
 
 func noScript(_pos, _meta) -> void:
     pass
 
 
-func runRandomTicks(pos, rawID):
+func runRandomTicks(pos, rawID) -> void:
     var block:BlockInfo = blockList[rawID]
     if block.tickable:
         block.tickCB.call(pos)
@@ -84,25 +91,31 @@ class BlockInfo:
         blockModel.random_tickable = true
 
 
-func log(id:String, message:String):
-    print("[Mod] [" + id + "] " + message)
+func log(id:String, message:String) -> String:
+    var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
+    print(out)
+    return out
 
 
-func startBlockRegister(blockID:String):
+func startBlockRegister(blockID:String) -> VoxelBlockyModel:
+    assert(not(_addingBlock), "You can only register one block at a time!")
+    _addingBlock = true
     idCounter += 1
     blockLibrary.voxel_count = idCounter
-    var hhh = blockLibrary.create_voxel(idCounter - 1, blockID)
+    var hhh := blockLibrary.create_voxel(idCounter - 1, blockID)
     return(hhh)
 
 
 func endBlockRegister(blockInfo:BlockInfo):
+    assert(_addingBlock, "You need to call 'startBlockRegister' first!")
+    _addingBlock = false
     blockList.append(blockInfo)
     blockIDlist[blockInfo.fullID] = blockList.size() - 1
-    print("[BlockManager] Registered block '" + blockInfo.fullID + "'")
+    print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '" + blockInfo.fullID + "'")
 
 
 func inputRegister(callback:Callable):
-    inplist.append(callback)
+    _inputList.append(callback)
 
 
 func setup():
@@ -128,22 +141,22 @@ func setup():
     endBlockRegister(airBlock)
 
     for i in modsToLoad:
-        print("[BlockManager] Fetching script for mod '" + i + "'...")
+        print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Fetching script for mod '" + i + "'...")
         mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
     for i in mods:
         if i.get("MODID") == null:
-            print("[BlockManager] One of your mods has no mod ID! It can still load, but this is bad practice. Register phase starting...")
+            print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] One of your mods has no mod ID! It can still load, but this is bad practice. Register phase starting...")
             i.refman(self)
             if i.has_method("registerPhase"):
                 i.registerPhase()
-            print("[BlockManager] Register phase done!")
+            print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase done!")
         else:
-            print("[BlockManager] Beginning register phase for mod '" + i.MODID + "'...")
+            print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Beginning register phase for mod '" + i.MODID + "'...")
             i.refman(self)
             if i.has_method("registerPhase"):
                 i.registerPhase()
-            print("[BlockManager] Register phase for '" + i.MODID + "' done!")
-    print("[BlockManager] Register phase completed for all mods!")
+            print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase for '" + i.MODID + "' done!")
+    print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase completed for all mods!")
 
     blockLibrary.bake()
     terrain = $/root/Node3D/VoxelTerrain
@@ -159,12 +172,12 @@ func setup():
 
 func _process(delta):
     if loadDone:
-        for i in updates:
+        for i in _updates:
             i.call(delta)
 
 
 func _input(event):
-    for i in inplist:
+    for i in _inputList:
         i.call(event)
         
         

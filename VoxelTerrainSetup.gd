@@ -2,8 +2,7 @@ extends VoxelTerrain
 
 
 func _ready():
-    var bm = $/root/BlockManager
-    bm.setup()
+    BlockManager.setup()
 
 
 #func _process(delta):
