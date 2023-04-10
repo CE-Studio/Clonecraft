@@ -1,22 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2808o5tdw60y"]
+[gd_scene load_steps=4 format=3 uid="uid://b2808o5tdw60y"]
 
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_h51y0"]
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="1_hp8h7"]
+[ext_resource type="Script" path="res://gui/backingpanel.gd" id="3_y3ptp"]
 
 [node name="backingpanel" type="Panel"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -97.5
-offset_top = -80.5
-offset_right = 97.5
-offset_bottom = 80.5
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_h51y0")
 theme_override_styles/panel = ExtResource("1_hp8h7")
+script = ExtResource("3_y3ptp")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -62,3 +60,5 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Back to game
 "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

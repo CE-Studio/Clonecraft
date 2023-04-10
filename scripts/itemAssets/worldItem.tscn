@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://v52qrik88bqs"]
+
+[ext_resource type="Script" path="res://scripts/itemAssets/worldItem.gd" id="1_xx26a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_evmbw"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="worldItem" type="RigidBody3D"]
+continuous_cd = true
+lock_rotation = true
+script = ExtResource("1_xx26a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_evmbw")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="Node3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.25, -0.25, -0.25)

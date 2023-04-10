@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8nw4yoyrgct7"
-path="res://.godot/imported/clonecraftBaseBlocks.png-96d08ebd9a4502c14dbd2e865aa0f2cc.ctex"
+uid="uid://do3jlsnwkap2d"
+path="res://.godot/imported/banner.png-1848e4ef21f0ce9400d5f117770fd209.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods/clonecraft/clonecraftBaseBlocks.png"
-dest_files=["res://.godot/imported/clonecraftBaseBlocks.png-96d08ebd9a4502c14dbd2e865aa0f2cc.ctex"]
+source_file="res://mods/godot/credits/banner.png"
+dest_files=["res://.godot/imported/banner.png-1848e4ef21f0ce9400d5f117770fd209.ctex"]
 
 [params]
 
@@ -21,11 +21,11 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

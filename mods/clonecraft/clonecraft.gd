@@ -5,20 +5,21 @@ var mat1 = load("res://mods/clonecraft/baseblocks.tres")
 var mat2 = load("res://mods/clonecraft/baseblocksTransparent.tres")
 var canGrass = []
 
+var grassDirs = [
+    [-1, 1],  [0, 1],  [1, 1],
+    [-1, 0],           [1, 0],
+    [-1, -1], [0, -1], [1, -1]
+]
+
 
 func _ready():
     pass
 
 
 func runGrass(pos):
-    var dirs = [
-        [-1, 1],  [0, 1],  [1, 1],
-        [-1, 0],           [1, 0],
-        [-1, -1], [0, -1], [1, -1]
-    ]
-    dirs.shuffle()
+    grassDirs.shuffle()
     for i in [1, 0, -1]:
-        var rpos = (pos - Vector3i(dirs[0][0], i, dirs[0][1]))
+        var rpos = (pos - Vector3i(grassDirs[0][0], i, grassDirs[0][1]))
         var vt = man.blockList[tool.get_voxel(rpos)]
         if vt.fullID in canGrass:
             if man.blockList[tool.get_voxel(rpos + Vector3i.UP)].isAir:
@@ -27,47 +28,7 @@ func runGrass(pos):
         tool.set_voxel(pos, man.blockIDlist["clonecraft:dirt"])
 
 
-func quickBlock(
-        blockName:String,
-        readableName:String,
-        texturePos:Vector2,
-        breakStrength := 3.0,
-        explStrength := 5.0,
-        tool := "pickaxe",
-        alphaChannel := 0):
-    var model = man.startBlockRegister("clonecraft:" + blockName)
-    model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
-    model.collision_enabled_0 = true
-    model.transparency_index = alphaChannel
-    model.cube_tiles_left   = texturePos
-    model.cube_tiles_right  = texturePos
-    model.cube_tiles_bottom = texturePos
-    model.cube_tiles_top    = texturePos
-    model.cube_tiles_back   = texturePos
-    model.cube_tiles_front  = texturePos
-    if alphaChannel == 0:
-        model.set_material_override(0, mat1)
-    else:
-        model.set_material_override(0, mat2)
-    var bi = BlockManager.BlockInfo.new(
-            "clonecraft",
-            blockName,
-            readableName,
-            model,
-            breakStrength,
-            explStrength,
-            false,
-            false,
-            noScript,
-            tool,
-            "default",
-            "default",
-            "default"
-    )
-    man.endBlockRegister(bi)
-
-
-func makeGB():
+func _makeGB():
     var model = man.startBlockRegister("clonecraft:grassBlock")
     model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
     model.collision_enabled_0 = true
@@ -98,7 +59,7 @@ func makeGB():
     man.endBlockRegister(bi)
 
 
-func makeCT():
+func _makeCT():
     var model = man.startBlockRegister("clonecraft:craftingBench")
     model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
     model.collision_enabled_0 = true
@@ -128,7 +89,7 @@ func makeCT():
     man.endBlockRegister(bi)
 
 
-func makeOL():
+func _makeOL():
     var model1 = man.startBlockRegister("clonecraft:logVertOak")
     model1.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
     model1.collision_enabled_0 = true
@@ -215,34 +176,34 @@ func makeOL():
 
 
 func registerPhase():
-    quickBlock("stone", "Stone", Vector2(0, 0))
-    quickBlock("dirt", "Dirt", Vector2(1, 0), 1, 1, "shovel")
+    man.quickUniformBlock(MODID, "stone", "Stone", Vector2(0, 0), mat1)
+    man.quickUniformBlock(MODID, "dirt", "Dirt", Vector2(1, 0), mat1, 1, 1, "shovel")
     canGrass.append("clonecraft:dirt")
-    makeGB()
-    quickBlock("cobblestone", "Cobblestone", Vector2(4, 0))
-    quickBlock("oreCoal", "Coal Ore", Vector2(5, 0))
-    quickBlock("oreIron", "Iron Ore", Vector2(0, 1))
-    quickBlock("oreGold", "Gold Ore", Vector2(1, 1))
-    quickBlock("oreDiamond", "Diamond Ore", Vector2(2, 1))
-    quickBlock("oreEnerstone", "EnerStone Ore", Vector2(3, 1))
-    quickBlock("oreCopper", "Copper Ore", Vector2(4, 1))
-    quickBlock("tileStone", "Stone Tile", Vector2(5, 1))
-    quickBlock("brickStone", "Stone Bricks", Vector2(0, 2))
-    quickBlock("plankOak", "Oak Planks", Vector2(1, 2), 3, 6, "axe")
-    quickBlock("tileOak", "Oak Plank Tile", Vector2(2, 2), 3, 6, "axe")
-    makeCT()
-    makeOL()
-    quickBlock("barkOak", "Oak Bark", Vector2(5, 2), 3, 6, "axe")
-    quickBlock("knotOak", "Oak Knot", Vector2(1, 3), 3, 6, "axe")
-    quickBlock("leavesOak", "Oak Leaves", Vector2(2, 3), 1, 1, "shears", 1)
-    quickBlock("gravel", "Gravel", Vector2(3, 3), 1, 1, "shovel")
-    quickBlock("sand", "Sand", Vector2(4, 3), 1, 1, "shovel")
-    quickBlock("glass", "Glass", Vector2(5, 3), 1, 1, "pickaxe", 2)
-    quickBlock("brick", "Brick", Vector2(0, 4))
-    quickBlock("clay", "Clay", Vector2(1, 4), 1, 1, "shovel")
-    quickBlock("blockCoal", "Coal Block", Vector2(2, 4))
-    quickBlock("blockIron", "Coal Block", Vector2(3, 4))
-    quickBlock("blockGold", "Coal Block", Vector2(4, 4))
-    quickBlock("blockDiamond", "Coal Block", Vector2(5, 4), 3, 5, "pickaxe", 2)
-    quickBlock("blockEnerstone", "EnerStone Crate", Vector2(0, 5))
-    quickBlock("blockCopper", "Copper Block", Vector2(1, 5))
+    _makeGB()
+    man.quickUniformBlock(MODID, "cobblestone", "Cobblestone", Vector2(4, 0), mat1)
+    man.quickUniformBlock(MODID, "oreCoal", "Coal Ore", Vector2(5, 0), mat1)
+    man.quickUniformBlock(MODID, "oreIron", "Iron Ore", Vector2(0, 1), mat1)
+    man.quickUniformBlock(MODID, "oreGold", "Gold Ore", Vector2(1, 1), mat1)
+    man.quickUniformBlock(MODID, "oreDiamond", "Diamond Ore", Vector2(2, 1), mat1)
+    man.quickUniformBlock(MODID, "oreEnerstone", "EnerStone Ore", Vector2(3, 1), mat1)
+    man.quickUniformBlock(MODID, "oreCopper", "Copper Ore", Vector2(4, 1), mat1)
+    man.quickUniformBlock(MODID, "tileStone", "Stone Tile", Vector2(5, 1), mat1)
+    man.quickUniformBlock(MODID, "brickStone", "Stone Bricks", Vector2(0, 2), mat1)
+    man.quickUniformBlock(MODID, "plankOak", "Oak Planks", Vector2(1, 2), mat1, 3, 6, "axe")
+    man.quickUniformBlock(MODID, "tileOak", "Oak Plank Tile", Vector2(2, 2), mat1, 3, 6, "axe")
+    _makeCT()
+    _makeOL()
+    man.quickUniformBlock(MODID, "barkOak", "Oak Bark", Vector2(5, 2), mat1, 3, 6, "axe")
+    man.quickUniformBlock(MODID, "knotOak", "Oak Knot", Vector2(1, 3), mat1, 3, 6, "axe")
+    man.quickUniformBlock(MODID, "leavesOak", "Oak Leaves", Vector2(2, 3), mat2, 1, 1, "shears", 1)
+    man.quickUniformBlock(MODID, "gravel", "Gravel", Vector2(3, 3), mat1, 1, 1, "shovel")
+    man.quickUniformBlock(MODID, "sand", "Sand", Vector2(4, 3), mat1, 1, 1, "shovel")
+    man.quickUniformBlock(MODID, "glass", "Glass", Vector2(5, 3), mat2, 1, 1, "pickaxe", 2)
+    man.quickUniformBlock(MODID, "brick", "Brick", Vector2(0, 4), mat1)
+    man.quickUniformBlock(MODID, "clay", "Clay", Vector2(1, 4), mat1, 1, 1, "shovel")
+    man.quickUniformBlock(MODID, "blockCoal", "Coal Block", Vector2(2, 4), mat1)
+    man.quickUniformBlock(MODID, "blockIron", "Coal Block", Vector2(3, 4), mat1)
+    man.quickUniformBlock(MODID, "blockGold", "Coal Block", Vector2(4, 4), mat1)
+    man.quickUniformBlock(MODID, "blockDiamond", "Coal Block", Vector2(5, 4), mat2, 3, 5, "pickaxe", 2)
+    man.quickUniformBlock(MODID, "blockEnerstone", "EnerStone Crate", Vector2(0, 5), mat1)
+    man.quickUniformBlock(MODID, "blockCopper", "Copper Block", Vector2(1, 5), mat1)

@@ -1743,7 +1743,7 @@ material_override_0 = ExtResource("13_8qgxy")
 collision_enabled_0 = true
 
 [sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_ludbs"]
-atlas_size = 6
+atlas_size = 10
 voxels/0 = SubResource("VoxelBlockyModel_t3s43")
 voxels/1 = SubResource("VoxelBlockyModel_8fijb")
 voxels/2 = SubResource("VoxelBlockyModel_ewmfd")
@@ -1836,6 +1836,12 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("10_2gb0e")
 text = "Options..."
 
+[node name="ModOpts" type="Button" parent="Control/CenterContainer/GridContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("10_2gb0e")
+text = "Mod Manager..."
+
 [node name="Quit" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -1875,6 +1881,7 @@ script = ExtResource("6_4woye")
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)
 stream = ExtResource("12_n2dnj")
 mesher = SubResource("VoxelMesherBlocky_gy3dk")
+generate_collisions = false
 
 [node name="spinpoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.193)

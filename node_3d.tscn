@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=27 format=3 uid="uid://dq6mys81fg3pj"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -13,6 +13,11 @@
 [ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="11_dq7n1"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
+[ext_resource type="Script" path="res://scripts/itemRenderLayerSize.gd" id="14_wt5ed"]
+[ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yoru6"]
+viewport_path = NodePath("itemRenderLayer")
 
 [sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4e7cf"]
 
@@ -30,7 +35,7 @@ material_override_0 = ExtResource("3_cx0vp")
 collision_enabled_0 = true
 
 [sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_qtsb8"]
-atlas_size = 6
+atlas_size = 10
 voxels/0 = SubResource("VoxelBlockyModel_4e7cf")
 voxels/1 = SubResource("VoxelBlockyModel_6qjqm")
 
@@ -46,6 +51,17 @@ albedo_color = Color(0, 0, 0, 0.529412)
 size = Vector3(0.7, 1.8, 0.7)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5tc7k"]
+
+[sub_resource type="Environment" id="Environment_mubym"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_ydc0p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iabes"]
+render_priority = 0
+shader = ExtResource("15_ji8mt")
 
 [node name="Node3D" type="Node3D"]
 process_mode = 1
@@ -73,6 +89,16 @@ metadata/_edit_use_custom_anchors = true
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("1_epwcq")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_yoru6")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
@@ -145,3 +171,28 @@ material_override = ExtResource("11_dq7n1")
 mesh = SubResource("PlaneMesh_5tc7k")
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("12_8tndb")]
+
+[node name="itemRenderLayer" type="SubViewport" parent="."]
+own_world_3d = true
+transparent_bg = true
+script = ExtResource("14_wt5ed")
+
+[node name="Camera3D" type="Camera3D" parent="itemRenderLayer"]
+environment = SubResource("Environment_mubym")
+projection = 1
+size = 5.0
+far = 100.0
+
+[node name="itemParent" type="Node3D" parent="itemRenderLayer/Camera3D"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, -50)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="itemRenderLayer/Camera3D"]
+transform = Transform3D(0.449017, -0.84685, 0.285006, 0.559327, 0.515138, 0.649451, -0.696805, -0.132202, 0.704972, 0, 0, 0)
+directional_shadow_mode = 0
+sky_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ydc0p")
+surface_material_override/0 = SubResource("ShaderMaterial_iabes")
