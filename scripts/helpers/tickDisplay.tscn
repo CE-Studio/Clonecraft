@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2vpsvd25esl0"]
+
+[ext_resource type="Script" path="res://scripts/helpers/tickDisplay.gd" id="1_kfvh1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w6a8h"]
+size = Vector3(1.05, 1.05, 1.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qt4is"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 0.286275)
+
+[node name="tickDisplay" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_w6a8h")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt4is")
+script = ExtResource("1_kfvh1")

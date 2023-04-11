@@ -38,6 +38,7 @@ video/use_vsync=false
 video/framerate_cap=0
 input/invert_mouse_x=false
 input/invert_mouse_y=false
+debug/showUpdates=true
 
 [importer_defaults]
 

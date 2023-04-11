@@ -10,11 +10,11 @@ var screenSize := Vector2(100, 100)
 class ItemStack:
     var id:String
     var count:int
-    
+
     func _init(iid:String, icount:int):
         id = iid
         count = icount
-        
+
     func getMesh() -> Mesh:
         return ItemManager.items[id].model
 

@@ -18,9 +18,14 @@ var terrain:VoxelTerrain
 var idCounter := 0
 var loadDone := false
 
+var blockUpdates:Array[Vector3i] = []
+var pendingBlockUpdates:Array[Vector3i] = []
+
 var _updates:Array[Callable] = []
 var _inputList := []
 var _addingBlock := false
+var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
+var _tool:VoxelToolTerrain
 
 
 func addUpdate(c:Callable) -> void:
@@ -32,6 +37,10 @@ func noScript(_pos, _meta) -> void:
 
 
 func runRandomTicks(pos, rawID) -> void:
+    if ProjectSettings.get_setting("gameplay/debug/showUpdates"):
+        var disp:MeshInstance3D = _tdisp.instantiate()
+        disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
+        terrain.add_child(disp)
     var block:BlockInfo = blockList[rawID]
     if block.tickable:
         block.tickCB.call(pos)
@@ -55,6 +64,7 @@ class BlockInfo:
     var stepsound:String
     var placesound:String
     var breaksound:String
+    var dropItem:String
 
 
     func _init(
@@ -70,7 +80,8 @@ class BlockInfo:
             ftoolClass:String,
             fstepsound:String,
             fplacesound:String,
-            fbreaksound:String):
+            fbreaksound:String,
+            fdropitem:String = "*"):
         modID = fmodID
         nameID = fnameID
         fullID = fmodID + ":" + fnameID
@@ -83,6 +94,10 @@ class BlockInfo:
         if scripted:
             blockScript = fscript
         toolClass = ftoolClass
+        stepsound = fstepsound
+        placesound = fplacesound
+        breaksound = fbreaksound
+        dropItem = fdropitem
 
 
     func setTickable(ftickcb:Callable):
@@ -119,6 +134,8 @@ func inputRegister(callback:Callable):
 
 
 func setup():
+    terrain = $/root/Node3D/VoxelTerrain
+    _tool = terrain.get_voxel_tool()
     blockLibrary.atlas_size = 10
     var airModel = startBlockRegister("clonecraft:air")
     airModel.geometry_type = VoxelBlockyModel.GEOMETRY_NONE
@@ -133,6 +150,7 @@ func setup():
             false,
             noScript,
             "shovel",
+            "null",
             "null",
             "null",
             "null"
@@ -159,14 +177,13 @@ func setup():
     print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase completed for all mods!")
 
     blockLibrary.bake()
-    terrain = $/root/Node3D/VoxelTerrain
     terrain.mesher.library = blockLibrary
-    
+
     #Ensure every block has an item
     ItemManager.getReady()
     for i in blockList:
         ItemManager.simpleBlockItem(i)
-        
+
     loadDone = true
 
 
@@ -179,8 +196,8 @@ func _process(delta):
 func _input(event):
     for i in _inputList:
         i.call(event)
-        
-        
+
+
 func quickUniformBlock(
         modID:String,
         blockName:String,
@@ -218,3 +235,8 @@ func quickUniformBlock(
             "default"
     )
     endBlockRegister(bi)
+
+
+func setBlock(pos:Vector3i, type:String, drop := true):
+    if drop:
+        pass

@@ -22,9 +22,9 @@ var terrain:VoxelTerrain
 ## Do not override unless you know what you're doing.
 func refman(ref):
     man = ref
-    terrain = man.get_node("/root/Node3D/VoxelTerrain")
+    terrain = man.terrain
     player = man.get_node("/root/Node3D/player")
-    tool = terrain.get_voxel_tool()
+    tool = man._tool
 
 
 ## An empty placehloder function.[br]
