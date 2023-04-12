@@ -110,6 +110,7 @@ metadata/_edit_layout_mode = 1
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 generator = ExtResource("4_brcpd")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
+collision_layer = 3
 script = ExtResource("4_828ak")
 
 [node name="blockOutline" type="MeshInstance3D" parent="."]

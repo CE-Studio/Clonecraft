@@ -1,6 +1,7 @@
 extends Node
 
 var items := {}
+var witem:PackedScene = preload("res://scripts/itemAssets/worldItem.tscn")
 
 var _buf := VoxelBuffer.new()
 var _mesh := VoxelMesherBlocky.new()
@@ -64,4 +65,13 @@ func simpleItemModel():
 
 func simpleItem() -> Item:
     var nitem := Item.new(Mesh.new())
+    return nitem
+    
+
+func spawnWorldItem(itemStack:ItemStack, pos:Vector3, vel:Vector3 = Vector3(0, 2, 0)) -> WorldItem:
+    var nitem:WorldItem = witem.instantiate()
+    nitem.position = pos
+    nitem.apply_central_impulse(vel)
+    nitem.setItem(itemStack)
+    $"/root/Node3D".add_child(nitem)
     return nitem
