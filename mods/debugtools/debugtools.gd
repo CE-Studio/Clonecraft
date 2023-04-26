@@ -22,10 +22,10 @@ func input(event):
             self.bid += 1
         elif (event.button_index == 2) && (event.pressed):
             if player.lookingAt != null:
-                tool.set_voxel(player.lookingAt.previous_position, bid)
+                man.setBlock(player.lookingAt.previous_position, man.blockList[bid].fullID, false)
         elif (event.button_index == 1) && (event.pressed):
             if player.lookingAt != null:
-                tool.set_voxel(player.lookingAt.position, 0)
+                man.setBlock(player.lookingAt.position, "clonecraft:air", false)
         elif (event.button_index == 3) && (event.pressed):
             if player.lookingAt != null:
                 var pl := player.lookingAt.position

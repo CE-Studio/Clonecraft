@@ -28,6 +28,10 @@ var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
 var _tool:VoxelToolTerrain
 
 
+func getBlockID(id:String) -> BlockInfo:
+    return blockList[blockIDlist[id]]
+
+
 func addUpdate(c:Callable) -> void:
     _updates.append(c)
 
@@ -239,4 +243,15 @@ func quickUniformBlock(
 
 func setBlock(pos:Vector3i, type:String, drop := true):
     if drop:
-        pass
+        var i:BlockInfo = blockList[_tool.get_voxel(pos)]
+        var h := i.dropItem
+        if h != "null":
+            var j:ItemManager.ItemStack
+            if h == "*":
+                j = ItemManager.ItemStack.new(i.fullID, 1)
+            elif h == "script":
+                pass
+            else:
+                j = ItemManager.ItemStack.new(h, 1)
+            ItemManager.spawnWorldItem(j, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
+    _tool.set_voxel(pos, blockIDlist[type])
