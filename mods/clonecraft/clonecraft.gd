@@ -1,6 +1,6 @@
 extends Mod
 
-const MODID = "clonecraft"
+const MODID = &"clonecraft"
 var mat1 = load("res://mods/clonecraft/baseblocks.tres")
 var mat2 = load("res://mods/clonecraft/baseblocksTransparent.tres")
 var canGrass = []
@@ -20,12 +20,11 @@ func runGrass(pos):
     grassDirs.shuffle()
     for i in [1, 0, -1]:
         var rpos = (pos - Vector3i(grassDirs[0][0], i, grassDirs[0][1]))
-        var vt = man.blockList[tool.get_voxel(rpos)]
-        if vt.fullID in canGrass:
-            if man.blockList[tool.get_voxel(rpos + Vector3i.UP)].isAir:
-                tool.set_voxel(rpos, man.blockIDlist["clonecraft:grassBlock"])
-    if not(man.blockList[tool.get_voxel(pos + Vector3i.UP)].isAir):
-        tool.set_voxel(pos, man.blockIDlist["clonecraft:dirt"])
+        if man.getBlock(rpos).fullID in canGrass:
+            if man.getBlock(rpos + Vector3i.UP).properties.has(&"air"):
+                man.setBlock(rpos, &"clonecraft:grassBlock", false, true, true)
+    if not(man.getBlock(pos + Vector3i.UP).properties.has(&"air")):
+        man.setBlock(pos, &"clonecraft:dirt", false, true, true)
 
 
 func _makeGB():
