@@ -13,11 +13,7 @@ func play():
 
 
 func openOptions():
-    var h = ProjectSettings.get_property_list()
-    for i in h:
-        print(i["name"])
-    var op = load("res://gui/backingpanel.tscn").instantiate()
-    $"/root".add_child(op)
+    SettingManager.spawnMenu()
 
 
 func openMods():

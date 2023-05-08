@@ -32,13 +32,13 @@ enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 [gameplay]
 
 video/fov=0.0
-video/fov_max=0.0
-video/fov_min=0.0
 video/use_vsync=false
 video/framerate_cap=0
 input/invert_mouse_x=false
 input/invert_mouse_y=false
-debug/showUpdates=true
+input/mouse_x_sensitivity=0.0
+input/mouse_y_sensitivity=0.0
+debug/show_updates=true
 
 [importer_defaults]
 

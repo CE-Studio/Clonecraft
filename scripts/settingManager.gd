@@ -3,19 +3,23 @@ extends Node
 #TODO swap to godot's builtin settings system
 #TODO better version system
 const VERSION = "Alpha 0.0.1"
-const DEFAULT_SETTINGS := {
-    #TODO renderDistance
-    "renderDistance": 128,
-    #TODO shadowDistance
-    "shadowDistance": 128,
-    #TODO fov
-    "fov": 75
-}
 
-var settings := {}
+var settings := []
 
 #TODO load settings from disk
 func _ready():
-    settings.merge(DEFAULT_SETTINGS, false)
+    var j := JSON.new()
+    var f := FileAccess.open("res://scripts/baseSettings.json", FileAccess.READ)
+    var stat := j.parse(f.get_as_text())
+    f.close()
+    assert(stat == OK, "error parsing setting tree!")
+    settings.append_array(j.get_data())
+    for i in settings:
+        print(i["name"])
 
 #TODO save settings to disk
+
+
+func spawnMenu(content := settings):
+    var op = load("res://gui/backingpanel.tscn").instantiate()
+    $"/root".add_child(op)

@@ -42,7 +42,7 @@ func noScript(_pos, _meta) -> void:
 
 
 func runRandomTicks(pos, rawID) -> void:
-    if ProjectSettings.get_setting("gameplay/debug/showUpdates"):
+    if ProjectSettings.get_setting("gameplay/debug/show_updates"):
         var disp:MeshInstance3D = _tdisp.instantiate()
         disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
         terrain.add_child(disp)
@@ -55,7 +55,7 @@ func runBlockUpdates() -> void:
     blockUpdates = pendingBlockUpdates
     pendingBlockUpdates = []
     for i in blockUpdates:
-        if ProjectSettings.get_setting("gameplay/debug/showUpdates"):
+        if ProjectSettings.get_setting("gameplay/debug/show_updates"):
             var disp:MeshInstance3D = _udisp.instantiate()
             disp.position = (Vector3(i.x, i.y, i.z) + Vector3(0.5, 0.5, 0.5))
             terrain.add_child(disp)

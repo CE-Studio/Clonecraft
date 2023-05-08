@@ -1,0 +1,82 @@
+[
+    {
+        "name": "options.video_folder",
+        "type": "folder",
+        "content": [
+            {
+                "name": "options.video.fov",
+                "type": "float",
+                "slidemin": 0.0,
+                "slidemax": 100.0,
+                "default": 50.0,
+                "path": "gameplay/video/fov"
+            },
+            {
+                "name": "options.video.vsync",
+                "type": "bool",
+                "default": true,
+                "path": "gameplay/video/use_vsync"
+            },
+            {
+                "name": "options.video.fps_cap",
+                "type": "int",
+                "slidemin": 15,
+                "slidemax": 256,
+                "default": 60,
+                "path": "gameplay/video/framerate_cap"
+            }
+        ]
+    },
+    {
+        "name": "options.input_folder",
+        "type": "folder",
+        "content": [
+            {
+                "name": "options.input.invert_mouse_x",
+                "type": "bool",
+                "default": false,
+                "path": "gameplay/input/invert_mouse_x"
+            },
+            {
+                "name": "options.input.invert_mouse_y",
+                "type": "bool",
+                "default": false,
+                "path": "gameplay/input/invert_mouse_y"
+            },
+            {
+                "name": "options.input.mouse_x_sensitivity",
+                "type": "float",
+                "slidemin": 0.0,
+                "slidemax": 100.0,
+                "default": 50.0,
+                "path": "gameplay/input/mouse_x_sensitivity"
+            },
+            {
+                "name": "options.input.mouse_y_sensitivity",
+                "type": "float",
+                "slidemin": 0.0,
+                "slidemax": 100.0,
+                "default": 50.0,
+                "path": "gameplay/input/mouse_y_sensitivity"
+            }
+        ]
+    },
+    {
+        "name": "options.advanced_folder",
+        "type": "folder",
+        "content": [
+            {
+                "name": "options.advanced.debug_folder",
+                "type": "folder",
+                "content": [
+                    {
+                        "name": "options.advanced.debug.show_updates",
+                        "type": "bool",
+                        "default": "false",
+                        "path": "gameplay/debug/show_updates"
+                    }
+                ]
+            }
+        ]
+    }
+]
