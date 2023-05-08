@@ -24,6 +24,7 @@ BlockManager="*res://scripts/blockManager.gd"
 ItemManager="*res://scripts/itemManager.gd"
 UiManager="*res://scripts/uiManager.gd"
 SettingManager="*res://scripts/settingManager.gd"
+Translator="*res://scripts/translation.gd"
 
 [editor_plugins]
 

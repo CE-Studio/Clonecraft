@@ -21,5 +21,14 @@ func _ready():
 
 
 func spawnMenu(content := settings):
-    var op = load("res://gui/backingpanel.tscn").instantiate()
+    var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
     $"/root".add_child(op)
+    for i in content:
+        if i["type"] == "folder":
+            var c:Button = load("res://scripts/helpers/settings/folderButton.tscn").instantiate()
+            c.init(i)
+            op.addItem(c)
+        elif i["type"] == "folder":
+            pass
+        else:
+            print("missing setting type: " + i["type"])

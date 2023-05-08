@@ -1,4 +1,5 @@
 extends Panel
+class_name BackingPanel
 
 
 func addItem(item:Control) -> void:
