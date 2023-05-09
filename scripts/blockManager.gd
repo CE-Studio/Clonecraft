@@ -121,6 +121,7 @@ class BlockInfo:
         blockModel.random_tickable = true
 
 
+@warning_ignore("shadowed_global_identifier")
 func log(id:String, message:String) -> String:
     var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
     print(out)

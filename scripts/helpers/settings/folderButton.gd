@@ -1,4 +1,5 @@
 extends Button
+class_name SettingFolderButton
 
 var iname:StringName
 var content: Array

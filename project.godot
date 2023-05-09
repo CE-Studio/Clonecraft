@@ -32,8 +32,8 @@ enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [gameplay]
 
-video/fov=0.0
-video/use_vsync=false
+video/fov=50.0
+video/use_vsync=true
 video/framerate_cap=0
 input/invert_mouse_x=false
 input/invert_mouse_y=false

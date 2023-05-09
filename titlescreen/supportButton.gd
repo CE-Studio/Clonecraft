@@ -26,5 +26,5 @@ func _pressed() -> void:
         k.populate(h)
 
 
-func _process(delta):
+func _process(_delta):
     disabled = is_instance_valid(op)

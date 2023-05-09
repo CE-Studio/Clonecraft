@@ -14,8 +14,6 @@ func _ready():
     f.close()
     assert(stat == OK, "error parsing setting tree!")
     settings.append_array(j.get_data())
-    for i in settings:
-        print(i["name"])
 
 #TODO save settings to disk
 
@@ -25,10 +23,12 @@ func spawnMenu(content := settings):
     $"/root".add_child(op)
     for i in content:
         if i["type"] == "folder":
-            var c:Button = load("res://scripts/helpers/settings/folderButton.tscn").instantiate()
+            var c:SettingFolderButton = load("res://scripts/helpers/settings/folderButton.tscn").instantiate()
             c.init(i)
             op.addItem(c)
-        elif i["type"] == "folder":
-            pass
+        elif i["type"] == "float":
+            var c:FloatSetting = load("res://scripts/helpers/settings/floatSetting.tscn").instantiate()
+            c.init(i)
+            op.addItem(c)
         else:
             print("missing setting type: " + i["type"])

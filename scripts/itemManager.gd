@@ -37,7 +37,7 @@ func getReady() -> void:
     _mesh.library = BlockManager.blockLibrary
 
 
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
     pass
 
 
