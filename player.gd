@@ -1,4 +1,5 @@
 class_name Player
+#extends Entity
 extends CharacterBody3D
 
 var SPEED := 5.0

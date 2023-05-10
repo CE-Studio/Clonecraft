@@ -30,5 +30,13 @@ func spawnMenu(content := settings):
             var c:FloatSetting = load("res://scripts/helpers/settings/floatSetting.tscn").instantiate()
             c.init(i)
             op.addItem(c)
+        elif i["type"] == "int":
+            var c:FloatSetting = load("res://scripts/helpers/settings/intSetting.tscn").instantiate()
+            c.init(i)
+            op.addItem(c)
+        elif i["type"] == "bool":
+            var c:BoolSetting = load("res://scripts/helpers/settings/boolSetting.tscn").instantiate()
+            c.init(i)
+            op.addItem(c)
         else:
             print("missing setting type: " + i["type"])

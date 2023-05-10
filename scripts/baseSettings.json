@@ -72,7 +72,7 @@
                     {
                         "name": "options.advanced.debug.show_updates",
                         "type": "bool",
-                        "default": "false",
+                        "default": false,
                         "path": "gameplay/debug/show_updates"
                     }
                 ]
