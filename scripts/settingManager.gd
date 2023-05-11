@@ -5,6 +5,7 @@ extends Node
 const VERSION = "Alpha 0.0.1"
 
 var settings := []
+var tick := 0
 
 #TODO load settings from disk
 func _ready():
@@ -18,8 +19,16 @@ func _ready():
 #TODO save settings to disk
 
 
+func tickSettings() -> void:
+    tick += 1
+
+
 func spawnMenu(content := settings):
     var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
+    if content == settings:
+        op.setExit("gui.back", tickSettings)
+    else:
+        op.setExit("gui.back")
     $"/root".add_child(op)
     for i in content:
         if i["type"] == "folder":

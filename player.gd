@@ -1,10 +1,8 @@
 class_name Player
-#extends Entity
-extends CharacterBody3D
+extends Entity
 
-var SPEED := 5.0
-const JUMP_VELOCITY := 8.0
-const SENSITIVITY := 200.0
+var SENSITIVITY := [200.0, 200.0]
+var settingTick := -1
 
 var head:Node3D
 var cam:Camera3D
@@ -16,8 +14,6 @@ var lookingAt:VoxelRaycastResult
 var blockOutline:MeshInstance3D
 var cloudmat:StandardMaterial3D
 
-# Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
-var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var moveDist := 0.0
 var animCurSpeed := 0.0
 var tickRange := 100
@@ -32,6 +28,9 @@ var fcheck := 1.0
 
 
 func _ready():
+    SPEED = 0.5
+    JUMP_VELOCITY = 8.0
+    GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
     head = $"head"
     cam = $"head/Camera3D"
     armPointY = $"armpointy"
@@ -68,8 +67,8 @@ func _input(event):
             Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
             $"/root/Node3D/VoxelTerrain".save_modified_blocks()
     elif event is InputEventMouseMotion:
-        var mx = -(event.relative.x / SENSITIVITY)
-        var my = -(event.relative.y / (SENSITIVITY / 2))
+        var mx = -(event.relative.x / SENSITIVITY[0])
+        var my = -(event.relative.y / (SENSITIVITY[1] / 2))
         head.rotate_y(mx)
         cam.rotate_x(my)
         cam.rotation.x = clamp(cam.rotation.x, -1.5708, 1.5708)
@@ -87,7 +86,7 @@ func ticks():
 func _physics_process(delta):
     # Add the gravity.
     if (not abillities["isFlying"]) && (not is_on_floor()):
-        velocity.y -= gravity * delta
+        velocity.y -= GRAVITY * delta
 
     # Handle Jump.
     if abillities["isFlying"]:
