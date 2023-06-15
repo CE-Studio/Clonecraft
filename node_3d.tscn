@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=27 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -7,7 +7,7 @@
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="4_auhxw"]
-[ext_resource type="VoxelGeneratorGraph" uid="uid://b3odtwoui0u6g" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
+[ext_resource type="VoxelGeneratorScript" uid="uid://bvjxaj2q5axx0" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
 [ext_resource type="Material" path="res://textures/handmat.tres" id="9_dfanb"]
 [ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
@@ -111,6 +111,7 @@ metadata/_edit_layout_mode = 1
 generator = ExtResource("4_brcpd")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
 collision_layer = 3
+run_stream_in_editor = false
 script = ExtResource("4_828ak")
 
 [node name="blockOutline" type="MeshInstance3D" parent="."]
