@@ -30,6 +30,7 @@ var fcheck := 1.0
 func _ready():
     SPEED = 0.5
     JUMP_VELOCITY = 8.0
+    TERMINAL_VELOCITY = -60.0
     GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
     head = $"head"
     cam = $"head/Camera3D"
@@ -60,12 +61,6 @@ func _input(event):
             if abillities["allowFlight"] || abillities["isFlying"]:
                 abillities["isFlying"] = not abillities["isFlying"]
         fcheck = 0
-    elif event.is_action_pressed("ui_cancel"):
-        if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
-            Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-        else:
-            Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-            $"/root/Node3D/VoxelTerrain".save_modified_blocks()
     elif event is InputEventMouseMotion:
         var mx = -(event.relative.x / SENSITIVITY[0])
         var my = -(event.relative.y / (SENSITIVITY[1] / 2))
@@ -87,6 +82,8 @@ func _physics_process(delta):
     # Add the gravity.
     if (not abillities["isFlying"]) && (not is_on_floor()):
         velocity.y -= GRAVITY * delta
+        if velocity.y < TERMINAL_VELOCITY:
+            velocity.y = TERMINAL_VELOCITY
 
     # Handle Jump.
     if abillities["isFlying"]:
@@ -131,7 +128,22 @@ func _physics_process(delta):
     else:
         velocity.x = move_toward(velocity.x, 0, SPEED)
         velocity.z = move_toward(velocity.z, 0, SPEED)
-
+    
+    if not voxelTool.is_area_editable(AABB(position + (velocity * delta), Vector3.ONE)):
+        $"/root/Node3D".startWait(position + (velocity * delta), ((velocity * delta) * 2))
+        velocity = Vector3.ZERO
+        return
+    
+    var h := BlockManager.getBlock(position + (velocity * delta))
+    if not h.properties.has(&"incompleteHitbox"): 
+        $"../RayCast3D".position = position
+        $"../RayCast3D".target_position = ((velocity * delta) * 2)
+        $"../RayCast3D".force_raycast_update()
+        if not $"../RayCast3D".is_colliding():
+            $"/root/Node3D".startWait(position + (velocity * delta), ((velocity * delta) * 2))
+            velocity = Vector3.ZERO
+            return
+    
     move_and_slide()
     moveDist += ((abs(velocity.x) + abs(velocity.z)) * delta)
     animCurSpeed = lerpf(animCurSpeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)

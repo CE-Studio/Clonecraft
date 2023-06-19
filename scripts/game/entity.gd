@@ -4,6 +4,7 @@ class_name Entity
 
 var SPEED := 5.0
 var JUMP_VELOCITY := 8.0
+var TERMINAL_VELOCITY := -60.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var GRAVITY:float = ProjectSettings.get_setting("physics/3d/default_gravity")

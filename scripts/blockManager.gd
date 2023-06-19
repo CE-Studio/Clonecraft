@@ -173,6 +173,7 @@ func setup():
     )
     airBlock.properties.append(&"air")
     airBlock.properties.append(&"replaceable")
+    airBlock.properties.append(&"incompleteHitbox")
     endBlockRegister(airBlock)
 
     for i in modsToLoad:
