@@ -1,4 +1,5 @@
 extends Node3D
+class_name WorldControl
 
 
 var _tool:VoxelToolTerrain
@@ -9,22 +10,29 @@ var pausing := false
 var tree:SceneTree
 
 
+func raycheck(rel:Vector3) -> bool:
+    var p:Player = $player
+    var col:KinematicCollision3D = p.move_and_collide(_waitrel, true, 0.001, true)
+    if col == null:
+        return false
+    return true
+
+
 func waitForChunk():
     if _tool.is_area_editable(AABB(_waitpos, Vector3.ONE)):
         var h := BlockManager.getBlock(_waitpos)
         if h.properties.has(&"incompleteHitbox"):
             waiting = false
+        elif raycheck(_waitrel):
+            waiting = false
         else:
             var p:Player = $player
-            var ray:RayCast3D = $RayCast3D
-            ray.position = p.position
-            ray.target_position = _waitrel
-            ray.force_raycast_update()
-            if ray.is_colliding():
-                waiting = false
-            else:
-                if not BlockManager.getBlock(p.position).properties.has(&"incompleteHitbox"):
-                    p.position += Vector3.UP
+            if not BlockManager.getBlock(p.position).properties.has(&"incompleteHitbox"):
+                p.position += Vector3.UP
+            elif not BlockManager.getBlock(p.position + Vector3.UP).properties.has(&"incompleteHitbox"):
+                p.position += Vector3.UP
+            elif not BlockManager.getBlock(p.position + Vector3.DOWN).properties.has(&"incompleteHitbox"):
+                p.position += Vector3.UP
                 
 
 func startWait(pos:Vector3, rel:Vector3):

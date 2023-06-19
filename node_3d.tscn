@@ -230,11 +230,12 @@ mesh = ExtResource("5_1o3wh")
 
 [node name="player" type="CharacterBody3D" parent="."]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502024, 124.832, -32.3555)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 128, 0)
 disable_mode = 1
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+platform_on_leave = 1
 script = ExtResource("2_tcydh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
@@ -316,6 +317,8 @@ surface_material_override/0 = SubResource("ShaderMaterial_iabes")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 process_mode = 3
-enabled = false
+exclude_parent = false
 collision_mask = 2
 hit_from_inside = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 5

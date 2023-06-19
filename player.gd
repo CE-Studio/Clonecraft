@@ -18,6 +18,7 @@ var moveDist := 0.0
 var animCurSpeed := 0.0
 var tickRange := 100
 var tickNumber := 512
+var world:WorldControl 
 
 var abillities := {
     "allowFlight":false,
@@ -41,6 +42,7 @@ func _ready():
     voxelTool = $"/root/Node3D/VoxelTerrain".get_voxel_tool()
     blockOutline = $"/root/Node3D/blockOutline"
     cloudmat = $"./clouds".material_override
+    world = $"/root/Node3D"
 
 
 func _process(delta):
@@ -136,11 +138,8 @@ func _physics_process(delta):
     
     var h := BlockManager.getBlock(position + (velocity * delta))
     if not h.properties.has(&"incompleteHitbox"): 
-        $"../RayCast3D".position = position
-        $"../RayCast3D".target_position = ((velocity * delta) * 2)
-        $"../RayCast3D".force_raycast_update()
-        if not $"../RayCast3D".is_colliding():
-            $"/root/Node3D".startWait(position + (velocity * delta), ((velocity * delta) * 2))
+        if not world.raycheck(((velocity * delta) * 2)):
+            world.startWait(position + (velocity * delta), ((velocity * delta) * 2))
             velocity = Vector3.ZERO
             return
     
