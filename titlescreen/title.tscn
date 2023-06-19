@@ -1828,24 +1828,24 @@ script = ExtResource("11_j4u0l")
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("10_2gb0e")
-text = "Singleplayer Game"
+text = "&&Singleplayer Game&&"
 
 [node name="Options" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("10_2gb0e")
-text = "Options..."
+text = "&&Options...&&"
 
 [node name="ModOpts" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("10_2gb0e")
-text = "Mod Manager..."
+text = "&&Mod Manager...&&"
 
 [node name="Quit" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-text = "Quit to Desktop"
+text = "&&Quit to Desktop&&"
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
@@ -1874,7 +1874,7 @@ offset_right = -3.0
 offset_bottom = -3.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Support devs!"
+text = "&&Support devs!&&"
 script = ExtResource("6_4woye")
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]

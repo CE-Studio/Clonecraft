@@ -15,7 +15,7 @@ script = ExtResource("1_3yn1u")
 [node name="CheckButton" type="CheckButton" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "name.name.name"
+text = "&&name.name.name&&"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2

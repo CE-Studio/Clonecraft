@@ -56,3 +56,4 @@ func _process(delta):
         waitForChunk()
     tree.paused = pausing or waiting
     $Control/waitpanel.visible = waiting
+    $Control/pausepanel.visible = pausing

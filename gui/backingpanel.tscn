@@ -62,7 +62,7 @@ alignment = 2
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Back to game
+text = "&&Back to game&&
 "
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
