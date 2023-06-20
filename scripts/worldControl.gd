@@ -28,11 +28,11 @@ func waitForChunk():
         else:
             var p:Player = $player
             if not BlockManager.getBlock(p.position).properties.has(&"incompleteHitbox"):
-                p.position += Vector3.UP
+                p.position += Vector3(0, 1.1, 0)
             elif not BlockManager.getBlock(p.position + Vector3.UP).properties.has(&"incompleteHitbox"):
-                p.position += Vector3.UP
+                p.position += Vector3(0, 1.1, 0)
             elif not BlockManager.getBlock(p.position + Vector3.DOWN).properties.has(&"incompleteHitbox"):
-                p.position += Vector3.UP
+                p.position += Vector3(0, 1.1, 0)
                 
 
 func startWait(pos:Vector3, rel:Vector3):
@@ -40,6 +40,7 @@ func startWait(pos:Vector3, rel:Vector3):
     get_tree().paused = true
     _waitpos = pos
     _waitrel = rel
+    print(_waitpos)
 
 
 func _input(event):
@@ -56,7 +57,6 @@ func _input(event):
 func _ready():
     tree = get_tree()
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-    $Control/waitpanel/CenterContainer/Label.text = Translator.translate(&"gui.chunkloading.wait")
 
 
 func _process(delta):

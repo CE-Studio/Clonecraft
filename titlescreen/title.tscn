@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="3_7yac3"]
 [ext_resource type="Script" path="res://titlescreen/derg.gd" id="4_m3okf"]
 [ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="4_q133x"]
+[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_runjh"]
 [ext_resource type="Script" path="res://titlescreen/supportButton.gd" id="6_4woye"]
 [ext_resource type="Script" path="res://titlescreen/splash.gd" id="6_nhbko"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="6_site2"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="7_qty17"]
 [ext_resource type="Script" path="res://titlescreen/cloudmove.gd" id="8_xt62g"]
-[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="10_2gb0e"]
 [ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="11_bylin"]
 [ext_resource type="Script" path="res://titlescreen/mainButtons.gd" id="11_j4u0l"]
 [ext_resource type="Script" path="res://titlescreen/idLabel.gd" id="12_bmkwy"]
@@ -1804,7 +1804,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("10_2gb0e")
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 layout_mode = 0
@@ -1827,25 +1826,30 @@ script = ExtResource("11_j4u0l")
 [node name="Play" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("10_2gb0e")
 text = "&&Singleplayer Game&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.title.singleplayer"
 
 [node name="Options" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("10_2gb0e")
 text = "&&Options...&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.generic.options"
 
 [node name="ModOpts" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("10_2gb0e")
 text = "&&Mod Manager...&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.title.mod_manager"
 
 [node name="Quit" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "&&Quit to Desktop&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.title.quit"
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0

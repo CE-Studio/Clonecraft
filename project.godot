@@ -41,6 +41,10 @@ input/mouse_x_sensitivity=0.0
 input/mouse_y_sensitivity=0.0
 debug/show_updates=true
 
+[gui]
+
+theme/custom="res://textures/uitheme.tres"
+
 [importer_defaults]
 
 texture={

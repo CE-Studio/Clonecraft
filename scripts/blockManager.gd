@@ -291,6 +291,7 @@ func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := 
     return willSet
 
 
-func getBlock(pos:Vector3i) -> BlockInfo:
-    return blockList[_tool.get_voxel(pos)]
+func getBlock(pos:Vector3) -> BlockInfo:
+    var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
+    return blockList[_tool.get_voxel(npos)]
     

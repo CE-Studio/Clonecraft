@@ -1,14 +1,14 @@
 extends Button
 
 var credcontent := {}
-@onready var dp := load("res://gui/devpanel.tscn")
+var dp := preload("res://gui/devpanel.tscn")
 var op:Node
 
 func _pressed() -> void:
     op = load("res://gui/backingpanel.tscn").instantiate()
     $"/root".add_child(op)
     disabled = true
-
+    
     var dir := DirAccess.open("res://mods")
     dir.include_navigational = false
     var j := JSON.new()
@@ -24,6 +24,10 @@ func _pressed() -> void:
         var k = dp.instantiate()
         op.addItem(k)
         k.populate(h)
+
+
+func _ready():
+    text = Translator.translate(&"gui.generic.support")
 
 
 func _process(_delta):

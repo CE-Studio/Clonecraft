@@ -133,6 +133,8 @@ func _physics_process(delta):
     
     if not voxelTool.is_area_editable(AABB(position + (velocity * delta), Vector3.ONE)):
         $"/root/Node3D".startWait(position + (velocity * delta), ((velocity * delta) * 2))
+        if velocity == Vector3.ZERO:
+            print("bruh")
         velocity = Vector3.ZERO
         return
     

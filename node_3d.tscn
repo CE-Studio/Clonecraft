@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=30 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="4_auhxw"]
 [ext_resource type="VoxelGeneratorScript" uid="uid://bvjxaj2q5axx0" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
+[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_i3vlu"]
 [ext_resource type="Material" path="res://textures/handmat.tres" id="9_dfanb"]
 [ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="11_dq7n1"]
@@ -139,9 +140,10 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="Control/waitpanel/CenterContainer"]
 layout_mode = 2
 text = "&&waiting on chunks&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.wait_for_chunks"
 
 [node name="pausepanel" type="Panel" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -170,6 +172,8 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="Control/pausepanel/CenterContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
 text = "&&game menu&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.pause_menu_title"
 
 [node name="Control" type="Control" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1.45519e-11, 60)
@@ -179,24 +183,32 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 text = "&&back to game&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.back"
 
 [node name="Button2" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "&&options&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.generic.options"
 
 [node name="Button3" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "&&achivements&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.achivements"
 
 [node name="Button6" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "&&statistics&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.statistics"
 
 [node name="Control2" type="Control" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1.45519e-11, 60)
@@ -207,12 +219,16 @@ custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "&&quit to menu&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.menu_quit"
 
 [node name="Button5" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "&&quit to desktop&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.desktop_quit"
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 process_mode = 3
@@ -252,6 +268,20 @@ process_mode = 3
 
 [node name="VoxelViewer" type="VoxelViewer" parent="player/head/Camera3D"]
 process_mode = 3
+
+[node name="RayCast3D" type="RayCast3D" parent="player/head/Camera3D"]
+process_mode = 3
+target_position = Vector3(1.45519e-11, 1.45519e-11, -5)
+collision_mask = 2
+hit_from_inside = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 1
+
+[node name="Camera3D" type="Camera3D" parent="player/head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Camera3D2" type="Camera3D" parent="player/head/Camera3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -5)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
@@ -314,11 +344,3 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 mesh = SubResource("BoxMesh_ydc0p")
 surface_material_override/0 = SubResource("ShaderMaterial_iabes")
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-process_mode = 3
-exclude_parent = false
-collision_mask = 2
-hit_from_inside = true
-debug_shape_custom_color = Color(1, 0, 0, 1)
-debug_shape_thickness = 5
