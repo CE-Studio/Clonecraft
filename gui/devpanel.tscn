@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ban3yil1lsv1b"]
+[gd_scene load_steps=5 format=3 uid="uid://ban3yil1lsv1b"]
 
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="1_wxxlo"]
 [ext_resource type="Script" path="res://gui/devpanel.gd" id="2_dwc44"]
 [ext_resource type="Texture2D" uid="uid://dg33uhl5m1o60" path="res://textures/missing.png" id="2_dxrxv"]
+[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="4_1e43m"]
 
 [node name="devpanel" type="Panel"]
 custom_minimum_size = Vector2(1.45519e-11, 76)
@@ -41,6 +42,8 @@ offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "&&More info&&"
+script = ExtResource("4_1e43m")
+dictKey = &"gui.credits.more"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0

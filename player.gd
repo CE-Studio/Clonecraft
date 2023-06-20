@@ -13,7 +13,11 @@ var voxelTool:VoxelToolTerrain
 var lookingAt:VoxelRaycastResult
 var blockOutline:MeshInstance3D
 var cloudmat:StandardMaterial3D
+var cams:Array[Camera3D]
+var camRay:RayCast3D
+var derg:Dictionary
 
+var camcycle := 0
 var moveDist := 0.0
 var animCurSpeed := 0.0
 var tickRange := 100
@@ -43,6 +47,13 @@ func _ready():
     blockOutline = $"/root/Node3D/blockOutline"
     cloudmat = $"./clouds".material_override
     world = $"/root/Node3D"
+    cams.append($head/Camera3D)
+    cams.append($head/Camera3D/Camera3D)
+    cams.append($head/Camera3D/Camera3D2)
+    camRay = $head/Camera3D/RayCast3D
+    derg["root"] = $derg
+    derg["body"] = $derg/Node2
+    derg["head"] = $derg/Node2/bone2/head
 
 
 func _process(delta):
@@ -53,6 +64,8 @@ func _process(delta):
         lerpf(armPointX.position.y, ((1 - abs(cos(moveDist))) / 80)  * animCurSpeed, delta * 20),
         0
     )
+    derg["body"].rotation.y = armPointY.rotation.y
+    derg["head"].rotation.x = armPointX.rotation.x
     cloudmat.uv1_offset.z += delta / 900
     fcheck += delta
 
@@ -69,6 +82,17 @@ func _input(event):
         head.rotate_y(mx)
         cam.rotate_x(my)
         cam.rotation.x = clamp(cam.rotation.x, -1.5708, 1.5708)
+    elif event.is_action_pressed("game_thirdperson"):
+        camcycle += 1
+        if camcycle >= cams.size():
+            camcycle = 0
+        cams[camcycle].make_current()
+        if camcycle > 0:
+            derg["root"].visible = true
+            armPointY.visible = false
+        else:
+            derg["root"].visible = false
+            armPointY.visible = true
 
 
 func ticks():
@@ -159,5 +183,22 @@ func _physics_process(delta):
         blockOutline.position = Vector3(lookingAt.position) + Vector3(0.5, 0.5, 0.5)
     else:
         blockOutline.hide()
+        
+    if camcycle == 0:
+        pass
+    elif camcycle == 1:
+        camRay.target_position = Vector3(0, 0, 5)
+        if camRay.is_colliding():
+            var dist = camRay.global_position.distance_to(camRay.get_collision_point())
+            cams[1].position = Vector3(0, 0, dist - 0.2)
+        else:
+            cams[1].position = Vector3(0, 0, 5)
+    elif camcycle == 2:
+        camRay.target_position = Vector3(0, 0, -5)
+        if camRay.is_colliding():
+            var dist = camRay.global_position.distance_to(camRay.get_collision_point())
+            cams[2].position = Vector3(0, 0, -dist + 0.2)
+        else:
+            cams[2].position = Vector3(0, 0, -5)
 
     ticks()
