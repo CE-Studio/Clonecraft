@@ -17,7 +17,8 @@ func openOptions():
 
 
 func openMods():
-    var op = load("res://gui/backingpanel.tscn").instantiate()
+    var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
+    op.setExit("gui.generic.back")
     $"/root".add_child(op)
     op.addItem(load("res://gui/warninglabel.tscn").instantiate())
     var l := LinkButton.new()

@@ -1,0 +1,61 @@
+{
+  "gui": {
+    "credits": {
+      "more": "More info..."
+    },
+    "gameplay": {
+      "achivements": "Achivements...",
+      "back": "Back to Game",
+      "desktop_quit": "Quit to Desktop",
+      "menu_quit": "Quit to Menu",
+      "pause_menu_title": "Game Menu",
+      "statistics": "Statistics...",
+      "wait_for_chunks": "Waiting for chunks to load..."
+    },
+    "generic": {
+      "back": "Back",
+      "disable": "Disable",
+      "enable": "Enable",
+      "options": "Options...",
+      "support": "Support devs!"
+    },
+    "title": {
+      "mod_manager": "Mod Manager...",
+      "quit": "Quit to Desktop",
+      "singleplayer": "Singleplayer game..."
+    }
+  },
+  "options": {
+    "advanced": {
+      "debug": {
+        "show_updates": "Show Block Updates"
+      },
+      "debug_folder": "Debug..."
+    },
+    "advanced_folder": "Advanced...",
+    "input": {
+      "invert_mouse_x": "Invert Mouse X",
+      "invert_mouse_y": "Invert Mouse Y",
+      "mouse_x_sensitivity": "Mouse X Sensitivity",
+      "mouse_y_sensitivity": "Mouse Y Sensitivity"
+    },
+    "input_folder": "Input Settings...",
+    "ui": {
+      "auto": "Scale GUI Automatically",
+      "scale": "GUI Scale"
+    },
+    "ui_folder": "GUI Settings...",
+    "video": {
+      "fov": "Field of Veiw",
+      "fps_cap": "Framerate Limit",
+      "vsync": "Use V-Sync"
+    },
+    "video_folder": "Video Settings..."
+  },
+  "scaling": {
+    "line1": "Large screen size detected!",
+    "line2": "Would you like to enable automatic GUI scaling?",
+    "line3": "This window is using the automatic scale",
+    "line4": "Your choice can be changed later in settings"
+  }
+}

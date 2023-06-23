@@ -1921,16 +1921,22 @@ layout_mode = 2
 layout_mode = 2
 text = "&&Large screen size detected!&&"
 horizontal_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"scaling.line1"
 
 [node name="Label2" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "&&Would you like to enable automatic GUI scaling?&&"
 horizontal_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"scaling.line2"
 
 [node name="Label4" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "&&This window is using the automatic scale&&"
 horizontal_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"scaling.line3"
 
 [node name="Control" type="Control" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1.45519e-11, 30)
@@ -1940,6 +1946,8 @@ layout_mode = 2
 layout_mode = 2
 text = "&&Your choice can be changed later in settings&&"
 horizontal_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"scaling.line4"
 
 [node name="Control2" type="Control" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1.45519e-11, 30)
@@ -1952,11 +1960,15 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "&&Enable&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.generic.enable"
 
 [node name="Button2" type="Button" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "&&Disable&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.generic.disable"
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)

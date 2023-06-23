@@ -26,9 +26,9 @@ func tickSettings() -> void:
 func spawnMenu(content := settings):
     var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
     if content == settings:
-        op.setExit("gui.back", tickSettings)
+        op.setExit("gui.generic.back", tickSettings)
     else:
-        op.setExit("gui.back")
+        op.setExit("gui.generic.back")
     $"/root".add_child(op)
     for i in content:
         if i["type"] == "folder":
