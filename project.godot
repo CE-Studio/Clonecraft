@@ -40,6 +40,8 @@ input/invert_mouse_y=false
 input/mouse_x_sensitivity=0.0
 input/mouse_y_sensitivity=0.0
 debug/show_updates=true
+ui/auto_scale=false
+ui/scale=0.0
 
 [gui]
 

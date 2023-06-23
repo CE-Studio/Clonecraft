@@ -23,6 +23,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 step = 0.01
+allow_greater = true
+allow_lesser = true
 
 [node name="SpinBox" type="SpinBox" parent="."]
 custom_minimum_size = Vector2(100, 1.45519e-11)

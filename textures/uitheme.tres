@@ -23,7 +23,6 @@ thickness = 2
 
 [resource]
 default_font = ExtResource("1_spyui")
-Button/font_sizes/font_sizee = 7
 Button/styles/disabled = ExtResource("1_qfc4k")
 Button/styles/focus = ExtResource("2_3x48p")
 Button/styles/hover = ExtResource("2_vbr7h")

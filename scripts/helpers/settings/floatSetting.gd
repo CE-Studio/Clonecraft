@@ -3,8 +3,8 @@ class_name FloatSetting
 
 
 var iname:StringName
-var min:float
-var max:float
+var minv:float
+var maxv:float
 var default:float
 var path:StringName
 var current:float
@@ -13,11 +13,13 @@ var current:float
 func init(i:Dictionary) -> void:
     iname = i["name"]
     $Label.text = Translator.translate(iname)
-    min = i["slidemin"]
-    max = i["slidemax"]
+    minv = i["slidemin"]
+    maxv = i["slidemax"]
     default = i["default"]
     path = i["path"]
     current = ProjectSettings.get_setting_with_override(path)
+    $HSlider.min_value = minv
+    $HSlider.max_value = maxv
     $HSlider.value = current
     $SpinBox.value = current
     $HSlider.connect("value_changed", changeVal)

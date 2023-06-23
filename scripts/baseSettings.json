@@ -62,6 +62,26 @@
         ]
     },
     {
+        "name": "options.ui_folder",
+        "type": "folder",
+        "content": [
+            {
+                "name": "options.ui.scale",
+                "type": "float",
+                "slidemin": 0.0,
+                "slidemax": 10.0,
+                "default": 1.0,
+                "path": "gameplay/ui/scale"
+            },
+            {
+                "name": "options.ui.auto",
+                "type": "bool",
+                "default": false,
+                "path": "gameplay/ui/auto_scale"
+            }
+        ]
+    },
+    {
         "name": "options.advanced_folder",
         "type": "folder",
         "content": [
