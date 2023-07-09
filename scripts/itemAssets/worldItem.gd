@@ -25,7 +25,7 @@ func _process(delta):
     _point.rotate_y(delta)
     _timer += delta
     _point.position.y = (sin(_timer) / 5) + 0.2
-    
+
     if despawnTime > 0:
         if _timer > despawnTime:
             queue_free()

@@ -27,6 +27,7 @@ var _addingBlock := false
 var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
 var _udisp:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
 var _tool:VoxelToolTerrain
+var _newmodel:VoxelBlockyModel
 
 
 func getBlockID(id:String) -> BlockInfo:
@@ -49,8 +50,8 @@ func runRandomTicks(pos, rawID) -> void:
     var block:BlockInfo = blockList[rawID]
     if block.tickable:
         block.tickCB.call(pos)
-        
-        
+
+
 func runBlockUpdates() -> void:
     blockUpdates = pendingBlockUpdates
     pendingBlockUpdates = []
@@ -128,13 +129,22 @@ func log(id:String, message:String) -> String:
     return out
 
 
-func startBlockRegister(blockID:String) -> VoxelBlockyModel:
+func startBlockRegister(blockID:String, type:Voxdat.vox) -> VoxelBlockyModel:
     assert(not(_addingBlock), "You can only register one block at a time!")
     _addingBlock = true
     idCounter += 1
-    blockLibrary.voxel_count = idCounter
-    var hhh := blockLibrary.create_voxel(idCounter - 1, blockID)
-    return(hhh)
+    #blockLibrary.voxel_count = idCounter
+    #var hhh := blockLibrary.create_voxel(idCounter - 1, blockID)
+    match type:
+        0:
+            _newmodel = VoxelBlockyModelCube.new()
+            _newmodel.atlas_size_in_tiles = Vector2i(10, 10)
+        1:
+            _newmodel = VoxelBlockyModelMesh.new()
+        2:
+            _newmodel = VoxelBlockyModelEmpty.new()
+
+    return(_newmodel)
 
 
 func endBlockRegister(blockInfo:BlockInfo):
@@ -142,6 +152,7 @@ func endBlockRegister(blockInfo:BlockInfo):
     _addingBlock = false
     blockList.append(blockInfo)
     blockIDlist[blockInfo.fullID] = blockList.size() - 1
+    blockLibrary.add_model(_newmodel)
     print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '" + blockInfo.fullID + "'")
 
 
@@ -153,8 +164,7 @@ func setup():
     terrain = $/root/Node3D/VoxelTerrain
     _tool = terrain.get_voxel_tool()
     blockLibrary.atlas_size = 10
-    var airModel = startBlockRegister("clonecraft:air")
-    airModel.geometry_type = VoxelBlockyModel.GEOMETRY_NONE
+    var airModel = startBlockRegister("clonecraft:air", Voxdat.vox.GEOMETRY_NONE)
     var airBlock := BlockInfo.new(
             "clonecraft",
             "air",
@@ -216,7 +226,8 @@ func _input(event):
     for i in _inputList:
         i.call(event)
 
-
+#TODO abstract away VoxelBlockyModel to pin the features
+#TODO unit testing for abstractions ig??? feels like the right thing to do for compatibillity
 func quickUniformBlock(
         modID:StringName,
         blockName:StringName,
@@ -227,16 +238,15 @@ func quickUniformBlock(
         explStrength := 5.0,
         tool := &"pickaxe",
         alphaChannel := 0):
-    var model = startBlockRegister(modID + blockName)
-    model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
-    model.collision_enabled_0 = true
+    var model = startBlockRegister(modID + blockName, Voxdat.vox.GEOMETRY_CUBE)
+    model.set_mesh_collision_enabled(0, true)
     model.transparency_index = alphaChannel
-    model.cube_tiles_left   = texturePos
-    model.cube_tiles_right  = texturePos
-    model.cube_tiles_bottom = texturePos
-    model.cube_tiles_top    = texturePos
-    model.cube_tiles_back   = texturePos
-    model.cube_tiles_front  = texturePos
+    model.tile_left   = texturePos
+    model.tile_right  = texturePos
+    model.tile_bottom = texturePos
+    model.tile_top    = texturePos
+    model.tile_back   = texturePos
+    model.tile_front  = texturePos
     model.set_material_override(0, mat)
     var bi = BlockManager.BlockInfo.new(
             modID,
@@ -258,12 +268,12 @@ func quickUniformBlock(
 
 func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := false) -> bool:
     var willSet := force
-    
+
     var i:BlockInfo = blockList[_tool.get_voxel(pos)]
     if not(willSet):
         if i.properties.has(&"replaceable") or blockList[blockIDlist[type]].properties.has(&"air"):
             willSet = true
-    
+
     if willSet:
         if drop:
             var h := i.dropItem
@@ -276,9 +286,9 @@ func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := 
                 else:
                     j = ItemManager.ItemStack.new(h, 1)
                 ItemManager.spawnWorldItem(j, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
-        
+
         _tool.set_voxel(pos, blockIDlist[type])
-        
+
         if update:
             pendingBlockUpdates.append(pos)
             pendingBlockUpdates.append(pos + Vector3i.UP)
@@ -287,11 +297,11 @@ func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := 
             pendingBlockUpdates.append(pos + Vector3i.BACK)
             pendingBlockUpdates.append(pos + Vector3i.LEFT)
             pendingBlockUpdates.append(pos + Vector3i.RIGHT)
-            
+
     return willSet
 
 
 func getBlock(pos:Vector3) -> BlockInfo:
     var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
     return blockList[_tool.get_voxel(npos)]
-    
+

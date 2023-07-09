@@ -8,7 +8,7 @@ func _pressed() -> void:
     op = load("res://gui/backingpanel.tscn").instantiate()
     $"/root".add_child(op)
     disabled = true
-    
+
     var dir := DirAccess.open("res://mods")
     dir.include_navigational = false
     var j := JSON.new()

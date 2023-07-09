@@ -28,16 +28,15 @@ func runGrass(pos):
 
 
 func _makeGB():
-    var model = man.startBlockRegister("clonecraft:grassBlock")
-    model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
-    model.collision_enabled_0 = true
+    var model = man.startBlockRegister("clonecraft:grassBlock", Voxdat.vox.GEOMETRY_CUBE)
+    model.set_mesh_collision_enabled(0, true)
     model.transparency_index = 0
-    model.cube_tiles_left   = Vector2(2, 0)
-    model.cube_tiles_right  = Vector2(2, 0)
-    model.cube_tiles_bottom = Vector2(1, 0)
-    model.cube_tiles_top    = Vector2(3, 0)
-    model.cube_tiles_back   = Vector2(2, 0)
-    model.cube_tiles_front  = Vector2(2, 0)
+    model.tile_left   = Vector2(2, 0)
+    model.tile_right  = Vector2(2, 0)
+    model.tile_bottom = Vector2(1, 0)
+    model.tile_top    = Vector2(3, 0)
+    model.tile_back   = Vector2(2, 0)
+    model.tile_front  = Vector2(2, 0)
     model.set_material_override(0, mat1)
     var bi := BlockManager.BlockInfo.new(
             "clonecraft",
@@ -59,16 +58,15 @@ func _makeGB():
 
 
 func _makeCT():
-    var model = man.startBlockRegister("clonecraft:craftingBench")
-    model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
-    model.collision_enabled_0 = true
+    var model = man.startBlockRegister("clonecraft:craftingBench", Voxdat.vox.GEOMETRY_CUBE)
+    model.set_mesh_collision_enabled(0, true)
     model.transparency_index = 0
-    model.cube_tiles_left   = Vector2(3, 2)
-    model.cube_tiles_right  = Vector2(3, 2)
-    model.cube_tiles_bottom = Vector2(2, 2)
-    model.cube_tiles_top    = Vector2(4, 2)
-    model.cube_tiles_back   = Vector2(3, 2)
-    model.cube_tiles_front  = Vector2(3, 2)
+    model.tile_left   = Vector2(3, 2)
+    model.tile_right  = Vector2(3, 2)
+    model.tile_bottom = Vector2(2, 2)
+    model.tile_top    = Vector2(4, 2)
+    model.tile_back   = Vector2(3, 2)
+    model.tile_front  = Vector2(3, 2)
     model.set_material_override(0, mat1)
     var bi = BlockManager.BlockInfo.new(
             "clonecraft",
@@ -89,16 +87,15 @@ func _makeCT():
 
 
 func _makeOL():
-    var model1 = man.startBlockRegister("clonecraft:logVertOak")
-    model1.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
-    model1.collision_enabled_0 = true
+    var model1 = man.startBlockRegister("clonecraft:logVertOak", Voxdat.vox.GEOMETRY_CUBE)
+    model1.set_mesh_collision_enabled(0, true)
     model1.transparency_index = 0
-    model1.cube_tiles_left   = Vector2(5, 2)
-    model1.cube_tiles_right  = Vector2(5, 2)
-    model1.cube_tiles_bottom = Vector2(1, 3)
-    model1.cube_tiles_top    = Vector2(1, 3)
-    model1.cube_tiles_back   = Vector2(5, 2)
-    model1.cube_tiles_front  = Vector2(5, 2)
+    model1.tile_left   = Vector2(5, 2)
+    model1.tile_right  = Vector2(5, 2)
+    model1.tile_bottom = Vector2(1, 3)
+    model1.tile_top    = Vector2(1, 3)
+    model1.tile_back   = Vector2(5, 2)
+    model1.tile_front  = Vector2(5, 2)
     model1.set_material_override(0, mat1)
     var bi1 = BlockManager.BlockInfo.new(
             "clonecraft",
@@ -117,16 +114,15 @@ func _makeOL():
     )
     man.endBlockRegister(bi1)
 
-    var model2 = man.startBlockRegister("clonecraft:logHoirz1Oak")
-    model2.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
-    model2.collision_enabled_0 = true
+    var model2 = man.startBlockRegister("clonecraft:logHoirz1Oak", Voxdat.vox.GEOMETRY_CUBE)
+    model2.set_mesh_collision_enabled(0, true)
     model2.transparency_index = 0
-    model2.cube_tiles_left   = Vector2(0, 3)
-    model2.cube_tiles_right  = Vector2(0, 3)
-    model2.cube_tiles_bottom = Vector2(5, 2)
-    model2.cube_tiles_top    = Vector2(5, 2)
-    model2.cube_tiles_back   = Vector2(1, 3)
-    model2.cube_tiles_front  = Vector2(1, 3)
+    model2.tile_left   = Vector2(0, 3)
+    model2.tile_right  = Vector2(0, 3)
+    model2.tile_bottom = Vector2(5, 2)
+    model2.tile_top    = Vector2(5, 2)
+    model2.tile_back   = Vector2(1, 3)
+    model2.tile_front  = Vector2(1, 3)
     model2.set_material_override(0, mat1)
     var bi2 = BlockManager.BlockInfo.new(
             "clonecraft",
@@ -145,16 +141,15 @@ func _makeOL():
     )
     man.endBlockRegister(bi2)
 
-    var model3 = man.startBlockRegister("clonecraft:logHoirz2Oak")
-    model3.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
-    model3.collision_enabled_0 = true
+    var model3 = man.startBlockRegister("clonecraft:logHoirz2Oak", Voxdat.vox.GEOMETRY_CUBE)
+    model3.set_mesh_collision_enabled(0, true)
     model3.transparency_index = 0
-    model3.cube_tiles_left   = Vector2(1, 3)
-    model3.cube_tiles_right  = Vector2(1, 3)
-    model3.cube_tiles_bottom = Vector2(0, 3)
-    model3.cube_tiles_top    = Vector2(0, 3)
-    model3.cube_tiles_back   = Vector2(0, 3)
-    model3.cube_tiles_front  = Vector2(0, 3)
+    model3.tile_left   = Vector2(1, 3)
+    model3.tile_right  = Vector2(1, 3)
+    model3.tile_bottom = Vector2(0, 3)
+    model3.tile_top    = Vector2(0, 3)
+    model3.tile_back   = Vector2(0, 3)
+    model3.tile_front  = Vector2(0, 3)
     model3.set_material_override(0, mat1)
     var bi3 = BlockManager.BlockInfo.new(
             "clonecraft",

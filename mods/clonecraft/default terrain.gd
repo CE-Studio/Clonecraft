@@ -1,6 +1,6 @@
 
 class gen:
-    var supBuf := VoxelBuffer.new() 
+    var supBuf := VoxelBuffer.new()
     var bounds := Vector3i()
     var pos:Vector3i
     var noise = FastNoise2.new()
@@ -12,8 +12,8 @@ class gen:
     func initSupBuf(size:Vector3i) -> void:
         supBuf.create(size.x, size.y + (MARGIN * 2), size.z)
         bounds = supBuf.get_size()
-                
-    
+
+
     func setSupBuf(x:int, y:int, z:int, val:int, global := true) -> void:
         if global:
             x = (x) - pos.x
@@ -21,7 +21,7 @@ class gen:
             z = (z) - pos.z
         supBuf.set_voxel(val, x, y, z)
 
-    
+
     func getSupBuf(x:int, y:int, z:int, global := true) -> int:
         if global:
             x = (x) - pos.x
@@ -60,17 +60,17 @@ class gen:
                 for iy in bounds.y:
                     var iiy = bounds.y - iy - 1
                     setSupBuf(ix, iiy, iz, genSolid(ix + (pos.x), iiy + (pos.y - MARGIN), iz + (pos.z)), false)
-    
-    
+
+
     func blit(buf:VoxelBuffer):
         buf.copy_channel_from_area(
-            supBuf, 
-            Vector3i(0, MARGIN, 0), 
+            supBuf,
+            Vector3i(0, MARGIN, 0),
             Vector3i(bounds.x, bounds.y - MARGIN, bounds.z),
             Vector3i.ZERO,
             0
         )
-                    
+
 
     func _generate_block(buf:VoxelBuffer, rpos:Vector3i, _lod:int) -> void:
         pos = rpos

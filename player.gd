@@ -22,7 +22,7 @@ var moveDist := 0.0
 var animCurSpeed := 0.0
 var tickRange := 100
 var tickNumber := 512
-var world:WorldControl 
+var world:WorldControl
 
 var abillities := {
     "allowFlight":false,
@@ -154,21 +154,21 @@ func _physics_process(delta):
     else:
         velocity.x = move_toward(velocity.x, 0, SPEED)
         velocity.z = move_toward(velocity.z, 0, SPEED)
-    
+
     if not voxelTool.is_area_editable(AABB(position + (velocity * delta), Vector3.ONE)):
         $"/root/Node3D".startWait(position + (velocity * delta), ((velocity * delta) * 2))
         if velocity == Vector3.ZERO:
             print("bruh")
         velocity = Vector3.ZERO
         return
-    
+
     var h := BlockManager.getBlock(position + (velocity * delta))
-    if not h.properties.has(&"incompleteHitbox"): 
+    if not h.properties.has(&"incompleteHitbox"):
         if not world.raycheck(((velocity * delta) * 2)):
             world.startWait(position + (velocity * delta), ((velocity * delta) * 2))
             velocity = Vector3.ZERO
             return
-    
+
     move_and_slide()
     moveDist += ((abs(velocity.x) + abs(velocity.z)) * delta)
     animCurSpeed = lerpf(animCurSpeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)
@@ -183,7 +183,7 @@ func _physics_process(delta):
         blockOutline.position = Vector3(lookingAt.position) + Vector3(0.5, 0.5, 0.5)
     else:
         blockOutline.hide()
-        
+
     if camcycle == 0:
         pass
     elif camcycle == 1:

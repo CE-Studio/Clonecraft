@@ -25,7 +25,7 @@ func changeVal(newval:bool) -> void:
     $CheckButton.button_pressed = newval
     $Button.disabled = (current == default)
     ProjectSettings.set_setting(path, newval)
-    
-    
+
+
 func reset() -> void:
     changeVal(default)

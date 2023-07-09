@@ -33,7 +33,7 @@ func waitForChunk():
                 p.position += Vector3(0, 1.1, 0)
             elif not BlockManager.getBlock(p.position + Vector3.DOWN).properties.has(&"incompleteHitbox"):
                 p.position += Vector3(0, 1.1, 0)
-                
+
 
 func startWait(pos:Vector3, rel:Vector3):
     waiting = true

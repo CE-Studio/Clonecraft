@@ -34,7 +34,7 @@ func changeVal(newval:float) -> void:
     $SpinBox.value = newval
     $Button.disabled = (current == default)
     ProjectSettings.set_setting(path, newval)
-    
-    
+
+
 func reset() -> void:
     changeVal(default)

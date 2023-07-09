@@ -1,8 +1,8 @@
 extends Node
 
-#TODO swap to godot's builtin settings system
+
 #TODO better version system
-const VERSION = "Alpha 0.0.1"
+const VERSION = "Alpha 0.0.2"
 
 var settings := []
 var tick := 0

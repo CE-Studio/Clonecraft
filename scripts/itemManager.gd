@@ -66,7 +66,7 @@ func simpleItemModel():
 func simpleItem() -> Item:
     var nitem := Item.new(Mesh.new())
     return nitem
-    
+
 
 func spawnWorldItem(itemStack:ItemStack, pos:Vector3, vel:Vector3 = Vector3(0, 2, 0)) -> WorldItem:
     var nitem:WorldItem = witem.instantiate()

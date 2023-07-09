@@ -48,25 +48,20 @@ viewport_path = NodePath("itemRenderLayer")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g08o8"]
 bg_color = Color(0, 0, 0, 0.2)
 
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4e7cf"]
+[sub_resource type="VoxelBlockyModelEmpty" id="VoxelBlockyModelEmpty_qrg2f"]
 
-[sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_6qjqm"]
-geometry_type = 1
-collision_aabbs = Array[AABB]([AABB(0, 0, 0, 1, 1, 1)])
-cube_geometry_padding_y = null
-cube_tiles_left = Vector2(5, 5)
-cube_tiles_right = Vector2(5, 5)
-cube_tiles_bottom = Vector2(5, 5)
-cube_tiles_top = Vector2(5, 5)
-cube_tiles_back = Vector2(5, 5)
-cube_tiles_front = Vector2(5, 5)
+[sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_bldsa"]
 material_override_0 = ExtResource("3_cx0vp")
-collision_enabled_0 = true
+atlas_size_in_tiles = Vector2i(10, 10)
+tile_left = Vector2i(5, 5)
+tile_right = Vector2i(5, 5)
+tile_bottom = Vector2i(5, 5)
+tile_top = Vector2i(5, 5)
+tile_back = Vector2i(5, 5)
+tile_front = Vector2i(5, 5)
 
 [sub_resource type="VoxelBlockyLibrary" id="VoxelBlockyLibrary_qtsb8"]
-atlas_size = 10
-voxels/0 = SubResource("VoxelBlockyModel_4e7cf")
-voxels/1 = SubResource("VoxelBlockyModel_6qjqm")
+models = Array[VoxelBlockyModel]([SubResource("VoxelBlockyModelEmpty_qrg2f"), SubResource("VoxelBlockyModelCube_bldsa")])
 
 [sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_h45n1"]
 library = SubResource("VoxelBlockyLibrary_qtsb8")
