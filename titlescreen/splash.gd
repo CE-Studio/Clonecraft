@@ -13,8 +13,7 @@ func _ready():
     var stat := j.parse(f.get_as_text())
     f.close()
     if stat == OK:
-        for i in j.get_data():
-            splashes.append(i)
+        splashes.append_array(j.get_data())
     else:
         splashes = ["Splash error!"]
     ch = get_child(0)

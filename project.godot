@@ -24,6 +24,7 @@ BlockManager="*res://scripts/blockManager.gd"
 ItemManager="*res://scripts/itemManager.gd"
 UiManager="*res://scripts/uiManager.gd"
 SettingManager="*res://scripts/settingManager.gd"
+Translator="*res://scripts/translation.gd"
 
 [editor_plugins]
 
@@ -31,14 +32,20 @@ enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [gameplay]
 
-video/fov=0.0
-video/fov_max=0.0
-video/fov_min=0.0
-video/use_vsync=false
+video/fov=50.0
+video/use_vsync=true
 video/framerate_cap=0
 input/invert_mouse_x=false
 input/invert_mouse_y=false
-debug/showUpdates=true
+input/mouse_x_sensitivity=0.0
+input/mouse_y_sensitivity=0.0
+debug/show_updates=true
+ui/auto_scale=false
+ui/scale=0.0
+
+[gui]
+
+theme/custom="res://textures/uitheme.tres"
 
 [importer_defaults]
 
@@ -93,6 +100,11 @@ game_sneak={
 game_sprint={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194326,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+game_thirdperson={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":0,"key_label":4194336,"unicode":0,"echo":false,"script":null)
 ]
 }
 

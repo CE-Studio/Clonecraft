@@ -1,23 +1,52 @@
-[gd_scene load_steps=27 format=3 uid="uid://dq6mys81fg3pj"]
+[gd_scene load_steps=54 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
+[ext_resource type="Script" path="res://scripts/worldControl.gd" id="1_ug7a2"]
 [ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
 [ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="4_auhxw"]
-[ext_resource type="VoxelGeneratorGraph" uid="uid://b3odtwoui0u6g" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
+[ext_resource type="VoxelGeneratorScript" uid="uid://bvjxaj2q5axx0" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
+[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_i3vlu"]
 [ext_resource type="Material" path="res://textures/handmat.tres" id="9_dfanb"]
 [ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="11_dq7n1"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="Script" path="res://scripts/itemRenderLayerSize.gd" id="14_wt5ed"]
+[ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="15_cbvca"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
+[ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="16_1bgru"]
+[ext_resource type="ArrayMesh" uid="uid://dd3u5ku213cue" path="res://titlescreen/dergparts/derg_back_frill.obj" id="17_ue5v2"]
+[ext_resource type="ArrayMesh" uid="uid://okvc8c54lgqu" path="res://titlescreen/dergparts/derg_head.obj" id="18_sykbi"]
+[ext_resource type="ArrayMesh" uid="uid://dx46ghs6st5mf" path="res://titlescreen/dergparts/derg_snout.obj" id="19_o8hla"]
+[ext_resource type="ArrayMesh" uid="uid://ctt7g2gdeea1p" path="res://titlescreen/dergparts/derg_r_ear_frill.obj" id="20_38bh5"]
+[ext_resource type="ArrayMesh" uid="uid://dcq0ai8gjbr2m" path="res://titlescreen/dergparts/derg_l_ear_frill.obj" id="21_2cp5x"]
+[ext_resource type="ArrayMesh" uid="uid://codei873rk6ta" path="res://titlescreen/dergparts/derg_l_horn.obj" id="22_dbenj"]
+[ext_resource type="ArrayMesh" uid="uid://cv0vcb3w14e2j" path="res://titlescreen/dergparts/derg_r_horn.obj" id="23_ncbhd"]
+[ext_resource type="ArrayMesh" uid="uid://cf4xq17wmuklp" path="res://titlescreen/dergparts/derg_head_frill.obj" id="24_wm87l"]
+[ext_resource type="ArrayMesh" uid="uid://c87dbj6vkpg01" path="res://titlescreen/dergparts/derg_l_arm.obj" id="25_qeyak"]
+[ext_resource type="ArrayMesh" uid="uid://dlngwfhfrsuxu" path="res://titlescreen/dergparts/derg_l_larm.obj" id="26_hexen"]
+[ext_resource type="ArrayMesh" uid="uid://bnvjbxcdognnx" path="res://titlescreen/dergparts/derg_r_arm.obj" id="27_tv6dk"]
+[ext_resource type="ArrayMesh" uid="uid://dykveklokhs4v" path="res://titlescreen/dergparts/derg_r_larm.obj" id="28_h3po5"]
+[ext_resource type="ArrayMesh" uid="uid://d4lhp5wgsjpha" path="res://titlescreen/dergparts/derg_r_leg.obj" id="29_clglw"]
+[ext_resource type="ArrayMesh" uid="uid://d3nkr3gdb4080" path="res://titlescreen/dergparts/derg_r_lleg.obj" id="30_uguv8"]
+[ext_resource type="ArrayMesh" uid="uid://dtdgt12xie76b" path="res://titlescreen/dergparts/derg_r_ankle.obj" id="31_0apmt"]
+[ext_resource type="ArrayMesh" uid="uid://deacr6m1xpo37" path="res://titlescreen/dergparts/derg_r_foot.obj" id="32_n3lw8"]
+[ext_resource type="ArrayMesh" uid="uid://dnv2d6yr1hv76" path="res://titlescreen/dergparts/derg_l_leg.obj" id="33_gfrg6"]
+[ext_resource type="ArrayMesh" uid="uid://82gusc61qlx7" path="res://titlescreen/dergparts/derg_l_lleg.obj" id="34_5dupy"]
+[ext_resource type="ArrayMesh" uid="uid://b577xtlaf040g" path="res://titlescreen/dergparts/derg_l_ankle.obj" id="35_34pmr"]
+[ext_resource type="ArrayMesh" uid="uid://dy4v7tg0yhrfq" path="res://titlescreen/dergparts/derg_l_foot.obj" id="36_pax3h"]
+[ext_resource type="ArrayMesh" uid="uid://htxvn0t1v5aj" path="res://titlescreen/dergparts/derg_tail_main.obj" id="37_k72ik"]
+[ext_resource type="ArrayMesh" uid="uid://dfjvyji3gwt5y" path="res://titlescreen/dergparts/derg_tail_frill.obj" id="38_6fv3c"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yoru6"]
 viewport_path = NodePath("itemRenderLayer")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g08o8"]
+bg_color = Color(0, 0, 0, 0.2)
 
 [sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_4e7cf"]
 
@@ -64,7 +93,8 @@ render_priority = 0
 shader = ExtResource("15_ji8mt")
 
 [node name="Node3D" type="Node3D"]
-process_mode = 1
+process_mode = 3
+script = ExtResource("1_ug7a2")
 
 [node name="Control" type="Control" parent="."]
 process_mode = 3
@@ -107,9 +137,130 @@ offset_bottom = 23.0
 script = ExtResource("2_yvkcu")
 metadata/_edit_layout_mode = 1
 
+[node name="waitpanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g08o8")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/waitpanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = 10.0
+offset_right = 94.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/waitpanel/CenterContainer"]
+layout_mode = 2
+text = "&&waiting on chunks&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.wait_for_chunks"
+
+[node name="pausepanel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g08o8")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/pausepanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/pausepanel/CenterContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Control/pausepanel/CenterContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "&&game menu&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.pause_menu_title"
+
+[node name="Control" type="Control" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1.45519e-11, 60)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "&&back to game&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.back"
+
+[node name="Button2" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 1.45519e-11)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&options&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.generic.options"
+
+[node name="Button3" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 1.45519e-11)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&achivements&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.achivements"
+
+[node name="Button6" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 1.45519e-11)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&statistics&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.statistics"
+
+[node name="Control2" type="Control" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1.45519e-11, 60)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 1.45519e-11)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&quit to menu&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.menu_quit"
+
+[node name="Button5" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 1.45519e-11)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&quit to desktop&&"
+script = ExtResource("5_i3vlu")
+dictKey = &"gui.gameplay.desktop_quit"
+
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
+process_mode = 3
+process_priority = -1
 generator = ExtResource("4_brcpd")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
+collision_layer = 3
+run_stream_in_editor = false
 script = ExtResource("4_828ak")
 
 [node name="blockOutline" type="MeshInstance3D" parent="."]
@@ -118,10 +269,13 @@ material_override = SubResource("StandardMaterial3D_oxvjf")
 mesh = ExtResource("5_1o3wh")
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502024, 124.832, -32.3555)
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 128, 0)
+disable_mode = 1
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+platform_on_leave = 1
 script = ExtResource("2_tcydh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
@@ -131,10 +285,27 @@ shape = SubResource("BoxShape3D_0d76e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688957, 0)
 
 [node name="Camera3D" type="Camera3D" parent="player/head"]
+process_mode = 3
 
 [node name="AudioListener3D" type="AudioListener3D" parent="player/head/Camera3D"]
+process_mode = 3
 
 [node name="VoxelViewer" type="VoxelViewer" parent="player/head/Camera3D"]
+process_mode = 3
+
+[node name="RayCast3D" type="RayCast3D" parent="player/head/Camera3D"]
+process_mode = 3
+target_position = Vector3(1.45519e-11, 1.45519e-11, -5)
+collision_mask = 2
+hit_from_inside = true
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 1
+
+[node name="Camera3D" type="Camera3D" parent="player/head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Camera3D2" type="Camera3D" parent="player/head/Camera3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -5)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
@@ -170,9 +341,236 @@ transform = Transform3D(2000, 0, 0, 0, -2000, 0.000301992, 0, -0.000301992, -200
 material_override = ExtResource("11_dq7n1")
 mesh = SubResource("PlaneMesh_5tc7k")
 
+[node name="derg" type="Node3D" parent="player"]
+transform = Transform3D(0.88182, 0, 0, 0, 0.88182, 0, 0, 0, 0.88182, 0, -0.905, 0)
+visible = false
+
+[node name="Node2" type="Node3D" parent="player/derg"]
+
+[node name="bone2" type="Node3D" parent="player/derg/Node2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+
+[node name="cube" type="MeshInstance3D" parent="player/derg/Node2/bone2"]
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("16_1bgru")
+skeleton = NodePath("")
+
+[node name="cube2" type="MeshInstance3D" parent="player/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.3125, 0.25)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("17_ue5v2")
+skeleton = NodePath("")
+
+[node name="head" type="Node3D" parent="player/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.625, 0)
+
+[node name="cube3" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("18_sykbi")
+skeleton = NodePath("")
+
+[node name="cube4" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("19_o8hla")
+skeleton = NodePath("")
+
+[node name="cube5" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
+transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0.25, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("20_38bh5")
+skeleton = NodePath("")
+
+[node name="cube6" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
+transform = Transform3D(0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, -0.25, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("21_2cp5x")
+skeleton = NodePath("")
+
+[node name="cube7" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
+transform = Transform3D(0.92388, 7.45058e-09, -0.382683, 0.146447, 0.92388, 0.353553, 0.353553, -0.382683, 0.853553, -0.25, 0.5, -0.0625)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("22_dbenj")
+skeleton = NodePath("")
+
+[node name="cube8" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
+transform = Transform3D(0.92388, -7.45058e-09, 0.382683, -0.146447, 0.92388, 0.353553, -0.353553, -0.382683, 0.853553, 0.25, 0.5, -0.0625)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("23_ncbhd")
+skeleton = NodePath("")
+
+[node name="cube9" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("24_wm87l")
+skeleton = NodePath("")
+
+[node name="larm" type="Node3D" parent="player/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.625, 0)
+
+[node name="cube10" type="MeshInstance3D" parent="player/derg/Node2/bone2/larm"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.25, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("25_qeyak")
+skeleton = NodePath("")
+
+[node name="bone6" type="Node3D" parent="player/derg/Node2/bone2/larm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, -0.375, 0.125)
+
+[node name="cube11" type="MeshInstance3D" parent="player/derg/Node2/bone2/larm/bone6"]
+transform = Transform3D(0, 1.82121e-17, -1, 8.27181e-25, -1, -1.82121e-17, -1, 0, 0, 0, 0.375, -0.125)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("26_hexen")
+skeleton = NodePath("")
+
+[node name="rarm" type="Node3D" parent="player/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249999, 0.625, 0)
+
+[node name="cube12" type="MeshInstance3D" parent="player/derg/Node2/bone2/rarm"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, 0, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("27_tv6dk")
+skeleton = NodePath("")
+
+[node name="bone4" type="Node3D" parent="player/derg/Node2/bone2/rarm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -0.375, 0.125)
+
+[node name="cube13" type="MeshInstance3D" parent="player/derg/Node2/bone2/rarm/bone4"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.125, 0.375, -0.125)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("28_h3po5")
+skeleton = NodePath("")
+
+[node name="rleg" type="Node3D" parent="player/derg/Node2/bone2"]
+transform = Transform3D(0.996195, -0.0188639, -0.0850897, 0, 0.976296, -0.216439, 0.0871557, 0.215616, 0.972581, 0.125, 0, 0)
+
+[node name="cube14" type="MeshInstance3D" parent="player/derg/Node2/bone2/rleg"]
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("29_clglw")
+skeleton = NodePath("")
+
+[node name="bone8" type="Node3D" parent="player/derg/Node2/bone2/rleg"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
+
+[node name="cube15" type="MeshInstance3D" parent="player/derg/Node2/bone2/rleg/bone8"]
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("30_uguv8")
+skeleton = NodePath("")
+
+[node name="bone9" type="Node3D" parent="player/derg/Node2/bone2/rleg/bone8"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
+
+[node name="cube16" type="MeshInstance3D" parent="player/derg/Node2/bone2/rleg/bone8/bone9"]
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("31_0apmt")
+skeleton = NodePath("")
+
+[node name="bone10" type="Node3D" parent="player/derg/Node2/bone2/rleg/bone8/bone9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
+
+[node name="cube17" type="MeshInstance3D" parent="player/derg/Node2/bone2/rleg/bone8/bone9/bone10"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("32_n3lw8")
+skeleton = NodePath("")
+
+[node name="lleg" type="Node3D" parent="player/derg/Node2/bone2"]
+transform = Transform3D(0.996195, 0.0188639, 0.0850897, 0, 0.976296, -0.216439, -0.0871557, 0.215616, 0.972581, -0.125, 0, 0)
+
+[node name="cube18" type="MeshInstance3D" parent="player/derg/Node2/bone2/lleg"]
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("33_gfrg6")
+skeleton = NodePath("")
+
+[node name="bone12" type="Node3D" parent="player/derg/Node2/bone2/lleg"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
+
+[node name="cube19" type="MeshInstance3D" parent="player/derg/Node2/bone2/lleg/bone12"]
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("34_5dupy")
+skeleton = NodePath("")
+
+[node name="bone13" type="Node3D" parent="player/derg/Node2/bone2/lleg/bone12"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
+
+[node name="cube20" type="MeshInstance3D" parent="player/derg/Node2/bone2/lleg/bone12/bone13"]
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("35_34pmr")
+skeleton = NodePath("")
+
+[node name="bone14" type="Node3D" parent="player/derg/Node2/bone2/lleg/bone12/bone13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
+
+[node name="cube21" type="MeshInstance3D" parent="player/derg/Node2/bone2/lleg/bone12/bone13/bone14"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("36_pax3h")
+skeleton = NodePath("")
+
+[node name="tail" type="Node3D" parent="player/derg/Node2/bone2"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.25, 0.125)
+
+[node name="cube22" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail"]
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("37_k72ik")
+skeleton = NodePath("")
+
+[node name="cube23" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("38_6fv3c")
+skeleton = NodePath("")
+
+[node name="tail2" type="Node3D" parent="player/derg/Node2/bone2/tail"]
+transform = Transform3D(1, 0, 0, 0, 0.965927, 0.258819, 0, -0.258819, 0.965927, -7.62939e-06, -0.499999, -0.250001)
+
+[node name="cube24" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("37_k72ik")
+skeleton = NodePath("")
+
+[node name="cube25" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("38_6fv3c")
+skeleton = NodePath("")
+
+[node name="tail3" type="Node3D" parent="player/derg/Node2/bone2/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 0.923879, 0.382683, 0, -0.382683, 0.923879, -9.53674e-07, -0.500001, -4.76837e-07)
+
+[node name="cube26" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2/tail3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("37_k72ik")
+skeleton = NodePath("")
+
+[node name="cube27" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2/tail3"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("38_6fv3c")
+skeleton = NodePath("")
+
+[node name="tail4" type="Node3D" parent="player/derg/Node2/bone2/tail/tail2/tail3"]
+transform = Transform3D(0.999998, 0, 0, 0, 0.923878, 0.382683, 0, -0.382683, 0.923878, 0, -0.499999, -1.19209e-07)
+
+[node name="cube28" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2/tail3/tail4"]
+transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 2.84217e-14, 0, -2.84217e-14, 1, 0, 0, 0.25)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("37_k72ik")
+skeleton = NodePath("")
+
+[node name="cube29" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2/tail3/tail4"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("15_cbvca")
+mesh = ExtResource("38_6fv3c")
+skeleton = NodePath("")
+
 [node name="WorldEnvironment" parent="." instance=ExtResource("12_8tndb")]
 
 [node name="itemRenderLayer" type="SubViewport" parent="."]
+process_mode = 3
 own_world_3d = true
 transparent_bg = true
 script = ExtResource("14_wt5ed")

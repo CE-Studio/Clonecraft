@@ -1,16 +1,18 @@
-[gd_scene load_steps=81 format=3 uid="uid://bskwsbaeexgu8"]
+[gd_scene load_steps=84 format=3 uid="uid://bskwsbaeexgu8"]
 
 [ext_resource type="Material" uid="uid://blu8to0ma63w2" path="res://titlescreen/title.tres" id="1_1krtb"]
 [ext_resource type="ArrayMesh" uid="uid://6u66lelyo5fc" path="res://titlescreen/cclogo.obj" id="2_dxce3"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="3_7yac3"]
 [ext_resource type="Script" path="res://titlescreen/derg.gd" id="4_m3okf"]
 [ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="4_q133x"]
+[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_runjh"]
 [ext_resource type="Script" path="res://titlescreen/supportButton.gd" id="6_4woye"]
 [ext_resource type="Script" path="res://titlescreen/splash.gd" id="6_nhbko"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="6_site2"]
+[ext_resource type="Script" path="res://titlescreen/scalepanel.gd" id="7_g3200"]
+[ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="7_mhwh7"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="7_qty17"]
 [ext_resource type="Script" path="res://titlescreen/cloudmove.gd" id="8_xt62g"]
-[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="10_2gb0e"]
 [ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="11_bylin"]
 [ext_resource type="Script" path="res://titlescreen/mainButtons.gd" id="11_j4u0l"]
 [ext_resource type="Script" path="res://titlescreen/idLabel.gd" id="12_bmkwy"]
@@ -1307,6 +1309,9 @@ _data = {
 "titlelean": SubResource("Animation_cp1hy")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5tr7"]
+bg_color = Color(0, 0, 0, 0.443137)
+
 [sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_t3s43"]
 
 [sub_resource type="VoxelBlockyModel" id="VoxelBlockyModel_8fijb"]
@@ -1804,7 +1809,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("10_2gb0e")
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 layout_mode = 0
@@ -1827,25 +1831,30 @@ script = ExtResource("11_j4u0l")
 [node name="Play" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("10_2gb0e")
-text = "Singleplayer Game"
+text = "&&Singleplayer Game&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.title.singleplayer"
 
 [node name="Options" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("10_2gb0e")
-text = "Options..."
+text = "&&Options...&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.generic.options"
 
 [node name="ModOpts" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("10_2gb0e")
-text = "Mod Manager..."
+text = "&&Mod Manager...&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.title.mod_manager"
 
 [node name="Quit" type="Button" parent="Control/CenterContainer/GridContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-text = "Quit to Desktop"
+text = "&&Quit to Desktop&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.title.quit"
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
@@ -1874,8 +1883,92 @@ offset_right = -3.0
 offset_bottom = -3.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Support devs!"
+text = "&&Support devs!&&"
 script = ExtResource("6_4woye")
+
+[node name="scalepanel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+script = ExtResource("7_g3200")
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/scalepanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = 10.0
+offset_right = 94.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/scalepanel/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_mhwh7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/scalepanel/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "&&Large screen size detected!&&"
+horizontal_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"scaling.line1"
+
+[node name="Label2" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "&&Would you like to enable automatic GUI scaling?&&"
+horizontal_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"scaling.line2"
+
+[node name="Label4" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "&&This window is using the automatic scale&&"
+horizontal_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"scaling.line3"
+
+[node name="Control" type="Control" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1.45519e-11, 30)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "&&Your choice can be changed later in settings&&"
+horizontal_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"scaling.line4"
+
+[node name="Control2" type="Control" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1.45519e-11, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&Enable&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.generic.enable"
+
+[node name="Button2" type="Button" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&Disable&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.generic.disable"
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)
@@ -2158,3 +2251,6 @@ transform = Transform3D(-1.153, 1.4899e-08, 9.96913e-08, 0, 1.14034, -0.170424, 
 material_override = ExtResource("1_1krtb")
 mesh = ExtResource("2_dxce3")
 skeleton = NodePath("../..")
+
+[connection signal="pressed" from="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button" to="Control/scalepanel" method="_on_enable_pressed"]
+[connection signal="pressed" from="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button2" to="Control/scalepanel" method="_on_disabled_pressed"]

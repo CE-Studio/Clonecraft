@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bihkngdemjrb1"]
+
+[ext_resource type="Script" path="res://scripts/helpers/settings/floatSetting.gd" id="1_00ycd"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_30jps"]
+
+[node name="floatSetting" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+columns = 4
+script = ExtResource("1_00ycd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "&&name.name.name&&"
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+step = 0.01
+allow_greater = true
+allow_lesser = true
+
+[node name="SpinBox" type="SpinBox" parent="."]
+custom_minimum_size = Vector2(100, 1.45519e-11)
+layout_mode = 2
+theme_override_icons/updown = SubResource("ImageTexture_30jps")
+step = 0.01
+allow_greater = true
+allow_lesser = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2

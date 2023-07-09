@@ -25,7 +25,12 @@ var _updates:Array[Callable] = []
 var _inputList := []
 var _addingBlock := false
 var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
+var _udisp:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
 var _tool:VoxelToolTerrain
+
+
+func getBlockID(id:String) -> BlockInfo:
+    return blockList[blockIDlist[id]]
 
 
 func addUpdate(c:Callable) -> void:
@@ -37,19 +42,29 @@ func noScript(_pos, _meta) -> void:
 
 
 func runRandomTicks(pos, rawID) -> void:
-    if ProjectSettings.get_setting("gameplay/debug/showUpdates"):
+    if ProjectSettings.get_setting("gameplay/debug/show_updates"):
         var disp:MeshInstance3D = _tdisp.instantiate()
         disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
         terrain.add_child(disp)
     var block:BlockInfo = blockList[rawID]
     if block.tickable:
         block.tickCB.call(pos)
+        
+        
+func runBlockUpdates() -> void:
+    blockUpdates = pendingBlockUpdates
+    pendingBlockUpdates = []
+    for i in blockUpdates:
+        if ProjectSettings.get_setting("gameplay/debug/show_updates"):
+            var disp:MeshInstance3D = _udisp.instantiate()
+            disp.position = (Vector3(i.x, i.y, i.z) + Vector3(0.5, 0.5, 0.5))
+            terrain.add_child(disp)
 
 
 class BlockInfo:
-    var modID:String
-    var nameID:String
-    var fullID:String
+    var modID:StringName
+    var nameID:StringName
+    var fullID:StringName
     var nameReadable:String
     var blockModel:VoxelBlockyModel
     var breakStrength:float
@@ -57,19 +72,19 @@ class BlockInfo:
     var unbreakable:bool
     var scripted:bool
     var blockScript:Callable
-    var toolClass:String
+    var toolClass:StringName
     var tickable := false
     var tickCB:Callable
-    var isAir := false
-    var stepsound:String
-    var placesound:String
-    var breaksound:String
-    var dropItem:String
+    var stepsound:StringName
+    var placesound:StringName
+    var breaksound:StringName
+    var dropItem:StringName
+    var properties:Array[StringName]
 
 
     func _init(
-            fmodID:String,
-            fnameID:String,
+            fmodID:StringName,
+            fnameID:StringName,
             fnameReadable:String,
             fblockModel:VoxelBlockyModel,
             fbreakStrength:float,
@@ -77,11 +92,11 @@ class BlockInfo:
             funbreakable:bool,
             fscripted:bool,
             fscript:Callable,
-            ftoolClass:String,
-            fstepsound:String,
-            fplacesound:String,
-            fbreaksound:String,
-            fdropitem:String = "*"):
+            ftoolClass:StringName,
+            fstepsound:StringName,
+            fplacesound:StringName,
+            fbreaksound:StringName,
+            fdropitem := &"*"):
         modID = fmodID
         nameID = fnameID
         fullID = fmodID + ":" + fnameID
@@ -106,6 +121,7 @@ class BlockInfo:
         blockModel.random_tickable = true
 
 
+@warning_ignore("shadowed_global_identifier")
 func log(id:String, message:String) -> String:
     var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
     print(out)
@@ -155,7 +171,9 @@ func setup():
             "null",
             "null"
     )
-    airBlock.isAir = true
+    airBlock.properties.append(&"air")
+    airBlock.properties.append(&"replaceable")
+    airBlock.properties.append(&"incompleteHitbox")
     endBlockRegister(airBlock)
 
     for i in modsToLoad:
@@ -191,6 +209,7 @@ func _process(delta):
     if loadDone:
         for i in _updates:
             i.call(delta)
+        runBlockUpdates()
 
 
 func _input(event):
@@ -199,14 +218,14 @@ func _input(event):
 
 
 func quickUniformBlock(
-        modID:String,
-        blockName:String,
+        modID:StringName,
+        blockName:StringName,
         readableName:String,
         texturePos:Vector2,
         mat:Material,
         breakStrength := 3.0,
         explStrength := 5.0,
-        tool := "pickaxe",
+        tool := &"pickaxe",
         alphaChannel := 0):
     var model = startBlockRegister(modID + blockName)
     model.geometry_type = VoxelBlockyModel.GEOMETRY_CUBE
@@ -237,6 +256,42 @@ func quickUniformBlock(
     endBlockRegister(bi)
 
 
-func setBlock(pos:Vector3i, type:String, drop := true):
-    if drop:
-        pass
+func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := false) -> bool:
+    var willSet := force
+    
+    var i:BlockInfo = blockList[_tool.get_voxel(pos)]
+    if not(willSet):
+        if i.properties.has(&"replaceable") or blockList[blockIDlist[type]].properties.has(&"air"):
+            willSet = true
+    
+    if willSet:
+        if drop:
+            var h := i.dropItem
+            if h != &"null":
+                var j:ItemManager.ItemStack
+                if h == &"*":
+                    j = ItemManager.ItemStack.new(i.fullID, 1)
+                elif h == &"script":
+                    pass
+                else:
+                    j = ItemManager.ItemStack.new(h, 1)
+                ItemManager.spawnWorldItem(j, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
+        
+        _tool.set_voxel(pos, blockIDlist[type])
+        
+        if update:
+            pendingBlockUpdates.append(pos)
+            pendingBlockUpdates.append(pos + Vector3i.UP)
+            pendingBlockUpdates.append(pos + Vector3i.DOWN)
+            pendingBlockUpdates.append(pos + Vector3i.FORWARD)
+            pendingBlockUpdates.append(pos + Vector3i.BACK)
+            pendingBlockUpdates.append(pos + Vector3i.LEFT)
+            pendingBlockUpdates.append(pos + Vector3i.RIGHT)
+            
+    return willSet
+
+
+func getBlock(pos:Vector3) -> BlockInfo:
+    var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
+    return blockList[_tool.get_voxel(npos)]
+    

@@ -1,0 +1,133 @@
+[gd_resource type="VoxelGeneratorGraph" load_steps=3 format=3 uid="uid://b3odtwoui0u6g"]
+
+[sub_resource type="FastNoise2" id="FastNoise2_of5i1"]
+
+[sub_resource type="FastNoise2" id="FastNoise2_njilm"]
+
+[resource]
+graph_data = {
+"connections": [[65, 0, 62, 1], [64, 0, 62, 2], [63, 0, 62, 0], [62, 0, 46, 0], [62, 0, 39, 0], [58, 0, 57, 0], [57, 0, 54, 0], [59, 0, 58, 1], [1, 0, 48, 0], [1, 0, 63, 0], [2, 0, 51, 0], [2, 0, 65, 0], [20, 0, 23, 1], [46, 0, 50, 0], [47, 0, 61, 1], [52, 0, 51, 1], [23, 0, 21, 0], [61, 0, 45, 0], [61, 0, 52, 0], [3, 0, 64, 0], [3, 0, 47, 0], [39, 0, 57, 2], [45, 0, 46, 1], [48, 0, 61, 0], [21, 0, 59, 2], [21, 0, 58, 2], [50, 0, 23, 0], [51, 0, 20, 0]],
+"nodes": {
+"1": {
+"gui_position": Vector2(64.9766, 229.953),
+"type": "InputX"
+},
+"2": {
+"gui_position": Vector2(64.9766, 309.953),
+"type": "InputY"
+},
+"20": {
+"b": 10.0,
+"gui_position": Vector2(800, 420),
+"type": "Divide"
+},
+"21": {
+"gui_position": Vector2(1080, 320),
+"max": 1.0,
+"min": 0.0,
+"type": "Clamp"
+},
+"23": {
+"gui_position": Vector2(960, 320),
+"type": "Subtract"
+},
+"3": {
+"gui_position": Vector2(64.9766, 389.953),
+"type": "InputZ"
+},
+"39": {
+"gui_position": Vector2(604.977, 89.9533),
+"type": "Abs"
+},
+"45": {
+"gui_position": Vector2(500, 240),
+"max0": 1.0,
+"max1": 5.0,
+"min0": -1.0,
+"min1": 0.0,
+"type": "Remap"
+},
+"46": {
+"gui_position": Vector2(700, 260),
+"type": "Multiply"
+},
+"47": {
+"b": 10.0,
+"gui_position": Vector2(264.977, 449.953),
+"type": "Divide"
+},
+"48": {
+"b": 10.0,
+"gui_position": Vector2(264.977, 229.953),
+"type": "Divide"
+},
+"50": {
+"b": -1.0,
+"gui_position": Vector2(820, 260),
+"type": "Multiply"
+},
+"51": {
+"gui_position": Vector2(660, 420),
+"type": "Subtract"
+},
+"52": {
+"gui_position": Vector2(540, 340),
+"max0": 1.0,
+"max1": 100.0,
+"min0": -1.0,
+"min1": -100.0,
+"type": "Remap"
+},
+"54": {
+"gui_position": Vector2(1540, 180),
+"type": "OutputType"
+},
+"57": {
+"b": 0.0,
+"gui_position": Vector2(1380, 180),
+"threshold": 0.8,
+"type": "Select"
+},
+"58": {
+"a": 0.0,
+"gui_position": Vector2(1220, 180),
+"threshold": 0.5,
+"type": "Select"
+},
+"59": {
+"a": 2.0,
+"b": 1.0,
+"gui_position": Vector2(1060, 60),
+"threshold": 0.8,
+"type": "Select"
+},
+"61": {
+"auto_connect": true,
+"gui_position": Vector2(400, 320),
+"noise": SubResource("FastNoise2_njilm"),
+"type": "FastNoise2_2D"
+},
+"62": {
+"auto_connect": true,
+"gui_position": Vector2(404.977, 29.9533),
+"noise": SubResource("FastNoise2_of5i1"),
+"type": "FastNoise2_3D"
+},
+"63": {
+"b": 2.0,
+"gui_position": Vector2(264.977, -30.0467),
+"type": "Multiply"
+},
+"64": {
+"b": 2.0,
+"gui_position": Vector2(264.977, 129.953),
+"type": "Multiply"
+},
+"65": {
+"b": 2.0,
+"gui_position": Vector2(264.977, 49.9533),
+"type": "Multiply"
+}
+},
+"version": 2
+}
