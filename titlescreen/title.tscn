@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bskwsbaeexgu8"]
+[gd_scene load_steps=85 format=3 uid="uid://bskwsbaeexgu8"]
 
 [ext_resource type="Material" uid="uid://blu8to0ma63w2" path="res://titlescreen/title.tres" id="1_1krtb"]
 [ext_resource type="ArrayMesh" uid="uid://6u66lelyo5fc" path="res://titlescreen/cclogo.obj" id="2_dxce3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="4_q133x"]
 [ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_runjh"]
 [ext_resource type="Script" path="res://titlescreen/supportButton.gd" id="6_4woye"]
+[ext_resource type="Script" path="res://titlescreen/infopanel.gd" id="6_iu8da"]
 [ext_resource type="Script" path="res://titlescreen/splash.gd" id="6_nhbko"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="6_site2"]
 [ext_resource type="Script" path="res://titlescreen/scalepanel.gd" id="7_g3200"]
@@ -1730,6 +1731,51 @@ Engine {version}
 GPLv3 CE Studio. Please distribute!"
 script = ExtResource("12_bmkwy")
 metadata/_edit_layout_mode = 1
+
+[node name="info" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 150.0
+offset_bottom = 150.0
+grow_vertical = 2
+script = ExtResource("6_iu8da")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/info"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -123.0
+offset_right = 633.0
+offset_bottom = -3.0
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("7_mhwh7")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/info/PanelContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/info/PanelContainer/PanelContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/info/PanelContainer/PanelContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/info/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+text = "&&preachy stuff&&"
+autowrap_mode = 3
+script = ExtResource("5_runjh")
+dictKey = &"gui.credits.info"
+
+[node name="LinkButton" type="LinkButton" parent="Control/info/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "GPLv3 license"
+uri = "https://www.gnu.org/licenses/gpl-3.0.en.html"
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 1
