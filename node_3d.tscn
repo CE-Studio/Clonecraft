@@ -129,6 +129,7 @@ expand_mode = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+text = "F3 data"
 script = ExtResource("2_yvkcu")
 metadata/_edit_layout_mode = 1
 
@@ -163,6 +164,7 @@ script = ExtResource("5_i3vlu")
 dictKey = &"gui.gameplay.wait_for_chunks"
 
 [node name="pausepanel" type="Panel" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
