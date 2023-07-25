@@ -1,10 +1,10 @@
 {
-  "author_name": "clarence112",
-  "author_id": "clarence112-0000",
-  "author_note": "",
-  "author_logo": "res://mods/clonecraft/credits/icon.png",
-  "author_banner": "res://textures/missing.png",
-  "author_desc": "Hello! I made the game!",
+  "name": "clarence112",
+  "group": "clarence112-0000",
+  "note": "",
+  "logo": "res://mods/clonecraft/credits/icon.png",
+  "banner": "res://textures/missing.png",
+  "desc": "Hello! I made the game!",
   "support_links": [
     "http://localhost"
   ]

@@ -18,7 +18,7 @@ func _pressed() -> void:
                 var f := FileAccess.open("res://mods/" + i + "/credits/content.json", FileAccess.READ)
                 if j.parse(f.get_as_text()) == OK:
                     var c = j.get_data()
-                    credcontent[c["author_id"]] = c
+                    credcontent[c["group"]] = c
     for i in credcontent:
         var h = credcontent[i]
         var k = dp.instantiate()
