@@ -8,19 +8,19 @@ extends RefCounted
 ## Mods require a [code]registerPhase()[/code] function to load.
 
 ## A shorthand reference to BlockManager.
-var man:BlockManager
+static var man:BlockManager
 ## A premade VoxelTool for the game world.
 #TODO dimenstion support?
-var tool:VoxelToolTerrain
+static var tool:VoxelToolTerrain
 ## A reference to the player.
-var player:Player
+static var player:Player
 ## A reference to the game world.
-var terrain:VoxelTerrain
+static var terrain:VoxelTerrain
 
 
 ## Used to initialize some variables before loading.[br]
 ## Do not override unless you know what you're doing.
-func refman(ref):
+static func refman(ref:BlockManager):
     man = ref
     terrain = man.terrain
     player = man.get_node("/root/Node3D/player")

@@ -186,19 +186,19 @@ func setup():
     airBlock.properties.append(&"incompleteHitbox")
     endBlockRegister(airBlock)
 
+    Mod.refman(self)
     for i in modsToLoad:
         print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Fetching script for mod '" + i + "'...")
         mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
     for i in mods:
         if i.get("MODID") == null:
             print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] One of your mods has no mod ID! It can still load, but this is bad practice. Register phase starting...")
-            i.refman(self)
             if i.has_method("registerPhase"):
                 i.registerPhase()
             print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase done!")
         else:
             print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Beginning register phase for mod '" + i.MODID + "'...")
-            i.refman(self)
+            #i.refman(self)
             if i.has_method("registerPhase"):
                 i.registerPhase()
             print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase for '" + i.MODID + "' done!")

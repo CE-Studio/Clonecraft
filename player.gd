@@ -16,6 +16,7 @@ var cloudmat:StandardMaterial3D
 var cams:Array[Camera3D]
 var camRay:RayCast3D
 var derg:Dictionary
+var terrain:VoxelTerrain
 
 var camcycle := 0
 var moveDist := 0.0
@@ -24,25 +25,17 @@ var tickRange := 100
 var tickNumber := 512
 var world:WorldControl
 
-var abillities := {
-    "allowFlight":false,
-    "isFlying":false,
-    "allowBuild":false
-}
 var fcheck := 1.0
 
 
 func _ready():
-    SPEED = 0.5
-    JUMP_VELOCITY = 8.0
-    TERMINAL_VELOCITY = -60.0
-    GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
     head = $"head"
     cam = $"head/Camera3D"
     armPointY = $"armpointy"
     armPointX = $"armpointy/armpointx"
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
     blockManager = $"/root/BlockManager"
+    terrain = blockManager.terrain
     voxelTool = $"/root/Node3D/VoxelTerrain".get_voxel_tool()
     blockOutline = $"/root/Node3D/blockOutline"
     cloudmat = $"./clouds".material_override
@@ -73,8 +66,8 @@ func _process(delta):
 func _input(event):
     if event.is_action_pressed("ui_accept"):
         if fcheck <= 0.2:
-            if abillities["allowFlight"] || abillities["isFlying"]:
-                abillities["isFlying"] = not abillities["isFlying"]
+            if abilities["allowFlight"] || abilities["isFlying"]:
+                abilities["isFlying"] = not abilities["isFlying"]
         fcheck = 0
     elif event is InputEventMouseMotion:
         var mx = -(event.relative.x / SENSITIVITY[0])
@@ -106,24 +99,24 @@ func ticks():
 
 func _physics_process(delta):
     # Add the gravity.
-    if (not abillities["isFlying"]) && (not is_on_floor()):
+    if (not abilities["isFlying"]) && (not is_on_floor()):
         velocity.y -= GRAVITY * delta
         if velocity.y < TERMINAL_VELOCITY:
             velocity.y = TERMINAL_VELOCITY
 
     # Handle Jump.
-    if abillities["isFlying"]:
+    if abilities["isFlying"]:
         if Input.is_action_pressed("ui_accept") and not Input.is_action_pressed("game_sneak"):
-            velocity.y = JUMP_VELOCITY
+            velocity.y = abilities.size.jump * abilities.scale.jump
         elif Input.is_action_pressed("game_sneak") and not Input.is_action_pressed("ui_accept"):
-            velocity.y = -JUMP_VELOCITY
+            velocity.y = -abilities.size.jump * abilities.scale.jump
             if is_on_floor():
-                abillities["isFlying"] = false
+                abilities["isFlying"] = false
         else:
             velocity.y = 0
     else:
         if Input.is_action_pressed("ui_accept") and is_on_floor():
-            velocity.y = JUMP_VELOCITY
+            velocity.y = abilities.size.jump * abilities.scale.jump
 
     if Input.is_action_pressed("ui_up"):
         if Input.is_action_pressed("game_sprint"):
@@ -149,13 +142,14 @@ func _physics_process(delta):
     var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
     var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
     if direction:
-        velocity.x = direction.x * SPEED
-        velocity.z = direction.z * SPEED
+        velocity.x = direction.x * SPEED * abilities.scale.speed
+        velocity.z = direction.z * SPEED * abilities.scale.speed
     else:
-        velocity.x = move_toward(velocity.x, 0, SPEED)
-        velocity.z = move_toward(velocity.z, 0, SPEED)
+        velocity.x = move_toward(velocity.x, 0, SPEED * abilities.scale.speed)
+        velocity.z = move_toward(velocity.z, 0, SPEED * abilities.scale.speed)
 
-    if not voxelTool.is_area_editable(AABB(position + (velocity * delta), Vector3.ONE)):
+    if not terrain.is_area_meshed(AABB(position + (velocity * delta), Vector3.ONE)):
+    #if not voxelTool.is_area_editable(AABB(position + (velocity * delta), Vector3.ONE)):
         $"/root/Node3D".startWait(position + (velocity * delta), ((velocity * delta) * 2))
         if velocity == Vector3.ZERO:
             print("bruh")
@@ -173,7 +167,7 @@ func _physics_process(delta):
     moveDist += ((abs(velocity.x) + abs(velocity.z)) * delta)
     animCurSpeed = lerpf(animCurSpeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)
 
-    if abillities["allowBuild"]:
+    if abilities["allowBuild"]:
         lookingAt = voxelTool.raycast(cam.global_position, -1 * cam.global_transform.basis.z.normalized(), 5)
     else:
         lookingAt = null

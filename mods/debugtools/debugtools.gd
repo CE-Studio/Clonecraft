@@ -50,8 +50,8 @@ func registerPhase():
     tlabel.text = man.blockList[bid].fullID
     man.get_node("/root/Node3D/Control").add_child(tlabel)
     man.inputRegister(input)
-    player.abillities["allowFlight"] = true
-    player.abillities["allowBuild"] = true
+    player.abilities["allowFlight"] = true
+    player.abilities["allowBuild"] = true
     itemDisp = MeshInstance3D.new()
     #man.get_node("/root/Node3D/player/head/Camera3D").add_child(itemDisp)
     ItemManager.addToItemLayer(itemDisp)
