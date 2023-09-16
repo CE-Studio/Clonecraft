@@ -14,7 +14,7 @@ config/name="Clonecraft"
 config/name_localized={
 "en_US": "Clonecraft"
 }
-run/main_scene="res://titlescreen/title.tscn"
+run/main_scene="res://init.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
 
@@ -24,7 +24,6 @@ BlockManager="*res://scripts/blockManager.gd"
 ItemManager="*res://scripts/itemManager.gd"
 UiManager="*res://scripts/uiManager.gd"
 SettingManager="*res://scripts/settingManager.gd"
-Translator="*res://scripts/translation.gd"
 
 [editor_plugins]
 

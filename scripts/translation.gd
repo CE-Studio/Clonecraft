@@ -1,13 +1,14 @@
-extends Node
+extends Object
+class_name Translator
 
 
-var fallback := &"res://lang/en_us.json"
+static var fallback := &"res://lang/en_us.json"
 
 
-var translations := {}
+static var translations := {}
 
 
-func _recurExtract(base:String, cont:Dictionary):
+static func _recurExtract(base:String, cont:Dictionary):
     for i in cont.keys():
         if cont[i] is String:
             translations[base + i] = cont[i]
@@ -15,7 +16,7 @@ func _recurExtract(base:String, cont:Dictionary):
             _recurExtract(base + i + ".", cont[i])
 
 
-func loadFromJson(path:String) -> bool:
+static func loadFromJson(path:String) -> bool:
     var j := JSON.new()
     var f := FileAccess.open(path, FileAccess.READ)
     var stat := j.parse(f.get_as_text())
@@ -28,12 +29,12 @@ func loadFromJson(path:String) -> bool:
     return true
 
 
-func _ready():
+static func _sinit():
     if not loadFromJson(fallback):
         print("Error loading language!")
 
 
-func translate(inp:StringName) -> String:
+static func translate(inp:StringName) -> String:
     if translations.has(inp):
         return translations[inp]
     else:
