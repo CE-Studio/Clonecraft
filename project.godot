@@ -23,7 +23,6 @@ config/icon="res://icon.png"
 BlockManager="*res://scripts/blockManager.gd"
 ItemManager="*res://scripts/itemManager.gd"
 UiManager="*res://scripts/uiManager.gd"
-SettingManager="*res://scripts/settingManager.gd"
 
 [editor_plugins]
 

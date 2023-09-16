@@ -1,14 +1,15 @@
-extends Node
+extends Object
+class_name SettingManager
 
 
 #TODO better version system
 const VERSION = "Alpha 0.0.2"
 
-var settings := []
-var tick := 0
+static var settings := []
+static var tick := 0
 
 #TODO load settings from disk
-func _ready():
+static func _sinit():
     var j := JSON.new()
     var f := FileAccess.open("res://scripts/baseSettings.json", FileAccess.READ)
     var stat := j.parse(f.get_as_text())
@@ -19,17 +20,19 @@ func _ready():
 #TODO save settings to disk
 
 
-func tickSettings() -> void:
+static func tickSettings() -> void:
     tick += 1
 
 
-func spawnMenu(content := settings):
+static func spawnMenu(content := settings):
     var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
     if content == settings:
-        op.setExit("gui.generic.back", tickSettings)
+        op.setExit("gui.generic.back", SettingManager.tickSettings)
     else:
         op.setExit("gui.generic.back")
-    $"/root".add_child(op)
+    #This feels cheaty
+    #why isn't get_node() available to static functions????????
+    Engine.get_main_loop().current_scene.get_node("/root").add_child(op)
     for i in content:
         if i["type"] == "folder":
             var c:SettingFolderButton = load("res://scripts/helpers/settings/folderButton.tscn").instantiate()
