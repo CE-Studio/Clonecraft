@@ -18,10 +18,6 @@ run/main_scene="res://init.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.png"
 
-[autoload]
-
-ItemManager="*res://scripts/itemManager.gd"
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
