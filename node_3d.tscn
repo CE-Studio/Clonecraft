@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=55 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -41,6 +41,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dy4v7tg0yhrfq" path="res://titlescreen/dergparts/derg_l_foot.obj" id="36_pax3h"]
 [ext_resource type="ArrayMesh" uid="uid://htxvn0t1v5aj" path="res://titlescreen/dergparts/derg_tail_main.obj" id="37_k72ik"]
 [ext_resource type="ArrayMesh" uid="uid://dfjvyji3gwt5y" path="res://titlescreen/dergparts/derg_tail_frill.obj" id="38_6fv3c"]
+[ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yoru6"]
 viewport_path = NodePath("itemRenderLayer")
@@ -591,3 +592,6 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 mesh = SubResource("BoxMesh_ydc0p")
 surface_material_override/0 = SubResource("ShaderMaterial_iabes")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("42_0hogo")

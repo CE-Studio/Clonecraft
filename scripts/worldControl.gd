@@ -12,7 +12,7 @@ var _p:Player
 var _terrain:VoxelTerrain
 
 
-func raycheck(rel:Vector3) -> bool:
+func raycheck(_rel:Vector3) -> bool:
     var col:KinematicCollision3D = _p.move_and_collide(_waitrel, true, 0.001, true)
     if col == null:
         return false
@@ -47,9 +47,10 @@ func _ready():
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
     _p = $player
     _terrain = BlockManager.terrain
+    _tool = BlockManager._tool
 
 
-func _process(delta):
+func _process(_delta):
     if waiting:
         waitForChunk()
     tree.paused = pausing or waiting

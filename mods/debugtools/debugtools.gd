@@ -37,7 +37,7 @@ func input(event):
                 ItemManager.spawnWorldItem(ItemManager.ItemStack.new(man.blockList[bid].fullID, 1), player.position)
 
 
-func update(delta):
+func update(_delta):
     var ssize := ItemManager.screenSize / 60
     itemDisp.position = Vector3(-ssize.x + 1, -ssize.y + 1, 0)
 
@@ -48,7 +48,7 @@ func registerPhase():
     tlabel.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
     tlabel.position.y -= 20
     tlabel.text = man.blockList[bid].fullID
-    man.get_node("/root/Node3D/Control").add_child(tlabel)
+    Statics.get_node("/root/Node3D/Control").add_child(tlabel)
     man.inputRegister(input)
     player.abilities["allowFlight"] = true
     player.abilities["allowBuild"] = true

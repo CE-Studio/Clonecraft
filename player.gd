@@ -8,7 +8,6 @@ var head:Node3D
 var cam:Camera3D
 var armPointX:Node3D
 var armPointY:Node3D
-var blockManager:BlockManager
 var voxelTool:VoxelToolTerrain
 var lookingAt:VoxelRaycastResult
 var blockOutline:MeshInstance3D
@@ -34,8 +33,7 @@ func _ready():
     armPointY = $"armpointy"
     armPointX = $"armpointy/armpointx"
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-    blockManager = $"/root/BlockManager"
-    terrain = blockManager.terrain
+    terrain = BlockManager.terrain
     voxelTool = $"/root/Node3D/VoxelTerrain".get_voxel_tool()
     blockOutline = $"/root/Node3D/blockOutline"
     cloudmat = $"./clouds".material_override
@@ -94,7 +92,7 @@ func ticks():
         center - Vector3(tickRange, tickRange, tickRange),
         2 * Vector3(tickRange, tickRange, tickRange)
     )
-    voxelTool.run_blocky_random_tick(area, tickNumber, blockManager.runRandomTicks)
+    voxelTool.run_blocky_random_tick(area, tickNumber, BlockManager.runRandomTicks)
 
 
 func _physics_process(delta):

@@ -30,9 +30,7 @@ static func spawnMenu(content := settings):
         op.setExit("gui.generic.back", SettingManager.tickSettings)
     else:
         op.setExit("gui.generic.back")
-    #This feels cheaty
-    #why isn't get_node() available to static functions????????
-    Engine.get_main_loop().current_scene.get_node("/root").add_child(op)
+    Statics.get_node("/root").add_child(op)
     for i in content:
         if i["type"] == "folder":
             var c:SettingFolderButton = load("res://scripts/helpers/settings/folderButton.tscn").instantiate()

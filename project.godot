@@ -20,7 +20,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-BlockManager="*res://scripts/blockManager.gd"
 ItemManager="*res://scripts/itemManager.gd"
 
 [editor_plugins]

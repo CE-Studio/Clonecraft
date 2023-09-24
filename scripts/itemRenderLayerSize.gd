@@ -10,7 +10,7 @@ extends SubViewport
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
     size = vp.get_visible_rect().size
     cam.size = (size.y)
     ItemManager.screenSize = size

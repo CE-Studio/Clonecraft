@@ -1,48 +1,46 @@
-#class_name BlockManager already setup by autoload
 extends Node
+class_name BlockManager
 
 ## Manages the setup of mods, voxels, and the world.
 
 # TODO: actual mod selection
 ## The list of mods to load when the world starts.
-var modsToLoad:Array[String] = ["clonecraft", "debugtools"]
+static var modsToLoad:Array[String] = ["clonecraft", "debugtools"]
 ## The list of loaded mods. Populates automatically.
-var mods := []
+static var mods := []
 ## The list of loaded voxels. Populates automatically as voxels are declared.
-var blockList:Array[BlockInfo] = []
+static var blockList:Array[BlockInfo] = []
 ## A dictionary to translate between a voxel's string name and numerical ID.[br]
 ## Numerical IDs will vary from world to world. Do not hardcode them.
-var blockIDlist := {}
-var blockLibrary := VoxelBlockyLibrary.new()
-var terrain:VoxelTerrain
-var idCounter := 0
-var loadDone := false
+static var blockIDlist := {}
+static var blockLibrary := VoxelBlockyLibrary.new()
+static var terrain:VoxelTerrain
+static var idCounter := 0
+static var loadDone := false
 
-var blockUpdates:Array[Vector3i] = []
-var pendingBlockUpdates:Array[Vector3i] = []
+static var blockUpdates:Array[Vector3i] = []
+static var pendingBlockUpdates:Array[Vector3i] = []
 
-var _updates:Array[Callable] = []
-var _inputList := []
-var _addingBlock := false
-var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
-var _udisp:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
-var _tool:VoxelToolTerrain
-var _newmodel:VoxelBlockyModel
+static var instance:BlockManager
+
+static var _updates:Array[Callable] = []
+static var _inputList := []
+static var _addingBlock := false
+static var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
+static var _udisp:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
+static var _tool:VoxelToolTerrain
+static var _newmodel:VoxelBlockyModel
 
 
-func getBlockID(id:String) -> BlockInfo:
+static func getBlockID(id:String) -> BlockInfo:
     return blockList[blockIDlist[id]]
 
 
-func addUpdate(c:Callable) -> void:
+static func addUpdate(c:Callable) -> void:
     _updates.append(c)
 
 
-func noScript(_pos, _meta) -> void:
-    pass
-
-
-func runRandomTicks(pos, rawID) -> void:
+static func runRandomTicks(pos, rawID) -> void:
     if ProjectSettings.get_setting("gameplay/debug/show_updates"):
         var disp:MeshInstance3D = _tdisp.instantiate()
         disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
@@ -52,7 +50,7 @@ func runRandomTicks(pos, rawID) -> void:
         block.tickCB.call(pos)
 
 
-func runBlockUpdates() -> void:
+static func runBlockUpdates() -> void:
     blockUpdates = pendingBlockUpdates
     pendingBlockUpdates = []
     for i in blockUpdates:
@@ -122,19 +120,17 @@ class BlockInfo:
         blockModel.random_tickable = true
 
 
-@warning_ignore("shadowed_global_identifier")
-func log(id:String, message:String) -> String:
+@warning_ignore("SHADOWED_GLOBAL_IDENTIFIER")
+static func log(id:String, message:String) -> String:
     var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
     print(out)
     return out
 
 
-func startBlockRegister(blockID:String, type:Voxdat.vox) -> VoxelBlockyModel:
+static func startBlockRegister(blockID:String, type:Voxdat.vox) -> VoxelBlockyModel:
     assert(not(_addingBlock), "You can only register one block at a time!")
     _addingBlock = true
     idCounter += 1
-    #blockLibrary.voxel_count = idCounter
-    #var hhh := blockLibrary.create_voxel(idCounter - 1, blockID)
     match type:
         0:
             _newmodel = VoxelBlockyModelCube.new()
@@ -147,7 +143,7 @@ func startBlockRegister(blockID:String, type:Voxdat.vox) -> VoxelBlockyModel:
     return(_newmodel)
 
 
-func endBlockRegister(blockInfo:BlockInfo):
+static func endBlockRegister(blockInfo:BlockInfo):
     assert(_addingBlock, "You need to call 'startBlockRegister' first!")
     _addingBlock = false
     blockList.append(blockInfo)
@@ -156,12 +152,12 @@ func endBlockRegister(blockInfo:BlockInfo):
     print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '" + blockInfo.fullID + "'")
 
 
-func inputRegister(callback:Callable):
+static func inputRegister(callback:Callable):
     _inputList.append(callback)
 
 
-func setup():
-    terrain = $/root/Node3D/VoxelTerrain
+static func setup():
+    terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
     _tool = terrain.get_voxel_tool()
     blockLibrary.atlas_size = 10
     var airModel = startBlockRegister("clonecraft:air", Voxdat.vox.GEOMETRY_NONE)
@@ -174,7 +170,7 @@ func setup():
             0,
             true,
             false,
-            noScript,
+            Callable(),
             "shovel",
             "null",
             "null",
@@ -186,7 +182,7 @@ func setup():
     airBlock.properties.append(&"incompleteHitbox")
     endBlockRegister(airBlock)
 
-    Mod.refman(self)
+    Mod.refman()
     for i in modsToLoad:
         print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Fetching script for mod '" + i + "'...")
         mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
@@ -219,16 +215,20 @@ func _process(delta):
     if loadDone:
         for i in _updates:
             i.call(delta)
-        runBlockUpdates()
+        BlockManager.runBlockUpdates()
 
 
 func _input(event):
     for i in _inputList:
         i.call(event)
+        
+        
+func _ready():
+    instance = self
 
 #TODO abstract away VoxelBlockyModel to pin the features
 #TODO unit testing for abstractions ig??? feels like the right thing to do for compatibillity
-func quickUniformBlock(
+static func quickUniformBlock(
         modID:StringName,
         blockName:StringName,
         readableName:String,
@@ -257,7 +257,7 @@ func quickUniformBlock(
             explStrength,
             false,
             false,
-            noScript,
+            Callable(),
             tool,
             "default",
             "default",
@@ -266,7 +266,7 @@ func quickUniformBlock(
     endBlockRegister(bi)
 
 
-func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := false) -> bool:
+static func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := false) -> bool:
     var willSet := force
 
     var i:BlockInfo = blockList[_tool.get_voxel(pos)]
@@ -301,7 +301,7 @@ func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := 
     return willSet
 
 
-func getBlock(pos:Vector3) -> BlockInfo:
+static func getBlock(pos:Vector3) -> BlockInfo:
     var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
     return blockList[_tool.get_voxel(npos)]
 

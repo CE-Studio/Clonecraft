@@ -10,22 +10,20 @@ const LABEL_TEXT := (
 var player:Player
 var head:Node3D
 var cam:Camera3D
-var blockManager:BlockManager
 
 
 func _ready():
     player = $"/root/Node3D/player"
-    blockManager = $"/root/BlockManager"
     head = player.get_child(1)
     cam = head.get_child(0)
 
 
-func _process(delta):
+func _process(_delta):
     var pl = Vector3i.ZERO
     var v = "None"
     if player.lookingAt != null:
         pl = player.lookingAt.get_position()
-        v = blockManager.blockList[player.voxelTool.get_voxel(pl)].fullID
+        v = BlockManager.blockList[player.voxelTool.get_voxel(pl)].fullID
     text = LABEL_TEXT % [
         SettingManager.VERSION,
         Engine.get_frames_per_second(),
