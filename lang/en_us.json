@@ -29,6 +29,7 @@
   "options": {
     "advanced": {
       "debug": {
+        "log_to_chat": "Show Debug Log in Chat",
         "show_updates": "Show Block Updates"
       },
       "debug_folder": "Debug..."

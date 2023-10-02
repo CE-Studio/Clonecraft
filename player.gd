@@ -96,6 +96,8 @@ func ticks():
 
 
 func _physics_process(delta):
+    var SPEED:float
+    
     # Add the gravity.
     if (not abilities["isFlying"]) && (not is_on_floor()):
         velocity.y -= GRAVITY * delta
@@ -119,16 +121,16 @@ func _physics_process(delta):
     if Input.is_action_pressed("ui_up"):
         if Input.is_action_pressed("game_sprint"):
             if Input.is_action_pressed("ui_accept"):
-                SPEED = 9
+                SPEED = abilities.size.speed * 1.8
             else:
-                SPEED = 8
+                SPEED = abilities.size.speed * 1.6
         else:
-            SPEED = 5
+            SPEED = abilities.size.speed
     else:
-        SPEED = 5
+        SPEED = abilities.size.speed
 
     if Input.is_action_pressed("game_sneak"):
-        SPEED = 2
+        SPEED = abilities.size.speed * 0.4
         head.position.y = 0.58
         armPointY.position.y = 0.6
     else:
@@ -136,7 +138,7 @@ func _physics_process(delta):
         armPointY.position.y = 0.689
 
     # Get the input direction and handle the movement/deceleration.
-    # As good practice, you should replace UI actions with custom gameplay actions.
+    #TODO As good practice, you should replace UI actions with custom gameplay actions.
     var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
     var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
     if direction:
@@ -193,3 +195,7 @@ func _physics_process(delta):
             cams[2].position = Vector3(0, 0, -5)
 
     ticks()
+
+
+func _on_enter_item_range(body):
+    BlockManager.log("clonecraft", body.name)

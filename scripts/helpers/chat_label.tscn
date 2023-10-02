@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2b5q66ljhtky"]
+
+[ext_resource type="Script" path="res://scripts/helpers/chatline.gd" id="1_mf5cp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujdj1"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[node name="chatLabel" type="Label"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_ujdj1")
+text = "aaaa"
+script = ExtResource("1_mf5cp")

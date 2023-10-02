@@ -124,6 +124,8 @@ class BlockInfo:
 static func log(id:String, message:String) -> String:
     var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
     print(out)
+    if ProjectSettings.get_setting("gameplay/debug/log_to_chat"):
+        Chat.pushText(out)
     return out
 
 

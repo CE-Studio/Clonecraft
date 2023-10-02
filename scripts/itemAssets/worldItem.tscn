@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://v52qrik88bqs"]
 
-[ext_resource type="Script" path="res://scripts/itemAssets/worldItem.gd" id="1_xx26a"]
+[ext_resource type="Script" path="res://scripts/itemAssets/worldItem.gd" id="1_ikk7s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_evmbw"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -10,7 +10,7 @@ collision_layer = 4
 collision_mask = 2
 continuous_cd = true
 lock_rotation = true
-script = ExtResource("1_xx26a")
+script = ExtResource("1_ikk7s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_evmbw")
