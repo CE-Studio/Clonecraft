@@ -2,13 +2,13 @@ extends Object
 class_name SettingManager
 
 
-#TODO better version system
+# TODO better version system
 const VERSION = "Alpha 0.0.2"
 
 static var settings := []
 static var tick := 0
 
-#TODO load settings from disk
+# TODO load settings from disk
 static func _sinit():
     var j := JSON.new()
     var f := FileAccess.open("res://scripts/baseSettings.json", FileAccess.READ)
@@ -17,7 +17,7 @@ static func _sinit():
     assert(stat == OK, "error parsing setting tree!")
     settings.append_array(j.get_data())
 
-#TODO save settings to disk
+# TODO save settings to disk
 
 
 static func tickSettings() -> void:

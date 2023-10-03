@@ -228,8 +228,8 @@ func _input(event):
 func _ready():
     instance = self
 
-#TODO abstract away VoxelBlockyModel to pin the features
-#TODO unit testing for abstractions ig??? feels like the right thing to do for compatibillity
+# TODO abstract away VoxelBlockyModel to pin the features
+# TODO unit testing for abstractions ig??? feels like the right thing to do for compatibillity
 static func quickUniformBlock(
         modID:StringName,
         blockName:StringName,

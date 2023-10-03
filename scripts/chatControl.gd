@@ -1,4 +1,4 @@
-#TODO make this generally better
+# TODO make this generally better
 extends VBoxContainer
 class_name Chat
 

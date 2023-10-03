@@ -10,7 +10,7 @@ extends RefCounted
 ## A shorthand reference to BlockManager.
 static var man := BlockManager
 ## A premade VoxelTool for the game world.
-#TODO dimenstion support?
+# TODO dimenstion support?
 static var tool:VoxelToolTerrain
 ## A reference to the player.
 static var player:Player
