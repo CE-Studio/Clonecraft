@@ -33,9 +33,10 @@ input/mouse_x_sensitivity=0.0
 input/mouse_y_sensitivity=0.0
 debug/show_updates=false
 ui/auto_scale=false
-ui/scale=0.0
+ui/scale=1.0
 physics/terminal_velocity=-60.0
 debug/log_to_chat=false
+ui/auto_scale_shown=false
 
 [gui]
 

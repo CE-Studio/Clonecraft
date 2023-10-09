@@ -68,8 +68,8 @@
             {
                 "name": "options.ui.scale",
                 "type": "float",
-                "slidemin": 0.0,
-                "slidemax": 10.0,
+                "slidemin": 0.5,
+                "slidemax": 4.0,
                 "default": 1.0,
                 "path": "gameplay/ui/scale"
             },

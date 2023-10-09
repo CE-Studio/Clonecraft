@@ -19,6 +19,7 @@ var terrain:VoxelTerrain
 
 var camcycle := 0
 var moveDist := 0.0
+var time := 0.0
 var animCurSpeed := 0.0
 var tickRange := 100
 var tickNumber := 512
@@ -45,9 +46,14 @@ func _ready():
     derg["root"] = $derg
     derg["body"] = $derg/Node2
     derg["head"] = $derg/Node2/bone2/head
+    derg["larm"] = $derg/Node2/bone2/larm
+    derg["rarm"] = $derg/Node2/bone2/rarm
+    derg["lleg"] = $derg/Node2/bone2/lleg
+    derg["rleg"] = $derg/Node2/bone2/rleg
 
 
 func _process(delta):
+    time += delta
     armPointY.rotation.y = lerp_angle(armPointY.rotation.y, head.rotation.y, delta * 20)
     armPointX.rotation.x = lerp_angle(armPointX.rotation.x, cam.rotation.x, delta * 20)
     armPointX.position = Vector3(
@@ -59,6 +65,15 @@ func _process(delta):
     derg["head"].rotation.x = armPointX.rotation.x
     cloudmat.uv1_offset.z += delta / 900
     fcheck += delta
+    
+    var z = (sin(time * 1.5) + 1) * 2.5
+    var x = sin(time * 0.994723812) * 2
+    var xl = sin(moveDist * 1.2) * (animCurSpeed * 40)
+    x += xl
+    derg["larm"].rotation_degrees = Vector3(-x, 0, -z)
+    derg["rarm"].rotation_degrees = Vector3(x, 0, z)
+    derg["lleg"].rotation_degrees.x = xl + 12.5
+    derg["rleg"].rotation_degrees.x = -xl + 12.5
 
 
 func _input(event):
