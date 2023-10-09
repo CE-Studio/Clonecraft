@@ -1,12 +1,12 @@
 
 class gen:
+    const MARGIN = 5
+    
+    static var noise = FastNoise2.new()
+    
     var supBuf := VoxelBuffer.new()
     var bounds := Vector3i()
     var pos:Vector3i
-    var noise = FastNoise2.new()
-    var pending:int
-
-    const MARGIN = 5
 
 
     func initSupBuf(size:Vector3i) -> void:
@@ -43,7 +43,7 @@ class gen:
 
 
     func genSolid(x:int, y:int, z:int) -> int:
-        pending = 0
+        var pending:int = 0
         if y < (noise.get_noise_2d_single(Vector2(x / 20.0, z / 20.0)) * (120 * noise.get_noise_2d_single(Vector2(x / 50.0, z / 50.0)))) + 30:
             if getSupBuf(x, y + 1, z) == 0:
                 pending = 3
