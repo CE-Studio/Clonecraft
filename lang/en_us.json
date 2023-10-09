@@ -2,7 +2,7 @@
   "gui": {
     "credits": {
       "more": "More info...",
-      "info": "Clonecraft is a FREE GAME licenced under the GNU General Public Licence version 3.\nIf you have paid for the game, downloaded a 'crack', or are being denied access to the source code, you are being SCAMMED and probably downloaded a virus.\nAdditionally, mods are required to be open-source and have a GPL-compatible license as well. Please be careful!"
+      "info": "Clonecraft is a FREE GAME licenced under the GNU General Public Licence version 3.\nIf you have paid for the game, downloaded a 'crack', or are being denied access to the source code, you are being SCAMMED and probably downloaded a virus.\nAdditionally, publicly distributed mods are required to be open-source and have a GPL-compatible license as well. Please be careful!"
     },
     "gameplay": {
       "achivements": "Achivements...",

@@ -54,7 +54,7 @@ class gen:
         return pending
 
 
-    func iterate():
+    func iterate() -> void:
         for ix in bounds.x:
             for iz in bounds.z:
                 for iy in bounds.y:
@@ -62,7 +62,7 @@ class gen:
                     setSupBuf(ix, iiy, iz, genSolid(ix + (pos.x), iiy + (pos.y - MARGIN), iz + (pos.z)), false)
 
 
-    func blit(buf:VoxelBuffer):
+    func blit(buf:VoxelBuffer) -> void:
         buf.copy_channel_from_area(
             supBuf,
             Vector3i(0, MARGIN, 0),
@@ -79,7 +79,7 @@ class gen:
         blit(buf)
 
 
-func _generate_block(buf:VoxelBuffer, rpos:Vector3i, _lod:int):
+func _generate_block(buf:VoxelBuffer, rpos:Vector3i, _lod:int) -> void:
     var h:gen = gen.new()
     h._generate_block(buf, rpos, _lod)
     h.queue_free()

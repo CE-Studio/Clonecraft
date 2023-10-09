@@ -1,7 +1,9 @@
 extends Control
 
+
 @onready var _vp := get_viewport()
 var pos := 150.0
+
 
 func _input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:

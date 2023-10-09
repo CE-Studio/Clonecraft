@@ -7,11 +7,11 @@ static var instance:Chat
 const _line := preload("res://scripts/helpers/chat_label.tscn")
 
 
-func _ready():
+func _ready() -> void:
     instance = self
 
 
-static func pushText(text:String):
+static func pushText(text:String) -> void:
     if is_instance_valid(instance):
         var nline:Label = _line.instantiate()
         nline.text = text

@@ -41,6 +41,11 @@ var abilities := {
 }
 
 
+func _settingsChanged() -> void:
+    TERMINAL_VELOCITY = ProjectSettings.get_setting("gameplay/physics/terminal_velocity")
+    GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
 func _movement_process(delta:float) -> void:
     pass
 

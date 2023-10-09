@@ -6,10 +6,10 @@ class_name SettingManager
 const VERSION = "Alpha 0.0.2"
 
 static var settings := []
-static var tick := 0
+
 
 # TODO load settings from disk
-static func _sinit():
+static func _sinit() -> void:
     var j := JSON.new()
     var f := FileAccess.open("res://scripts/baseSettings.json", FileAccess.READ)
     var stat := j.parse(f.get_as_text())
@@ -20,14 +20,21 @@ static func _sinit():
 # TODO save settings to disk
 
 
-static func tickSettings() -> void:
-    tick += 1
+static func _recur(n:Node) -> void:
+        if n.has_method("_settingsChanged"):
+            n._settingsChanged()
+        for i in n.get_children():
+            _recur(i)
 
 
-static func spawnMenu(content := settings):
+static func broadcast() -> void:
+    _recur(Statics.get_node("/root"))
+
+
+static func spawnMenu(content := settings) -> void:
     var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
     if content == settings:
-        op.setExit("gui.generic.back", SettingManager.tickSettings)
+        op.setExit("gui.generic.back", SettingManager, &"broadcast")
     else:
         op.setExit("gui.generic.back")
     Statics.get_node("/root").add_child(op)

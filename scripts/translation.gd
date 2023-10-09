@@ -8,7 +8,7 @@ static var fallback := &"res://lang/en_us.json"
 static var translations := {}
 
 
-static func _recurExtract(base:String, cont:Dictionary):
+static func _recurExtract(base:String, cont:Dictionary) -> void:
     for i in cont.keys():
         if cont[i] is String:
             translations[base + i] = cont[i]
@@ -29,7 +29,7 @@ static func loadFromJson(path:String) -> bool:
     return true
 
 
-static func _sinit():
+static func _sinit() -> void:
     if not loadFromJson(fallback):
         print("Error loading language!")
 

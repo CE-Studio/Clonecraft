@@ -26,9 +26,9 @@ func _pressed() -> void:
         k.populate(h)
 
 
-func _ready():
+func _ready() -> void:
     text = Translator.translate(&"gui.generic.support")
 
 
-func _process(_delta):
+func _process(_delta) -> void:
     disabled = is_instance_valid(op)

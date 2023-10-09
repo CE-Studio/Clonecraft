@@ -55,7 +55,7 @@ func populate(data:Dictionary) -> void:
             print("the fucc is this???")
 
 
-func addExtract(obj, addRule := true):
+func addExtract(obj, addRule := true) -> void:
     if obj is Dictionary:
         for i in obj:
             if obj[i] is String:
@@ -76,7 +76,7 @@ func addExtract(obj, addRule := true):
         content[-1].text = content[-1].text + "\n" + obj
 
 
-func _on_button_pressed():
+func _on_button_pressed() -> void:
     var op = load("res://gui/backingpanel.tscn").instantiate()
     $"/root".add_child(op)
     var h := 0

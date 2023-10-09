@@ -21,14 +21,14 @@ var gpuinfo := ["Unkown Driver", "0.0.0"]
 @onready var other:Label = $"../f32"
 
 
-func _ready():
+func _ready() -> void:
     var h = OS.get_video_adapter_driver_info()
     if h.size() >= 2:
         if h[0] != "":
             gpuinfo = h
 
 
-func _process(_delta):
+func _process(_delta) -> void:
     var pl = Vector3i.ZERO
     var v = "None"
     if player.lookingAt != null:

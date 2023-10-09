@@ -20,7 +20,7 @@ static var terrain:VoxelTerrain
 
 ## Used to initialize some variables before loading.[br]
 ## Do not override unless you know what you're doing.
-static func refman():
+static func refman() -> void:
     terrain = man.terrain
     player = Statics.get_node("/root/Node3D/player")
     tool = man._tool

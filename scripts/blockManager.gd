@@ -114,7 +114,7 @@ class BlockInfo:
         dropItem = fdropitem
 
 
-    func setTickable(ftickcb:Callable):
+    func setTickable(ftickcb:Callable) -> void:
         tickable = true
         tickCB = ftickcb
         blockModel.random_tickable = true
@@ -145,7 +145,7 @@ static func startBlockRegister(blockID:String, type:Voxdat.vox) -> VoxelBlockyMo
     return(_newmodel)
 
 
-static func endBlockRegister(blockInfo:BlockInfo):
+static func endBlockRegister(blockInfo:BlockInfo) -> void:
     assert(_addingBlock, "You need to call 'startBlockRegister' first!")
     _addingBlock = false
     blockList.append(blockInfo)
@@ -154,11 +154,11 @@ static func endBlockRegister(blockInfo:BlockInfo):
     print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '" + blockInfo.fullID + "'")
 
 
-static func inputRegister(callback:Callable):
+static func inputRegister(callback:Callable) -> void:
     _inputList.append(callback)
 
 
-static func setup():
+static func setup() -> void:
     terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
     _tool = terrain.get_voxel_tool()
     blockLibrary.atlas_size = 10
@@ -213,19 +213,19 @@ static func setup():
     loadDone = true
 
 
-func _process(delta):
+func _process(delta) -> void:
     if loadDone:
         for i in _updates:
             i.call(delta)
         BlockManager.runBlockUpdates()
 
 
-func _input(event):
+func _input(event) -> void:
     for i in _inputList:
         i.call(event)
         
         
-func _ready():
+func _ready() -> void:
     instance = self
 
 # TODO abstract away VoxelBlockyModel to pin the features
@@ -239,7 +239,7 @@ static func quickUniformBlock(
         breakStrength := 3.0,
         explStrength := 5.0,
         tool := &"pickaxe",
-        alphaChannel := 0):
+        alphaChannel := 0) -> void:
     var model = startBlockRegister(modID + blockName, Voxdat.vox.GEOMETRY_CUBE)
     model.set_mesh_collision_enabled(0, true)
     model.transparency_index = alphaChannel

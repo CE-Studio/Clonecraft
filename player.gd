@@ -2,7 +2,6 @@ class_name Player
 extends Entity
 
 var SENSITIVITY := [200.0, 200.0]
-var settingTick := -1
 
 var head:Node3D
 var cam:Camera3D
@@ -28,7 +27,7 @@ var world:WorldControl
 var fcheck := 1.0
 
 
-func _ready():
+func _ready() -> void:
     head = $"head"
     cam = $"head/Camera3D"
     armPointY = $"armpointy"
@@ -52,7 +51,7 @@ func _ready():
     derg["rleg"] = $derg/Node2/bone2/rleg
 
 
-func _process(delta):
+func _process(delta) -> void:
     time += delta
     armPointY.rotation.y = lerp_angle(armPointY.rotation.y, head.rotation.y, delta * 20)
     armPointX.rotation.x = lerp_angle(armPointX.rotation.x, cam.rotation.x, delta * 20)
@@ -76,7 +75,7 @@ func _process(delta):
     derg["rleg"].rotation_degrees.x = -xl + 12.5
 
 
-func _input(event):
+func _input(event) -> void:
     if event.is_action_pressed("ui_accept"):
         if fcheck <= 0.2:
             if abilities["allowFlight"] || abilities["isFlying"]:
@@ -101,7 +100,7 @@ func _input(event):
             armPointY.visible = true
 
 
-func ticks():
+func ticks() -> void:
     var center = position.floor()
     var area = AABB(
         center - Vector3(tickRange, tickRange, tickRange),
@@ -110,7 +109,7 @@ func ticks():
     voxelTool.run_blocky_random_tick(area, tickNumber, BlockManager.runRandomTicks)
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
     var SPEED:float
     
     # Add the gravity.
@@ -153,8 +152,7 @@ func _physics_process(delta):
         armPointY.position.y = 0.689
 
     # Get the input direction and handle the movement/deceleration.
-    # TODO replace UI actions with custom gameplay actions.
-    var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+    var input_dir = Input.get_vector("game_left", "game_right", "game_up", "game_down")
     var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
     if direction:
         velocity.x = direction.x * SPEED * abilities.scale.speed
@@ -212,5 +210,5 @@ func _physics_process(delta):
     ticks()
 
 
-func _on_enter_item_range(body):
+func _on_enter_item_range(body) -> void:
     BlockManager.log("clonecraft", body.name)

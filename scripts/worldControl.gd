@@ -19,19 +19,19 @@ func raycheck(_rel:Vector3) -> bool:
     return true
 
 
-func waitForChunk():
+func waitForChunk() -> void:
     if _terrain.is_area_meshed(AABB(_waitpos, Vector3.ONE)):
         waiting = false
 
 
-func startWait(pos:Vector3, rel:Vector3):
+func startWait(pos:Vector3, rel:Vector3) -> void:
     waiting = true
     get_tree().paused = true
     _waitpos = pos
     _waitrel = rel
 
 
-func _input(event):
+func _input(event) -> void:
     if event.is_action_pressed("ui_cancel"):
         if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
             Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -42,7 +42,7 @@ func _input(event):
             pausing = true
 
 
-func _ready():
+func _ready() -> void:
     tree = get_tree()
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
     _p = $player
@@ -50,7 +50,7 @@ func _ready():
     _tool = BlockManager._tool
 
 
-func _process(_delta):
+func _process(_delta) -> void:
     if waiting:
         waitForChunk()
     tree.paused = pausing or waiting

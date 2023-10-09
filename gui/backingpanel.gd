@@ -3,17 +3,17 @@ class_name BackingPanel
 
 
 var exitName = "gui.gameplay.back"
-var closeCallbacks:Array[Callable] = []
+var closeCallbacks:Array[Array] = []
 
 
 func _ready() -> void:
     $HBoxContainer/Button.text = Translator.translate(exitName)
 
 
-func setExit(ename:String, cb:Callable = Callable()):
+func setExit(ename:String, obj:Object = null, fun:StringName = &"") -> void:
     exitName = ename
-    if cb.is_valid():
-        closeCallbacks.append(cb)
+    if obj != null:
+        closeCallbacks.append([obj, fun])
 
 
 func addItem(item:Control) -> void:
@@ -22,7 +22,7 @@ func addItem(item:Control) -> void:
 
 func close() -> void:
     for i in closeCallbacks:
-        i.call()
+        i[0].call(i[1])
     queue_free()
 
 

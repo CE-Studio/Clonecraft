@@ -5,7 +5,7 @@ var iname:StringName
 var content: Array
 
 
-func init(i):
+func init(i) -> void:
     iname = i["name"]
     text = Translator.translate(iname)
     content = i["content"]
