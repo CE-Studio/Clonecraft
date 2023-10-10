@@ -180,7 +180,6 @@ script = ExtResource("5_i3vlu")
 dictKey = &"gui.gameplay.wait_for_chunks"
 
 [node name="pausepanel" type="Panel" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -216,14 +215,14 @@ dictKey = &"gui.gameplay.pause_menu_title"
 custom_minimum_size = Vector2(1.45519e-11, 60)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+[node name="pauseButton" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "&&back to game&&"
 script = ExtResource("5_i3vlu")
 dictKey = &"gui.gameplay.back"
 
-[node name="Button2" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+[node name="settingButton" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -231,7 +230,7 @@ text = "&&options&&"
 script = ExtResource("5_i3vlu")
 dictKey = &"gui.generic.options"
 
-[node name="Button3" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+[node name="achButton" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -239,7 +238,7 @@ text = "&&achivements&&"
 script = ExtResource("5_i3vlu")
 dictKey = &"gui.gameplay.achivements"
 
-[node name="Button6" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+[node name="statButton" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -251,7 +250,7 @@ dictKey = &"gui.gameplay.statistics"
 custom_minimum_size = Vector2(1.45519e-11, 60)
 layout_mode = 2
 
-[node name="Button4" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+[node name="quitTButton" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -259,7 +258,7 @@ text = "&&quit to menu&&"
 script = ExtResource("5_i3vlu")
 dictKey = &"gui.gameplay.menu_quit"
 
-[node name="Button5" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
+[node name="quitDButton" type="Button" parent="Control/pausepanel/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 1.45519e-11)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -630,4 +629,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_iabes")
 [node name="Node" type="Node" parent="."]
 script = ExtResource("42_0hogo")
 
+[connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pauseUnpause"]
+[connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="body_entered" from="player/Area3D" to="player" method="_on_enter_item_range"]

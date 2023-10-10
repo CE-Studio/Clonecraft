@@ -29,10 +29,10 @@ func startWait(pos:Vector3, rel:Vector3) -> void:
     get_tree().paused = true
     _waitpos = pos
     _waitrel = rel
-
-
-func _input(event) -> void:
-    if event.is_action_pressed("ui_cancel"):
+    
+    
+func pauseUnpause() -> void:
+    if SettingManager.isIdle():
         if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
             Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
             pausing = false
@@ -40,6 +40,11 @@ func _input(event) -> void:
             Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
             $"/root/Node3D/VoxelTerrain".save_modified_blocks()
             pausing = true
+
+
+func _input(event) -> void:
+    if event.is_action_pressed("ui_cancel"):
+        pauseUnpause()
 
 
 func _ready() -> void:
@@ -56,3 +61,7 @@ func _process(_delta) -> void:
     tree.paused = pausing or waiting
     $Control/waitpanel.visible = waiting
     $Control/pausepanel.visible = pausing
+
+
+func _on_setting_button_pressed():
+    SettingManager.spawnMenu()

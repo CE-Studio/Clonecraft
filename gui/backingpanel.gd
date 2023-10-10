@@ -23,6 +23,7 @@ func addItem(item:Control) -> void:
 func close() -> void:
     for i in closeCallbacks:
         i[0].call(i[1])
+    SettingManager._layers -= 1
     queue_free()
 
 

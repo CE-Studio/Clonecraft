@@ -6,6 +6,11 @@ class_name SettingManager
 const VERSION = "Alpha 0.0.2"
 
 static var settings := []
+static var _layers:int = 0
+
+
+static func isIdle() -> bool:
+    return _layers == 0
 
 
 # TODO load settings from disk
@@ -32,7 +37,8 @@ static func broadcast() -> void:
 
 
 static func spawnMenu(content := settings) -> void:
-    var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
+    _layers += 1
+    var op:BackingPanel = preload("res://gui/backingpanel.tscn").instantiate()
     if content == settings:
         op.setExit("gui.generic.back", SettingManager, &"broadcast")
     else:
@@ -40,19 +46,19 @@ static func spawnMenu(content := settings) -> void:
     Statics.get_node("/root").add_child(op)
     for i in content:
         if i["type"] == "folder":
-            var c:SettingFolderButton = load("res://scripts/helpers/settings/folderButton.tscn").instantiate()
+            var c:SettingFolderButton = preload("res://scripts/helpers/settings/folderButton.tscn").instantiate()
             c.init(i)
             op.addItem(c)
         elif i["type"] == "float":
-            var c:FloatSetting = load("res://scripts/helpers/settings/floatSetting.tscn").instantiate()
+            var c:FloatSetting = preload("res://scripts/helpers/settings/floatSetting.tscn").instantiate()
             c.init(i)
             op.addItem(c)
         elif i["type"] == "int":
-            var c:FloatSetting = load("res://scripts/helpers/settings/intSetting.tscn").instantiate()
+            var c:FloatSetting = preload("res://scripts/helpers/settings/intSetting.tscn").instantiate()
             c.init(i)
             op.addItem(c)
         elif i["type"] == "bool":
-            var c:BoolSetting = load("res://scripts/helpers/settings/boolSetting.tscn").instantiate()
+            var c:BoolSetting = preload("res://scripts/helpers/settings/boolSetting.tscn").instantiate()
             c.init(i)
             op.addItem(c)
         else:
