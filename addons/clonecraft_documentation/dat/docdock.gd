@@ -3,7 +3,7 @@ extends Control
 
 
 var ep:EditorPlugin
-@onready var _odoc:Signal = ep.get_editor_interface().get_script_editor().get_current_editor().go_to_help
+var _odoc:Signal 
 var maintext
 
 
@@ -15,13 +15,14 @@ static func opentext(f:String) -> String:
     return s
 
 
-func _ready():
+func ready():
     if ep != null:
         maintext = $TabContainer/Main
         maintext.text = opentext("Index")
 
 
 func _on_rich_text_label_meta_clicked(meta):
+    _odoc = ep.get_editor_interface().get_script_editor().get_current_editor().go_to_help
     var _m = meta.split(",")
     if _m[0] == "cla":
         _odoc.emit(_m[1])

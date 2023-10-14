@@ -14,6 +14,7 @@ func _enter_tree():
     # Add the loaded scene to the docks.
     add_control_to_dock(DOCK_SLOT_LEFT_UL, dock)
     # Note that LEFT_UL means the left of the editor, upper-left dock.
+    dock.ready()
 
 
 func _exit_tree():
