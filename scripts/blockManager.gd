@@ -7,7 +7,7 @@ class_name BlockManager
 ## The list of mods to load when the world starts.
 static var modsToLoad:Array[String] = ["clonecraft", "debugtools"]
 ## The list of loaded mods. Populates automatically.
-static var mods := []
+static var mods:Array[Mod] = []
 ## The list of loaded voxels. Populates automatically as voxels are declared.
 static var blockList:Array[BlockInfo] = []
 ## A dictionary to translate between a voxel's string name and numerical ID.[br]
@@ -64,7 +64,7 @@ class BlockInfo:
     var modID:StringName
     var nameID:StringName
     var fullID:StringName
-    var nameReadable:String
+    var nameReadable:StringName
     var blockModel:VoxelBlockyModel
     var breakStrength:float
     var explStrength:float
@@ -84,7 +84,7 @@ class BlockInfo:
     func _init(
             fmodID:StringName,
             fnameID:StringName,
-            fnameReadable:String,
+            fnameReadable:StringName,
             fblockModel:VoxelBlockyModel,
             fbreakStrength:float,
             fexplStrength:float,
@@ -99,7 +99,7 @@ class BlockInfo:
         modID = fmodID
         nameID = fnameID
         fullID = fmodID + ":" + fnameID
-        nameReadable = fnameReadable
+        nameReadable = Translator.translate(fnameReadable)
         blockModel = fblockModel
         breakStrength = fbreakStrength
         explStrength = fexplStrength

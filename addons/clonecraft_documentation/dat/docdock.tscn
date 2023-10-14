@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsjlth2tiyues"]
+
+[ext_resource type="Script" path="res://addons/clonecraft_documentation/dat/docdock.gd" id="1_5wytu"]
+
+[node name="Clonecraft Docs" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5wytu")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" type="RichTextLabel" parent="TabContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Index
+
+[font_size=25][b]Tutorials[/b][/font_size]
+[ul][url=doc,createMod]Creating a mod[/url][/ul]
+
+[font_size=25][b]Class Reference[/b][/font_size]
+[ul][url=cla,BlockManager]BlockManager[/url][img]res://addons/clonecraft_documentation/dat/Help.svg[/img][/ul]
+[ul][url=cla,AutoScaler]AutoScaler[/url][img]res://addons/clonecraft_documentation/dat/Help.svg[/img][/ul]"
+
+[connection signal="meta_clicked" from="TabContainer/Main" to="." method="_on_rich_text_label_meta_clicked"]
