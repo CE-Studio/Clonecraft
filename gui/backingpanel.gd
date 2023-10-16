@@ -26,7 +26,8 @@ func _ready() -> void:
 
 ## Configures how the panel will behave when closed.[br]
 ## [code]ename[/code] sets the text on the exit button.[br]
-## [code]obj[/code] and [code]fun[/code] are a workaround for static callables. Pass in an object, and the name of the function to call on it.
+## [code]obj[/code] and [code]fun[/code] are a workaround for static callables. Pass in an object, 
+## and the name of the function to call on it.
 func setExit(ename:String, obj:Object = null, fun:StringName = &"", count = true) -> void:
     exitName = ename
     if obj != null:
@@ -35,7 +36,8 @@ func setExit(ename:String, obj:Object = null, fun:StringName = &"", count = true
     
 
 ## Adds a callback to be called when the panel closes.[br]
-## [code]obj[/code] and [code]fun[/code] are a workaround for static callables. Pass in an object, and the name of the function to call on it.
+## [code]obj[/code] and [code]fun[/code] are a workaround for static callables. Pass in an object, 
+## and the name of the function to call on it.
 func addExit(obj:Object, fun:StringName) -> void:
     closeCallbacks.append([obj, fun])
 

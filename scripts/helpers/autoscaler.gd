@@ -3,9 +3,11 @@ class_name AutoScaler
 
 ## Handles the automatic scaling of the game's UI.
 ##
-## Will atuomatically set the scale of the game's UI elements when the window is resized, or set the scale to the player's choice if autoscaling is turned off.
+## Will atuomatically set the scale of the game's UI elements when the window is resized, 
+## or set the scale to the player's choice if autoscaling is turned off.
 
-## A static refrence to the AutoScaler singleton.
+## A static refrence to the AutoScaler singleton.[br]
+## Static
 static var instance:AutoScaler
 
 

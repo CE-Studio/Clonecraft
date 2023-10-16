@@ -4,24 +4,45 @@ class_name BlockManager
 ## Manages the setup of mods, voxels, and the world.
 
 # TODO actual mod selection
-## The list of mods to load when the world starts.
+## The list of mods to load when the world starts.[br]
+## Static
 static var modsToLoad:Array[String] = ["clonecraft", "debugtools"]
-## The list of loaded mods. Populates automatically.
+## The list of loaded mods. Populates automatically.[br]
+## Static
 static var mods:Array[Mod] = []
-## The list of loaded voxels. Populates automatically as voxels are declared.
+## The list of loaded voxels. Populates automatically as voxels are declared.[br]
+## Static
 static var blockList:Array[BlockInfo] = []
 ## A dictionary to translate between a voxel's string name and numerical ID.[br]
-## Numerical IDs will vary from world to world. Do not hardcode them.
+## Numerical IDs will vary from world to world. Do not hardcode them. 
+## Caching, however, is strongly encuraged.[br]
+## Static
 static var blockIDlist := {}
+## The world's [VoxelBlockyLibrary].[br]
+## Static
 static var blockLibrary := VoxelBlockyLibrary.new()
+## The world's [VoxelTerrain].[br]
+## Static
 static var terrain:VoxelTerrain
+## Counts the number of registered voxels.[br]
+## Static
 static var idCounter := 0
+## Turns [code]true[/code] when the world is fully initalized.[br]
+## Static
 static var loadDone := false
-
-static var blockUpdates:Array[Vector3i] = []
-static var pendingBlockUpdates:Array[Vector3i] = []
-
+## A static refrence to the BlockManager singleton.[br]
+## [code]null[/code] until the world scene loads.[br]
+## You won't typically need to use this.[br]
+## Static
 static var instance:BlockManager
+
+## A list of voxel positions to update this simulation tick.[br]
+## You probably want to use [member pendingBlockUpdates] instead.[br]
+## Static
+static var blockUpdates:Array[Vector3i] = []
+## A list of voxel positions to update on the next simulation tick.[br]
+## Static
+static var pendingBlockUpdates:Array[Vector3i] = []
 
 static var _updates:Array[Callable] = []
 static var _inputList := []
@@ -32,24 +53,32 @@ static var _tool:VoxelToolTerrain
 static var _newmodel:VoxelBlockyModel
 
 
-static func getBlockID(id:String) -> BlockInfo:
+## Get the [BlockInfo] tied to a specific ID string.[br]
+## Static
+static func getBlockID(id:StringName) -> BlockInfo:
     return blockList[blockIDlist[id]]
 
 
+## Register a [Callable] to be called every simulation tick.[br]
+## Static
 static func addUpdate(c:Callable) -> void:
     _updates.append(c)
 
 
-static func runRandomTicks(pos, rawID) -> void:
+static func _tickBlock(pos:Vector3i, rawID:int) -> void:
     if ProjectSettings.get_setting("gameplay/debug/show_updates"):
         var disp:MeshInstance3D = _tdisp.instantiate()
         disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
         terrain.add_child(disp)
+        
     var block:BlockInfo = blockList[rawID]
     if block.tickable:
         block.tickCB.call(pos)
 
 
+## Run all pending block updates.
+## Called automatically every simulation tick.[br]
+## Static
 static func runBlockUpdates() -> void:
     blockUpdates = pendingBlockUpdates
     pendingBlockUpdates = []
@@ -120,6 +149,9 @@ class BlockInfo:
         blockModel.random_tickable = true
 
 
+## Output a message to the debug log.[br]
+## [color=red][b]YOU SHOULD USE THIS INSTEAD OF PRINT.[/b][/color][br]
+## Static
 @warning_ignore("SHADOWED_GLOBAL_IDENTIFIER")
 static func log(id:String, message:String) -> String:
     var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
@@ -129,17 +161,17 @@ static func log(id:String, message:String) -> String:
     return out
 
 
-static func startBlockRegister(blockID:String, type:Voxdat.vox) -> VoxelBlockyModel:
+static func startBlockRegister(blockID:StringName, type:Voxdat.vox) -> VoxelBlockyModel:
     assert(not(_addingBlock), "You can only register one block at a time!")
     _addingBlock = true
     idCounter += 1
     match type:
-        0:
+        Voxdat.vox.GEOMETRY_CUBE:
             _newmodel = VoxelBlockyModelCube.new()
             _newmodel.atlas_size_in_tiles = Vector2i(10, 10)
-        1:
+        Voxdat.vox.GEOMETRY_MESH:
             _newmodel = VoxelBlockyModelMesh.new()
-        2:
+        Voxdat.vox.GEOMETRY_NONE:
             _newmodel = VoxelBlockyModelEmpty.new()
 
     return(_newmodel)
@@ -151,7 +183,10 @@ static func endBlockRegister(blockInfo:BlockInfo) -> void:
     blockList.append(blockInfo)
     blockIDlist[blockInfo.fullID] = blockList.size() - 1
     blockLibrary.add_model(_newmodel)
-    print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '" + blockInfo.fullID + "'")
+    print(
+        "[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '" 
+        + blockInfo.fullID + "'"
+    )
 
 
 static func inputRegister(callback:Callable) -> void:
@@ -186,21 +221,39 @@ static func setup() -> void:
 
     Mod.refman()
     for i in modsToLoad:
-        print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Fetching script for mod '" + i + "'...")
+        print(
+            "[" + Time.get_datetime_string_from_system() + 
+            "] [BlockManager] Fetching script for mod '" + i + "'..."
+        )
         mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
     for i in mods:
         if i.get("MODID") == null:
-            print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] One of your mods has no mod ID! It can still load, but this is bad practice. Register phase starting...")
+            print(
+                "[" + Time.get_datetime_string_from_system() + 
+                "] [BlockManager] One of your mods has no mod ID! It can still load," + 
+                "but this is bad practice. Register phase starting..."
+            )
             if i.has_method("registerPhase"):
                 i.registerPhase()
-            print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase done!")
+            print(
+                "[" + Time.get_datetime_string_from_system() + 
+                "] [BlockManager] Register phase done!"
+            )
         else:
-            print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Beginning register phase for mod '" + i.MODID + "'...")
-            #i.refman(self)
+            print(
+                "[" + Time.get_datetime_string_from_system() + 
+                "] [BlockManager] Beginning register phase for mod '" + i.MODID + "'..."
+            )
             if i.has_method("registerPhase"):
                 i.registerPhase()
-            print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase for '" + i.MODID + "' done!")
-    print("[" + Time.get_datetime_string_from_system() + "] [BlockManager] Register phase completed for all mods!")
+            print(
+                "[" + Time.get_datetime_string_from_system() + 
+                "] [BlockManager] Register phase for '" + i.MODID + "' done!"
+            )
+    print(
+        "[" + Time.get_datetime_string_from_system() + 
+        "] [BlockManager] Register phase completed for all mods!"
+    )
 
     blockLibrary.bake()
     terrain.mesher.library = blockLibrary

@@ -106,7 +106,7 @@ func ticks() -> void:
         center - Vector3(tickRange, tickRange, tickRange),
         2 * Vector3(tickRange, tickRange, tickRange)
     )
-    voxelTool.run_blocky_random_tick(area, tickNumber, BlockManager.runRandomTicks)
+    voxelTool.run_blocky_random_tick(area, tickNumber, BlockManager._tickBlock)
 
 
 func _physics_process(delta) -> void:
