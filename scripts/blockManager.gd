@@ -161,6 +161,9 @@ static func log(id:String, message:String) -> String:
     return out
 
 
+## Begin registering a new voxel.[br]
+## See [Voxdat], [method endBlockRegister] and [BlockManager.BlockInfo].[br]
+## Static
 static func startBlockRegister(blockID:StringName, type:Voxdat.vox) -> VoxelBlockyModel:
     assert(not(_addingBlock), "You can only register one block at a time!")
     _addingBlock = true
@@ -177,6 +180,9 @@ static func startBlockRegister(blockID:StringName, type:Voxdat.vox) -> VoxelBloc
     return(_newmodel)
 
 
+## Finish registering a voxel.[br]
+## See [method startBlockRegister] and [BlockManager.BlockInfo].[br]
+## Static
 static func endBlockRegister(blockInfo:BlockInfo) -> void:
     assert(_addingBlock, "You need to call 'startBlockRegister' first!")
     _addingBlock = false
@@ -189,10 +195,17 @@ static func endBlockRegister(blockInfo:BlockInfo) -> void:
     )
 
 
+## Register a function to handle user inputs.[br]
+## Analogous to [method Node._input][br]
+## Static
 static func inputRegister(callback:Callable) -> void:
     _inputList.append(callback)
 
 
+# TODO finalize and document the loading order
+## Initalize the block manager.[br]
+## You probably don't want to call this.[br]
+## Static
 static func setup() -> void:
     terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
     _tool = terrain.get_voxel_tool()
@@ -281,8 +294,11 @@ func _input(event) -> void:
 func _ready() -> void:
     instance = self
 
+
 # TODO abstract away VoxelBlockyModel to pin the features
 # TODO unit testing for abstractions ig??? feels like the right thing to do for compatibillity
+## Quickly and easily create a simple voxel that has the same texture on all sides.[br]
+## Static
 static func quickUniformBlock(
         modID:StringName,
         blockName:StringName,
@@ -290,7 +306,7 @@ static func quickUniformBlock(
         texturePos:Vector2,
         mat:Material,
         breakStrength := 3.0,
-        explStrength := 5.0,
+        explosionStrength := 5.0,
         tool := &"pickaxe",
         alphaChannel := 0) -> void:
     var model = startBlockRegister(modID + blockName, Voxdat.vox.GEOMETRY_CUBE)
@@ -309,7 +325,7 @@ static func quickUniformBlock(
             readableName,
             model,
             breakStrength,
-            explStrength,
+            explosionStrength,
             false,
             false,
             Callable(),
