@@ -298,6 +298,17 @@ func _ready() -> void:
 # TODO abstract away VoxelBlockyModel to pin the features
 # TODO unit testing for abstractions ig??? feels like the right thing to do for compatibillity
 ## Quickly and easily create a simple voxel that has the same texture on all sides.[br]
+## [param modID] is typically the ID of your mod, but can be anything if needed.[br]
+## [param blockName] is the ID of your voxel.[br]
+## [param readableName] is the name of your voxel that is shown to the player.
+## Supports translation keys.[br]
+## [param texturePos] is the UV position of the voxel's texture.[br]
+## [param mat] is the [Material] to apply to the voxel. The supplied texture should be a
+## 10x10 atlas.[br]
+## [param breakStrength] is how hard it is for the player to break the voxel.[br]
+## [param explosionStrength] is how hard it is for an explosion to break the voxel.[br]
+## [param tool] is the kind of tool that is most effective at breaking the voxel.[br]
+## [param alphaChannel] see [member VoxelBlockyModel.transparency_index][br]
 ## Static
 static func quickUniformBlock(
         modID:StringName,
@@ -337,12 +348,20 @@ static func quickUniformBlock(
     endBlockRegister(bi)
 
 
-static func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := false) -> bool:
+## Places a voxel at the specified position.
+## [param pos] is the position.[br]
+## [param blockID] is the id of the voxel you want to place (in [code]modID:blockID[/code] format).[br]
+## [param drop] determines if the voxel already at the position will drop an item when replaced.[br]
+## [param update] determins if the operation will send block updates to neighoring voxels.[br]
+## [param force] forces the operation to replace any voxel, not just ones flagged as replaceable.[br]
+## Returns [code]true[/code] if the operation succeeded.[br]
+## Static
+static func setBlock(pos:Vector3i, blockID:StringName, drop := true, update := true, force := false) -> bool:
     var willSet := force
 
     var oldBlock:BlockInfo = blockList[_tool.get_voxel(pos)]
     if not(willSet):
-        if oldBlock.properties.has(&"replaceable") or blockList[blockIDlist[type]].properties.has(&"air"):
+        if oldBlock.properties.has(&"replaceable") or blockList[blockIDlist[blockID]].properties.has(&"air"):
             willSet = true
 
     if willSet:
@@ -358,7 +377,7 @@ static func setBlock(pos:Vector3i, type:String, drop := true, update := true, fo
                     item = ItemManager.ItemStack.new(itemID, 1)
                 ItemManager.spawnWorldItem(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
 
-        _tool.set_voxel(pos, blockIDlist[type])
+        _tool.set_voxel(pos, blockIDlist[blockID])
 
         if update:
             pendingBlockUpdates.append(pos)
@@ -372,6 +391,8 @@ static func setBlock(pos:Vector3i, type:String, drop := true, update := true, fo
     return willSet
 
 
+## Gets the [BlockInfo] for the voxel at the specified position.[br]
+## Static
 static func getBlock(pos:Vector3) -> BlockInfo:
     var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
     return blockList[_tool.get_voxel(npos)]
