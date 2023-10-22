@@ -19,14 +19,16 @@ var closeCallbacks:Array[Array] = []
 ## Should only be set using [method setExit].
 var counted := true
 
+# TODO add a way to add more buttons to the bottom of the panel
+
 
 func _ready() -> void:
     $HBoxContainer/Button.text = Translator.translate(exitName)
 
 
 ## Configures how the panel will behave when closed.[br]
-## [code]ename[/code] sets the text on the exit button.[br]
-## [code]obj[/code] and [code]fun[/code] are a workaround for static callables. Pass in an object, 
+## [param ename] sets the text on the exit button.[br]
+## [param obj] and [param fun] are a workaround for static callables. Pass in an object, 
 ## and the name of the function to call on it.
 func setExit(ename:String, obj:Object = null, fun:StringName = &"", count = true) -> void:
     exitName = ename
@@ -36,13 +38,13 @@ func setExit(ename:String, obj:Object = null, fun:StringName = &"", count = true
     
 
 ## Adds a callback to be called when the panel closes.[br]
-## [code]obj[/code] and [code]fun[/code] are a workaround for static callables. Pass in an object, 
+## [param obj] and [param fun] are a workaround for static callables. Pass in an object, 
 ## and the name of the function to call on it.
 func addExit(obj:Object, fun:StringName) -> void:
     closeCallbacks.append([obj, fun])
 
 
-## Add an item to be displayed inside the panel.
+## Add a [Control] to be displayed inside the panel.
 func addItem(item:Control) -> void:
     $Panel/ScrollContainer/Container.add_child(item)
 

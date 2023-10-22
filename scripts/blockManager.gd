@@ -76,7 +76,7 @@ static func _tickBlock(pos:Vector3i, rawID:int) -> void:
         block.tickCB.call(pos)
 
 
-## Run all pending block updates.
+## Run all pending block updates.[br]
 ## Called automatically every simulation tick.[br]
 ## Static
 static func runBlockUpdates() -> void:
@@ -340,23 +340,23 @@ static func quickUniformBlock(
 static func setBlock(pos:Vector3i, type:String, drop := true, update := true, force := false) -> bool:
     var willSet := force
 
-    var i:BlockInfo = blockList[_tool.get_voxel(pos)]
+    var oldBlock:BlockInfo = blockList[_tool.get_voxel(pos)]
     if not(willSet):
-        if i.properties.has(&"replaceable") or blockList[blockIDlist[type]].properties.has(&"air"):
+        if oldBlock.properties.has(&"replaceable") or blockList[blockIDlist[type]].properties.has(&"air"):
             willSet = true
 
     if willSet:
         if drop:
-            var h := i.dropItem
-            if h != &"null":
-                var j:ItemManager.ItemStack
-                if h == &"*":
-                    j = ItemManager.ItemStack.new(i.fullID, 1)
-                elif h == &"script":
+            var itemID := oldBlock.dropItem
+            if itemID != &"null":
+                var item:ItemManager.ItemStack
+                if itemID == &"*":
+                    item = ItemManager.ItemStack.new(oldBlock.fullID, 1)
+                elif itemID == &"script":
                     pass
                 else:
-                    j = ItemManager.ItemStack.new(h, 1)
-                ItemManager.spawnWorldItem(j, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
+                    item = ItemManager.ItemStack.new(itemID, 1)
+                ItemManager.spawnWorldItem(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
 
         _tool.set_voxel(pos, blockIDlist[type])
 
