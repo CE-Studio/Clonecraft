@@ -89,6 +89,7 @@ static func runBlockUpdates() -> void:
             terrain.add_child(disp)
 
 
+## The base class for representing information about a voxel.
 class BlockInfo:
     var modID:StringName
     var nameID:StringName
@@ -356,12 +357,18 @@ static func quickUniformBlock(
 ## [param force] forces the operation to replace any voxel, not just ones flagged as replaceable.[br]
 ## Returns [code]true[/code] if the operation succeeded.[br]
 ## Static
-static func setBlock(pos:Vector3i, blockID:StringName, drop := true, update := true, force := false) -> bool:
+static func setBlock(
+        pos:Vector3i, 
+        blockID:StringName, 
+        drop := true, 
+        update := true, 
+        force := false,
+    ) -> bool:
     var willSet := force
 
     var oldBlock:BlockInfo = blockList[_tool.get_voxel(pos)]
     if not(willSet):
-        if oldBlock.properties.has(&"replaceable") or blockList[blockIDlist[blockID]].properties.has(&"air"):
+        if oldBlock.properties.has(&"replaceable") or getBlockID(blockID).properties.has(&"air"):
             willSet = true
 
     if willSet:
