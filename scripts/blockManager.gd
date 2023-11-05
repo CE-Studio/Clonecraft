@@ -73,7 +73,7 @@ static func _tickBlock(pos:Vector3i, rawID:int) -> void:
         
     var block:BlockInfo = blockList[rawID]
     if block.tickable:
-        block.tickCB.call(pos)
+        block.tickCallback.call(pos)
 
 
 ## Run all pending block updates.[br]
@@ -91,23 +91,49 @@ static func runBlockUpdates() -> void:
 
 ## The base class for representing information about a voxel.
 class BlockInfo:
+    ## The ID of the mod the voxel comes from.[br]
+    ## Identical to the first half of [member fullID].
     var modID:StringName
+    ## The ID of the voxel.[br]
+    ## Identical to the second half of [member fullID].
     var nameID:StringName
+    ## The full ID of the voxel, in the format of [code]mod_id:block_id[/code].
     var fullID:StringName
+    ## The human-readable name of the voxel.
     var nameReadable:StringName
+    ## The [VoxelBlockyModel] of the voxel.[br]
+    ## Not to be confused with any kind of [Mesh].
     var blockModel:VoxelBlockyModel
+    ## How hard the voxel is for the player to mine.
     var breakStrength:float
+    ## How hard it is to destroy the voxel in an explosion.
     var explStrength:float
+    ## If explosions or the player are completely unable to destroy the voxel.
     var unbreakable:bool
+    ## If the voxel has a custom script attached.
     var scripted:bool
+    ## The script attached to the voxel.[br]
+    ## Is empty if [member scripted] is [code]false[/code].[br]
+    ## Called only on block updates.
     var blockScript:Callable
+    ## The kind of tool most effective at mining the voxel.
     var toolClass:StringName
+    ## If the voxel can be randomly ticked.
     var tickable := false
-    var tickCB:Callable
+    ## The script to be called if the voxel is randomly ticked.
+    ## Is empty if [member tickable] is [code]false[/code].[br]
+    var tickCallback:Callable
+    ## The ID of the sound to be played when the voxel is stepped on.
     var stepsound:StringName
+    ## The ID of the sound to be played when the voxel is placed.
     var placesound:StringName
+    ## The ID of the sound to be played when the voxel is borken.
     var breaksound:StringName
+    ## The ID of the item the voxel will drop when broken.
     var dropItem:StringName
+    # TODO come up with and explain voxel properties
+    ## A list of various unique properties the voxel may have.[br]
+    ## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
     var properties:Array[StringName]
 
 
@@ -143,10 +169,11 @@ class BlockInfo:
         breaksound = fbreaksound
         dropItem = fdropitem
 
-
+    
+    ## Set the voxel to be able to be randomly ticked.
     func setTickable(ftickcb:Callable) -> void:
         tickable = true
-        tickCB = ftickcb
+        tickCallback = ftickcb
         blockModel.random_tickable = true
 
 
