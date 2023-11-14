@@ -1,6 +1,8 @@
 extends Node
 class_name ItemManager
+## Creates and manages items.
 
+## A dictionary 
 static var items := {}
 static var witem:PackedScene = preload("res://scripts/itemAssets/worldItem.tscn")
 
