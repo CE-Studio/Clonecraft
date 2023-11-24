@@ -2,13 +2,11 @@ class_name Player
 extends Entity
 
 var SENSITIVITY := [200.0, 200.0]
-var settingTick := -1
 
 var head:Node3D
 var cam:Camera3D
 var armPointX:Node3D
 var armPointY:Node3D
-var blockManager:BlockManager
 var voxelTool:VoxelToolTerrain
 var lookingAt:VoxelRaycastResult
 var blockOutline:MeshInstance3D
@@ -20,6 +18,7 @@ var terrain:VoxelTerrain
 
 var camcycle := 0
 var moveDist := 0.0
+var time := 0.0
 var animCurSpeed := 0.0
 var tickRange := 100
 var tickNumber := 512
@@ -28,14 +27,13 @@ var world:WorldControl
 var fcheck := 1.0
 
 
-func _ready():
+func _ready() -> void:
     head = $"head"
     cam = $"head/Camera3D"
     armPointY = $"armpointy"
     armPointX = $"armpointy/armpointx"
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-    blockManager = $"/root/BlockManager"
-    terrain = blockManager.terrain
+    terrain = BlockManager.terrain
     voxelTool = $"/root/Node3D/VoxelTerrain".get_voxel_tool()
     blockOutline = $"/root/Node3D/blockOutline"
     cloudmat = $"./clouds".material_override
@@ -47,9 +45,14 @@ func _ready():
     derg["root"] = $derg
     derg["body"] = $derg/Node2
     derg["head"] = $derg/Node2/bone2/head
+    derg["larm"] = $derg/Node2/bone2/larm
+    derg["rarm"] = $derg/Node2/bone2/rarm
+    derg["lleg"] = $derg/Node2/bone2/lleg
+    derg["rleg"] = $derg/Node2/bone2/rleg
 
 
-func _process(delta):
+func _process(delta) -> void:
+    time += delta
     armPointY.rotation.y = lerp_angle(armPointY.rotation.y, head.rotation.y, delta * 20)
     armPointX.rotation.x = lerp_angle(armPointX.rotation.x, cam.rotation.x, delta * 20)
     armPointX.position = Vector3(
@@ -61,9 +64,18 @@ func _process(delta):
     derg["head"].rotation.x = armPointX.rotation.x
     cloudmat.uv1_offset.z += delta / 900
     fcheck += delta
+    
+    var z = (sin(time * 1.5) + 1) * 2.5
+    var x = sin(time * 0.994723812) * 2
+    var xl = sin(moveDist * 1.2) * (animCurSpeed * 40)
+    x += xl
+    derg["larm"].rotation_degrees = Vector3(-x, 0, -z)
+    derg["rarm"].rotation_degrees = Vector3(x, 0, z)
+    derg["lleg"].rotation_degrees.x = xl + 12.5
+    derg["rleg"].rotation_degrees.x = -xl + 12.5
 
 
-func _input(event):
+func _input(event) -> void:
     if event.is_action_pressed("ui_accept"):
         if fcheck <= 0.2:
             if abilities["allowFlight"] || abilities["isFlying"]:
@@ -88,16 +100,18 @@ func _input(event):
             armPointY.visible = true
 
 
-func ticks():
+func ticks() -> void:
     var center = position.floor()
     var area = AABB(
         center - Vector3(tickRange, tickRange, tickRange),
         2 * Vector3(tickRange, tickRange, tickRange)
     )
-    voxelTool.run_blocky_random_tick(area, tickNumber, blockManager.runRandomTicks)
+    voxelTool.run_blocky_random_tick(area, tickNumber, BlockManager._tickBlock)
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
+    var SPEED:float
+    
     # Add the gravity.
     if (not abilities["isFlying"]) && (not is_on_floor()):
         velocity.y -= GRAVITY * delta
@@ -121,16 +135,16 @@ func _physics_process(delta):
     if Input.is_action_pressed("ui_up"):
         if Input.is_action_pressed("game_sprint"):
             if Input.is_action_pressed("ui_accept"):
-                SPEED = 9
+                SPEED = abilities.size.speed * 1.8
             else:
-                SPEED = 8
+                SPEED = abilities.size.speed * 1.6
         else:
-            SPEED = 5
+            SPEED = abilities.size.speed
     else:
-        SPEED = 5
+        SPEED = abilities.size.speed
 
     if Input.is_action_pressed("game_sneak"):
-        SPEED = 2
+        SPEED = abilities.size.speed * 0.4
         head.position.y = 0.58
         armPointY.position.y = 0.6
     else:
@@ -138,8 +152,7 @@ func _physics_process(delta):
         armPointY.position.y = 0.689
 
     # Get the input direction and handle the movement/deceleration.
-    # As good practice, you should replace UI actions with custom gameplay actions.
-    var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+    var input_dir = Input.get_vector("game_left", "game_right", "game_up", "game_down")
     var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
     if direction:
         velocity.x = direction.x * SPEED * abilities.scale.speed
@@ -195,3 +208,7 @@ func _physics_process(delta):
             cams[2].position = Vector3(0, 0, -5)
 
     ticks()
+
+
+func _on_enter_item_range(body) -> void:
+    BlockManager.log("clonecraft", body.name)

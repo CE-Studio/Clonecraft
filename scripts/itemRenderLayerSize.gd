@@ -5,12 +5,7 @@ extends SubViewport
 @onready var cam:Camera3D = $Camera3D
 
 
-#func _ready():
-#    own_world_3d = true
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta) -> void:
     size = vp.get_visible_rect().size
     cam.size = (size.y)
     ItemManager.screenSize = size

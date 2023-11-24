@@ -1,11 +1,14 @@
 extends Node
+class_name ItemManager
+## Creates and manages items.
 
-var items := {}
-var witem:PackedScene = preload("res://scripts/itemAssets/worldItem.tscn")
+## A dictionary 
+static var items := {}
+static var witem:PackedScene = preload("res://scripts/itemAssets/worldItem.tscn")
 
-var _buf := VoxelBuffer.new()
-var _mesh := VoxelMesherBlocky.new()
-var screenSize := Vector2(100, 100)
+static var _buf := VoxelBuffer.new()
+static var _mesh := VoxelMesherBlocky.new()
+static var screenSize := Vector2(100, 100)
 
 
 class ItemStack:
@@ -27,28 +30,24 @@ class Item:
         model = itemMesh
 
 
-func addToItemLayer(obj:Node) -> Node:
-    $/root/Node3D/itemRenderLayer/Camera3D/itemParent.add_child(obj)
+static func addToItemLayer(obj:Node) -> Node:
+    Statics.get_node("/root/Node3D/itemRenderLayer/Camera3D/itemParent").add_child(obj)
     return obj
 
 
-func getReady() -> void:
+static func getReady() -> void:
     _buf.create(3, 3, 3)
     _mesh.library = BlockManager.blockLibrary
 
 
-func _process(_delta:float) -> void:
-    pass
-
-
-func simpleBlockItemModel(bi:BlockManager.BlockInfo) -> Mesh:
+static func simpleBlockItemModel(bi:BlockManager.BlockInfo) -> Mesh:
     _buf.set_voxel(BlockManager.blockIDlist[bi.fullID], 1, 1, 1)
     #_buf.fill(BlockManager.blockIDlist[bi.fullID])
     var m:Mesh = _mesh.build_mesh(_buf, _mesh.library.get_materials())
     return m
 
 
-func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
+static func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
     if items.has(bi.fullID):
         return items[bi.fullID]
     var m := simpleBlockItemModel(bi)
@@ -59,19 +58,19 @@ func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
     return nitem
 
 
-func simpleItemModel():
+static func simpleItemModel():
     pass
 
 
-func simpleItem() -> Item:
+static func simpleItem() -> Item:
     var nitem := Item.new(Mesh.new())
     return nitem
 
 
-func spawnWorldItem(itemStack:ItemStack, pos:Vector3, vel:Vector3 = Vector3(0, 2, 0)) -> WorldItem:
+static func spawnWorldItem(itemStack:ItemStack, pos:Vector3, vel:Vector3 = Vector3(0, 2, 0)) -> WorldItem:
     var nitem:WorldItem = witem.instantiate()
     nitem.position = pos
     nitem.apply_central_impulse(vel)
     nitem.setItem(itemStack)
-    $"/root/Node3D".add_child(nitem)
+    Statics.get_node("/root/Node3D").add_child(nitem)
     return nitem

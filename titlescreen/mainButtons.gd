@@ -1,22 +1,22 @@
 extends GridContainer
 
 
-func _ready():
+func _ready() -> void:
     $"Play".connect("pressed", play)
     $"Options".connect("pressed", openOptions)
     $"ModOpts".connect("pressed", openMods)
     $"Quit".connect("pressed", get_tree().quit)
 
 
-func play():
+func play() -> void:
     get_tree().change_scene_to_file("res://node_3d.tscn")
 
 
-func openOptions():
+func openOptions() -> void:
     SettingManager.spawnMenu()
 
 
-func openMods():
+func openMods() -> void:
     var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
     op.setExit("gui.generic.back")
     $"/root".add_child(op)

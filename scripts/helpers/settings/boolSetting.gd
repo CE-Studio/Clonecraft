@@ -1,5 +1,6 @@
 extends GridContainer
 class_name BoolSetting
+## A GUI element that is created and managed by [SettingManager].
 
 
 var iname:StringName

@@ -68,8 +68,8 @@
             {
                 "name": "options.ui.scale",
                 "type": "float",
-                "slidemin": 0.0,
-                "slidemax": 10.0,
+                "slidemin": 0.5,
+                "slidemax": 4.0,
                 "default": 1.0,
                 "path": "gameplay/ui/scale"
             },
@@ -94,6 +94,12 @@
                         "type": "bool",
                         "default": false,
                         "path": "gameplay/debug/show_updates"
+                    },
+                    {
+                        "name": "options.advanced.debug.log_to_chat",
+                        "type": "bool",
+                        "default": false,
+                        "path": "gameplay/debug/log_to_chat"
                     }
                 ]
             }

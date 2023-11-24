@@ -2,9 +2,6 @@ extends CharacterBody3D
 class_name Entity
 
 
-var SPEED := 5.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var TERMINAL_VELOCITY:float = ProjectSettings.get_setting("gameplay/physics/terminal_velocity")
 var GRAVITY:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -14,6 +11,9 @@ var abilities := {
     "allowFlight":false,
     "isFlying":false,
     "allowBuild":false,
+    "endlessInventory":false,
+    "allowPickup":false,
+    "immortal":false,
     "scale":{
         "uniform":1.0,
         "x":1.0,
@@ -24,6 +24,8 @@ var abilities := {
         "range":1.0,
         "reach":1.0,
         "inventory":1.0,
+        "health":20.0,
+        "fallDamage":1.0,
     },
     "size":{
         "x":1.0,
@@ -33,27 +35,25 @@ var abilities := {
         "jump":8.0,
         "reach":0.0,
         "inventory":0.0,
+        "health":20.0,
+        "fallDamage":4.0,
     },
 }
 
-func _physics_process(delta):
-    # Add the gravity.
+
+func _settingsChanged() -> void:
+    TERMINAL_VELOCITY = ProjectSettings.get_setting("gameplay/physics/terminal_velocity")
+    GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
+func _movement_process(delta:float) -> void:
+    pass
+
+
+func _physics_process(delta:float) -> void:
     if not is_on_floor():
         velocity.y -= GRAVITY * delta
 
-    # Handle Jump.
-    if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-        velocity.y = abilities.size.jump
-
-    # Get the input direction and handle the movement/deceleration.
-    # As good practice, you should replace UI actions with custom gameplay actions.
-    var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-    var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-    if direction:
-        velocity.x = direction.x * SPEED
-        velocity.z = direction.z * SPEED
-    else:
-        velocity.x = move_toward(velocity.x, 0, SPEED)
-        velocity.z = move_toward(velocity.z, 0, SPEED)
+    _movement_process(delta)
 
     move_and_slide()

@@ -3,14 +3,14 @@ extends RefCounted
 
 ## The base class for all mods.
 ##
-## The base class that all gameplay mods should inherit from. It is loaded by ["scripts/blockManager.gd"] during world initialization.[br]
+## The base class that all gameplay mods should inherit from. It is loaded by [BlockManager] during world initialization.[br]
 ## [br]
 ## Mods require a [code]registerPhase()[/code] function to load.
 
 ## A shorthand reference to BlockManager.
-static var man:BlockManager
+static var man := BlockManager
 ## A premade VoxelTool for the game world.
-#TODO dimenstion support?
+# TODO dimenstion support?
 static var tool:VoxelToolTerrain
 ## A reference to the player.
 static var player:Player
@@ -20,10 +20,9 @@ static var terrain:VoxelTerrain
 
 ## Used to initialize some variables before loading.[br]
 ## Do not override unless you know what you're doing.
-static func refman(ref:BlockManager):
-    man = ref
+static func refman() -> void:
     terrain = man.terrain
-    player = man.get_node("/root/Node3D/player")
+    player = Statics.get_node("/root/Node3D/player")
     tool = man._tool
 
 

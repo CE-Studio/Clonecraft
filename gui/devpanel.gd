@@ -35,10 +35,10 @@ func populate(data:Dictionary) -> void:
             content[-1].autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
             if dat["extra"] == "":
                 addExtract(Engine.get_license_text())
-                #TODO fix the rest of this freezing the game.
-                #I don't know why it does. I don't know how it does.
-                #My only guess is there's just too much text.
-                #still an issue in 4.2 :sigh:
+                # TODO fix the rest of this freezing the game.
+                # I don't know why it does. I don't know how it does.
+                # My only guess is there's just too much text.
+                # still an issue in 4.2 :sigh:
                 #addExtract(Engine.get_license_info())
                 #addExtract(Engine.get_copyright_info())
                 #addExtract(Engine.get_author_info())
@@ -55,7 +55,7 @@ func populate(data:Dictionary) -> void:
             print("the fucc is this???")
 
 
-func addExtract(obj, addRule := true):
+func addExtract(obj, addRule := true) -> void:
     if obj is Dictionary:
         for i in obj:
             if obj[i] is String:
@@ -76,7 +76,7 @@ func addExtract(obj, addRule := true):
         content[-1].text = content[-1].text + "\n" + obj
 
 
-func _on_button_pressed():
+func _on_button_pressed() -> void:
     var op = load("res://gui/backingpanel.tscn").instantiate()
     $"/root".add_child(op)
     var h := 0

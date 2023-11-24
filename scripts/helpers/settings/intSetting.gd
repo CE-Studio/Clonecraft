@@ -1,5 +1,6 @@
 extends GridContainer
 class_name IntSetting
+## A GUI element that is created and managed by [SettingManager].
 
 
 var iname:StringName

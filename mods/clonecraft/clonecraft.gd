@@ -12,7 +12,7 @@ var grassDirs = [
 ]
 
 
-func _ready():
+func _ready() -> void:
     pass
 
 
@@ -27,7 +27,7 @@ func runGrass(pos):
         man.setBlock(pos, &"clonecraft:dirt", false, true, true)
 
 
-func _makeGB():
+func _makeGB() -> void:
     var model = man.startBlockRegister("clonecraft:grassBlock", Voxdat.vox.GEOMETRY_CUBE)
     model.set_mesh_collision_enabled(0, true)
     model.transparency_index = 0
@@ -57,7 +57,7 @@ func _makeGB():
     man.endBlockRegister(bi)
 
 
-func _makeCT():
+func _makeCT() -> void:
     var model = man.startBlockRegister("clonecraft:craftingBench", Voxdat.vox.GEOMETRY_CUBE)
     model.set_mesh_collision_enabled(0, true)
     model.transparency_index = 0
@@ -86,7 +86,7 @@ func _makeCT():
     man.endBlockRegister(bi)
 
 
-func _makeOL():
+func _makeOL() -> void:
     var model1 = man.startBlockRegister("clonecraft:logVertOak", Voxdat.vox.GEOMETRY_CUBE)
     model1.set_mesh_collision_enabled(0, true)
     model1.transparency_index = 0
@@ -169,7 +169,7 @@ func _makeOL():
     man.endBlockRegister(bi3)
 
 
-func registerPhase():
+func registerPhase() -> void:
     man.quickUniformBlock(MODID, "stone", "Stone", Vector2(0, 0), mat1)
     man.quickUniformBlock(MODID, "dirt", "Dirt", Vector2(1, 0), mat1, 1, 1, "shovel")
     canGrass.append("clonecraft:dirt")

@@ -1,12 +1,12 @@
 
 class gen:
+    const MARGIN = 5
+    
+    static var noise = FastNoise2.new()
+    
     var supBuf := VoxelBuffer.new()
     var bounds := Vector3i()
     var pos:Vector3i
-    var noise = FastNoise2.new()
-    var pending:int
-
-    const MARGIN = 5
 
 
     func initSupBuf(size:Vector3i) -> void:
@@ -43,7 +43,7 @@ class gen:
 
 
     func genSolid(x:int, y:int, z:int) -> int:
-        pending = 0
+        var pending:int = 0
         if y < (noise.get_noise_2d_single(Vector2(x / 20.0, z / 20.0)) * (120 * noise.get_noise_2d_single(Vector2(x / 50.0, z / 50.0)))) + 30:
             if getSupBuf(x, y + 1, z) == 0:
                 pending = 3
@@ -54,7 +54,7 @@ class gen:
         return pending
 
 
-    func iterate():
+    func iterate() -> void:
         for ix in bounds.x:
             for iz in bounds.z:
                 for iy in bounds.y:
@@ -62,7 +62,7 @@ class gen:
                     setSupBuf(ix, iiy, iz, genSolid(ix + (pos.x), iiy + (pos.y - MARGIN), iz + (pos.z)), false)
 
 
-    func blit(buf:VoxelBuffer):
+    func blit(buf:VoxelBuffer) -> void:
         buf.copy_channel_from_area(
             supBuf,
             Vector3i(0, MARGIN, 0),
@@ -79,7 +79,7 @@ class gen:
         blit(buf)
 
 
-func _generate_block(buf:VoxelBuffer, rpos:Vector3i, _lod:int):
+func _generate_block(buf:VoxelBuffer, rpos:Vector3i, _lod:int) -> void:
     var h:gen = gen.new()
     h._generate_block(buf, rpos, _lod)
     h.queue_free()

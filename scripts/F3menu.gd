@@ -1,32 +1,40 @@
 extends Label
 
-const LABEL_TEXT := (
+const LABEL1_TEXT := (
     "Clonecraft %s" +
     "\nFPS: %s" +
     "\nX/Y/Z: %s, %s, %s" +
     "\nRotation: %s, %s" +
     "\nLooking at: %s, %s, %s: %s"
 )
-var player:Player
-var head:Node3D
-var cam:Camera3D
-var blockManager:BlockManager
+const LABEL2_TEXT := (
+    "%s %s"
+)
 
 
-func _ready():
-    player = $"/root/Node3D/player"
-    blockManager = $"/root/BlockManager"
-    head = player.get_child(1)
-    cam = head.get_child(0)
+var gpuinfo := ["Unkown Driver", "0.0.0"]
 
 
-func _process(delta):
+@onready var player:Player = $"/root/Node3D/player"
+@onready var head:Node3D = player.get_child(1)
+@onready var cam:Camera3D = head.get_child(0)
+@onready var other:Label = $"../f32"
+
+
+func _ready() -> void:
+    var h = OS.get_video_adapter_driver_info()
+    if h.size() >= 2:
+        if h[0] != "":
+            gpuinfo = h
+
+
+func _process(_delta) -> void:
     var pl = Vector3i.ZERO
     var v = "None"
     if player.lookingAt != null:
         pl = player.lookingAt.get_position()
-        v = blockManager.blockList[player.voxelTool.get_voxel(pl)].fullID
-    text = LABEL_TEXT % [
+        v = BlockManager.blockList[player.voxelTool.get_voxel(pl)].fullID
+    text = LABEL1_TEXT % [
         SettingManager.VERSION,
         Engine.get_frames_per_second(),
         snapped(player.position.x, 0.01),
@@ -38,4 +46,7 @@ func _process(delta):
         pl[1],
         pl[2],
         v,
+    ]
+    other.text = LABEL2_TEXT % [
+        gpuinfo[0], gpuinfo[1],
     ]
