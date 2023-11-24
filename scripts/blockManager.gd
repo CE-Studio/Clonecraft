@@ -14,7 +14,7 @@ static var mods:Array[Mod] = []
 ## Static
 static var blockList:Array[BlockInfo] = []
 ## A dictionary to translate between a voxel's string name and numerical ID.[br]
-## Numerical IDs will vary from world to world. Do not hardcode them. 
+## Numerical IDs will vary from world to world. Do not hardcode them.
 ## Caching, however, is strongly encuraged.[br]
 ## Static
 static var blockIDlist := {}
@@ -70,7 +70,7 @@ static func _tickBlock(pos:Vector3i, rawID:int) -> void:
         var disp:MeshInstance3D = _tdisp.instantiate()
         disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
         terrain.add_child(disp)
-        
+
     var block:BlockInfo = blockList[rawID]
     if block.tickable:
         block.tickCallback.call(pos)
@@ -169,7 +169,7 @@ class BlockInfo:
         breaksound = fbreaksound
         dropItem = fdropitem
 
-    
+
     ## Set the voxel to be able to be randomly ticked.
     func setTickable(ftickcb:Callable) -> void:
         tickable = true
@@ -218,7 +218,7 @@ static func endBlockRegister(blockInfo:BlockInfo) -> void:
     blockIDlist[blockInfo.fullID] = blockList.size() - 1
     blockLibrary.add_model(_newmodel)
     print(
-        "[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '" 
+        "[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '"
         + blockInfo.fullID + "'"
     )
 
@@ -263,36 +263,36 @@ static func setup() -> void:
     Mod.refman()
     for i in modsToLoad:
         print(
-            "[" + Time.get_datetime_string_from_system() + 
+            "[" + Time.get_datetime_string_from_system() +
             "] [BlockManager] Fetching script for mod '" + i + "'..."
         )
         mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
     for i in mods:
         if i.get("MODID") == null:
             print(
-                "[" + Time.get_datetime_string_from_system() + 
-                "] [BlockManager] One of your mods has no mod ID! It can still load," + 
+                "[" + Time.get_datetime_string_from_system() +
+                "] [BlockManager] One of your mods has no mod ID! It can still load," +
                 "but this is bad practice. Register phase starting..."
             )
             if i.has_method("registerPhase"):
                 i.registerPhase()
             print(
-                "[" + Time.get_datetime_string_from_system() + 
+                "[" + Time.get_datetime_string_from_system() +
                 "] [BlockManager] Register phase done!"
             )
         else:
             print(
-                "[" + Time.get_datetime_string_from_system() + 
+                "[" + Time.get_datetime_string_from_system() +
                 "] [BlockManager] Beginning register phase for mod '" + i.MODID + "'..."
             )
             if i.has_method("registerPhase"):
                 i.registerPhase()
             print(
-                "[" + Time.get_datetime_string_from_system() + 
+                "[" + Time.get_datetime_string_from_system() +
                 "] [BlockManager] Register phase for '" + i.MODID + "' done!"
             )
     print(
-        "[" + Time.get_datetime_string_from_system() + 
+        "[" + Time.get_datetime_string_from_system() +
         "] [BlockManager] Register phase completed for all mods!"
     )
 
@@ -317,8 +317,8 @@ func _process(delta) -> void:
 func _input(event) -> void:
     for i in _inputList:
         i.call(event)
-        
-        
+
+
 func _ready() -> void:
     instance = self
 
@@ -385,10 +385,10 @@ static func quickUniformBlock(
 ## Returns [code]true[/code] if the operation succeeded.[br]
 ## Static
 static func setBlock(
-        pos:Vector3i, 
-        blockID:StringName, 
-        drop := true, 
-        update := true, 
+        pos:Vector3i,
+        blockID:StringName,
+        drop := true,
+        update := true,
         force := false,
     ) -> bool:
     var willSet := force

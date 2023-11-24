@@ -29,8 +29,8 @@ func startWait(pos:Vector3, rel:Vector3) -> void:
     get_tree().paused = true
     _waitpos = pos
     _waitrel = rel
-    
-    
+
+
 func pauseUnpause() -> void:
     if SettingManager.isIdle():
         if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:

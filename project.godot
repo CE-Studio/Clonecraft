@@ -15,7 +15,7 @@ config/name_localized={
 "en_US": "Clonecraft"
 }
 run/main_scene="res://init.tscn"
-config/features=PackedStringArray("4.2")
+config/features=PackedStringArray("4.2", "Double Precision")
 config/icon="res://icon.png"
 
 [editor_plugins]

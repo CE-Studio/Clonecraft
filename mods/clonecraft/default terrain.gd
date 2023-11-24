@@ -1,9 +1,9 @@
 
 class gen:
     const MARGIN = 5
-    
+
     static var noise = FastNoise2.new()
-    
+
     var supBuf := VoxelBuffer.new()
     var bounds := Vector3i()
     var pos:Vector3i
@@ -82,4 +82,4 @@ class gen:
 func _generate_block(buf:VoxelBuffer, rpos:Vector3i, _lod:int) -> void:
     var h:gen = gen.new()
     h._generate_block(buf, rpos, _lod)
-    h.queue_free()
+    #h.free()

@@ -64,7 +64,7 @@ func _process(delta) -> void:
     derg["head"].rotation.x = armPointX.rotation.x
     cloudmat.uv1_offset.z += delta / 900
     fcheck += delta
-    
+
     var z = (sin(time * 1.5) + 1) * 2.5
     var x = sin(time * 0.994723812) * 2
     var xl = sin(moveDist * 1.2) * (animCurSpeed * 40)
@@ -111,7 +111,7 @@ func ticks() -> void:
 
 func _physics_process(delta) -> void:
     var SPEED:float
-    
+
     # Add the gravity.
     if (not abilities["isFlying"]) && (not is_on_floor()):
         velocity.y -= GRAVITY * delta
