@@ -53,7 +53,7 @@ static var _tool:VoxelToolTerrain
 static var _newmodel:VoxelBlockyModel
 
 
-## Get the [BlockInfo] tied to a specific ID string.[br]
+## Get the [BlockManager.BlockInfo] tied to a specific ID string.[br]
 ## Static
 static func getBlockID(id:StringName) -> BlockInfo:
     return blockList[blockIDlist[id]]
@@ -425,7 +425,7 @@ static func setBlock(
     return willSet
 
 
-## Gets the [BlockInfo] for the voxel at the specified position.[br]
+## Gets the [BlockManager.BlockInfo] for the voxel at the specified position.[br]
 ## Static
 static func getBlock(pos:Vector3) -> BlockInfo:
     var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))

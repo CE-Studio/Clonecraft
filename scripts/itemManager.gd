@@ -2,12 +2,13 @@ extends Node
 class_name ItemManager
 ## Creates and manages items.
 
-## A dictionary 
+## A dictionary containing all registered items.
 static var items := {}
+## A preloaded blank [WorldItem].
 static var witem:PackedScene = preload("res://scripts/itemAssets/worldItem.tscn")
-
 static var _buf := VoxelBuffer.new()
 static var _mesh := VoxelMesherBlocky.new()
+## Keeps track of the screen size for rendering reasons.
 static var screenSize := Vector2(100, 100)
 
 
@@ -30,6 +31,8 @@ class Item:
         model = itemMesh
 
 
+## Parents a node to the item rendering layer to draw on-screen.[br]
+## The item rendering layer is orthographic 3D.
 static func addToItemLayer(obj:Node) -> Node:
     Statics.get_node("/root/Node3D/itemRenderLayer/Camera3D/itemParent").add_child(obj)
     return obj
