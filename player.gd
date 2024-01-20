@@ -1,30 +1,54 @@
 class_name Player
 extends Entity
 
-var SENSITIVITY := [200.0, 200.0]
+## The player controller
+##
+## Manages player movement, physics, and interaction.
 
+## How reactive the camera is to mouse movement. Supports setting both x and y individually.
+var SENSITIVITY := Vector2(200.0, 200.0)
+
+## Refrence to the player's head.
 var head:Node3D
+## Refrence to the first-person camera.
 var cam:Camera3D
+## A point used for animation.
 var armPointX:Node3D
+## A point used for animation.
 var armPointY:Node3D
+## A [VoxelTool] linked to the current dimension.
 var voxelTool:VoxelToolTerrain
+## The nearest block that the player is looking at, within their reach.
 var lookingAt:VoxelRaycastResult
+## The mesh that is used to highlight the block that the player is looking at.
 var blockOutline:MeshInstance3D
+## The material used to render the clouds.
 var cloudmat:StandardMaterial3D
+## An array containing the 3rd-person cameras.
 var cams:Array[Camera3D]
+## A raycast used to position the 3rd-person cameras.
 var camRay:RayCast3D
+## A dictionary containing the various parts of the 3rd-person player model.
 var derg:Dictionary
+## A refrence to the currently loaded dimension's terrain.
 var terrain:VoxelTerrain
 
+## Keeps track of what camera is being used.
 var camcycle := 0
+## Keeps strack of how far the player has moved for animation.
 var moveDist := 0.0
+## Keeps count of how many seconds the world has been loaded for. Used for animation and the day/night cycle.
 var time := 0.0
+## Used to smoothly fade the walking animation in/out.
 var animCurSpeed := 0.0
+## Sets how may blocks away from the player random ticks can be.
 var tickRange := 100
+## Sets how many random ticks will go off every simulation tick.
 var tickNumber := 512
+## A reference to the world's [WorldControl].
 var world:WorldControl
 
-var fcheck := 1.0
+var _fcheck := 1.0
 
 
 func _ready() -> void:
@@ -63,7 +87,7 @@ func _process(delta) -> void:
     derg["body"].rotation.y = armPointY.rotation.y
     derg["head"].rotation.x = armPointX.rotation.x
     cloudmat.uv1_offset.z += delta / 900
-    fcheck += delta
+    _fcheck += delta
 
     var z = (sin(time * 1.5) + 1) * 2.5
     var x = sin(time * 0.994723812) * 2
@@ -77,13 +101,13 @@ func _process(delta) -> void:
 
 func _input(event) -> void:
     if event.is_action_pressed("ui_accept"):
-        if fcheck <= 0.2:
+        if _fcheck <= 0.2:
             if abilities["allowFlight"] || abilities["isFlying"]:
                 abilities["isFlying"] = not abilities["isFlying"]
-        fcheck = 0
+        _fcheck = 0
     elif event is InputEventMouseMotion:
-        var mx = -(event.relative.x / SENSITIVITY[0])
-        var my = -(event.relative.y / (SENSITIVITY[1] / 2))
+        var mx = -(event.relative.x / SENSITIVITY.x)
+        var my = -(event.relative.y / (SENSITIVITY.y / 2))
         head.rotate_y(mx)
         cam.rotate_x(my)
         cam.rotation.x = clamp(cam.rotation.x, -1.5708, 1.5708)
@@ -100,6 +124,7 @@ func _input(event) -> void:
             armPointY.visible = true
 
 
+## Runs random ticks around the player. Called automatically.
 func ticks() -> void:
     var center = position.floor()
     var area = AABB(
@@ -154,12 +179,19 @@ func _physics_process(delta) -> void:
     # Get the input direction and handle the movement/deceleration.
     var input_dir = Input.get_vector("game_left", "game_right", "game_up", "game_down")
     var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+    # TODO scale with terrain player is on.
+    var lerpdelta = 30.0 * delta
+    var cvel := Vector2(velocity.x, velocity.z)
     if direction:
-        velocity.x = direction.x * SPEED * abilities.scale.speed
-        velocity.z = direction.z * SPEED * abilities.scale.speed
+        var rvel := Vector2(
+            direction.x * SPEED * abilities.scale.speed,
+            direction.z * SPEED * abilities.scale.speed,
+        )
+        cvel = cvel.move_toward(rvel, lerpdelta)
     else:
-        velocity.x = move_toward(velocity.x, 0, SPEED * abilities.scale.speed)
-        velocity.z = move_toward(velocity.z, 0, SPEED * abilities.scale.speed)
+        cvel = cvel.move_toward(Vector2.ZERO, lerpdelta)
+    velocity.x = cvel.x
+    velocity.z = cvel.y
 
     if not terrain.is_area_meshed(AABB(position + (velocity * delta), Vector3.ONE)):
         $"/root/Node3D".startWait(position + (velocity * delta), ((velocity * delta) * 2))

@@ -15,8 +15,15 @@ config/name_localized={
 "en_US": "Clonecraft"
 }
 run/main_scene="res://init.tscn"
+config/project_settings_override="user://settings.godot"
 config/features=PackedStringArray("4.2", "Double Precision")
 config/icon="res://icon.png"
+
+[editor]
+
+naming/node_name_casing=1
+naming/scene_name_casing=1
+export/convert_text_resources_to_binary=false
 
 [editor_plugins]
 

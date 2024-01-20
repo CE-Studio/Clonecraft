@@ -13,7 +13,6 @@ static func isIdle() -> bool:
     return _layers == 0
 
 
-# TODO load settings from disk
 static func _sinit() -> void:
     var j := JSON.new()
     var f := FileAccess.open("res://scripts/baseSettings.json", FileAccess.READ)
@@ -21,8 +20,6 @@ static func _sinit() -> void:
     f.close()
     assert(stat == OK, "error parsing setting tree!")
     settings.append_array(j.get_data())
-
-# TODO save settings to disk
 
 
 static func _recur(n:Node) -> void:
@@ -33,6 +30,7 @@ static func _recur(n:Node) -> void:
 
 
 static func broadcast() -> void:
+    ProjectSettings.save_custom("user://settings.godot")
     _recur(Statics.get_node("/root"))
 
 

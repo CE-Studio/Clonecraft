@@ -12,18 +12,31 @@ static var _mesh := VoxelMesherBlocky.new()
 static var screenSize := Vector2(100, 100)
 
 
+## A wrapper for items. 99% of the time you want to use this instead of an item object.
 class ItemStack:
-    var id:String
+    ## The ID of the contained item(s) (mod:name)
+    var itemID:StringName
+    ## The number of items in the stack.
     var count:int
-
-    func _init(iid:String, icount:int):
-        id = iid
+    ## Generic data storage. Can contain anything.
+    var metadata:Dictionary
+    
+    func _init(iid:StringName, icount:int, imetadata:Dictionary = {}):
+        itemID = iid
         count = icount
+        metadata = imetadata
 
+    ## Return the model of the contained item.
     func getMesh() -> Mesh:
-        return ItemManager.items[id].model
+        return getItem().model
+        
+    ## Return the contained item.
+    func getItem() -> Item:
+        return ItemManager.items[itemID]
 
 
+## A container for item properties.[br]
+## Currently just the item's model.
 class Item:
     var model:Mesh
 
@@ -38,11 +51,13 @@ static func addToItemLayer(obj:Node) -> Node:
     return obj
 
 
+## Sets up the buffer and block library for generating item models.
 static func getReady() -> void:
     _buf.create(3, 3, 3)
     _mesh.library = BlockManager.blockLibrary
 
 
+## Generates an item model for the given block.
 static func simpleBlockItemModel(bi:BlockManager.BlockInfo) -> Mesh:
     _buf.set_voxel(BlockManager.blockIDlist[bi.fullID], 1, 1, 1)
     #_buf.fill(BlockManager.blockIDlist[bi.fullID])
@@ -50,6 +65,8 @@ static func simpleBlockItemModel(bi:BlockManager.BlockInfo) -> Mesh:
     return m
 
 
+## The easiest way to make an item for a block.[br]
+## Gets called automatically if you haven't given your block an item on your own.
 static func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
     if items.has(bi.fullID):
         return items[bi.fullID]
@@ -61,15 +78,18 @@ static func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
     return nitem
 
 
+# TODO simple item model
 static func simpleItemModel():
     pass
 
 
+## Creates a blank [ItemManager.Item]
 static func simpleItem() -> Item:
     var nitem := Item.new(Mesh.new())
     return nitem
 
 
+## Spawns an item entity in the world.
 static func spawnWorldItem(itemStack:ItemStack, pos:Vector3, vel:Vector3 = Vector3(0, 2, 0)) -> WorldItem:
     var nitem:WorldItem = witem.instantiate()
     nitem.position = pos
