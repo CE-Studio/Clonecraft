@@ -123,9 +123,9 @@ func _input(event) -> void:
             derg["root"].visible = false
             armPointY.visible = true
     elif  event.is_action_pressed("game_screenshot"):
-        var date:String = Time.get_date_string_from_system()
-        var time:String = Time.get_time_string_from_system().replace(":","-")
-        var screenshotPath = "user://screenshots/cc_sc_ymd" + date + "_hms" + time + "_"
+        var sdate:String = Time.get_date_string_from_system()
+        var stime:String = Time.get_time_string_from_system().replace(":","-")
+        var screenshotPath = "user://screenshots/cc_sc_ymd" + sdate + "_hms" + stime + "_"
         while FileAccess.file_exists(screenshotPath + ".png"):
             screenshotPath = screenshotPath + "e"
         screenshotPath = screenshotPath + ".png"
