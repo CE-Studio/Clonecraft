@@ -44,6 +44,7 @@ ui/scale=1.0
 physics/terminal_velocity=-60.0
 debug/log_to_chat=false
 ui/auto_scale_shown=false
+mods/api_url="https://ce-studio.github.io/api/v1/clonecraft/modstore.json"
 
 [gui]
 

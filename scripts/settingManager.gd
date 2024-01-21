@@ -59,5 +59,9 @@ static func spawnMenu(content := settings) -> void:
             var c:BoolSetting = preload("res://scripts/helpers/settings/boolSetting.tscn").instantiate()
             c.init(i)
             op.addItem(c)
+        elif i["type"] == "string":
+            var c:StringSetting = preload("res://scripts/helpers/settings/stringSetting.tscn").instantiate()
+            c.init(i)
+            op.addItem(c)
         else:
             print("missing setting type: " + i["type"])

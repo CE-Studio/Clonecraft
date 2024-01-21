@@ -32,7 +32,11 @@
         "log_to_chat": "Show Debug Log in Chat",
         "show_updates": "Show Block Updates"
       },
-      "debug_folder": "Debug..."
+      "debug_folder": "Debug...",
+      "modloader": {
+        "api_url": "Mod Store API URL"
+      },
+      "modloader_folder": "Modloader..."
     },
     "advanced_folder": "Advanced...",
     "input": {

@@ -102,6 +102,18 @@
                         "path": "gameplay/debug/log_to_chat"
                     }
                 ]
+            },
+            {
+                "name": "options.advanced.modloader_folder",
+                "type": "folder",
+                "content": [
+                    {
+                        "name": "options.advanced.modloader.api_url",
+                        "type": "string",
+                        "default": "https://ce-studio.github.io/api/v1/clonecraft/modstore.json",
+                        "path": "gameplay/mods/api_url"
+                    }
+                ]
             }
         ]
     }

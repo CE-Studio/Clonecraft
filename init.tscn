@@ -33,3 +33,35 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 mesh = SubResource("BoxMesh_jmrau")
 script = SubResource("GDScript_4mvha")
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vBoxContainer" type="VBoxContainer" parent="control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -34.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="label" type="Label" parent="control/vBoxContainer"]
+layout_mode = 2
+text = "Startup..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="progressBar" type="ProgressBar" parent="control/vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+value = 25.0
