@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://eikvg3smmp6t"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://eikvg3smmp6t"]
 
 [ext_resource type="StyleBox" uid="uid://d2168jgf71u6p" path="res://textures/buttonDisabled.tres" id="1_qfc4k"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="1_spyui"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://oscnea5y3sh4" path="res://textures/radio1.png" id="13_71ett"]
 [ext_resource type="StyleBox" uid="uid://cnjonn6th6shm" path="res://textures/efbar0.tres" id="14_mkweh"]
 [ext_resource type="StyleBox" uid="uid://fanrvrspafel" path="res://textures/efbar1.tres" id="15_yk7w6"]
+[ext_resource type="StyleBox" uid="uid://rwdvuv6adrd1" path="res://textures/tooltipPanel.tres" id="16_rohjp"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_m5jno"]
 color = Color(0.364706, 0.364706, 0.364706, 1)
@@ -79,6 +80,7 @@ TabContainer/styles/panel = ExtResource("1_qfc4k")
 TextEdit/styles/focus = ExtResource("2_3x48p")
 TextEdit/styles/normal = ExtResource("9_q5b1f")
 TextEdit/styles/read_only = ExtResource("10_iu1qr")
+TooltipPanel/styles/panel = ExtResource("16_rohjp")
 VScrollBar/styles/grabber = ExtResource("3_y8rvq")
 VScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
 VScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
