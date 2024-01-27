@@ -14,7 +14,7 @@ var exitName = "gui.gameplay.back"
 ## A workaround for static callables not currently being possible.[br]
 ## Should only be set using [method setExit] and [method addExit].
 var closeCallbacks:Array[Array] = []
-## If the panel shoudl report to the [SettingManager] that it has been closed.[br]
+## If the panel should report to the [SettingManager] that it has been closed.[br]
 ## You probably don't need to touch this.[br]
 ## Should only be set using [method setExit].
 var counted := true

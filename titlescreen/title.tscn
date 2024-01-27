@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://bskwsbaeexgu8"]
+[gd_scene load_steps=88 format=3 uid="uid://bskwsbaeexgu8"]
 
 [ext_resource type="Material" uid="uid://blu8to0ma63w2" path="res://titlescreen/title.tres" id="1_1krtb"]
 [ext_resource type="ArrayMesh" uid="uid://6u66lelyo5fc" path="res://titlescreen/cclogo.obj" id="2_dxce3"]
@@ -14,6 +14,9 @@
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="7_mhwh7"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="7_qty17"]
 [ext_resource type="Script" path="res://titlescreen/cloudmove.gd" id="8_xt62g"]
+[ext_resource type="Script" path="res://scripts/singleplayerpanel.gd" id="10_a4yy8"]
+[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="10_ot2wo"]
+[ext_resource type="PackedScene" uid="uid://b0qi8e3f73dhs" path="res://gui/SaveSlot.tscn" id="11_50lnd"]
 [ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="11_bylin"]
 [ext_resource type="Script" path="res://titlescreen/mainButtons.gd" id="11_j4u0l"]
 [ext_resource type="Script" path="res://titlescreen/idLabel.gd" id="12_bmkwy"]
@@ -1878,6 +1881,96 @@ text = "&&Disable&&"
 script = ExtResource("5_runjh")
 dictKey = &"gui.generic.disable"
 
+[node name="singleplayerpanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+script = ExtResource("10_a4yy8")
+
+[node name="backingpanel" type="Panel" parent="Control/singleplayerpanel"]
+process_mode = 3
+layout_mode = 0
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_ot2wo")
+theme_override_styles/panel = ExtResource("7_mhwh7")
+
+[node name="Panel" type="Panel" parent="Control/singleplayerpanel/backingpanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/singleplayerpanel/backingpanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="Control/singleplayerpanel/backingpanel/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="saveSlot" parent="Control/singleplayerpanel/backingpanel/Panel/ScrollContainer/Container" instance=ExtResource("11_50lnd")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="Control/singleplayerpanel/backingpanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.8
+offset_top = -36.2
+offset_right = -7.8
+offset_bottom = -5.2
+grow_horizontal = 2
+grow_vertical = 0
+columns = 3
+
+[node name="newworld" type="Button" parent="Control/singleplayerpanel/backingpanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&NewWorld&&
+"
+
+[node name="worldfolder" type="Button" parent="Control/singleplayerpanel/backingpanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&WorldFolder&&
+"
+
+[node name="backbutton" type="Button" parent="Control/singleplayerpanel/backingpanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&Back&&
+"
+
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)
 stream = ExtResource("12_n2dnj")
@@ -2162,3 +2255,6 @@ skeleton = NodePath("../..")
 
 [connection signal="pressed" from="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button" to="Control/scalepanel" method="_on_enable_pressed"]
 [connection signal="pressed" from="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button2" to="Control/scalepanel" method="_on_disabled_pressed"]
+[connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/newworld" to="Control/singleplayerpanel" method="_on_newworld_pressed"]
+[connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/worldfolder" to="Control/singleplayerpanel" method="_on_worldfolder_pressed"]
+[connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/backbutton" to="Control/singleplayerpanel" method="_on_backbutton_pressed"]

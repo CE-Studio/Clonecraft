@@ -24,6 +24,13 @@
       "mod_manager": "Mod Manager...",
       "quit": "Quit to Desktop",
       "singleplayer": "Singleplayer game..."
+    },
+    "worlds": {
+      "newworld": "New World...",
+      "worldfolder": "World Folder",
+      "play": "Play",
+      "edit": "Edit World...",
+      "backup": "Create Backup of World" 
     }
   },
   "options": {

@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0qi8e3f73dhs"]
+
+[ext_resource type="Texture2D" uid="uid://d31ggpeaj35y" path="res://textures/pack.svg" id="1_32v3r"]
+[ext_resource type="Script" path="res://scripts/SaveSlot.gd" id="1_p2f0v"]
+[ext_resource type="Texture2D" uid="uid://b3dmd6r5y80je" path="res://textures/play.png" id="3_vg0w1"]
+[ext_resource type="Texture2D" uid="uid://eyb0uetgpqyk" path="res://textures/edit.png" id="4_kob6r"]
+[ext_resource type="Texture2D" uid="uid://d1ewtsg4hnmda" path="res://textures/backup.png" id="5_puqi6"]
+
+[node name="saveSlot" type="Button"]
+custom_minimum_size = Vector2(1.45519e-11, 74)
+script = ExtResource("1_p2f0v")
+
+[node name="textureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 69.0
+offset_bottom = 69.0
+texture = ExtResource("1_32v3r")
+expand_mode = 1
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.8
+offset_top = 5.2
+offset_right = 255.8
+offset_bottom = 26.2
+text = "@@WorldName@@"
+
+[node name="sub" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.8
+offset_top = 26.2
+offset_right = 293.8
+offset_bottom = 47.2
+theme_override_colors/font_color = Color(0.686275, 0.686275, 0.686275, 1)
+text = "@@WorldSubtitle@@"
+
+[node name="time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.8
+offset_top = 48.2
+offset_right = 293.8
+offset_bottom = 69.2
+theme_override_colors/font_color = Color(0.686275, 0.686275, 0.686275, 1)
+text = "@@WorldTime@@"
+
+[node name="play" type="Button" parent="."]
+custom_minimum_size = Vector2(1.45519e-11, 64)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -37.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 69.0
+grow_horizontal = 0
+tooltip_text = "&&Play&&"
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_vg0w1")
+icon_alignment = 1
+
+[node name="edit" type="Button" parent="."]
+custom_minimum_size = Vector2(1.45519e-11, 32)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -69.0
+offset_top = 5.0
+offset_right = -37.0
+offset_bottom = 37.0
+grow_horizontal = 0
+tooltip_text = "&&Edit World&&"
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_kob6r")
+icon_alignment = 1
+
+[node name="backup" type="Button" parent="."]
+custom_minimum_size = Vector2(1.45519e-11, 32)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -69.2
+offset_top = 37.2
+offset_right = -37.2
+offset_bottom = 69.2
+grow_horizontal = 0
+tooltip_text = "&&Backup World&&"
+mouse_default_cursor_shape = 2
+icon = ExtResource("5_puqi6")
+icon_alignment = 1
