@@ -3,10 +3,9 @@ class_name BlockManager
 
 ## Manages the setup of mods, voxels, and the world.
 
-# TODO actual mod selection
 ## The list of mods to load when the world starts.[br]
 ## Static
-static var modsToLoad:Array[String] = ["clonecraft", "debugtools"]
+static var modsToLoad:Array[String]
 ## The list of loaded mods. Populates automatically.[br]
 ## Static
 static var mods:Array[Mod] = []

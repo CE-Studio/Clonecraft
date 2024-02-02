@@ -2,6 +2,10 @@ extends Node3D
 class_name WorldControl
 
 
+static var worldpath:String
+static var streamtype:String
+
+
 var _tool:VoxelToolTerrain
 var _waitpos := Vector3.ZERO
 var _waitrel := Vector3.ZERO
@@ -53,6 +57,11 @@ func _ready() -> void:
     _p = $player
     _terrain = BlockManager.terrain
     _tool = BlockManager._tool
+    match streamtype:
+        "region":
+            pass
+        "sql":
+            pass
 
 
 func _process(_delta) -> void:

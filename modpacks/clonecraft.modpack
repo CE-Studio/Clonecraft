@@ -1,0 +1,18 @@
+{
+    "game": "clonecraft",
+    "gameversion": "*",
+    "packname": "Clonecraft Debug",
+    "packversion": "0.0.1",
+    "required": [
+        {
+            "name": "clonecraft",
+            "url": ""
+        },
+        {
+            "name": "debugtools",
+            "url": ""
+        }
+    ],
+    "optional": [
+    ]
+}

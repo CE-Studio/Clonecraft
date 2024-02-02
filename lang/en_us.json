@@ -2,10 +2,10 @@
   "gui": {
     "credits": {
       "more": "More info...",
-      "info": "Clonecraft is a FREE GAME licenced under the GNU General Public Licence version 3.\nIf you have paid for the game, downloaded a 'crack', or are being denied access to the source code, you are being SCAMMED and probably downloaded a virus.\nAdditionally, publicly distributed mods are required to be open-source and have a GPL-compatible license as well. Please be careful!"
+      "info": "Clonecraft is a FREE GAME licensed under the GNU General Public Licence version 3.\nIf you have paid for the game, downloaded a 'crack', or are being denied access to the source code, you are being SCAMMED and probably downloaded a virus.\nAdditionally, publicly distributed mods are required to be open-source and have a GPL-compatible license as well. Please be careful!"
     },
     "gameplay": {
-      "achivements": "Achivements...",
+      "achievements": "Achievements...",
       "back": "Back to Game",
       "desktop_quit": "Quit to Desktop",
       "menu_quit": "Quit to Menu",
@@ -30,7 +30,14 @@
       "worldfolder": "World Folder",
       "play": "Play",
       "edit": "Edit World...",
-      "backup": "Create Backup of World" 
+      "backup": "Create Backup of World",
+      "corrupted0": "\"ccworld.json\" is missing property",
+      "versiondiff": "World was last saved in a different version of Clonecraft!"
+    },
+    "mods": {
+      "warning": "Mods can change ANY game code! Please be careful!",
+      "modfolder": "Open Mods Folder...",
+      "gamefolder": "Open Game Folder..."
     }
   },
   "options": {
@@ -59,7 +66,7 @@
     },
     "ui_folder": "GUI Settings...",
     "video": {
-      "fov": "Field of Veiw",
+      "fov": "Field of View",
       "fps_cap": "Framerate Limit",
       "vsync": "Use V-Sync"
     },

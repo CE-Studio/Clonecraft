@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://bskwsbaeexgu8"]
+[gd_scene load_steps=87 format=3 uid="uid://bskwsbaeexgu8"]
 
 [ext_resource type="Material" uid="uid://blu8to0ma63w2" path="res://titlescreen/title.tres" id="1_1krtb"]
 [ext_resource type="ArrayMesh" uid="uid://6u66lelyo5fc" path="res://titlescreen/cclogo.obj" id="2_dxce3"]
@@ -16,7 +16,6 @@
 [ext_resource type="Script" path="res://titlescreen/cloudmove.gd" id="8_xt62g"]
 [ext_resource type="Script" path="res://scripts/singleplayerpanel.gd" id="10_a4yy8"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="10_ot2wo"]
-[ext_resource type="PackedScene" uid="uid://b0qi8e3f73dhs" path="res://gui/SaveSlot.tscn" id="11_50lnd"]
 [ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="11_bylin"]
 [ext_resource type="Script" path="res://titlescreen/mainButtons.gd" id="11_j4u0l"]
 [ext_resource type="Script" path="res://titlescreen/idLabel.gd" id="12_bmkwy"]
@@ -1666,6 +1665,7 @@ libraries = {
 script = ExtResource("4_m3okf")
 
 [node name="Control" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1731,7 +1731,7 @@ offset_right = 466.0
 grow_vertical = 0
 text = "Clonecraft {version}
 Engine {version}
-GPLv3 CE Studio. Please distribute!"
+Copyright (GPLv3) CE Studio 2024. Please distribute!"
 script = ExtResource("12_bmkwy")
 metadata/_edit_layout_mode = 1
 
@@ -1916,7 +1916,7 @@ offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/singleplayerpanel/backingpanel/Panel"]
+[node name="worldlist" type="ScrollContainer" parent="Control/singleplayerpanel/backingpanel/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1928,13 +1928,10 @@ offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Container" type="VBoxContainer" parent="Control/singleplayerpanel/backingpanel/Panel/ScrollContainer"]
+[node name="Container" type="VBoxContainer" parent="Control/singleplayerpanel/backingpanel/Panel/worldlist"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="saveSlot" parent="Control/singleplayerpanel/backingpanel/Panel/ScrollContainer/Container" instance=ExtResource("11_50lnd")]
-layout_mode = 2
 
 [node name="HBoxContainer" type="GridContainer" parent="Control/singleplayerpanel/backingpanel"]
 layout_mode = 1
@@ -2255,6 +2252,7 @@ skeleton = NodePath("../..")
 
 [connection signal="pressed" from="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button" to="Control/scalepanel" method="_on_enable_pressed"]
 [connection signal="pressed" from="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button2" to="Control/scalepanel" method="_on_disabled_pressed"]
+[connection signal="visibility_changed" from="Control/singleplayerpanel" to="Control/singleplayerpanel" method="_on_visibility_changed"]
 [connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/newworld" to="Control/singleplayerpanel" method="_on_newworld_pressed"]
 [connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/worldfolder" to="Control/singleplayerpanel" method="_on_worldfolder_pressed"]
 [connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/backbutton" to="Control/singleplayerpanel" method="_on_backbutton_pressed"]

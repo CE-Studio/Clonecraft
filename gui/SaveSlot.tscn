@@ -1,16 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0qi8e3f73dhs"]
+[gd_scene load_steps=8 format=3 uid="uid://b0qi8e3f73dhs"]
 
 [ext_resource type="Texture2D" uid="uid://d31ggpeaj35y" path="res://textures/pack.svg" id="1_32v3r"]
 [ext_resource type="Script" path="res://scripts/SaveSlot.gd" id="1_p2f0v"]
 [ext_resource type="Texture2D" uid="uid://b3dmd6r5y80je" path="res://textures/play.png" id="3_vg0w1"]
 [ext_resource type="Texture2D" uid="uid://eyb0uetgpqyk" path="res://textures/edit.png" id="4_kob6r"]
 [ext_resource type="Texture2D" uid="uid://d1ewtsg4hnmda" path="res://textures/backup.png" id="5_puqi6"]
+[ext_resource type="Texture2D" uid="uid://diifvmfx5qvl" path="res://textures/warning.png" id="6_b5u7f"]
+[ext_resource type="Texture2D" uid="uid://rogovjyuhns8" path="res://textures/stop.png" id="7_7dqma"]
 
 [node name="saveSlot" type="Button"]
-custom_minimum_size = Vector2(1.45519e-11, 74)
+texture_filter = 1
+custom_minimum_size = Vector2(300, 74)
 script = ExtResource("1_p2f0v")
 
-[node name="textureRect" type="TextureRect" parent="."]
+[node name="icon" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
@@ -21,10 +24,10 @@ expand_mode = 1
 
 [node name="name" type="Label" parent="."]
 layout_mode = 0
-offset_left = 68.8
-offset_top = 5.2
-offset_right = 255.8
-offset_bottom = 26.2
+offset_left = 69.0
+offset_top = 5.0
+offset_right = 256.0
+offset_bottom = 26.0
 text = "@@WorldName@@"
 
 [node name="sub" type="Label" parent="."]
@@ -74,6 +77,7 @@ offset_bottom = 37.0
 grow_horizontal = 0
 tooltip_text = "&&Edit World&&"
 mouse_default_cursor_shape = 2
+disabled = true
 icon = ExtResource("4_kob6r")
 icon_alignment = 1
 
@@ -90,5 +94,34 @@ offset_bottom = 69.2
 grow_horizontal = 0
 tooltip_text = "&&Backup World&&"
 mouse_default_cursor_shape = 2
+disabled = true
 icon = ExtResource("5_puqi6")
 icon_alignment = 1
+
+[node name="warning" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 5.0
+offset_right = -71.0
+offset_bottom = 45.0
+grow_horizontal = 0
+texture = ExtResource("6_b5u7f")
+
+[node name="error" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 5.0
+offset_right = -71.0
+offset_bottom = 45.0
+grow_horizontal = 0
+texture = ExtResource("7_7dqma")
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

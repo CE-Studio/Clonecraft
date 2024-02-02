@@ -42,6 +42,8 @@ func _process(_delta):
                 DirAccess.make_dir_absolute("user://saves")
             if not DirAccess.dir_exists_absolute("user://screenshots"):
                 DirAccess.make_dir_absolute("user://screenshots")
+            if not DirAccess.dir_exists_absolute("user://modpacks"):
+                DirAccess.make_dir_absolute("user://modpacks")
         2:
             label.text = "Init translation..."
             Translator._sinit()
