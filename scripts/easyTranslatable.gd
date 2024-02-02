@@ -5,4 +5,4 @@ extends Control
 
 
 func _ready() -> void:
-    self.text = Translator.translate(dictKey)
+	self.text = Translator.translate(dictKey)

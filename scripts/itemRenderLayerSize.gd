@@ -6,6 +6,6 @@ extends SubViewport
 
 
 func _process(_delta) -> void:
-    size = vp.get_visible_rect().size
-    cam.size = (size.y)
-    ItemManager.screenSize = size
+	size = vp.get_visible_rect().size
+	cam.size = (size.y)
+	ItemManager.screenSize = size

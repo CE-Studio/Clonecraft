@@ -21,12 +21,12 @@ static var terrain:VoxelTerrain
 ## Used to initialize some variables before loading.[br]
 ## Do not override unless you know what you're doing.
 static func refman() -> void:
-    terrain = man.terrain
-    player = Statics.get_node("/root/Node3D/player")
-    tool = man._tool
+	terrain = man.terrain
+	player = Statics.get_node("/root/Node3D/player")
+	tool = man._tool
 
 
 ## An empty placehloder function.[br]
 ## Use when you need a reference to a callable but don't want it to do anything.
 func noScript(_pos, _meta) -> void:
-    pass
+	pass

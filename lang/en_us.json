@@ -1,81 +1,81 @@
 {
-  "gui": {
-    "credits": {
-      "more": "More info...",
-      "info": "Clonecraft is a FREE GAME licensed under the GNU General Public Licence version 3.\nIf you have paid for the game, downloaded a 'crack', or are being denied access to the source code, you are being SCAMMED and probably downloaded a virus.\nAdditionally, publicly distributed mods are required to be open-source and have a GPL-compatible license as well. Please be careful!"
-    },
-    "gameplay": {
-      "achievements": "Achievements...",
-      "back": "Back to Game",
-      "desktop_quit": "Quit to Desktop",
-      "menu_quit": "Quit to Menu",
-      "pause_menu_title": "Game Menu",
-      "statistics": "Statistics...",
-      "wait_for_chunks": "Waiting for chunks to load..."
-    },
-    "generic": {
-      "back": "Back",
-      "disable": "Disable",
-      "enable": "Enable",
-      "options": "Options...",
-      "support": "Support devs!"
-    },
-    "title": {
-      "mod_manager": "Mod Manager...",
-      "quit": "Quit to Desktop",
-      "singleplayer": "Singleplayer game..."
-    },
-    "worlds": {
-      "newworld": "New World...",
-      "worldfolder": "World Folder",
-      "play": "Play",
-      "edit": "Edit World...",
-      "backup": "Create Backup of World",
-      "corrupted0": "\"ccworld.json\" is missing property",
-      "versiondiff": "World was last saved in a different version of Clonecraft!"
-    },
-    "mods": {
-      "warning": "Mods can change ANY game code! Please be careful!",
-      "modfolder": "Open Mods Folder...",
-      "gamefolder": "Open Game Folder..."
-    }
-  },
-  "options": {
-    "advanced": {
-      "debug": {
-        "log_to_chat": "Show Debug Log in Chat",
-        "show_updates": "Show Block Updates"
-      },
-      "debug_folder": "Debug...",
-      "modloader": {
-        "api_url": "Mod Store API URL"
-      },
-      "modloader_folder": "Modloader..."
-    },
-    "advanced_folder": "Advanced...",
-    "input": {
-      "invert_mouse_x": "Invert Mouse X",
-      "invert_mouse_y": "Invert Mouse Y",
-      "mouse_x_sensitivity": "Mouse X Sensitivity",
-      "mouse_y_sensitivity": "Mouse Y Sensitivity"
-    },
-    "input_folder": "Input Settings...",
-    "ui": {
-      "auto": "Scale GUI Automatically",
-      "scale": "GUI Scale"
-    },
-    "ui_folder": "GUI Settings...",
-    "video": {
-      "fov": "Field of View",
-      "fps_cap": "Framerate Limit",
-      "vsync": "Use V-Sync"
-    },
-    "video_folder": "Video Settings..."
-  },
-  "scaling": {
-    "line1": "Large screen size detected!",
-    "line2": "Would you like to enable automatic GUI scaling?",
-    "line3": "This window is using the automatic scale",
-    "line4": "Your choice can be changed later in settings"
-  }
+	"gui": {
+		"credits": {
+			"more": "More info...",
+			"info": "Clonecraft is a FREE GAME licensed under the GNU General Public Licence version 3.\nIf you have paid for the game, downloaded a 'crack', or are being denied access to the source code, you are being SCAMMED and probably downloaded a virus.\nAdditionally, publicly distributed mods are required to be open-source and have a GPL-compatible license as well. Please be careful!"
+		},
+		"gameplay": {
+			"achievements": "Achievements...",
+			"back": "Back to Game",
+			"desktop_quit": "Quit to Desktop",
+			"menu_quit": "Quit to Menu",
+			"pause_menu_title": "Game Menu",
+			"statistics": "Statistics...",
+			"wait_for_chunks": "Waiting for chunks to load..."
+		},
+		"generic": {
+			"back": "Back",
+			"disable": "Disable",
+			"enable": "Enable",
+			"options": "Options...",
+			"support": "Support devs!"
+		},
+		"title": {
+			"mod_manager": "Mod Manager...",
+			"quit": "Quit to Desktop",
+			"singleplayer": "Singleplayer game..."
+		},
+		"worlds": {
+			"newworld": "New World...",
+			"worldfolder": "World Folder",
+			"play": "Play",
+			"edit": "Edit World...",
+			"backup": "Create Backup of World",
+			"corrupted0": "\"ccworld.json\" is missing property",
+			"versiondiff": "World was last saved in a different version of Clonecraft!"
+		},
+		"mods": {
+			"warning": "Mods can change ANY game code! Please be careful!",
+			"modfolder": "Open Mods Folder...",
+			"gamefolder": "Open Game Folder..."
+		}
+	},
+	"options": {
+		"advanced": {
+			"debug": {
+				"log_to_chat": "Show Debug Log in Chat",
+				"show_updates": "Show Block Updates"
+			},
+			"debug_folder": "Debug...",
+			"modloader": {
+				"api_url": "Mod Store API URL"
+			},
+			"modloader_folder": "Modloader..."
+		},
+		"advanced_folder": "Advanced...",
+		"input": {
+			"invert_mouse_x": "Invert Mouse X",
+			"invert_mouse_y": "Invert Mouse Y",
+			"mouse_x_sensitivity": "Mouse X Sensitivity",
+			"mouse_y_sensitivity": "Mouse Y Sensitivity"
+		},
+		"input_folder": "Input Settings...",
+		"ui": {
+			"auto": "Scale GUI Automatically",
+			"scale": "GUI Scale"
+		},
+		"ui_folder": "GUI Settings...",
+		"video": {
+			"fov": "Field of View",
+			"fps_cap": "Framerate Limit",
+			"vsync": "Use V-Sync"
+		},
+		"video_folder": "Video Settings..."
+	},
+	"scaling": {
+		"line1": "Large screen size detected!",
+		"line2": "Would you like to enable automatic GUI scaling?",
+		"line3": "This window is using the automatic scale",
+		"line4": "Your choice can be changed later in settings"
+	}
 }

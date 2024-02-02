@@ -6,10 +6,10 @@ var content: Array
 
 
 func init(i) -> void:
-    iname = i["name"]
-    text = Translator.translate(iname)
-    content = i["content"]
+	iname = i["name"]
+	text = Translator.translate(iname)
+	content = i["content"]
 
 
 func _on_pressed():
-    SettingManager.spawnMenu(content)
+	SettingManager.spawnMenu(content)

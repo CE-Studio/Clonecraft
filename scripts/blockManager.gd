@@ -55,125 +55,125 @@ static var _newmodel:VoxelBlockyModel
 ## Get the [BlockManager.BlockInfo] tied to a specific ID string.[br]
 ## Static
 static func getBlockID(id:StringName) -> BlockInfo:
-    return blockList[blockIDlist[id]]
+	return blockList[blockIDlist[id]]
 
 
 ## Register a [Callable] to be called every simulation tick.[br]
 ## Static
 static func addUpdate(c:Callable) -> void:
-    _updates.append(c)
+	_updates.append(c)
 
 
 static func _tickBlock(pos:Vector3i, rawID:int) -> void:
-    if ProjectSettings.get_setting("gameplay/debug/show_updates"):
-        var disp:MeshInstance3D = _tdisp.instantiate()
-        disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
-        terrain.add_child(disp)
+	if ProjectSettings.get_setting("gameplay/debug/show_updates"):
+		var disp:MeshInstance3D = _tdisp.instantiate()
+		disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
+		terrain.add_child(disp)
 
-    var block:BlockInfo = blockList[rawID]
-    if block.tickable:
-        block.tickCallback.call(pos)
+	var block:BlockInfo = blockList[rawID]
+	if block.tickable:
+		block.tickCallback.call(pos)
 
 
 ## Run all pending block updates.[br]
 ## Called automatically every simulation tick.[br]
 ## Static
 static func runBlockUpdates() -> void:
-    blockUpdates = pendingBlockUpdates
-    pendingBlockUpdates = []
-    for i in blockUpdates:
-        if ProjectSettings.get_setting("gameplay/debug/show_updates"):
-            var disp:MeshInstance3D = _udisp.instantiate()
-            disp.position = (Vector3(i.x, i.y, i.z) + Vector3(0.5, 0.5, 0.5))
-            terrain.add_child(disp)
+	blockUpdates = pendingBlockUpdates
+	pendingBlockUpdates = []
+	for i in blockUpdates:
+		if ProjectSettings.get_setting("gameplay/debug/show_updates"):
+			var disp:MeshInstance3D = _udisp.instantiate()
+			disp.position = (Vector3(i.x, i.y, i.z) + Vector3(0.5, 0.5, 0.5))
+			terrain.add_child(disp)
 
 
 ## The base class for representing information about a voxel.
 class BlockInfo:
-    ## The ID of the mod the voxel comes from.[br]
-    ## Identical to the first half of [member fullID].
-    var modID:StringName
-    ## The ID of the voxel.[br]
-    ## Identical to the second half of [member fullID].
-    var nameID:StringName
-    ## The full ID of the voxel, in the format of [code]mod_id:block_id[/code].
-    var fullID:StringName
-    ## The human-readable name of the voxel.
-    var nameReadable:StringName
-    ## The [VoxelBlockyModel] of the voxel.[br]
-    ## Not to be confused with any kind of [Mesh].
-    var blockModel:VoxelBlockyModel
-    ## How hard the voxel is for the player to mine.
-    var breakStrength:float
-    ## How hard it is to destroy the voxel in an explosion.
-    var explStrength:float
-    ## If explosions or the player are completely unable to destroy the voxel.
-    var unbreakable:bool
-    ## If the voxel has a custom script attached.
-    var scripted:bool
-    ## The script attached to the voxel.[br]
-    ## Is empty if [member scripted] is [code]false[/code].[br]
-    ## Called only on block updates.
-    var blockScript:Callable
-    ## The kind of tool most effective at mining the voxel.
-    var toolClass:StringName
-    ## If the voxel can be randomly ticked.
-    var tickable := false
-    ## The script to be called if the voxel is randomly ticked.
-    ## Is empty if [member tickable] is [code]false[/code].[br]
-    var tickCallback:Callable
-    ## The ID of the sound to be played when the voxel is stepped on.
-    var stepsound:StringName
-    ## The ID of the sound to be played when the voxel is placed.
-    var placesound:StringName
-    ## The ID of the sound to be played when the voxel is borken.
-    var breaksound:StringName
-    ## The ID of the item the voxel will drop when broken.
-    var dropItem:StringName
-    # TODO come up with and explain voxel properties
-    ## A list of various unique properties the voxel may have.[br]
-    ## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
-    var properties:Array[StringName]
+	## The ID of the mod the voxel comes from.[br]
+	## Identical to the first half of [member fullID].
+	var modID:StringName
+	## The ID of the voxel.[br]
+	## Identical to the second half of [member fullID].
+	var nameID:StringName
+	## The full ID of the voxel, in the format of [code]mod_id:block_id[/code].
+	var fullID:StringName
+	## The human-readable name of the voxel.
+	var nameReadable:StringName
+	## The [VoxelBlockyModel] of the voxel.[br]
+	## Not to be confused with any kind of [Mesh].
+	var blockModel:VoxelBlockyModel
+	## How hard the voxel is for the player to mine.
+	var breakStrength:float
+	## How hard it is to destroy the voxel in an explosion.
+	var explStrength:float
+	## If explosions or the player are completely unable to destroy the voxel.
+	var unbreakable:bool
+	## If the voxel has a custom script attached.
+	var scripted:bool
+	## The script attached to the voxel.[br]
+	## Is empty if [member scripted] is [code]false[/code].[br]
+	## Called only on block updates.
+	var blockScript:Callable
+	## The kind of tool most effective at mining the voxel.
+	var toolClass:StringName
+	## If the voxel can be randomly ticked.
+	var tickable := false
+	## The script to be called if the voxel is randomly ticked.
+	## Is empty if [member tickable] is [code]false[/code].[br]
+	var tickCallback:Callable
+	## The ID of the sound to be played when the voxel is stepped on.
+	var stepsound:StringName
+	## The ID of the sound to be played when the voxel is placed.
+	var placesound:StringName
+	## The ID of the sound to be played when the voxel is borken.
+	var breaksound:StringName
+	## The ID of the item the voxel will drop when broken.
+	var dropItem:StringName
+	# TODO come up with and explain voxel properties
+	## A list of various unique properties the voxel may have.[br]
+	## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
+	var properties:Array[StringName]
 
 
-    func _init(
-            fmodID:StringName,
-            fnameID:StringName,
-            fnameReadable:StringName,
-            fblockModel:VoxelBlockyModel,
-            fbreakStrength:float,
-            fexplStrength:float,
-            funbreakable:bool,
-            fscripted:bool,
-            fscript:Callable,
-            ftoolClass:StringName,
-            fstepsound:StringName,
-            fplacesound:StringName,
-            fbreaksound:StringName,
-            fdropitem := &"*"):
-        modID = fmodID
-        nameID = fnameID
-        fullID = fmodID + ":" + fnameID
-        nameReadable = Translator.translate(fnameReadable)
-        blockModel = fblockModel
-        breakStrength = fbreakStrength
-        explStrength = fexplStrength
-        unbreakable = funbreakable
-        scripted = fscripted
-        if scripted:
-            blockScript = fscript
-        toolClass = ftoolClass
-        stepsound = fstepsound
-        placesound = fplacesound
-        breaksound = fbreaksound
-        dropItem = fdropitem
+	func _init(
+			fmodID:StringName,
+			fnameID:StringName,
+			fnameReadable:StringName,
+			fblockModel:VoxelBlockyModel,
+			fbreakStrength:float,
+			fexplStrength:float,
+			funbreakable:bool,
+			fscripted:bool,
+			fscript:Callable,
+			ftoolClass:StringName,
+			fstepsound:StringName,
+			fplacesound:StringName,
+			fbreaksound:StringName,
+			fdropitem := &"*"):
+		modID = fmodID
+		nameID = fnameID
+		fullID = fmodID + ":" + fnameID
+		nameReadable = Translator.translate(fnameReadable)
+		blockModel = fblockModel
+		breakStrength = fbreakStrength
+		explStrength = fexplStrength
+		unbreakable = funbreakable
+		scripted = fscripted
+		if scripted:
+			blockScript = fscript
+		toolClass = ftoolClass
+		stepsound = fstepsound
+		placesound = fplacesound
+		breaksound = fbreaksound
+		dropItem = fdropitem
 
 
-    ## Set the voxel to be able to be randomly ticked.
-    func setTickable(ftickcb:Callable) -> void:
-        tickable = true
-        tickCallback = ftickcb
-        blockModel.random_tickable = true
+	## Set the voxel to be able to be randomly ticked.
+	func setTickable(ftickcb:Callable) -> void:
+		tickable = true
+		tickCallback = ftickcb
+		blockModel.random_tickable = true
 
 
 ## Output a message to the debug log.[br]
@@ -181,52 +181,52 @@ class BlockInfo:
 ## Static
 @warning_ignore("SHADOWED_GLOBAL_IDENTIFIER")
 static func log(id:String, message:String) -> String:
-    var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
-    print(out)
-    if ProjectSettings.get_setting("gameplay/debug/log_to_chat"):
-        Chat.pushText(out)
-    return out
+	var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
+	print(out)
+	if ProjectSettings.get_setting("gameplay/debug/log_to_chat"):
+		Chat.pushText(out)
+	return out
 
 
 ## Begin registering a new voxel.[br]
 ## See [Voxdat], [method endBlockRegister] and [BlockManager.BlockInfo].[br]
 ## Static
 static func startBlockRegister(blockID:StringName, type:Voxdat.vox) -> VoxelBlockyModel:
-    assert(not(_addingBlock), "You can only register one block at a time!")
-    _addingBlock = true
-    idCounter += 1
-    match type:
-        Voxdat.vox.GEOMETRY_CUBE:
-            _newmodel = VoxelBlockyModelCube.new()
-            _newmodel.atlas_size_in_tiles = Vector2i(10, 10)
-        Voxdat.vox.GEOMETRY_MESH:
-            _newmodel = VoxelBlockyModelMesh.new()
-        Voxdat.vox.GEOMETRY_NONE:
-            _newmodel = VoxelBlockyModelEmpty.new()
+	assert(not(_addingBlock), "You can only register one block at a time!")
+	_addingBlock = true
+	idCounter += 1
+	match type:
+		Voxdat.vox.GEOMETRY_CUBE:
+			_newmodel = VoxelBlockyModelCube.new()
+			_newmodel.atlas_size_in_tiles = Vector2i(10, 10)
+		Voxdat.vox.GEOMETRY_MESH:
+			_newmodel = VoxelBlockyModelMesh.new()
+		Voxdat.vox.GEOMETRY_NONE:
+			_newmodel = VoxelBlockyModelEmpty.new()
 
-    return(_newmodel)
+	return(_newmodel)
 
 
 ## Finish registering a voxel.[br]
 ## See [method startBlockRegister] and [BlockManager.BlockInfo].[br]
 ## Static
 static func endBlockRegister(blockInfo:BlockInfo) -> void:
-    assert(_addingBlock, "You need to call 'startBlockRegister' first!")
-    _addingBlock = false
-    blockList.append(blockInfo)
-    blockIDlist[blockInfo.fullID] = blockList.size() - 1
-    blockLibrary.add_model(_newmodel)
-    print(
-        "[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '"
-        + blockInfo.fullID + "'"
-    )
+	assert(_addingBlock, "You need to call 'startBlockRegister' first!")
+	_addingBlock = false
+	blockList.append(blockInfo)
+	blockIDlist[blockInfo.fullID] = blockList.size() - 1
+	blockLibrary.add_model(_newmodel)
+	print(
+		"[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '"
+		+ blockInfo.fullID + "'"
+	)
 
 
 ## Register a function to handle user inputs.[br]
 ## Analogous to [method Node._input][br]
 ## Static
 static func inputRegister(callback:Callable) -> void:
-    _inputList.append(callback)
+	_inputList.append(callback)
 
 
 # TODO finalize and document the loading order
@@ -234,92 +234,92 @@ static func inputRegister(callback:Callable) -> void:
 ## You probably don't want to call this.[br]
 ## Static
 static func setup() -> void:
-    terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
-    _tool = terrain.get_voxel_tool()
-    blockLibrary.atlas_size = 10
-    var airModel = startBlockRegister("clonecraft:air", Voxdat.vox.GEOMETRY_NONE)
-    var airBlock := BlockInfo.new(
-            "clonecraft",
-            "air",
-            "Air",
-            airModel,
-            0,
-            0,
-            true,
-            false,
-            Callable(),
-            "shovel",
-            "null",
-            "null",
-            "null",
-            "null"
-    )
-    airBlock.properties.append(&"air")
-    airBlock.properties.append(&"replaceable")
-    airBlock.properties.append(&"incompleteHitbox")
-    endBlockRegister(airBlock)
+	terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
+	_tool = terrain.get_voxel_tool()
+	blockLibrary.atlas_size = 10
+	var airModel = startBlockRegister("clonecraft:air", Voxdat.vox.GEOMETRY_NONE)
+	var airBlock := BlockInfo.new(
+			"clonecraft",
+			"air",
+			"Air",
+			airModel,
+			0,
+			0,
+			true,
+			false,
+			Callable(),
+			"shovel",
+			"null",
+			"null",
+			"null",
+			"null"
+	)
+	airBlock.properties.append(&"air")
+	airBlock.properties.append(&"replaceable")
+	airBlock.properties.append(&"incompleteHitbox")
+	endBlockRegister(airBlock)
 
-    Mod.refman()
-    for i in modsToLoad:
-        print(
-            "[" + Time.get_datetime_string_from_system() +
-            "] [BlockManager] Fetching script for mod '" + i + "'..."
-        )
-        mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
-    for i in mods:
-        if i.get("MODID") == null:
-            print(
-                "[" + Time.get_datetime_string_from_system() +
-                "] [BlockManager] One of your mods has no mod ID! It can still load," +
-                "but this is bad practice. Register phase starting..."
-            )
-            if i.has_method("registerPhase"):
-                i.registerPhase()
-            print(
-                "[" + Time.get_datetime_string_from_system() +
-                "] [BlockManager] Register phase done!"
-            )
-        else:
-            print(
-                "[" + Time.get_datetime_string_from_system() +
-                "] [BlockManager] Beginning register phase for mod '" + i.MODID + "'..."
-            )
-            if i.has_method("registerPhase"):
-                i.registerPhase()
-            print(
-                "[" + Time.get_datetime_string_from_system() +
-                "] [BlockManager] Register phase for '" + i.MODID + "' done!"
-            )
-    print(
-        "[" + Time.get_datetime_string_from_system() +
-        "] [BlockManager] Register phase completed for all mods!"
-    )
+	Mod.refman()
+	for i in modsToLoad:
+		print(
+			"[" + Time.get_datetime_string_from_system() +
+			"] [BlockManager] Fetching script for mod '" + i + "'..."
+		)
+		mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
+	for i in mods:
+		if i.get("MODID") == null:
+			print(
+				"[" + Time.get_datetime_string_from_system() +
+				"] [BlockManager] One of your mods has no mod ID! It can still load," +
+				"but this is bad practice. Register phase starting..."
+			)
+			if i.has_method("registerPhase"):
+				i.registerPhase()
+			print(
+				"[" + Time.get_datetime_string_from_system() +
+				"] [BlockManager] Register phase done!"
+			)
+		else:
+			print(
+				"[" + Time.get_datetime_string_from_system() +
+				"] [BlockManager] Beginning register phase for mod '" + i.MODID + "'..."
+			)
+			if i.has_method("registerPhase"):
+				i.registerPhase()
+			print(
+				"[" + Time.get_datetime_string_from_system() +
+				"] [BlockManager] Register phase for '" + i.MODID + "' done!"
+			)
+	print(
+		"[" + Time.get_datetime_string_from_system() +
+		"] [BlockManager] Register phase completed for all mods!"
+	)
 
-    blockLibrary.bake()
-    terrain.mesher.library = blockLibrary
+	blockLibrary.bake()
+	terrain.mesher.library = blockLibrary
 
-    #Ensure every block has an item
-    ItemManager.getReady()
-    for i in blockList:
-        ItemManager.simpleBlockItem(i)
+	#Ensure every block has an item
+	ItemManager.getReady()
+	for i in blockList:
+		ItemManager.simpleBlockItem(i)
 
-    loadDone = true
+	loadDone = true
 
 
 func _process(delta) -> void:
-    if loadDone:
-        for i in _updates:
-            i.call(delta)
-        BlockManager.runBlockUpdates()
+	if loadDone:
+		for i in _updates:
+			i.call(delta)
+		BlockManager.runBlockUpdates()
 
 
 func _input(event) -> void:
-    for i in _inputList:
-        i.call(event)
+	for i in _inputList:
+		i.call(event)
 
 
 func _ready() -> void:
-    instance = self
+	instance = self
 
 
 # TODO abstract away VoxelBlockyModel to pin the features
@@ -338,41 +338,41 @@ func _ready() -> void:
 ## [param alphaChannel] see [member VoxelBlockyModel.transparency_index][br]
 ## Static
 static func quickUniformBlock(
-        modID:StringName,
-        blockName:StringName,
-        readableName:String,
-        texturePos:Vector2,
-        mat:Material,
-        breakStrength := 3.0,
-        explosionStrength := 5.0,
-        tool := &"pickaxe",
-        alphaChannel := 0) -> void:
-    var model = startBlockRegister(modID + blockName, Voxdat.vox.GEOMETRY_CUBE)
-    model.set_mesh_collision_enabled(0, true)
-    model.transparency_index = alphaChannel
-    model.tile_left   = texturePos
-    model.tile_right  = texturePos
-    model.tile_bottom = texturePos
-    model.tile_top    = texturePos
-    model.tile_back   = texturePos
-    model.tile_front  = texturePos
-    model.set_material_override(0, mat)
-    var bi = BlockManager.BlockInfo.new(
-            modID,
-            blockName,
-            readableName,
-            model,
-            breakStrength,
-            explosionStrength,
-            false,
-            false,
-            Callable(),
-            tool,
-            "default",
-            "default",
-            "default"
-    )
-    endBlockRegister(bi)
+		modID:StringName,
+		blockName:StringName,
+		readableName:String,
+		texturePos:Vector2,
+		mat:Material,
+		breakStrength := 3.0,
+		explosionStrength := 5.0,
+		tool := &"pickaxe",
+		alphaChannel := 0) -> void:
+	var model = startBlockRegister(modID + blockName, Voxdat.vox.GEOMETRY_CUBE)
+	model.set_mesh_collision_enabled(0, true)
+	model.transparency_index = alphaChannel
+	model.tile_left   = texturePos
+	model.tile_right  = texturePos
+	model.tile_bottom = texturePos
+	model.tile_top    = texturePos
+	model.tile_back   = texturePos
+	model.tile_front  = texturePos
+	model.set_material_override(0, mat)
+	var bi = BlockManager.BlockInfo.new(
+			modID,
+			blockName,
+			readableName,
+			model,
+			breakStrength,
+			explosionStrength,
+			false,
+			false,
+			Callable(),
+			tool,
+			"default",
+			"default",
+			"default"
+	)
+	endBlockRegister(bi)
 
 
 ## Places a voxel at the specified position.
@@ -384,49 +384,49 @@ static func quickUniformBlock(
 ## Returns [code]true[/code] if the operation succeeded.[br]
 ## Static
 static func setBlock(
-        pos:Vector3i,
-        blockID:StringName,
-        drop := true,
-        update := true,
-        force := false,
-    ) -> bool:
-    var willSet := force
+		pos:Vector3i,
+		blockID:StringName,
+		drop := true,
+		update := true,
+		force := false,
+	) -> bool:
+	var willSet := force
 
-    var oldBlock:BlockInfo = blockList[_tool.get_voxel(pos)]
-    if not(willSet):
-        if oldBlock.properties.has(&"replaceable") or getBlockID(blockID).properties.has(&"air"):
-            willSet = true
+	var oldBlock:BlockInfo = blockList[_tool.get_voxel(pos)]
+	if not(willSet):
+		if oldBlock.properties.has(&"replaceable") or getBlockID(blockID).properties.has(&"air"):
+			willSet = true
 
-    if willSet:
-        if drop:
-            var itemID := oldBlock.dropItem
-            if itemID != &"null":
-                var item:ItemManager.ItemStack
-                if itemID == &"*":
-                    item = ItemManager.ItemStack.new(oldBlock.fullID, 1)
-                elif itemID == &"script":
-                    pass
-                else:
-                    item = ItemManager.ItemStack.new(itemID, 1)
-                ItemManager.spawnWorldItem(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
+	if willSet:
+		if drop:
+			var itemID := oldBlock.dropItem
+			if itemID != &"null":
+				var item:ItemManager.ItemStack
+				if itemID == &"*":
+					item = ItemManager.ItemStack.new(oldBlock.fullID, 1)
+				elif itemID == &"script":
+					pass
+				else:
+					item = ItemManager.ItemStack.new(itemID, 1)
+				ItemManager.spawnWorldItem(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
 
-        _tool.set_voxel(pos, blockIDlist[blockID])
+		_tool.set_voxel(pos, blockIDlist[blockID])
 
-        if update:
-            pendingBlockUpdates.append(pos)
-            pendingBlockUpdates.append(pos + Vector3i.UP)
-            pendingBlockUpdates.append(pos + Vector3i.DOWN)
-            pendingBlockUpdates.append(pos + Vector3i.FORWARD)
-            pendingBlockUpdates.append(pos + Vector3i.BACK)
-            pendingBlockUpdates.append(pos + Vector3i.LEFT)
-            pendingBlockUpdates.append(pos + Vector3i.RIGHT)
+		if update:
+			pendingBlockUpdates.append(pos)
+			pendingBlockUpdates.append(pos + Vector3i.UP)
+			pendingBlockUpdates.append(pos + Vector3i.DOWN)
+			pendingBlockUpdates.append(pos + Vector3i.FORWARD)
+			pendingBlockUpdates.append(pos + Vector3i.BACK)
+			pendingBlockUpdates.append(pos + Vector3i.LEFT)
+			pendingBlockUpdates.append(pos + Vector3i.RIGHT)
 
-    return willSet
+	return willSet
 
 
 ## Gets the [BlockManager.BlockInfo] for the voxel at the specified position.[br]
 ## Static
 static func getBlock(pos:Vector3) -> BlockInfo:
-    var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
-    return blockList[_tool.get_voxel(npos)]
+	var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
+	return blockList[_tool.get_voxel(npos)]
 
