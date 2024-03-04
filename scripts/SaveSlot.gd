@@ -29,6 +29,7 @@ func _ready():
 	
 	
 func populate(datain:Dictionary, filepath:String):
+	print(filepath)
 	fpath = filepath
 	data = datain
 	var keys:Array = data.keys()
@@ -73,3 +74,6 @@ func populate(datain:Dictionary, filepath:String):
 
 func _on_play_pressed():
 	BlockManager.modsToLoad = data["mods"]
+	WorldControl.worldpath = fpath
+	WorldControl.streamtype = data["streamtype"]
+	get_tree().change_scene_to_file("res://node_3d.tscn")

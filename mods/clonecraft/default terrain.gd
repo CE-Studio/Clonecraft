@@ -46,11 +46,11 @@ class gen:
 		var pending:int = 0
 		if y < (noise.get_noise_2d_single(Vector2(x / 20.0, z / 20.0)) * (120 * noise.get_noise_2d_single(Vector2(x / 50.0, z / 50.0)))) + 30:
 			if getSupBuf(x, y + 1, z) == 0:
-				pending = 3
+				pending = 4
 			elif getSupBuf(x, y + 5, z) == 0:
-				pending = 2
+				pending = 3
 			else:
-				pending = 1
+				pending = 2
 		return pending
 
 

@@ -14,6 +14,7 @@ var pausing := false
 var tree:SceneTree
 var _p:Player
 var _terrain:VoxelTerrain
+var stream:VoxelStream
 
 
 func raycheck(_rel:Vector3) -> bool:
@@ -59,7 +60,10 @@ func _ready() -> void:
 	_tool = BlockManager._tool
 	match streamtype:
 		"region":
-			pass
+			stream = VoxelStreamRegionFiles.new()
+			stream.directory = ProjectSettings.globalize_path(worldpath + "/dims/0/")
+			stream.save_generator_output = true
+			$"/root/Node3D/VoxelTerrain".stream = stream
 		"sql":
 			pass
 

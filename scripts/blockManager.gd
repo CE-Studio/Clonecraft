@@ -5,7 +5,7 @@ class_name BlockManager
 
 ## The list of mods to load when the world starts.[br]
 ## Static
-static var modsToLoad:Array[String]
+static var modsToLoad:Array
 ## The list of loaded mods. Populates automatically.[br]
 ## Static
 static var mods:Array[Mod] = []
@@ -237,7 +237,7 @@ static func setup() -> void:
 	terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
 	_tool = terrain.get_voxel_tool()
 	blockLibrary.atlas_size = 10
-	var airModel = startBlockRegister("clonecraft:air", Voxdat.vox.GEOMETRY_NONE)
+	var airModel = startBlockRegister(&"clonecraft:air", Voxdat.vox.GEOMETRY_NONE)
 	var airBlock := BlockInfo.new(
 			"clonecraft",
 			"air",
@@ -258,6 +258,25 @@ static func setup() -> void:
 	airBlock.properties.append(&"replaceable")
 	airBlock.properties.append(&"incompleteHitbox")
 	endBlockRegister(airBlock)
+	var blockEntityModel = startBlockRegister(&"clonecraft:blockEntity", Voxdat.vox.GEOMETRY_NONE)
+	var blockEntityBlock := BlockInfo.new(
+			"clonecraft",
+			"blockEntity",
+			"Block Entity Parent [Internal use only!]",
+			blockEntityModel,
+			0,
+			0,
+			true,
+			false,
+			Callable(),
+			"shovel",
+			"null",
+			"null",
+			"null",
+			"null"
+	)
+	blockEntityBlock.properties.append(&"incompleteHitbox")
+	endBlockRegister(blockEntityBlock)
 
 	Mod.refman()
 	for i in modsToLoad:

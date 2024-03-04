@@ -8,10 +8,11 @@ var _odoc
 
 
 static func opentext(f:String) -> String:
-	f = "res://addons/clonecraft_documentation/dat/content/" + f + ".txt"
-	var ff = FileAccess.open(f, FileAccess.READ)
+	var h = "res://addons/clonecraft_documentation/dat/content/" + f + ".txt"
+	var ff = FileAccess.open(h, FileAccess.READ)
 	var s = ff.get_as_text()
 	ff.close()
+	print(f)
 	return s
 
 

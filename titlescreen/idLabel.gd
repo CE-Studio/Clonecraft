@@ -6,5 +6,5 @@ func _ready():
 	var vinfo := Engine.get_version_info()
 	text = "Clonecraft "+ SettingManager.VERSION + "
 Engine version " + vinfo["string"] + ", " + str(vinfo["year"]) + "
-Copyright (GPLv3) CE Studio 2024. Please distribute!"
+(C) CE Studio 2024. GPLv3. Please distribute!"
 	print(vinfo["hash"])

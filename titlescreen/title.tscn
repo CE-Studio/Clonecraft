@@ -1731,7 +1731,7 @@ offset_right = 466.0
 grow_vertical = 0
 text = "Clonecraft {version}
 Engine {version}
-Copyright (GPLv3) CE Studio 2024. Please distribute!"
+(C) CE Studio 2024. GPLv3. Please distribute!"
 script = ExtResource("12_bmkwy")
 metadata/_edit_layout_mode = 1
 
