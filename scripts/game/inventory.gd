@@ -5,26 +5,39 @@ class_name Inventory
 
 @export var space:int = 2624
 var container:Array[ItemManager.ItemStack]
-var consumption:int
+var consumption:int:
 	set(_val):
 		pass
 
 
 func save() -> Dictionary:
-	pass
+	return {}
 
 
 func load(inp:Dictionary) -> bool:
-	pass
+	return false
 
 
 func addItem(item:ItemManager.ItemStack) -> bool:
-	pass
+	if (item.count + consumption) > space:
+		return false
+	consumption += item.count
+	for i in container:
+		if i.compare(item):
+			i.count += item.count
+			return true
+	container.append(item)
+	return true
 
 
 func extractItem(item:ItemManager.ItemStack) -> bool:
-	pass
+	return false
 
 
-func containsItem(item:ItemManager.ItemStack) -> bool:
-	pass
+func containsItem(item:ItemManager.ItemStack, strict := true) -> bool:
+	for i in container:
+		if item.compare(i):
+			if strict:
+				return i.count == item.count
+			return true
+	return false

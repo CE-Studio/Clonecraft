@@ -33,9 +33,21 @@ class ItemStack:
 	## Return the contained item.
 	func getItem() -> Item:
 		return ItemManager.items[itemID]
+		
+	## Checks if two ItemStacks are identical, ignoring count.
+	func compare(compTo: ItemStack) -> bool:
+		if itemID != compTo.itemID:
+			return false
+		if compTo.metadata.has_all(metadata.keys()) && metadata.has_all(compTo.metadata.keys()):
+			for i in metadata.keys():
+				if metadata[i] != compTo.metadata[i]:
+					return false
+		else:
+			return false
+		return true
 
 
-## A container for item properties.[br]
+## A container for static item properties.[br]
 ## Currently just the item's model.
 class Item:
 	var model:Mesh
