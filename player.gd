@@ -32,6 +32,8 @@ var camRay:RayCast3D
 var derg:Dictionary
 ## A refrence to the currently loaded dimension's terrain.
 var terrain:VoxelTerrain
+## The player's main inventory.
+var inventory := Inventory.new()
 
 ## Keeps track of what camera is being used.
 var camcycle := 0

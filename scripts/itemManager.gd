@@ -13,7 +13,7 @@ static var screenSize := Vector2(100, 100)
 
 
 ## A wrapper for items. 99% of the time you want to use this instead of an item object.
-class ItemStack:
+class ItemStack extends RefCounted:
 	## The ID of the contained item(s) (mod:name)
 	var itemID:StringName
 	## The number of items in the stack.
@@ -49,7 +49,7 @@ class ItemStack:
 
 ## A container for static item properties.[br]
 ## Currently just the item's model.
-class Item:
+class Item extends RefCounted:
 	var model:Mesh
 
 	func _init(itemMesh:Mesh):

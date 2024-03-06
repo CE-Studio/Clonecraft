@@ -89,7 +89,7 @@ static func runBlockUpdates() -> void:
 
 
 ## The base class for representing information about a voxel.
-class BlockInfo:
+class BlockInfo extends RefCounted:
 	## The ID of the mod the voxel comes from.[br]
 	## Identical to the first half of [member fullID].
 	var modID:StringName
