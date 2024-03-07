@@ -36,6 +36,11 @@ func startWait(pos:Vector3, rel:Vector3) -> void:
 	_waitrel = rel
 
 
+func saveworld():
+	$"/root/Node3D/VoxelTerrain".save_modified_blocks()
+	print(JSON.stringify(_p.save(), "  "))
+
+
 func pauseUnpause() -> void:
 	if SettingManager.isIdle():
 		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
@@ -43,7 +48,7 @@ func pauseUnpause() -> void:
 			pausing = false
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-			$"/root/Node3D/VoxelTerrain".save_modified_blocks()
+			saveworld()
 			pausing = true
 
 

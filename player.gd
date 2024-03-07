@@ -53,6 +53,28 @@ var world:WorldControl
 var _fcheck := 1.0
 
 
+func save() -> Dictionary:
+	return {
+		"abilities": abilities,
+		"position": position,
+		"inventory": inventory.save(),
+	}
+	
+	
+func restore(dict:Dictionary) -> bool:
+	if dict.has_all([
+		"abilities",
+		"position",
+		"inventory",
+	]):
+		abilities = dict["abilities"]
+		position = dict["position"]
+		updateAbilities()
+		return inventory.restore(dict["inventory"])
+	return false
+
+
+# TODO make inventory scale with ablilities
 func _ready() -> void:
 	head = $"head"
 	cam = $"head/Camera3D"

@@ -41,6 +41,31 @@ var abilities := {
 }
 
 
+func save() -> Dictionary:
+	return {
+		"abilities": abilities,
+		"position": position,
+	}
+	
+	
+func restore(dict:Dictionary) -> bool:
+	if dict.has_all([
+		"abilities",
+		"position",
+	]):
+		abilities = dict["abilities"]
+		position = dict["position"]
+		updateAbilities()
+		return true
+	return false
+	
+	
+func updateAbilities():
+	scale.x = (abilities["size"]["x"] * abilities["scale"]["x"]) * abilities["scale"]["uniform"]
+	scale.y = (abilities["size"]["y"] * abilities["scale"]["y"]) * abilities["scale"]["uniform"]
+	scale.z = (abilities["size"]["z"] * abilities["scale"]["x"]) * abilities["scale"]["uniform"]
+	
+
 func _settingsChanged() -> void:
 	TERMINAL_VELOCITY = ProjectSettings.get_setting("gameplay/physics/terminal_velocity")
 	GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")

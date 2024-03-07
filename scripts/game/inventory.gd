@@ -22,11 +22,38 @@ signal contentChanged
 
 
 func save() -> Dictionary:
-	return {}
+	var outp := {
+		"sapce": space,
+	}
+	var compcont = []
+	for i:ItemManager.ItemStack in container:
+		compcont.append({
+			"item": i.itemID,
+			"count": i.count,
+			"meta": i.metadata,
+		})
+	outp["container"] = compcont
+	return outp
 
 
-func load(inp:Dictionary) -> bool:
-	return false
+func restore(inp:Dictionary) -> bool:
+	if !inp.has_all([
+		"space",
+		"container",
+	]):
+		return false
+	space = inp["space"]
+	for i in inp["container"]:
+		if !i.has_all([
+			"item",
+			"count",
+			"meta",
+		]):
+			return false
+		var istack = ItemManager.ItemStack.new(i.item, i.count, i.meta)
+		if !addItem(istack):
+			return false
+	return true
 
 
 func addItem(item:ItemManager.ItemStack) -> bool:
@@ -58,8 +85,6 @@ func containsItem(item:ItemManager.ItemStack, countMode := ANY) -> bool:
 	for i in container:
 		if item.compare(i):
 			match countMode:
-				_:
-					return true
 				ANY:
 					return true
 				AT_LEAST:
@@ -68,4 +93,6 @@ func containsItem(item:ItemManager.ItemStack, countMode := ANY) -> bool:
 					return i.count == item.count
 				AT_MOST:
 					return i.count <= item.count
+				_:
+					return true
 	return false
