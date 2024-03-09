@@ -44,17 +44,23 @@ var abilities := {
 func save() -> Dictionary:
 	return {
 		"abilities": abilities,
-		"position": position,
+		"posx": position.x,
+		"posy": position.y,
+		"posz": position.z,
 	}
 	
 	
 func restore(dict:Dictionary) -> bool:
 	if dict.has_all([
 		"abilities",
-		"position",
+		"posx",
+		"posy",
+		"posz",
 	]):
 		abilities = dict["abilities"]
-		position = dict["position"]
+		position.x = dict["posx"]
+		position.y = dict["posy"]
+		position.z = dict["posz"]
 		updateAbilities()
 		return true
 	return false

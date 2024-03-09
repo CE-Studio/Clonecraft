@@ -3,5 +3,9 @@ class_name UiManager
 
 ## This class is not finished yet.
 
-## Placeholder
-static var placeholder
+
+static var elements:Dictionary = {}
+
+
+static func registerElement(element:GUIElement):
+	pass

@@ -13,6 +13,11 @@ static func opentext(f:String) -> String:
 	var s = ff.get_as_text()
 	ff.close()
 	print(f)
+	if f == "Index":
+		var list := ""
+		for i in ProjectSettings.get_global_class_list():
+			list += "[url=cla," + i.class + "]" + i.class + "[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img]\n"
+		s = s.replace("%list%", list)
 	return s
 
 

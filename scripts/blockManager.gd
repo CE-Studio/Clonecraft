@@ -332,7 +332,7 @@ func _process(delta) -> void:
 		BlockManager.runBlockUpdates()
 
 
-func _input(event) -> void:
+func _unhandled_input(event) -> void:
 	for i in _inputList:
 		i.call(event)
 

@@ -56,7 +56,9 @@ var _fcheck := 1.0
 func save() -> Dictionary:
 	return {
 		"abilities": abilities,
-		"position": position,
+		"posx": position.x,
+		"posy": position.y,
+		"posz": position.z,
 		"inventory": inventory.save(),
 	}
 	
@@ -64,11 +66,15 @@ func save() -> Dictionary:
 func restore(dict:Dictionary) -> bool:
 	if dict.has_all([
 		"abilities",
-		"position",
+		"posx",
+		"posy",
+		"posz",
 		"inventory",
 	]):
 		abilities = dict["abilities"]
-		position = dict["position"]
+		position.x = dict["posx"]
+		position.y = dict["posy"]
+		position.z = dict["posz"]
 		updateAbilities()
 		return inventory.restore(dict["inventory"])
 	return false
@@ -123,7 +129,7 @@ func _process(delta) -> void:
 	derg["rleg"].rotation_degrees.x = -xl + 12.5
 
 
-func _input(event) -> void:
+func _unhandled_input(event) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if _fcheck <= 0.2:
 			if abilities["allowFlight"] || abilities["isFlying"]:

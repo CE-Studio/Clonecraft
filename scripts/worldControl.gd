@@ -38,7 +38,13 @@ func startWait(pos:Vector3, rel:Vector3) -> void:
 
 func saveworld():
 	$"/root/Node3D/VoxelTerrain".save_modified_blocks()
-	print(JSON.stringify(_p.save(), "  "))
+	var jsave := JSON.stringify(_p.save(), "  ")
+	if !DirAccess.dir_exists_absolute(worldpath + "/playerdata/"):
+		DirAccess.make_dir_absolute(worldpath + "/playerdata/")
+	var playsavepath := worldpath + "/playerdata/__localplayer__.json"
+	var f := FileAccess.open(playsavepath, FileAccess.WRITE)
+	f.store_string(jsave)
+	f.close()
 
 
 func pauseUnpause() -> void:
@@ -71,6 +77,12 @@ func _ready() -> void:
 			$"/root/Node3D/VoxelTerrain".stream = stream
 		"sql":
 			pass
+	var playsavepath := worldpath + "/playerdata/__localplayer__.json"
+	if FileAccess.file_exists(playsavepath):
+		var f := FileAccess.open(playsavepath, FileAccess.READ)
+		var dict:Dictionary = JSON.parse_string(f.get_as_text())
+		f.close()
+		_p.restore(dict)
 
 
 func _process(_delta) -> void:
