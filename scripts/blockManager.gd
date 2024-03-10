@@ -134,6 +134,7 @@ class BlockInfo extends RefCounted:
 	## A list of various unique properties the voxel may have.[br]
 	## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
 	var properties:Array[StringName]
+	var _model:VoxelBlockyModel
 
 
 	func _init(
@@ -215,7 +216,7 @@ static func endBlockRegister(blockInfo:BlockInfo) -> void:
 	_addingBlock = false
 	blockList.append(blockInfo)
 	blockIDlist[blockInfo.fullID] = blockList.size() - 1
-	blockLibrary.add_model(_newmodel)
+	blockInfo._model = _newmodel
 	print(
 		"[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '"
 		+ blockInfo.fullID + "'"
@@ -234,6 +235,8 @@ static func inputRegister(callback:Callable) -> void:
 ## You probably don't want to call this.[br]
 ## Static
 static func setup() -> void:
+	var f:FileAccess
+	var regpath := WorldControl.worldpath + "/setupData/"
 	terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
 	_tool = terrain.get_voxel_tool()
 	blockLibrary.atlas_size = 10
@@ -313,9 +316,18 @@ static func setup() -> void:
 		"[" + Time.get_datetime_string_from_system() +
 		"] [BlockManager] Register phase completed for all mods!"
 	)
-
+	
+	for i in blockList:
+		blockLibrary.add_model(i._model)
 	blockLibrary.bake()
 	terrain.mesher.library = blockLibrary
+	
+	#Write out the block registry to lock numerical block IDs
+	if !DirAccess.dir_exists_absolute(regpath):
+		DirAccess.make_dir_absolute(regpath)
+	f = FileAccess.open(regpath + "IDregistry.json", FileAccess.WRITE)
+	f.store_string(JSON.stringify(blockIDlist, "  "))
+	f.close()
 
 	#Ensure every block has an item
 	ItemManager.getReady()

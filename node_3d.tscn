@@ -118,6 +118,7 @@ metadata/_edit_use_custom_anchors = true
 [node name="TextureRect" type="TextureRect" parent="Control/CenterContainer"]
 texture_filter = 1
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_epwcq")
 
 [node name="TextureRect2" type="TextureRect" parent="Control"]
@@ -283,6 +284,7 @@ process_mode = 3
 process_priority = -1
 generator = ExtResource("4_brcpd")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
+max_view_distance = 256
 collision_layer = 3
 run_stream_in_editor = false
 script = ExtResource("4_828ak")

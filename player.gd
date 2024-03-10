@@ -51,6 +51,7 @@ var tickNumber := 512
 var world:WorldControl
 
 var _fcheck := 1.0
+var extraSaveData := {}
 
 
 func save() -> Dictionary:
@@ -60,6 +61,7 @@ func save() -> Dictionary:
 		"posy": position.y,
 		"posz": position.z,
 		"inventory": inventory.save(),
+		"extra": extraSaveData,
 	}
 	
 	
@@ -70,12 +72,14 @@ func restore(dict:Dictionary) -> bool:
 		"posy",
 		"posz",
 		"inventory",
+		"extra",
 	]):
 		abilities = dict["abilities"]
 		position.x = dict["posx"]
 		position.y = dict["posy"]
 		position.z = dict["posz"]
 		updateAbilities()
+		extraSaveData = dict["extra"]
 		return inventory.restore(dict["inventory"])
 	return false
 
@@ -129,7 +133,7 @@ func _process(delta) -> void:
 	derg["rleg"].rotation_degrees.x = -xl + 12.5
 
 
-func _unhandled_input(event) -> void:
+func _input(event) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if _fcheck <= 0.2:
 			if abilities["allowFlight"] || abilities["isFlying"]:
