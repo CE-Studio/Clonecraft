@@ -134,7 +134,6 @@ class BlockInfo extends RefCounted:
 	## A list of various unique properties the voxel may have.[br]
 	## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
 	var properties:Array[StringName]
-	var _model:VoxelBlockyModel
 
 
 	func _init(
@@ -206,7 +205,7 @@ static func startBlockRegister(blockID:StringName, type:Voxdat.vox) -> VoxelBloc
 			_newmodel = VoxelBlockyModelEmpty.new()
 
 	return(_newmodel)
-
+	
 
 ## Finish registering a voxel.[br]
 ## See [method startBlockRegister] and [BlockManager.BlockInfo].[br]
@@ -214,9 +213,11 @@ static func startBlockRegister(blockID:StringName, type:Voxdat.vox) -> VoxelBloc
 static func endBlockRegister(blockInfo:BlockInfo) -> void:
 	assert(_addingBlock, "You need to call 'startBlockRegister' first!")
 	_addingBlock = false
-	blockList.append(blockInfo)
-	blockIDlist[blockInfo.fullID] = blockList.size() - 1
-	blockInfo._model = _newmodel
+	if blockIDlist.has(blockInfo.fullID):
+		blockList[blockIDlist[blockInfo.fullID]] = blockInfo
+	else:
+		blockList.append(blockInfo)
+		blockIDlist[blockInfo.fullID] = blockList.size() - 1
 	print(
 		"[" + Time.get_datetime_string_from_system() + "] [BlockManager] Registered block '"
 		+ blockInfo.fullID + "'"
@@ -230,16 +231,58 @@ static func inputRegister(callback:Callable) -> void:
 	_inputList.append(callback)
 
 
+static func _setupplaceholders():
+	var regpath := WorldControl.worldpath + "/setupData/IDregistry.json"
+	if FileAccess.file_exists(regpath):
+		var f = FileAccess.open(regpath, FileAccess.READ)
+		var h = JSON.parse_string(f.get_as_text())
+		f.close()
+		var count:int = 0
+		for i in h:
+			count = maxi(count, h[i] + 1)
+		blockList.resize(count)
+		var mat:StandardMaterial3D = preload("res://mods/clonecraft/baseblocks.tres")
+		var m := VoxelBlockyModelCube.new()
+		var v = Vector2(9, 9)
+		m.atlas_size_in_tiles = Vector2i(10, 10)
+		m.tile_left   = v
+		m.tile_right  = v
+		m.tile_bottom = v
+		m.tile_top    = v
+		m.tile_back   = v
+		m.tile_front  = v
+		m.set_material_override(0, mat)
+		for i:String in h:
+			var j = i.split(":", false, 1)
+			var bi = BlockInfo.new(
+				j[0],
+				j[1],
+				"Missing block!",
+				m,
+				10,
+				10,
+				false,
+				false,
+				Callable(),
+				&"pickaxe",
+				"default",
+				"default",
+				"default"
+			)
+			blockList[h[i]] = bi
+		blockIDlist = h
+
+
 # TODO finalize and document the loading order
 ## Initalize the block manager.[br]
 ## You probably don't want to call this.[br]
 ## Static
 static func setup() -> void:
-	var f:FileAccess
 	var regpath := WorldControl.worldpath + "/setupData/"
 	terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
 	_tool = terrain.get_voxel_tool()
 	blockLibrary.atlas_size = 10
+	_setupplaceholders()
 	var airModel = startBlockRegister(&"clonecraft:air", Voxdat.vox.GEOMETRY_NONE)
 	var airBlock := BlockInfo.new(
 			"clonecraft",
@@ -318,14 +361,14 @@ static func setup() -> void:
 	)
 	
 	for i in blockList:
-		blockLibrary.add_model(i._model)
+		blockLibrary.add_model(i.blockModel)
 	blockLibrary.bake()
 	terrain.mesher.library = blockLibrary
 	
 	#Write out the block registry to lock numerical block IDs
 	if !DirAccess.dir_exists_absolute(regpath):
 		DirAccess.make_dir_absolute(regpath)
-	f = FileAccess.open(regpath + "IDregistry.json", FileAccess.WRITE)
+	var f = FileAccess.open(regpath + "IDregistry.json", FileAccess.WRITE)
 	f.store_string(JSON.stringify(blockIDlist, "  "))
 	f.close()
 
@@ -344,7 +387,7 @@ func _process(delta) -> void:
 		BlockManager.runBlockUpdates()
 
 
-func _unhandled_input(event) -> void:
+func _input(event) -> void:
 	for i in _inputList:
 		i.call(event)
 
