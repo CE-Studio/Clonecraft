@@ -4,6 +4,10 @@ class_name WorldControl
 
 static var worldpath:String
 static var streamtype:String
+static var instance:WorldControl
+static var localUsername := "__localplayer__" : 
+	set(value):
+		pass
 
 
 var _tool:VoxelToolTerrain
@@ -15,6 +19,18 @@ var tree:SceneTree
 var _p:Player
 var _terrain:VoxelTerrain
 var stream:VoxelStream
+
+# TODO with the rest of multiplayer
+static func getPlayerList() -> Array[String]:
+	return ["__localplayer__"]
+	
+	
+static func getPlayer(player:String) -> Player:
+	if player == "__localplayer__":
+		return instance.get_node("player")
+	else:
+		assert(false, "Not yet implemented!")
+		return null
 
 
 func raycheck(_rel:Vector3) -> bool:
@@ -64,6 +80,7 @@ func _input(event) -> void:
 
 
 func _ready() -> void:
+	instance = self
 	tree = get_tree()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_p = $player

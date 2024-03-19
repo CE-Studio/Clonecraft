@@ -133,7 +133,7 @@ func _process(delta) -> void:
 	derg["rleg"].rotation_degrees.x = -xl + 12.5
 
 
-func _input(event) -> void:
+func _unhandled_input(event) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if _fcheck <= 0.2:
 			if abilities["allowFlight"] || abilities["isFlying"]:

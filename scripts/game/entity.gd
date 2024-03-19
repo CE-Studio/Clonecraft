@@ -24,7 +24,7 @@ var abilities := {
 		"range":1.0,
 		"reach":1.0,
 		"inventory":1.0,
-		"health":20.0,
+		"health":1.0,
 		"fallDamage":1.0,
 	},
 	"size":{

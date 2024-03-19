@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=58 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -43,6 +43,7 @@
 [ext_resource type="ArrayMesh" uid="uid://htxvn0t1v5aj" path="res://titlescreen/dergparts/derg_tail_main.obj" id="37_k72ik"]
 [ext_resource type="ArrayMesh" uid="uid://dfjvyji3gwt5y" path="res://titlescreen/dergparts/derg_tail_frill.obj" id="38_6fv3c"]
 [ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
+[ext_resource type="Script" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yoru6"]
 viewport_path = NodePath("itemRenderLayer")
@@ -104,32 +105,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_tpx33")
 
-[node name="CenterContainer" type="CenterContainer" parent="Control"]
+[node name="HUDlayer" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="crosshair" type="CenterContainer" parent="Control"]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_layout_mode = 1
 metadata/_edit_use_custom_anchors = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/crosshair"]
 texture_filter = 1
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("1_epwcq")
-
-[node name="TextureRect2" type="TextureRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("ViewportTexture_yoru6")
-expand_mode = 1
 
 [node name="f31" type="Label" parent="Control"]
 layout_mode = 0
@@ -149,6 +147,40 @@ offset_bottom = 21.0
 grow_horizontal = 0
 text = "F3 data 2"
 horizontal_alignment = 2
+
+[node name="chat" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -42.0
+offset_right = 402.0
+offset_bottom = -2.0
+grow_vertical = 0
+alignment = 2
+script = ExtResource("6_efijs")
+
+[node name="inpline" type="LineEdit" parent="Control/chat"]
+visible = false
+custom_minimum_size = Vector2(400, 1.45519e-11)
+layout_mode = 2
+
+[node name="GUIlayer" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="itemLayer" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_yoru6")
+expand_mode = 1
 
 [node name="waitpanel" type="Panel" parent="Control"]
 visible = false
@@ -266,18 +298,6 @@ size_flags_horizontal = 3
 text = "&&quit to desktop&&"
 script = ExtResource("5_i3vlu")
 dictKey = &"gui.gameplay.desktop_quit"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -148.0
-offset_right = 40.0
-offset_bottom = -108.0
-grow_vertical = 0
-alignment = 2
-script = ExtResource("6_efijs")
 
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 process_mode = 3
@@ -628,9 +648,13 @@ visible = false
 mesh = SubResource("BoxMesh_ydc0p")
 surface_material_override/0 = SubResource("ShaderMaterial_iabes")
 
-[node name="Node" type="Node" parent="."]
+[node name="blockManager" type="Node" parent="."]
 script = ExtResource("42_0hogo")
 
+[node name="cmdProcessor" type="Node" parent="."]
+script = ExtResource("44_fbb68")
+
+[connection signal="text_submitted" from="Control/chat/inpline" to="Control/chat" method="_on_inpline_text_submitted"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pauseUnpause"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="body_entered" from="player/Area3D" to="player" method="_on_enter_item_range"]

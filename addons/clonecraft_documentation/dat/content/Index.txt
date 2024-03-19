@@ -7,4 +7,5 @@ Index
 [url=cla,BlockManager.BlockInfo]BlockManager.BlockInfo[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img]
 [url=cla,ItemManager.Item]ItemManager.Item[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img]
 [url=cla,ItemManager.ItemStack]ItemManager.ItemStack[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img]
+[url=cla,CMDprocessor.Command]CMDprocessor.Command[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img]
 %list%
