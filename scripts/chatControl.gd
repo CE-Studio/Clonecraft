@@ -39,7 +39,13 @@ static func pushText(text:String) -> void:
 		instance.add_child(nline)
 
 
-func _on_inpline_text_submitted(new_text):
-	pushText(new_text)
+func _on_inpline_text_submitted(new_text:String):
 	inpline.visible = false
 	inpline.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if new_text == "":
+		return
+	if new_text[0] == "/":
+		pushText(str(CMDprocessor.run(new_text.erase(0, 1))))
+		CMDprocessor._thrown = false
+		return
+	pushText("[" + WorldControl.localUsername + "] " + new_text)
