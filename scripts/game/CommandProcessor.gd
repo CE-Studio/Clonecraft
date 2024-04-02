@@ -64,7 +64,24 @@ static func _run(tokens:Array) -> Variant:
 					tokens[i] = vars[j]
 				else:
 					throw("cmd.error.undefined_var")
-	return
+	if tokens[0] is String:
+		if (tokens[0][0] == "$") and (tokens[0][-1] == "="):
+			if tokens.size() == 1:
+				throw("cmd.error.missing_arg")
+				return
+			var h = tokens[0].replace("$", "").replace("=", "")
+			vars[h] = tokens[1]
+			return tokens[1]
+		else:
+			for i in commands:
+				if i.getCommandInvocation() == tokens[0]:
+					var outp = i.exectue(tokens.slice(1))
+					if _thrown:
+						return
+					return outp
+	else:
+		return tokens
+	return false
 
 
 static func _extTokens(con:String) -> Array:

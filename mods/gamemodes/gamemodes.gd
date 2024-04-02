@@ -115,7 +115,7 @@ class GamemodeCMD extends CMDprocessor.Command:
 		if index == -1:
 			return ["<String Mode>", "<String Player>"]
 		elif index == 0:
-			return _mod.mode.get_keys()
+			return _mod.modes.get_keys()
 		elif index == 1:
 			return WorldControl.getPlayerList()
 		return []
@@ -140,11 +140,11 @@ class GamemodeCMD extends CMDprocessor.Command:
 			CMDprocessor.throw("cmd.error.player_not_found")
 			return false
 			
-		if not _mod.mode.has(str(args[0])):
+		if not _mod.modes.has(str(args[0])):
 			CMDprocessor.throw("cmd.error.arg_invalid")
 			return false
 		
-		p.abilities.merge(_mod.mode[str(args[0])], true)
+		p.abilities.merge(_mod.modes[str(args[0])], true)
 		
 		return true
 	
