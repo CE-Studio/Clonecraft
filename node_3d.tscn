@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=60 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -12,6 +12,8 @@
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
 [ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_i3vlu"]
 [ext_resource type="Script" path="res://scripts/chatControl.gd" id="6_efijs"]
+[ext_resource type="Texture2D" uid="uid://bo156172yuv48" path="res://gui/hotbar.png" id="6_garc0"]
+[ext_resource type="Texture2D" uid="uid://dy0d23dqmbyhy" path="res://gui/hotbar_sel.png" id="7_rdery"]
 [ext_resource type="Material" path="res://textures/handmat.tres" id="9_dfanb"]
 [ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="11_dq7n1"]
@@ -167,9 +169,77 @@ custom_minimum_size = Vector2(400, 1.45519e-11)
 layout_mode = 2
 
 [node name="GUIlayer" type="Control" parent="Control"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="hotbar" type="Control" parent="Control/GUIlayer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="hb1" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-279, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb2" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-217, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb3" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-155, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb4" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-93, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb5" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-31, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb6" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(31, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb7" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(93, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb8" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(155, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb9" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(217, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hb10" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(279, -33)
+texture = ExtResource("6_garc0")
+hframes = 2
+
+[node name="hbsel" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-279, -34)
+texture = ExtResource("7_rdery")
 
 [node name="itemLayer" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -213,6 +283,7 @@ script = ExtResource("5_i3vlu")
 dictKey = &"gui.gameplay.wait_for_chunks"
 
 [node name="pausepanel" type="Panel" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -626,6 +697,7 @@ shape = SubResource("SphereShape3D_iq0cg")
 process_mode = 3
 own_world_3d = true
 transparent_bg = true
+size = Vector2i(1152, 648)
 script = ExtResource("14_wt5ed")
 
 [node name="Camera3D" type="Camera3D" parent="itemRenderLayer"]

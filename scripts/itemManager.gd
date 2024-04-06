@@ -109,3 +109,11 @@ static func spawnWorldItem(itemStack:ItemStack, pos:Vector3, vel:Vector3 = Vecto
 	nitem.setItem(itemStack)
 	Statics.get_node("/root/Node3D").add_child(nitem)
 	return nitem
+
+
+static func posConvert(pos:Vector2) -> Vector3:
+	pos = Vector2(pos)
+	pos.x -= (screenSize.x /2)
+	pos.y -= (screenSize.y /2)
+	pos = pos / 30
+	return Vector3(pos.x, -pos.y, 0)
