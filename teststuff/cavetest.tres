@@ -1,0 +1,26 @@
+[gd_resource type="VoxelGeneratorScript" load_steps=6 format=3 uid="uid://cl4rnl2wmo4gm"]
+
+[ext_resource type="Script" path="res://teststuff/cavetest.gd" id="1_51vjs"]
+
+[sub_resource type="ZN_FastNoiseLite" id="ZN_FastNoiseLite_cbgf3"]
+fractal_octaves = 17
+fractal_gain = 1.0
+
+[sub_resource type="ZN_FastNoiseLite" id="ZN_FastNoiseLite_qfptf"]
+seed = 1
+fractal_octaves = 17
+fractal_gain = 1.0
+
+[sub_resource type="ZN_FastNoiseLite" id="ZN_FastNoiseLite_rd8kc"]
+seed = 2
+fractal_octaves = 17
+fractal_gain = 1.0
+
+[sub_resource type="ZN_FastNoiseLite" id="ZN_FastNoiseLite_vxbju"]
+noise_type = 2
+period = 300.0
+
+[resource]
+script = ExtResource("1_51vjs")
+thenoise = SubResource("ZN_FastNoiseLite_vxbju")
+noisearray = Array[ZN_FastNoiseLite]([SubResource("ZN_FastNoiseLite_cbgf3"), SubResource("ZN_FastNoiseLite_qfptf"), SubResource("ZN_FastNoiseLite_rd8kc")])
