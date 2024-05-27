@@ -77,7 +77,7 @@ func _settingsChanged() -> void:
 	GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
-func _movement_process(delta:float) -> void:
+func _movement_process(_delta:float) -> void:
 	pass
 
 

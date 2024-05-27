@@ -11,11 +11,11 @@ class Command extends RefCounted:
 		return "__invalid__"
 	
 	
-	func getCommandArgList(index:int) -> Array:
+	func getCommandArgList(_index:int) -> Array:
 		return []
 	
 	
-	func exectue(args:Array) -> Variant:
+	func exectue(_args:Array) -> Variant:
 		return null
 
 

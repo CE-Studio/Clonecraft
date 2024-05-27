@@ -45,7 +45,7 @@ func _on_inpline_text_submitted(new_text:String):
 	if new_text == "":
 		return
 	if new_text[0] == "/":
-		pushText(str(CMDprocessor.run(new_text.erase(0, 1))))
+		Chat.pushText(str(CMDprocessor.run(new_text.erase(0, 1))))
 		CMDprocessor._thrown = false
 		return
-	pushText("[" + WorldControl.localUsername + "] " + new_text)
+	Chat.pushText("[" + WorldControl.localUsername + "] " + new_text)
