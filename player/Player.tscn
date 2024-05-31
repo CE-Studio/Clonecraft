@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://cng7kfytaxygb"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_3ny33"]
+[ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="2_ywuj5"]
+[ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="5_vknlp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
+size = Vector3(0.7, 1.8, 0.7)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xe5eu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5tc7k"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_iq0cg"]
+radius = 2.0
+
+[node name="player" type="CharacterBody3D"]
+process_mode = 1
+disable_mode = 1
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+platform_on_leave = 1
+script = ExtResource("1_3ny33")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_0d76e")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688957, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+process_mode = 3
+
+[node name="AudioListener3D" type="AudioListener3D" parent="head/Camera3D"]
+process_mode = 3
+
+[node name="VoxelViewer" type="VoxelViewer" parent="head/Camera3D"]
+process_mode = 3
+
+[node name="springArm3d" type="SpringArm3D" parent="head/Camera3D"]
+shape = SubResource("SphereShape3D_xe5eu")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="head/Camera3D/springArm3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="springArm3d2" type="SpringArm3D" parent="head/Camera3D"]
+transform = Transform3D(-1, 0, -1.22465e-16, 0, 1, 0, 1.22465e-16, 0, -1, 0, 0, 0)
+shape = SubResource("SphereShape3D_xe5eu")
+spring_length = 5.0
+
+[node name="Camera3D2" type="Camera3D" parent="head/Camera3D/springArm3d2"]
+transform = Transform3D(1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, -6.12323e-16, 0, 5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
+visible = false
+light_bake_mode = 0
+omni_range = 30.0365
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.105167, -0.87148, 0.479023, 0.316413, 0.485984, 0.814679, -0.942774, 0.0658922, 0.326857, 0, 0.689, 0)
+light_bake_mode = 0
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_pancake_size = 0.4
+
+[node name="Sprite3D" type="Sprite3D" parent="DirectionalLight3D"]
+transform = Transform3D(264.525, 300.044, 2.28882e-05, -300.044, 264.525, -9.53674e-06, 0, -5.34058e-05, 400, 3.8147e-05, -4.19617e-05, 600)
+texture = ExtResource("2_ywuj5")
+
+[node name="armpointy" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
+
+[node name="armpointx" type="Node3D" parent="armpointy"]
+
+[node name="clouds" type="MeshInstance3D" parent="."]
+transform = Transform3D(2000, 0, 0, 0, -2000, 0.000301992, 0, -0.000301992, -2000, 0, 215.917, 0)
+material_override = ExtResource("5_vknlp")
+mesh = SubResource("PlaneMesh_5tc7k")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_iq0cg")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_enter_item_range"]

@@ -26,14 +26,12 @@ var blockOutline:MeshInstance3D
 var cloudmat:StandardMaterial3D
 ## An array containing the 3rd-person cameras.
 var cams:Array[Camera3D]
-## A raycast used to position the 3rd-person cameras.
-var camRay:RayCast3D
-## A dictionary containing the various parts of the 3rd-person player model.
-var derg:Dictionary
 ## A refrence to the currently loaded dimension's terrain.
 var terrain:VoxelTerrain
 ## The player's main inventory.
 var inventory := Inventory.new()
+## The player model
+var model:PlayerModel
 
 ## Keeps track of what camera is being used.
 var camcycle := 0
@@ -41,6 +39,8 @@ var camcycle := 0
 var moveDist := 0.0
 ## Keeps count of how many seconds the world has been loaded for. Used for animation and the day/night cycle.
 var time := 0.0
+## Keeps strack of how long the player has moved for animation.
+var moveTime := 0.0
 ## Used to smoothly fade the walking animation in/out.
 var animCurSpeed := 0.0
 ## Sets how may blocks away from the player random ticks can be.
@@ -52,6 +52,7 @@ var world:WorldControl
 
 var _fcheck := 1.0
 var extraSaveData := {}
+var TEMP_REMOVE_THIS := SkeletonModification2D.new()
 
 
 func save() -> Dictionary:
@@ -82,6 +83,12 @@ func restore(dict:Dictionary) -> bool:
 		extraSaveData = dict["extra"]
 		return inventory.restore(dict["inventory"])
 	return false
+	
+	
+func setModel(m:PlayerModel):
+	model = m
+	add_child(m)
+	m.getFPArm().reparent(armPointX, false)
 
 
 # TODO make inventory scale with ablilities
@@ -97,20 +104,15 @@ func _ready() -> void:
 	cloudmat = $"./clouds".material_override
 	world = $"/root/Node3D"
 	cams.append($head/Camera3D)
-	cams.append($head/Camera3D/Camera3D)
-	cams.append($head/Camera3D/Camera3D2)
-	camRay = $head/Camera3D/RayCast3D
-	derg["root"] = $derg
-	derg["body"] = $derg/Node2
-	derg["head"] = $derg/Node2/bone2/head
-	derg["larm"] = $derg/Node2/bone2/larm
-	derg["rarm"] = $derg/Node2/bone2/rarm
-	derg["lleg"] = $derg/Node2/bone2/lleg
-	derg["rleg"] = $derg/Node2/bone2/rleg
+	cams.append($head/Camera3D/springArm3d/Camera3D)
+	cams.append($head/Camera3D/springArm3d2/Camera3D2)
+	call_deferred("setModel", load("res://player/default/Derg.tscn").instantiate())
 
 
 func _process(delta) -> void:
 	time += delta
+	if animCurSpeed > 0:
+		moveTime += delta
 	armPointY.rotation.y = lerp_angle(armPointY.rotation.y, head.rotation.y, delta * 20)
 	armPointX.rotation.x = lerp_angle(armPointX.rotation.x, cam.rotation.x, delta * 20)
 	armPointX.position = Vector3(
@@ -118,19 +120,14 @@ func _process(delta) -> void:
 		lerpf(armPointX.position.y, ((1 - abs(cos(moveDist))) / 80)  * animCurSpeed, delta * 20),
 		0
 	)
-	derg["body"].rotation.y = armPointY.rotation.y
-	derg["head"].rotation.x = armPointX.rotation.x
 	cloudmat.uv1_offset.z += delta / 900
 	_fcheck += delta
-
-	var z = (sin(time * 1.5) + 1) * 2.5
-	var x = sin(time * 0.994723812) * 2
-	var xl = sin(moveDist * 1.2) * (animCurSpeed * 40)
-	x += xl
-	derg["larm"].rotation_degrees = Vector3(-x, 0, -z)
-	derg["rarm"].rotation_degrees = Vector3(x, 0, z)
-	derg["lleg"].rotation_degrees.x = xl + 12.5
-	derg["rleg"].rotation_degrees.x = -xl + 12.5
+	
+	model.speed = animCurSpeed
+	model.time = time
+	model.moveTime = moveTime
+	model.moveDistance = moveDist
+	model.animate()
 
 
 func _unhandled_input(event) -> void:
@@ -145,16 +142,16 @@ func _unhandled_input(event) -> void:
 		head.rotate_y(mx)
 		cam.rotate_x(my)
 		cam.rotation.x = clamp(cam.rotation.x, -1.5708, 1.5708)
+		model.look = Vector2(cam.rotation_degrees.x, head.rotation_degrees.y)
+		model.bodyRotation = clampf(rad_to_deg(mx) + model.bodyRotation, -45, 45)
 	elif event.is_action_pressed("game_thirdperson"):
 		camcycle += 1
 		if camcycle >= cams.size():
 			camcycle = 0
 		cams[camcycle].make_current()
 		if camcycle > 0:
-			derg["root"].visible = true
 			armPointY.visible = false
 		else:
-			derg["root"].visible = false
 			armPointY.visible = true
 	elif  event.is_action_pressed("game_screenshot"):
 		var sdate:String = Time.get_date_string_from_system()
@@ -265,23 +262,6 @@ func _physics_process(delta) -> void:
 		blockOutline.position = Vector3(lookingAt.position) + Vector3(0.5, 0.5, 0.5)
 	else:
 		blockOutline.hide()
-
-	if camcycle == 0:
-		pass
-	elif camcycle == 1:
-		camRay.target_position = Vector3(0, 0, 5)
-		if camRay.is_colliding():
-			var dist = camRay.global_position.distance_to(camRay.get_collision_point())
-			cams[1].position = Vector3(0, 0, dist - 0.2)
-		else:
-			cams[1].position = Vector3(0, 0, 5)
-	elif camcycle == 2:
-		camRay.target_position = Vector3(0, 0, -5)
-		if camRay.is_colliding():
-			var dist = camRay.global_position.distance_to(camRay.get_collision_point())
-			cams[2].position = Vector3(0, 0, -dist + 0.2)
-		else:
-			cams[2].position = Vector3(0, 0, -5)
 
 	ticks()
 

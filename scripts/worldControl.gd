@@ -89,7 +89,10 @@ func _ready() -> void:
 	match streamtype:
 		"region":
 			stream = VoxelStreamRegionFiles.new()
-			stream.directory = ProjectSettings.globalize_path(worldpath + "/dims/0/")
+			var dimpath := ProjectSettings.globalize_path(worldpath + "/dims/0/")
+			if not DirAccess.dir_exists_absolute(dimpath):
+				DirAccess.make_dir_recursive_absolute(dimpath)
+			stream.directory = dimpath
 			stream.save_generator_output = true
 			$"/root/Node3D/VoxelTerrain".stream = stream
 		"sql":
