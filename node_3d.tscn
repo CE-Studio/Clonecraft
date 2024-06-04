@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=31 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -8,9 +8,11 @@
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="VoxelGeneratorScript" uid="uid://bvjxaj2q5axx0" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
+[ext_resource type="Script" path="res://scripts/game/hotbar.gd" id="5_7ch0y"]
 [ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_i3vlu"]
 [ext_resource type="Script" path="res://scripts/chatControl.gd" id="6_efijs"]
 [ext_resource type="Texture2D" uid="uid://bo156172yuv48" path="res://gui/hotbar.png" id="6_garc0"]
+[ext_resource type="Texture2D" uid="uid://t3mnt7mdm64f" path="res://gui/hotbar_layers.png" id="6_v81ga"]
 [ext_resource type="Texture2D" uid="uid://dy0d23dqmbyhy" path="res://gui/hotbar_sel.png" id="7_rdery"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
@@ -114,24 +116,6 @@ grow_horizontal = 0
 text = "F3 data 2"
 horizontal_alignment = 2
 
-[node name="chat" type="VBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -42.0
-offset_right = 402.0
-offset_bottom = -2.0
-grow_vertical = 0
-alignment = 2
-script = ExtResource("6_efijs")
-
-[node name="inpline" type="LineEdit" parent="Control/chat"]
-visible = false
-custom_minimum_size = Vector2(400, 1.45519e-11)
-layout_mode = 2
-
 [node name="GUIlayer" type="Control" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -150,6 +134,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("5_7ch0y")
 
 [node name="hb1" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
 position = Vector2(-279, -33)
@@ -201,6 +186,33 @@ position = Vector2(279, -33)
 texture = ExtResource("6_garc0")
 hframes = 2
 
+[node name="layer0" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-325, -63)
+texture = ExtResource("6_v81ga")
+centered = false
+hframes = 2
+
+[node name="layer1" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-325, -48)
+texture = ExtResource("6_v81ga")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="layer2" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-325, -33)
+texture = ExtResource("6_v81ga")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="layer3" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-325, -18)
+texture = ExtResource("6_v81ga")
+centered = false
+hframes = 2
+frame = 1
+
 [node name="hbsel" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
 position = Vector2(-279, -34)
 texture = ExtResource("7_rdery")
@@ -215,6 +227,24 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("ViewportTexture_yoru6")
 expand_mode = 1
+
+[node name="chat" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -42.0
+offset_right = 402.0
+offset_bottom = -2.0
+grow_vertical = 0
+alignment = 2
+script = ExtResource("6_efijs")
+
+[node name="inpline" type="LineEdit" parent="Control/chat"]
+visible = false
+custom_minimum_size = Vector2(400, 1.45519e-11)
+layout_mode = 2
 
 [node name="waitpanel" type="Panel" parent="Control"]
 visible = false

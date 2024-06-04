@@ -1,5 +1,5 @@
 extends Node3D
-class_name PlayerModel
+class_name EntityModel
 
 
 ## How fast the player is currently moving
@@ -17,7 +17,7 @@ var bodyRotation:float
 
 
 ## Called every frame to update the animations
-func animate() -> void:
+func animate(_delta:float) -> void:
 	pass
 
 

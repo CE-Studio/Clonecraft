@@ -31,7 +31,7 @@ var terrain:VoxelTerrain
 ## The player's main inventory.
 var inventory := Inventory.new()
 ## The player model
-var model:PlayerModel
+var model:EntityModel
 
 ## Keeps track of what camera is being used.
 var camcycle := 0
@@ -49,6 +49,8 @@ var tickRange := 100
 var tickNumber := 512
 ## A reference to the world's [WorldControl].
 var world:WorldControl
+
+var _looktrack := Vector2.ZERO
 
 var _fcheck := 1.0
 var extraSaveData := {}
@@ -85,7 +87,7 @@ func restore(dict:Dictionary) -> bool:
 	return false
 	
 	
-func setModel(m:PlayerModel):
+func setModel(m:EntityModel):
 	model = m
 	add_child(m)
 	m.getFPArm().reparent(armPointX, false)
@@ -127,7 +129,17 @@ func _process(delta) -> void:
 	model.time = time
 	model.moveTime = moveTime
 	model.moveDistance = moveDist
-	model.animate()
+	var lerpdelta = delta * 10
+	_looktrack = Vector2(
+		lerp_angle(deg_to_rad(model.look.x), cam.rotation.x, lerpdelta),
+		lerp_angle(deg_to_rad(model.look.y), head.rotation.y, lerpdelta)
+	)
+	model.bodyRotation = clampf((rad_to_deg(_looktrack.y) - model.look.y) + model.bodyRotation, -45, 45)
+	model.look = Vector2(
+		rad_to_deg(_looktrack.x),
+		rad_to_deg(_looktrack.y)
+	)
+	model.animate(delta)
 
 
 func _unhandled_input(event) -> void:
@@ -142,8 +154,6 @@ func _unhandled_input(event) -> void:
 		head.rotate_y(mx)
 		cam.rotate_x(my)
 		cam.rotation.x = clamp(cam.rotation.x, -1.5708, 1.5708)
-		model.look = Vector2(cam.rotation_degrees.x, head.rotation_degrees.y)
-		model.bodyRotation = clampf(rad_to_deg(mx) + model.bodyRotation, -45, 45)
 	elif event.is_action_pressed("game_thirdperson"):
 		camcycle += 1
 		if camcycle >= cams.size():
@@ -151,8 +161,10 @@ func _unhandled_input(event) -> void:
 		cams[camcycle].make_current()
 		if camcycle > 0:
 			armPointY.visible = false
+			model.visible = true
 		else:
 			armPointY.visible = true
+			model.visible = false
 	elif  event.is_action_pressed("game_screenshot"):
 		var sdate:String = Time.get_date_string_from_system()
 		var stime:String = Time.get_time_string_from_system().replace(":","-")
@@ -217,11 +229,16 @@ func _physics_process(delta) -> void:
 		head.position.y = 0.689
 		armPointY.position.y = 0.689
 
-	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("game_left", "game_right", "game_up", "game_down")
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	# TODO scale with terrain player is on.
 	var lerpdelta = 30.0 * delta
+	# Get the input direction and handle the movement/deceleration.
+	var input_dir := Input.get_vector("game_left", "game_right", "game_up", "game_down")
+	model.bodyRotation = lerpf(model.bodyRotation, 0, abs(input_dir.y) * (delta * 10))
+	if input_dir.y <= 0:
+		model.bodyRotation = lerpf(model.bodyRotation, 45 * input_dir.x, abs(input_dir.x) * (delta * 10))
+	else:
+		model.bodyRotation = lerpf(model.bodyRotation, -45 * input_dir.x, abs(input_dir.x) * (delta * 10))
+	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	# TODO scale with terrain player is on.
 	var cvel := Vector2(velocity.x, velocity.z)
 	if direction:
 		var rvel := Vector2(
