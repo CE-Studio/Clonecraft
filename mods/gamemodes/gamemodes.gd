@@ -113,7 +113,7 @@ class GamemodeCMD extends CMDprocessor.Command:
 	
 	func getCommandArgList(index:int) -> Array:
 		if index == -1:
-			return ["<String Mode>", "<String Player>"]
+			return ["<String Mode>", "[String Player]"]
 		elif index == 0:
 			return _mod.modes.get_keys()
 		elif index == 1:
