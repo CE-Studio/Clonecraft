@@ -81,6 +81,13 @@ func extractItem(item:ItemManager.ItemStack) -> bool:
 	return false
 
 
+func getItemFromID(sitem:StringName) -> ItemManager.ItemStack:
+	for i in container:
+		if i.itemID == sitem:
+			return i
+	return null
+
+
 func containsItem(item:ItemManager.ItemStack, countMode := ANY) -> bool:
 	for i in container:
 		if item.compare(i):

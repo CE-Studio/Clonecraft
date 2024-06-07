@@ -30,6 +30,8 @@ var cams:Array[Camera3D]
 var terrain:VoxelTerrain
 ## The player's main inventory.
 var inventory := Inventory.new()
+## The contents of the hotbar.
+var hotbarItems:Array[ItemManager.ItemStack] = []
 ## The player model
 var model:EntityModel
 
@@ -54,7 +56,6 @@ var _looktrack := Vector2.ZERO
 
 var _fcheck := 1.0
 var extraSaveData := {}
-var TEMP_REMOVE_THIS := SkeletonModification2D.new()
 
 
 func save() -> Dictionary:
@@ -95,6 +96,7 @@ func setModel(m:EntityModel):
 
 # TODO make inventory scale with ablilities.
 func _ready() -> void:
+	hotbarItems.resize(40)
 	head = $"head"
 	cam = $"head/Camera3D"
 	armPointY = $"armpointy"
