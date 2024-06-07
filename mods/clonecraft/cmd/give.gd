@@ -7,7 +7,7 @@ func getCommandInvocation() -> String:
 
 func getCommandArgList(index:int) -> Array:
 	if index == -1:
-		return ["<String ID>", "[Int Count]", "[String Player]"]
+		return ["<String ID>", "[Int Count]", "[String Player]", "[Dict Metadata]"]
 	elif index == 0:
 		return ItemManager.items.keys()
 	elif index == 1:
@@ -38,5 +38,21 @@ func exectue(args:Array) -> Variant:
 		else:
 			CMDprocessor.throw("cmd.error.arg_invalid")
 			return false
+		c = int(args[1])
 	
-	return true
+	
+	if l > 2:
+		p = WorldControl.getPlayer(str(args[2]))
+		if p == null:
+			CMDprocessor.throw("cmd.error.player_not_found")
+			return false
+	else:
+		p = WorldControl.getPlayer(WorldControl.localUsername)
+			
+	# TODO implement metadata arg
+			
+	if l > 4:
+		CMDprocessor.throw("cmd.error.too_many_args")
+		return false
+	
+	return p.inventory.addItem(ItemManager.ItemStack.new(str(args[0]), c))

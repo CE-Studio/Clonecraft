@@ -57,6 +57,7 @@ func saveworld():
 	var jsave := JSON.stringify(_p.save(), "  ")
 	if !DirAccess.dir_exists_absolute(worldpath + "/playerdata/"):
 		DirAccess.make_dir_absolute(worldpath + "/playerdata/")
+	# TODO un-hardcode this
 	var playsavepath := worldpath + "/playerdata/__localplayer__.json"
 	var f := FileAccess.open(playsavepath, FileAccess.WRITE)
 	f.store_string(jsave)

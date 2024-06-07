@@ -170,6 +170,7 @@ func _makeOL() -> void:
 
 
 func registerPhase() -> void:
+	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/give.gd").new())
 	man.quickUniformBlock(MODID, "stone", "Stone", Vector2(0, 0), mat1)
 	man.quickUniformBlock(MODID, "dirt", "Dirt", Vector2(1, 0), mat1, 1, 1, "shovel")
 	canGrass.append("clonecraft:dirt")
