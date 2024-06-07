@@ -93,7 +93,7 @@ func setModel(m:EntityModel):
 	m.getFPArm().reparent(armPointX, false)
 
 
-# TODO make inventory scale with ablilities
+# TODO make inventory scale with ablilities.
 func _ready() -> void:
 	head = $"head"
 	cam = $"head/Camera3D"

@@ -20,7 +20,7 @@ var _p:Player
 var _terrain:VoxelTerrain
 var stream:VoxelStream
 
-# TODO with the rest of multiplayer
+# TODO redo this when adding multiplayer
 static func getPlayerList() -> Array[String]:
 	return ["__localplayer__"]
 	
