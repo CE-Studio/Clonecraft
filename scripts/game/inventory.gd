@@ -88,6 +88,26 @@ func getItemFromID(sitem:StringName) -> ItemManager.ItemStack:
 	return null
 
 
+func getItemFromStack(item:ItemManager.ItemStack, countMode := ANY) -> ItemManager.ItemStack:
+	for i in container:
+		if item.compare(i):
+			match countMode:
+				ANY:
+					return i
+				AT_LEAST:
+					if i.count >= item.count:
+						return i
+				EXACTLY:
+					if i.count == item.count:
+						return i
+				AT_MOST:
+					if i.count <= item.count:
+						return i
+				_:
+					return i
+	return null
+
+
 func containsItem(item:ItemManager.ItemStack, countMode := ANY) -> bool:
 	for i in container:
 		if item.compare(i):
