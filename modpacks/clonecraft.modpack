@@ -1,15 +1,18 @@
 {
+    "a comment": "MDP modpack file. Open with the CE-Studio launcher to install.",
     "game": "clonecraft",
     "gameversion": "*",
-    "packname": "Clonecraft Debug",
+    "packname": "Clonecraft: Story Mode",
     "packversion": "0.0.1",
+    "icon": "",
+    "desc": "You awaken in a strange world slowly recovering from a great disaster, but the threats of the past still lurk in the shadows. Can you help the world heal once and for all?\nThe intended gameplay experience. Recommended for new players.",
     "required": [
         {
             "name": "clonecraft",
             "url": ""
         },
         {
-            "name": "debugtools",
+            "name": "gamemodes",
             "url": ""
         }
     ],

@@ -55,6 +55,5 @@ func registerPhase() -> void:
 	player.abilities["allowFlight"] = true
 	player.abilities["allowBuild"] = true
 	itemDisp = MeshInstance3D.new()
-	ItemManager.addToItemLayer(itemDisp)
-	itemDisp.rotation_degrees = Vector3(10.5, -46, -10.7)
+	ItemManager.addToItemLayer(itemDisp, true)
 	man.addUpdate(update)

@@ -64,7 +64,7 @@ static func _run(tokens:Array) -> Variant:
 					tokens[i] = vars[j]
 				else:
 					throw("cmd.error.undefined_var")
-	if tokens[0] is String:
+	if (tokens.size() > 0) and (tokens[0] is String):
 		if (tokens[0][0] == "$") and (tokens[0][-1] == "="):
 			if tokens.size() == 1:
 				throw("cmd.error.missing_arg")

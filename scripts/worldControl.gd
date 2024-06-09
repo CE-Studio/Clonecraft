@@ -103,7 +103,7 @@ func _ready() -> void:
 		var f := FileAccess.open(playsavepath, FileAccess.READ)
 		var dict:Dictionary = JSON.parse_string(f.get_as_text())
 		f.close()
-		_p.restore(dict)
+		BlockManager.log("WorldControl", str(_p.restore(dict)))
 
 
 func _process(_delta) -> void:
@@ -116,3 +116,8 @@ func _process(_delta) -> void:
 
 func _on_setting_button_pressed():
 	SettingManager.spawnMenu()
+
+
+func _on_quit_desktop_button_pressed():
+	saveworld()
+	get_tree().quit()

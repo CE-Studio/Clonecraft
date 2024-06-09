@@ -19,7 +19,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	get_tree().root.size_changed.connect(resize)
 	instance = self
-	
+
 
 ## Forces the scale of the UI to update.[br]
 ## Use via [code]AutoScaler.instance.resize()[/code]
@@ -30,7 +30,9 @@ func resize() -> void:
 		get_window().content_scale_factor = smallestSide / SCALE_FACTOR
 	else:
 		get_window().content_scale_factor = ProjectSettings.get_setting("gameplay/ui/scale")
-		
-		
+	if is_instance_valid(Hotbar.instance):
+		Hotbar.instance.deferRedraw()
+
+
 func _settingsChanged() -> void:
 	resize()

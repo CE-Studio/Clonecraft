@@ -23,7 +23,7 @@ signal contentChanged
 
 func save() -> Dictionary:
 	var outp := {
-		"sapce": space,
+		"space": space,
 	}
 	var compcont = []
 	for i:ItemManager.ItemStack in container:

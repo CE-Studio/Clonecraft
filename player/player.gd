@@ -58,6 +58,23 @@ var _fcheck := 1.0
 var extraSaveData := {}
 
 
+func _saveHotbar() -> Array:
+	var h := []
+	for i in hotbarItems:
+		if i == null:
+			h.append(null)
+		else:
+			h.append([i.itemID, i.metadata])
+	return h
+
+
+func _loadHotbar(a:Array):
+	for i in a.size():
+		if a[i] is Array:
+			var h := ItemManager.ItemStack.new(a[i][0], 1, a[i][1])
+			hotbarItems[i] = inventory.getItemFromStack(h)
+
+
 func save() -> Dictionary:
 	return {
 		"abilities": abilities,
@@ -66,9 +83,10 @@ func save() -> Dictionary:
 		"posz": position.z,
 		"inventory": inventory.save(),
 		"extra": extraSaveData,
+		"hotbar": _saveHotbar(),
 	}
-	
-	
+
+
 func restore(dict:Dictionary) -> bool:
 	if dict.has_all([
 		"abilities",
@@ -77,6 +95,7 @@ func restore(dict:Dictionary) -> bool:
 		"posz",
 		"inventory",
 		"extra",
+		"hotbar",
 	]):
 		abilities = dict["abilities"]
 		position.x = dict["posx"]
@@ -84,7 +103,9 @@ func restore(dict:Dictionary) -> bool:
 		position.z = dict["posz"]
 		updateAbilities()
 		extraSaveData = dict["extra"]
-		return inventory.restore(dict["inventory"])
+		var h := inventory.restore(dict["inventory"])
+		_loadHotbar(dict["hotbar"])
+		return h
 	return false
 	
 	
@@ -92,6 +113,8 @@ func setModel(m:EntityModel):
 	model = m
 	add_child(m)
 	m.getFPArm().reparent(armPointX, false)
+	if camcycle == 0:
+		model.hide()
 
 
 # TODO make inventory scale with ablilities.
@@ -167,7 +190,7 @@ func _unhandled_input(event) -> void:
 		else:
 			armPointY.visible = true
 			model.visible = false
-	elif  event.is_action_pressed("game_screenshot"):
+	elif event.is_action_pressed("game_screenshot"):
 		var sdate:String = Time.get_date_string_from_system()
 		var stime:String = Time.get_time_string_from_system().replace(":","-")
 		var screenshotPath = "user://screenshots/cc_sc_ymd" + sdate + "_hms" + stime + "_"
@@ -177,6 +200,14 @@ func _unhandled_input(event) -> void:
 		var image = get_viewport().get_texture().get_image()
 		image.save_png(screenshotPath)
 		Chat.pushText("Saved screenshot \"" + ProjectSettings.globalize_path(screenshotPath) + "\"")
+	elif event.is_action_pressed("game_hotbar_layer_next"):
+		Hotbar.layer += 1
+	elif event.is_action_pressed("game_hotbar_layer_prev"):
+		Hotbar.layer -= 1
+	elif event.is_action_pressed("game_hotbar_next"):
+		Hotbar.slot += 1
+	elif event.is_action_pressed("game_hotbar_prev"):
+		Hotbar.slot -= 1
 
 
 ## Runs random ticks around the player. Called automatically.
