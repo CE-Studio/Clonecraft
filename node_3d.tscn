@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=43 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -14,12 +14,61 @@
 [ext_resource type="Texture2D" uid="uid://bo156172yuv48" path="res://gui/hotbar.png" id="6_garc0"]
 [ext_resource type="Texture2D" uid="uid://t3mnt7mdm64f" path="res://gui/hotbar_layers.png" id="6_v81ga"]
 [ext_resource type="Texture2D" uid="uid://dy0d23dqmbyhy" path="res://gui/hotbar_sel.png" id="7_rdery"]
+[ext_resource type="Texture2D" uid="uid://dgjlgaesep514" path="res://gui/statbars.png" id="9_ehm4h"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
 [ext_resource type="Script" path="res://scripts/itemRenderLayerSize.gd" id="14_wt5ed"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
 [ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
 [ext_resource type="Script" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ceb"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(30, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cjf6q"]
+texture = SubResource("AtlasTexture_f1ceb")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+axis_stretch_vertical = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dajyh"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(0, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o78yd"]
+texture = SubResource("AtlasTexture_dajyh")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atfrb"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(20, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l54sm"]
+texture = SubResource("AtlasTexture_atfrb")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l1xi"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(10, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vehuk"]
+texture = SubResource("AtlasTexture_8l1xi")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf4da"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntior"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(40, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgxlq"]
+texture = SubResource("AtlasTexture_ntior")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_yoru6"]
 viewport_path = NodePath("itemRenderLayer")
@@ -216,6 +265,56 @@ frame = 1
 [node name="hbsel" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
 position = Vector2(-279, -34)
 texture = ExtResource("7_rdery")
+
+[node name="progressBar" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+layout_mode = 0
+offset_left = -306.0
+offset_top = -86.0
+offset_right = -6.0
+offset_bottom = -70.0
+theme_override_styles/background = SubResource("StyleBoxTexture_cjf6q")
+theme_override_styles/fill = SubResource("StyleBoxTexture_o78yd")
+max_value = 20.0
+value = 12.13
+show_percentage = false
+
+[node name="progressBar4" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+layout_mode = 0
+offset_left = -306.0
+offset_top = -106.0
+offset_right = -6.0
+offset_bottom = -90.0
+theme_override_styles/background = SubResource("StyleBoxTexture_cjf6q")
+theme_override_styles/fill = SubResource("StyleBoxTexture_l54sm")
+max_value = 20.0
+value = 15.27
+show_percentage = false
+
+[node name="progressBar2" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -86.0
+offset_right = 306.0
+offset_bottom = -70.0
+theme_override_styles/background = SubResource("StyleBoxTexture_cjf6q")
+theme_override_styles/fill = SubResource("StyleBoxTexture_vehuk")
+max_value = 20.0
+value = 11.72
+fill_mode = 1
+show_percentage = false
+
+[node name="progressBar3" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -86.0
+offset_right = 306.0
+offset_bottom = -70.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_yf4da")
+theme_override_styles/fill = SubResource("StyleBoxTexture_rgxlq")
+max_value = 20.0
+value = 9.22
+fill_mode = 1
+show_percentage = false
 
 [node name="itemLayer" type="TextureRect" parent="Control"]
 layout_mode = 1

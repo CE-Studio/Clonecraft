@@ -55,7 +55,6 @@ func _setup():
 		slotmodels.append(MeshInstance3D.new())
 		ItemManager.addToItemLayer(slotmodels[-1])
 		slotmodels[-1].position = ItemManager.posConvert(i.global_position)
-		print(i.global_position)
 		slotmodels[-1].mesh = aaa
 		slotlbls.append(Label.new())
 		$"../../GUIlayer2".add_child(slotlbls[-1])

@@ -43,7 +43,6 @@ static func run(con:String) -> Variant:
 	var tokens := _extTokens(con)
 	if _thrown:
 		return
-	print(tokens)
 	
 	return _run(tokens)
 
@@ -55,7 +54,6 @@ static func _run(tokens:Array) -> Variant:
 			if _thrown:
 				return
 		if tokens[i] is String:
-			print(tokens[i])
 			if tokens[i][0] == "$":
 				var j = tokens[i].erase(0, 1)
 				if j[-1] == "=":
