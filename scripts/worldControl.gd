@@ -10,6 +10,19 @@ static var localUsername := "__localplayer__" :
 		pass
 
 
+@export var dayLength:float
+@export var dayNightRatio:float:
+	set(value):
+		dayNightRatio = clampf(value, 0, 1)
+@export var upperSkyColor:Gradient
+@export var lowerSkyColor:Gradient
+@export var sunlightColor:Gradient
+@export var moonlightColor:Gradient
+
+
+@onready var sky:ProceduralSkyMaterial = $WorldEnvironment.environment.sky.sky_material
+
+
 var _tool:VoxelToolTerrain
 var _waitpos := Vector3.ZERO
 var _waitrel := Vector3.ZERO
@@ -19,6 +32,8 @@ var tree:SceneTree
 var _p:Player
 var _terrain:VoxelTerrain
 var stream:VoxelStream
+var daytime:float = 0
+var dayprogress:float = 0
 
 # TODO redo this when adding multiplayer
 static func getPlayerList() -> Array[String]:
@@ -112,6 +127,14 @@ func _process(_delta) -> void:
 	tree.paused = pausing or waiting
 	$Control/waitpanel.visible = waiting
 	$Control/pausepanel.visible = pausing
+	if not(tree.paused):
+		daytime += _delta
+		if daytime >= dayLength:
+			daytime -= dayLength
+		dayprogress = remap(daytime, 0, dayLength, 0, 1)
+		_p.sunAngle = dayprogress
+		sky.sky_top_color = upperSkyColor.sample(dayprogress)
+		sky.ground_bottom_color = lowerSkyColor.sample(dayprogress)
 
 
 func _on_setting_button_pressed():

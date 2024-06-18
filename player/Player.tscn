@@ -59,15 +59,18 @@ visible = false
 light_bake_mode = 0
 omni_range = 30.0365
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.105167, -0.87148, 0.479023, 0.316413, 0.485984, 0.814679, -0.942774, 0.0658922, 0.326857, 0, 0.689, 0)
+[node name="sunpoint" type="Node3D" parent="."]
+transform = Transform3D(0.104635, -0.994454, -0.0106473, 0.42201, 0.0347038, 0.905927, -0.900532, -0.0992847, 0.423301, 0, 0.689, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="sunpoint"]
+transform = Transform3D(1, 0, -2.08167e-17, 0, 0.0778501, 0.996965, -1.11022e-16, -0.996965, 0.0778501, 0, 0, 0)
 light_bake_mode = 0
 shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_pancake_size = 0.4
 
-[node name="Sprite3D" type="Sprite3D" parent="DirectionalLight3D"]
-transform = Transform3D(264.525, 300.044, 2.28882e-05, -300.044, 264.525, -9.53674e-06, 0, -5.34058e-05, 400, 3.8147e-05, -4.19617e-05, 600)
+[node name="Sprite3D" type="Sprite3D" parent="sunpoint/DirectionalLight3D"]
+transform = Transform3D(1058.1, 1200.18, 0.000160241, -1200.18, 1058.1, 0.000141272, -5.68435e-14, -0.000213623, 1600, 0.000121416, -7.66572e-05, 2055.23)
 texture = ExtResource("2_ywuj5")
 
 [node name="armpointy" type="Node3D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=47 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -21,6 +21,19 @@
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
 [ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
 [ext_resource type="Script" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
+
+[sub_resource type="Gradient" id="Gradient_gul6o"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
+colors = PackedColorArray(0.0705882, 0.101961, 0.180392, 1, 0.498039, 0.301961, 0.113725, 1, 0.541176, 0.713726, 0.862745, 1, 0.541176, 0.713726, 0.862745, 1, 0.498039, 0.301961, 0.113725, 1, 0.0705882, 0.101961, 0.180392, 1)
+
+[sub_resource type="Gradient" id="Gradient_5sooj"]
+offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
+colors = PackedColorArray(0.0313726, 0.0509804, 0.101961, 1, 0.435294, 0.258824, 0.0941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.435294, 0.258824, 0.0941176, 1, 0.0313726, 0.0509804, 0.101961, 1)
+
+[sub_resource type="Gradient" id="Gradient_8853r"]
+
+[sub_resource type="Gradient" id="Gradient_onrho"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ceb"]
 atlas = ExtResource("9_ehm4h")
@@ -113,6 +126,11 @@ shader = ExtResource("15_ji8mt")
 [node name="Node3D" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_ug7a2")
+dayLength = 60.0
+upperSkyColor = SubResource("Gradient_gul6o")
+lowerSkyColor = SubResource("Gradient_5sooj")
+sunlightColor = SubResource("Gradient_8853r")
+moonlightColor = SubResource("Gradient_onrho")
 
 [node name="Control" type="Control" parent="."]
 process_mode = 3

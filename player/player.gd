@@ -58,6 +58,15 @@ var _fcheck := 1.0
 var extraSaveData := {}
 
 
+@onready var sun:DirectionalLight3D = $sunpoint/DirectionalLight3D
+
+
+var sunAngle:float:
+	set(value):
+		sun.rotation_degrees.x = remap(value, 0, 1, -180, 180)
+		sunAngle = value
+
+
 func _saveHotbar() -> Array:
 	var h := []
 	for i in hotbarItems:
