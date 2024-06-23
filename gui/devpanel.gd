@@ -45,8 +45,7 @@ func populate(data:Dictionary) -> void:
 				#addExtract(Engine.get_donor_info())
 			else:
 				addExtract(dat["extra"])
-		elif ((dat["extra"] is Array) or
-			  (dat["extra"] is Dictionary)):
+		elif ((dat["extra"] is Array) or (dat["extra"] is Dictionary)):
 			content.append(HSeparator.new())
 			content.append(Label.new())
 			content[-1].autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
