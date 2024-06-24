@@ -385,6 +385,15 @@ func _process(delta) -> void:
 		for i in _updates:
 			i.call(delta)
 		BlockManager.runBlockUpdates()
+		for i in mods:
+			if i.has_method(&"_process"):
+				i._process(delta)
+
+
+func _physics_process(delta):
+	for i in mods:
+		if i.has_method(&"_physics_process"):
+			i._physics_process(delta)
 
 
 func _input(event) -> void:

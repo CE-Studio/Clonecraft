@@ -1662,120 +1662,6 @@ library = SubResource("VoxelBlockyLibrary_ludbs")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cn1w4"]
 
-[sub_resource type="Animation" id="Animation_lw4lh"]
-resource_name = "logo appear"
-length = 3.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("c1:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0, 0.6, 0.825249, 0.945381, 1.2837)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("l:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.0979331, 0.697933, 0.923183, 1.04331, 1.38163)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("o:position:y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.198042, 0.798042, 1.02329, 1.14342, 1.48174)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("n:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.298152, 0.898152, 1.1234, 1.24353, 1.58185)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("e:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.398261, 0.998261, 1.22351, 1.34364, 1.68196)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("c2:position:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.498371, 1.09837, 1.32362, 1.44375, 1.78207)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("r:position:y")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.59848, 1.19848, 1.42373, 1.54386, 1.88218)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("a:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.698589, 1.29859, 1.52384, 1.64397, 1.98229)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("f:position:y")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.798699, 1.3987, 1.62395, 1.74408, 2.0824)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("t:position:y")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
-"times": PackedFloat64Array(0.898808, 1.49881, 1.72406, 1.84419, 2.18251)
-}
-
 [sub_resource type="Animation" id="Animation_abuk8"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -2107,6 +1993,120 @@ tracks/29/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat64Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_lw4lh"]
+resource_name = "logo appear"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("c1:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0, 0.6, 0.825249, 0.945381, 1.2837)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("l:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.0979331, 0.697933, 0.923183, 1.04331, 1.38163)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("o:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.198042, 0.798042, 1.02329, 1.14342, 1.48174)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("n:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.298152, 0.898152, 1.1234, 1.24353, 1.58185)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("e:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.398261, 0.998261, 1.22351, 1.34364, 1.68196)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("c2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.498371, 1.09837, 1.32362, 1.44375, 1.78207)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("r:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.59848, 1.19848, 1.42373, 1.54386, 1.88218)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("a:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.698589, 1.29859, 1.52384, 1.64397, 1.98229)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("f:position:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.798699, 1.3987, 1.62395, 1.74408, 2.0824)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("t:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat64Array(10, -0.25, 0, 0.25, 0, -8.88998e-12, -0.0208709, 0.459991, 0.031015, -0.683565, -0.32516, -0.030468, -0.262404, 0.0185013, 0.159341, 0.148448, -0.0652887, -0.0384006, 0.0652887, 0.0384006, 0, -0.201411, -0.197158, 0.25, 0),
+"times": PackedFloat64Array(0.898808, 1.49881, 1.72406, 1.84419, 2.18251)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hfcju"]
