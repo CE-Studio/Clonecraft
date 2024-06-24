@@ -23,6 +23,7 @@ static var localUsername := "__localplayer__" :
 @export var sunlightColor:Gradient
 @export var moonlightColor:Gradient
 @export var moonSunAndStarIntensity:Gradient
+@export var processTime := true
 
 
 @onready var sky:ProceduralSkyMaterial = $WorldEnvironment.environment.sky.sky_material
@@ -131,7 +132,7 @@ func _process(_delta) -> void:
 	tree.paused = pausing or waiting
 	$Control/waitpanel.visible = waiting
 	$Control/pausepanel.visible = pausing
-	if not(tree.paused):
+	if not(tree.paused) && processTime:
 		daytime += _delta
 		if daytime >= dayLength:
 			daytime -= dayLength
