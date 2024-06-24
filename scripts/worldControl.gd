@@ -11,13 +11,18 @@ static var localUsername := "__localplayer__" :
 
 
 @export var dayLength:float
+@export var daytime:float = 0
+#TODO implement day/night ratio
 @export var dayNightRatio:float:
 	set(value):
 		dayNightRatio = clampf(value, 0, 1)
 @export var upperSkyColor:Gradient
+@export var upperHorizonColor:Gradient
 @export var lowerSkyColor:Gradient
+@export var lowerHorizonColor:Gradient
 @export var sunlightColor:Gradient
 @export var moonlightColor:Gradient
+@export var moonSunAndStarIntensity:Gradient
 
 
 @onready var sky:ProceduralSkyMaterial = $WorldEnvironment.environment.sky.sky_material
@@ -32,7 +37,6 @@ var tree:SceneTree
 var _p:Player
 var _terrain:VoxelTerrain
 var stream:VoxelStream
-var daytime:float = 0
 var dayprogress:float = 0
 
 # TODO redo this when adding multiplayer
@@ -134,7 +138,14 @@ func _process(_delta) -> void:
 		dayprogress = remap(daytime, 0, dayLength, 0, 1)
 		_p.sunAngle = dayprogress
 		sky.sky_top_color = upperSkyColor.sample(dayprogress)
+		sky.sky_horizon_color = upperHorizonColor.sample(dayprogress)
 		sky.ground_bottom_color = lowerSkyColor.sample(dayprogress)
+		sky.ground_horizon_color = lowerHorizonColor.sample(dayprogress)
+		_p.sun.light_color = sunlightColor.sample(dayprogress)
+		_p.moon.light_color = moonlightColor.sample(dayprogress)
+		var intensities := moonSunAndStarIntensity.sample(dayprogress)
+		_p.sun.light_energy = intensities.r
+		_p.moon.light_energy = intensities.g
 
 
 func _on_setting_button_pressed():

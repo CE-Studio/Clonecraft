@@ -58,12 +58,16 @@ var _fcheck := 1.0
 var extraSaveData := {}
 
 
-@onready var sun:DirectionalLight3D = $sunpoint/DirectionalLight3D
+@onready var sun:DirectionalLight3D = $sunpoint/sunlight
+@onready var sunSprite:Sprite3D = $sunpoint/sunlight/sun
+@onready var moon:DirectionalLight3D = $sunpoint/moonlight
+@onready var moonSprite:Sprite3D = $sunpoint/moonlight/moon
 
 
 var sunAngle:float:
 	set(value):
 		sun.rotation_degrees.x = remap(value, 0, 1, -180, 180)
+		moon.rotation_degrees.x = remap(value, 0, 1, -180, 180) + 180
 		sunAngle = value
 
 

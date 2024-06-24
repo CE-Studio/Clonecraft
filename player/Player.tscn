@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cng7kfytaxygb"]
+[gd_scene load_steps=9 format=3 uid="uid://cng7kfytaxygb"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_3ny33"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="2_ywuj5"]
+[ext_resource type="Texture2D" uid="uid://c6bwcm8cfebe7" path="res://textures/moon.png" id="3_sxkd0"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="5_vknlp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
@@ -62,16 +63,30 @@ omni_range = 30.0365
 [node name="sunpoint" type="Node3D" parent="."]
 transform = Transform3D(0.104635, -0.994454, -0.0106473, 0.42201, 0.0347038, 0.905927, -0.900532, -0.0992847, 0.423301, 0, 0.689, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="sunpoint"]
+[node name="sunlight" type="DirectionalLight3D" parent="sunpoint"]
 transform = Transform3D(1, 0, -2.08167e-17, 0, 0.0778501, 0.996965, -1.11022e-16, -0.996965, 0.0778501, 0, 0, 0)
 light_bake_mode = 0
 shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_pancake_size = 0.4
 
-[node name="Sprite3D" type="Sprite3D" parent="sunpoint/DirectionalLight3D"]
+[node name="sun" type="Sprite3D" parent="sunpoint/sunlight"]
 transform = Transform3D(1058.1, 1200.18, 0.000160241, -1200.18, 1058.1, 0.000141272, -5.68435e-14, -0.000213623, 1600, 0.000121416, -7.66572e-05, 2055.23)
 texture = ExtResource("2_ywuj5")
+
+[node name="moonlight" type="DirectionalLight3D" parent="sunpoint"]
+transform = Transform3D(1, -7.69026e-08, -2.94192e-07, 0, 6.245e-17, -1, 5.55112e-17, 1, 4.67021e-08, 0, 0, 0)
+light_energy = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_pancake_size = 0.4
+
+[node name="moon" type="Sprite3D" parent="sunpoint/moonlight"]
+transform = Transform3D(1058.1, 1200.18, 0.000160241, -1200.18, 1058.1, 0.000141272, -5.68435e-14, -0.000213623, 1600, 0.000121416, -7.66572e-05, 2055.23)
+texture_filter = 0
+texture = ExtResource("3_sxkd0")
+vframes = 6
 
 [node name="armpointy" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
