@@ -353,6 +353,10 @@ value = 9.22
 fill_mode = 1
 show_percentage = false
 
+[node name="timer" type="Timer" parent="Control/GUIlayer/hotbar"]
+wait_time = 0.3
+one_shot = true
+
 [node name="itemLayer" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -561,6 +565,7 @@ script = ExtResource("42_0hogo")
 [node name="cmdProcessor" type="Node" parent="."]
 script = ExtResource("44_fbb68")
 
+[connection signal="timeout" from="Control/GUIlayer/hotbar/timer" to="Control/GUIlayer/hotbar" method="_reallyDeferRedraw"]
 [connection signal="text_submitted" from="Control/chat/inpline" to="Control/chat" method="_on_inpline_text_submitted"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pauseUnpause"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]

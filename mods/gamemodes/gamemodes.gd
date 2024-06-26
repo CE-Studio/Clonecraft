@@ -1,6 +1,9 @@
 extends Mod
 
 
+const MODID := &"gamemodes"
+
+
 var modes := {
 	"creative": {
 		"allowFlight":true,

@@ -4,6 +4,7 @@ extends Control
 
 static var instance:Hotbar
 @onready var player:Player = $"../../../player"
+@onready var timer:Timer = $timer
 
 
 @onready var layerLights:Array[Sprite2D] = [
@@ -60,10 +61,16 @@ func _setup():
 		$"../../GUIlayer2".add_child(slotlbls[-1])
 		slotlbls[-1].text = "0"
 	redraw()
+	timer.start()
+
+
+func _reallyDeferRedraw():
+	redraw()
 
 
 func deferRedraw():
 	call_deferred("redraw")
+	timer.start()
 
 
 func redraw():

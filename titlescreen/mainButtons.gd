@@ -18,8 +18,9 @@ func openOptions() -> void:
 
 func openMods() -> void:
 	var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
+	SettingManager._layers += 1
 	op.setExit(&"gui.generic.back")
-	$"/root".add_child(op)
+	$"/root/title/Control".add_child(op)
 	op.addItem(load("res://gui/warninglabel.tscn").instantiate())
 	var l := LinkButton.new()
 	l.text = Translator.translate(&"gui.mods.modfolder")

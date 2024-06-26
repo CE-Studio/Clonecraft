@@ -330,4 +330,7 @@ func _physics_process(delta) -> void:
 
 
 func _on_enter_item_range(body) -> void:
-	BlockManager.log("clonecraft", body.name)
+	if body is WorldItem:
+		if body.canPickup():
+			if inventory.addItem(body.iStack):
+				body.queue_free()

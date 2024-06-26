@@ -2,6 +2,7 @@ extends RigidBody3D
 class_name WorldItem
 
 
+@export var pickupTime:int = 3
 var despawnTime = 300
 var iStack:ItemManager.ItemStack
 
@@ -19,6 +20,10 @@ func _ready() -> void:
 func setItem(itemStack:ItemManager.ItemStack) -> void:
 	iStack = itemStack
 	$Node3D/Node3D.mesh = itemStack.getMesh()
+
+
+func canPickup() -> bool:
+	return pickupTime <= _timer
 
 
 func _process(delta) -> void:

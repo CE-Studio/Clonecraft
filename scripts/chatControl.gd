@@ -24,10 +24,13 @@ func _input(event):
 	if event.is_action_pressed("game_chat"):
 		if not inpline.visible:
 			get_viewport().set_input_as_handled()
-			inpline.text = ""
 			inpline.visible = true
 			inpline.mouse_filter = Control.MOUSE_FILTER_STOP
-			inpline.grab_focus()
+		inpline.grab_focus()
+	if event.is_action_pressed("ui_cancel"):
+		if inpline.visible:
+			inpline.visible = false
+			get_viewport().set_input_as_handled()
 
 
 ## Display a line of text in the chat.[br]
@@ -49,3 +52,4 @@ func _on_inpline_text_submitted(new_text:String):
 		CMDprocessor._thrown = false
 		return
 	Chat.pushText("[" + WorldControl.localUsername + "] " + new_text)
+	inpline.text = ""
