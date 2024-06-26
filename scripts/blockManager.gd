@@ -44,6 +44,7 @@ static var blockUpdates:Array[Vector3i] = []
 static var pendingBlockUpdates:Array[Vector3i] = []
 
 static var _updates:Array[Callable] = []
+static var _physicsUpdates:Array[Callable] = []
 static var _inputList := []
 static var _addingBlock := false
 static var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
@@ -62,6 +63,12 @@ static func getBlockID(id:StringName) -> BlockInfo:
 ## Static
 static func addUpdate(c:Callable) -> void:
 	_updates.append(c)
+
+
+## Register a [Callable] to be called every physics tick.[br]
+## Static
+static func addPhysicsUpdate(c:Callable) -> void:
+	_physicsUpdates.append(c)
 
 
 static func _tickBlock(pos:Vector3i, rawID:int) -> void:
@@ -385,15 +392,11 @@ func _process(delta) -> void:
 		for i in _updates:
 			i.call(delta)
 		BlockManager.runBlockUpdates()
-		for i in mods:
-			if i.has_method(&"_process"):
-				i._process(delta)
 
 
 func _physics_process(delta):
-	for i in mods:
-		if i.has_method(&"_physics_process"):
-			i._physics_process(delta)
+	for i in _physicsUpdates:
+		i.call(delta)
 
 
 func _input(event) -> void:
