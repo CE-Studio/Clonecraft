@@ -2430,6 +2430,56 @@ mouse_default_cursor_shape = 2
 text = "&&Back&&
 "
 
+[node name="modpanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+
+[node name="centerContainer" type="CenterContainer" parent="Control/modpanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panelContainer" type="PanelContainer" parent="Control/modpanel/centerContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_mhwh7")
+
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/modpanel/centerContainer/panelContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="Control/modpanel/centerContainer/panelContainer/vBoxContainer"]
+layout_mode = 2
+text = "&&Changes will not take effect
+until the game is restarted&&"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_runjh")
+dictKey = &"gui.mods.changes"
+
+[node name="button" type="Button" parent="Control/modpanel/centerContainer/panelContainer/vBoxContainer"]
+layout_mode = 2
+text = "&&ok&&"
+script = ExtResource("5_runjh")
+dictKey = &"gui.generic.ok"
+
+[node name="settingpanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -3.76727, 6.193)
 stream = ExtResource("12_n2dnj")
@@ -2761,3 +2811,4 @@ mesh = ExtResource("54_6eq3m")
 [connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/newworld" to="Control/singleplayerpanel" method="_on_newworld_pressed"]
 [connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/worldfolder" to="Control/singleplayerpanel" method="_on_worldfolder_pressed"]
 [connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/backbutton" to="Control/singleplayerpanel" method="_on_backbutton_pressed"]
+[connection signal="pressed" from="Control/modpanel/centerContainer/panelContainer/vBoxContainer/button" to="Control/modpanel" method="hide"]
