@@ -20,7 +20,7 @@ Create the function  [color=white][bgcolor=black][code]registerPhase()[/code][/b
 
 The current state of your script should look like this:
 
-[color=white][bgcolor=black][code]res://mods/<modname>/<modname.gd
+[color=white][bgcolor=black][code]res://mods/<modname>/<modname>.gd
 | extends Mod                   |
 |                               |
 | const MODID = &"<modname>"    |
@@ -43,7 +43,7 @@ Assign your block's ID, name, texture, and properties. The default property valu
 
 The current state of your script should look like this:
 
-[color=white][bgcolor=black][code]res://mods/<modname>/<modname.gd
+[color=white][bgcolor=black][code]res://mods/<modname>/<modname>.gd
 | extends Mod                               |
 |                                           |
 | var mat = load(                           |
