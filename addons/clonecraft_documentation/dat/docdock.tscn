@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsjlth2tiyues"]
+[gd_scene load_steps=7 format=3 uid="uid://bsjlth2tiyues"]
 
 [ext_resource type="Script" path="res://addons/clonecraft_documentation/dat/docdock.gd" id="1_5wytu"]
+[ext_resource type="FontFile" uid="uid://dcrouiquj15wl" path="res://addons/clonecraft_documentation/dat/OpenSans-Regular.ttf" id="2_7ymho"]
+[ext_resource type="FontFile" uid="uid://bk758sppr77nk" path="res://addons/clonecraft_documentation/dat/OpenSans-Bold.ttf" id="3_cym0v"]
+[ext_resource type="FontFile" uid="uid://dkow08u7etsyb" path="res://addons/clonecraft_documentation/dat/OpenSans-Italic.ttf" id="4_vrxun"]
+[ext_resource type="FontFile" uid="uid://qqa1mp7xoa4m" path="res://addons/clonecraft_documentation/dat/OpenSans-BoldItalic.ttf" id="5_l2crr"]
+[ext_resource type="FontFile" uid="uid://v80eg20odioh" path="res://addons/clonecraft_documentation/dat/UbuntuMono-Regular.ttf" id="6_dwuhd"]
 
 [node name="Clonecraft Docs" type="Control"]
 layout_mode = 3
@@ -21,6 +26,14 @@ grow_vertical = 2
 
 [node name="Main" type="RichTextLabel" parent="TabContainer"]
 layout_mode = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/line_separation = 4
+theme_override_fonts/normal_font = ExtResource("2_7ymho")
+theme_override_fonts/bold_font = ExtResource("3_cym0v")
+theme_override_fonts/italics_font = ExtResource("4_vrxun")
+theme_override_fonts/bold_italics_font = ExtResource("5_l2crr")
+theme_override_fonts/mono_font = ExtResource("6_dwuhd")
 bbcode_enabled = true
 text = "Index
 

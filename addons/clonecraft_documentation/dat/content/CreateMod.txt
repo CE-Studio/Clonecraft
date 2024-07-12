@@ -1,1 +1,62 @@
 [url=doc,Index]Index[/url] > Creating a Mod
+
+[font_size=25][b]Step 1: File Structure[/b][/font_size]
+
+Creating a mod is simple. Just create a new folder inside the  [color=white][bgcolor=black][code]mods[/code][/bgcolor][/color]  folder, give it the same name as your mod, and then create a gdsript file with the same name as the folder.
+
+For example: 
+	
+[color=white][bgcolor=black][code]res://mods/<modname>/<modename>.gd[/code][/bgcolor][/color]
+
+To make exporting your finished mod easier, [b]keep all files related to your mod inside its folder[/b] and [b]try to avoid changing game assets outside of your mod's folder.[/b]
+
+[font_size=25][b]Step 2: Main Script[/b][/font_size]
+
+[ul bullet=‣]
+Make sure your new script inherits from the [url=cla,Mod]Mod[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img] class.
+Create  [color=white][bgcolor=black][code]const MODID:StringName[/code][/bgcolor][/color] , to give your mod an in-game way to identify itself. This name is NOT meant to be shown to the player, just other mods and debug logs.
+Create the function  [color=white][bgcolor=black][code]registerPhase()[/code][/bgcolor][/color] . This will serve as the entrypoint for loading your mod.
+[/ul]
+
+The current state of your script should look like this:
+
+[color=white][bgcolor=black][code]res://mods/<modname>/<modname.gd
+| extends Mod                   |
+|                               |
+| const MODID = &"<modname>"    |
+|                               |
+| func registerPhase() -> Void: |
+|     pass                      |[/code][/bgcolor][/color]
+
+Technically, this is all you need for your mod to load, but currently it will do nothing.
+
+[font_size=25][b]Step 3: Creating new blocks.[/b][/font_size]
+
+[ul bullet=‣]
+Import a texture for your block. Textures should be a [b]spritesheet laid out in a 10x10 grid[/b].
+Right-click your mod folder. Select: Create New → Resource... → StandardMaterial3D
+Add the texture to the material's albedo texture.
+Create a new variable, and make it load the material.
+Look through the documentation for [url=cla,BlockManager]BlockMaganer[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img], and choose the block creation method that best sutis your needs. For this example we will be using  [color=white][bgcolor=black][code]quickUniformBlock()[/code][/bgcolor][/color]  for a simple block that has the same texture on all sides and no special functions.
+Assign your block's ID, name, texture, and properties. The default property values mimmic stone.
+[/ul]
+
+The current state of your script should look like this:
+
+[color=white][bgcolor=black][code]res://mods/<modname>/<modname.gd
+| extends Mod                               |
+|                                           |
+| var mat = load(                           |
+|     "res://<modname>/<materialname>.tres" |
+| )                                         |
+|                                           |
+| const MODID = &"<modname>"                |
+|                                           |
+| func registerPhase() -> void:             |
+|     man.quickUniformBlock(                |
+|         MODID,                            |
+|         "<blockid>",                      |
+|         "<readable block name>",          |
+|         Vector2(0, 0),                    |
+|         mat                               |
+|     )                                     |[/code][/bgcolor][/color]

@@ -88,6 +88,10 @@ func _loadHotbar(a:Array):
 			hotbarItems[i] = inventory.getItemFromStack(h)
 
 
+func getSelectedItem() -> ItemManager.ItemStack:
+	return hotbarItems[(Hotbar.layer * 10) + Hotbar.slot]
+
+
 func save() -> Dictionary:
 	return {
 		"abilities": abilities,
@@ -221,6 +225,8 @@ func _unhandled_input(event) -> void:
 		Hotbar.slot += 1
 	elif event.is_action_pressed("game_hotbar_prev"):
 		Hotbar.slot -= 1
+	elif event.is_action_pressed("game_place"):
+		print("a!")
 
 
 ## Runs random ticks around the player. Called automatically.
