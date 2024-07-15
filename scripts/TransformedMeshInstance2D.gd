@@ -28,7 +28,7 @@ var _rq := false
 		queueRecalc()
 @export var mat:Material:
 	set(value):
-		if mat is BaseMaterial3D:
+		if value is BaseMaterial3D:
 			mat = value
 			texture = mat.albedo_texture
 
@@ -56,6 +56,11 @@ func _normToCol(norm:Vector3) -> Color:
 
 
 func _recalc():
+	_rq = false
+	var err:Error
+	if not is_instance_valid(baseMesh):
+		mesh = Mesh.new()
+		return
 	var surface_tool := SurfaceTool.new()
 	surface_tool.create_from(baseMesh,0)
 	var array_mesh := surface_tool.commit()
@@ -71,7 +76,10 @@ func _recalc():
 	xform = xform.translated(xPosition)
 	
 	var _tool = MeshDataTool.new()
-	_tool.create_from_surface(array_mesh, 0)
+	err = _tool.create_from_surface(array_mesh, 0)
+	if err != OK:
+		mesh = Mesh.new()
+		return
 	
 	for i in _tool.get_vertex_count():
 		var vert := _tool.get_vertex(i)
@@ -129,5 +137,3 @@ func _recalc():
 	
 	mesh = st.commit()
 	mesh.surface_set_material(0, mat)
-	
-	_rq = false

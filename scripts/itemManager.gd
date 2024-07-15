@@ -8,8 +8,6 @@ static var items := {}
 static var witem:PackedScene = preload("res://scripts/itemAssets/worldItem.tscn")
 static var _buf := VoxelBuffer.new()
 static var _mesh := VoxelMesherBlocky.new()
-## Keeps track of the screen size for rendering reasons.
-static var screenSize := Vector2(100, 100)
 
 
 ## A wrapper for items. 99% of the time you want to use this instead of an item object.
@@ -54,15 +52,6 @@ class Item extends RefCounted:
 
 	func _init(itemMesh:Mesh):
 		model = itemMesh
-
-
-## Parents a node to the item rendering layer to draw on-screen.[br]
-## The item rendering layer is orthographic 3D.
-static func addToItemLayer(obj:Node, defaultRotation := true) -> Node:
-	if defaultRotation and (obj is Node3D):
-		obj.rotation_degrees = Vector3(10.5, -46, -10.7)
-	Statics.get_node("/root/Node3D/itemRenderLayer/Camera3D/itemParent").add_child(obj)
-	return obj
 
 
 ## Sets up the buffer and block library for generating item models.
@@ -111,11 +100,3 @@ static func spawnWorldItem(itemStack:ItemStack, pos:Vector3, vel:Vector3 = Vecto
 	nitem.setItem(itemStack)
 	Statics.get_node("/root/Node3D").add_child(nitem)
 	return nitem
-
-
-static func posConvert(pos:Vector2, depth := 0.0) -> Vector3:
-	pos = Vector2(pos)
-	pos.x -= (screenSize.x /2)
-	pos.y -= (screenSize.y /2)
-	pos = pos / 30
-	return Vector3(pos.x, -pos.y, depth)

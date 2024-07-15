@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7hhni6y0e055"]
+
+[ext_resource type="Script" path="res://gui/GuiItem.gd" id="1_2xs5l"]
+[ext_resource type="Script" path="res://scripts/TransformedMeshInstance2D.gd" id="1_h37yb"]
+
+[node name="GUIItem" type="Control"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 46.0
+offset_bottom = 46.0
+script = ExtResource("1_2xs5l")
+
+[node name="transformedMeshInstance2d" type="MeshInstance2D" parent="."]
+position = Vector2(23, 32)
+script = ExtResource("1_h37yb")
+xRotation = Vector3(165, 45, 0)
+xScale = Vector3(30, 30, 30)
+
+[node name="label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -21.0
+offset_right = 45.0
+grow_vertical = 0
+text = "0"

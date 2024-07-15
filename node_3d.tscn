@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=47 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://dgjlgaesep514" path="res://gui/statbars.png" id="9_ehm4h"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
-[ext_resource type="Script" path="res://scripts/itemRenderLayerSize.gd" id="14_wt5ed"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
 [ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
 [ext_resource type="Script" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
@@ -99,9 +98,6 @@ texture = SubResource("AtlasTexture_ntior")
 texture_margin_left = 5.0
 texture_margin_right = 5.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yoru6"]
-viewport_path = NodePath("itemRenderLayer")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g08o8"]
 bg_color = Color(0, 0, 0, 0.2)
 
@@ -127,11 +123,6 @@ library = SubResource("VoxelBlockyLibrary_qtsb8")
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 0.529412)
-
-[sub_resource type="Environment" id="Environment_mubym"]
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.5
 
 [sub_resource type="BoxMesh" id="BoxMesh_ydc0p"]
 
@@ -357,17 +348,6 @@ show_percentage = false
 wait_time = 0.3
 one_shot = true
 
-[node name="itemLayer" type="TextureRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("ViewportTexture_yoru6")
-expand_mode = 1
-
 [node name="GUIlayer2" type="Control" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -531,27 +511,6 @@ mesh = ExtResource("5_1o3wh")
 [node name="player" parent="." instance=ExtResource("13_0aat4")]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("12_8tndb")]
-
-[node name="itemRenderLayer" type="SubViewport" parent="."]
-process_mode = 3
-own_world_3d = true
-transparent_bg = true
-size = Vector2i(1152, 648)
-script = ExtResource("14_wt5ed")
-
-[node name="Camera3D" type="Camera3D" parent="itemRenderLayer"]
-environment = SubResource("Environment_mubym")
-projection = 1
-size = 5.0
-far = 100.0
-
-[node name="itemParent" type="Node3D" parent="itemRenderLayer/Camera3D"]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, -50)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="itemRenderLayer/Camera3D"]
-transform = Transform3D(0.449017, -0.84685, 0.285006, 0.559327, 0.515138, 0.649451, -0.696805, -0.132202, 0.704972, 0, 0, 0)
-directional_shadow_mode = 0
-sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
