@@ -133,7 +133,7 @@ shader = ExtResource("15_ji8mt")
 [node name="Node3D" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_ug7a2")
-dayLength = 60.0
+dayLength = 1200.0
 upperSkyColor = SubResource("Gradient_gul6o")
 upperHorizonColor = SubResource("Gradient_ykb7x")
 lowerSkyColor = SubResource("Gradient_5sooj")

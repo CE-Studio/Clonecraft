@@ -225,8 +225,6 @@ func _unhandled_input(event) -> void:
 		Hotbar.slot += 1
 	elif event.is_action_pressed("game_hotbar_prev"):
 		Hotbar.slot -= 1
-	elif event.is_action_pressed("game_place"):
-		print("a!")
 
 
 ## Runs random ticks around the player. Called automatically.

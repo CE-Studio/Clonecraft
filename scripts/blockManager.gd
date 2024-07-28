@@ -46,6 +46,7 @@ static var pendingBlockUpdates:Array[Vector3i] = []
 static var _updates:Array[Callable] = []
 static var _physicsUpdates:Array[Callable] = []
 static var _inputList := []
+static var _uInputList := []
 static var _addingBlock := false
 static var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
 static var _udisp:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
@@ -237,6 +238,12 @@ static func endBlockRegister(blockInfo:BlockInfo) -> void:
 static func inputRegister(callback:Callable) -> void:
 	_inputList.append(callback)
 
+## Register a function to handle unhandled user inputs.[br]
+## Analogous to [method Node._unhandled_input][br]
+## Static
+static func unhandledInputRegister(callback:Callable) -> void:
+	_inputList.append(callback)
+
 
 static func _setupplaceholders():
 	var regpath := WorldControl.worldpath + "/setupData/IDregistry.json"
@@ -401,6 +408,11 @@ func _physics_process(delta):
 
 func _input(event) -> void:
 	for i in _inputList:
+		i.call(event)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	for i in _uInputList:
 		i.call(event)
 
 

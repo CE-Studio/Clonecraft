@@ -124,27 +124,27 @@ class GamemodeCMD extends CMDprocessor.Command:
 		return []
 	
 	
-	func exectue(args:Array) -> Variant:
+	func execute(args:Array) -> Variant:
 		var p:Player = null
 		var l := args.size()
 		
 		if l <= 0:
-			CMDprocessor.throw("cmd.error.missing_arg")
+			CMDprocessor.throw("cmd.error.missing_arg", "Game mode expected")
 			return false
 		elif l == 1:
 			p = WorldControl.getPlayer(WorldControl.localUsername)
 		elif l == 2:
 			p = WorldControl.getPlayer(str(args[1]))
 		else:
-			CMDprocessor.throw("cmd.error.too_many_args")
+			CMDprocessor.throw("cmd.error.too_many_args", "2 arguments expected, got " + str(l))
 			return false
 		
 		if p == null:
-			CMDprocessor.throw("cmd.error.player_not_found")
+			CMDprocessor.throw("cmd.error.player_not_found", "Player \"" + str(args[1]) + "\" is not online")
 			return false
 			
 		if not _mod.modes.has(str(args[0])):
-			CMDprocessor.throw("cmd.error.arg_invalid")
+			CMDprocessor.throw("cmd.error.arg_invalid", "\"" + str(args[0]) + "\" is not a valid game mode")
 			return false
 		
 		p.abilities.merge(_mod.modes[str(args[0])], true)

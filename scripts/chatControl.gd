@@ -48,8 +48,9 @@ func _on_inpline_text_submitted(new_text:String):
 	if new_text == "":
 		return
 	if new_text[0] == "/":
+		CMDprocessor._calledByPlayer = true
 		Chat.pushText(str(CMDprocessor.run(new_text.erase(0, 1))))
-		CMDprocessor._thrown = false
+		CMDprocessor._calledByPlayer = false
 		return
 	Chat.pushText("[" + WorldControl.localUsername + "] " + new_text)
 	inpline.text = ""
