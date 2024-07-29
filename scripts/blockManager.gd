@@ -443,7 +443,7 @@ static func quickUniformBlock(
 		mat:Material,
 		breakStrength := 3.0,
 		explosionStrength := 5.0,
-		tool := &"pickaxe",
+		tool := &"tools:pickaxe",
 		alphaChannel := 0) -> void:
 	var model = startBlockRegister(modID + blockName, Voxdat.vox.GEOMETRY_CUBE)
 	model.set_mesh_collision_enabled(0, true)

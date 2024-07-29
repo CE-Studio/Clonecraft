@@ -48,7 +48,7 @@ func _makeGB() -> void:
 			false,
 			false,
 			noScript,
-			"shovel",
+			"tools:shovel",
 			"plant",
 			"plant",
 			"plant"
@@ -78,7 +78,7 @@ func _makeCT() -> void:
 			false,
 			false,
 			noScript,
-			"axe",
+			"tools:axe",
 			"wood",
 			"wood",
 			"wood"
@@ -107,7 +107,7 @@ func _makeOL() -> void:
 			false,
 			false,
 			noScript,
-			"axe",
+			"tools:axe",
 			"wood",
 			"wood",
 			"wood"
@@ -134,7 +134,7 @@ func _makeOL() -> void:
 			false,
 			false,
 			noScript,
-			"axe",
+			"tools:axe",
 			"wood",
 			"wood",
 			"wood"
@@ -161,7 +161,7 @@ func _makeOL() -> void:
 			false,
 			false,
 			noScript,
-			"axe",
+			"tools:axe",
 			"wood",
 			"wood",
 			"wood"
@@ -173,7 +173,7 @@ func registerPhase() -> void:
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/give.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/editbar.gd").new())
 	man.quickUniformBlock(MODID, "stone", "Stone", Vector2(0, 0), mat1)
-	man.quickUniformBlock(MODID, "dirt", "Dirt", Vector2(1, 0), mat1, 1, 1, "shovel")
+	man.quickUniformBlock(MODID, "dirt", "Dirt", Vector2(1, 0), mat1, 1, 1, "tools:shovel")
 	canGrass.append("clonecraft:dirt")
 	_makeGB()
 	man.quickUniformBlock(MODID, "cobblestone", "Cobblestone", Vector2(4, 0), mat1)
@@ -185,21 +185,21 @@ func registerPhase() -> void:
 	man.quickUniformBlock(MODID, "oreCopper", "Copper Ore", Vector2(4, 1), mat1)
 	man.quickUniformBlock(MODID, "tileStone", "Stone Tile", Vector2(5, 1), mat1)
 	man.quickUniformBlock(MODID, "brickStone", "Stone Bricks", Vector2(0, 2), mat1)
-	man.quickUniformBlock(MODID, "plankOak", "Oak Planks", Vector2(1, 2), mat1, 3, 6, "axe")
-	man.quickUniformBlock(MODID, "tileOak", "Oak Plank Tile", Vector2(2, 2), mat1, 3, 6, "axe")
+	man.quickUniformBlock(MODID, "plankOak", "Oak Planks", Vector2(1, 2), mat1, 3, 6, "tools:axe")
+	man.quickUniformBlock(MODID, "tileOak", "Oak Plank Tile", Vector2(2, 2), mat1, 3, 6, "tools:axe")
 	_makeCT()
 	_makeOL()
-	man.quickUniformBlock(MODID, "barkOak", "Oak Bark", Vector2(5, 2), mat1, 3, 6, "axe")
-	man.quickUniformBlock(MODID, "knotOak", "Oak Knot", Vector2(1, 3), mat1, 3, 6, "axe")
-	man.quickUniformBlock(MODID, "leavesOak", "Oak Leaves", Vector2(2, 3), mat2, 1, 1, "shears", 1)
-	man.quickUniformBlock(MODID, "gravel", "Gravel", Vector2(3, 3), mat1, 1, 1, "shovel")
-	man.quickUniformBlock(MODID, "sand", "Sand", Vector2(4, 3), mat1, 1, 1, "shovel")
-	man.quickUniformBlock(MODID, "glass", "Glass", Vector2(5, 3), mat2, 1, 1, "pickaxe", 2)
+	man.quickUniformBlock(MODID, "barkOak", "Oak Bark", Vector2(5, 2), mat1, 3, 6, "tools:axe")
+	man.quickUniformBlock(MODID, "knotOak", "Oak Knot", Vector2(1, 3), mat1, 3, 6, "tools:axe")
+	man.quickUniformBlock(MODID, "leavesOak", "Oak Leaves", Vector2(2, 3), mat2, 1, 1, "tools:shears", 1)
+	man.quickUniformBlock(MODID, "gravel", "Gravel", Vector2(3, 3), mat1, 1, 1, "tools:shovel")
+	man.quickUniformBlock(MODID, "sand", "Sand", Vector2(4, 3), mat1, 1, 1, "tools:shovel")
+	man.quickUniformBlock(MODID, "glass", "Glass", Vector2(5, 3), mat2, 1, 1, "tools:pickaxe", 2)
 	man.quickUniformBlock(MODID, "brick", "Brick", Vector2(0, 4), mat1)
-	man.quickUniformBlock(MODID, "clay", "Clay", Vector2(1, 4), mat1, 1, 1, "shovel")
+	man.quickUniformBlock(MODID, "clay", "Clay", Vector2(1, 4), mat1, 1, 1, "tools:shovel")
 	man.quickUniformBlock(MODID, "blockCoal", "Coal Block", Vector2(2, 4), mat1)
 	man.quickUniformBlock(MODID, "blockIron", "Coal Block", Vector2(3, 4), mat1)
 	man.quickUniformBlock(MODID, "blockGold", "Coal Block", Vector2(4, 4), mat1)
-	man.quickUniformBlock(MODID, "blockDiamond", "Coal Block", Vector2(5, 4), mat2, 3, 5, "pickaxe", 2)
+	man.quickUniformBlock(MODID, "blockDiamond", "Coal Block", Vector2(5, 4), mat2, 3, 5, "tools:pickaxe", 2)
 	man.quickUniformBlock(MODID, "blockEnerstone", "EnerStone Crate", Vector2(0, 5), mat1)
 	man.quickUniformBlock(MODID, "blockCopper", "Copper Block", Vector2(1, 5), mat1)

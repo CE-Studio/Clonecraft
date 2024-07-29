@@ -45,13 +45,46 @@ class ItemStack extends RefCounted:
 		return true
 
 
-## A container for static item properties.[br]
-## Currently just the item's model.
+## A container for static item properties.
 class Item extends RefCounted:
 	var model:Mesh
+	
+	var hasInteractionOverride := false
+	var interactionOverride:Callable
+
+
+	var isTool := false
+	var toolClass:StringName
+	var toolPower:float
+	var toolBaseDurability:float
+
+
+	var isVoxel := false
+	var voxel:StringName
 
 	func _init(itemMesh:Mesh):
 		model = itemMesh
+
+	
+	## Allows items to intercept place/break events.[br]
+	## Expects the function to return a [bool]. True to mark the event as handled, and false to continue processing the event normally.
+	func setInteractionOverride(i:Callable):
+		hasInteractionOverride = true
+		interactionOverride = i
+	
+	
+	## Marks the item as a tool of the given type toolclass, for example: "tools:pickaxe"
+	func setToolClass(toolclass:StringName, power:float = 1, durability:float = -1):
+		isTool = true
+		toolClass = toolclass
+		toolPower = power
+		toolBaseDurability = durability
+	
+	
+	## Marks the item as being placable.
+	func setVoxel(vox:StringName):
+		isVoxel = true
+		voxel = vox
 
 
 ## Sets up the buffer and block library for generating item models.

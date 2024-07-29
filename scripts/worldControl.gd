@@ -40,6 +40,11 @@ var _terrain:VoxelTerrain
 var stream:VoxelStream
 var dayprogress:float = 0
 
+
+static func isPaused() -> bool:
+	return instance.pausing or instance.waiting
+
+
 # TODO redo this when adding multiplayer
 static func getPlayerList() -> Array[String]:
 	return ["__localplayer__"]
