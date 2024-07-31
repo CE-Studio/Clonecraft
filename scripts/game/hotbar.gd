@@ -41,7 +41,6 @@ static var layer:int:
 			instance.redraw()
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	instance = self
 	call_deferred("_setup")

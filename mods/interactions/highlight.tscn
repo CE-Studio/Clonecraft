@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://phie3bnh5m3f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jmesx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fv45t"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.27451)
+
+[node name="highlight" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_jmesx")
+surface_material_override/0 = SubResource("StandardMaterial3D_fv45t")

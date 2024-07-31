@@ -64,7 +64,7 @@ class Item extends RefCounted:
 
 	func _init(itemMesh:Mesh):
 		model = itemMesh
-
+	
 	
 	## Allows items to intercept place/break events.[br]
 	## Expects the function to return a [bool]. True to mark the event as handled, and false to continue processing the event normally.
