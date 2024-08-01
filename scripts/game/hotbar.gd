@@ -71,9 +71,13 @@ func redraw():
 			h.queue_free()
 		var j := player.hotbarItems[i + (10 * layer)]
 		if is_instance_valid(j):
-			var gi:GUIItem = UiManager.createGuiItemstack(j)
-			slots[i].add_child(gi)
-			gi.position += Vector2(-23, -23)
-			slots[i].frame = 1
+			if j.count <= 0:
+				player.hotbarItems[i + (10 * layer)] = null
+				slots[i].frame = 0
+			else:
+				var gi:GUIItem = UiManager.createGuiItemstack(j)
+				slots[i].add_child(gi)
+				gi.position += Vector2(-23, -23)
+				slots[i].frame = 1
 		else:
 			slots[i].frame = 0

@@ -110,6 +110,7 @@ static func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
 	if m == null:
 		m = Mesh.new()
 	var nitem := Item.new(m)
+	nitem.setVoxel(bi.fullID)
 	items[bi.fullID] = nitem
 	return nitem
 
