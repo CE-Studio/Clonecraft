@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7hhni6y0e055"]
+[gd_scene load_steps=7 format=3 uid="uid://b7hhni6y0e055"]
 
 [ext_resource type="Script" path="res://gui/GuiItem.gd" id="1_2xs5l"]
 [ext_resource type="Script" path="res://scripts/TransformedMeshInstance2D.gd" id="1_h37yb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grmsk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tuvh"]
+bg_color = Color(1, 1, 1, 0.439216)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u28c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3uao"]
 
 [node name="GUIItem" type="Control"]
 custom_minimum_size = Vector2(46, 46)
@@ -25,4 +34,20 @@ anchor_bottom = 1.0
 offset_top = -21.0
 offset_right = 45.0
 grow_vertical = 0
+pivot_offset = Vector2(0, 21)
 text = "0"
+
+[node name="button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_grmsk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8tuvh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8tuvh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u28c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o3uao")
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]

@@ -8,6 +8,7 @@ var placing := false
 var breaking := false
 var _oldplace := false
 var _placestart := Vector3i.ZERO
+var _breakpos:Vector3i
 var _highlight:MeshInstance3D
 
 
@@ -52,7 +53,7 @@ func _process(_delta:float) -> void:
 			else:
 				targpos = player.lookingAt.previous_position
 			_highlight.position = ((_placestart + targpos) / 2.0) + Vector3(0.5, 0.5, 0.5)
-			_highlight.scale = (_placestart - targpos).abs() + Vector3i.ONE
+			_highlight.scale = Vector3((_placestart - targpos).abs()) + Vector3(1.05, 1.05, 1.05)
 
 
 func _ununhandled_input(event:InputEvent) -> void:
@@ -62,12 +63,12 @@ func _ununhandled_input(event:InputEvent) -> void:
 			if is_instance_valid(i):
 				var ii := i.getItem()
 				if ii.hasInteractionOverride:
-					if ii.interactionOverride.call():
+					if ii.interactionOverride.call(event):
 						return
 				if ii.isTool:
 					# TODO implement tools
 					return
-				if ii.isVoxel:
+				if ii.isVoxel and player.abilities["allowBuild"]:
 					if player.lookingAt != null:
 						if Input.is_action_pressed("game_sneak"):
 							_placestart = player.lookingAt.position
@@ -78,8 +79,36 @@ func _ununhandled_input(event:InputEvent) -> void:
 		elif  event.is_action_released("game_place"):
 			placing = false
 			updatePlace()
+			var i := player.getSelectedItem()
+			if is_instance_valid(i):
+				var ii := i.getItem()
+				if ii.hasInteractionOverride:
+					if ii.interactionOverride.call(event):
+						return
+				if ii.isTool:
+					return
+		elif event.is_action_pressed("game_break"):
+			var i := player.getSelectedItem()
+			if is_instance_valid(i):
+				var ii := i.getItem()
+				if ii.hasInteractionOverride:
+					if ii.interactionOverride.call(event):
+						return
+				if ii.isTool:
+					return
+			breaking = true
+		elif event.is_action_released("game_break"):
+			breaking = false
+			var i := player.getSelectedItem()
+			if is_instance_valid(i):
+				var ii := i.getItem()
+				if ii.hasInteractionOverride:
+					if ii.interactionOverride.call(event):
+						return
+				if ii.isTool:
+					return
 		
-		if placing:
+		if placing or breaking:
 			if (
 				event.is_action_pressed("game_hotbar_layer_next") or
 				event.is_action_pressed("game_hotbar_layer_prev") or
