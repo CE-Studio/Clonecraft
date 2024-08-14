@@ -142,6 +142,8 @@ class BlockInfo extends RefCounted:
 	## A list of various unique properties the voxel may have.[br]
 	## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
 	var properties:Array[StringName]
+	## How slippery the voxel is when being walked on. Lower is more slippery, higher is less.
+	var traction:float = 1.0
 
 
 	func _init(
@@ -444,7 +446,7 @@ static func quickUniformBlock(
 		breakStrength := 3.0,
 		explosionStrength := 5.0,
 		tool := &"tools:pickaxe",
-		alphaChannel := 0) -> void:
+		alphaChannel := 0) -> BlockInfo:
 	var model = startBlockRegister(modID + blockName, Voxdat.vox.GEOMETRY_CUBE)
 	model.set_mesh_collision_enabled(0, true)
 	model.transparency_index = alphaChannel
@@ -471,6 +473,7 @@ static func quickUniformBlock(
 			"default"
 	)
 	endBlockRegister(bi)
+	return(bi)
 
 
 ## Places a voxel at the specified position.

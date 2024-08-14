@@ -288,16 +288,22 @@ func _physics_process(delta) -> void:
 	else:
 		model.bodyRotation = lerpf(model.bodyRotation, -45 * input_dir.x, abs(input_dir.x) * (delta * 10))
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	# TODO scale with terrain player is on.
 	var cvel := Vector2(velocity.x, velocity.z)
+	var tscalefactor := 1.0
+	if is_on_floor():
+		var vhit = voxelTool.raycast(position, Vector3.DOWN)
+		if vhit != null:
+			tscalefactor = BlockManager.getBlock(vhit.position).traction
+	elif not abilities["isFlying"]:
+		tscalefactor = 0.1
 	if direction:
 		var rvel := Vector2(
 			direction.x * SPEED * abilities.scale.speed,
 			direction.z * SPEED * abilities.scale.speed,
 		)
-		cvel = cvel.move_toward(rvel, lerpdelta)
+		cvel = cvel.move_toward(rvel, lerpdelta * tscalefactor)
 	else:
-		cvel = cvel.move_toward(Vector2.ZERO, lerpdelta)
+		cvel = cvel.move_toward(Vector2.ZERO, lerpdelta * tscalefactor)
 	velocity.x = cvel.x
 	velocity.z = cvel.y
 
