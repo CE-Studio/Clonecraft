@@ -70,6 +70,19 @@ func populate(datain:Dictionary, filepath:String):
 			warn.show()
 			warn.tooltip_text = Translator.translate(&"gui.worlds.versiondiff")
 	
+	for i in data["mods"]:
+		if not FileAccess.file_exists("res://mods/" + i + "/" + i + ".gd"):
+			error.show()
+			error.tooltip_text = Translator.translate(&"gui.worlds.mod_missing") + ' "' + i + '"'
+			disabled = true
+			play.disabled = true
+			edit.disabled = true
+			backup.disabled = true
+			sicon.modulate = Color.hex(0xA9A9A9FF)
+			namel.modulate = Color.hex(0xA9A9A9FF)
+			subl.modulate = Color.hex(0xA9A9A9FF)
+			timel.modulate = Color.hex(0xA9A9A9FF)
+			return
 
 
 func _on_play_pressed():
