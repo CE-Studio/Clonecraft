@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://cus08itsvgr4o"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxj1jfgjo16v7" path="res://mods/interactions/break.obj" id="1_r55kw"]
+[ext_resource type="Shader" uid="uid://kcb6dekrmv40" path="res://mods/interactions/breakshader.tres" id="2_0wukj"]
+[ext_resource type="Texture2D" uid="uid://c5gcqdwntchlu" path="res://mods/interactions/Break.png" id="3_xe35h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tblt4"]
+render_priority = 0
+shader = ExtResource("2_0wukj")
+shader_parameter/progress = 0
+shader_parameter/Texture2DParameter = ExtResource("3_xe35h")
+
+[node name="break" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_tblt4")
+mesh = ExtResource("1_r55kw")

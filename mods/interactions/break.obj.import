@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxj1jfgjo16v7"
+path="res://.godot/imported/break.obj-211843595e61a868e32ab35beeed963f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/break.obj-211843595e61a868e32ab35beeed963f.mesh"]
+
+source_file="res://mods/interactions/break.obj"
+dest_files=["res://.godot/imported/break.obj-211843595e61a868e32ab35beeed963f.mesh", "res://.godot/imported/break.obj-211843595e61a868e32ab35beeed963f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
