@@ -1,0 +1,264 @@
+[gd_scene load_steps=28 format=3 uid="uid://btoy0s4lki6im"]
+
+[ext_resource type="Script" path="res://player/default/derg.gd" id="1_hi4xf"]
+[ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="2_pj874"]
+[ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="3_b4kjc"]
+[ext_resource type="ArrayMesh" uid="uid://dd3u5ku213cue" path="res://titlescreen/dergparts/derg_back_frill.obj" id="4_x7hsj"]
+[ext_resource type="ArrayMesh" uid="uid://okvc8c54lgqu" path="res://titlescreen/dergparts/derg_head.obj" id="5_lhbbq"]
+[ext_resource type="ArrayMesh" uid="uid://dx46ghs6st5mf" path="res://titlescreen/dergparts/derg_snout.obj" id="6_nwy54"]
+[ext_resource type="ArrayMesh" uid="uid://ctt7g2gdeea1p" path="res://titlescreen/dergparts/derg_r_ear_frill.obj" id="7_j0r7g"]
+[ext_resource type="ArrayMesh" uid="uid://dcq0ai8gjbr2m" path="res://titlescreen/dergparts/derg_l_ear_frill.obj" id="8_2qkex"]
+[ext_resource type="ArrayMesh" uid="uid://codei873rk6ta" path="res://titlescreen/dergparts/derg_l_horn.obj" id="9_iiep5"]
+[ext_resource type="ArrayMesh" uid="uid://cv0vcb3w14e2j" path="res://titlescreen/dergparts/derg_r_horn.obj" id="10_ebfk2"]
+[ext_resource type="ArrayMesh" uid="uid://cf4xq17wmuklp" path="res://titlescreen/dergparts/derg_head_frill.obj" id="11_ijgl5"]
+[ext_resource type="ArrayMesh" uid="uid://c87dbj6vkpg01" path="res://titlescreen/dergparts/derg_l_arm.obj" id="12_dnybn"]
+[ext_resource type="ArrayMesh" uid="uid://dlngwfhfrsuxu" path="res://titlescreen/dergparts/derg_l_larm.obj" id="13_uf7hu"]
+[ext_resource type="ArrayMesh" uid="uid://bnvjbxcdognnx" path="res://titlescreen/dergparts/derg_r_arm.obj" id="14_aa0ec"]
+[ext_resource type="ArrayMesh" uid="uid://dykveklokhs4v" path="res://titlescreen/dergparts/derg_r_larm.obj" id="15_1l2dm"]
+[ext_resource type="ArrayMesh" uid="uid://d4lhp5wgsjpha" path="res://titlescreen/dergparts/derg_r_leg.obj" id="16_57k7k"]
+[ext_resource type="ArrayMesh" uid="uid://d3nkr3gdb4080" path="res://titlescreen/dergparts/derg_r_lleg.obj" id="17_5vof3"]
+[ext_resource type="ArrayMesh" uid="uid://dtdgt12xie76b" path="res://titlescreen/dergparts/derg_r_ankle.obj" id="18_jlvgn"]
+[ext_resource type="ArrayMesh" uid="uid://deacr6m1xpo37" path="res://titlescreen/dergparts/derg_r_foot.obj" id="19_ehgr7"]
+[ext_resource type="ArrayMesh" uid="uid://dnv2d6yr1hv76" path="res://titlescreen/dergparts/derg_l_leg.obj" id="20_4ltuu"]
+[ext_resource type="ArrayMesh" uid="uid://82gusc61qlx7" path="res://titlescreen/dergparts/derg_l_lleg.obj" id="21_2ik4a"]
+[ext_resource type="ArrayMesh" uid="uid://b577xtlaf040g" path="res://titlescreen/dergparts/derg_l_ankle.obj" id="22_jw72q"]
+[ext_resource type="ArrayMesh" uid="uid://dy4v7tg0yhrfq" path="res://titlescreen/dergparts/derg_l_foot.obj" id="23_0m57q"]
+[ext_resource type="ArrayMesh" uid="uid://htxvn0t1v5aj" path="res://titlescreen/dergparts/derg_tail_main.obj" id="24_0ju6x"]
+[ext_resource type="ArrayMesh" uid="uid://dfjvyji3gwt5y" path="res://titlescreen/dergparts/derg_tail_frill.obj" id="25_b6b0g"]
+[ext_resource type="Material" path="res://textures/handmat.tres" id="26_48t76"]
+[ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="27_a0mdq"]
+
+[node name="derg" type="Node3D"]
+transform = Transform3D(0.88182, 0, 0, 0, 0.88182, 0, 0, 0, 0.88182, 0, -0.905, 0)
+script = ExtResource("1_hi4xf")
+
+[node name="bodyGround" type="Node3D" parent="."]
+
+[node name="bodyCenter" type="Node3D" parent="bodyGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+
+[node name="cube" type="MeshInstance3D" parent="bodyGround/bodyCenter"]
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("3_b4kjc")
+skeleton = NodePath("")
+
+[node name="cube2" type="MeshInstance3D" parent="bodyGround/bodyCenter"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.3125, 0.25)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("4_x7hsj")
+skeleton = NodePath("")
+
+[node name="larm" type="Node3D" parent="bodyGround/bodyCenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.625, 0)
+
+[node name="cube10" type="MeshInstance3D" parent="bodyGround/bodyCenter/larm"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.25, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("12_dnybn")
+skeleton = NodePath("")
+
+[node name="bone6" type="Node3D" parent="bodyGround/bodyCenter/larm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, -0.375, 0.125)
+
+[node name="cube11" type="MeshInstance3D" parent="bodyGround/bodyCenter/larm/bone6"]
+transform = Transform3D(0, 1.82121e-17, -1, 8.27181e-25, -1, -1.82121e-17, -1, 0, 0, 0, 0.375, -0.125)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("13_uf7hu")
+skeleton = NodePath("")
+
+[node name="rarm" type="Node3D" parent="bodyGround/bodyCenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249999, 0.625, 0)
+
+[node name="cube12" type="MeshInstance3D" parent="bodyGround/bodyCenter/rarm"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, 0, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("14_aa0ec")
+skeleton = NodePath("")
+
+[node name="bone4" type="Node3D" parent="bodyGround/bodyCenter/rarm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -0.375, 0.125)
+
+[node name="cube13" type="MeshInstance3D" parent="bodyGround/bodyCenter/rarm/bone4"]
+transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.125, 0.375, -0.125)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("15_1l2dm")
+skeleton = NodePath("")
+
+[node name="rleg" type="Node3D" parent="bodyGround/bodyCenter"]
+transform = Transform3D(0.996195, -0.0188639, -0.0850897, 0, 0.976296, -0.216439, 0.0871557, 0.215616, 0.972581, 0.125, 0, 0)
+
+[node name="cube14" type="MeshInstance3D" parent="bodyGround/bodyCenter/rleg"]
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("16_57k7k")
+skeleton = NodePath("")
+
+[node name="bone8" type="Node3D" parent="bodyGround/bodyCenter/rleg"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
+
+[node name="cube15" type="MeshInstance3D" parent="bodyGround/bodyCenter/rleg/bone8"]
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("17_5vof3")
+skeleton = NodePath("")
+
+[node name="bone9" type="Node3D" parent="bodyGround/bodyCenter/rleg/bone8"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
+
+[node name="cube16" type="MeshInstance3D" parent="bodyGround/bodyCenter/rleg/bone8/bone9"]
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("18_jlvgn")
+skeleton = NodePath("")
+
+[node name="bone10" type="Node3D" parent="bodyGround/bodyCenter/rleg/bone8/bone9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
+
+[node name="cube17" type="MeshInstance3D" parent="bodyGround/bodyCenter/rleg/bone8/bone9/bone10"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("19_ehgr7")
+skeleton = NodePath("")
+
+[node name="lleg" type="Node3D" parent="bodyGround/bodyCenter"]
+transform = Transform3D(0.996195, 0.0188639, 0.0850897, 0, 0.976296, -0.216439, -0.0871557, 0.215616, 0.972581, -0.125, 0, 0)
+
+[node name="cube18" type="MeshInstance3D" parent="bodyGround/bodyCenter/lleg"]
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("20_4ltuu")
+skeleton = NodePath("")
+
+[node name="bone12" type="Node3D" parent="bodyGround/bodyCenter/lleg"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
+
+[node name="cube19" type="MeshInstance3D" parent="bodyGround/bodyCenter/lleg/bone12"]
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("21_2ik4a")
+skeleton = NodePath("")
+
+[node name="bone13" type="Node3D" parent="bodyGround/bodyCenter/lleg/bone12"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
+
+[node name="cube20" type="MeshInstance3D" parent="bodyGround/bodyCenter/lleg/bone12/bone13"]
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("22_jw72q")
+skeleton = NodePath("")
+
+[node name="bone14" type="Node3D" parent="bodyGround/bodyCenter/lleg/bone12/bone13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
+
+[node name="cube21" type="MeshInstance3D" parent="bodyGround/bodyCenter/lleg/bone12/bone13/bone14"]
+transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("23_0m57q")
+skeleton = NodePath("")
+
+[node name="tail" type="Node3D" parent="bodyGround/bodyCenter"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.25, 0.125)
+
+[node name="cube22" type="MeshInstance3D" parent="bodyGround/bodyCenter/tail"]
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("24_0ju6x")
+skeleton = NodePath("")
+
+[node name="cube23" type="MeshInstance3D" parent="bodyGround/bodyCenter/tail"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("25_b6b0g")
+skeleton = NodePath("")
+
+[node name="tail2" type="Node3D" parent="bodyGround/bodyCenter/tail"]
+transform = Transform3D(1, 0, 0, 0, 0.965927, 0.258819, 0, -0.258819, 0.965927, -7.62939e-06, -0.499999, -0.250001)
+
+[node name="cube24" type="MeshInstance3D" parent="bodyGround/bodyCenter/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("24_0ju6x")
+skeleton = NodePath("")
+
+[node name="cube25" type="MeshInstance3D" parent="bodyGround/bodyCenter/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("25_b6b0g")
+skeleton = NodePath("")
+
+[node name="tail3" type="Node3D" parent="bodyGround/bodyCenter/tail/tail2"]
+transform = Transform3D(1, 0, 0, 0, 0.923879, 0.382683, 0, -0.382683, 0.923879, -9.53674e-07, -0.500001, -4.76837e-07)
+
+[node name="cube26" type="MeshInstance3D" parent="bodyGround/bodyCenter/tail/tail2/tail3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("24_0ju6x")
+skeleton = NodePath("")
+
+[node name="cube27" type="MeshInstance3D" parent="bodyGround/bodyCenter/tail/tail2/tail3"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("25_b6b0g")
+skeleton = NodePath("")
+
+[node name="tail4" type="Node3D" parent="bodyGround/bodyCenter/tail/tail2/tail3"]
+transform = Transform3D(0.999998, 0, 0, 0, 0.923878, 0.382683, 0, -0.382683, 0.923878, 0, -0.499999, -1.19209e-07)
+
+[node name="cube28" type="MeshInstance3D" parent="bodyGround/bodyCenter/tail/tail2/tail3/tail4"]
+transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 2.84217e-14, 0, -2.84217e-14, 1, 0, 0, 0.25)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("24_0ju6x")
+skeleton = NodePath("")
+
+[node name="cube29" type="MeshInstance3D" parent="bodyGround/bodyCenter/tail/tail2/tail3/tail4"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("25_b6b0g")
+skeleton = NodePath("")
+
+[node name="arm" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0551216, -0.0274894, -0.395229, 0.328933, 0.219241, -0.0611244, 0.220827, -0.333433, -0.00760687, 0.24, -0.265, -0.055)
+material_override = ExtResource("26_48t76")
+cast_shadow = 0
+mesh = ExtResource("27_a0mdq")
+skeleton = NodePath("../../head/Camera3D")
+
+[node name="handItem" type="Node3D" parent="arm"]
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 1.5, 0)
+
+[node name="cube3" type="MeshInstance3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("5_lhbbq")
+skeleton = NodePath("")
+
+[node name="cube4" type="MeshInstance3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("6_nwy54")
+skeleton = NodePath("")
+
+[node name="cube5" type="MeshInstance3D" parent="head"]
+transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0.25, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("7_j0r7g")
+skeleton = NodePath("")
+
+[node name="cube6" type="MeshInstance3D" parent="head"]
+transform = Transform3D(0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, -0.25, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("8_2qkex")
+skeleton = NodePath("")
+
+[node name="cube7" type="MeshInstance3D" parent="head"]
+transform = Transform3D(0.92388, 7.45058e-09, -0.382683, 0.146447, 0.92388, 0.353553, 0.353553, -0.382683, 0.853553, -0.25, 0.5, -0.0625)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("9_iiep5")
+skeleton = NodePath("")
+
+[node name="cube8" type="MeshInstance3D" parent="head"]
+transform = Transform3D(0.92388, -7.45058e-09, 0.382683, -0.146447, 0.92388, 0.353553, -0.353553, -0.382683, 0.853553, 0.25, 0.5, -0.0625)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("10_ebfk2")
+skeleton = NodePath("")
+
+[node name="cube9" type="MeshInstance3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
+material_override = ExtResource("2_pj874")
+mesh = ExtResource("11_ijgl5")
+skeleton = NodePath("")

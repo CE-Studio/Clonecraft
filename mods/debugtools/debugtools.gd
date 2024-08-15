@@ -3,7 +3,7 @@ extends Mod
 
 var tlabel:Label
 var bid:int : set = _bidSet
-var itemDisp:MeshInstance3D
+var itemDisp:GUIItem
 
 
 func _bidSet(val:int) -> void:
@@ -13,7 +13,7 @@ func _bidSet(val:int) -> void:
 	elif bid >= man.blockList.size():
 		bid -= man.blockList.size()
 	tlabel.text = man.blockList[bid].fullID
-	itemDisp.mesh = ItemManager.items[man.blockList[bid].fullID].model
+	itemDisp.assign(ItemManager.ItemStack.new(tlabel.text, 0))
 
 
 func input(event) -> void:
@@ -39,11 +39,6 @@ func input(event) -> void:
 				ItemManager.spawnWorldItem(ItemManager.ItemStack.new(man.blockList[bid].fullID, 1), player.position)
 
 
-func update(_delta) -> void:
-	var ssize := ItemManager.screenSize / 60
-	itemDisp.position = Vector3(-ssize.x + 1, -ssize.y + 1, 0)
-
-
 func registerPhase() -> void:
 	man.log("debugtools", "This world is in debug mode! A lot of default features are overridden!")
 	tlabel = Label.new()
@@ -54,7 +49,7 @@ func registerPhase() -> void:
 	man.inputRegister(input)
 	player.abilities["allowFlight"] = true
 	player.abilities["allowBuild"] = true
-	itemDisp = MeshInstance3D.new()
-	ItemManager.addToItemLayer(itemDisp)
-	itemDisp.rotation_degrees = Vector3(10.5, -46, -10.7)
-	man.addUpdate(update)
+	itemDisp = preload("res://gui/GuiItem.tscn").instantiate()
+	Statics.get_node("/root/Node3D/Control").add_child(itemDisp)
+	itemDisp.set_anchors_preset(Control.PRESET_BOTTOM_LEFT, true)
+	itemDisp.position.y -= (20 + 46)

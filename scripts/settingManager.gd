@@ -34,7 +34,7 @@ static func broadcast() -> void:
 	_recur(Statics.get_node("/root"))
 
 
-static func spawnMenu(content := settings) -> void:
+static func spawnMenu(content := settings) -> BackingPanel:
 	_layers += 1
 	var op:BackingPanel = preload("res://gui/backingpanel.tscn").instantiate()
 	if content == settings:
@@ -65,3 +65,4 @@ static func spawnMenu(content := settings) -> void:
 			op.addItem(c)
 		else:
 			print("missing setting type: " + i["type"])
+	return op

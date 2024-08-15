@@ -1,54 +1,102 @@
-[gd_scene load_steps=60 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=47 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
 [ext_resource type="Script" path="res://scripts/worldControl.gd" id="1_ug7a2"]
-[ext_resource type="Script" path="res://player.gd" id="2_tcydh"]
 [ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
-[ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="4_auhxw"]
 [ext_resource type="VoxelGeneratorScript" uid="uid://bvjxaj2q5axx0" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
+[ext_resource type="Script" path="res://scripts/game/hotbar.gd" id="5_7ch0y"]
 [ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_i3vlu"]
 [ext_resource type="Script" path="res://scripts/chatControl.gd" id="6_efijs"]
 [ext_resource type="Texture2D" uid="uid://bo156172yuv48" path="res://gui/hotbar.png" id="6_garc0"]
+[ext_resource type="Texture2D" uid="uid://t3mnt7mdm64f" path="res://gui/hotbar_layers.png" id="6_v81ga"]
 [ext_resource type="Texture2D" uid="uid://dy0d23dqmbyhy" path="res://gui/hotbar_sel.png" id="7_rdery"]
-[ext_resource type="Material" path="res://textures/handmat.tres" id="9_dfanb"]
-[ext_resource type="ArrayMesh" uid="uid://dfj2r3032hvsq" path="res://hand.obj" id="9_no3b2"]
-[ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="11_dq7n1"]
+[ext_resource type="Texture2D" uid="uid://dgjlgaesep514" path="res://gui/statbars.png" id="9_ehm4h"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
-[ext_resource type="Script" path="res://scripts/itemRenderLayerSize.gd" id="14_wt5ed"]
-[ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="15_cbvca"]
+[ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
-[ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="16_1bgru"]
-[ext_resource type="ArrayMesh" uid="uid://dd3u5ku213cue" path="res://titlescreen/dergparts/derg_back_frill.obj" id="17_ue5v2"]
-[ext_resource type="ArrayMesh" uid="uid://okvc8c54lgqu" path="res://titlescreen/dergparts/derg_head.obj" id="18_sykbi"]
-[ext_resource type="ArrayMesh" uid="uid://dx46ghs6st5mf" path="res://titlescreen/dergparts/derg_snout.obj" id="19_o8hla"]
-[ext_resource type="ArrayMesh" uid="uid://ctt7g2gdeea1p" path="res://titlescreen/dergparts/derg_r_ear_frill.obj" id="20_38bh5"]
-[ext_resource type="ArrayMesh" uid="uid://dcq0ai8gjbr2m" path="res://titlescreen/dergparts/derg_l_ear_frill.obj" id="21_2cp5x"]
-[ext_resource type="ArrayMesh" uid="uid://codei873rk6ta" path="res://titlescreen/dergparts/derg_l_horn.obj" id="22_dbenj"]
-[ext_resource type="ArrayMesh" uid="uid://cv0vcb3w14e2j" path="res://titlescreen/dergparts/derg_r_horn.obj" id="23_ncbhd"]
-[ext_resource type="ArrayMesh" uid="uid://cf4xq17wmuklp" path="res://titlescreen/dergparts/derg_head_frill.obj" id="24_wm87l"]
-[ext_resource type="ArrayMesh" uid="uid://c87dbj6vkpg01" path="res://titlescreen/dergparts/derg_l_arm.obj" id="25_qeyak"]
-[ext_resource type="ArrayMesh" uid="uid://dlngwfhfrsuxu" path="res://titlescreen/dergparts/derg_l_larm.obj" id="26_hexen"]
-[ext_resource type="ArrayMesh" uid="uid://bnvjbxcdognnx" path="res://titlescreen/dergparts/derg_r_arm.obj" id="27_tv6dk"]
-[ext_resource type="ArrayMesh" uid="uid://dykveklokhs4v" path="res://titlescreen/dergparts/derg_r_larm.obj" id="28_h3po5"]
-[ext_resource type="ArrayMesh" uid="uid://d4lhp5wgsjpha" path="res://titlescreen/dergparts/derg_r_leg.obj" id="29_clglw"]
-[ext_resource type="ArrayMesh" uid="uid://d3nkr3gdb4080" path="res://titlescreen/dergparts/derg_r_lleg.obj" id="30_uguv8"]
-[ext_resource type="ArrayMesh" uid="uid://dtdgt12xie76b" path="res://titlescreen/dergparts/derg_r_ankle.obj" id="31_0apmt"]
-[ext_resource type="ArrayMesh" uid="uid://deacr6m1xpo37" path="res://titlescreen/dergparts/derg_r_foot.obj" id="32_n3lw8"]
-[ext_resource type="ArrayMesh" uid="uid://dnv2d6yr1hv76" path="res://titlescreen/dergparts/derg_l_leg.obj" id="33_gfrg6"]
-[ext_resource type="ArrayMesh" uid="uid://82gusc61qlx7" path="res://titlescreen/dergparts/derg_l_lleg.obj" id="34_5dupy"]
-[ext_resource type="ArrayMesh" uid="uid://b577xtlaf040g" path="res://titlescreen/dergparts/derg_l_ankle.obj" id="35_34pmr"]
-[ext_resource type="ArrayMesh" uid="uid://dy4v7tg0yhrfq" path="res://titlescreen/dergparts/derg_l_foot.obj" id="36_pax3h"]
-[ext_resource type="ArrayMesh" uid="uid://htxvn0t1v5aj" path="res://titlescreen/dergparts/derg_tail_main.obj" id="37_k72ik"]
-[ext_resource type="ArrayMesh" uid="uid://dfjvyji3gwt5y" path="res://titlescreen/dergparts/derg_tail_frill.obj" id="38_6fv3c"]
 [ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
 [ext_resource type="Script" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yoru6"]
-viewport_path = NodePath("itemRenderLayer")
+[sub_resource type="Gradient" id="Gradient_gul6o"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
+colors = PackedColorArray(0.0705882, 0.101961, 0.180392, 1, 0.498039, 0.301961, 0.113725, 1, 0.541176, 0.713726, 0.862745, 1, 0.541176, 0.713726, 0.862745, 1, 0.498039, 0.301961, 0.113725, 1, 0.0705882, 0.101961, 0.180392, 1)
+
+[sub_resource type="Gradient" id="Gradient_ykb7x"]
+offsets = PackedFloat32Array(0.2, 0.25, 0.35, 0.65, 0.75, 0.8)
+colors = PackedColorArray(0.105882, 0.14902, 0.247059, 1, 0.780392, 0.32549, 0.105882, 1, 0.776471, 0.866667, 0.941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.780392, 0.32549, 0.105882, 1, 0.105882, 0.14902, 0.247059, 1)
+
+[sub_resource type="Gradient" id="Gradient_5sooj"]
+offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
+colors = PackedColorArray(0.0313726, 0.0509804, 0.101961, 1, 0.435294, 0.258824, 0.0941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.435294, 0.258824, 0.0941176, 1, 0.0313726, 0.0509804, 0.101961, 1)
+
+[sub_resource type="Gradient" id="Gradient_6n12d"]
+offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
+colors = PackedColorArray(0.105882, 0.14902, 0.247059, 1, 0.780392, 0.32549, 0.105882, 1, 0.776471, 0.866667, 0.941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.780392, 0.32549, 0.105882, 1, 0.105882, 0.14902, 0.247059, 1)
+
+[sub_resource type="Gradient" id="Gradient_8853r"]
+offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
+colors = PackedColorArray(1, 1, 1, 1, 0.960784, 0.431373, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.960784, 0.431373, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_5v3fw"]
+offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
+colors = PackedColorArray(0.666667, 0.796078, 1, 1, 0.788235, 0.870588, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.788235, 0.870588, 1, 1, 0.666667, 0.796078, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_1jifp"]
+offsets = PackedFloat32Array(0.2, 0.3, 0.7, 0.8)
+colors = PackedColorArray(0, 0.45098, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0.45098, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ceb"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(30, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cjf6q"]
+texture = SubResource("AtlasTexture_f1ceb")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+axis_stretch_vertical = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dajyh"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(0, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o78yd"]
+texture = SubResource("AtlasTexture_dajyh")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atfrb"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(20, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l54sm"]
+texture = SubResource("AtlasTexture_atfrb")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l1xi"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(10, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vehuk"]
+texture = SubResource("AtlasTexture_8l1xi")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf4da"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntior"]
+atlas = ExtResource("9_ehm4h")
+region = Rect2(40, 0, 10, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgxlq"]
+texture = SubResource("AtlasTexture_ntior")
+texture_margin_left = 5.0
+texture_margin_right = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g08o8"]
 bg_color = Color(0, 0, 0, 0.2)
@@ -76,19 +124,6 @@ transparency = 1
 shading_mode = 0
 albedo_color = Color(0, 0, 0, 0.529412)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
-size = Vector3(0.7, 1.8, 0.7)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_5tc7k"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_iq0cg"]
-radius = 2.0
-
-[sub_resource type="Environment" id="Environment_mubym"]
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.5
-
 [sub_resource type="BoxMesh" id="BoxMesh_ydc0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iabes"]
@@ -98,6 +133,14 @@ shader = ExtResource("15_ji8mt")
 [node name="Node3D" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_ug7a2")
+dayLength = 1200.0
+upperSkyColor = SubResource("Gradient_gul6o")
+upperHorizonColor = SubResource("Gradient_ykb7x")
+lowerSkyColor = SubResource("Gradient_5sooj")
+lowerHorizonColor = SubResource("Gradient_6n12d")
+sunlightColor = SubResource("Gradient_8853r")
+moonlightColor = SubResource("Gradient_5v3fw")
+moonSunAndStarIntensity = SubResource("Gradient_1jifp")
 
 [node name="Control" type="Control" parent="."]
 process_mode = 3
@@ -150,24 +193,6 @@ grow_horizontal = 0
 text = "F3 data 2"
 horizontal_alignment = 2
 
-[node name="chat" type="VBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -42.0
-offset_right = 402.0
-offset_bottom = -2.0
-grow_vertical = 0
-alignment = 2
-script = ExtResource("6_efijs")
-
-[node name="inpline" type="LineEdit" parent="Control/chat"]
-visible = false
-custom_minimum_size = Vector2(400, 1.45519e-11)
-layout_mode = 2
-
 [node name="GUIlayer" type="Control" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -186,6 +211,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("5_7ch0y")
 
 [node name="hb1" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
 position = Vector2(-279, -33)
@@ -237,11 +263,92 @@ position = Vector2(279, -33)
 texture = ExtResource("6_garc0")
 hframes = 2
 
+[node name="layer0" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-325, -63)
+texture = ExtResource("6_v81ga")
+centered = false
+hframes = 2
+
+[node name="layer1" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-325, -48)
+texture = ExtResource("6_v81ga")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="layer2" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-325, -33)
+texture = ExtResource("6_v81ga")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="layer3" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
+position = Vector2(-325, -18)
+texture = ExtResource("6_v81ga")
+centered = false
+hframes = 2
+frame = 1
+
 [node name="hbsel" type="Sprite2D" parent="Control/GUIlayer/hotbar"]
 position = Vector2(-279, -34)
 texture = ExtResource("7_rdery")
 
-[node name="itemLayer" type="TextureRect" parent="Control"]
+[node name="progressBar" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+layout_mode = 0
+offset_left = -306.0
+offset_top = -86.0
+offset_right = -6.0
+offset_bottom = -70.0
+theme_override_styles/background = SubResource("StyleBoxTexture_cjf6q")
+theme_override_styles/fill = SubResource("StyleBoxTexture_o78yd")
+max_value = 20.0
+value = 12.13
+show_percentage = false
+
+[node name="progressBar4" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+layout_mode = 0
+offset_left = -306.0
+offset_top = -106.0
+offset_right = -6.0
+offset_bottom = -90.0
+theme_override_styles/background = SubResource("StyleBoxTexture_cjf6q")
+theme_override_styles/fill = SubResource("StyleBoxTexture_l54sm")
+max_value = 20.0
+value = 15.27
+show_percentage = false
+
+[node name="progressBar2" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -86.0
+offset_right = 306.0
+offset_bottom = -70.0
+theme_override_styles/background = SubResource("StyleBoxTexture_cjf6q")
+theme_override_styles/fill = SubResource("StyleBoxTexture_vehuk")
+max_value = 20.0
+value = 11.72
+fill_mode = 1
+show_percentage = false
+
+[node name="progressBar3" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -86.0
+offset_right = 306.0
+offset_bottom = -70.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_yf4da")
+theme_override_styles/fill = SubResource("StyleBoxTexture_rgxlq")
+max_value = 20.0
+value = 9.22
+fill_mode = 1
+show_percentage = false
+
+[node name="timer" type="Timer" parent="Control/GUIlayer/hotbar"]
+wait_time = 0.3
+one_shot = true
+
+[node name="GUIlayer2" type="Control" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -249,8 +356,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("ViewportTexture_yoru6")
-expand_mode = 1
+
+[node name="chat" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -42.0
+offset_right = 402.0
+offset_bottom = -2.0
+grow_vertical = 0
+alignment = 2
+script = ExtResource("6_efijs")
+
+[node name="inpline" type="LineEdit" parent="Control/chat"]
+visible = false
+custom_minimum_size = Vector2(400, 1.45519e-11)
+layout_mode = 2
 
 [node name="waitpanel" type="Panel" parent="Control"]
 visible = false
@@ -375,6 +498,7 @@ process_mode = 3
 process_priority = -1
 generator = ExtResource("4_brcpd")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
+cast_shadow = 2
 max_view_distance = 256
 collision_layer = 3
 run_stream_in_editor = false
@@ -385,334 +509,9 @@ transform = Transform3D(0.83, 0, 0, 0, 0.83, 0, 0, 0, 0.83, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_oxvjf")
 mesh = ExtResource("5_1o3wh")
 
-[node name="player" type="CharacterBody3D" parent="."]
-process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 128, 0)
-disable_mode = 1
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-platform_on_leave = 1
-script = ExtResource("2_tcydh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
-shape = SubResource("BoxShape3D_0d76e")
-
-[node name="head" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688957, 0)
-
-[node name="Camera3D" type="Camera3D" parent="player/head"]
-process_mode = 3
-
-[node name="AudioListener3D" type="AudioListener3D" parent="player/head/Camera3D"]
-process_mode = 3
-
-[node name="VoxelViewer" type="VoxelViewer" parent="player/head/Camera3D"]
-process_mode = 3
-
-[node name="RayCast3D" type="RayCast3D" parent="player/head/Camera3D"]
-process_mode = 3
-target_position = Vector3(1.45519e-11, 1.45519e-11, -5)
-collision_mask = 2
-hit_from_inside = true
-debug_shape_custom_color = Color(1, 0, 0, 1)
-debug_shape_thickness = 1
-
-[node name="Camera3D" type="Camera3D" parent="player/head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-
-[node name="Camera3D2" type="Camera3D" parent="player/head/Camera3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -5)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
-visible = false
-light_bake_mode = 0
-omni_range = 30.0365
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="player"]
-transform = Transform3D(0.105167, -0.87148, 0.479023, 0.316413, 0.485984, 0.814679, -0.942774, 0.0658922, 0.326857, 0, 0.689, 0)
-light_bake_mode = 0
-shadow_enabled = true
-directional_shadow_mode = 0
-directional_shadow_pancake_size = 0.4
-
-[node name="Sprite3D" type="Sprite3D" parent="player/DirectionalLight3D"]
-transform = Transform3D(264.525, 300.044, 2.28882e-05, -300.044, 264.525, -9.53674e-06, 0, -5.34058e-05, 400, 3.8147e-05, -4.19617e-05, 600)
-texture = ExtResource("4_auhxw")
-
-[node name="armpointy" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
-
-[node name="armpointx" type="Node3D" parent="player/armpointy"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player/armpointy/armpointx"]
-transform = Transform3D(-0.0551216, -0.0274894, -0.395229, 0.328933, 0.219241, -0.0611244, 0.220827, -0.333433, -0.00760687, 0.24, -0.265, -0.055)
-material_override = ExtResource("9_dfanb")
-cast_shadow = 0
-mesh = ExtResource("9_no3b2")
-skeleton = NodePath("../../../head/Camera3D")
-
-[node name="clouds" type="MeshInstance3D" parent="player"]
-transform = Transform3D(2000, 0, 0, 0, -2000, 0.000301992, 0, -0.000301992, -2000, 0, 215.917, 0)
-material_override = ExtResource("11_dq7n1")
-mesh = SubResource("PlaneMesh_5tc7k")
-
-[node name="derg" type="Node3D" parent="player"]
-transform = Transform3D(0.88182, 0, 0, 0, 0.88182, 0, 0, 0, 0.88182, 0, -0.905, 0)
-visible = false
-
-[node name="Node2" type="Node3D" parent="player/derg"]
-
-[node name="bone2" type="Node3D" parent="player/derg/Node2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
-
-[node name="cube" type="MeshInstance3D" parent="player/derg/Node2/bone2"]
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("16_1bgru")
-skeleton = NodePath("")
-
-[node name="cube2" type="MeshInstance3D" parent="player/derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.3125, 0.25)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("17_ue5v2")
-skeleton = NodePath("")
-
-[node name="head" type="Node3D" parent="player/derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0.625, 0)
-
-[node name="cube3" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("18_sykbi")
-skeleton = NodePath("")
-
-[node name="cube4" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("19_o8hla")
-skeleton = NodePath("")
-
-[node name="cube5" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
-transform = Transform3D(0.92388, 0, 0.382683, 0, 1, 0, -0.382683, 0, 0.92388, 0.25, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("20_38bh5")
-skeleton = NodePath("")
-
-[node name="cube6" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
-transform = Transform3D(0.92388, 0, -0.382683, 0, 1, 0, 0.382683, 0, 0.92388, -0.25, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("21_2cp5x")
-skeleton = NodePath("")
-
-[node name="cube7" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
-transform = Transform3D(0.92388, 7.45058e-09, -0.382683, 0.146447, 0.92388, 0.353553, 0.353553, -0.382683, 0.853553, -0.25, 0.5, -0.0625)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("22_dbenj")
-skeleton = NodePath("")
-
-[node name="cube8" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
-transform = Transform3D(0.92388, -7.45058e-09, 0.382683, -0.146447, 0.92388, 0.353553, -0.353553, -0.382683, 0.853553, 0.25, 0.5, -0.0625)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("23_ncbhd")
-skeleton = NodePath("")
-
-[node name="cube9" type="MeshInstance3D" parent="player/derg/Node2/bone2/head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("24_wm87l")
-skeleton = NodePath("")
-
-[node name="larm" type="Node3D" parent="player/derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.625, 0)
-
-[node name="cube10" type="MeshInstance3D" parent="player/derg/Node2/bone2/larm"]
-transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.25, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("25_qeyak")
-skeleton = NodePath("")
-
-[node name="bone6" type="Node3D" parent="player/derg/Node2/bone2/larm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125, -0.375, 0.125)
-
-[node name="cube11" type="MeshInstance3D" parent="player/derg/Node2/bone2/larm/bone6"]
-transform = Transform3D(0, 1.82121e-17, -1, 8.27181e-25, -1, -1.82121e-17, -1, 0, 0, 0, 0.375, -0.125)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("26_hexen")
-skeleton = NodePath("")
-
-[node name="rarm" type="Node3D" parent="player/derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249999, 0.625, 0)
-
-[node name="cube12" type="MeshInstance3D" parent="player/derg/Node2/bone2/rarm"]
-transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, 0, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("27_tv6dk")
-skeleton = NodePath("")
-
-[node name="bone4" type="Node3D" parent="player/derg/Node2/bone2/rarm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -0.375, 0.125)
-
-[node name="cube13" type="MeshInstance3D" parent="player/derg/Node2/bone2/rarm/bone4"]
-transform = Transform3D(0, -1.22465e-16, 1, -6.61744e-24, -1, -1.22465e-16, 1, 0, 0, -0.125, 0.375, -0.125)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("28_h3po5")
-skeleton = NodePath("")
-
-[node name="rleg" type="Node3D" parent="player/derg/Node2/bone2"]
-transform = Transform3D(0.996195, -0.0188639, -0.0850897, 0, 0.976296, -0.216439, 0.0871557, 0.215616, 0.972581, 0.125, 0, 0)
-
-[node name="cube14" type="MeshInstance3D" parent="player/derg/Node2/bone2/rleg"]
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("29_clglw")
-skeleton = NodePath("")
-
-[node name="bone8" type="Node3D" parent="player/derg/Node2/bone2/rleg"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
-
-[node name="cube15" type="MeshInstance3D" parent="player/derg/Node2/bone2/rleg/bone8"]
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("30_uguv8")
-skeleton = NodePath("")
-
-[node name="bone9" type="Node3D" parent="player/derg/Node2/bone2/rleg/bone8"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
-
-[node name="cube16" type="MeshInstance3D" parent="player/derg/Node2/bone2/rleg/bone8/bone9"]
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("31_0apmt")
-skeleton = NodePath("")
-
-[node name="bone10" type="Node3D" parent="player/derg/Node2/bone2/rleg/bone8/bone9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
-
-[node name="cube17" type="MeshInstance3D" parent="player/derg/Node2/bone2/rleg/bone8/bone9/bone10"]
-transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("32_n3lw8")
-skeleton = NodePath("")
-
-[node name="lleg" type="Node3D" parent="player/derg/Node2/bone2"]
-transform = Transform3D(0.996195, 0.0188639, 0.0850897, 0, 0.976296, -0.216439, -0.0871557, 0.215616, 0.972581, -0.125, 0, 0)
-
-[node name="cube18" type="MeshInstance3D" parent="player/derg/Node2/bone2/lleg"]
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("33_gfrg6")
-skeleton = NodePath("")
-
-[node name="bone12" type="Node3D" parent="player/derg/Node2/bone2/lleg"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, -0.4375, -0.125)
-
-[node name="cube19" type="MeshInstance3D" parent="player/derg/Node2/bone2/lleg/bone12"]
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("34_5dupy")
-skeleton = NodePath("")
-
-[node name="bone13" type="Node3D" parent="player/derg/Node2/bone2/lleg/bone12"]
-transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0.1875, 0.375)
-
-[node name="cube20" type="MeshInstance3D" parent="player/derg/Node2/bone2/lleg/bone12/bone13"]
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("35_34pmr")
-skeleton = NodePath("")
-
-[node name="bone14" type="Node3D" parent="player/derg/Node2/bone2/lleg/bone12/bone13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4375, 0)
-
-[node name="cube21" type="MeshInstance3D" parent="player/derg/Node2/bone2/lleg/bone12/bone13/bone14"]
-transform = Transform3D(1, 0, 0, 0, 0.976296, 0.21644, 0, -0.21644, 0.976296, 0, 0, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("36_pax3h")
-skeleton = NodePath("")
-
-[node name="tail" type="Node3D" parent="player/derg/Node2/bone2"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.25, 0.125)
-
-[node name="cube22" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail"]
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("37_k72ik")
-skeleton = NodePath("")
-
-[node name="cube23" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("38_6fv3c")
-skeleton = NodePath("")
-
-[node name="tail2" type="Node3D" parent="player/derg/Node2/bone2/tail"]
-transform = Transform3D(1, 0, 0, 0, 0.965927, 0.258819, 0, -0.258819, 0.965927, -7.62939e-06, -0.499999, -0.250001)
-
-[node name="cube24" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("37_k72ik")
-skeleton = NodePath("")
-
-[node name="cube25" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("38_6fv3c")
-skeleton = NodePath("")
-
-[node name="tail3" type="Node3D" parent="player/derg/Node2/bone2/tail/tail2"]
-transform = Transform3D(1, 0, 0, 0, 0.923879, 0.382683, 0, -0.382683, 0.923879, -9.53674e-07, -0.500001, -4.76837e-07)
-
-[node name="cube26" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2/tail3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("37_k72ik")
-skeleton = NodePath("")
-
-[node name="cube27" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2/tail3"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("38_6fv3c")
-skeleton = NodePath("")
-
-[node name="tail4" type="Node3D" parent="player/derg/Node2/bone2/tail/tail2/tail3"]
-transform = Transform3D(0.999998, 0, 0, 0, 0.923878, 0.382683, 0, -0.382683, 0.923878, 0, -0.499999, -1.19209e-07)
-
-[node name="cube28" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2/tail3/tail4"]
-transform = Transform3D(1, 0, 0, -7.10543e-15, 1, 2.84217e-14, 0, -2.84217e-14, 1, 0, 0, 0.25)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("37_k72ik")
-skeleton = NodePath("")
-
-[node name="cube29" type="MeshInstance3D" parent="player/derg/Node2/bone2/tail/tail2/tail3/tail4"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0625, 0.25)
-material_override = ExtResource("15_cbvca")
-mesh = ExtResource("38_6fv3c")
-skeleton = NodePath("")
-
-[node name="Area3D" type="Area3D" parent="player"]
-collision_layer = 6
-collision_mask = 6
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player/Area3D"]
-shape = SubResource("SphereShape3D_iq0cg")
+[node name="player" parent="." instance=ExtResource("13_0aat4")]
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("12_8tndb")]
-
-[node name="itemRenderLayer" type="SubViewport" parent="."]
-process_mode = 3
-own_world_3d = true
-transparent_bg = true
-size = Vector2i(1152, 648)
-script = ExtResource("14_wt5ed")
-
-[node name="Camera3D" type="Camera3D" parent="itemRenderLayer"]
-environment = SubResource("Environment_mubym")
-projection = 1
-size = 5.0
-far = 100.0
-
-[node name="itemParent" type="Node3D" parent="itemRenderLayer/Camera3D"]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, -50)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="itemRenderLayer/Camera3D"]
-transform = Transform3D(0.449017, -0.84685, 0.285006, 0.559327, 0.515138, 0.649451, -0.696805, -0.132202, 0.704972, 0, 0, 0)
-directional_shadow_mode = 0
-sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -726,7 +525,8 @@ script = ExtResource("42_0hogo")
 [node name="cmdProcessor" type="Node" parent="."]
 script = ExtResource("44_fbb68")
 
+[connection signal="timeout" from="Control/GUIlayer/hotbar/timer" to="Control/GUIlayer/hotbar" method="_reallyDeferRedraw"]
 [connection signal="text_submitted" from="Control/chat/inpline" to="Control/chat" method="_on_inpline_text_submitted"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pauseUnpause"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="body_entered" from="player/Area3D" to="player" method="_on_enter_item_range"]
+[connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/quitDButton" to="." method="_on_quit_desktop_button_pressed"]

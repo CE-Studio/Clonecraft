@@ -1,0 +1,65 @@
+[gd_resource type="VoxelGeneratorGraph" load_steps=3 format=3 uid="uid://bckhyyvm3xgj7"]
+
+[sub_resource type="ZN_FastNoiseLite" id="ZN_FastNoiseLite_7wrnd"]
+seed = 1
+period = 200.0
+
+[sub_resource type="ZN_FastNoiseLite" id="ZN_FastNoiseLite_ssigp"]
+period = 200.0
+
+[resource]
+graph_data = {
+"connections": [[7, 0, 15, 2], [18, 0, 15, 0], [17, 0, 18, 2], [3, 0, 13, 2], [3, 0, 16, 2], [16, 0, 17, 0], [16, 0, 17, 1], [2, 0, 13, 1], [2, 0, 16, 1], [15, 0, 19, 0], [13, 0, 7, 0], [13, 0, 7, 1], [1, 0, 13, 0], [1, 0, 16, 0]],
+"nodes": {
+"1": {
+"gui_position": Vector2(360, 140),
+"type": "InputX"
+},
+"13": {
+"auto_connect": true,
+"gui_position": Vector2(460, 120),
+"noise": SubResource("ZN_FastNoiseLite_ssigp"),
+"type": "FastNoise3D"
+},
+"15": {
+"b": 1.0,
+"gui_position": Vector2(920, 160),
+"threshold": 0.01,
+"type": "Select"
+},
+"16": {
+"auto_connect": true,
+"gui_position": Vector2(460, 260),
+"noise": SubResource("ZN_FastNoiseLite_7wrnd"),
+"type": "FastNoise3D"
+},
+"17": {
+"gui_position": Vector2(660, 260),
+"type": "Multiply"
+},
+"18": {
+"a": 0.0,
+"b": 1.0,
+"gui_position": Vector2(780, 240),
+"threshold": 0.01,
+"type": "Select"
+},
+"19": {
+"gui_position": Vector2(1080, 160),
+"type": "OutputType"
+},
+"2": {
+"gui_position": Vector2(360, 280),
+"type": "InputY"
+},
+"3": {
+"gui_position": Vector2(360, 200),
+"type": "InputZ"
+},
+"7": {
+"gui_position": Vector2(640, 140),
+"type": "Multiply"
+}
+},
+"version": 2
+}

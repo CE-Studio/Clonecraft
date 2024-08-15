@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpufysahna7oj"]
+
+[ext_resource type="Texture2D" uid="uid://cq111562ajry" path="res://textures/playleft.png" id="1_i6uqg"]
+[ext_resource type="Script" path="res://gui/modPckItem.gd" id="1_o4pxs"]
+[ext_resource type="Texture2D" uid="uid://b3dmd6r5y80je" path="res://textures/play.png" id="2_cc1r6"]
+
+[node name="modPckItem" type="Button"]
+custom_minimum_size = Vector2(0, 50)
+size_flags_horizontal = 3
+text = "  Mod name  "
+script = ExtResource("1_o4pxs")
+
+[node name="<" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -5.0
+offset_right = 10.0
+offset_bottom = 5.0
+grow_vertical = 2
+disabled = true
+icon = ExtResource("1_i6uqg")
+
+[node name=">" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("2_cc1r6")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="<" to="." method="_on_off_pressed"]
+[connection signal="pressed" from=">" to="." method="_on_on_pressed"]

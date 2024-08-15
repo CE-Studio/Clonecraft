@@ -1,4 +1,7 @@
 
+
+static var caves:VoxelGeneratorGraph = load("res://mods/clonecraft/caves.tres")
+
 class gen:
 	const MARGIN = 5
 
@@ -79,7 +82,12 @@ class gen:
 		blit(buf)
 
 
-func _generate_block(buf:VoxelBuffer, rpos:Vector3i, _lod:int) -> void:
+func _generate_block(buf:VoxelBuffer, rpos:Vector3i, lod:int) -> void:
 	var h:gen = gen.new()
-	h._generate_block(buf, rpos, _lod)
-	#h.free()
+	h._generate_block(buf, rpos, lod)
+	var cavebuf = VoxelBuffer.new()
+	var bufsize = buf.get_size()
+	cavebuf.create(bufsize.x, bufsize.y, bufsize.z)
+	caves.generate_block(cavebuf, rpos, lod)
+	var t := buf.get_voxel_tool()
+	t.paste_masked(Vector3i.ZERO, cavebuf, 1 << VoxelBuffer.CHANNEL_TYPE, VoxelBuffer.CHANNEL_TYPE, 1)

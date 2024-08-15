@@ -1,0 +1,2689 @@
+# PixelForge Font File
+format_version: 1.0
+
+line_gap: 1
+
+space_width: 2
+
+creator_name: Unknown
+font_family_name: ClarenceOS Terminal NotMono
+font_sub_family_name: Regular
+version: Version 1.0
+font_url: 
+license: 
+license_url: 
+
+last_exported_path: 
+
+num_glyphs: 534
+glyphs:
+	33:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 3, 0 4, 0 5, 0 6, 
+	34:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 0 8, 2 7, 2 8, 
+	35:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 4, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 2 1, 2 4, 3 0, 3 1, 3 2, 3 3, 3 4, 3 5, 4 1, 4 4, 
+	36:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 0 5, 1 0, 1 3, 1 6, 2 -1, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 2 7, 3 0, 3 2, 3 6, 4 1, 4 6, 
+	37:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 5, 0 6, 1 1, 1 2, 1 5, 1 6, 2 3, 3 0, 3 1, 3 4, 3 5, 4 0, 4 1, 4 6, 
+	38:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 5, 1 0, 1 4, 1 6, 2 1, 2 3, 2 5, 3 2, 4 0, 4 1, 4 3, 
+	39:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 8, 1 7, 1 8, 
+	40:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 1, 1 5, 2 0, 2 6, 
+	41:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 1, 1 5, 2 2, 2 3, 2 4, 
+	42:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 3, 0 5, 1 2, 1 3, 1 4, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 2, 3 3, 3 4, 4 1, 4 3, 4 5, 
+	43:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 3, 1 4, 2 3, 
+	44:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 1 -1, 1 0, 
+	45:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 2 3, 
+	46:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 
+	47:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 1, 1 2, 2 3, 3 4, 3 5, 4 6, 
+	48:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 2, 1 6, 2 0, 2 3, 2 6, 3 0, 3 4, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	49:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 4 0, 4 1, 
+	50:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 6, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 0, 4 3, 4 4, 4 5, 4 6, 
+	51:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 0, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	52:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 0 5, 1 3, 2 3, 3 3, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	53:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 4, 0 5, 0 6, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 0, 4 1, 4 2, 4 3, 4 6, 
+	54:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 4 0, 4 1, 4 2, 4 3, 
+	55:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 6, 2 6, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	56:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 5, 1 0, 1 4, 1 6, 2 0, 2 4, 2 6, 3 0, 3 4, 3 6, 4 1, 4 2, 4 3, 4 5, 
+	57:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 4, 0 5, 0 6, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	58:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 4, 0 5, 
+	59:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 1 -1, 1 0, 1 4, 
+	60:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 2 2, 2 4, 3 1, 3 5, 4 1, 4 5, 
+	61:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 2, 1 4, 2 2, 2 4, 
+	62:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 5, 1 1, 1 5, 2 2, 2 4, 3 2, 3 4, 4 3, 
+	63:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 0, 1 2, 1 3, 1 6, 2 3, 2 6, 3 4, 3 5, 
+	64:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 2, 2 3, 2 4, 2 6, 3 0, 3 2, 3 3, 3 4, 3 6, 4 3, 4 4, 4 5, 
+	65:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 1 3, 1 6, 2 3, 2 6, 3 3, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	66:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 1, 4 2, 4 4, 4 5, 
+	67:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 6, 3 0, 3 6, 4 0, 4 6, 
+	68:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 6, 2 0, 2 6, 3 0, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	69:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 4, 1 6, 2 0, 2 4, 2 6, 3 0, 3 4, 3 6, 4 0, 4 6, 
+	70:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 4, 1 6, 2 4, 2 6, 3 4, 3 6, 4 6, 
+	71:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 1, 4 2, 4 6, 
+	72:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 3, 2 3, 3 3, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	73:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 6, 4 0, 4 6, 
+	74:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 0, 2 0, 2 6, 3 0, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	75:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 3, 1 4, 2 2, 2 4, 3 1, 3 5, 4 0, 4 6, 
+	76:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 2 0, 3 0, 4 0, 
+	77:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 5, 2 4, 3 5, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	78:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 5, 2 4, 3 3, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	79:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 6, 3 0, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	80:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 3, 1 6, 2 3, 2 6, 3 3, 3 6, 4 4, 4 5, 
+	81:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 2, 2 6, 3 1, 3 6, 4 0, 4 2, 4 3, 4 4, 4 5, 
+	82:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 3, 1 6, 2 2, 2 3, 2 6, 3 1, 3 3, 3 6, 4 0, 4 4, 4 5, 
+	83:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 0 5, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 2, 3 6, 4 1, 4 6, 
+	84:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 6, 4 6, 
+	85:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 2 0, 3 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	86:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 0 5, 0 6, 1 1, 2 0, 3 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	87:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 1, 2 2, 3 1, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	88:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 5, 0 6, 1 2, 1 4, 2 3, 3 2, 3 4, 4 0, 4 1, 4 5, 4 6, 
+	89:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 0 6, 1 3, 2 0, 2 1, 2 2, 3 3, 4 4, 4 5, 4 6, 
+	90:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 6, 1 0, 1 2, 1 6, 2 0, 2 3, 2 6, 3 0, 3 4, 3 6, 4 0, 4 5, 4 6, 
+	91:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 6, 2 0, 2 6, 
+	92:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 4, 1 5, 2 3, 3 1, 3 2, 4 0, 
+	93:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 
+	94:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 4, 1 5, 2 6, 3 4, 3 5, 4 2, 4 3, 
+	95:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 0, 2 0, 3 0, 4 0, 
+	96:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 5, 
+	97:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 0, 1 3, 1 5, 2 0, 2 3, 2 5, 3 0, 3 3, 3 5, 4 0, 4 1, 4 2, 4 3, 4 4, 
+	98:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 3, 2 0, 2 3, 3 0, 3 3, 4 1, 4 2, 
+	99:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 2 0, 2 4, 3 0, 3 4, 4 1, 4 3, 
+	100:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 0, 1 3, 2 0, 2 3, 3 0, 3 3, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	101:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 3 0, 3 2, 3 4, 4 0, 4 2, 4 3, 
+	102:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 3, 1 5, 2 3, 2 5, 3 5, 4 4, 
+	103:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 2, 0 3, 1 -1, 1 1, 1 4, 2 -1, 2 1, 2 4, 3 -1, 3 1, 3 4, 4 0, 4 1, 4 2, 4 3, 
+	104:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 3, 2 3, 3 3, 4 0, 4 1, 4 2, 
+	105:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 5, 1 3, 
+	106:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 1 -1, 2 -1, 3 -1, 4 0, 4 1, 4 2, 4 3, 4 5, 
+	107:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 2, 2 1, 2 3, 3 0, 3 4, 
+	108:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 
+	109:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 4, 2 0, 2 1, 2 2, 2 3, 3 4, 4 0, 4 1, 4 2, 4 3, 
+	110:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 4, 2 4, 3 4, 4 0, 4 1, 4 2, 4 3, 
+	111:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 2 0, 2 4, 3 0, 3 4, 4 1, 4 2, 4 3, 
+	112:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 0 3, 0 4, 1 1, 1 4, 2 1, 2 4, 3 1, 3 4, 4 2, 4 3, 
+	113:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 1, 1 4, 2 1, 2 4, 3 1, 3 4, 4 -1, 4 0, 4 1, 4 2, 4 3, 4 4, 5 -1, 
+	114:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 3, 2 4, 3 4, 4 3, 
+	115:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 3 0, 3 2, 3 4, 4 1, 4 4, 
+	116:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 4, 
+	117:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 2 0, 3 0, 4 1, 4 2, 4 3, 
+	118:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 1, 2 0, 3 1, 4 2, 4 3, 
+	119:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 2 1, 2 2, 2 3, 2 4, 3 0, 4 1, 4 2, 4 3, 4 4, 
+	120:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 1, 1 3, 2 2, 3 1, 3 3, 4 0, 4 4, 
+	121:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 -1, 1 1, 2 -1, 2 1, 3 -1, 3 1, 4 0, 4 1, 4 2, 4 3, 4 4, 
+	122:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 0, 1 1, 1 4, 2 0, 2 2, 2 4, 3 0, 3 3, 3 4, 4 0, 4 4, 
+	123:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 0, 1 1, 1 2, 1 4, 1 5, 1 6, 2 0, 2 6, 
+	124:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 
+	125:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 0, 1 1, 1 2, 1 4, 1 5, 1 6, 2 2, 2 3, 2 4, 
+	126:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 4, 2 3, 3 2, 4 3, 
+	161:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 6, 
+	162:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 1, 1 3, 1 4, 2 1, 2 3, 
+	163:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 3, 2 6, 3 0, 3 6, 4 0, 4 5, 
+	164:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 1, 1 2, 1 3, 2 1, 2 3, 3 1, 3 2, 3 3, 4 0, 4 4, 
+	165:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 3, 0 5, 0 6, 1 1, 1 3, 1 4, 2 0, 2 1, 2 2, 2 3, 3 1, 3 3, 3 4, 4 1, 4 3, 4 5, 4 6, 
+	166:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 4, 0 5, 0 6, 
+	167:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 4, 0 5, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 2 6, 3 0, 3 2, 3 4, 3 6, 4 1, 4 2, 4 3, 4 6, 
+	168:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 2 6, 
+	169:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 1, 1 2, 1 3, 1 4, 2 0, 2 1, 2 3, 2 4, 3 0, 3 1, 3 3, 3 4, 4 1, 4 2, 4 3, 
+	170:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 1 6, 2 2, 2 4, 2 6, 3 2, 3 3, 3 4, 3 5, 
+	171:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 3 3, 4 2, 4 4, 
+	172:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 2 3, 3 3, 4 1, 4 2, 4 3, 
+	173:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 
+	174:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 2 0, 2 1, 2 2, 2 4, 3 0, 3 2, 3 4, 4 1, 4 2, 4 3, 
+	175:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 6, 2 6, 3 6, 4 6, 
+	176:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 0 6, 1 4, 1 6, 2 4, 2 5, 2 6, 
+	177:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 4, 1 1, 1 3, 1 4, 1 5, 2 1, 2 4, 
+	178:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 0 6, 1 3, 1 5, 1 6, 
+	179:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 6, 1 3, 1 5, 1 6, 2 3, 2 4, 2 5, 2 6, 
+	180:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 6, 
+	181:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 0 3, 1 1, 2 0, 3 1, 4 0, 4 1, 4 2, 4 3, 
+	182:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 1 3, 1 4, 1 5, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	183:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 
+	184:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 1, 1 -1, 1 0, 
+	185:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 7, 1 4, 1 5, 1 6, 1 7, 2 4, 
+	186:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 5, 1 7, 2 6, 
+	187:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 3, 3 2, 3 4, 4 3, 
+	188:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 6, 1 0, 1 4, 1 5, 1 6, 2 1, 2 2, 2 4, 3 3, 4 1, 4 2, 4 4, 4 5, 5 1, 5 6, 6 0, 6 1, 6 2, 
+	189:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 6, 1 0, 1 4, 1 5, 1 6, 2 1, 2 2, 2 4, 3 3, 4 4, 4 5, 5 0, 5 1, 5 3, 5 6, 6 0, 6 2, 6 3, 
+	190:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 6, 1 3, 1 5, 1 6, 2 0, 2 3, 2 4, 2 5, 2 6, 3 1, 3 2, 4 3, 5 1, 5 2, 5 4, 5 5, 6 1, 6 6, 7 0, 7 1, 7 2, 
+	191:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 0, 1 3, 2 0, 2 3, 2 4, 2 6, 3 0, 
+	192:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 2, 1 4, 1 7, 2 2, 2 4, 2 6, 3 2, 3 4, 4 0, 4 1, 4 2, 4 3, 
+	193:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 2, 1 4, 2 2, 2 4, 2 6, 3 2, 3 4, 3 7, 4 0, 4 1, 4 2, 4 3, 
+	194:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 2, 1 4, 1 6, 2 2, 2 4, 2 7, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 
+	195:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 2, 1 4, 1 6, 2 2, 2 4, 2 7, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 4 7, 
+	196:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 2, 1 4, 1 6, 2 2, 2 4, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 
+	197:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 2, 1 4, 1 6, 2 2, 2 4, 2 5, 2 7, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 
+	198:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 1 3, 1 6, 2 3, 2 6, 3 0, 3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 4 0, 4 3, 4 6, 
+	199:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 0 5, 1 1, 1 6, 2 -1, 2 1, 2 6, 3 -1, 3 0, 3 1, 3 6, 4 1, 4 6, 
+	200:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 0, 1 2, 1 4, 1 7, 2 0, 2 2, 2 4, 2 6, 3 0, 3 2, 3 4, 4 0, 4 4, 
+	201:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 2 6, 3 0, 3 2, 3 4, 3 7, 4 0, 4 4, 
+	202:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 2 7, 3 0, 3 2, 3 4, 3 6, 4 0, 4 4, 
+	203:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 3 0, 3 2, 3 4, 3 6, 4 0, 4 4, 
+	204:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 0, 1 4, 1 7, 2 0, 2 1, 2 2, 2 3, 2 4, 2 6, 3 0, 3 4, 4 0, 4 4, 
+	205:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 0, 1 4, 2 0, 2 1, 2 2, 2 3, 2 4, 2 6, 3 0, 3 4, 3 7, 4 0, 4 4, 
+	206:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 0, 1 4, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 7, 3 0, 3 4, 3 6, 4 0, 4 4, 
+	207:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 0, 1 4, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 3 0, 3 4, 3 6, 4 0, 4 4, 
+	208:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 0, 2 3, 2 6, 3 0, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	209:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 3, 1 6, 2 2, 2 7, 3 1, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 7, 
+	210:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 5, 1 7, 2 0, 2 5, 2 6, 3 0, 3 5, 4 1, 4 2, 4 3, 4 4, 
+	211:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 5, 2 0, 2 5, 2 6, 3 0, 3 5, 3 7, 4 1, 4 2, 4 3, 4 4, 
+	212:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 5, 1 6, 2 0, 2 5, 2 7, 3 0, 3 5, 3 6, 4 1, 4 2, 4 3, 4 4, 
+	213:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 5, 1 6, 2 0, 2 5, 2 7, 3 0, 3 5, 3 6, 4 1, 4 2, 4 3, 4 4, 4 7, 
+	214:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 5, 1 7, 2 0, 2 5, 3 0, 3 5, 4 1, 4 2, 4 3, 4 4, 4 7, 
+	215:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 3, 2 2, 2 4, 
+	216:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 2, 2 3, 2 6, 3 0, 3 3, 3 4, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 5 6, 
+	217:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 7, 2 0, 2 6, 3 0, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	218:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 2 0, 2 6, 3 0, 3 7, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	219:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 7, 3 0, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	220:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 7, 2 0, 3 0, 3 7, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	221:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 3, 2 0, 2 1, 2 2, 2 6, 3 3, 3 7, 4 4, 
+	222:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 1, 1 5, 2 1, 2 5, 3 2, 3 3, 3 4, 
+	223:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 1 6, 2 0, 2 3, 2 6, 3 0, 3 2, 3 4, 3 6, 4 1, 4 5, 
+	224:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 2, 1 4, 1 7, 2 0, 2 2, 2 4, 2 6, 3 0, 3 2, 3 4, 4 0, 4 1, 4 2, 4 3, 
+	225:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 2 6, 3 0, 3 2, 3 4, 3 7, 4 0, 4 1, 4 2, 4 3, 
+	226:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 2 7, 3 0, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 
+	227:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 2 7, 3 0, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 4 7, 
+	228:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 3 0, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 
+	229:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 2 5, 2 7, 3 0, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 
+	230:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 2, 1 4, 2 0, 2 1, 2 2, 2 3, 3 0, 3 2, 3 4, 4 0, 4 2, 4 3, 
+	231:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 -1, 1 1, 1 5, 2 -1, 2 0, 2 1, 2 5, 3 1, 3 5, 4 2, 4 4, 
+	232:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 2, 1 4, 1 7, 2 0, 2 2, 2 4, 2 6, 3 0, 3 2, 3 4, 4 0, 4 2, 4 3, 
+	233:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 2 6, 3 0, 3 2, 3 4, 3 7, 4 0, 4 2, 4 3, 
+	234:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 2 7, 3 0, 3 2, 3 4, 3 6, 4 0, 4 2, 4 3, 
+	235:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 3 0, 3 2, 3 4, 3 6, 4 0, 4 2, 4 3, 
+	236:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 0, 1 1, 1 2, 1 3, 1 5, 2 3, 
+	237:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 5, 1 3, 1 6, 
+	238:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 0, 1 1, 1 2, 1 3, 1 6, 2 3, 2 5, 
+	239:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 0, 1 1, 1 2, 1 3, 2 3, 2 5, 
+	240:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 0, 1 3, 1 5, 1 7, 2 0, 2 3, 2 6, 3 0, 3 3, 3 5, 3 7, 4 1, 4 2, 4 3, 4 4, 
+	241:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 4, 1 6, 2 4, 2 7, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 4 7, 
+	242:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 1 7, 2 0, 2 4, 2 6, 3 0, 3 4, 4 1, 4 2, 4 3, 
+	243:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 2 0, 2 4, 2 6, 3 0, 3 4, 3 7, 4 1, 4 2, 4 3, 
+	244:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 1 6, 2 0, 2 4, 2 7, 3 0, 3 4, 3 6, 4 1, 4 2, 4 3, 
+	245:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 1 6, 2 0, 2 4, 2 7, 3 0, 3 4, 3 6, 4 1, 4 2, 4 3, 4 7, 
+	246:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 1 6, 2 0, 2 4, 3 0, 3 4, 3 6, 4 1, 4 2, 4 3, 
+	247:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 1, 1 3, 1 5, 2 3, 
+	248:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 -1, 1 0, 1 4, 2 0, 2 1, 2 2, 2 3, 2 4, 3 0, 3 4, 3 5, 4 1, 4 2, 4 3, 
+	249:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 7, 2 0, 2 6, 3 0, 4 0, 4 1, 4 2, 4 3, 4 4, 
+	250:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 2 0, 2 6, 3 0, 3 7, 4 0, 4 1, 4 2, 4 3, 4 4, 
+	251:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 6, 2 0, 2 7, 3 0, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 
+	252:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 6, 2 0, 3 0, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 
+	253:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 -1, 1 1, 2 -1, 2 1, 2 6, 3 -1, 3 1, 3 7, 4 0, 4 1, 4 2, 4 3, 4 4, 
+	254:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 2, 1 4, 2 3, 
+	255:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 -1, 1 1, 1 6, 2 -1, 2 1, 3 -1, 3 1, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 
+	305:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 3, 
+	321:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 0, 2 3, 3 0, 4 0, 5 0, 
+	322:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 6, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 3, 
+	338:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 4, 3 6, 4 0, 4 6, 
+	339:
+		advance: 10
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 2 0, 2 4, 3 0, 3 4, 4 1, 4 2, 4 3, 5 0, 5 2, 5 4, 6 0, 6 2, 6 4, 7 0, 7 2, 7 4, 8 0, 8 2, 8 3, 
+	352:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 0 5, 1 0, 1 3, 1 6, 1 8, 2 0, 2 3, 2 6, 2 7, 3 0, 3 2, 3 6, 3 8, 4 1, 4 6, 
+	353:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 1 0, 1 2, 1 4, 1 6, 2 0, 2 2, 2 4, 2 5, 3 0, 3 2, 3 4, 3 6, 4 1, 4 4, 
+	376:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 0 6, 1 3, 1 8, 2 0, 2 1, 2 2, 3 3, 3 8, 4 4, 4 5, 4 6, 
+	381:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 6, 1 0, 1 2, 1 6, 1 8, 2 0, 2 3, 2 6, 2 7, 3 0, 3 4, 3 6, 3 8, 4 0, 4 5, 4 6, 
+	382:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 0, 1 1, 1 4, 1 6, 2 0, 2 2, 2 4, 2 5, 3 0, 3 3, 3 4, 3 6, 4 0, 4 4, 
+	402:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 1 0, 1 1, 1 2, 1 3, 1 4, 2 3, 2 5, 3 3, 3 5, 4 5, 5 4, 
+	710:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 8, 2 7, 
+	711:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 8, 1 7, 2 8, 
+	713:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 8, 1 8, 2 8, 
+	728:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 8, 1 7, 2 7, 3 8, 
+	729:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 8, 
+	730:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 6, 1 8, 2 7, 
+	731:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 1 -1, 1 1, 
+	732:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 8, 2 7, 3 8, 
+	733:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 8, 3 7, 4 8, 
+	960:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 0, 1 1, 1 2, 1 3, 1 4, 2 4, 3 1, 3 2, 3 3, 3 4, 4 0, 4 4, 
+	8204:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 
+	8205:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 6, 1 0, 1 1, 1 2, 1 3, 1 5, 2 4, 2 6, 
+	8206:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 4, 2 3, 2 4, 2 5, 3 4, 
+	8207:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 3, 1 4, 1 5, 2 4, 3 0, 3 1, 3 2, 3 3, 3 4, 
+	8208:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 
+	8209:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 
+	8210:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 2 3, 3 3, 4 3, 
+	8211:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 2 3, 3 3, 
+	8212:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 2 3, 3 3, 4 3, 5 3, 
+	8213:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 2 3, 3 3, 4 3, 5 3, 6 3, 
+	8214:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 
+	8215:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 1 0, 1 2, 2 0, 2 2, 3 0, 3 2, 4 0, 4 2, 
+	8216:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 0 7, 1 7, 
+	8217:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 6, 1 7, 
+	8218:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 
+	8219:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 0 7, 1 6, 
+	8220:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 0 7, 1 7, 3 6, 3 7, 4 7, 
+	8221:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 6, 1 7, 3 6, 4 6, 4 7, 
+	8222:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 1 -1, 3 -1, 3 0, 4 -1, 
+	8223:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 6, 1 7, 3 7, 4 6, 4 7, 
+	8224:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 4, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 4, 4 4, 
+	8225:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 2, 1 4, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 2, 3 4, 4 2, 4 4, 
+	8226:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 1 2, 1 3, 1 4, 1 5, 2 2, 2 3, 2 4, 2 5, 3 3, 3 4, 
+	8227:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 0 5, 1 3, 1 4, 
+	8228:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 1 0, 1 1, 
+	8229:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 1 0, 1 1, 4 0, 4 1, 5 0, 5 1, 
+	8230:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 2 0, 4 0, 
+	8231:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 1 3, 1 4, 
+	8240:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 5, 0 6, 1 3, 2 0, 2 1, 2 4, 2 5, 2 6, 4 0, 4 1, 
+	8241:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 5, 0 6, 1 3, 2 0, 2 1, 2 4, 2 5, 2 6, 4 0, 4 1, 6 0, 6 1, 
+	8242:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 6, 2 7, 
+	8243:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 6, 2 7, 3 5, 4 6, 5 7, 
+	8244:
+		advance: 10
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 6, 2 7, 3 5, 4 6, 5 7, 6 5, 7 6, 8 7, 
+	8245:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 6, 2 5, 
+	8246:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 6, 2 5, 3 7, 4 6, 5 5, 
+	8247:
+		advance: 10
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 6, 2 5, 3 7, 4 6, 5 5, 6 7, 7 6, 8 5, 
+	8248:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 1 0, 2 -1, 
+	8249:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 
+	8250:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 3, 
+	8251:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 6, 1 1, 1 5, 2 2, 2 4, 3 0, 3 3, 3 6, 4 2, 4 4, 5 1, 5 5, 6 0, 6 3, 6 6, 
+	8252:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 3, 0 4, 0 5, 0 6, 2 0, 2 2, 2 3, 2 4, 2 5, 2 6, 
+	8253:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 0, 1 2, 1 3, 1 4, 1 5, 1 6, 2 3, 2 6, 3 4, 3 5, 
+	8254:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 7, 2 7, 3 7, 4 7, 
+	8255:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 -1, 2 -1, 3 -1, 4 0, 
+	8256:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 7, 2 7, 3 7, 4 6, 
+	8257:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 1 0, 2 -1, 2 1, 3 2, 
+	8258:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 1 1, 2 0, 2 2, 2 4, 2 6, 3 5, 4 0, 4 2, 4 4, 4 6, 5 1, 6 0, 6 2, 
+	8259:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 1 2, 1 3, 2 2, 2 3, 3 2, 3 3, 
+	8260:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 1, 1 2, 2 3, 3 4, 3 5, 4 6, 
+	8261:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 3, 1 6, 
+	8262:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 6, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 
+	8263:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 5, 1 3, 1 4, 3 0, 3 2, 3 5, 4 3, 4 4, 
+	8264:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 5, 1 3, 1 4, 3 0, 3 2, 3 3, 3 4, 3 5, 
+	8265:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 3, 0 4, 0 5, 2 0, 2 2, 2 5, 3 3, 3 4, 
+	8266:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 1 1, 1 3, 2 2, 2 3, 
+	8267:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 3, 3 4, 3 5, 3 6, 4 4, 4 5, 
+	8268:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 1 2, 1 3, 1 4, 1 5, 2 2, 2 3, 2 4, 2 5, 4 2, 4 3, 4 4, 4 5, 
+	8269:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 0 5, 2 2, 2 3, 2 4, 2 5, 3 2, 3 3, 3 4, 3 5, 4 3, 4 4, 
+	8270:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 1 1, 2 0, 2 2, 
+	8271:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 4, 1 -1, 
+	8272:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 -1, 1 7, 2 -1, 2 7, 3 -1, 3 7, 4 0, 4 6, 
+	8273:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 4, 0 6, 1 1, 1 5, 2 0, 2 2, 2 4, 2 6, 
+	8274:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 5, 1 3, 2 1, 2 4, 2 5, 2 6, 
+	8275:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 4, 2 4, 3 3, 4 2, 5 2, 6 3, 
+	8276:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 1 0, 2 0, 3 0, 4 -1, 
+	8277:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 3, 1 2, 1 3, 1 4, 2 1, 2 2, 2 3, 3 2, 3 4, 
+	8278:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 2, 1 3, 3 1, 3 2, 3 4, 3 5, 4 1, 4 2, 4 4, 4 5, 
+	8279:
+		advance: 13
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 6, 2 7, 3 5, 4 6, 5 7, 6 5, 7 6, 8 7, 9 5, 10 6, 11 7, 
+	8280:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 2 1, 2 5, 4 3, 
+	8281:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 5, 2 3, 4 1, 4 5, 
+	8282:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 4, 0 5, 1 1, 1 2, 1 4, 1 5, 
+	8283:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 1 3, 1 4, 3 0, 3 1, 3 6, 3 7, 4 0, 4 1, 4 6, 4 7, 6 3, 6 4, 7 3, 7 4, 
+	8284:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 1, 1 3, 1 5, 2 3, 3 0, 3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 4 3, 5 1, 5 3, 5 5, 6 3, 
+	8285:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 3, 0 5, 
+	8286:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 4, 0 6, 
+	8304:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 1 3, 1 6, 2 4, 2 5, 
+	8305:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 0 6, 
+	8308:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 0 6, 1 5, 2 3, 2 4, 2 5, 2 6, 
+	8309:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 5, 0 6, 1 3, 1 4, 1 6, 
+	8310:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 0 5, 1 3, 1 4, 1 6, 
+	8311:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 0 6, 1 5, 1 6, 
+	8312:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 6, 1 3, 1 5, 1 7, 2 4, 2 6, 
+	8313:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 4, 1 6, 2 3, 2 4, 2 5, 
+	8314:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 4, 1 5, 1 6, 2 5, 
+	8315:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 5, 2 5, 
+	8316:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 6, 1 4, 1 6, 2 4, 2 6, 
+	8317:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 1 3, 1 6, 
+	8318:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 6, 1 4, 1 5, 
+	8319:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 0 5, 0 6, 1 6, 2 6, 3 3, 3 4, 3 5, 
+	8320:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 1 -1, 1 2, 2 0, 2 1, 
+	8321:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 2, 1 -1, 1 0, 1 1, 1 2, 2 -1, 
+	8322:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 2, 1 -1, 1 1, 1 2, 
+	8323:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 2, 1 -1, 1 1, 1 2, 2 -1, 2 0, 2 1, 2 2, 
+	8324:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 1, 2 -1, 2 0, 2 1, 2 2, 
+	8325:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 1, 0 2, 1 -1, 1 0, 1 2, 
+	8326:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 1 -1, 1 0, 1 2, 
+	8327:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 2, 1 1, 1 2, 
+	8328:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 1 -1, 1 1, 1 3, 2 0, 2 2, 
+	8329:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 -1, 1 0, 1 1, 1 2, 
+	8330:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 -1, 1 0, 1 1, 2 0, 
+	8331:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 0, 2 0, 
+	8332:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 1, 1 -1, 1 1, 2 -1, 2 1, 
+	8333:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 1 -1, 1 2, 
+	8334:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 2, 1 0, 1 1, 
+	8336:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 -1, 1 1, 1 3, 2 -1, 2 1, 2 3, 3 -1, 3 0, 3 1, 3 2, 
+	8337:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 1 -1, 1 1, 1 3, 2 -1, 2 1, 2 3, 3 -1, 3 1, 3 2, 
+	8338:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 1 -1, 1 2, 2 -1, 2 2, 3 0, 3 1, 
+	8339:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 2, 0 3, 1 1, 2 -1, 2 0, 2 2, 2 3, 
+	8340:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 3, 1 -1, 1 1, 1 3, 2 -1, 2 1, 2 3, 3 0, 3 1, 3 2, 
+	8341:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 1 0, 2 -1, 2 0, 
+	8342:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 1 0, 2 -1, 2 1, 
+	8343:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 1 -1, 1 0, 1 1, 
+	8344:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 1 1, 2 0, 3 1, 4 -1, 4 0, 4 1, 
+	8345:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 1 1, 2 -1, 2 0, 
+	8346:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 1 0, 1 2, 2 1, 
+	8347:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 1, 1 0, 1 2, 
+	8348:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 1, 1 2, 2 -1, 2 1, 
+	8352:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 0 5, 0 6, 1 2, 1 7, 2 0, 2 1, 2 2, 2 3, 2 4, 2 7, 3 0, 3 2, 3 4, 3 7, 4 0, 4 2, 4 4, 
+	8353:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 -1, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 6, 3 -1, 3 0, 3 4, 3 5, 3 6, 3 7, 4 0, 4 1, 4 2, 4 3, 4 6, 5 0, 5 4, 5 5, 5 6, 5 7, 
+	8354:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 6, 3 0, 3 2, 3 6, 4 0, 4 3, 4 6, 5 2, 
+	8355:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 2, 2 4, 2 6, 3 4, 3 6, 4 6, 
+	8356:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 4, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 2, 2 4, 2 6, 3 0, 3 6, 4 0, 4 5, 
+	8357:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 -1, 1 0, 1 3, 2 0, 2 1, 2 2, 3 2, 3 3, 3 4, 4 0, 4 1, 4 2, 4 3, 
+	8358:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 5, 1 -1, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 1 7, 2 1, 2 4, 2 5, 2 6, 3 1, 3 2, 3 3, 3 5, 4 0, 4 1, 4 5, 5 -1, 5 0, 5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 5 7, 6 1, 6 5, 
+	8359:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 3, 1 6, 2 4, 2 5, 3 2, 4 1, 4 2, 4 3, 5 0, 5 2, 
+	8360:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 4, 1 6, 2 4, 2 6, 3 0, 3 1, 3 2, 3 3, 3 5, 5 0, 5 2, 5 3, 6 0, 6 1, 6 3, 
+	8361:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 5, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 1, 2 3, 2 5, 3 2, 3 3, 3 5, 4 1, 4 3, 4 5, 5 0, 5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 6 3, 6 5, 
+	8362:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 6, 3 0, 3 6, 4 0, 4 2, 4 3, 4 4, 4 5, 5 0, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 
+	8363:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 2 6, 3 0, 3 2, 3 3, 3 4, 3 5, 3 6, 3 7, 4 6, 
+	8364:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 2, 2 4, 2 6, 3 0, 3 6, 4 1, 4 5, 
+	8365:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 3, 3 2, 3 3, 3 4, 4 1, 4 3, 4 5, 5 0, 5 6, 
+	8366:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 1, 1 3, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 2, 3 4, 3 6, 4 6, 
+	8367:
+		advance: 10
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 0, 2 6, 3 0, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 6 -1, 6 0, 6 1, 6 2, 7 0, 7 2, 8 1, 
+	8368:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 1, 2 0, 2 3, 2 4, 3 1, 3 2, 3 5, 4 -1, 4 2, 4 3, 4 4, 5 0, 5 1, 
+	8369:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 5, 1 -1, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 1 7, 2 1, 2 3, 2 5, 2 7, 3 1, 3 3, 3 5, 3 7, 4 2, 4 3, 4 4, 4 5, 4 6, 5 3, 5 5, 
+	8370:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 -1, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 2 7, 3 0, 3 3, 3 6, 4 1, 4 2, 4 6, 
+	8371:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 2 2, 2 4, 2 6, 3 2, 3 4, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 5 2, 5 4, 
+	8372:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 5, 1 0, 1 1, 1 2, 1 5, 1 6, 2 -1, 2 1, 2 3, 2 5, 2 7, 3 -1, 3 1, 3 3, 3 5, 3 7, 4 0, 4 1, 4 4, 4 5, 4 6, 5 1, 5 5, 
+	8373:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 6, 3 -1, 3 0, 3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 3 7, 4 0, 4 6, 
+	8374:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 6, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 3, 3 3, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 5 0, 5 3, 
+	8375:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 4, 0 5, 1 0, 1 1, 1 3, 1 6, 2 -1, 2 0, 2 1, 2 3, 2 6, 3 0, 3 1, 3 3, 3 6, 4 -1, 4 0, 4 1, 4 3, 4 6, 5 1, 5 2, 5 5, 5 6, 5 7, 
+	8376:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 6, 1 4, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 6, 3 4, 3 6, 4 4, 4 6, 
+	8377:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 5, 0 7, 1 2, 1 4, 1 5, 1 6, 1 7, 2 1, 2 5, 2 7, 3 0, 
+	8378:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 0, 2 3, 2 5, 3 0, 4 1, 4 2, 
+	8379:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 1, 1 4, 1 6, 2 1, 2 2, 2 3, 2 4, 2 5, 3 0, 3 2, 3 4, 4 0, 4 1, 4 4, 5 0, 5 2, 5 4, 6 2, 6 3, 
+	8380:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 1 3, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 3, 4 0, 4 1, 4 2, 
+	8381:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 3, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 1, 2 3, 2 6, 3 3, 3 6, 4 4, 4 5, 
+	8382:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 3, 0 4, 0 5, 1 0, 1 1, 1 6, 2 0, 2 4, 2 5, 2 6, 2 7, 3 0, 3 6, 4 0, 4 4, 4 5, 4 6, 4 7, 5 0, 5 6, 
+	8383:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 5, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 1, 2 3, 2 5, 3 0, 3 1, 3 3, 3 5, 3 6, 4 2, 4 4, 
+	8400:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 5, 1 6, 2 5, 3 5, 
+	8401:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 5, 2 5, 2 6, 3 5, 
+	8402:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 
+	8403:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 
+	8404:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 0 6, 0 7, 1 5, 1 6, 2 5, 2 7, 3 7, 4 7, 5 6, 
+	8405:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 7, 2 7, 3 5, 3 7, 4 5, 4 6, 5 5, 5 6, 5 7, 
+	8406:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 5, 1 6, 1 7, 2 6, 3 6, 4 6, 
+	8407:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 6, 2 6, 3 5, 3 6, 3 7, 4 6, 
+	8408:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 2 3, 
+	8409:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 2 3, 2 4, 
+	8410:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 2 2, 2 3, 
+	8411:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 2 7, 4 7, 
+	8448:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 4, 0 6, 1 1, 1 3, 1 5, 1 6, 2 2, 2 3, 2 4, 2 5, 3 3, 4 0, 4 1, 4 2, 4 4, 5 0, 5 2, 5 5, 6 0, 6 2, 6 6, 
+	8449:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 4, 0 6, 1 1, 1 3, 1 5, 1 6, 2 2, 2 3, 2 4, 2 5, 3 3, 4 0, 4 2, 4 4, 5 1, 5 3, 5 5, 6 6, 
+	8450:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 6, 4 0, 4 6, 
+	8451:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 4, 1 6, 2 5, 3 1, 3 2, 3 3, 3 4, 4 0, 4 5, 5 0, 5 5, 
+	8452:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 1 2, 1 5, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 2, 3 5, 4 0, 
+	8453:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 0 5, 0 6, 1 1, 1 2, 1 4, 1 6, 2 3, 3 0, 3 1, 3 2, 3 4, 3 5, 4 0, 4 2, 4 6, 5 0, 5 1, 5 2, 
+	8454:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 0 5, 0 6, 1 1, 1 2, 1 4, 1 6, 2 3, 3 1, 3 2, 3 4, 3 5, 4 0, 4 6, 5 0, 5 1, 5 2, 
+	8455:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 4, 0 5, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 6, 4 1, 4 5, 
+	8456:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 3, 1 0, 1 4, 2 0, 2 2, 2 4, 3 0, 3 2, 3 4, 4 1, 4 2, 4 3, 
+	8457:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 4, 1 6, 2 5, 3 0, 3 1, 3 2, 3 3, 3 4, 3 5, 4 3, 4 5, 5 5, 
+	8458:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 0, 1 2, 1 4, 2 -1, 2 1, 2 2, 2 4, 3 -1, 3 0, 3 1, 3 2, 3 3, 3 4, 4 2, 5 3, 
+	8459:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 3, 2 6, 3 3, 4 1, 4 2, 4 3, 4 4, 4 5, 5 0, 5 6, 
+	8460:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 4, 0 5, 0 6, 1 1, 1 2, 1 4, 1 6, 2 4, 2 6, 3 -1, 3 4, 4 0, 4 1, 4 2, 4 3, 
+	8461:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 3, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 5 0, 5 6, 6 0, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 
+	8462:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 1 2, 1 3, 1 4, 1 5, 2 4, 2 6, 2 7, 3 4, 4 0, 4 1, 4 4, 5 2, 5 3, 
+	8463:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 5, 1 2, 1 3, 1 4, 1 5, 2 4, 2 6, 2 7, 3 4, 3 6, 4 0, 4 1, 4 4, 4 6, 5 2, 5 3, 
+	8464:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 0, 1 6, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 6, 4 7, 
+	8465:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 5, 1 1, 1 6, 2 1, 2 6, 3 0, 3 6, 4 0, 4 3, 4 4, 4 5, 4 7, 5 1, 5 2, 
+	8466:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 6, 3 0, 4 0, 5 1, 5 2, 
+	8467:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 3, 2 6, 3 0, 3 4, 3 5, 
+	8468:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 5, 3 0, 3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 4 0, 4 3, 4 5, 5 1, 5 2, 5 5, 
+	8469:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 4, 1 6, 2 3, 2 5, 3 2, 3 4, 4 1, 4 3, 5 0, 5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 
+	8470:
+		advance: 10
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 4, 3 3, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 5 6, 6 1, 6 4, 7 1, 7 3, 7 5, 8 1, 8 4, 
+	8471:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 4, 2 0, 2 1, 2 2, 2 3, 2 4, 3 0, 3 2, 3 3, 3 4, 4 1, 4 2, 4 3, 
+	8472:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 6, 1 0, 1 5, 2 1, 2 2, 2 3, 2 4, 2 6, 3 6, 4 3, 4 6, 5 4, 5 5, 
+	8473:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 2, 3 6, 4 2, 4 6, 5 2, 5 3, 5 4, 5 5, 5 6, 6 2, 6 6, 7 3, 7 4, 7 5, 
+	8474:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 6, 4 0, 4 2, 4 6, 5 0, 5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 6 0, 6 6, 7 -1, 7 1, 7 2, 7 3, 7 4, 7 5, 
+	8475:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 3, 2 6, 3 3, 3 6, 4 1, 4 2, 4 4, 4 5, 5 0, 6 1, 
+	8476:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 5, 0 6, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 3, 3 6, 4 0, 4 1, 4 2, 4 3, 4 6, 5 0, 5 3, 5 4, 5 5, 6 0, 6 1, 
+	8477:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 3, 3 6, 4 2, 4 3, 4 6, 5 0, 5 1, 5 3, 5 4, 5 5, 5 6, 6 0, 6 2, 6 3, 6 6, 7 0, 7 1, 7 4, 7 5, 
+	8478:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 3, 1 6, 2 3, 2 6, 3 0, 3 2, 3 3, 3 6, 4 1, 4 4, 4 5, 5 0, 5 2, 
+	8479:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 0 8, 1 3, 1 6, 1 8, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 2 7, 2 8, 3 1, 3 3, 3 6, 4 0, 4 4, 4 5, 
+	8480:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 6, 1 5, 1 7, 3 4, 3 5, 3 6, 3 7, 4 6, 5 4, 5 5, 5 6, 5 7, 
+	8481:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 6, 3 0, 3 1, 3 2, 3 3, 3 4, 4 0, 4 2, 4 4, 6 0, 6 1, 6 2, 6 3, 6 4, 7 0, 
+	8482:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 7, 1 4, 1 5, 1 6, 1 7, 2 7, 4 4, 4 5, 4 6, 4 7, 5 6, 6 4, 6 5, 6 6, 6 7, 
+	8483:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 3, 0 4, 0 5, 0 6, 1 1, 1 2, 2 0, 2 3, 2 4, 2 7, 3 1, 3 5, 3 6, 3 7, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	8484:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 6, 1 0, 1 2, 1 6, 2 0, 2 1, 2 3, 2 6, 3 0, 3 2, 3 4, 3 6, 4 0, 4 3, 4 5, 4 6, 5 0, 5 4, 5 6, 6 0, 6 5, 6 6, 
+	8485:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 2, 0 5, 0 7, 1 -1, 1 2, 1 3, 1 5, 1 6, 1 7, 2 -1, 2 2, 2 4, 2 5, 2 7, 3 0, 3 1, 
+	8486:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 3, 0 4, 1 0, 1 1, 1 5, 2 0, 2 6, 3 6, 4 0, 4 6, 5 0, 5 1, 5 5, 6 0, 6 2, 6 3, 6 4, 
+	8487:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 0 6, 1 1, 1 5, 1 6, 2 0, 2 6, 3 0, 4 0, 4 6, 5 1, 5 5, 5 6, 6 2, 6 3, 6 4, 6 6, 
+	8488:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 6, 0 7, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 4, 3 6, 4 1, 4 2, 4 5, 
+	8489:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 0, 1 1, 1 2, 1 3, 
+	8490:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 3, 1 4, 2 2, 2 4, 3 1, 3 5, 4 0, 4 6, 
+	8491:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 1 3, 1 6, 1 7, 2 3, 2 6, 2 8, 3 3, 3 6, 3 7, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	8492:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 1, 4 2, 4 4, 4 5, 
+	8493:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 1 0, 1 2, 1 5, 2 0, 2 3, 2 4, 2 5, 2 6, 3 0, 3 6, 4 1, 4 5, 4 6, 5 5, 
+	8494:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 1 1, 1 2, 1 3, 1 4, 2 0, 2 2, 2 4, 3 0, 3 2, 3 4, 4 0, 4 2, 4 3, 4 4, 5 2, 5 3, 
+	8495:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 3 2, 3 3, 3 4, 
+	8496:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 4, 0 5, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 6, 4 1, 4 4, 4 5, 
+	8497:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 5, 1 0, 1 6, 2 0, 2 3, 2 6, 3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 4 3, 4 6, 5 3, 5 6, 5 7, 
+	8498:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 0, 1 2, 2 0, 2 2, 3 0, 3 2, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	8531:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 0 6, 1 1, 1 2, 1 4, 1 5, 1 6, 2 3, 2 4, 3 4, 3 5, 4 0, 4 2, 4 4, 4 6, 5 1, 5 3, 
+	8532:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 0 7, 1 1, 1 2, 1 4, 1 5, 1 7, 2 3, 2 4, 2 6, 3 4, 3 5, 4 0, 4 2, 4 4, 4 6, 5 1, 5 3, 
+	8539:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 0 6, 1 1, 1 2, 1 4, 1 5, 1 6, 2 3, 2 4, 3 4, 3 5, 4 1, 4 3, 4 6, 5 0, 5 2, 5 4, 6 1, 6 3, 
+	8540:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 5, 0 7, 1 0, 1 4, 1 6, 2 1, 2 2, 3 3, 4 4, 4 5, 5 1, 5 3, 5 6, 6 0, 6 2, 6 4, 7 1, 7 3, 
+	8541:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 5, 0 6, 0 7, 1 0, 1 3, 1 5, 1 7, 2 1, 2 2, 2 4, 2 7, 3 3, 4 4, 4 5, 5 1, 5 3, 5 6, 6 0, 6 2, 6 4, 7 1, 7 3, 
+	8542:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 6, 1 0, 1 4, 1 6, 2 1, 2 2, 2 5, 2 6, 3 3, 4 4, 4 5, 5 1, 5 3, 5 6, 6 0, 6 2, 6 4, 7 1, 7 3, 
+	8592:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 3, 1 4, 2 1, 2 3, 2 5, 3 3, 4 3, 
+	8593:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 5, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 5, 4 4, 
+	8594:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 2 1, 2 3, 2 5, 3 2, 3 3, 3 4, 4 3, 
+	8595:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 1 1, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 1, 4 2, 
+	8596:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 3, 1 4, 2 1, 2 3, 2 5, 3 3, 4 1, 4 3, 4 5, 5 2, 5 3, 5 4, 6 3, 
+	8597:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 1, 1 5, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 1, 3 5, 4 2, 4 4, 
+	8599:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 1, 2 2, 3 3, 3 6, 4 4, 4 6, 5 5, 5 6, 6 3, 6 4, 6 5, 6 6, 
+	8600:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 5, 2 4, 3 0, 3 3, 4 0, 4 2, 5 0, 5 1, 6 0, 6 1, 6 2, 6 3, 
+	8616:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 0 5, 1 0, 1 2, 1 6, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 2 7, 3 0, 3 2, 3 6, 4 0, 4 3, 4 5, 
+	8706:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 1, 3 2, 3 3, 3 4, 3 5, 
+	8710:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 1 0, 1 3, 1 4, 1 5, 2 0, 2 6, 3 0, 3 3, 3 4, 3 5, 4 0, 4 1, 4 2, 
+	8719:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 6, 2 6, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	8721:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 0, 1 1, 1 5, 1 6, 2 0, 2 2, 2 4, 2 6, 3 0, 3 3, 3 6, 4 0, 4 6, 
+	8722:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 3, 2 3, 
+	8725:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 1, 2 2, 3 3, 4 4, 5 5, 6 6, 
+	8729:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 1, 1 2, 1 3, 1 4, 2 1, 2 2, 2 3, 2 4, 3 2, 3 3, 
+	8730:
+		advance: 11
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 1, 1 2, 2 0, 3 1, 3 2, 4 3, 4 4, 5 5, 5 6, 6 6, 7 6, 8 6, 9 6, 
+	8734:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 1, 1 4, 2 1, 2 4, 3 2, 3 3, 4 1, 4 4, 5 1, 5 4, 6 2, 6 3, 
+	8735:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 0, 2 0, 3 0, 4 0, 
+	8745:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 1 6, 2 6, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	8747:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 7, 
+	8776:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 5, 1 3, 1 6, 2 2, 2 5, 3 1, 3 4, 4 2, 4 5, 
+	8800:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 1, 1 2, 1 4, 2 2, 2 3, 2 4, 3 2, 3 4, 3 5, 4 2, 4 4, 
+	8801:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 3, 0 5, 1 1, 1 3, 1 5, 2 1, 2 3, 2 5, 
+	8804:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 3 0, 3 1, 3 5, 4 0, 4 1, 4 5, 
+	8805:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 5, 1 0, 1 1, 1 5, 2 0, 2 2, 2 4, 3 0, 3 2, 3 4, 4 0, 4 3, 
+	8962:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 1 0, 1 4, 2 0, 2 5, 3 0, 3 4, 4 0, 4 1, 4 2, 4 3, 
+	8976:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 5, 2 6, 3 5, 4 4, 
+	9632:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 1, 1 2, 1 3, 1 4, 1 5, 2 1, 2 2, 2 3, 2 4, 2 5, 3 1, 3 2, 3 3, 3 4, 3 5, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	9633:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 1, 1 5, 2 1, 2 5, 3 1, 3 5, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	9642:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 2, 1 3, 1 4, 2 2, 2 3, 2 4, 
+	9643:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 2, 1 4, 2 2, 2 3, 2 4, 
+	9650:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 1, 1 2, 1 3, 1 4, 2 1, 2 2, 2 3, 2 4, 2 5, 3 1, 3 2, 3 3, 3 4, 4 1, 4 2, 
+	9651:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 1, 1 3, 1 4, 2 1, 2 5, 3 1, 3 3, 3 4, 4 1, 4 2, 
+	9654:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 1, 1 2, 1 3, 1 4, 1 5, 2 2, 2 3, 2 4, 3 2, 3 3, 3 4, 4 3, 
+	9655:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 1, 1 5, 2 2, 2 4, 3 2, 3 4, 4 3, 
+	9660:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 1 2, 1 3, 1 4, 1 5, 2 1, 2 2, 2 3, 2 4, 2 5, 3 2, 3 3, 3 4, 3 5, 4 4, 4 5, 
+	9661:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 1 2, 1 3, 1 5, 2 1, 2 5, 3 2, 3 3, 3 5, 4 4, 4 5, 
+	9664:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 3, 1 4, 2 2, 2 3, 2 4, 3 1, 3 2, 3 3, 3 4, 3 5, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	9665:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 2 2, 2 4, 3 1, 3 5, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	9670:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 3, 1 4, 2 1, 2 2, 2 3, 2 4, 2 5, 3 2, 3 3, 3 4, 4 3, 
+	9673:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 1, 1 5, 2 0, 2 2, 2 3, 2 4, 2 6, 3 0, 3 2, 3 3, 3 4, 3 6, 4 0, 4 2, 4 3, 4 4, 4 6, 5 1, 5 5, 6 2, 6 3, 6 4, 
+	9674:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 1, 1 2, 1 4, 1 5, 2 0, 2 6, 3 1, 3 2, 3 4, 3 5, 4 3, 
+	9675:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 1, 1 5, 2 0, 2 6, 3 0, 3 6, 4 0, 4 6, 5 1, 5 5, 6 2, 6 3, 6 4, 
+	9676:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 2 0, 2 6, 4 0, 4 6, 6 2, 6 4, 
+	9679:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 5 1, 5 2, 5 3, 5 4, 5 5, 6 2, 6 3, 6 4, 
+	9702:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 2 3, 
+	9744:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 6, 2 0, 2 6, 3 0, 3 6, 4 0, 4 6, 5 0, 5 6, 6 0, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 
+	9745:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 2, 1 3, 1 6, 2 0, 2 1, 2 2, 2 6, 3 0, 3 2, 3 3, 3 6, 4 0, 4 3, 4 4, 4 6, 5 0, 5 4, 5 5, 5 6, 6 0, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 
+	9786:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 1 1, 1 4, 2 1, 3 1, 3 4, 4 2, 
+	9787:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 1, 1 3, 1 4, 1 5, 1 6, 2 0, 2 2, 2 3, 2 5, 2 6, 3 0, 3 2, 3 3, 3 4, 3 5, 3 6, 4 0, 4 2, 4 3, 4 5, 4 6, 5 0, 5 1, 5 3, 5 4, 5 5, 5 6, 6 0, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 
+	9788:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 2, 0 4, 1 1, 1 2, 1 3, 2 0, 2 1, 2 3, 2 4, 3 1, 3 2, 3 3, 4 0, 4 2, 4 4, 
+	9792:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 3, 0 4, 0 5, 1 0, 1 1, 1 2, 1 3, 1 5, 2 1, 2 3, 2 4, 2 5, 
+	9794:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 1 0, 1 2, 2 0, 2 1, 2 2, 2 4, 3 3, 3 4, 4 2, 4 3, 4 4, 
+	9824:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 0, 1 2, 1 3, 1 4, 2 0, 2 1, 2 3, 2 4, 2 5, 3 0, 3 2, 3 3, 3 4, 4 2, 4 3, 
+	9827:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 0, 1 2, 1 3, 1 4, 1 5, 2 0, 2 1, 2 3, 2 4, 2 5, 3 0, 3 2, 3 3, 3 4, 3 5, 4 2, 4 3, 
+	9829:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 1, 2 2, 2 3, 2 4, 3 1, 3 2, 3 3, 3 4, 3 5, 4 2, 4 3, 4 4, 
+	9830:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 1, 1 2, 1 3, 1 4, 1 5, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 1, 3 2, 3 3, 3 4, 3 5, 4 3, 
+	9834:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 1, 1 2, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 5, 4 3, 4 4, 
+	9835:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 1, 1 2, 2 1, 2 2, 2 3, 2 4, 2 5, 3 5, 4 2, 4 6, 5 1, 5 2, 5 3, 5 6, 6 2, 6 3, 6 4, 6 5, 6 6, 
+	9836:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 1, 1 2, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 4, 3 6, 4 2, 4 5, 4 7, 5 1, 5 2, 5 3, 5 5, 5 7, 6 2, 6 3, 6 4, 6 5, 6 6, 6 7, 
+	9854:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 1, 1 3, 1 5, 2 0, 2 2, 2 4, 2 6, 3 0, 3 3, 3 6, 4 0, 4 2, 4 4, 4 6, 5 1, 5 3, 5 5, 6 2, 6 3, 6 4, 
+	10003:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 1, 1 2, 2 0, 2 1, 3 1, 3 2, 4 2, 4 3, 5 3, 5 4, 6 4, 6 5, 
+	10066:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 5, 1 6, 2 0, 2 5, 2 6, 3 0, 3 5, 3 6, 4 0, 4 5, 4 6, 5 0, 5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 6 1, 6 2, 6 3, 6 4, 6 5, 6 6, 
+	10216:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 1 0, 1 1, 1 5, 1 6, 
+	10217:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 5, 0 6, 1 2, 1 3, 1 4, 
+	10710:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 0, 1 1, 1 2, 1 4, 1 5, 1 6, 2 0, 2 3, 2 6, 3 0, 3 1, 3 2, 3 4, 3 5, 3 6, 4 0, 4 6, 
+	11362:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 1 3, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 2, 4 0, 4 3, 5 0, 6 0, 
+	11363:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 3, 2 4, 2 6, 3 3, 3 6, 4 3, 4 6, 5 4, 5 5, 
+	11364:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 -1, 1 3, 1 6, 2 2, 2 3, 2 6, 3 1, 3 3, 3 6, 4 0, 4 4, 4 5, 
+	11373:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 6, 3 1, 3 5, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	11374:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 5, 2 4, 3 -1, 3 5, 4 -1, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	11375:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 3, 2 0, 2 3, 3 0, 3 3, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	11376:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 1, 1 5, 2 0, 2 6, 3 0, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	11377:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 1 1, 2 0, 3 1, 4 2, 4 3, 5 3, 
+	11378:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 1 1, 2 2, 3 1, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 5 5, 
+	11379:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 1 0, 2 1, 2 2, 2 3, 3 0, 4 1, 4 2, 4 3, 5 3, 
+	42781:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 0 5, 0 6, 
+	42889:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 4, 0 5, 
+	42890:
+		advance: 3
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 4, 1 2, 1 4, 
+	42891:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 0 3, 0 4, 0 5, 
+	42892:
+		advance: 2
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 0 5, 
+	42893:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 0 4, 0 5, 0 6, 1 3, 2 3, 3 3, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	42894:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 4, 1 3, 1 5, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 3, 
+	42922:
+		advance: 7
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 6, 1 0, 1 1, 1 2, 1 3, 1 4, 1 5, 1 6, 2 3, 3 3, 4 3, 5 0, 5 1, 5 2, 5 3, 5 4, 5 5, 5 6, 
+	42923:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 5, 1 0, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 1, 4 2, 4 4, 4 5, 
+	42924:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 4, 0 5, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 1, 3 2, 3 3, 3 4, 3 5, 3 6, 
+	42925:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 3, 1 2, 1 4, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 3 2, 4 0, 5 0, 6 0, 
+	42926:
+		advance: 4
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 0, 1 1, 1 2, 1 3, 1 4, 2 0, 2 4, 
+	42928:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 6, 1 1, 1 5, 2 2, 2 4, 3 2, 3 3, 4 0, 4 1, 4 2, 4 3, 4 4, 4 5, 4 6, 
+	42929:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 1 0, 2 0, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 4 0, 
+	42930:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 1 0, 1 2, 2 1, 2 2, 2 3, 2 4, 2 5, 2 6, 3 0, 
+	42931:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 6, 1 2, 1 4, 1 5, 1 6, 2 3, 3 0, 3 1, 3 2, 3 4, 4 0, 4 5, 4 6, 
+	42932:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 0 6, 1 0, 1 3, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 1, 4 2, 4 4, 4 5, 
+	42933:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 -1, 0 0, 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 0, 2 3, 2 6, 3 0, 3 3, 3 6, 4 1, 4 2, 4 4, 4 5, 
+	42934:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 0 3, 0 4, 0 5, 1 0, 1 6, 2 1, 2 2, 2 3, 3 0, 3 6, 4 1, 4 2, 4 3, 4 4, 4 5, 
+	42935:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 1, 0 2, 1 0, 1 3, 2 1, 3 0, 3 3, 4 1, 4 2, 
+	43001:
+		advance: 5
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 2, 1 1, 1 3, 2 1, 2 2, 2 3, 3 1, 3 3, 
+	43859:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 4, 1 1, 1 3, 1 4, 2 2, 3 0, 3 1, 3 3, 4 0, 4 4, 
+	64256:
+		advance: 10
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 3, 1 5, 2 5, 3 4, 5 0, 5 1, 5 2, 5 3, 5 4, 6 3, 6 5, 7 5, 8 4, 
+	64257:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 3, 1 5, 2 5, 3 4, 5 0, 5 1, 5 2, 5 3, 5 5, 6 3, 
+	64258:
+		advance: 8
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 3, 1 5, 2 5, 3 4, 5 6, 6 0, 6 1, 6 2, 6 3, 6 4, 6 5, 
+	64259:
+		advance: 13
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 3, 1 5, 2 5, 3 4, 5 0, 5 1, 5 2, 5 3, 5 4, 6 3, 6 5, 7 5, 8 4, 10 0, 10 1, 10 2, 10 3, 10 5, 11 3, 
+	64260:
+		advance: 13
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 3, 1 5, 2 5, 3 4, 5 0, 5 1, 5 2, 5 3, 5 4, 6 3, 6 5, 7 5, 8 4, 10 6, 11 0, 11 1, 11 2, 11 3, 11 4, 11 5, 
+	64262:
+		advance: 9
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 3, 1 0, 1 2, 1 4, 2 0, 2 2, 2 4, 3 1, 3 4, 3 5, 4 6, 5 4, 5 6, 6 1, 6 2, 6 3, 6 4, 6 5, 7 0, 7 4, 
+	65533:
+		advance: 6
+		auto_update_advance: true
+		auto_advance_amount: 1
+		pixels: 0 0, 0 1, 0 2, 0 3, 0 4, 1 0, 1 2, 1 4, 3 0, 3 1, 3 2, 4 2, 

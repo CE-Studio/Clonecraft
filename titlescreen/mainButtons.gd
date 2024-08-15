@@ -13,19 +13,29 @@ func play() -> void:
 
 
 func openOptions() -> void:
-	SettingManager.spawnMenu()
+	var op := SettingManager.spawnMenu()
+	$"../../settingpanel".show()
+	op.addExit($"../../settingpanel", &"hide")
 
 
 func openMods() -> void:
-	var op:BackingPanel = load("res://gui/backingpanel.tscn").instantiate()
+	var op:BackingPanel = preload("res://gui/backingpanel.tscn").instantiate()
+	SettingManager._layers += 1
 	op.setExit(&"gui.generic.back")
-	$"/root".add_child(op)
-	op.addItem(load("res://gui/warninglabel.tscn").instantiate())
-	var l := LinkButton.new()
-	l.text = Translator.translate(&"gui.mods.modfolder")
-	l.uri = "file://" + ProjectSettings.globalize_path("user://mods/")
-	op.addItem(l)
-	l = LinkButton.new()
-	l.text = Translator.translate(&"gui.mods.gamefolder")
-	l.uri = "file://" + ProjectSettings.globalize_path("res://")
-	op.addItem(l)
+	$"/root/title/Control/modpanel".show()
+	$"/root/title/Control/modpanel".add_child(op)
+	op.addButton(&"gui.mods.modfolder", _modfolder, ProjectSettings.globalize_path("user://mods/"))
+	op.addButton(&"gui.mods.gamefolder", _gamefolder, ProjectSettings.globalize_path("res://"))
+	op.addButton(&"gui.mods.download", _gamefolder)
+	op.addItem(preload("res://gui/warninglabel.tscn").instantiate())
+	var i = preload("res://gui/modPckPicker.tscn").instantiate()
+	op.addItem(i)
+	op.addExit(i, &"save")
+
+
+func _modfolder():
+	OS.shell_open("file://" + ProjectSettings.globalize_path("user://mods/"))
+
+
+func _gamefolder():
+	OS.shell_open("file://" + ProjectSettings.globalize_path("res://"))

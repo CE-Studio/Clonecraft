@@ -8,8 +8,8 @@ size = Vector3(0.5, 0.5, 0.5)
 [node name="worldItem" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 2
-continuous_cd = true
 lock_rotation = true
+continuous_cd = true
 script = ExtResource("1_ikk7s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

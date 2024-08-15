@@ -2,12 +2,14 @@ extends Button
 
 var credcontent := {}
 var dp := preload("res://gui/devpanel.tscn")
-var op:Node
+var op:BackingPanel
 
 func _pressed() -> void:
-	op = load("res://gui/backingpanel.tscn").instantiate()
+	$"../settingpanel".show()
+	op = preload("res://gui/backingpanel.tscn").instantiate()
 	$"/root".add_child(op)
 	disabled = true
+	op.addExit($"../settingpanel", &"hide")
 
 	var dir := DirAccess.open("res://mods")
 	dir.include_navigational = false

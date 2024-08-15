@@ -44,7 +44,9 @@ static var blockUpdates:Array[Vector3i] = []
 static var pendingBlockUpdates:Array[Vector3i] = []
 
 static var _updates:Array[Callable] = []
+static var _physicsUpdates:Array[Callable] = []
 static var _inputList := []
+static var _uInputList := []
 static var _addingBlock := false
 static var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
 static var _udisp:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
@@ -62,6 +64,12 @@ static func getBlockID(id:StringName) -> BlockInfo:
 ## Static
 static func addUpdate(c:Callable) -> void:
 	_updates.append(c)
+
+
+## Register a [Callable] to be called every physics tick.[br]
+## Static
+static func addPhysicsUpdate(c:Callable) -> void:
+	_physicsUpdates.append(c)
 
 
 static func _tickBlock(pos:Vector3i, rawID:int) -> void:
@@ -134,6 +142,8 @@ class BlockInfo extends RefCounted:
 	## A list of various unique properties the voxel may have.[br]
 	## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
 	var properties:Array[StringName]
+	## How slippery the voxel is when being walked on. Lower is more slippery, higher is less.
+	var traction:float = 1.0
 
 
 	func _init(
@@ -228,6 +238,12 @@ static func endBlockRegister(blockInfo:BlockInfo) -> void:
 ## Analogous to [method Node._input][br]
 ## Static
 static func inputRegister(callback:Callable) -> void:
+	_inputList.append(callback)
+
+## Register a function to handle unhandled user inputs.[br]
+## Analogous to [method Node._unhandled_input][br]
+## Static
+static func unhandledInputRegister(callback:Callable) -> void:
 	_inputList.append(callback)
 
 
@@ -387,8 +403,18 @@ func _process(delta) -> void:
 		BlockManager.runBlockUpdates()
 
 
+func _physics_process(delta):
+	for i in _physicsUpdates:
+		i.call(delta)
+
+
 func _input(event) -> void:
 	for i in _inputList:
+		i.call(event)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	for i in _uInputList:
 		i.call(event)
 
 
@@ -419,8 +445,8 @@ static func quickUniformBlock(
 		mat:Material,
 		breakStrength := 3.0,
 		explosionStrength := 5.0,
-		tool := &"pickaxe",
-		alphaChannel := 0) -> void:
+		tool := &"tools:pickaxe",
+		alphaChannel := 0) -> BlockInfo:
 	var model = startBlockRegister(modID + blockName, Voxdat.vox.GEOMETRY_CUBE)
 	model.set_mesh_collision_enabled(0, true)
 	model.transparency_index = alphaChannel
@@ -447,6 +473,7 @@ static func quickUniformBlock(
 			"default"
 	)
 	endBlockRegister(bi)
+	return(bi)
 
 
 ## Places a voxel at the specified position.

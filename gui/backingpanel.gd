@@ -19,8 +19,6 @@ var closeCallbacks:Array[Array] = []
 ## Should only be set using [method setExit].
 var counted := true
 
-# TODO add a way to add more buttons to the bottom of the panel
-
 
 func _ready() -> void:
 	$HBoxContainer/Button.text = Translator.translate(exitName)
@@ -42,6 +40,16 @@ func setExit(ename:String, obj:Object = null, fun:StringName = &"", count = true
 ## and the name of the function to call on it.
 func addExit(obj:Object, fun:StringName) -> void:
 	closeCallbacks.append([obj, fun])
+
+
+## Adds an additional button to the bottom of the panel
+func addButton(name:StringName, cb:Callable, tooltip:String = "") -> void:
+	var b := Button.new()
+	b.text = Translator.translate(name)
+	b.pressed.connect(cb)
+	b.tooltip_text = tooltip
+	$HBoxContainer.add_child(b)
+	$HBoxContainer.move_child(b, 0)
 
 
 ## Add a [Control] to be displayed inside the panel.

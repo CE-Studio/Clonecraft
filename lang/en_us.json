@@ -18,7 +18,8 @@
 			"disable": "Disable",
 			"enable": "Enable",
 			"options": "Options...",
-			"support": "Support devs!"
+			"support": "Support devs!",
+			"ok": "Ok"
 		},
 		"title": {
 			"mod_manager": "Mod Manager...",
@@ -37,7 +38,11 @@
 		"mods": {
 			"warning": "Mods can change ANY game code! Please be careful!",
 			"modfolder": "Open Mods Folder...",
-			"gamefolder": "Open Game Folder..."
+			"gamefolder": "Open Game Folder...",
+			"download": "Download Mods...",
+			"enabled": "Enabled Mods",
+			"disabled": "Disabled Mods",
+			"changes": "Changes will not take effect\nuntil the game is restarted."
 		}
 	},
 	"options": {

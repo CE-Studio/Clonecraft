@@ -10,6 +10,25 @@ static var localUsername := "__localplayer__" :
 		pass
 
 
+@export var dayLength:float
+@export var daytime:float = 0
+#TODO implement day/night ratio
+@export var dayNightRatio:float:
+	set(value):
+		dayNightRatio = clampf(value, 0, 1)
+@export var upperSkyColor:Gradient
+@export var upperHorizonColor:Gradient
+@export var lowerSkyColor:Gradient
+@export var lowerHorizonColor:Gradient
+@export var sunlightColor:Gradient
+@export var moonlightColor:Gradient
+@export var moonSunAndStarIntensity:Gradient
+@export var processTime := true
+
+
+@onready var sky:ProceduralSkyMaterial = $WorldEnvironment.environment.sky.sky_material
+
+
 var _tool:VoxelToolTerrain
 var _waitpos := Vector3.ZERO
 var _waitrel := Vector3.ZERO
@@ -19,8 +38,14 @@ var tree:SceneTree
 var _p:Player
 var _terrain:VoxelTerrain
 var stream:VoxelStream
+var dayprogress:float = 0
 
-# TODO with the rest of multiplayer
+
+static func isPaused() -> bool:
+	return instance.pausing or instance.waiting
+
+
+# TODO redo this when adding multiplayer
 static func getPlayerList() -> Array[String]:
 	return ["__localplayer__"]
 	
@@ -57,6 +82,7 @@ func saveworld():
 	var jsave := JSON.stringify(_p.save(), "  ")
 	if !DirAccess.dir_exists_absolute(worldpath + "/playerdata/"):
 		DirAccess.make_dir_absolute(worldpath + "/playerdata/")
+	# TODO un-hardcode this
 	var playsavepath := worldpath + "/playerdata/__localplayer__.json"
 	var f := FileAccess.open(playsavepath, FileAccess.WRITE)
 	f.store_string(jsave)
@@ -89,7 +115,10 @@ func _ready() -> void:
 	match streamtype:
 		"region":
 			stream = VoxelStreamRegionFiles.new()
-			stream.directory = ProjectSettings.globalize_path(worldpath + "/dims/0/")
+			var dimpath := ProjectSettings.globalize_path(worldpath + "/dims/0/")
+			if not DirAccess.dir_exists_absolute(dimpath):
+				DirAccess.make_dir_recursive_absolute(dimpath)
+			stream.directory = dimpath
 			stream.save_generator_output = true
 			$"/root/Node3D/VoxelTerrain".stream = stream
 		"sql":
@@ -99,7 +128,7 @@ func _ready() -> void:
 		var f := FileAccess.open(playsavepath, FileAccess.READ)
 		var dict:Dictionary = JSON.parse_string(f.get_as_text())
 		f.close()
-		_p.restore(dict)
+		BlockManager.log("WorldControl", str(_p.restore(dict)))
 
 
 func _process(_delta) -> void:
@@ -108,7 +137,27 @@ func _process(_delta) -> void:
 	tree.paused = pausing or waiting
 	$Control/waitpanel.visible = waiting
 	$Control/pausepanel.visible = pausing
+	if not(tree.paused) && processTime:
+		daytime += _delta
+		if daytime >= dayLength:
+			daytime -= dayLength
+		dayprogress = remap(daytime, 0, dayLength, 0, 1)
+		_p.sunAngle = dayprogress
+		sky.sky_top_color = upperSkyColor.sample(dayprogress)
+		sky.sky_horizon_color = upperHorizonColor.sample(dayprogress)
+		sky.ground_bottom_color = lowerSkyColor.sample(dayprogress)
+		sky.ground_horizon_color = lowerHorizonColor.sample(dayprogress)
+		_p.sun.light_color = sunlightColor.sample(dayprogress)
+		_p.moon.light_color = moonlightColor.sample(dayprogress)
+		var intensities := moonSunAndStarIntensity.sample(dayprogress)
+		_p.sun.light_energy = intensities.r
+		_p.moon.light_energy = intensities.g
 
 
 func _on_setting_button_pressed():
 	SettingManager.spawnMenu()
+
+
+func _on_quit_desktop_button_pressed():
+	saveworld()
+	get_tree().quit()

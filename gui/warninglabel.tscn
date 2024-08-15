@@ -5,6 +5,7 @@
 
 [node name="warninglabel" type="HBoxContainer"]
 texture_filter = 1
+size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2

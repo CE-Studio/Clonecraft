@@ -26,14 +26,14 @@ var blockOutline:MeshInstance3D
 var cloudmat:StandardMaterial3D
 ## An array containing the 3rd-person cameras.
 var cams:Array[Camera3D]
-## A raycast used to position the 3rd-person cameras.
-var camRay:RayCast3D
-## A dictionary containing the various parts of the 3rd-person player model.
-var derg:Dictionary
 ## A refrence to the currently loaded dimension's terrain.
 var terrain:VoxelTerrain
 ## The player's main inventory.
 var inventory := Inventory.new()
+## The contents of the hotbar.
+var hotbarItems:Array[ItemManager.ItemStack] = []
+## The player model
+var model:EntityModel
 
 ## Keeps track of what camera is being used.
 var camcycle := 0
@@ -41,6 +41,8 @@ var camcycle := 0
 var moveDist := 0.0
 ## Keeps count of how many seconds the world has been loaded for. Used for animation and the day/night cycle.
 var time := 0.0
+## Keeps strack of how long the player has moved for animation.
+var moveTime := 0.0
 ## Used to smoothly fade the walking animation in/out.
 var animCurSpeed := 0.0
 ## Sets how may blocks away from the player random ticks can be.
@@ -50,8 +52,44 @@ var tickNumber := 512
 ## A reference to the world's [WorldControl].
 var world:WorldControl
 
+var _looktrack := Vector2.ZERO
+
 var _fcheck := 1.0
 var extraSaveData := {}
+
+
+@onready var sun:DirectionalLight3D = $sunpoint/sunlight
+@onready var sunSprite:Sprite3D = $sunpoint/sunlight/sun
+@onready var moon:DirectionalLight3D = $sunpoint/moonlight
+@onready var moonSprite:Sprite3D = $sunpoint/moonlight/moon
+
+
+var sunAngle:float:
+	set(value):
+		sun.rotation_degrees.x = remap(value, 0, 1, -180, 180)
+		moon.rotation_degrees.x = remap(value, 0, 1, -180, 180) + 180
+		sunAngle = value
+
+
+func _saveHotbar() -> Array:
+	var h := []
+	for i in hotbarItems:
+		if i == null:
+			h.append(null)
+		else:
+			h.append([i.itemID, i.metadata])
+	return h
+
+
+func _loadHotbar(a:Array):
+	for i in a.size():
+		if a[i] is Array:
+			var h := ItemManager.ItemStack.new(a[i][0], 1, a[i][1])
+			hotbarItems[i] = inventory.getItemFromStack(h)
+
+
+func getSelectedItem() -> ItemManager.ItemStack:
+	return hotbarItems[(Hotbar.layer * 10) + Hotbar.slot]
 
 
 func save() -> Dictionary:
@@ -62,9 +100,10 @@ func save() -> Dictionary:
 		"posz": position.z,
 		"inventory": inventory.save(),
 		"extra": extraSaveData,
+		"hotbar": _saveHotbar(),
 	}
-	
-	
+
+
 func restore(dict:Dictionary) -> bool:
 	if dict.has_all([
 		"abilities",
@@ -73,6 +112,7 @@ func restore(dict:Dictionary) -> bool:
 		"posz",
 		"inventory",
 		"extra",
+		"hotbar",
 	]):
 		abilities = dict["abilities"]
 		position.x = dict["posx"]
@@ -80,12 +120,23 @@ func restore(dict:Dictionary) -> bool:
 		position.z = dict["posz"]
 		updateAbilities()
 		extraSaveData = dict["extra"]
-		return inventory.restore(dict["inventory"])
+		var h := inventory.restore(dict["inventory"])
+		_loadHotbar(dict["hotbar"])
+		return h
 	return false
+	
+	
+func setModel(m:EntityModel):
+	model = m
+	add_child(m)
+	m.getFPArm().reparent(armPointX, false)
+	if camcycle == 0:
+		model.hide()
 
 
-# TODO make inventory scale with ablilities
+# TODO make inventory scale with ablilities.
 func _ready() -> void:
+	hotbarItems.resize(40)
 	head = $"head"
 	cam = $"head/Camera3D"
 	armPointY = $"armpointy"
@@ -97,20 +148,15 @@ func _ready() -> void:
 	cloudmat = $"./clouds".material_override
 	world = $"/root/Node3D"
 	cams.append($head/Camera3D)
-	cams.append($head/Camera3D/Camera3D)
-	cams.append($head/Camera3D/Camera3D2)
-	camRay = $head/Camera3D/RayCast3D
-	derg["root"] = $derg
-	derg["body"] = $derg/Node2
-	derg["head"] = $derg/Node2/bone2/head
-	derg["larm"] = $derg/Node2/bone2/larm
-	derg["rarm"] = $derg/Node2/bone2/rarm
-	derg["lleg"] = $derg/Node2/bone2/lleg
-	derg["rleg"] = $derg/Node2/bone2/rleg
+	cams.append($head/Camera3D/springArm3d/Camera3D)
+	cams.append($head/Camera3D/springArm3d2/Camera3D2)
+	call_deferred("setModel", load("res://player/default/Derg.tscn").instantiate())
 
 
 func _process(delta) -> void:
 	time += delta
+	if animCurSpeed > 0:
+		moveTime += delta
 	armPointY.rotation.y = lerp_angle(armPointY.rotation.y, head.rotation.y, delta * 20)
 	armPointX.rotation.x = lerp_angle(armPointX.rotation.x, cam.rotation.x, delta * 20)
 	armPointX.position = Vector3(
@@ -118,19 +164,24 @@ func _process(delta) -> void:
 		lerpf(armPointX.position.y, ((1 - abs(cos(moveDist))) / 80)  * animCurSpeed, delta * 20),
 		0
 	)
-	derg["body"].rotation.y = armPointY.rotation.y
-	derg["head"].rotation.x = armPointX.rotation.x
 	cloudmat.uv1_offset.z += delta / 900
 	_fcheck += delta
-
-	var z = (sin(time * 1.5) + 1) * 2.5
-	var x = sin(time * 0.994723812) * 2
-	var xl = sin(moveDist * 1.2) * (animCurSpeed * 40)
-	x += xl
-	derg["larm"].rotation_degrees = Vector3(-x, 0, -z)
-	derg["rarm"].rotation_degrees = Vector3(x, 0, z)
-	derg["lleg"].rotation_degrees.x = xl + 12.5
-	derg["rleg"].rotation_degrees.x = -xl + 12.5
+	
+	model.speed = animCurSpeed
+	model.time = time
+	model.moveTime = moveTime
+	model.moveDistance = moveDist
+	var lerpdelta = delta * 10
+	_looktrack = Vector2(
+		lerp_angle(deg_to_rad(model.look.x), cam.rotation.x, lerpdelta),
+		lerp_angle(deg_to_rad(model.look.y), head.rotation.y, lerpdelta)
+	)
+	model.bodyRotation = clampf((rad_to_deg(_looktrack.y) - model.look.y) + model.bodyRotation, -45, 45)
+	model.look = Vector2(
+		rad_to_deg(_looktrack.x),
+		rad_to_deg(_looktrack.y)
+	)
+	model.animate(delta)
 
 
 func _unhandled_input(event) -> void:
@@ -151,12 +202,12 @@ func _unhandled_input(event) -> void:
 			camcycle = 0
 		cams[camcycle].make_current()
 		if camcycle > 0:
-			derg["root"].visible = true
 			armPointY.visible = false
+			model.visible = true
 		else:
-			derg["root"].visible = false
 			armPointY.visible = true
-	elif  event.is_action_pressed("game_screenshot"):
+			model.visible = false
+	elif event.is_action_pressed("game_screenshot"):
 		var sdate:String = Time.get_date_string_from_system()
 		var stime:String = Time.get_time_string_from_system().replace(":","-")
 		var screenshotPath = "user://screenshots/cc_sc_ymd" + sdate + "_hms" + stime + "_"
@@ -166,6 +217,14 @@ func _unhandled_input(event) -> void:
 		var image = get_viewport().get_texture().get_image()
 		image.save_png(screenshotPath)
 		Chat.pushText("Saved screenshot \"" + ProjectSettings.globalize_path(screenshotPath) + "\"")
+	elif event.is_action_pressed("game_hotbar_layer_next"):
+		Hotbar.layer += 1
+	elif event.is_action_pressed("game_hotbar_layer_prev"):
+		Hotbar.layer -= 1
+	elif event.is_action_pressed("game_hotbar_next"):
+		Hotbar.slot += 1
+	elif event.is_action_pressed("game_hotbar_prev"):
+		Hotbar.slot -= 1
 
 
 ## Runs random ticks around the player. Called automatically.
@@ -220,20 +279,31 @@ func _physics_process(delta) -> void:
 		head.position.y = 0.689
 		armPointY.position.y = 0.689
 
-	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("game_left", "game_right", "game_up", "game_down")
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	# TODO scale with terrain player is on.
 	var lerpdelta = 30.0 * delta
+	# Get the input direction and handle the movement/deceleration.
+	var input_dir := Input.get_vector("game_left", "game_right", "game_up", "game_down")
+	model.bodyRotation = lerpf(model.bodyRotation, 0, abs(input_dir.y) * (delta * 10))
+	if input_dir.y <= 0:
+		model.bodyRotation = lerpf(model.bodyRotation, 45 * input_dir.x, abs(input_dir.x) * (delta * 10))
+	else:
+		model.bodyRotation = lerpf(model.bodyRotation, -45 * input_dir.x, abs(input_dir.x) * (delta * 10))
+	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	var cvel := Vector2(velocity.x, velocity.z)
+	var tscalefactor := 1.0
+	if is_on_floor():
+		var vhit = voxelTool.raycast(position, Vector3.DOWN)
+		if vhit != null:
+			tscalefactor = BlockManager.getBlock(vhit.position).traction
+	elif not abilities["isFlying"]:
+		tscalefactor = 0.1
 	if direction:
 		var rvel := Vector2(
 			direction.x * SPEED * abilities.scale.speed,
 			direction.z * SPEED * abilities.scale.speed,
 		)
-		cvel = cvel.move_toward(rvel, lerpdelta)
+		cvel = cvel.move_toward(rvel, lerpdelta * tscalefactor)
 	else:
-		cvel = cvel.move_toward(Vector2.ZERO, lerpdelta)
+		cvel = cvel.move_toward(Vector2.ZERO, lerpdelta * tscalefactor)
 	velocity.x = cvel.x
 	velocity.z = cvel.y
 
@@ -266,25 +336,11 @@ func _physics_process(delta) -> void:
 	else:
 		blockOutline.hide()
 
-	if camcycle == 0:
-		pass
-	elif camcycle == 1:
-		camRay.target_position = Vector3(0, 0, 5)
-		if camRay.is_colliding():
-			var dist = camRay.global_position.distance_to(camRay.get_collision_point())
-			cams[1].position = Vector3(0, 0, dist - 0.2)
-		else:
-			cams[1].position = Vector3(0, 0, 5)
-	elif camcycle == 2:
-		camRay.target_position = Vector3(0, 0, -5)
-		if camRay.is_colliding():
-			var dist = camRay.global_position.distance_to(camRay.get_collision_point())
-			cams[2].position = Vector3(0, 0, -dist + 0.2)
-		else:
-			cams[2].position = Vector3(0, 0, -5)
-
 	ticks()
 
 
 func _on_enter_item_range(body) -> void:
-	BlockManager.log("clonecraft", body.name)
+	if body is WorldItem:
+		if body.canPickup():
+			if inventory.addItem(body.iStack):
+				body.queue_free()

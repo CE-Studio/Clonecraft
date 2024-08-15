@@ -2,8 +2,12 @@ extends Node
 class_name CMDprocessor
 
 
+static var instance:CMDprocessor
 static var vars := {}
 static var _thrown := false
+static var _err:String
+static var _whyerr:String
+static var _calledByPlayer := false
 
 
 class Command extends RefCounted:
@@ -15,7 +19,7 @@ class Command extends RefCounted:
 		return []
 	
 	
-	func exectue(_args:Array) -> Variant:
+	func execute(_args:Array) -> Variant:
 		return null
 
 
@@ -42,10 +46,13 @@ static func run(con:String) -> Variant:
 	
 	var tokens := _extTokens(con)
 	if _thrown:
+		_thrown = false
 		return
-	print(tokens)
 	
-	return _run(tokens)
+	var k = _run(tokens)
+	if _thrown:
+		_thrown = false
+	return k
 
 
 static func _run(tokens:Array) -> Variant:
@@ -55,7 +62,6 @@ static func _run(tokens:Array) -> Variant:
 			if _thrown:
 				return
 		if tokens[i] is String:
-			print(tokens[i])
 			if tokens[i][0] == "$":
 				var j = tokens[i].erase(0, 1)
 				if j[-1] == "=":
@@ -63,11 +69,11 @@ static func _run(tokens:Array) -> Variant:
 				elif vars.has(j):
 					tokens[i] = vars[j]
 				else:
-					throw("cmd.error.undefined_var")
-	if tokens[0] is String:
+					throw("cmd.error.undefined_var", "No variable named \"" + j + "\" exists")
+	if (tokens.size() > 0) and (tokens[0] is String):
 		if (tokens[0][0] == "$") and (tokens[0][-1] == "="):
 			if tokens.size() == 1:
-				throw("cmd.error.missing_arg")
+				throw("cmd.error.missing_arg", "Missing value to assign to variable \"" + tokens[0] + "\"")
 				return
 			var h = tokens[0].replace("$", "").replace("=", "")
 			vars[h] = tokens[1]
@@ -75,8 +81,13 @@ static func _run(tokens:Array) -> Variant:
 		else:
 			for i in commands:
 				if i.getCommandInvocation() == tokens[0]:
-					var outp = i.exectue(tokens.slice(1))
+					var outp = i.execute(tokens.slice(1))
 					if _thrown:
+						if _calledByPlayer:
+							Chat.pushText(
+								Translator.translate(_err) + ": " + _whyerr + "\n" +
+								"In command: " + str(tokens)
+							)
 						return
 					return outp
 	else:
@@ -131,7 +142,7 @@ static func _extTokens(con:String) -> Array:
 				innerd = ""
 				depth = 1
 			")" when !insideStr:
-				throw("cmd.error.unblanced")
+				throw("cmd.error.unblanced", "Unexpected closing parenthesis in token set \"" + con + "\"")
 				return []
 			"\\":
 				escaped = true
@@ -145,10 +156,10 @@ static func _extTokens(con:String) -> Array:
 					tokens.append("")
 				tokens[-1] += con[i]
 	if depth > 0:
-		throw("cmd.error.unbalanced")
+		throw("cmd.error.unbalanced", "Imbalanced parenthesis in token set \"" + con + "\"")
 		return []
 	if insideStr:
-		throw("cmd.error.unbalanced_string")
+		throw("cmd.error.unbalanced_string", "Unterminated string in token set \"" + con + "\"")
 		return []
 	return tokens
 
@@ -157,6 +168,31 @@ static func registerCommand(command:Command) -> void:
 	commands.append(command)
 
 
-static func throw(error:String):
-	BlockManager.log("Command Processor", Translator.translate(error))
+static func throw(error:String, why:String):
+	_err = error
+	_whyerr = why
 	_thrown = true
+	BlockManager.log("Command Processor", Translator.translate(error) + " For reason: " + why)
+
+
+class _helpCMD extends Command:
+	func getCommandInvocation() -> String:
+		return "help"
+		
+	func getCommandArgList(_index:int) -> Array:
+		return []
+		
+	func execute(_args:Array) -> Variant:
+		if _args.size() > 0:
+			CMDprocessor.throw("cmd.error.too_many_args", "Expected 0 arguments, got " + str(_args.size()))
+		var h := "Help: " + str(CMDprocessor.commands.size()) + " command(s) found"
+		for i in CMDprocessor.commands:
+			h += "\n  - " + i.getCommandInvocation() + " "
+			for j in i.getCommandArgList(-1):
+				h += str(j) + " "
+		return h
+
+
+func _ready():
+	instance = self
+	CMDprocessor.registerCommand(_helpCMD.new())
