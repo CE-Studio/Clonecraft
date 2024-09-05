@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=19 format=3 uid="uid://eikvg3smmp6t"]
+[gd_resource type="Theme" load_steps=25 format=3 uid="uid://eikvg3smmp6t"]
 
 [ext_resource type="StyleBox" uid="uid://d2168jgf71u6p" path="res://textures/buttonDisabled.tres" id="1_qfc4k"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="1_spyui"]
@@ -21,6 +21,26 @@
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_m5jno"]
 color = Color(0.364706, 0.364706, 0.364706, 1)
 thickness = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yx81x"]
+color = Color(0.364706, 0.364706, 0.364706, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqh15"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c8lha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xa80"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v85a1"]
+bg_color = Color(0.509804, 0.509804, 0.509804, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_csdht"]
+color = Color(0.364706, 0.364706, 0.364706, 1)
+thickness = 2
+vertical = true
 
 [resource]
 default_font = ExtResource("1_spyui")
@@ -74,20 +94,36 @@ PopupMenu/icons/radio_unchecked = ExtResource("13_71ett")
 PopupMenu/icons/unchecked = ExtResource("1_y287y")
 PopupMenu/styles/hover = ExtResource("2_vbr7h")
 PopupMenu/styles/panel = ExtResource("1_qfc4k")
+PopupMenu/styles/separator = SubResource("StyleBoxLine_yx81x")
 ProgressBar/styles/background = ExtResource("14_mkweh")
 ProgressBar/styles/fill = ExtResource("15_yk7w6")
 TabContainer/styles/panel = ExtResource("1_qfc4k")
+TabContainer/styles/tab_disabled = ExtResource("1_qfc4k")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_nqh15")
+TabContainer/styles/tab_hovered = ExtResource("2_vbr7h")
+TabContainer/styles/tab_selected = ExtResource("4_7wnnr")
+TabContainer/styles/tab_unselected = ExtResource("3_y8rvq")
 TextEdit/styles/focus = ExtResource("2_3x48p")
 TextEdit/styles/normal = ExtResource("9_q5b1f")
 TextEdit/styles/read_only = ExtResource("10_iu1qr")
 TooltipPanel/styles/panel = ExtResource("16_rohjp")
+Tree/constants/draw_guides = 0
+Tree/icons/checked = ExtResource("5_gra7t")
+Tree/icons/unchecked = ExtResource("1_y287y")
+Tree/styles/focus = SubResource("StyleBoxEmpty_c8lha")
+Tree/styles/panel = ExtResource("1_qfc4k")
+Tree/styles/selected = SubResource("StyleBoxFlat_8xa80")
+Tree/styles/selected_focus = SubResource("StyleBoxFlat_v85a1")
 VScrollBar/styles/grabber = ExtResource("3_y8rvq")
 VScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
 VScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
 VScrollBar/styles/scroll = ExtResource("1_qfc4k")
+VSeparator/styles/separator = SubResource("StyleBoxLine_csdht")
 VSlider/icons/grabber = ExtResource("5_gra7t")
 VSlider/icons/grabber_disabled = ExtResource("1_y287y")
 VSlider/icons/grabber_highlight = ExtResource("8_ut5b0")
 VSlider/styles/grabber_area = ExtResource("2_3x48p")
 VSlider/styles/grabber_area_highlight = ExtResource("2_3x48p")
 VSlider/styles/slider = ExtResource("1_qfc4k")
+Window/styles/embedded_border = ExtResource("3_y8rvq")
+Window/styles/embedded_unfocused_border = ExtResource("3_y8rvq")

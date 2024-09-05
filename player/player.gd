@@ -46,9 +46,9 @@ var moveTime := 0.0
 ## Used to smoothly fade the walking animation in/out.
 var animCurSpeed := 0.0
 ## Sets how may blocks away from the player random ticks can be.
-var tickRange := 100
+var tickRange := 256
 ## Sets how many random ticks will go off every simulation tick.
-var tickNumber := 512
+var tickNumber := 15360
 ## A reference to the world's [WorldControl].
 var world:WorldControl
 
@@ -336,7 +336,9 @@ func _physics_process(delta) -> void:
 	else:
 		blockOutline.hide()
 
-	ticks()
+
+func _settingsChanged():
+	print("a")
 
 
 func _on_enter_item_range(body) -> void:

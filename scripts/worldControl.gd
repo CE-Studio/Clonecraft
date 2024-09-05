@@ -41,6 +41,11 @@ var stream:VoxelStream
 var dayprogress:float = 0
 
 
+var _savedata := {
+	"daytime": 0.0,
+}
+
+
 static func isPaused() -> bool:
 	return instance.pausing or instance.waiting
 
@@ -87,6 +92,30 @@ func saveworld():
 	var f := FileAccess.open(playsavepath, FileAccess.WRITE)
 	f.store_string(jsave)
 	f.close()
+	_savedata["daytime"] = daytime
+	f = FileAccess.open(worldpath + "/worldData.json", FileAccess.WRITE)
+	jsave = JSON.stringify(_savedata, "  ")
+	f.store_string(jsave)
+	f.close()
+	_updateCCWorld()
+
+
+func _updateCCWorld():
+	var f := FileAccess.open(worldpath + "/ccworld.json", FileAccess.READ)
+	var dict:Dictionary = JSON.parse_string(f.get_as_text())
+	f.close()
+	dict["gameversion"] = SettingManager.VERSION
+	var t := Time.get_datetime_dict_from_system()
+	if t["hour"] > 12:
+		t["hour"] -= 12
+		t["ampm"] = "PM"
+	else:
+		t["ampm"] = "AM"
+	dict["savetime"] = str(t["month"]) + "/" + str(t["day"]) + "/" + str(t["year"]) + " " + str(t["hour"]) + ":" + str(t["minute"]) + ":" + str(t["second"]) + " " + t["ampm"]
+	f = FileAccess.open(worldpath + "/ccworld.json", FileAccess.WRITE)
+	var jsave = JSON.stringify(dict, "  ")
+	f.store_string(jsave)
+	f.close()
 
 
 func pauseUnpause() -> void:
@@ -129,6 +158,12 @@ func _ready() -> void:
 		var dict:Dictionary = JSON.parse_string(f.get_as_text())
 		f.close()
 		BlockManager.log("WorldControl", str(_p.restore(dict)))
+	if FileAccess.file_exists(worldpath + "/worldData.json"):
+		var f := FileAccess.open(worldpath + "/worldData.json", FileAccess.READ)
+		var dict:Dictionary = JSON.parse_string(f.get_as_text())
+		f.close()
+		_savedata.merge(dict, true)
+	daytime = _savedata["daytime"]
 
 
 func _process(_delta) -> void:

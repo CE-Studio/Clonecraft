@@ -38,6 +38,7 @@ process_mode = 3
 
 [node name="VoxelViewer" type="VoxelViewer" parent="head/Camera3D"]
 process_mode = 3
+view_distance = 512
 
 [node name="springArm3d" type="SpringArm3D" parent="head/Camera3D"]
 shape = SubResource("SphereShape3D_xe5eu")

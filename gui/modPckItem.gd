@@ -1,5 +1,6 @@
 extends Button
 class_name ModPckItem
+## Used to display mods in the modpicker.
 
 
 var loff:VBoxContainer

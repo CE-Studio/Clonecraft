@@ -42,7 +42,12 @@ static var blockUpdates:Array[Vector3i] = []
 ## A list of voxel positions to update on the next simulation tick.[br]
 ## Static
 static var pendingBlockUpdates:Array[Vector3i] = []
+## The time between ticks, in seconds.
+## Static
+static var TICK_LENGTH:float = 0.05
 
+
+static var _tickTime:float = 0.0
 static var _updates:Array[Callable] = []
 static var _physicsUpdates:Array[Callable] = []
 static var _inputList := []
@@ -397,10 +402,15 @@ static func setup() -> void:
 
 
 func _process(delta) -> void:
-	if loadDone:
-		for i in _updates:
-			i.call(delta)
-		BlockManager.runBlockUpdates()
+	if loadDone and (not(WorldControl.isPaused())):
+		BlockManager._tickTime += delta
+		if BlockManager._tickTime >= BlockManager.TICK_LENGTH:
+			BlockManager._tickTime -= BlockManager.TICK_LENGTH
+			for i in _updates:
+				i.call(delta)
+			BlockManager.runBlockUpdates()
+			WorldControl.instance._p.ticks()
+		
 
 
 func _physics_process(delta):

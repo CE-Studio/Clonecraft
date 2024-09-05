@@ -7,8 +7,8 @@
 				"name": "options.video.fov",
 				"type": "float",
 				"slidemin": 0.0,
-				"slidemax": 100.0,
-				"default": 50.0,
+				"slidemax": 110.0,
+				"default": 75.0,
 				"path": "gameplay/video/fov"
 			},
 			{
