@@ -1,14 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cng7kfytaxygb"]
+[gd_scene load_steps=10 format=3 uid="uid://cng7kfytaxygb"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_3ny33"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="2_ywuj5"]
 [ext_resource type="Texture2D" uid="uid://c6bwcm8cfebe7" path="res://textures/moon.png" id="3_sxkd0"]
+[ext_resource type="Script" path="res://player/collectArea.gd" id="5_di3oy"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="5_vknlp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
 size = Vector3(0.7, 1.8, 0.7)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xe5eu"]
+radius = 0.3
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5tc7k"]
 
@@ -105,5 +107,6 @@ collision_mask = 6
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_iq0cg")
+script = ExtResource("5_di3oy")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_enter_item_range"]

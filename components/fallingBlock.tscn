@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm8r8nbakueje"]
+
+[ext_resource type="Script" path="res://components/fallingBlock.gd" id="1_mlk55"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gfi81"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[node name="fallingBlock" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+can_sleep = false
+continuous_cd = true
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_mlk55")
+
+[node name="collisionShape3d" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gfi81")
+
+[node name="meshInstance3d" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, -0.5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

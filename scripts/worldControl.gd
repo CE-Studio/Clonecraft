@@ -196,3 +196,9 @@ func _on_setting_button_pressed():
 func _on_quit_desktop_button_pressed():
 	saveworld()
 	get_tree().quit()
+
+
+func spawnFallingBlock(pos:Vector3) -> void:
+	var i:FallingBlock = preload("res://components/fallingBlock.tscn").instantiate()
+	i.position = pos + Vector3(0.5, 0.5, 0.5)
+	add_child(i)

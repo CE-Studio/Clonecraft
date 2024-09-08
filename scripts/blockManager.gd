@@ -99,6 +99,9 @@ static func runBlockUpdates() -> void:
 			var disp:MeshInstance3D = _udisp.instantiate()
 			disp.position = (Vector3(i.x, i.y, i.z) + Vector3(0.5, 0.5, 0.5))
 			terrain.add_child(disp)
+		var bi := BlockManager.getBlock(i)
+		if bi.scripted:
+			bi.blockScript.call(i)
 
 
 ## The base class for representing information about a voxel.
@@ -189,6 +192,11 @@ class BlockInfo extends RefCounted:
 		tickable = true
 		tickCallback = ftickcb
 		blockModel.random_tickable = true
+	
+	
+	func setScripted(callable:Callable) -> void:
+		scripted = true
+		blockScript = callable
 
 
 ## Output a message to the debug log.[br]

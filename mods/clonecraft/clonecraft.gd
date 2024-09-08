@@ -169,6 +169,11 @@ func _makeOL() -> void:
 	man.endBlockRegister(bi3)
 
 
+func blockFall(pos:Vector3) -> void:
+	if man.getBlock(pos + Vector3.DOWN).properties.has(&"air"):
+		WorldControl.instance.spawnFallingBlock(pos)
+
+
 func registerPhase() -> void:
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/give.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/editbar.gd").new())
@@ -192,8 +197,8 @@ func registerPhase() -> void:
 	man.quickUniformBlock(MODID, "barkOak", "Oak Bark", Vector2(5, 2), mat1, 3, 6, "tools:axe")
 	man.quickUniformBlock(MODID, "knotOak", "Oak Knot", Vector2(1, 3), mat1, 3, 6, "tools:axe")
 	man.quickUniformBlock(MODID, "leavesOak", "Oak Leaves", Vector2(2, 3), mat2, 1, 1, "tools:shears", 1)
-	man.quickUniformBlock(MODID, "gravel", "Gravel", Vector2(3, 3), mat1, 1, 1, "tools:shovel")
-	man.quickUniformBlock(MODID, "sand", "Sand", Vector2(4, 3), mat1, 1, 1, "tools:shovel")
+	man.quickUniformBlock(MODID, "gravel", "Gravel", Vector2(3, 3), mat1, 1, 1, "tools:shovel").setScripted(blockFall)
+	man.quickUniformBlock(MODID, "sand", "Sand", Vector2(4, 3), mat1, 1, 1, "tools:shovel").setScripted(blockFall)
 	man.quickUniformBlock(MODID, "glass", "Glass", Vector2(5, 3), mat2, 1, 1, "tools:pickaxe", 2)
 	man.quickUniformBlock(MODID, "brick", "Brick", Vector2(0, 4), mat1)
 	man.quickUniformBlock(MODID, "clay", "Clay", Vector2(1, 4), mat1, 1, 1, "tools:shovel")
