@@ -168,7 +168,7 @@ static func registerCommand(command:Command) -> void:
 	commands.append(command)
 
 
-static func throw(error:String, why:String):
+static func throw(error:String, why:String) -> void:
 	_err = error
 	_whyerr = why
 	_thrown = true
