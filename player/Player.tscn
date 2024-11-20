@@ -40,7 +40,7 @@ process_mode = 3
 
 [node name="VoxelViewer" type="VoxelViewer" parent="head/Camera3D"]
 process_mode = 3
-view_distance = 512
+view_distance = 256
 
 [node name="springArm3d" type="SpringArm3D" parent="head/Camera3D"]
 shape = SubResource("SphereShape3D_xe5eu")
@@ -97,7 +97,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
 [node name="armpointx" type="Node3D" parent="armpointy"]
 
 [node name="clouds" type="MeshInstance3D" parent="."]
-transform = Transform3D(2000, 0, 0, 0, -2000, 0.000301992, 0, -0.000301992, -2000, 0, 215.917, 0)
+transform = Transform3D(2000, 0, 0, 0, 2000, 0.000301992, 0, 0.000301992, -2000, 0, 215.917, 0)
+material_override = ExtResource("5_vknlp")
+mesh = SubResource("PlaneMesh_5tc7k")
+
+[node name="clouds2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2000, 2.44929e-13, 0, 2.44929e-13, -2000, 0.000301992, 3.69834e-20, -0.000301992, -2000, 0, 215.917, 0)
 material_override = ExtResource("5_vknlp")
 mesh = SubResource("PlaneMesh_5tc7k")
 

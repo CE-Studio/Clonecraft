@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=63 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
 [ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
-[ext_resource type="VoxelGeneratorScript" uid="uid://bvjxaj2q5axx0" path="res://mods/clonecraft/default terrain.tres" id="4_brcpd"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
 [ext_resource type="Script" path="res://scripts/game/hotbar.gd" id="5_7ch0y"]
 [ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_i3vlu"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://t3mnt7mdm64f" path="res://gui/hotbar_layers.png" id="6_v81ga"]
 [ext_resource type="Texture2D" uid="uid://dy0d23dqmbyhy" path="res://gui/hotbar_sel.png" id="7_rdery"]
 [ext_resource type="Texture2D" uid="uid://dgjlgaesep514" path="res://gui/statbars.png" id="9_ehm4h"]
+[ext_resource type="Texture2D" uid="uid://bnbw2v2p2r2uo" path="res://gui/statbar_glint.png" id="10_pvi8e"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
@@ -35,7 +35,7 @@ offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
 colors = PackedColorArray(0.0313726, 0.0509804, 0.101961, 1, 0.435294, 0.258824, 0.0941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.435294, 0.258824, 0.0941176, 1, 0.0313726, 0.0509804, 0.101961, 1)
 
 [sub_resource type="Gradient" id="Gradient_6n12d"]
-offsets = PackedFloat32Array(0.2, 0.25, 0.3, 0.7, 0.75, 0.8)
+offsets = PackedFloat32Array(0.2, 0.25, 0.35, 0.65, 0.75, 0.8)
 colors = PackedColorArray(0.105882, 0.14902, 0.247059, 1, 0.780392, 0.32549, 0.105882, 1, 0.776471, 0.866667, 0.941176, 1, 0.776471, 0.866667, 0.941176, 1, 0.780392, 0.32549, 0.105882, 1, 0.105882, 0.14902, 0.247059, 1)
 
 [sub_resource type="Gradient" id="Gradient_8853r"]
@@ -69,6 +69,157 @@ texture = SubResource("AtlasTexture_dajyh")
 texture_margin_left = 5.0
 texture_margin_right = 5.0
 
+[sub_resource type="Animation" id="Animation_wflqv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector2(-128, -55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t8kls"]
+resource_name = "drain"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.133333),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector2(428, -55), Vector2(0, -55)]
+}
+
+[sub_resource type="Animation" id="Animation_2ufv6"]
+resource_name = "fill"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.15),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector2(-128, -55), Vector2(300, -55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yauv8"]
+_data = {
+"RESET": SubResource("Animation_wflqv"),
+"drain": SubResource("Animation_t8kls"),
+"fill": SubResource("Animation_2ufv6")
+}
+
+[sub_resource type="Animation" id="Animation_6p2mi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../progressBar2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bvo25"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.5),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../progressBar2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.5),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwc5v"]
+_data = {
+"RESET": SubResource("Animation_6p2mi"),
+"fade": SubResource("Animation_bvo25")
+}
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_atfrb"]
 atlas = ExtResource("9_ehm4h")
 region = Rect2(20, 0, 10, 16)
@@ -77,6 +228,72 @@ region = Rect2(20, 0, 10, 16)
 texture = SubResource("AtlasTexture_atfrb")
 texture_margin_left = 5.0
 texture_margin_right = 5.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v4nf3"]
+animation = &"fade"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qjfb7"]
+animation = &"fade"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mbwyd"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "get_parent().value == get_parent().max_value"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4ngxp"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "get_parent().value != get_parent().max_value"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mo26k"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_r1sks"]
+states/Start/position = Vector2(627, 247)
+states/fade/node = SubResource("AnimationNodeAnimation_qjfb7")
+states/fade/position = Vector2(507, 72)
+"states/fade 2/node" = SubResource("AnimationNodeAnimation_v4nf3")
+"states/fade 2/position" = Vector2(755, 72)
+transitions = ["fade", "fade 2", SubResource("AnimationNodeStateMachineTransition_mbwyd"), "fade 2", "fade", SubResource("AnimationNodeStateMachineTransition_4ngxp"), "Start", "fade 2", SubResource("AnimationNodeStateMachineTransition_mo26k")]
+
+[sub_resource type="Animation" id="Animation_fl42u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l5d6t"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.5),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7c41e"]
+_data = {
+"RESET": SubResource("Animation_fl42u"),
+"fade": SubResource("Animation_l5d6t")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8l1xi"]
 atlas = ExtResource("9_ehm4h")
@@ -295,6 +512,7 @@ position = Vector2(-279, -34)
 texture = ExtResource("7_rdery")
 
 [node name="progressBar" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+clip_children = 2
 layout_mode = 0
 offset_left = -306.0
 offset_top = -86.0
@@ -306,7 +524,25 @@ max_value = 20.0
 value = 12.13
 show_percentage = false
 
+[node name="textureRect" type="TextureRect" parent="Control/GUIlayer/hotbar/progressBar"]
+layout_mode = 0
+offset_left = -128.0
+offset_top = -55.0
+offset_bottom = 73.0
+texture = ExtResource("10_pvi8e")
+
+[node name="animationPlayer" type="AnimationPlayer" parent="Control/GUIlayer/hotbar/progressBar/textureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_yauv8")
+}
+
+[node name="animationPlayer" type="AnimationPlayer" parent="Control/GUIlayer/hotbar/progressBar"]
+libraries = {
+"": SubResource("AnimationLibrary_rwc5v")
+}
+
 [node name="progressBar4" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -306.0
 offset_top = -106.0
@@ -315,8 +551,17 @@ offset_bottom = -90.0
 theme_override_styles/background = SubResource("StyleBoxTexture_cjf6q")
 theme_override_styles/fill = SubResource("StyleBoxTexture_l54sm")
 max_value = 20.0
-value = 15.27
+value = 20.0
 show_percentage = false
+
+[node name="animationTree" type="AnimationTree" parent="Control/GUIlayer/hotbar/progressBar4"]
+tree_root = SubResource("AnimationNodeStateMachine_r1sks")
+anim_player = NodePath("../animationPlayer")
+
+[node name="animationPlayer" type="AnimationPlayer" parent="Control/GUIlayer/hotbar/progressBar4"]
+libraries = {
+"": SubResource("AnimationLibrary_7c41e")
+}
 
 [node name="progressBar2" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
 layout_mode = 0
@@ -331,12 +576,10 @@ value = 11.72
 fill_mode = 1
 show_percentage = false
 
-[node name="progressBar3" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
+[node name="progressBar3" type="ProgressBar" parent="Control/GUIlayer/hotbar/progressBar2"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = -86.0
-offset_right = 306.0
-offset_bottom = -70.0
+offset_right = 300.0
+offset_bottom = 16.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_yf4da")
 theme_override_styles/fill = SubResource("StyleBoxTexture_rgxlq")
 max_value = 20.0
@@ -496,7 +739,6 @@ dictKey = &"gui.gameplay.desktop_quit"
 [node name="VoxelTerrain" type="VoxelTerrain" parent="."]
 process_mode = 3
 process_priority = -1
-generator = ExtResource("4_brcpd")
 mesher = SubResource("VoxelMesherBlocky_h45n1")
 cast_shadow = 2
 max_view_distance = 1024

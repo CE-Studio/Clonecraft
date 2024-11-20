@@ -5,7 +5,7 @@ extends Control
 static var instance:Hotbar
 @onready var player:Player = $"../../../player"
 @onready var timer:Timer = $timer
-
+var immcheck := false
 
 @onready var layerLights:Array[Sprite2D] = [
 	$layer0,
@@ -44,6 +44,15 @@ static var layer:int:
 func _ready():
 	instance = self
 	call_deferred("_setup")
+
+
+func _process(delta: float) -> void:
+	if player.abilities["immortal"] != immcheck:
+		immcheck = player.abilities["immortal"]
+		if immcheck:
+			$progressBar/animationPlayer.play("fade")
+		else:
+			$progressBar/animationPlayer.play_backwards("fade")
 
 
 func _setup():

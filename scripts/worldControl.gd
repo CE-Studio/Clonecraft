@@ -2,6 +2,8 @@ extends Node3D
 class_name WorldControl
 
 
+static var seed:int
+static var generator:VoxelGenerator
 static var worldpath:String
 static var streamtype:String
 static var instance:WorldControl

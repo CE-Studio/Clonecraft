@@ -114,7 +114,7 @@ func restore(dict:Dictionary) -> bool:
 		"extra",
 		"hotbar",
 	]):
-		abilities = dict["abilities"]
+		abilities.merge(dict["abilities"], true)
 		position.x = dict["posx"]
 		position.y = dict["posy"]
 		position.z = dict["posz"]
@@ -338,7 +338,7 @@ func _physics_process(delta) -> void:
 
 
 func _settingsChanged():
-	print("a")
+	super()
 
 
 func _on_enter_item_range(body) -> void:

@@ -1,0 +1,14 @@
+{
+	"clonecraft:default" : {
+		"path" : "res://mods/clonecraft/default terrain.tres",
+		"icon" : "res://textures/pack.svg",
+		"name" : "gui.worlds.gen_name_default",
+		"desc" : "gui.worlds.gen_desc_default"
+	},
+	"clonecraft:debug" : {
+		"path" : "res://mods/clonecraft/debug terrain.tres",
+		"icon" : "res://textures/pack.svg",
+		"name" : "gui.worlds.gen_name_debug",
+		"desc" : "gui.worlds.gen_desc_debug"
+	}
+}

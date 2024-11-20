@@ -45,6 +45,8 @@ func save() -> bool:
 		md = {}
 	if md is Dictionary:
 		md.merge({ID : data}, true)
+		md["tileEntityKey"] = ID
+		md["tileEntityNodeID"] = get_instance_id()
 		BlockManager._tool.set_voxel_metadata(pos, md)
 		return true
 	return false

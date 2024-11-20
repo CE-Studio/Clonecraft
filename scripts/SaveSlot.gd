@@ -11,6 +11,7 @@ class_name SaveSlot
 @onready var warn := $warning
 @onready var error := $error
 @onready var sicon := $icon
+var gens:Dictionary = {}
 var data:Dictionary
 var fpath:String
 
@@ -22,6 +23,19 @@ const IMPORTANTKEYS := [
 ]
 
 
+func showerror(e:String) -> void:
+	error.show()
+	error.tooltip_text = Translator.translate(e)
+	disabled = true
+	play.disabled = true
+	edit.disabled = true
+	backup.disabled = true
+	sicon.modulate = Color.hex(0xA9A9A9FF)
+	namel.modulate = Color.hex(0xA9A9A9FF)
+	subl.modulate = Color.hex(0xA9A9A9FF)
+	timel.modulate = Color.hex(0xA9A9A9FF)
+
+
 func _ready():
 	play.tooltip_text = Translator.translate(&"gui.worlds.play")
 	edit.tooltip_text = Translator.translate(&"gui.worlds.edit")
@@ -29,7 +43,6 @@ func _ready():
 	
 	
 func populate(datain:Dictionary, filepath:String):
-	print(filepath)
 	fpath = filepath
 	data = datain
 	var keys:Array = data.keys()
@@ -55,38 +68,42 @@ func populate(datain:Dictionary, filepath:String):
 	
 	for i in IMPORTANTKEYS:
 		if i not in keys:
-			error.show()
-			error.tooltip_text = Translator.translate(&"gui.worlds.corrupted0") + ' "' + i + '"'
-			disabled = true
-			play.disabled = true
-			edit.disabled = true
-			backup.disabled = true
-			sicon.modulate = Color.hex(0xA9A9A9FF)
-			namel.modulate = Color.hex(0xA9A9A9FF)
-			subl.modulate = Color.hex(0xA9A9A9FF)
-			timel.modulate = Color.hex(0xA9A9A9FF)
+			showerror(Translator.translate(&"gui.worlds.corrupted0") + ' "' + i + '"')
 			return
-		if data["gameversion"] != SettingManager.VERSION:
-			warn.show()
-			warn.tooltip_text = Translator.translate(&"gui.worlds.versiondiff")
+
+	if data["gameversion"] != SettingManager.VERSION:
+		warn.show()
+		warn.tooltip_text = Translator.translate(&"gui.worlds.versiondiff")
 	
 	for i in data["mods"]:
 		if not FileAccess.file_exists("res://mods/" + i + "/" + i + ".gd"):
-			error.show()
-			error.tooltip_text = Translator.translate(&"gui.worlds.mod_missing") + ' "' + i + '"'
-			disabled = true
-			play.disabled = true
-			edit.disabled = true
-			backup.disabled = true
-			sicon.modulate = Color.hex(0xA9A9A9FF)
-			namel.modulate = Color.hex(0xA9A9A9FF)
-			subl.modulate = Color.hex(0xA9A9A9FF)
-			timel.modulate = Color.hex(0xA9A9A9FF)
+			showerror(Translator.translate(&"gui.worlds.mod_missing") + ' "' + i + '"')
 			return
+		if FileAccess.file_exists("res://mods/" + i + "/generators.json"):
+			var f := FileAccess.open("res://mods/" + i + "/generators.json", FileAccess.READ)
+			var g = JSON.parse_string(f.get_as_text())
+			f.close()
+			if g != null:
+				gens.merge(g, true)
+	
+	if not (data["generator"] in gens.keys()):
+		showerror(&"gui.worlds.generator_missing")
+		return
+		
+	if not FileAccess.file_exists(gens[data["generator"]]["path"]):
+		showerror(&"gui.worlds.generator_code_missing")
+		return
 
 
 func _on_play_pressed():
+	var g = load(gens[data["generator"]]["path"])
+	if g is VoxelGenerator:
+		WorldControl.generator = g
+	else:
+		showerror(&"gui.worlds.generator_not_a_generator")
+		return
 	BlockManager.modsToLoad = data["mods"]
 	WorldControl.worldpath = fpath
 	WorldControl.streamtype = data["streamtype"]
+	WorldControl.seed = data["seed"]
 	get_tree().change_scene_to_file("res://node_3d.tscn")

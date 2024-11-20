@@ -548,4 +548,3 @@ static func setBlock(
 static func getBlock(pos:Vector3) -> BlockInfo:
 	var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
 	return blockList[_tool.get_voxel(npos)]
-

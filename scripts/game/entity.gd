@@ -14,6 +14,10 @@ var abilities := {
 	"endlessInventory":false,
 	"allowPickup":false,
 	"immortal":false,
+	"health": 20.0,
+	"oxygen": 20.0,
+	"food": 20.0,
+	"saturation": 20.0,
 	"scale":{
 		"uniform":1.0,
 		"x":1.0,
@@ -25,7 +29,10 @@ var abilities := {
 		"reach":1.0,
 		"inventory":1.0,
 		"health":1.0,
+		"oxygen": 1.0,
 		"fallDamage":1.0,
+		"food": 1.0,
+		"saturation": 1.0,
 	},
 	"size":{
 		"x":1.0,
@@ -36,7 +43,10 @@ var abilities := {
 		"reach":0.0,
 		"inventory":0.0,
 		"health":20.0,
+		"oxygen": 20.0,
 		"fallDamage":4.0,
+		"food": 20.0,
+		"saturation": 20.0,
 	},
 }
 

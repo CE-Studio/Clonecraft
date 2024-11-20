@@ -6,7 +6,7 @@
 transparency = 2
 alpha_scissor_threshold = 0.05
 alpha_antialiasing_mode = 0
-shading_mode = 0
+cull_mode = 1
 albedo_texture = ExtResource("1_cn8ff")
 uv1_scale = Vector3(0.0004, 0.0004, 0.0004)
 uv1_triplanar = true

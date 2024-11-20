@@ -10,7 +10,6 @@ static var _layers:int = 0
 
 
 static func isIdle() -> bool:
-	print(_layers)
 	if _layers < 0:
 		_layers = 0
 	return _layers == 0

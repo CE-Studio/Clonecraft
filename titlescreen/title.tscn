@@ -1521,7 +1521,6 @@ tile_back = Vector2i(1, 3)
 tile_front = Vector2i(1, 3)
 
 [sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_lrm5p"]
-transparent = true
 transparency_index = 1
 material_override_0 = ExtResource("13_2nbak")
 atlas_size_in_tiles = Vector2i(10, 10)
@@ -1553,7 +1552,6 @@ tile_back = Vector2i(4, 3)
 tile_front = Vector2i(4, 3)
 
 [sub_resource type="VoxelBlockyModelCube" id="VoxelBlockyModelCube_u2pq3"]
-transparent = true
 transparency_index = 1
 material_override_0 = ExtResource("13_2nbak")
 atlas_size_in_tiles = Vector2i(10, 10)
