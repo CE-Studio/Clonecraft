@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnbkdrsk6miv4"]
+
+[ext_resource type="Texture2D" uid="uid://q6l8gu5hnobr" path="res://gui/invbacking.png" id="1_ll82i"]
+[ext_resource type="Script" path="res://gui/playerinv.gd" id="1_n3umw"]
+[ext_resource type="Texture2D" uid="uid://bhxbhlufsuk2r" path="res://gui/hotbarinv.png" id="2_etwfy"]
+[ext_resource type="Script" path="res://gui/inventoryTabs.gd" id="2_ntsvs"]
+[ext_resource type="Script" path="res://gui/mainInvetory.gd" id="4_p3272"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6suff"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2ahj"]
+texture = ExtResource("1_ll82i")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="playerinv" type="HBoxContainer"]
+offset_right = 796.0
+offset_bottom = 313.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_n3umw")
+
+[node name="control2" type="Control" parent="."]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="control3" type="Control" parent="."]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="vBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="control2" type="Control" parent="vBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="hBoxContainer" type="HBoxContainer" parent="vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="tabBar" type="TabContainer" parent="vBoxContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_constants/side_margin = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6suff")
+current_tab = 0
+use_hidden_tabs_for_min_size = true
+script = ExtResource("2_ntsvs")
+
+[node name="primaryInventory" type="PanelContainer" parent="vBoxContainer/hBoxContainer/tabBar"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_c2ahj")
+script = ExtResource("4_p3272")
+metadata/_tab_index = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="vBoxContainer/hBoxContainer/tabBar/primaryInventory"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="scrollContainer" type="ScrollContainer" parent="vBoxContainer/hBoxContainer/tabBar/primaryInventory/vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="gridContainer" type="GridContainer" parent="vBoxContainer/hBoxContainer/tabBar/primaryInventory/vBoxContainer/scrollContainer"]
+layout_mode = 2
+columns = 9
+
+[node name="fillBar" type="ProgressBar" parent="vBoxContainer/hBoxContainer/tabBar/primaryInventory/vBoxContainer"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+show_percentage = false
+
+[node name="control" type="Control" parent="vBoxContainer/hBoxContainer"]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="textureRect" type="TextureRect" parent="vBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_etwfy")
+
+[node name="control" type="Control" parent="vBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="control4" type="Control" parent="."]
+custom_minimum_size = Vector2(71, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1

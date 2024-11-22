@@ -57,6 +57,7 @@ static var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn"
 static var _udisp:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
 static var _tool:VoxelToolTerrain
 static var _newmodel:VoxelBlockyModel
+static var _checkTileEntites := {}
 
 
 ## Get the [BlockManager.BlockInfo] tied to a specific ID string.[br]
@@ -86,6 +87,10 @@ static func _tickBlock(pos:Vector3i, rawID:int) -> void:
 	var block:BlockInfo = blockList[rawID]
 	if block.tickable:
 		block.tickCallback.call(pos)
+
+
+static func _tickMeta(pos:Vector3i, meta:Variant) -> void:
+	pass
 
 
 ## Run all pending block updates.[br]
@@ -333,12 +338,12 @@ static func setup() -> void:
 	airBlock.properties.append(&"replaceable")
 	airBlock.properties.append(&"incompleteHitbox")
 	endBlockRegister(airBlock)
-	var blockEntityModel = startBlockRegister(&"clonecraft:blockEntity", Voxdat.vox.GEOMETRY_NONE)
-	var blockEntityBlock := BlockInfo.new(
+	var tileEntityModel = startBlockRegister(&"clonecraft:tileEntity", Voxdat.vox.GEOMETRY_NONE)
+	var tileEntityBlock := BlockInfo.new(
 			"clonecraft",
-			"blockEntity",
-			"Block Entity Parent [Internal use only!]",
-			blockEntityModel,
+			"tileEntity",
+			"Tile Entity Parent [Internal use only!]",
+			tileEntityModel,
 			0,
 			0,
 			true,
@@ -350,8 +355,8 @@ static func setup() -> void:
 			"null",
 			"null"
 	)
-	blockEntityBlock.properties.append(&"incompleteHitbox")
-	endBlockRegister(blockEntityBlock)
+	tileEntityBlock.properties.append(&"incompleteHitbox")
+	endBlockRegister(tileEntityBlock)
 
 	Mod.refman()
 	for i in modsToLoad:

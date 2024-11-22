@@ -73,7 +73,8 @@
 		"video": {
 			"fov": "Field of View",
 			"fps_cap": "Framerate Limit",
-			"vsync": "Use V-Sync"
+			"vsync": "Use V-Sync",
+			"render_distance": "Render Distance"
 		},
 		"video_folder": "Video Settings..."
 	},

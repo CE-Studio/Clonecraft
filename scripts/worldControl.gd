@@ -2,6 +2,9 @@ extends Node3D
 class_name WorldControl
 
 
+static var packedInv:PackedScene = preload("res://gui/Playerinv.tscn") 
+
+
 static var seed:int
 static var generator:VoxelGenerator
 static var worldpath:String
@@ -41,6 +44,7 @@ var _p:Player
 var _terrain:VoxelTerrain
 var stream:VoxelStream
 var dayprogress:float = 0
+var invInstance:Node
 
 
 var _savedata := {
@@ -131,9 +135,13 @@ func pauseUnpause() -> void:
 			pausing = true
 
 
-func _input(event) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		pauseUnpause()
+	elif event.is_action_pressed("game_inventory"):
+		if not is_instance_valid(invInstance):
+			invInstance = packedInv.instantiate()
+			$Control/invbacking.add_child(invInstance)
 
 
 func _ready() -> void:

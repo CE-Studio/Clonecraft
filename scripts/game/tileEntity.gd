@@ -2,9 +2,18 @@ extends Node3D
 class_name TileEntity
 
 
+@export var itemModel:Mesh
+
+
 var data:Dictionary
 var pos:Vector3i
-var ID:StringName
+var ID:StringName:
+	get:
+		return getID()
+
+
+func getID() -> StringName:
+	return &"null:null"
 
 
 ## Called when the TileEntity enters the scene tree for the first time.
@@ -25,9 +34,8 @@ func _blockUpdate() -> void:
 ## Called when the tile entity is added to the scene, after [code]_ready[/code].[br]
 ## Returns [code]true[/code] if it sucessfully loaded save data from the world, otherwise [code]false[/code].[br]
 ## A falure does NOT indicate a problem, just that no data was found. This is expected, for example, when a new TileEntity is just placed.
-func setup(iID:StringName, ipos:Vector3i) -> bool:
+func setup(ipos:Vector3i) -> bool:
 	pos = ipos
-	ID = iID
 	var md = BlockManager._tool.get_voxel_metadata(pos)
 	if md is Dictionary:
 		if ID in md.keys():
@@ -45,8 +53,7 @@ func save() -> bool:
 		md = {}
 	if md is Dictionary:
 		md.merge({ID : data}, true)
-		md["tileEntityKey"] = ID
-		md["tileEntityNodeID"] = get_instance_id()
+		md[&"tileEntityKey"] = ID
 		BlockManager._tool.set_voxel_metadata(pos, md)
 		return true
 	return false

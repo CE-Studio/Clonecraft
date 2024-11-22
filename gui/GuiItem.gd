@@ -18,6 +18,7 @@ func assign(item:ItemManager.ItemStack) -> void:
 	var m2d:TransformedMeshInstance2D = $transformedMeshInstance2d
 	m2d.baseMesh = item.getMesh()
 	m2d.mat = item.getMesh().surface_get_material(0)
+	$button.tooltip_text = Translator.translate(item.getItem().name)
 
 
 func _on_button_pressed() -> void:

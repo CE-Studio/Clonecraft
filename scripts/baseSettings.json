@@ -4,10 +4,18 @@
 		"type": "folder",
 		"content": [
 			{
+				"name": "options.video.render_distance",
+				"type": "int",
+				"slidemin": 3,
+				"slidemax": 32,
+				"default": 16,
+				"path": "gameplay/video/render_distance"
+			},
+			{
 				"name": "options.video.fov",
 				"type": "float",
-				"slidemin": 0.0,
-				"slidemax": 110.0,
+				"slidemin": 1.0,
+				"slidemax": 179.0,
 				"default": 75.0,
 				"path": "gameplay/video/fov"
 			},

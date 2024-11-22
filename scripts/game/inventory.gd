@@ -13,12 +13,14 @@ enum {
 
 @export var space:int = 2624
 var container:Array[ItemManager.ItemStack]
-var consumption:int:
-	set(_val):
-		pass
+var consumption:int
 
 
 signal contentChanged
+
+
+func sort() -> void:
+	container.sort_custom(func(a, b): return a.count > b.count)
 
 
 func save() -> Dictionary:
@@ -66,6 +68,7 @@ func addItem(item:ItemManager.ItemStack) -> bool:
 			contentChanged.emit()
 			return true
 	container.append(item)
+	sort()
 	contentChanged.emit()
 	return true
 

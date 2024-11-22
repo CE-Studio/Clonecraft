@@ -45,10 +45,10 @@ var time := 0.0
 var moveTime := 0.0
 ## Used to smoothly fade the walking animation in/out.
 var animCurSpeed := 0.0
-## Sets how may blocks away from the player random ticks can be.
-var tickRange := 256
-## Sets how many random ticks will go off every simulation tick.
-var tickNumber := 15360
+## Sets how may blocks away from the player random ticks can be, as a percentage of render distance.
+var tickRange := 0.5
+## Sets how many random ticks will go off every simulation tick, per chunk in range.
+var tickNumber := 0.47
 ## A reference to the world's [WorldControl].
 var world:WorldControl
 
@@ -230,11 +230,14 @@ func _unhandled_input(event) -> void:
 ## Runs random ticks around the player. Called automatically.
 func ticks() -> void:
 	var center = position.floor()
+	var trange = ceili(ProjectSettings.get_setting("gameplay/video/render_distance") * 16 * tickRange)
 	var area = AABB(
-		center - Vector3(tickRange, tickRange, tickRange),
-		2 * Vector3(tickRange, tickRange, tickRange)
+		center - Vector3(trange, trange, trange),
+		2 * Vector3(trange, trange, trange)
 	)
-	voxelTool.run_blocky_random_tick(area, tickNumber, BlockManager._tickBlock)
+	var tnum = ceili(pow(ceilf((trange * 2.0) / 16), 3) * tickNumber)
+	voxelTool.run_blocky_random_tick(area, tnum, BlockManager._tickBlock)
+	#voxelTool.for_each_voxel_metadata_in_area(area, BlockManager._tickMeta)
 
 
 func _physics_process(delta) -> void:
@@ -339,6 +342,10 @@ func _physics_process(delta) -> void:
 
 func _settingsChanged():
 	super()
+	$head/Camera3D/VoxelViewer.view_distance = 16 * ProjectSettings.get_setting("gameplay/video/render_distance")
+	cams[0].fov = ProjectSettings.get_setting("gameplay/video/fov")
+	cams[1].fov = ProjectSettings.get_setting("gameplay/video/fov")
+	cams[2].fov = ProjectSettings.get_setting("gameplay/video/fov")
 
 
 func _on_enter_item_range(body) -> void:

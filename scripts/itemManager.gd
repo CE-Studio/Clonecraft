@@ -48,6 +48,7 @@ class ItemStack extends RefCounted:
 ## A container for static item properties.
 class Item extends RefCounted:
 	var model:Mesh
+	var name:StringName
 	
 	var hasInteractionOverride := false
 	var interactionOverride:Callable
@@ -111,6 +112,7 @@ static func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
 		m = Mesh.new()
 	var nitem := Item.new(m)
 	nitem.setVoxel(bi.fullID)
+	nitem.name = bi.nameReadable
 	items[bi.fullID] = nitem
 	return nitem
 

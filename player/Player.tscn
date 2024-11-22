@@ -99,11 +99,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
 [node name="clouds" type="MeshInstance3D" parent="."]
 transform = Transform3D(2000, 0, 0, 0, 2000, 0.000301992, 0, 0.000301992, -2000, 0, 215.917, 0)
 material_override = ExtResource("5_vknlp")
+cast_shadow = 0
 mesh = SubResource("PlaneMesh_5tc7k")
 
 [node name="clouds2" type="MeshInstance3D" parent="."]
 transform = Transform3D(2000, 2.44929e-13, 0, 2.44929e-13, -2000, 0.000301992, 3.69834e-20, -0.000301992, -2000, 0, 215.917, 0)
 material_override = ExtResource("5_vknlp")
+cast_shadow = 0
 mesh = SubResource("PlaneMesh_5tc7k")
 
 [node name="Area3D" type="Area3D" parent="."]

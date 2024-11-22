@@ -1,7 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
-[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_tpx33"]
 [ext_resource type="Script" path="res://scripts/worldControl.gd" id="1_ug7a2"]
 [ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dy0d23dqmbyhy" path="res://gui/hotbar_sel.png" id="7_rdery"]
 [ext_resource type="Texture2D" uid="uid://dgjlgaesep514" path="res://gui/statbars.png" id="9_ehm4h"]
 [ext_resource type="Texture2D" uid="uid://bnbw2v2p2r2uo" path="res://gui/statbar_glint.png" id="10_pvi8e"]
+[ext_resource type="Script" path="res://invbacking.gd" id="11_lbxo1"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
@@ -359,8 +359,11 @@ sunlightColor = SubResource("Gradient_8853r")
 moonlightColor = SubResource("Gradient_5v3fw")
 moonSunAndStarIntensity = SubResource("Gradient_1jifp")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="CanvasLayer" parent="."]
 process_mode = 3
+layer = -1
+
+[node name="HUDlayer" type="Control" parent="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -368,15 +371,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_tpx33")
-
-[node name="HUDlayer" type="Control" parent="Control"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="crosshair" type="CenterContainer" parent="Control"]
-layout_mode = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -392,7 +389,6 @@ mouse_filter = 2
 texture = ExtResource("1_epwcq")
 
 [node name="f31" type="Label" parent="Control"]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "F3 data 1"
@@ -400,7 +396,6 @@ script = ExtResource("2_yvkcu")
 metadata/_edit_layout_mode = 1
 
 [node name="f32" type="Label" parent="Control"]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -411,7 +406,7 @@ text = "F3 data 2"
 horizontal_alignment = 2
 
 [node name="GUIlayer" type="Control" parent="Control"]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -591,17 +586,7 @@ show_percentage = false
 wait_time = 0.3
 one_shot = true
 
-[node name="GUIlayer2" type="Control" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="chat" type="VBoxContainer" parent="Control"]
-layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -618,9 +603,28 @@ visible = false
 custom_minimum_size = Vector2(400, 1.45519e-11)
 layout_mode = 2
 
+[node name="GUIlayer2" type="Control" parent="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="invbacking" type="Panel" parent="Control"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_g08o8")
+script = ExtResource("11_lbxo1")
+
 [node name="waitpanel" type="Panel" parent="Control"]
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -650,7 +654,6 @@ dictKey = &"gui.gameplay.wait_for_chunks"
 
 [node name="pausepanel" type="Panel" parent="Control"]
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
