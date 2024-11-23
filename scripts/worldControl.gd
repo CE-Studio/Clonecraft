@@ -141,7 +141,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("game_inventory"):
 		if not is_instance_valid(invInstance):
 			invInstance = packedInv.instantiate()
-			$Control/invbacking.add_child(invInstance)
+			$Control/invlayer.add_child(invInstance)
 
 
 func _ready() -> void:

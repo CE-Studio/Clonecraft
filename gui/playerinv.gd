@@ -8,8 +8,3 @@ func _ready() -> void:
 	offset_right = 0
 	offset_bottom = 0
 	offset_top = 0
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

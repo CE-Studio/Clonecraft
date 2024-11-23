@@ -1,4 +1,4 @@
-extends Panel
+extends Button
 
 
 var prevc:int = 0

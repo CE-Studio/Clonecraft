@@ -133,6 +133,14 @@ func _ununhandled_input(event:InputEvent) -> void:
 						return
 				if ii.isTool:
 					return
+		elif  event.is_action_pressed("game_throw"):
+			var i := player.getSelectedItem()
+			if is_instance_valid(i):
+				i = i.copy()
+				if not Input.is_action_pressed("game_sprint"):
+					i.count = 1
+				if player.inventory.extractItem(i):
+					player.throwItem(i)
 		
 		if placing or breaking:
 			if (

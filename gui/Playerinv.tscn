@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnbkdrsk6miv4"]
+[gd_scene load_steps=9 format=3 uid="uid://bnbkdrsk6miv4"]
 
 [ext_resource type="Texture2D" uid="uid://q6l8gu5hnobr" path="res://gui/invbacking.png" id="1_ll82i"]
 [ext_resource type="Script" path="res://gui/playerinv.gd" id="1_n3umw"]
 [ext_resource type="Texture2D" uid="uid://bhxbhlufsuk2r" path="res://gui/hotbarinv.png" id="2_etwfy"]
 [ext_resource type="Script" path="res://gui/inventoryTabs.gd" id="2_ntsvs"]
 [ext_resource type="Script" path="res://gui/mainInvetory.gd" id="4_p3272"]
+[ext_resource type="Script" path="res://gui/hotbar_grid.gd" id="6_hog6f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6suff"]
 
@@ -92,6 +93,16 @@ mouse_filter = 1
 [node name="textureRect" type="TextureRect" parent="vBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_etwfy")
+
+[node name="gridContainer" type="GridContainer" parent="vBoxContainer/textureRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 504.0
+offset_bottom = 204.0
+theme_override_constants/v_separation = 4
+columns = 10
+script = ExtResource("6_hog6f")
 
 [node name="control" type="Control" parent="vBoxContainer"]
 custom_minimum_size = Vector2(0, 30)

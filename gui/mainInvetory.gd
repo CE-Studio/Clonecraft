@@ -19,17 +19,10 @@ func _ready() -> void:
 func redraw() -> void:
 	var inv := WorldControl.instance._p.inventory
 	fillbar.max_value = inv.space
-	print(fillbar.max_value)
 	fillbar.value = inv.consumption
-	print(fillbar.value)
 	for i in grid.get_children():
 		i.queue_free()
 	for i in inv.container:
 		var ngi:GUIItem = guii.instantiate()
 		grid.add_child(ngi)
 		ngi.assign(i)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

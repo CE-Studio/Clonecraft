@@ -41,7 +41,7 @@ func _makeGB() -> void:
 	var bi := BlockManager.BlockInfo.new(
 			"clonecraft",
 			"grassBlock",
-			"Grass Block",
+			"clonecraft.block.grass_block",
 			model,
 			1,
 			1,
@@ -71,7 +71,7 @@ func _makeCT() -> void:
 	var bi = BlockManager.BlockInfo.new(
 			"clonecraft",
 			"craftingBench",
-			"Crafting Workbench",
+			"clonecraft.block.crafting_bench",
 			model,
 			3,
 			6,
@@ -100,7 +100,7 @@ func _makeOL() -> void:
 	var bi1 = BlockManager.BlockInfo.new(
 			"clonecraft",
 			"logVertOak",
-			"Vertical Oak Lok",
+			"clonecraft.block.oak_log_vert",
 			model1,
 			3,
 			6,
@@ -127,7 +127,7 @@ func _makeOL() -> void:
 	var bi2 = BlockManager.BlockInfo.new(
 			"clonecraft",
 			"logHoirz1Oak",
-			"Horizotal Oak Log 1",
+			"clonecraft.block.oak_log_horiz_1",
 			model2,
 			3,
 			6,
@@ -154,7 +154,7 @@ func _makeOL() -> void:
 	var bi3 = BlockManager.BlockInfo.new(
 			"clonecraft",
 			"logHoirz2Oak",
-			"Horizotal Oak Log 2",
+			"clonecraft.block.oak_log_horiz_2",
 			model3,
 			3,
 			6,
@@ -175,36 +175,37 @@ func blockFall(pos:Vector3) -> void:
 
 
 func registerPhase() -> void:
+	Translator.loadFromJson("res://mods/clonecraft/lang/en_us.json")
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/give.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/editbar.gd").new())
-	man.quickUniformBlock(MODID, "stone", "Stone", Vector2(0, 0), mat1)
-	man.quickUniformBlock(MODID, "dirt", "Dirt", Vector2(1, 0), mat1, 1, 1, "tools:shovel")
+	man.quickUniformBlock(MODID, "stone", "clonecraft.block.stone", Vector2(0, 0), mat1)
+	man.quickUniformBlock(MODID, "dirt", "clonecraft.block.dirt", Vector2(1, 0), mat1, 1, 1, "tools:shovel")
 	canGrass.append("clonecraft:dirt")
 	_makeGB()
-	man.quickUniformBlock(MODID, "cobblestone", "Cobblestone", Vector2(4, 0), mat1)
-	man.quickUniformBlock(MODID, "oreCoal", "Coal Ore", Vector2(5, 0), mat1)
-	man.quickUniformBlock(MODID, "oreIron", "Iron Ore", Vector2(0, 1), mat1)
-	man.quickUniformBlock(MODID, "oreGold", "Gold Ore", Vector2(1, 1), mat1)
-	man.quickUniformBlock(MODID, "oreDiamond", "Diamond Ore", Vector2(2, 1), mat1)
-	man.quickUniformBlock(MODID, "oreEnerstone", "EnerStone Ore", Vector2(3, 1), mat1)
-	man.quickUniformBlock(MODID, "oreCopper", "Copper Ore", Vector2(4, 1), mat1)
-	man.quickUniformBlock(MODID, "tileStone", "Stone Tile", Vector2(5, 1), mat1)
-	man.quickUniformBlock(MODID, "brickStone", "Stone Bricks", Vector2(0, 2), mat1)
-	man.quickUniformBlock(MODID, "plankOak", "Oak Planks", Vector2(1, 2), mat1, 3, 6, "tools:axe")
-	man.quickUniformBlock(MODID, "tileOak", "Oak Plank Tile", Vector2(2, 2), mat1, 3, 6, "tools:axe")
+	man.quickUniformBlock(MODID, "cobblestone", "clonecraft.block.cobblestone", Vector2(4, 0), mat1)
+	man.quickUniformBlock(MODID, "oreCoal", "clonecraft.block.coal_ore", Vector2(5, 0), mat1)
+	man.quickUniformBlock(MODID, "oreIron", "clonecraft.block.iron_ore", Vector2(0, 1), mat1)
+	man.quickUniformBlock(MODID, "oreGold", "clonecraft.block.gold_ore", Vector2(1, 1), mat1)
+	man.quickUniformBlock(MODID, "oreDiamond", "clonecraft.block.diamond_ore", Vector2(2, 1), mat1)
+	man.quickUniformBlock(MODID, "oreEnerstone", "clonecraft.block.enerstone_ore", Vector2(3, 1), mat1)
+	man.quickUniformBlock(MODID, "oreCopper", "clonecraft.block.copper_ore", Vector2(4, 1), mat1)
+	man.quickUniformBlock(MODID, "tileStone", "clonecraft.block.stone_tile", Vector2(5, 1), mat1)
+	man.quickUniformBlock(MODID, "brickStone", "clonecraft.block.stone_bricks", Vector2(0, 2), mat1)
+	man.quickUniformBlock(MODID, "plankOak", "clonecraft.block.oak_planks", Vector2(1, 2), mat1, 3, 6, "tools:axe")
+	man.quickUniformBlock(MODID, "tileOak", "clonecraft.block.oak_plank_tile", Vector2(2, 2), mat1, 3, 6, "tools:axe")
 	_makeCT()
 	_makeOL()
-	man.quickUniformBlock(MODID, "barkOak", "Oak Bark", Vector2(5, 2), mat1, 3, 6, "tools:axe")
-	man.quickUniformBlock(MODID, "knotOak", "Oak Knot", Vector2(1, 3), mat1, 3, 6, "tools:axe")
-	man.quickUniformBlock(MODID, "leavesOak", "Oak Leaves", Vector2(2, 3), mat2, 1, 1, "tools:shears", 1)
-	man.quickUniformBlock(MODID, "gravel", "Gravel", Vector2(3, 3), mat1, 1, 1, "tools:shovel").setScripted(blockFall)
-	man.quickUniformBlock(MODID, "sand", "Sand", Vector2(4, 3), mat1, 1, 1, "tools:shovel").setScripted(blockFall)
-	man.quickUniformBlock(MODID, "glass", "Glass", Vector2(5, 3), mat2, 1, 1, "tools:pickaxe", 2)
-	man.quickUniformBlock(MODID, "brick", "Brick", Vector2(0, 4), mat1)
-	man.quickUniformBlock(MODID, "clay", "Clay", Vector2(1, 4), mat1, 1, 1, "tools:shovel")
-	man.quickUniformBlock(MODID, "blockCoal", "Coal Block", Vector2(2, 4), mat1)
-	man.quickUniformBlock(MODID, "blockIron", "Coal Block", Vector2(3, 4), mat1)
-	man.quickUniformBlock(MODID, "blockGold", "Coal Block", Vector2(4, 4), mat1)
-	man.quickUniformBlock(MODID, "blockDiamond", "Coal Block", Vector2(5, 4), mat2, 3, 5, "tools:pickaxe", 2)
-	man.quickUniformBlock(MODID, "blockEnerstone", "EnerStone Crate", Vector2(0, 5), mat1)
-	man.quickUniformBlock(MODID, "blockCopper", "Copper Block", Vector2(1, 5), mat1)
+	man.quickUniformBlock(MODID, "barkOak", "clonecraft.block.oak_bark", Vector2(5, 2), mat1, 3, 6, "tools:axe")
+	man.quickUniformBlock(MODID, "knotOak", "clonecraft.block.oak_knot", Vector2(1, 3), mat1, 3, 6, "tools:axe")
+	man.quickUniformBlock(MODID, "leavesOak", "clonecraft.block.oak_leaves", Vector2(2, 3), mat2, 1, 1, "tools:shears", 1)
+	man.quickUniformBlock(MODID, "gravel", "clonecraft.block.gravel", Vector2(3, 3), mat1, 1, 1, "tools:shovel").setScripted(blockFall)
+	man.quickUniformBlock(MODID, "sand", "clonecraft.block.sand", Vector2(4, 3), mat1, 1, 1, "tools:shovel").setScripted(blockFall)
+	man.quickUniformBlock(MODID, "glass", "clonecraft.block.glass", Vector2(5, 3), mat2, 1, 1, "tools:pickaxe", 2)
+	man.quickUniformBlock(MODID, "brick", "clonecraft.block.brick", Vector2(0, 4), mat1)
+	man.quickUniformBlock(MODID, "clay", "clonecraft.block.clay", Vector2(1, 4), mat1, 1, 1, "tools:shovel")
+	man.quickUniformBlock(MODID, "blockCoal", "clonecraft.block.coal_block", Vector2(2, 4), mat1)
+	man.quickUniformBlock(MODID, "blockIron", "clonecraft.block.iron_block", Vector2(3, 4), mat1)
+	man.quickUniformBlock(MODID, "blockGold", "clonecraft.block.gold_block", Vector2(4, 4), mat1)
+	man.quickUniformBlock(MODID, "blockDiamond", "clonecraft.block.diamond_block", Vector2(5, 4), mat2, 3, 5, "tools:pickaxe", 2)
+	man.quickUniformBlock(MODID, "blockEnerstone", "clonecraft.block.enerstone_crate", Vector2(0, 5), mat1)
+	man.quickUniformBlock(MODID, "blockCopper", "clonecraft.block.copper_block", Vector2(1, 5), mat1)

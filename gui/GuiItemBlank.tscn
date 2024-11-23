@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfiewpaq453u"]
+
+[ext_resource type="Script" path="res://gui/GUIItemBlank.gd" id="1_r7tvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb76j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snu7v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8mij"]
+bg_color = Color(1, 1, 1, 0.439216)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3yo3"]
+bg_color = Color(1, 1, 1, 0.439216)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0ri5"]
+
+[node name="GuiItemBlank" type="Button"]
+custom_minimum_size = Vector2(46, 46)
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fb76j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_snu7v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x8mij")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o3yo3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a0ri5")
+script = ExtResource("1_r7tvn")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

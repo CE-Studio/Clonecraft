@@ -79,6 +79,7 @@ func extractItem(item:ItemManager.ItemStack) -> bool:
 			container[i].count -= item.count
 			if container[i].count <= 0:
 				container.remove_at(i)
+			consumption -= item.count
 			contentChanged.emit()
 			return true
 	return false

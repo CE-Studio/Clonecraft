@@ -88,6 +88,12 @@ func _loadHotbar(a:Array):
 			hotbarItems[i] = inventory.getItemFromStack(h)
 
 
+func throwItem(item:ItemManager.ItemStack, strength := 10.0) -> void:
+	var vel = velocity
+	vel += cam.global_basis * (Vector3.FORWARD * strength)
+	ItemManager.spawnWorldItem(item, cam.global_position, vel)
+
+
 func getSelectedItem() -> ItemManager.ItemStack:
 	return hotbarItems[(Hotbar.layer * 10) + Hotbar.slot]
 

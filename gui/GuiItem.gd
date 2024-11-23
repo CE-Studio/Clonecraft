@@ -3,6 +3,11 @@ class_name GUIItem
 
 
 signal clicked(target:GUIItem)
+signal pressed
+signal slotPressed(slot:int)
+
+
+var slotID:int = 0
 
 
 func assign(item:ItemManager.ItemStack) -> void:
@@ -23,3 +28,5 @@ func assign(item:ItemManager.ItemStack) -> void:
 
 func _on_button_pressed() -> void:
 	clicked.emit(self)
+	pressed.emit()
+	slotPressed.emit(slotID)

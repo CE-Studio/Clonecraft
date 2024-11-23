@@ -612,15 +612,24 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="invbacking" type="Panel" parent="Control"]
-visible = false
+[node name="invlayer" type="Button" parent="Control"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g08o8")
 script = ExtResource("11_lbxo1")
 
 [node name="waitpanel" type="Panel" parent="Control"]

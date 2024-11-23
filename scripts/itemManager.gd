@@ -23,7 +23,11 @@ class ItemStack extends RefCounted:
 		itemID = iid
 		count = icount
 		metadata = imetadata
-
+	
+	## Create a copy of this ItemStack
+	func copy() -> ItemStack:
+		return ItemStack.new(itemID, count, metadata)
+	
 	## Return the model of the contained item.
 	func getMesh() -> Mesh:
 		return getItem().model

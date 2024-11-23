@@ -1,0 +1,38 @@
+{
+	"clonecraft": {
+		"block": {
+			"stone": "Stone",
+			"dirt": "Dirt",
+			"grass_block": "Grass Block",
+			"cobblestone": "Cobblestone",
+			"coal_ore": "Coal Ore",
+			"iron_ore": "Iron Ore",
+			"gold_ore": "Gold Ore",
+			"diamond_ore": "Diamond Ore",
+			"enerstone_ore": "EnerStone Ore",
+			"copper_ore": "Copper Ore",
+			"stone_tile": "Stone Tile",
+			"stone_bricks": "Stone Bricks",
+			"oak_planks": "Oak Planks",
+			"oak_plank_tile": "Oak Plank Tile",
+			"crafting_bench": "Crafting Workbench",
+			"oak_log": "Oak Log",
+			"oak_log_horiz_1": "Horizontal Oak Log 1",
+			"oak_log_horiz_2": "Horizontal Oak Log 2",
+			"oak_bark": "Oak Bark",
+			"oak_knot": "Oak Knot",
+			"oak_leaves": "Oak Leaves",
+			"gravel": "Gravel",
+			"sand": "Sand",
+			"glass": "Glass",
+			"brick": "Brick",
+			"clay": "Clay",
+			"coal_block": "Coal Block",
+			"iron_block": "Iron Block",
+			"gold_block": "Gold Block",
+			"diamond_block": "Diamond Block",
+			"enerstone_crate": "EnerStone Crate",
+			"copper_block": "Copper Block"
+		}
+	}
+}

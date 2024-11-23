@@ -177,7 +177,7 @@ class BlockInfo extends RefCounted:
 		modID = fmodID
 		nameID = fnameID
 		fullID = fmodID + ":" + fnameID
-		nameReadable = Translator.translate(fnameReadable)
+		nameReadable = fnameReadable
 		blockModel = fblockModel
 		breakStrength = fbreakStrength
 		explStrength = fexplStrength
@@ -262,7 +262,7 @@ static func inputRegister(callback:Callable) -> void:
 ## Analogous to [method Node._unhandled_input][br]
 ## Static
 static func unhandledInputRegister(callback:Callable) -> void:
-	_inputList.append(callback)
+	_uInputList.append(callback)
 
 
 static func _setupplaceholders():
