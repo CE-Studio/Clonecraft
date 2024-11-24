@@ -3,7 +3,7 @@ class_name SettingManager
 
 
 # TODO better version system
-const VERSION = "Alpha 0.0.2"
+const VERSION = "Alpha 0.0.3"
 
 static var settings := []
 static var _layers:int = 0

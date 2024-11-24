@@ -1,21 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnbkdrsk6miv4"]
+[gd_scene load_steps=7 format=3 uid="uid://bnbkdrsk6miv4"]
 
-[ext_resource type="Texture2D" uid="uid://q6l8gu5hnobr" path="res://gui/invbacking.png" id="1_ll82i"]
 [ext_resource type="Script" path="res://gui/playerinv.gd" id="1_n3umw"]
 [ext_resource type="Texture2D" uid="uid://bhxbhlufsuk2r" path="res://gui/hotbarinv.png" id="2_etwfy"]
 [ext_resource type="Script" path="res://gui/inventoryTabs.gd" id="2_ntsvs"]
-[ext_resource type="Script" path="res://gui/mainInvetory.gd" id="4_p3272"]
+[ext_resource type="PackedScene" uid="uid://b837w4xwagvvg" path="res://gui/PrimaryInventory.tscn" id="3_2ax4r"]
 [ext_resource type="Script" path="res://gui/hotbar_grid.gd" id="6_hog6f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6suff"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2ahj"]
-texture = ExtResource("1_ll82i")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
 
 [node name="playerinv" type="HBoxContainer"]
 offset_right = 796.0
@@ -60,30 +51,8 @@ current_tab = 0
 use_hidden_tabs_for_min_size = true
 script = ExtResource("2_ntsvs")
 
-[node name="primaryInventory" type="PanelContainer" parent="vBoxContainer/hBoxContainer/tabBar"]
+[node name="primaryInventory" parent="vBoxContainer/hBoxContainer/tabBar" instance=ExtResource("3_2ax4r")]
 layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_c2ahj")
-script = ExtResource("4_p3272")
-metadata/_tab_index = 0
-
-[node name="vBoxContainer" type="VBoxContainer" parent="vBoxContainer/hBoxContainer/tabBar/primaryInventory"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="scrollContainer" type="ScrollContainer" parent="vBoxContainer/hBoxContainer/tabBar/primaryInventory/vBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="gridContainer" type="GridContainer" parent="vBoxContainer/hBoxContainer/tabBar/primaryInventory/vBoxContainer/scrollContainer"]
-layout_mode = 2
-columns = 9
-
-[node name="fillBar" type="ProgressBar" parent="vBoxContainer/hBoxContainer/tabBar/primaryInventory/vBoxContainer"]
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 2
-show_percentage = false
 
 [node name="control" type="Control" parent="vBoxContainer/hBoxContainer"]
 custom_minimum_size = Vector2(71, 0)

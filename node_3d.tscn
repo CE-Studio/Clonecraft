@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=64 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" path="res://scripts/worldControl.gd" id="1_ug7a2"]
@@ -315,6 +315,8 @@ texture = SubResource("AtlasTexture_ntior")
 texture_margin_left = 5.0
 texture_margin_right = 5.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_go27a"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g08o8"]
 bg_color = Color(0, 0, 0, 0.2)
 
@@ -389,6 +391,7 @@ mouse_filter = 2
 texture = ExtResource("1_epwcq")
 
 [node name="f31" type="Label" parent="Control"]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "F3 data 1"
@@ -396,6 +399,7 @@ script = ExtResource("2_yvkcu")
 metadata/_edit_layout_mode = 1
 
 [node name="f32" type="Label" parent="Control"]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -619,7 +623,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_styles/focus = SubResource("StyleBoxFlat_g08o8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_go27a")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_g08o8")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_g08o8")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_g08o8")
@@ -781,6 +785,7 @@ script = ExtResource("44_fbb68")
 
 [connection signal="timeout" from="Control/GUIlayer/hotbar/timer" to="Control/GUIlayer/hotbar" method="_reallyDeferRedraw"]
 [connection signal="text_submitted" from="Control/chat/inpline" to="Control/chat" method="_on_inpline_text_submitted"]
+[connection signal="pressed" from="Control/invlayer" to="Control/invlayer" method="_on_pressed"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pauseUnpause"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/quitDButton" to="." method="_on_quit_desktop_button_pressed"]

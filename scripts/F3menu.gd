@@ -28,6 +28,16 @@ func _ready() -> void:
 			gpuinfo = h
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("game_showdebug"):
+		if visible:
+			hide()
+			other.hide()
+		else:
+			show()
+			other.show()
+
+
 func _process(_delta) -> void:
 	var pl = Vector3i.ZERO
 	var v = "None"

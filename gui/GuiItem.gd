@@ -8,9 +8,13 @@ signal slotPressed(slot:int)
 
 
 var slotID:int = 0
+var item:ItemManager.ItemStack
 
 
-func assign(item:ItemManager.ItemStack) -> void:
+func assign(iitem:ItemManager.ItemStack) -> void:
+	item = iitem
+	$label.mouse_filter = mouse_filter
+	$button.mouse_filter = mouse_filter
 	$label.text = str(item.count)
 	if $label.text.length() > 3:
 		$label.scale = Vector2(0.5, 0.5)

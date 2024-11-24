@@ -1,0 +1,79 @@
+[gd_scene load_steps=16 format=3 uid="uid://cg0bskq24vtvg"]
+
+[ext_resource type="Texture2D" uid="uid://q6l8gu5hnobr" path="res://gui/invbacking.png" id="1_ro417"]
+[ext_resource type="Script" path="res://mods/gamemodes/creativeInvetory.gd" id="2_du0qi"]
+[ext_resource type="PackedScene" uid="uid://b837w4xwagvvg" path="res://gui/PrimaryInventory.tscn" id="3_tkv8r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2ahj"]
+texture = ExtResource("1_ro417")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2br0k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3wena"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3otki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yklhr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xaixa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83doi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faykj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twb4j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uf3d3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xc258"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28qfk"]
+
+[node name="creativeInv" type="VBoxContainer"]
+theme_override_constants/separation = 0
+
+[node name="primaryInventory" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_c2ahj")
+script = ExtResource("2_du0qi")
+metadata/_tab_index = 0
+
+[node name="button" type="Button" parent="primaryInventory"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2br0k")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3wena")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3otki")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yklhr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xaixa")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_83doi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_faykj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_twb4j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uf3d3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_xc258")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_28qfk")
+
+[node name="scrollContainer" type="ScrollContainer" parent="primaryInventory"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+horizontal_scroll_mode = 0
+
+[node name="gridContainer" type="GridContainer" parent="primaryInventory/scrollContainer"]
+layout_mode = 2
+mouse_filter = 2
+columns = 9
+
+[node name="primaryInventory2" parent="." instance=ExtResource("3_tkv8r")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="primaryInventory/button" to="primaryInventory" method="_on_button_pressed"]
