@@ -2,7 +2,7 @@ extends PanelContainer
 
 
 var guii:PackedScene = preload("res://gui/GuiItem.tscn")
-@onready var grid:GridContainer = $scrollContainer/gridContainer
+@onready var grid:GridContainer = $scrollContainer/hBoxContainer/gridContainer
 var ignoreItems:Array[StringName] = [&"clonecraft:air", &"clonecraft:tileEntity"]
 
 

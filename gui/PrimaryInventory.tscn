@@ -63,11 +63,28 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
-[node name="gridContainer" type="GridContainer" parent="vBoxContainer/scrollContainer"]
+[node name="hBoxContainer" type="HBoxContainer" parent="vBoxContainer/scrollContainer"]
 layout_mode = 2
 mouse_filter = 2
-columns = 9
+
+[node name="control" type="Control" parent="vBoxContainer/scrollContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="gridContainer" type="GridContainer" parent="vBoxContainer/scrollContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 10
+
+[node name="control2" type="Control" parent="vBoxContainer/scrollContainer/hBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
 
 [node name="fillBar" type="ProgressBar" parent="vBoxContainer"]
 custom_minimum_size = Vector2(0, 12)
