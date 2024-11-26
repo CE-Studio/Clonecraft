@@ -214,7 +214,6 @@ transform = Transform3D(-0.0551216, -0.0274894, -0.395229, 0.328933, 0.219241, -
 material_override = ExtResource("26_48t76")
 cast_shadow = 0
 mesh = ExtResource("27_a0mdq")
-skeleton = NodePath("../../head/Camera3D")
 
 [node name="handItem" type="Node3D" parent="arm"]
 
