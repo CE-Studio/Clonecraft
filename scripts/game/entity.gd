@@ -51,6 +51,28 @@ var abilities := {
 }
 
 
+func get_aabb() -> AABB:
+	var aabb := AABB()
+	var sv3 := Vector3(
+		abilities["size"]["x"],
+		abilities["size"]["y"],
+		abilities["size"]["z"]
+	)
+	var scv3 := Vector3(
+		abilities["scale"]["x"],
+		abilities["scale"]["y"],
+		abilities["scale"]["z"]
+	)
+	for i in get_children():
+		if i is CollisionShape3D:
+			var shape = i.shape
+			if shape is BoxShape3D:
+				aabb.size = shape.size * sv3 * scv3
+	aabb.position = global_position - (aabb.size / 2.0)
+	return aabb
+	
+
+
 func save() -> Dictionary:
 	return {
 		"abilities": abilities,

@@ -315,9 +315,11 @@ func _physics_process(delta) -> void:
 		cvel = cvel.move_toward(Vector2.ZERO, lerpdelta * tscalefactor)
 	velocity.x = cvel.x
 	velocity.z = cvel.y
-
-	if not terrain.is_area_meshed(AABB(position + (velocity * delta), Vector3.ONE)):
-		$"/root/Node3D".startWait(position + (velocity * delta), ((velocity * delta) * 2))
+	
+	var aabb := get_aabb()
+	aabb.position += (velocity * delta)
+	if not terrain.is_area_meshed(aabb):
+		world.startWait(aabb, ((velocity * delta) * 2))
 		if velocity == Vector3.ZERO:
 			print("bruh")
 		#velocity = Vector3.ZERO

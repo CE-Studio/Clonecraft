@@ -35,7 +35,7 @@ static var localUsername := "__localplayer__" :
 
 
 var _tool:VoxelToolTerrain
-var _waitpos := Vector3.ZERO
+var _waitaabb := AABB()
 var _waitrel := Vector3.ZERO
 var waiting := false
 var pausing := false
@@ -77,14 +77,14 @@ func raycheck(_rel:Vector3) -> bool:
 
 
 func waitForChunk() -> void:
-	if _terrain.is_area_meshed(AABB(_waitpos, Vector3.ONE)):
+	if _terrain.is_area_meshed(_waitaabb):
 		waiting = false
 
 
-func startWait(pos:Vector3, rel:Vector3) -> void:
+func startWait(aabb:AABB, rel:Vector3) -> void:
 	waiting = true
 	get_tree().paused = true
-	_waitpos = pos
+	_waitaabb = aabb
 	_waitrel = rel
 
 
