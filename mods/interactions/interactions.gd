@@ -68,8 +68,12 @@ func _process(_delta:float) -> void:
 				_breakprogress = 0
 				_break.material_override.set_shader_parameter(&"progress", 0)
 			else:
-				_breakprogress += _delta * breakPower
-				var s := man.getBlock(_breakpos).breakStrength
+				_breakprogress += _delta * breakPower * 2
+				var s:float
+				if (breakPower == 1.0) and player.abilities["endlessInventory"]:
+					s = 0.2
+				else:
+					s = man.getBlock(_breakpos).breakStrength
 				_break.material_override.set_shader_parameter(&"progress", round(remap(_breakprogress, 0, s, 0, 9)))
 				if _breakprogress >= s:
 					man.setBlock(_breakpos, &"clonecraft:air", not(player.abilities["endlessInventory"]))
