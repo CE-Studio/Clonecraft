@@ -328,7 +328,7 @@ func _physics_process(delta) -> void:
 	var h := BlockManager.getBlock(position + (velocity * delta))
 	if not h.properties.has(&"incompleteHitbox"):
 		if not world.raycheck(((velocity * delta) * 2)):
-			world.startWait(position + (velocity * delta), ((velocity * delta) * 2))
+			world.startWait(aabb, ((velocity * delta) * 2))
 			velocity = Vector3.ZERO
 			return
 
