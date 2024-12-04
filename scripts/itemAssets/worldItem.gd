@@ -7,19 +7,17 @@ var despawnTime = 300
 var iStack:ItemManager.ItemStack
 
 
-var _point:Node3D
-var _mesh:MeshInstance3D
+@onready var _point:Node3D = $Node3D
+@onready var _mesh:MeshInstance3D = $Node3D/Node3D
+@onready var _sprite:Sprite3D = $Node3D/sprite3d
 var _timer:float = 0
-
-
-func _ready() -> void:
-	_point = $Node3D
-	_mesh = $Node3D/Node3D
 
 
 func setItem(itemStack:ItemManager.ItemStack) -> void:
 	iStack = itemStack
 	$Node3D/Node3D.mesh = itemStack.getMesh()
+	if iStack.count != 1:
+		$Node3D/sprite3d/label3d.text = str(iStack.count)
 
 
 func canPickup() -> bool:
@@ -30,6 +28,7 @@ func _process(delta) -> void:
 	_point.rotate_y(delta)
 	_timer += delta
 	_point.position.y = (sin(_timer) / 5) + 0.2
+	_sprite.look_at(WorldControl.instance._p.global_position, Vector3.UP, true)
 
 	if despawnTime > 0:
 		if _timer > despawnTime:

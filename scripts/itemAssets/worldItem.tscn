@@ -6,6 +6,7 @@
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="worldItem" type="RigidBody3D"]
+process_mode = 1
 collision_layer = 4
 collision_mask = 2
 lock_rotation = true
@@ -20,3 +21,15 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
 [node name="Node3D" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.25, -0.25, -0.25)
+
+[node name="sprite3d" type="Sprite3D" parent="Node3D"]
+shaded = true
+texture_filter = 0
+
+[node name="label3d" type="Label3D" parent="Node3D/sprite3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.324816, -0.216554, 0.492233)
+shaded = true
+texture_filter = 0
+render_priority = 1
+outline_render_priority = 0
+horizontal_alignment = 0
