@@ -8,14 +8,18 @@ var guii:PackedScene = preload("res://gui/GuiItem.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	setup.call_deferred()
+	redraw.call_deferred()
+	WorldControl.instance._p.inventory.contentChanged.connect(redraw)
+
+
+func setup() -> void:
 	var p = get_parent()
 	if p is InventoryTabs:
 		var i = get_index()
-		p.set_tab_icon(i, preload("res://textures/ok.png"))
+		p.set_tab_icon(i, preload("res://gui/invico.png"))
 		p.set_tab_title(i, "")
 		p.set_tab_tooltip(i, Translator.translate(&"gameplay.inventory.primary"))
-	redraw.call_deferred()
-	WorldControl.instance._p.inventory.contentChanged.connect(redraw)
 
 
 func pick(i:GUIItem) -> void:

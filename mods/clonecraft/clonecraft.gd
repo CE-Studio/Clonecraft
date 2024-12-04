@@ -169,6 +169,16 @@ func _makeOL() -> void:
 	man.endBlockRegister(bi3)
 
 
+func _makeItems() -> void:
+	var t:Texture2D = load("res://mods/clonecraft/items.png")
+	var s:Vector2i = Vector2i(10, 10)
+	ItemManager.registerItem(&"clonecraft:stick", &"clonecraft.item.stick", ItemManager.ItemModel.make2D(
+		t,
+		s,
+		Vector2i(0, 0)
+	))
+
+
 func blockFall(pos:Vector3) -> void:
 	if man.getBlock(pos + Vector3.DOWN).properties.has(&"air"):
 		WorldControl.instance.spawnFallingBlock(pos)
@@ -209,3 +219,4 @@ func registerPhase() -> void:
 	man.quickUniformBlock(MODID, "blockDiamond", "clonecraft.block.diamond_block", Vector2(5, 4), mat2, 3, 5, "tools:pickaxe", 2)
 	man.quickUniformBlock(MODID, "blockEnerstone", "clonecraft.block.enerstone_crate", Vector2(0, 5), mat1)
 	man.quickUniformBlock(MODID, "blockCopper", "clonecraft.block.copper_block", Vector2(1, 5), mat1)
+	_makeItems()

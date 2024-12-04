@@ -29,7 +29,7 @@ class ItemStack extends RefCounted:
 		return ItemStack.new(itemID, count, metadata)
 	
 	## Return the model of the contained item.
-	func getMesh() -> Mesh:
+	func getModel() -> ItemModel:
 		return getItem().model
 		
 	## Return the contained item.
@@ -49,9 +49,34 @@ class ItemStack extends RefCounted:
 		return true
 
 
+class ItemModel extends RefCounted:
+	var is3D:bool
+	var texture:Texture2D
+	var mesh:Mesh
+	var atlasSize:Vector2i
+	var frame:Vector2i
+	var animateFrame:Callable
+	
+	
+	static func make2D(iTexture:Texture2D, iAtlasSize:Vector2i, iFrame:Vector2i, iAnimateFrame:Callable = Callable()) -> ItemModel:
+		var m = ItemModel.new()
+		m.is3D = false
+		m.texture = iTexture
+		m.atlasSize = iAtlasSize
+		m.animateFrame = iAnimateFrame
+		return m
+	
+	
+	static func make3D(iMesh:Mesh) -> ItemModel:
+		var m = ItemModel.new()
+		m.is3D = true
+		m.mesh = iMesh
+		return m
+
+
 ## A container for static item properties.
 class Item extends RefCounted:
-	var model:Mesh
+	var model:ItemModel
 	var name:StringName
 	
 	var hasInteractionOverride := false
@@ -67,8 +92,8 @@ class Item extends RefCounted:
 	var isVoxel := false
 	var voxel:StringName
 
-	func _init(itemMesh:Mesh):
-		model = itemMesh
+	func _init(itemModel:ItemModel):
+		model = itemModel
 	
 	
 	## Allows items to intercept place/break events.[br]
@@ -114,21 +139,24 @@ static func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
 	var m := simpleBlockItemModel(bi)
 	if m == null:
 		m = Mesh.new()
-	var nitem := Item.new(m)
+	var im := ItemModel.make3D(m)
+	var nitem := registerItem(bi.fullID, bi.nameReadable, im)
 	nitem.setVoxel(bi.fullID)
-	nitem.name = bi.nameReadable
-	items[bi.fullID] = nitem
 	return nitem
 
 
-# TODO simple item model
-static func simpleItemModel():
-	pass
+static func registerItem(id:StringName, nameReadable:StringName, model:ItemModel) -> Item:
+	if items.has(id):
+		return items[id]
+	var nitem := Item.new(model)
+	nitem.name = nameReadable
+	items[id] = nitem
+	return nitem
 
 
 ## Creates a blank [ItemManager.Item]
 static func simpleItem() -> Item:
-	var nitem := Item.new(Mesh.new())
+	var nitem := Item.new(ItemModel.make3D(Mesh.new()))
 	return nitem
 
 

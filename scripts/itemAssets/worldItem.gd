@@ -15,7 +15,14 @@ var _timer:float = 0
 
 func setItem(itemStack:ItemManager.ItemStack) -> void:
 	iStack = itemStack
-	$Node3D/Node3D.mesh = itemStack.getMesh()
+	var m := itemStack.getModel()
+	if m.is3D:
+		$Node3D/Node3D.mesh = m.mesh
+	else:
+		$Node3D/sprite3d.texture = m.texture
+		$Node3D/sprite3d.hframes = m.atlasSize.x
+		$Node3D/sprite3d.vframes = m.atlasSize.y
+		$Node3D/sprite3d.frame_coords = m.frame
 	if iStack.count != 1:
 		$Node3D/sprite3d/label3d.text = str(iStack.count)
 

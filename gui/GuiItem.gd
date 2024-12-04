@@ -24,9 +24,17 @@ func assign(iitem:ItemManager.ItemStack) -> void:
 		$label.hide()
 	else:
 		$label.show()
-	var m2d:TransformedMeshInstance2D = $transformedMeshInstance2d
-	m2d.baseMesh = item.getMesh()
-	m2d.mat = item.getMesh().surface_get_material(0)
+	var im := item.getModel()
+	if im.is3D:
+		var m2d:TransformedMeshInstance2D = $transformedMeshInstance2d
+		m2d.baseMesh = im.mesh
+		m2d.mat = im.mesh.surface_get_material(0)
+	else:
+		var s:Sprite2D = $sprite2d
+		s.texture = im.texture
+		s.hframes = im.atlasSize.x
+		s.vframes = im.atlasSize.y
+		s.frame_coords = im.frame
 	$button.tooltip_text = Translator.translate(item.getItem().name)
 
 

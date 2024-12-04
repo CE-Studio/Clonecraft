@@ -26,6 +26,12 @@ script = ExtResource("1_h37yb")
 xRotation = Vector3(165, 45, 0)
 xScale = Vector3(30, 30, 30)
 
+[node name="sprite2d" type="Sprite2D" parent="."]
+scale = Vector2(2.9, 2.9)
+centered = false
+hframes = 10
+vframes = 10
+
 [node name="label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
