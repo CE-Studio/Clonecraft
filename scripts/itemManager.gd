@@ -34,7 +34,10 @@ class ItemStack extends RefCounted:
 		
 	## Return the contained item.
 	func getItem() -> Item:
-		return ItemManager.items[itemID]
+		if ItemManager.items.has(itemID):
+			return ItemManager.items[itemID]
+		else:
+			return ItemManager.simpleItem()
 		
 	## Checks if two ItemStacks are identical, ignoring count.
 	func compare(compTo: ItemStack) -> bool:
@@ -64,6 +67,7 @@ class ItemModel extends RefCounted:
 		m.texture = iTexture
 		m.atlasSize = iAtlasSize
 		m.animateFrame = iAnimateFrame
+		m.frame = iFrame
 		return m
 	
 	
@@ -138,7 +142,7 @@ static func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
 		return items[bi.fullID]
 	var m := simpleBlockItemModel(bi)
 	if m == null:
-		m = Mesh.new()
+		m = ArrayMesh.new()
 	var im := ItemModel.make3D(m)
 	var nitem := registerItem(bi.fullID, bi.nameReadable, im)
 	nitem.setVoxel(bi.fullID)
@@ -156,7 +160,7 @@ static func registerItem(id:StringName, nameReadable:StringName, model:ItemModel
 
 ## Creates a blank [ItemManager.Item]
 static func simpleItem() -> Item:
-	var nitem := Item.new(ItemModel.make3D(Mesh.new()))
+	var nitem := Item.new(ItemModel.make2D(preload("res://textures/missing16.png"), Vector2i.ONE, Vector2i.ZERO))
 	return nitem
 
 

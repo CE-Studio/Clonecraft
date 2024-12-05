@@ -4,6 +4,8 @@ const MODID = &"clonecraft"
 var mat1 = load("res://mods/clonecraft/baseblocks.tres")
 var mat2 = load("res://mods/clonecraft/baseblocksTransparent.tres")
 var canGrass = []
+var _it:Texture2D = load("res://mods/clonecraft/items.png")
+const _is:Vector2i = Vector2i(10, 10)
 
 var grassDirs = [
 	[-1, 1],  [0, 1],  [1, 1],
@@ -169,14 +171,37 @@ func _makeOL() -> void:
 	man.endBlockRegister(bi3)
 
 
-func _makeItems() -> void:
-	var t:Texture2D = load("res://mods/clonecraft/items.png")
-	var s:Vector2i = Vector2i(10, 10)
-	ItemManager.registerItem(&"clonecraft:stick", &"clonecraft.item.stick", ItemManager.ItemModel.make2D(
-		t,
-		s,
-		Vector2i(0, 0)
+func _mitem(name:String, key:String, uv:Vector2i) -> ItemManager.Item:
+	return ItemManager.registerItem("clonecraft:" + name, "clonecraft.item." + key, ItemManager.ItemModel.make2D(
+		_it,
+		_is,
+		uv
 	))
+	
+
+
+func _makeItems() -> void:
+	_mitem("stick", "stick", Vector2i(0, 0))
+	_mitem("coal", "coal", Vector2i(1, 0))
+	_mitem("ironIngot", "iron_ingot", Vector2i(2, 0))
+	_mitem("copperIngot", "copper_ingot", Vector2i(3, 0))
+	_mitem("enerstoneCrystal", "enerstone_crystal", Vector2i(4, 0))
+	_mitem("goldIngot", "gold_ingot", Vector2i(5, 0))
+	_mitem("brickItem", "brick", Vector2i(6, 0))
+	_mitem("tntStick", "tnt_stick", Vector2i(7, 0))
+	_mitem("diamond", "diamond", Vector2i(8, 0))
+	_mitem("stonePickaxe", "stone_pickaxe", Vector2i(1, 1))
+	_mitem("copperPickaxe", "copper_pickaxe", Vector2i(2, 1))
+	_mitem("ironPickaxe", "iron_pickaxe", Vector2i(3, 1))
+	_mitem("diamondPickaxe", "diamond_pickaxe", Vector2i(8, 1))
+	_mitem("stoneAxe", "stone_axe", Vector2i(1, 2))
+	_mitem("copperAxe", "copper_axe", Vector2i(2, 2))
+	_mitem("ironAxe", "iron_axe", Vector2i(3, 2))
+	_mitem("diamondAxe", "diamond_axe", Vector2i(8, 2))
+	_mitem("stoneSword", "stone_sword", Vector2i(1, 3))
+	_mitem("copperSword", "copper_sword", Vector2i(2, 3))
+	_mitem("ironSword", "iron_sword", Vector2i(3, 3))
+	_mitem("diamondSword", "diamond_sword", Vector2i(8, 3))
 
 
 func blockFall(pos:Vector3) -> void:

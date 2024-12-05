@@ -28,14 +28,19 @@ func assign(iitem:ItemManager.ItemStack) -> void:
 	if im.is3D:
 		var m2d:TransformedMeshInstance2D = $transformedMeshInstance2d
 		m2d.baseMesh = im.mesh
-		m2d.mat = im.mesh.surface_get_material(0)
+		if im.mesh.get_surface_count() != 0:
+			m2d.mat = im.mesh.surface_get_material(0)
 	else:
 		var s:Sprite2D = $sprite2d
 		s.texture = im.texture
 		s.hframes = im.atlasSize.x
 		s.vframes = im.atlasSize.y
 		s.frame_coords = im.frame
-	$button.tooltip_text = Translator.translate(item.getItem().name)
+	var n = item.getItem().name
+	if n != "":
+		$button.tooltip_text = Translator.translate(n)
+	else:
+		$button.tooltip_text = item.itemID
 
 
 func _on_button_pressed() -> void:

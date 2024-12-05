@@ -58,8 +58,8 @@ func _normToCol(norm:Vector3) -> Color:
 func _recalc():
 	_rq = false
 	var err:Error
-	if not is_instance_valid(baseMesh):
-		mesh = Mesh.new()
+	if (not is_instance_valid(baseMesh)) or (baseMesh.get_surface_count() == 0):
+		mesh = ArrayMesh.new()
 		return
 	var surface_tool := SurfaceTool.new()
 	surface_tool.create_from(baseMesh,0)
@@ -78,7 +78,7 @@ func _recalc():
 	var _tool = MeshDataTool.new()
 	err = _tool.create_from_surface(array_mesh, 0)
 	if err != OK:
-		mesh = Mesh.new()
+		mesh = ArrayMesh.new()
 		return
 	
 	for i in _tool.get_vertex_count():
