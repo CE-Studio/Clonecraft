@@ -210,12 +210,13 @@ mesh = ExtResource("25_b6b0g")
 skeleton = NodePath("")
 
 [node name="arm" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0551216, -0.0274894, -0.395229, 0.328933, 0.219241, -0.0611244, 0.220827, -0.333433, -0.00760687, 0.24, -0.265, -0.055)
+transform = Transform3D(-0.0551216, -0.0274894, -0.395229, 0.328933, 0.219241, -0.0611244, 0.220827, -0.333433, -0.00760687, 0.269482, -0.265, -0.055)
 material_override = ExtResource("26_48t76")
 cast_shadow = 0
 mesh = ExtResource("27_a0mdq")
 
 [node name="handItem" type="Node3D" parent="arm"]
+transform = Transform3D(0.259385, 0.1614, 0, -0.1614, 0.259385, -4.33681e-18, -2.72488e-18, -3.25673e-18, 0.3055, 0.359104, 0.7644, 0.0653111)
 
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 1.5, 0)

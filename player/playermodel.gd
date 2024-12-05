@@ -26,6 +26,12 @@ func getFPArm() -> Node3D:
 	var h := get_children()
 	for i in h:
 		if i.name == "arm":
+			for j in  i.get_children():
+				if j.name == "handItem":
+					return i
+			var j := Node3D.new()
+			j.name = "handItem"
+			i.add_child(j)
 			return i
 	var j := Node3D.new()
 	j.name = "arm"

@@ -7,6 +7,8 @@ static var instance:Hotbar
 @onready var timer:Timer = $timer
 var immcheck := false
 
+signal selectionChanged
+
 @onready var layerLights:Array[Sprite2D] = [
 	$layer0,
 	$layer1,
@@ -90,3 +92,4 @@ func redraw():
 				slots[i].frame = 1
 		else:
 			slots[i].frame = 0
+	selectionChanged.emit()

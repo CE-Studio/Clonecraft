@@ -12,6 +12,7 @@ static var grass:int
 static var dirt:int
 static var stone:int
 static var sand:int
+static var clay:int
 
 
 func setupSeed(newSeed:int) -> void:
@@ -37,6 +38,7 @@ func setupIDS() -> void:
 	dirt = BlockManager.blockIDlist["clonecraft:dirt"]
 	stone = BlockManager.blockIDlist["clonecraft:stone"]
 	sand = BlockManager.blockIDlist["clonecraft:sand"]
+	clay = BlockManager.blockIDlist["clonecraft:clay"]
 
 
 func setSupBuf(x:int, y:int, z:int, val:int, supBuf:VoxelBuffer, pos:Vector3i, global := true) -> void:
@@ -72,15 +74,18 @@ func genSolid(x:int, y:int, z:int, supBuf, pos, bounds) -> int:
 	var smoothness = clampf((noise2.get_noise_2d_single(Vector2(x, z) * 0.4) * 2) - 1, 0, 1)
 	var density = noise.get_noise_3d_single(Vector3(x, y, z) * 0.3) * 30
 	var river = clampf(abs(noise.get_noise_2d_single(Vector2(
-		x + noise2.get_noise_2d_single(Vector2(x, z) * 1) * 5, 
-		z + noise2.get_noise_2d_single(Vector2(x + 324425, z + 23480) * 1) * 5
+		x + noise2.get_noise_2d_single(Vector2(x, z)) * 5, 
+		z + noise2.get_noise_2d_single(Vector2(x + 324425, z + 23480)) * 5
 	) * 0.1) - 0.5), 0.005, 0.02) * 50
 	density += ((noise.get_noise_3d_single(Vector3(x, y, z) * 3) * 10) - 5) * smoothness
 	density += noise.get_noise_3d_single(Vector3(x, y, z) * 5) 
 	if y < remap(river, 0.5, 1, 0, density):
 		if river < 1:
 			if getSupBuf(x, y + 5, z, supBuf, pos, bounds) == 0:
-				pending = sand
+				if noise.get_noise_3d_single(Vector3(x, y, z) * 3) < 0.3:
+					pending = clay
+				else:
+					pending = sand
 			else:
 				pending = stone
 		else:

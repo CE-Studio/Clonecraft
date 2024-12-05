@@ -53,6 +53,7 @@ var tickNumber := 0.47
 var world:WorldControl
 
 var _looktrack := Vector2.ZERO
+var _fpitem:HeldItem = preload("res://scripts/itemAssets/HeldItem.tscn").instantiate()
 
 var _fcheck := 1.0
 var extraSaveData := {}
@@ -69,6 +70,10 @@ var sunAngle:float:
 		sun.rotation_degrees.x = remap(value, 0, 1, -180, 180)
 		moon.rotation_degrees.x = remap(value, 0, 1, -180, 180) + 180
 		sunAngle = value
+
+
+func updateHeldItems() -> void:
+	_fpitem.assign(getSelectedItem())
 
 
 func _saveHotbar() -> Array:
@@ -135,7 +140,9 @@ func restore(dict:Dictionary) -> bool:
 func setModel(m:EntityModel):
 	model = m
 	add_child(m)
-	m.getFPArm().reparent(armPointX, false)
+	var fpa := m.getFPArm()
+	fpa.reparent(armPointX, false)
+	fpa.get_node("handItem").add_child(_fpitem)
 	if camcycle == 0:
 		model.hide()
 
@@ -156,6 +163,7 @@ func _ready() -> void:
 	cams.append($head/Camera3D)
 	cams.append($head/Camera3D/springArm3d/Camera3D)
 	cams.append($head/Camera3D/springArm3d2/Camera3D2)
+	Hotbar.instance.selectionChanged.connect(updateHeldItems)
 	call_deferred("setModel", load("res://player/default/Derg.tscn").instantiate())
 
 
@@ -287,6 +295,9 @@ func _physics_process(delta) -> void:
 	else:
 		head.position.y = 0.689
 		armPointY.position.y = 0.689
+		
+	if getSelectedItem() != null:
+		armPointY.position.y -= 0.1
 
 	var lerpdelta = 30.0 * delta
 	# Get the input direction and handle the movement/deceleration.

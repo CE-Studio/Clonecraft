@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3n3ak2mivm5u"]
+
+[ext_resource type="Script" path="res://scripts/itemAssets/heldItem.gd" id="1_pqxqg"]
+
+[node name="heldItem" type="Node3D"]
+script = ExtResource("1_pqxqg")
+
+[node name="sprite3d" type="Sprite3D" parent="."]
+pixel_size = 0.1
+shaded = true
+texture_filter = 0
+hframes = 10
+vframes = 10
+frame = 31
+
+[node name="meshInstance3d" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.303974, 0.825256, 0.512715, 0.177213, 0.481115, -0.879459, -0.955259, 0.351859, 4.44089e-16, -1.61527, 0.213293, 0.210432)
