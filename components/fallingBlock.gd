@@ -9,7 +9,7 @@ func _ready() -> void:
 	var v = BlockManager.getBlock(position)
 	ID = v.fullID
 	BlockManager.setBlock(position.floor(), &"clonecraft:air", false, true, true)
-	$meshInstance3d.mesh = ItemManager.items[ID].model
+	$meshInstance3d.mesh = ItemManager.items[ID].model.mesh
 
 
 func _physics_process(delta: float) -> void:

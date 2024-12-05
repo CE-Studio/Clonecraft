@@ -160,6 +160,9 @@ func _ready() -> void:
 			stream.directory = dimpath
 			stream.save_generator_output = true
 			$"/root/Node3D/VoxelTerrain".stream = stream
+		"memory":
+			stream = VoxelStreamMemory.new()
+			$"/root/Node3D/VoxelTerrain".stream = stream
 		"sql":
 			pass
 	var playsavepath := worldpath + "/playerdata/__localplayer__.json"
