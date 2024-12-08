@@ -215,3 +215,20 @@ func spawnFallingBlock(pos:Vector3) -> void:
 	var i:FallingBlock = preload("res://components/fallingBlock.tscn").instantiate()
 	i.position = pos + Vector3(0.5, 0.5, 0.5)
 	add_child(i)
+
+
+static func explode(pos:Vector3, range:float, power:int, drop := true, bias := Vector3.ZERO, replaceWith := &"clonecraft:air") -> bool:
+	var didHit := false
+	var tool := BlockManager._tool
+	for i in power:
+		var dir = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1))
+		dir += bias
+		var hit := tool.raycast(pos, dir, range)
+		if hit != null:
+			var info := BlockManager.getBlock(hit.position)
+			if (info.fullID != replaceWith) and (info.explStrength < randf_range(0, 10)):
+				didHit = true
+				BlockManager.setBlock(hit.position, replaceWith, drop)
+	SoundManager.playSound3D(&"clonecraft:explosion", pos)
+	ParticleManager.spawnGPUeffect(&"clonecraft:explosion", pos)
+	return didHit

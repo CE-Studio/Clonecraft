@@ -33,6 +33,29 @@
 			"diamond_block": "Diamond Block",
 			"enerstone_crate": "EnerStone Crate",
 			"copper_block": "Copper Block"
+		},
+		"item": {
+			"stick": "Stick",
+			"coal": "Coal",
+			"iron_ingot": "Iron Ingot",
+			"copper_ingot": "Copper Ingot",
+			"enerstone_crystal": "EnerStone Crystal",
+			"gold_ingot": "Gold Ingot",
+			"brick": "Brick",
+			"tnt_stick": "Stick of TNT",
+			"diamond": "Diamond",
+			"stone_pickaxe": "Stone Pickaxe",
+			"copper_pickaxe": "Copper Pickaxe",
+			"iron_pickaxe": "Iron Pickaxe",
+			"diamond_pickaxe": "Diamond Pickaxe",
+			"stone_axe": "Stone Axe",
+			"copper_axe": "Copper Axe",
+			"iron_axe": "Iron Axe",
+			"diamond_axe": "Diamond Axe",
+			"stone_sword": "Stone Sword",
+			"copper_sword": "Copper Sword",
+			"iron_sword": "Iron Sword",
+			"diamond_sword": "Diamond Sword",
 		}
 	}
 }

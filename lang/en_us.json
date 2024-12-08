@@ -67,7 +67,9 @@
 		"input_folder": "Input Settings...",
 		"ui": {
 			"auto": "Scale GUI Automatically",
-			"scale": "GUI Scale"
+			"scale": "GUI Scale",
+			"show_item_count": "Show World Item Quantity Labels",
+			"show_track_names": "Show Music Titles"
 		},
 		"ui_folder": "GUI Settings...",
 		"video": {
@@ -83,5 +85,11 @@
 		"line2": "Would you like to enable automatic GUI scaling?",
 		"line3": "This window is using the automatic scale",
 		"line4": "Your choice can be changed later in settings"
+	},
+	"gameplay": {
+		"inventory": {
+			"primary": "Inventory",
+			"creative": "Creative Inventory"
+		}
 	}
 }

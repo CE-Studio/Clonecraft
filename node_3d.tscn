@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=66 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" path="res://scripts/worldControl.gd" id="1_ug7a2"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
+[ext_resource type="Script" path="res://scripts/soundManager.gd" id="21_yqwpl"]
+[ext_resource type="Script" path="res://scripts/particleManager.gd" id="22_6fdpn"]
 [ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
 [ext_resource type="Script" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
 
@@ -783,6 +785,16 @@ script = ExtResource("42_0hogo")
 
 [node name="cmdProcessor" type="Node" parent="."]
 script = ExtResource("44_fbb68")
+
+[node name="entities" type="Node3D" parent="."]
+
+[node name="blockEntities" type="Node3D" parent="."]
+
+[node name="sounds" type="Node3D" parent="."]
+script = ExtResource("21_yqwpl")
+
+[node name="particles" type="Node3D" parent="."]
+script = ExtResource("22_6fdpn")
 
 [connection signal="timeout" from="Control/GUIlayer/hotbar/timer" to="Control/GUIlayer/hotbar" method="_reallyDeferRedraw"]
 [connection signal="text_submitted" from="Control/chat/inpline" to="Control/chat" method="_on_inpline_text_submitted"]

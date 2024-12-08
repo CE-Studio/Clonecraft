@@ -86,6 +86,9 @@ func _process(_delta:float) -> void:
 
 func _ununhandled_input(event:InputEvent) -> void:
 	if !WorldControl.isPaused():
+		if event.is_action_pressed("debug_action"):
+			if player.lookingAt != null:
+				WorldControl.explode(Vector3(player.lookingAt.previous_position) + Vector3(0.5, 0.5, 0.5), 8, 100)
 		if event.is_action_pressed("game_place"):
 			var i := player.getSelectedItem()
 			if is_instance_valid(i):
@@ -137,7 +140,7 @@ func _ununhandled_input(event:InputEvent) -> void:
 						return
 				if ii.isTool:
 					return
-		elif  event.is_action_pressed("game_throw"):
+		elif event.is_action_pressed("game_throw"):
 			var i := player.getSelectedItem()
 			if is_instance_valid(i):
 				i = i.copy()

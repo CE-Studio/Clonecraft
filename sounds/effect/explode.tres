@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://blautai2568tn"]
+
+[ext_resource type="AudioStream" uid="uid://d23fsl2dy7t5" path="res://sounds/effect/explode.wav" id="1_66wlw"]
+
+[resource]
+random_pitch = 2.02
+streams_count = 1
+stream_0/stream = ExtResource("1_66wlw")
