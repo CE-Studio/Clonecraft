@@ -371,4 +371,5 @@ func _on_enter_item_range(body) -> void:
 	if body is WorldItem:
 		if body.canPickup():
 			if inventory.addItem(body.iStack):
+				SoundManager.playSound3D(&"clonecraft:pop", body.position)
 				body.queue_free()

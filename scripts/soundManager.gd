@@ -9,6 +9,7 @@ static var sounds:Dictionary = {}
 func _ready() -> void:
 	instance = self
 	registerSound(&"clonecraft:explosion", preload("res://sounds/effect/explode.tres"))
+	registerSound(&"clonecraft:pop", preload("res://sounds/effect/pop.tres"))
 
 
 static func registerSound(ID:StringName, sound:AudioStream) -> void:
