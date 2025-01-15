@@ -31,16 +31,11 @@ func execute(args:Array) -> Variant:
 		return false
 	
 	if l > 1:
-		if args[1] is int:
-			pass
-		elif (args[1] is String) and (args[1].is_valid_int()):
-			pass
-		elif args[1] is float:
-			args[1] = roundi(args[1])
-		else:
+		var ct = Statics.toNumber(args[1])
+		if ct == null:
 			CMDprocessor.throw("cmd.error.arg_invalid", "\"" + str(args[1]) + "\" is not a valid number")
 			return false
-		c = int(args[1])
+		c = roundi(ct)
 	
 	
 	if l > 2:

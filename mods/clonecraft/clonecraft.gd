@@ -213,6 +213,7 @@ func registerPhase() -> void:
 	Translator.loadFromJson("res://mods/clonecraft/lang/en_us.json")
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/give.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/editbar.gd").new())
+	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/tp.gd").new())
 	man.quickUniformBlock(MODID, "stone", "clonecraft.block.stone", Vector2(0, 0), mat1)
 	man.quickUniformBlock(MODID, "dirt", "clonecraft.block.dirt", Vector2(1, 0), mat1, 1, 1, "tools:shovel")
 	canGrass.append("clonecraft:dirt")

@@ -157,7 +157,12 @@ class BlockInfo extends RefCounted:
 	var properties:Array[StringName]
 	## How slippery the voxel is when being walked on. Lower is more slippery, higher is less.
 	var traction:float = 1.0
-
+	
+	
+	const AIR := &"air"
+	const REPLACABLE := &"replacable"
+	const INCOMPLETE_HITBOX := &"incompleteHitbox"
+	
 
 	func _init(
 			fmodID:StringName,

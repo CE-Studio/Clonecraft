@@ -11,6 +11,23 @@ static func get_node(path:NodePath) -> Node:
 	return Engine.get_main_loop().current_scene.get_node(path)
 
 
+static func toNumber(inp:Variant, fallback:Variant = null) -> Variant:
+	if inp is float:
+		return inp
+	if inp is int:
+		return inp
+	if inp is String:
+		if inp.is_valid_float():
+			if inp.is_valid_int():
+				return inp.to_int()
+			return inp.to_float()
+		elif inp.is_valid_hex_number(true):
+			return inp.hex_to_int()
+		else:
+			return fallback
+	return fallback
+
+
 ## A reimplementaion of [method @GDScript.range] to be [b]inclusive[/b] of the second parameter.
 static func iRange(start:int, stop:int) -> Array:
 	var dir

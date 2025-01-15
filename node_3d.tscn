@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=68 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" path="res://scripts/worldControl.gd" id="1_ug7a2"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://invbacking.gd" id="11_lbxo1"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
+[ext_resource type="Script" path="res://addons/auto_complete_menu_node/Scripts/auto_complete_assistant.gd" id="13_mc1q2"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
 [ext_resource type="Script" path="res://scripts/blockEntityManager.gd" id="21_833sv"]
 [ext_resource type="Script" path="res://scripts/soundManager.gd" id="21_yqwpl"]
@@ -599,16 +600,39 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 2.0
 offset_top = -42.0
-offset_right = 402.0
+offset_right = 886.0
 offset_bottom = -2.0
 grow_vertical = 0
+theme_override_constants/separation = 0
 alignment = 2
 script = ExtResource("6_efijs")
 
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/chat"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
 [node name="inpline" type="LineEdit" parent="Control/chat"]
-visible = false
 custom_minimum_size = Vector2(400, 1.45519e-11)
 layout_mode = 2
+
+[node name="acarea" type="Control" parent="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -188.0
+offset_right = 886.0
+offset_bottom = -29.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="autoCompleteAssistant" type="Node" parent="Control" node_paths=PackedStringArray("line_edits", "menu_location_node")]
+script = ExtResource("13_mc1q2")
+line_edits = [NodePath("../chat/inpline")]
+menu_location_node = NodePath("../acarea")
+disable_south = true
+disable_west = true
 
 [node name="GUIlayer2" type="Control" parent="Control"]
 layout_mode = 3

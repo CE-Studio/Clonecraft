@@ -37,26 +37,26 @@ Import a texture for your block. Textures should be a [b]spritesheet laid out in
 Right-click your mod folder. Select: Create New → Resource... → StandardMaterial3D
 Add the texture to the material's albedo texture.
 Create a new variable, and make it load the material.
-Look through the documentation for [url=cla,BlockManager]BlockMaganer[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img], and choose the block creation method that best sutis your needs. For this example we will be using  [color=white][bgcolor=black][code]quickUniformBlock()[/code][/bgcolor][/color]  for a simple block that has the same texture on all sides and no special functions.
+Look through the documentation for [url=cla,BlockManager]BlockMaganer[/url] [img]res://addons/clonecraft_documentation/dat/Help.svg[/img], and choose the block creation method that best suits your needs. For this example we will be using  [color=white][bgcolor=black][code]quickUniformBlock()[/code][/bgcolor][/color]  for a simple block that has the same texture on all sides and no special functions.
 Assign your block's ID, name, texture, and properties. The default property values mimmic stone.
 [/ul]
 
 The current state of your script should look like this:
 
 [color=white][bgcolor=black][code]res://mods/<modname>/<modname>.gd
-| extends Mod                               |
-|                                           |
-| var mat = load(                           |
-|     "res://<modname>/<materialname>.tres" |
-| )                                         |
-|                                           |
-| const MODID = &"<modname>"                |
-|                                           |
-| func registerPhase() -> void:             |
-|     man.quickUniformBlock(                |
-|         MODID,                            |
-|         "<blockid>",                      |
-|         "<readable block name>",          |
-|         Vector2(0, 0),                    |
-|         mat                               |
-|     )                                     |[/code][/bgcolor][/color]
+| extends Mod                                    |
+|                                                |
+| var mat = load(                                |
+|     "res://mods/<modname>/<materialname>.tres" |
+| )                                              |
+|                                                |
+| const MODID = &"<modname>"                     |
+|                                                |
+| func registerPhase() -> void:                  |
+|     man.quickUniformBlock(                     |
+|         MODID,                                 |
+|         "<blockid>",                           |
+|         "<readable block name>",               |
+|         Vector2(0, 0),                         |
+|         mat                                    |
+|     )                                          |[/code][/bgcolor][/color]

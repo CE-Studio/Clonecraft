@@ -11,6 +11,7 @@ static var instance:Chat
 const _line := preload("res://scripts/helpers/chat_label.tscn")
 
 
+@onready var vbox:VBoxContainer = $vBoxContainer
 @onready var inpline:LineEdit = $inpline
 
 
@@ -39,7 +40,7 @@ static func pushText(text:String) -> void:
 	if is_instance_valid(instance):
 		var nline:Label = _line.instantiate()
 		nline.text = text
-		instance.add_child(nline)
+		instance.vbox.add_child(nline)
 
 
 func _on_inpline_text_submitted(new_text:String):

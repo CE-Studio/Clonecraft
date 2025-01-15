@@ -8,4 +8,5 @@ bg_color = Color(0, 0, 0, 0.392157)
 [node name="chatLabel" type="Label"]
 theme_override_styles/normal = SubResource("StyleBoxFlat_ujdj1")
 text = "aaaa"
+autowrap_mode = 3
 script = ExtResource("1_mf5cp")

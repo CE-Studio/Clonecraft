@@ -13,6 +13,9 @@ var iStack:ItemManager.ItemStack
 var _timer:float = 0
 
 
+var newpos = null
+
+
 func setItem(itemStack:ItemManager.ItemStack) -> void:
 	iStack = itemStack
 	var m := itemStack.getModel()
@@ -25,6 +28,7 @@ func setItem(itemStack:ItemManager.ItemStack) -> void:
 		$Node3D/sprite3d.frame_coords = m.frame
 	if iStack.count != 1:
 		$Node3D/sprite3d/label3d.text = str(iStack.count)
+	$Node3D/sprite3d/label3d.visible = ProjectSettings.get_setting("gameplay/ui/show_item_count")
 
 
 func canPickup() -> bool:
@@ -40,3 +44,30 @@ func _process(delta) -> void:
 	if despawnTime > 0:
 		if _timer > despawnTime:
 			queue_free()
+
+
+func _physics_process(delta: float) -> void:
+	var pos := Vector3i(global_position.floor())
+	if not BlockManager.getBlock(pos).properties.has(BlockManager.BlockInfo.INCOMPLETE_HITBOX):
+		tryMove(pos, delta)
+	
+	
+func tryMove(pos:Vector3i, delta:float) -> void:
+	for y in [1, 0, -1, 2, -2]:
+		for x in [0, 1, -1, 2, -2]:
+			for z in [0, 1, -1, 2, -2]:
+				var rel := Vector3i(x, y, z)
+				if BlockManager.getBlock(pos + rel).properties.has(BlockManager.BlockInfo.INCOMPLETE_HITBOX):
+					newpos = global_position + Vector3(rel)
+					return
+	newpos = global_position + Vector3(0, 0.5 * delta, 0)
+	
+	
+func _integrate_forces(state:PhysicsDirectBodyState3D) -> void:
+	if newpos != null:
+		state.linear_velocity = Vector3.ZERO
+		var t := state.get_transform()
+		t.origin = newpos
+		global_position = newpos
+		state.transform = t
+		newpos = null
