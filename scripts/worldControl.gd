@@ -200,6 +200,7 @@ func _process(_delta) -> void:
 		var intensities := moonSunAndStarIntensity.sample(dayprogress)
 		_p.sun.light_energy = intensities.r
 		_p.moon.light_energy = intensities.g
+		_p.starmat.albedo_color.a = intensities.b
 
 
 func _on_setting_button_pressed():

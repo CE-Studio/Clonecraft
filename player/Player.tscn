@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cng7kfytaxygb"]
+[gd_scene load_steps=11 format=3 uid="uid://cng7kfytaxygb"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_3ny33"]
 [ext_resource type="Texture2D" uid="uid://dy41aig1tiywf" path="res://textures/sun.png" id="2_ywuj5"]
 [ext_resource type="Texture2D" uid="uid://c6bwcm8cfebe7" path="res://textures/moon.png" id="3_sxkd0"]
 [ext_resource type="Script" path="res://player/collectArea.gd" id="5_di3oy"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="5_vknlp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjl1a"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.933333, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0d76e"]
 size = Vector3(0.7, 1.8, 0.7)
@@ -25,6 +30,7 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 platform_on_leave = 1
 script = ExtResource("1_3ny33")
+starmat = SubResource("StandardMaterial3D_mjl1a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_0d76e")
@@ -90,6 +96,8 @@ transform = Transform3D(1058.1, 1200.18, 0.000160241, -1200.18, 1058.1, 0.000141
 texture_filter = 0
 texture = ExtResource("3_sxkd0")
 vframes = 6
+
+[node name="stars" type="Node3D" parent="sunpoint"]
 
 [node name="armpointy" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)

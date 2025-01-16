@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://brith1dkhq6ce"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24uru"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.933333, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_heupy"]
+
+[node name="star" type="Node3D"]
+
+[node name="meshInstance3d" type="MeshInstance3D" parent="."]
+transform = Transform3D(11.274, 0, 0, 0, 11.274, 0, 0, 0, 11.274, 0, -2124, 0)
+material_override = SubResource("StandardMaterial3D_24uru")
+mesh = SubResource("PlaneMesh_heupy")

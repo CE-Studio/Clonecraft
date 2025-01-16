@@ -52,7 +52,7 @@ colors = PackedColorArray(0.666667, 0.796078, 1, 1, 0.788235, 0.870588, 1, 1, 1,
 
 [sub_resource type="Gradient" id="Gradient_1jifp"]
 offsets = PackedFloat32Array(0.2, 0.3, 0.7, 0.8)
-colors = PackedColorArray(0, 0.45098, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0.45098, 1, 1)
+colors = PackedColorArray(0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ceb"]
 atlas = ExtResource("9_ehm4h")

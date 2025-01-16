@@ -63,12 +63,17 @@ var extraSaveData := {}
 @onready var sunSprite:Sprite3D = $sunpoint/sunlight/sun
 @onready var moon:DirectionalLight3D = $sunpoint/moonlight
 @onready var moonSprite:Sprite3D = $sunpoint/moonlight/moon
+@onready var stars:Node3D = $sunpoint/stars
+
+
+@export var starmat:Material
 
 
 var sunAngle:float:
 	set(value):
 		sun.rotation_degrees.x = remap(value, 0, 1, -180, 180)
 		moon.rotation_degrees.x = remap(value, 0, 1, -180, 180) + 180
+		stars.rotation.x = sun.rotation.x
 		sunAngle = value
 
 
@@ -165,6 +170,7 @@ func _ready() -> void:
 	cams.append($head/Camera3D/springArm3d2/Camera3D2)
 	Hotbar.instance.selectionChanged.connect(updateHeldItems)
 	call_deferred("setModel", load("res://player/default/Derg.tscn").instantiate())
+	createStars()
 
 
 func _process(delta) -> void:
@@ -373,3 +379,21 @@ func _on_enter_item_range(body) -> void:
 			if inventory.addItem(body.iStack):
 				SoundManager.playSound3D(&"clonecraft:pop", body.position)
 				body.queue_free()
+
+
+func createStars(seed:int = 0, density:int = 300, star:PackedScene = preload("res://components/Star.tscn"), clear := true):
+	if clear:
+		for i in stars.get_children():
+			i.queue_free()
+	var rng = RandomNumberGenerator.new()
+	rng.seed = seed
+	for i in density:
+		var s = star.instantiate()
+		stars.add_child(s)
+		s.rotate_x(rng.randf_range(-PI, PI))
+		s.rotate_y(rng.randf_range(-PI, PI))
+		s.rotate_z(rng.randf_range(-PI, PI))
+		var c = s.get_child(0)
+		c.material_override = starmat
+		var sc = rng.randf_range(8, 11.274)
+		c.scale = Vector3(sc, sc, sc)
