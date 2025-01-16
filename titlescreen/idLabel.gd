@@ -5,6 +5,6 @@ extends Label
 func _ready():
 	var vinfo := Engine.get_version_info()
 	text = "Clonecraft "+ SettingManager.VERSION + "
-Engine version " + vinfo["string"] + ", " + str("2024") + "
-(C) CE Studio 2024. GPLv3. Please distribute!"
+Engine version " + vinfo["string"] + ", " + str("2025") + "
+(C) CE Studio 2025. GPLv3. Please distribute!"
 	print("[Engine info] [Commit hash] " + vinfo["hash"])
