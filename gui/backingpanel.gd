@@ -43,13 +43,14 @@ func addExit(obj:Object, fun:StringName) -> void:
 
 
 ## Adds an additional button to the bottom of the panel
-func addButton(name:StringName, cb:Callable, tooltip:String = "") -> void:
+func addButton(name:StringName, cb:Callable, tooltip:String = "") -> Button:
 	var b := Button.new()
 	b.text = Translator.translate(name)
 	b.pressed.connect(cb)
 	b.tooltip_text = tooltip
 	$HBoxContainer.add_child(b)
 	$HBoxContainer.move_child(b, 0)
+	return b
 
 
 ## Add a [Control] to be displayed inside the panel.
@@ -68,3 +69,7 @@ func close() -> void:
 
 func _on_button_pressed() -> void:
 	close()
+
+
+func getExitButton() -> Button:
+	return get_node("HBoxContainer/Button")
