@@ -2741,7 +2741,7 @@ texture_filter = 0
 modulate = Color(1, 1, 0, 1)
 text = "No megacorps involved!"
 font = ExtResource("6_site2")
-font_size = 15
+font_size = 20
 script = ExtResource("6_nhbko")
 
 [node name="Label3D2" type="Label3D" parent="spinpoint/Label3D"]
@@ -2752,7 +2752,7 @@ texture_filter = 0
 modulate = Color(0.494118, 0.494118, 0, 1)
 text = "No megacorps involved!"
 font = ExtResource("6_site2")
-font_size = 15
+font_size = 20
 
 [node name="logo" type="Node3D" parent="spinpoint"]
 transform = Transform3D(-1.153, 1.4899e-08, 9.96913e-08, 0, 1.14034, -0.170424, -1.00798e-07, -0.170424, -1.14034, 0, 2.261, -6.193)

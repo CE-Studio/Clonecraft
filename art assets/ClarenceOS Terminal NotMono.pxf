@@ -3,7 +3,7 @@ format_version: 1.0
 
 line_gap: 1
 
-space_width: 2
+space_width: 3
 
 creator_name: Unknown
 font_family_name: ClarenceOS Terminal NotMono
@@ -13,7 +13,7 @@ font_url:
 license: 
 license_url: 
 
-last_exported_path: 
+last_exported_path: C:\users\clarence112\My Documents\git\Clonecraft\ClarenceOSTerminalNotMono.ttf
 
 num_glyphs: 534
 glyphs:
