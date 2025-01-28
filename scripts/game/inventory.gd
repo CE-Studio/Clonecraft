@@ -73,6 +73,40 @@ func addItem(item:ItemManager.ItemStack) -> bool:
 	return true
 
 
+func addItemPartial(item:ItemManager.ItemStack) -> bool:
+	var c := space - consumption
+	if c < 1:
+		return false
+	if (item.count + consumption) > space:
+		for i in container:
+			if i.compare(item):
+				if c > 0:
+					i.count += c
+					item.count -= c
+					consumption += c
+					return true
+		var ni = item.copy()
+		ni.count = c
+		item.count -= c
+		consumption += c
+		container.append(ni)
+		sort()
+		contentChanged.emit()
+		return true
+	consumption += item.count
+	for i in container:
+		if i.compare(item):
+			i.count += item.count
+			item.count = 0
+			contentChanged.emit()
+			return true
+	container.append(item.copy())
+	item.count = 0
+	sort()
+	contentChanged.emit()
+	return true
+
+
 func extractItem(item:ItemManager.ItemStack) -> bool:
 	for i in container.size():
 		if (item.compare(container[i])) && (item.count <= container[i].count):

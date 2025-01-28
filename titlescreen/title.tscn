@@ -1657,6 +1657,12 @@ models = Array[VoxelBlockyModel]([SubResource("VoxelBlockyModelEmpty_n3amp"), Su
 
 [sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_gy3dk"]
 library = SubResource("VoxelBlockyLibrary_ludbs")
+shadow_occluder_negative_x = true
+shadow_occluder_positive_x = true
+shadow_occluder_negative_y = true
+shadow_occluder_positive_y = true
+shadow_occluder_negative_z = true
+shadow_occluder_positive_z = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cn1w4"]
 

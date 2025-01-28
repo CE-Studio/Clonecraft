@@ -341,6 +341,12 @@ models = Array[VoxelBlockyModel]([SubResource("VoxelBlockyModelEmpty_qrg2f"), Su
 
 [sub_resource type="VoxelMesherBlocky" id="VoxelMesherBlocky_h45n1"]
 library = SubResource("VoxelBlockyLibrary_qtsb8")
+shadow_occluder_negative_x = true
+shadow_occluder_positive_x = true
+shadow_occluder_negative_y = true
+shadow_occluder_positive_y = true
+shadow_occluder_negative_z = true
+shadow_occluder_positive_z = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxvjf"]
 transparency = 1

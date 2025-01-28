@@ -376,9 +376,12 @@ func _settingsChanged():
 func _on_enter_item_range(body) -> void:
 	if body is WorldItem:
 		if body.canPickup():
-			if inventory.addItem(body.iStack):
+			if inventory.addItemPartial(body.iStack):
 				SoundManager.playSound3D(&"clonecraft:pop", body.position)
-				body.queue_free()
+				if body.iStack.count == 0:
+					body.queue_free()
+				else:
+					body.setItem(body.iStack)
 
 
 func createStars(seed:int = 0, density:int = 300, star:PackedScene = preload("res://components/Star.tscn"), clear := true):
