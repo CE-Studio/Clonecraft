@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=69 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" path="res://scripts/worldControl.gd" id="1_ug7a2"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://scripts/blockEntityManager.gd" id="21_833sv"]
 [ext_resource type="Script" path="res://scripts/soundManager.gd" id="21_yqwpl"]
 [ext_resource type="Script" path="res://scripts/particleManager.gd" id="22_6fdpn"]
+[ext_resource type="Script" path="res://scripts/entityManager.gd" id="22_fexg8"]
 [ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
 [ext_resource type="Script" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
 
@@ -818,6 +819,7 @@ script = ExtResource("42_0hogo")
 script = ExtResource("44_fbb68")
 
 [node name="entities" type="Node3D" parent="."]
+script = ExtResource("22_fexg8")
 
 [node name="blockEntities" type="Node3D" parent="."]
 script = ExtResource("21_833sv")
@@ -834,4 +836,5 @@ script = ExtResource("22_6fdpn")
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pauseUnpause"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/quitDButton" to="." method="_on_quit_desktop_button_pressed"]
-[connection signal="mesh_block_exited" from="VoxelTerrain" to="blockEntities" method="_on_voxel_terrain_mesh_block_exited"]
+[connection signal="mesh_block_entered" from="VoxelTerrain" to="." method="_on_voxel_terrain_mesh_block_entered"]
+[connection signal="mesh_block_exited" from="VoxelTerrain" to="." method="_on_voxel_terrain_mesh_block_exited"]

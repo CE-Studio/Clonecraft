@@ -10,6 +10,7 @@ static var generator:VoxelGenerator
 static var worldpath:String
 static var streamtype:String
 static var instance:WorldControl
+static var metastream:VoxelStream
 static var localUsername := "__localplayer__" : 
 	set(value):
 		pass
@@ -160,8 +161,14 @@ func _ready() -> void:
 			stream.directory = dimpath
 			stream.save_generator_output = true
 			$"/root/Node3D/VoxelTerrain".stream = stream
+			metastream = VoxelStreamRegionFiles.new()
+			var metapath := ProjectSettings.globalize_path(worldpath + "/entities/0/")
+			if not DirAccess.dir_exists_absolute(metapath):
+				DirAccess.make_dir_recursive_absolute(metapath)
+			metastream.directory = metapath
 		"memory":
 			stream = VoxelStreamMemory.new()
+			metastream = VoxelStreamMemory.new()
 			$"/root/Node3D/VoxelTerrain".stream = stream
 		"sql":
 			pass
@@ -233,3 +240,23 @@ static func explode(pos:Vector3, range:float, power:int, drop := true, bias := V
 	SoundManager.playSound3D(&"clonecraft:explosion", pos)
 	ParticleManager.spawnGPUeffect(&"clonecraft:explosion", pos)
 	return didHit
+
+
+func _on_voxel_terrain_mesh_block_exited(pos: Vector3i) -> void:
+	var buf := VoxelBuffer.new()
+	var s := metastream.get_block_size()
+	buf.create(s.x, s.y, s.z)
+	metastream.load_voxel_block(buf, pos, 0)
+	var vtool = buf.get_voxel_tool()
+	var aabb := AABB(pos, s)
+	$blockEntities._save(aabb, vtool)
+	metastream.save_voxel_block(buf, pos, 0)
+
+
+func _on_voxel_terrain_mesh_block_entered(pos: Vector3i) -> void:
+	var buf := VoxelBuffer.new()
+	var s := metastream.get_block_size()
+	buf.create(s.x, s.y, s.z)
+	metastream.load_voxel_block(buf, pos, 0)
+	var aabb := AABB(pos, s)
+	$blockEntities._load(aabb, buf, s)
