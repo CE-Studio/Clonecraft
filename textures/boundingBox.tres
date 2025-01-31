@@ -69,7 +69,7 @@ input_name = "time"
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_schlick_ggx, unshaded;
 
 
 
@@ -166,6 +166,8 @@ void fragment() {
 
 }
 "
+modes/cull = 2
+flags/unshaded = true
 nodes/fragment/0/position = Vector2(1100, 160)
 nodes/fragment/2/node = SubResource("VisualShaderNodeInput_drqgj")
 nodes/fragment/2/position = Vector2(-360, 200)

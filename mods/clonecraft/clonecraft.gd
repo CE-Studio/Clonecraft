@@ -202,6 +202,18 @@ func _makeItems() -> void:
 	_mitem("copperSword", "copper_sword", Vector2i(2, 3))
 	_mitem("ironSword", "iron_sword", Vector2i(3, 3))
 	_mitem("diamondSword", "diamond_sword", Vector2i(8, 3))
+	#ItemManager.registerItem(
+	#	&"clonecraft:dbtile",
+	#	&"clonecraft.item.dbtile",
+	#	ItemManager.ItemModel.make2D(_it, _is, Vector2i(7, 0))
+	#).setInteractionOverride(placete.bind(&"null:null"))
+
+
+func placete(event:InputEvent, id:StringName, meta := {}) -> bool:
+	if event.is_action_pressed("game_place"):
+		if player.lookingAt != null:
+			return BlockEntityManager.instance.place(id, player.lookingAt.previous_position, meta)
+	return false
 
 
 func blockFall(pos:Vector3) -> void:

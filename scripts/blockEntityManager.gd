@@ -5,22 +5,37 @@ class_name BlockEntityManager
 static var TElist:Dictionary = {
 	&"null:null": preload("res://components/InvalidTileEntity.tscn")
 }
+static var instance:BlockEntityManager
 
 
 @onready var terrain:VoxelTerrain = $"../VoxelTerrain"
 
 
+func  _ready() -> void:
+	instance = self
+
+
 func _save(aabb:AABB, tool:VoxelTool) -> void:
+	for i in _saveChunk(aabb, tool):
+		i.queue_free()
+
+
+func _saveChunk(aabb:AABB, tool:VoxelTool) -> Array[TileEntity]:
+	#DebugAABB.instance.aabb = aabb
+	#print("savin")
 	var tosave:Array[TileEntity] = []
 	for i in get_children():
-		if aabb.has_point(i.pos):
-			tosave.append(i)
+		if i is TileEntity:
+			if aabb.has_point(i.pos):
+				#print("found at ", i.pos)
+				tosave.append(i)
 	for i in tosave:
 		var rpos := Vector3i(
-			i.pos.x % int(aabb.size.x + 1),
-			i.pos.y % int(aabb.size.y + 1),
-			i.pos.z % int(aabb.size.z + 1),
+			posmod(i.pos.x, int(aabb.size.x)),
+			posmod(i.pos.y, int(aabb.size.y)),
+			posmod(i.pos.z, int(aabb.size.z)),
 		)
+		#print("relative ", rpos)
 		var md = tool.get_voxel_metadata(rpos)
 		if md is Dictionary:
 			md.merge({&"tileEntity": [i.getID(), i.save()]}, true)
@@ -28,13 +43,15 @@ func _save(aabb:AABB, tool:VoxelTool) -> void:
 			md = {}
 			md.merge({&"tileEntity": [i.getID(), i.save()]}, true)
 		tool.set_voxel_metadata(rpos, md)
-		i.queue_free()
+	return tosave
 
 
 func _procload(pos:Vector3i, md, aabb:AABB):
 	var rpos := aabb.position + Vector3(pos)
+	#print("loadin ",rpos)
 	var bi = BlockManager.getBlock(rpos)
 	if bi.fullID == &"clonecraft:tileEntity":
+		#print("is te")
 		if md is Dictionary:
 			if md.has(&"tileEntity"):
 				var te = md[&"tileEntity"]
@@ -47,3 +64,19 @@ func _procload(pos:Vector3i, md, aabb:AABB):
 
 func _load(aabb:AABB, buf:VoxelBuffer) -> void:
 	buf.for_each_voxel_metadata(_procload.bind(aabb))
+
+
+func place(id:StringName, pos:Vector3, meta := {}) -> bool:
+	if not TElist.has(id):
+		return false
+	var ipos := Vector3i(pos.floor())
+	if BlockManager.setBlock(ipos, &"clonecraft:tileEntity"):
+		var te:TileEntity = TElist[id].instantiate()
+		te.position = ipos
+		add_child(te)
+		te.setup(ipos, meta)
+		WorldControl.instance.saveMetaChunkContainingBlock(ipos)
+		return true
+	else:
+		return false
+	return false

@@ -248,9 +248,25 @@ func _on_voxel_terrain_mesh_block_exited(pos: Vector3i) -> void:
 	buf.create(s.x, s.y, s.z)
 	metastream.load_voxel_block(buf, pos, 0)
 	var vtool = buf.get_voxel_tool()
-	var aabb := AABB(pos, s)
+	var aabb := AABB(Vector3(pos) * s, s)
 	$blockEntities._save(aabb, vtool)
 	metastream.save_voxel_block(buf, pos, 0)
+
+
+func saveMetaChunk(pos:Vector3i) -> void:
+	var buf := VoxelBuffer.new()
+	var s := metastream.get_block_size()
+	buf.create(s.x, s.y, s.z)
+	metastream.load_voxel_block(buf, pos, 0)
+	var vtool = buf.get_voxel_tool()
+	var aabb := AABB(Vector3(pos) * s, s)
+	$blockEntities._saveChunk(aabb, vtool)
+	metastream.save_voxel_block(buf, pos, 0)
+
+
+func saveMetaChunkContainingBlock(pos:Vector3i) -> void:
+	var p = (Vector3(pos) / 16).floor()
+	saveMetaChunk(p)
 
 
 func _on_voxel_terrain_mesh_block_entered(pos: Vector3i) -> void:
@@ -258,5 +274,5 @@ func _on_voxel_terrain_mesh_block_entered(pos: Vector3i) -> void:
 	var s := metastream.get_block_size()
 	buf.create(s.x, s.y, s.z)
 	metastream.load_voxel_block(buf, pos, 0)
-	var aabb := AABB(pos, s)
-	$blockEntities._load(aabb, buf, s)
+	var aabb := AABB(Vector3(pos) * s, s)
+	$blockEntities._load(aabb, buf)

@@ -85,6 +85,7 @@ class Item extends RefCounted:
 	
 	var hasInteractionOverride := false
 	var interactionOverride:Callable
+	var consumeOnInteract := false
 
 
 	var isTool := false
