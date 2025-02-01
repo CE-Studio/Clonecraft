@@ -202,11 +202,11 @@ func _makeItems() -> void:
 	_mitem("copperSword", "copper_sword", Vector2i(2, 3))
 	_mitem("ironSword", "iron_sword", Vector2i(3, 3))
 	_mitem("diamondSword", "diamond_sword", Vector2i(8, 3))
-	#ItemManager.registerItem(
-	#	&"clonecraft:dbtile",
-	#	&"clonecraft.item.dbtile",
-	#	ItemManager.ItemModel.make2D(_it, _is, Vector2i(7, 0))
-	#).setInteractionOverride(placete.bind(&"null:null"))
+	ItemManager.registerItem(
+		&"clonecraft:dbtile",
+		&"clonecraft.item.dbtile",
+		ItemManager.ItemModel.make2D(_it, _is, Vector2i(7, 0))
+	).setInteractionOverride(placete.bind(&"null:null"))
 
 
 func placete(event:InputEvent, id:StringName, meta := {}) -> bool:

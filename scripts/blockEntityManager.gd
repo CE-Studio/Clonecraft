@@ -75,7 +75,7 @@ func place(id:StringName, pos:Vector3, meta := {}) -> bool:
 		te.position = ipos
 		add_child(te)
 		te.setup(ipos, meta)
-		WorldControl.instance.saveMetaChunkContainingBlock(ipos)
+		te.markDirty()
 		return true
 	else:
 		return false

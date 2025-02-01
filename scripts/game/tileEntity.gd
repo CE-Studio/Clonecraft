@@ -12,6 +12,7 @@ var ID:StringName:
 		return getID()
 
 
+## Override with your TileEntity's ID
 func getID() -> StringName:
 	return &"null:null"
 
@@ -41,3 +42,9 @@ func setup(ipos:Vector3i, idata:Dictionary) -> void:
 ## Called whenever a tile needs to be saved.
 func save() -> Dictionary:
 	return data
+
+
+## Call to flag that the TileEntity needs to be re-saved.[br]
+## The TileEntity may still be re-saved even if you don't call this.
+func markDirty() -> void:
+	WorldControl.markDirty(Vector3i((pos / 16.0).floor()))

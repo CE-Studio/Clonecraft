@@ -14,6 +14,8 @@ static var metastream:VoxelStream
 static var localUsername := "__localplayer__" : 
 	set(value):
 		pass
+static var dirtyChunks:Array[Vector3i] = []
+static var mutex := Mutex.new()
 
 
 @export var dayLength:float
@@ -53,6 +55,22 @@ var _savedata := {
 }
 
 
+static func markDirty(pos:Vector3i) -> void:
+	mutex.lock()
+	if not dirtyChunks.has(pos):
+		dirtyChunks.append(pos)
+	mutex.unlock()
+
+
+static func saveDirtyChunks() -> void:
+	if is_instance_valid(instance):
+		mutex.lock()
+		for i in dirtyChunks:
+			instance.saveMetaChunk(i)
+		dirtyChunks = []
+		mutex.unlock()
+
+
 static func isPaused() -> bool:
 	return instance.pausing or instance.waiting
 
@@ -90,6 +108,7 @@ func startWait(aabb:AABB, rel:Vector3) -> void:
 
 
 func saveworld():
+	saveDirtyChunks()
 	$"/root/Node3D/VoxelTerrain".save_modified_blocks()
 	var jsave := JSON.stringify(_p.save(), "  ")
 	if !DirAccess.dir_exists_absolute(worldpath + "/playerdata/"):
@@ -243,14 +262,20 @@ static func explode(pos:Vector3, range:float, power:int, drop := true, bias := V
 
 
 func _on_voxel_terrain_mesh_block_exited(pos: Vector3i) -> void:
-	var buf := VoxelBuffer.new()
-	var s := metastream.get_block_size()
-	buf.create(s.x, s.y, s.z)
-	metastream.load_voxel_block(buf, pos, 0)
-	var vtool = buf.get_voxel_tool()
-	var aabb := AABB(Vector3(pos) * s, s)
-	$blockEntities._save(aabb, vtool)
-	metastream.save_voxel_block(buf, pos, 0)
+	mutex.lock()
+	if dirtyChunks.has(pos):
+		dirtyChunks.erase(pos)
+		mutex.unlock()
+		var buf := VoxelBuffer.new()
+		var s := metastream.get_block_size()
+		buf.create(s.x, s.y, s.z)
+		metastream.load_voxel_block(buf, pos, 0)
+		var vtool = buf.get_voxel_tool()
+		var aabb := AABB(Vector3(pos) * s, s)
+		$blockEntities._save(aabb, vtool)
+		metastream.save_voxel_block(buf, pos, 0)
+	else:
+		mutex.unlock()
 
 
 func saveMetaChunk(pos:Vector3i) -> void:
