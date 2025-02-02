@@ -56,6 +56,7 @@ func _makeGB() -> void:
 			"plant"
 	)
 	bi.setTickable(runGrass)
+	bi.dropItem = &"clonecraft:dirt"
 	man.endBlockRegister(bi)
 
 
@@ -114,6 +115,7 @@ func _makeOL() -> void:
 			"wood",
 			"wood"
 	)
+	bi1.dropItem = &"clonecraft:logOak"
 	man.endBlockRegister(bi1)
 
 	var model2 = man.startBlockRegister("clonecraft:logHoirz1Oak", Voxdat.vox.GEOMETRY_CUBE)
@@ -141,6 +143,7 @@ func _makeOL() -> void:
 			"wood",
 			"wood"
 	)
+	bi2.dropItem = &"clonecraft:logOak"
 	man.endBlockRegister(bi2)
 
 	var model3 = man.startBlockRegister("clonecraft:logHoirz2Oak", Voxdat.vox.GEOMETRY_CUBE)
@@ -168,6 +171,7 @@ func _makeOL() -> void:
 			"wood",
 			"wood"
 	)
+	bi3.dropItem = &"clonecraft:logOak"
 	man.endBlockRegister(bi3)
 
 
@@ -202,16 +206,29 @@ func _makeItems() -> void:
 	_mitem("copperSword", "copper_sword", Vector2i(2, 3))
 	_mitem("ironSword", "iron_sword", Vector2i(3, 3))
 	_mitem("diamondSword", "diamond_sword", Vector2i(8, 3))
-	ItemManager.registerItem(
-		&"clonecraft:dbtile",
-		&"clonecraft.item.dbtile",
-		ItemManager.ItemModel.make2D(_it, _is, Vector2i(7, 0))
-	).setInteractionOverride(placete.bind(&"null:null"))
+	var logitem := ItemManager.registerItem(
+		&"clonecraft:logOak",
+		&"clonecraft.item.log_oak",
+		# TODO make a way to gereate block item models during the register phasse
+		# ...or just rework the phases
+		ItemManager.ItemModel.make3D(BoxMesh.new())
+	)
+	logitem.setInteractionOverride(placelog)
+	logitem.consumeOnInteract = 1
+	#ItemManager.registerItem(
+	#	&"clonecraft:dbtile",
+	#	&"clonecraft.item.dbtile",
+	#	ItemManager.ItemModel.make2D(_it, _is, Vector2i(7, 0))
+	#).setInteractionOverride(placete.bind(&"null:null"))
+
+
+func placelog(event:InputEvent) -> bool:
+	return false
 
 
 func placete(event:InputEvent, id:StringName, meta := {}) -> bool:
 	if event.is_action_pressed("game_place"):
-		if player.lookingAt != null:
+		if player.abilities.allowBuild and (player.lookingAt != null):
 			return BlockEntityManager.instance.place(id, player.lookingAt.previous_position, meta)
 	return false
 
@@ -226,7 +243,7 @@ func registerPhase() -> void:
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/give.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/editbar.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/tp.gd").new())
-	man.quickUniformBlock(MODID, "stone", "clonecraft.block.stone", Vector2(0, 0), mat1)
+	man.quickUniformBlock(MODID, "stone", "clonecraft.block.stone", Vector2(0, 0), mat1).dropItem = &"clonecraft:cobblestone"
 	man.quickUniformBlock(MODID, "dirt", "clonecraft.block.dirt", Vector2(1, 0), mat1, 1, 1, "tools:shovel")
 	canGrass.append("clonecraft:dirt")
 	_makeGB()
@@ -234,7 +251,7 @@ func registerPhase() -> void:
 	man.quickUniformBlock(MODID, "oreCoal", "clonecraft.block.coal_ore", Vector2(5, 0), mat1)
 	man.quickUniformBlock(MODID, "oreIron", "clonecraft.block.iron_ore", Vector2(0, 1), mat1)
 	man.quickUniformBlock(MODID, "oreGold", "clonecraft.block.gold_ore", Vector2(1, 1), mat1)
-	man.quickUniformBlock(MODID, "oreDiamond", "clonecraft.block.diamond_ore", Vector2(2, 1), mat1)
+	man.quickUniformBlock(MODID, "oreDiamond", "clonecraft.block.diamond_ore", Vector2(2, 1), mat1).dropItem = &"clonecraft:diamond"
 	man.quickUniformBlock(MODID, "oreEnerstone", "clonecraft.block.enerstone_ore", Vector2(3, 1), mat1)
 	man.quickUniformBlock(MODID, "oreCopper", "clonecraft.block.copper_ore", Vector2(4, 1), mat1)
 	man.quickUniformBlock(MODID, "tileStone", "clonecraft.block.stone_tile", Vector2(5, 1), mat1)

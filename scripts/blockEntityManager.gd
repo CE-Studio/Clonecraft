@@ -20,6 +20,13 @@ func _save(aabb:AABB, tool:VoxelTool) -> void:
 		i.queue_free()
 
 
+func _clear(aabb:AABB) -> void:
+	for i in get_children():
+		if i is TileEntity:
+			if aabb.has_point(i.pos):
+				i.queue_free()
+
+
 func _saveChunk(aabb:AABB, tool:VoxelTool) -> Array[TileEntity]:
 	#DebugAABB.instance.aabb = aabb
 	#print("savin")

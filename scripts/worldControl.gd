@@ -159,9 +159,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		pauseUnpause()
 	elif event.is_action_pressed("game_inventory"):
-		if not is_instance_valid(invInstance):
-			invInstance = packedInv.instantiate()
-			$Control/invlayer.add_child(invInstance)
+		openInventory()
+
+
+func openInventory() -> void:
+	if not is_instance_valid(invInstance):
+		invInstance = packedInv.instantiate()
+		$Control/invlayer.add_child(invInstance)
 
 
 func _ready() -> void:
@@ -196,7 +200,10 @@ func _ready() -> void:
 		var f := FileAccess.open(playsavepath, FileAccess.READ)
 		var dict:Dictionary = JSON.parse_string(f.get_as_text())
 		f.close()
-		BlockManager.log("WorldControl", str(_p.restore(dict)))
+		if _p.restore(dict):
+			BlockManager.glog("WorldControl", "Loaded player inventory")
+		else:
+			BlockManager.glog("WorldControl", "Failed to load player inventory")
 	if FileAccess.file_exists(worldpath + "/worldData.json"):
 		var f := FileAccess.open(worldpath + "/worldData.json", FileAccess.READ)
 		var dict:Dictionary = JSON.parse_string(f.get_as_text())
@@ -276,6 +283,10 @@ func _on_voxel_terrain_mesh_block_exited(pos: Vector3i) -> void:
 		metastream.save_voxel_block(buf, pos, 0)
 	else:
 		mutex.unlock()
+		var s := metastream.get_block_size()
+		var aabb := AABB(Vector3(pos) * s, s)
+		$blockEntities._clear(aabb)
+		
 
 
 func saveMetaChunk(pos:Vector3i) -> void:

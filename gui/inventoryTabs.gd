@@ -12,6 +12,10 @@ static func registerTab(tab:PackedScene) -> void:
 	tabs.append(tab)
 
 
+static func registerTempTab(tab:PackedScene) -> void:
+	tempTabs.append(tab)
+
+
 static func registerContextualTab(tab:PackedScene, condition:Callable) -> void:
 	contextualTabs.append(tab)
 	contextualConditions.append(condition)

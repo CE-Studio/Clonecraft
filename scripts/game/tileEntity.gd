@@ -1,4 +1,4 @@
-extends Node3D
+extends StaticBody3D
 class_name TileEntity
 
 
@@ -20,6 +20,10 @@ func getID() -> StringName:
 ## Called when the TileEntity enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+
+
+func interact(event:InputEvent) -> bool:
+	return false
 
 
 ## Called every world tick. 'delta' is the elapsed time since the previous tick.

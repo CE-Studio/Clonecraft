@@ -63,6 +63,10 @@ spring_length = 5.0
 [node name="Camera3D2" type="Camera3D" parent="head/Camera3D/springArm3d2"]
 transform = Transform3D(1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, -6.12323e-16, 0, 5)
 
+[node name="rayCast3d" type="RayCast3D" parent="head/Camera3D"]
+target_position = Vector3(0, 0, -5)
+collision_mask = 7
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
 visible = false

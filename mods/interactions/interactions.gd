@@ -47,6 +47,15 @@ func updatePlace() -> void:
 				player.inventory.extractItem(ItemManager.ItemStack.new(istack.itemID, placed, istack.metadata))
 
 
+func consumeHeld(count:int) -> bool:
+	if player.abilities.endlessInventory:
+		return true
+	var istack:ItemManager.ItemStack = player.getSelectedItem()
+	istack = istack.copy()
+	istack.count = count
+	return player.inventory.extractItem(istack)
+
+
 func _process(_delta:float) -> void:
 	if !WorldControl.isPaused():
 		if placing and (player.lookingAt != null):
@@ -89,15 +98,30 @@ func _ununhandled_input(event:InputEvent) -> void:
 		if event.is_action_pressed("debug_action"):
 			if player.lookingAt != null:
 				WorldControl.explode(Vector3(player.lookingAt.previous_position) + Vector3(0.5, 0.5, 0.5), 8, 100)
+		if (not placing) and (not breaking) and player.raycast.is_colliding():
+			var c := player.raycast.get_collider()
+			if c is WorldItem:
+				if event.is_action_pressed("game_break"):
+					player._on_enter_item_range(c)
+					player.get_viewport().set_input_as_handled()
+					return
+			if c is TileEntity:
+				if c.interact(event):
+					player.get_viewport().set_input_as_handled()
+					return
 		if event.is_action_pressed("game_place"):
 			var i := player.getSelectedItem()
 			if is_instance_valid(i):
 				var ii := i.getItem()
 				if ii.hasInteractionOverride:
 					if ii.interactionOverride.call(event):
+						if ii.consumeOnInteract > 0:
+							consumeHeld(ii.consumeOnInteract)
+						player.get_viewport().set_input_as_handled()
 						return
 				if ii.isTool:
 					# TODO implement tools
+					player.get_viewport().set_input_as_handled()
 					return
 				if ii.isVoxel and player.abilities["allowBuild"]:
 					if player.lookingAt != null:
@@ -115,8 +139,12 @@ func _ununhandled_input(event:InputEvent) -> void:
 				var ii := i.getItem()
 				if ii.hasInteractionOverride:
 					if ii.interactionOverride.call(event):
+						if ii.consumeOnInteract > 0:
+							consumeHeld(ii.consumeOnInteract)
+						player.get_viewport().set_input_as_handled()
 						return
 				if ii.isTool:
+					player.get_viewport().set_input_as_handled()
 					return
 		elif event.is_action_pressed("game_break"):
 			var i := player.getSelectedItem()
@@ -124,8 +152,12 @@ func _ununhandled_input(event:InputEvent) -> void:
 				var ii := i.getItem()
 				if ii.hasInteractionOverride:
 					if ii.interactionOverride.call(event):
+						if ii.consumeOnInteract > 0:
+							consumeHeld(ii.consumeOnInteract)
+						player.get_viewport().set_input_as_handled()
 						return
 				if ii.isTool:
+					player.get_viewport().set_input_as_handled()
 					return
 			breakPower = 1.0
 			breaking = true
@@ -137,8 +169,12 @@ func _ununhandled_input(event:InputEvent) -> void:
 				var ii := i.getItem()
 				if ii.hasInteractionOverride:
 					if ii.interactionOverride.call(event):
+						if ii.consumeOnInteract > 0:
+							consumeHeld(ii.consumeOnInteract)
+						player.get_viewport().set_input_as_handled()
 						return
 				if ii.isTool:
+					player.get_viewport().set_input_as_handled()
 					return
 		elif event.is_action_pressed("game_throw"):
 			var i := player.getSelectedItem()

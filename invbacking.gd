@@ -57,9 +57,9 @@ static func dropInto(oinv:Inventory) -> bool:
 			if oinv.extractItem(heldItem):
 				return false
 			else:
-				print("!!! POSSIBLE ITEM DUPLICATION DETECTED !!!")
-				print(heldSourceInventory)
-				print(oinv)
+				BlockManager.glog("ItemManager", "!!! POSSIBLE ITEM DUPLICATION DETECTED !!!")
+				BlockManager.glog("ItemManager", str(heldSourceInventory))
+				BlockManager.glog("ItemManager", str(oinv))
 				return false
 	return false
 

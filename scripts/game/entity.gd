@@ -98,7 +98,7 @@ func restore(dict:Dictionary) -> bool:
 	return false
 	
 	
-func updateAbilities():
+func updateAbilities() -> void:
 	scale.x = (abilities["size"]["x"] * abilities["scale"]["x"]) * abilities["scale"]["uniform"]
 	scale.y = (abilities["size"]["y"] * abilities["scale"]["y"]) * abilities["scale"]["uniform"]
 	scale.z = (abilities["size"]["z"] * abilities["scale"]["x"]) * abilities["scale"]["uniform"]

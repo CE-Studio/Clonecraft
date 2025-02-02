@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4ka7k0fda5i"]
+[gd_scene load_steps=6 format=3 uid="uid://b4ka7k0fda5i"]
 
 [ext_resource type="Script" path="res://scripts/game/tileEntity.gd" id="1_wfcv3"]
 [ext_resource type="Texture2D" uid="uid://diifvmfx5qvl" path="res://textures/warning.png" id="2_yde6f"]
@@ -15,9 +15,16 @@ texture_filter = 0
 [sub_resource type="BoxMesh" id="BoxMesh_e31sf"]
 material = SubResource("StandardMaterial3D_xwvib")
 
-[node name="invalid tile entity" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_p861i"]
+size = Vector3(1, 0.5, 1)
+
+[node name="invalid tile entity" type="StaticBody3D"]
 script = ExtResource("1_wfcv3")
 
 [node name="meshInstance3d" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
 mesh = SubResource("BoxMesh_e31sf")
+
+[node name="collisionShape3d" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.25, 0.5)
+shape = SubResource("BoxShape3D_p861i")

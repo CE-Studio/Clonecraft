@@ -57,6 +57,7 @@ var _fpitem:HeldItem = preload("res://scripts/itemAssets/HeldItem.tscn").instant
 
 var _fcheck := 1.0
 var extraSaveData := {}
+var _physfix = false
 
 
 @onready var sun:DirectionalLight3D = $sunpoint/sunlight
@@ -64,6 +65,7 @@ var extraSaveData := {}
 @onready var moon:DirectionalLight3D = $sunpoint/moonlight
 @onready var moonSprite:Sprite3D = $sunpoint/moonlight/moon
 @onready var stars:Node3D = $sunpoint/stars
+@onready var raycast:RayCast3D = $head/Camera3D/rayCast3d
 
 
 @export var starmat:Material
@@ -152,6 +154,11 @@ func setModel(m:EntityModel):
 		model.hide()
 
 
+func updateAbilities() -> void:
+	super()
+	raycast.target_position.z = -abilities.size.reach * abilities.scale.reach * abilities.scale.uniform
+
+
 # TODO make inventory scale with ablilities.
 func _ready() -> void:
 	hotbarItems.resize(40)
@@ -171,6 +178,7 @@ func _ready() -> void:
 	Hotbar.instance.selectionChanged.connect(updateHeldItems)
 	call_deferred("setModel", load("res://player/default/Derg.tscn").instantiate())
 	createStars()
+	get_tree().create_timer(1).timeout.connect(func(): _physfix = true)
 
 
 func _process(delta) -> void:
@@ -264,7 +272,7 @@ func _physics_process(delta) -> void:
 	var SPEED:float
 
 	# Add the gravity.
-	if (not abilities["isFlying"]) && (not is_on_floor()):
+	if (not abilities["isFlying"]) && (not is_on_floor()) && _physfix:
 		velocity.y -= GRAVITY * delta
 		if velocity.y < TERMINAL_VELOCITY:
 			velocity.y = TERMINAL_VELOCITY
@@ -272,16 +280,16 @@ func _physics_process(delta) -> void:
 	# Handle Jump.
 	if abilities["isFlying"]:
 		if Input.is_action_pressed("ui_accept") and not Input.is_action_pressed("game_sneak"):
-			velocity.y = abilities.size.jump * abilities.scale.jump
+			velocity.y = abilities.size.jump * abilities.scale.jump * abilities.scale.uniform
 		elif Input.is_action_pressed("game_sneak") and not Input.is_action_pressed("ui_accept"):
-			velocity.y = -abilities.size.jump * abilities.scale.jump
+			velocity.y = -abilities.size.jump * abilities.scale.jump * abilities.scale.uniform
 			if is_on_floor():
 				abilities["isFlying"] = false
 		else:
 			velocity.y = 0
 	else:
 		if Input.is_action_pressed("ui_accept") and is_on_floor():
-			velocity.y = abilities.size.jump * abilities.scale.jump
+			velocity.y = abilities.size.jump * abilities.scale.jump * abilities.scale.uniform
 
 	if Input.is_action_pressed("ui_up"):
 		if Input.is_action_pressed("game_sprint"):
@@ -324,8 +332,8 @@ func _physics_process(delta) -> void:
 		tscalefactor = 0.1
 	if direction:
 		var rvel := Vector2(
-			direction.x * SPEED * abilities.scale.speed,
-			direction.z * SPEED * abilities.scale.speed,
+			direction.x * SPEED * abilities.scale.speed * abilities.scale.uniform,
+			direction.z * SPEED * abilities.scale.speed * abilities.scale.uniform,
 		)
 		cvel = cvel.move_toward(rvel, lerpdelta * tscalefactor)
 	else:
@@ -338,7 +346,7 @@ func _physics_process(delta) -> void:
 	if not terrain.is_area_meshed(aabb):
 		world.startWait(aabb, ((velocity * delta) * 2))
 		if velocity == Vector3.ZERO:
-			print("bruh")
+			BlockManager.glog("Player Physics", "Waiting with no velocity!")
 		#velocity = Vector3.ZERO
 		return
 
@@ -354,7 +362,11 @@ func _physics_process(delta) -> void:
 	animCurSpeed = lerpf(animCurSpeed, clamp((abs(velocity.x) + abs(velocity.z)), 0, 1), delta * 10)
 
 	if abilities["allowBuild"]:
-		lookingAt = voxelTool.raycast(cam.global_position, -1 * cam.global_transform.basis.z.normalized(), 5)
+		lookingAt = voxelTool.raycast(
+			cam.global_position,
+			-1 * cam.global_transform.basis.z.normalized(),
+			abilities.size.reach * abilities.scale.reach * abilities.scale.uniform
+		)
 	else:
 		lookingAt = null
 

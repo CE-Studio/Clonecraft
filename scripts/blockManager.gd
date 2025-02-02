@@ -151,6 +151,9 @@ class BlockInfo extends RefCounted:
 	var breaksound:StringName
 	## The ID of the item the voxel will drop when broken.
 	var dropItem:StringName
+	## The script used to determine dropped items, if DropItem is set to "script"[br]
+	## Return an aray of ItemStacks
+	var dropScript:Callable
 	# TODO come up with and explain voxel properties
 	## A list of various unique properties the voxel may have.[br]
 	## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
@@ -207,6 +210,11 @@ class BlockInfo extends RefCounted:
 	func setScripted(callable:Callable) -> void:
 		scripted = true
 		blockScript = callable
+		
+	
+	func setDropScript(callable:Callable) -> void:
+		dropItem = &"script"
+		dropScript = callable
 
 
 ## Output a message to the debug log.[br]
@@ -215,6 +223,15 @@ class BlockInfo extends RefCounted:
 @warning_ignore("SHADOWED_GLOBAL_IDENTIFIER")
 static func log(id:String, message:String) -> String:
 	var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
+	print(out)
+	if ProjectSettings.get_setting("gameplay/debug/log_to_chat"):
+		Chat.pushText(out)
+	return out
+
+
+
+static func glog(id:String, message:String) -> String:
+	var out:String = "[" + Time.get_datetime_string_from_system() + "] [" + id + "] " + message
 	print(out)
 	if ProjectSettings.get_setting("gameplay/debug/log_to_chat"):
 		Chat.pushText(out)
@@ -518,6 +535,7 @@ static func setBlock(
 		drop := true,
 		update := true,
 		force := false,
+		silky := false,
 	) -> bool:
 	var willSet := force
 
@@ -527,17 +545,21 @@ static func setBlock(
 			willSet = true
 
 	if willSet:
-		if drop:
+		if silky:
+			var item := ItemManager.ItemStack.new(oldBlock.fullID, 1)
+			ItemManager.spawnWorldItem(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
+		elif drop:
 			var itemID := oldBlock.dropItem
 			if itemID != &"null":
-				var item:ItemManager.ItemStack
+				var item:Array[ItemManager.ItemStack]
 				if itemID == &"*":
-					item = ItemManager.ItemStack.new(oldBlock.fullID, 1)
+					item = [ItemManager.ItemStack.new(oldBlock.fullID, 1)]
 				elif itemID == &"script":
-					pass
+					item = oldBlock.dropScript.call()
 				else:
-					item = ItemManager.ItemStack.new(itemID, 1)
-				ItemManager.spawnWorldItem(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
+					item = [ItemManager.ItemStack.new(itemID, 1)]
+				for i in item:
+					ItemManager.spawnWorldItem(i, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
 
 		_tool.set_voxel(pos, blockIDlist[blockID])
 
