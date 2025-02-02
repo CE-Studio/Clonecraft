@@ -5,6 +5,7 @@ const LABEL1_TEXT := (
 	"\nFPS: %s" +
 	"\nX/Y/Z: %s, %s, %s" +
 	"\nRotation: %s, %s" +
+	"\nFacing: %s" +
 	"\nLooking at: %s, %s, %s: %s"
 )
 const LABEL2_TEXT := (
@@ -50,8 +51,9 @@ func _process(_delta) -> void:
 		snapped(player.position.x, 0.01),
 		snapped(player.position.y, 0.01),
 		snapped(player.position.z, 0.01),
-		snapped(rad_to_deg(cam.rotation.x), 0.01),
-		snapped(rad_to_deg(head.rotation.y), 0.01),
+		snapped(cam.rotation_degrees.x, 0.01),
+		snapped(head.rotation_degrees.y, 0.01),
+		(int(round(head.rotation_degrees.y / 90)) + 2) % 4,
 		pl[0],
 		pl[1],
 		pl[2],

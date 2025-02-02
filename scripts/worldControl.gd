@@ -286,7 +286,6 @@ func _on_voxel_terrain_mesh_block_exited(pos: Vector3i) -> void:
 		var s := metastream.get_block_size()
 		var aabb := AABB(Vector3(pos) * s, s)
 		$blockEntities._clear(aabb)
-		
 
 
 func saveMetaChunk(pos:Vector3i) -> void:

@@ -5,14 +5,14 @@ class_name InventoryTabs
 static var tabs:Array[PackedScene] = []
 static var contextualTabs:Array[PackedScene] = []
 static var contextualConditions:Array[Callable] = []
-static var tempTabs:Array[PackedScene] = []
+static var tempTabs:Array[Control] = []
 
 
 static func registerTab(tab:PackedScene) -> void:
 	tabs.append(tab)
 
 
-static func registerTempTab(tab:PackedScene) -> void:
+static func registerTempTab(tab:Control) -> void:
 	tempTabs.append(tab)
 
 
@@ -30,6 +30,6 @@ func _ready() -> void:
 			add_child(contextualTabs[i].instantiate())
 			current_tab = get_child_count() - 1
 	for i in tempTabs:
-		add_child(i.instantiate())
+		add_child(i)
 		current_tab = get_child_count() - 1
 	tempTabs = []

@@ -215,6 +215,18 @@ func _makeItems() -> void:
 	)
 	logitem.setInteractionOverride(placelog)
 	logitem.consumeOnInteract = 1
+	var chestmodel:Mesh = preload("res://mods/clonecraft/models/chest.obj")
+	for i in chestmodel.get_surface_count():
+		chestmodel.surface_set_material(i, preload("res://mods/clonecraft/textures/chest.tres"))
+	var chestitem := ItemManager.registerItem(
+		&"clonecraft:chest",
+		&"clonecraft.item.chest",
+		# TODO make a way to gereate block item models during the register phasse
+		# ...or just rework the phases
+		ItemManager.ItemModel.make3D(chestmodel)
+	)
+	chestitem.setInteractionOverride(placete.bind(&"clonecraft:chest"))
+	chestitem.consumeOnInteract = 1
 	#ItemManager.registerItem(
 	#	&"clonecraft:dbtile",
 	#	&"clonecraft.item.dbtile",
@@ -227,6 +239,8 @@ func placelog(event:InputEvent) -> bool:
 
 
 func placete(event:InputEvent, id:StringName, meta := {}) -> bool:
+	if not meta.has("facing"):
+		meta["facing"] = (int(round(player.head.rotation_degrees.y / 90)) + 2) % 4
 	if event.is_action_pressed("game_place"):
 		if player.abilities.allowBuild and (player.lookingAt != null):
 			return BlockEntityManager.instance.place(id, player.lookingAt.previous_position, meta)
@@ -274,4 +288,5 @@ func registerPhase() -> void:
 	man.quickUniformBlock(MODID, "blockDiamond", "clonecraft.block.diamond_block", Vector2(5, 4), mat2, 3, 5, "tools:pickaxe", 2)
 	man.quickUniformBlock(MODID, "blockEnerstone", "clonecraft.block.enerstone_crate", Vector2(0, 5), mat1)
 	man.quickUniformBlock(MODID, "blockCopper", "clonecraft.block.copper_block", Vector2(1, 5), mat1)
+	BlockEntityManager.TElist[&"clonecraft:chest"] = preload("res://mods/clonecraft/tileEntities/chest.tscn")
 	_makeItems()

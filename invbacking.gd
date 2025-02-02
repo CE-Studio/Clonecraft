@@ -10,6 +10,9 @@ static var heldSourceInventory:Inventory
 static var gHeldItem:GUIItem
 
 
+signal inventoryClosed
+
+
 var prevc:int = 0
 @onready var vp := get_viewport()
 
@@ -77,6 +80,7 @@ func _p() -> void:
 		hide()
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		mouse_filter = MOUSE_FILTER_PASS
+		inventoryClosed.emit()
 
 
 func _process(_delta:float) -> void:

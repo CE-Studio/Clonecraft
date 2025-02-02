@@ -38,7 +38,7 @@ func save() -> Dictionary:
 	return outp
 
 
-func restore(inp:Dictionary) -> bool:
+func restore(inp:Dictionary, emit := true) -> bool:
 	if !inp.has_all([
 		"space",
 		"container",
@@ -53,12 +53,12 @@ func restore(inp:Dictionary) -> bool:
 		]):
 			return false
 		var istack = ItemManager.ItemStack.new(i.item, i.count, i.meta)
-		if !addItem(istack):
+		if !addItem(istack, emit):
 			return false
 	return true
 
 
-func addItem(item:ItemManager.ItemStack) -> bool:
+func addItem(item:ItemManager.ItemStack, emit := true) -> bool:
 	if (item.count + consumption) > space:
 		return false
 	consumption += item.count
@@ -69,7 +69,8 @@ func addItem(item:ItemManager.ItemStack) -> bool:
 			return true
 	container.append(item)
 	sort()
-	contentChanged.emit()
+	if emit:
+		contentChanged.emit()
 	return true
 
 

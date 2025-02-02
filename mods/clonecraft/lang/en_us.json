@@ -57,6 +57,10 @@
 			"iron_sword": "Iron Sword",
 			"diamond_sword": "Diamond Sword",
 			"log_oak": "Oak Log",
+			"chest": "Chest",
+		},
+		"inventory": {
+			"chest": "Chest",
 		}
 	}
 }

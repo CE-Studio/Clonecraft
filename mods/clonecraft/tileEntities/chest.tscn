@@ -1,0 +1,256 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5olmgemdsowf"]
+
+[ext_resource type="Script" path="res://mods/clonecraft/tileEntities/chest.gd" id="1_p3e2g"]
+[ext_resource type="PackedScene" uid="uid://cve388dr83xw4" path="res://mods/clonecraft/models/chest.gltf" id="2_udqtn"]
+[ext_resource type="Material" uid="uid://c5j400b2sq22b" path="res://mods/clonecraft/textures/chest.tres" id="3_2x4sm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ad80h"]
+size = Vector3(0.875, 0.875, 0.875)
+
+[sub_resource type="Animation" id="Animation_d3yxt"]
+resource_name = "open"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chest/Node_7/hinge/clasp:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.0666, 0.179173, 0.450396, -0.1002, -0.0174396, 0.25, 0),
+"times": PackedFloat64Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chest/Node_7/hinge/clasp:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("chest/Node_7/hinge/clasp:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("chest/Node_7/hinge:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1.14556, -0.6004, 0.0178983, 0.2987, -0.0332129, 1.14556, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.1332, 1, 2)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("chest/Node_7/hinge:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.1332, 1, 2)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("chest/Node_7/hinge:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.1332, 1, 2)
+}
+
+[sub_resource type="Animation" id="Animation_rakhn"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chest/Node_7/hinge/clasp:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chest/Node_7/hinge/clasp:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("chest/Node_7/hinge/clasp:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("chest/Node_7/hinge:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("chest/Node_7/hinge:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("chest/Node_7/hinge:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tk35a"]
+resource_name = "close"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chest/Node_7/hinge/clasp:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat64Array(0.450396, -0.25, 0, 0.25, 0, 0.4504, -0.25, 0, 0.0680683, -0.163738, 0, -0.0319651, 0.182158, 0.0679349, 0.14633, 0, -0.0654651, 0.140359, 0.0344348, 0.0388452, 0, -0.0323318, 0.0358595, 0.0675682, 0.0179453, 0, -0.0657985, 0.0149597, 0.25, 0),
+"times": PackedFloat64Array(0, 0.6327, 0.833333, 1.03333, 1.2, 1.36667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chest/Node_7/hinge/clasp:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.7, 0.833333, 1.03333, 1.2, 1.36667)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("chest/Node_7/hinge/clasp:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.7, 0.833333, 1.03333, 1.2, 1.36667)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("chest/Node_7/hinge:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(1.14556, -0.25, 0, 0.1665, 0.0690095, 0, -0.034, 1.30011, 0.25, 0),
+"times": PackedFloat64Array(0, 0.7)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("chest/Node_7/hinge:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.7)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("chest/Node_7/hinge:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 0.7)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1pfi"]
+_data = {
+"RESET": SubResource("Animation_rakhn"),
+"close": SubResource("Animation_tk35a"),
+"open": SubResource("Animation_d3yxt")
+}
+
+[node name="chest" type="StaticBody3D"]
+script = ExtResource("1_p3e2g")
+
+[node name="chest" parent="." instance=ExtResource("2_udqtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="body" parent="chest/Node_7" index="0"]
+material_override = ExtResource("3_2x4sm")
+
+[node name="cube" parent="chest/Node_7/hinge/clasp" index="0"]
+material_override = ExtResource("3_2x4sm")
+
+[node name="cube_001" parent="chest/Node_7/hinge/clasp" index="1"]
+material_override = ExtResource("3_2x4sm")
+
+[node name="cube_002" parent="chest/Node_7/hinge/clasp" index="2"]
+material_override = ExtResource("3_2x4sm")
+
+[node name="lid" parent="chest/Node_7/hinge" index="1"]
+material_override = ExtResource("3_2x4sm")
+
+[node name="collisionShape3d" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.439508, 0.5)
+shape = SubResource("BoxShape3D_ad80h")
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i1pfi")
+}
+
+[editable path="chest"]
