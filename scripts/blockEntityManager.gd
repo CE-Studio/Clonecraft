@@ -23,18 +23,16 @@ func _save(aabb:AABB, tool:VoxelTool) -> void:
 func _clear(aabb:AABB) -> void:
 	for i in get_children():
 		if i is TileEntity:
-			if aabb.has_point(i.pos):
+			if aabb.has_point(Vector3(i.pos) + Vector3(0.5, 0.5, 0.5)):
 				i.queue_free()
 
 
 func _saveChunk(aabb:AABB, tool:VoxelTool) -> Array[TileEntity]:
 	#DebugAABB.instance.aabb = aabb
-	#print("savin")
 	var tosave:Array[TileEntity] = []
 	for i in get_children():
 		if i is TileEntity:
-			if aabb.has_point(i.pos):
-				#print("found at ", i.pos)
+			if aabb.has_point(Vector3(i.pos) + Vector3(0.5, 0.5, 0.5)):
 				tosave.append(i)
 	for i in tosave:
 		var rpos := Vector3i(
@@ -42,7 +40,6 @@ func _saveChunk(aabb:AABB, tool:VoxelTool) -> Array[TileEntity]:
 			posmod(i.pos.y, int(aabb.size.y)),
 			posmod(i.pos.z, int(aabb.size.z)),
 		)
-		#print("relative ", rpos)
 		var md = tool.get_voxel_metadata(rpos)
 		if md is Dictionary:
 			md.merge({&"tileEntity": [i.getID(), i.save()]}, true)
@@ -55,10 +52,8 @@ func _saveChunk(aabb:AABB, tool:VoxelTool) -> Array[TileEntity]:
 
 func _procload(pos:Vector3i, md, aabb:AABB):
 	var rpos := aabb.position + Vector3(pos)
-	#print("loadin ",rpos)
 	var bi = BlockManager.getBlock(rpos)
 	if bi.fullID == &"clonecraft:tileEntity":
-		#print("is te")
 		if md is Dictionary:
 			if md.has(&"tileEntity"):
 				var te = md[&"tileEntity"]
