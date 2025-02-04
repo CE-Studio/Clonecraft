@@ -96,6 +96,8 @@ class Item extends RefCounted:
 
 	var isVoxel := false
 	var voxel:StringName
+	var ponderScene:PackedScene
+
 
 	func _init(itemModel:ItemModel):
 		model = itemModel

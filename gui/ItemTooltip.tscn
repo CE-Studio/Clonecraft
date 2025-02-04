@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci17ccbboffw4"]
+
+[ext_resource type="Script" path="res://gui/item_tooltip.gd" id="1_fdjay"]
+
+[node name="ItemTooltip" type="MarginContainer"]
+offset_right = 108.0
+offset_bottom = 64.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+script = ExtResource("1_fdjay")
+
+[node name="ItemTooltip" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="name" type="RichTextLabel" parent="ItemTooltip"]
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "&&name&&"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="lore" type="RichTextLabel" parent="ItemTooltip"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[i]&&lore&&[/i]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="energy" type="ProgressBar" parent="ItemTooltip"]
+visible = false
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+show_percentage = false
+
+[node name="damage" type="Label" parent="ItemTooltip"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.42, 0.42, 1)
+text = "99/99 &&damage&&"
+
+[node name="ponder" type="RichTextLabel" parent="ItemTooltip"]
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "&&Hold [key] to ponder&&"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="id" type="Label" parent="ItemTooltip"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42, 0.42, 0.42, 1)
+text = "&&item:id&&"
+
+[node name="modname" type="Label" parent="ItemTooltip"]
+layout_mode = 2
+theme_type_variation = &"italicLabel"
+theme_override_colors/font_color = Color(0.483132, 0.000136066, 0.471469, 1)
+text = "&&mod&&"

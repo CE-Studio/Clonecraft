@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7hhni6y0e055"]
+[gd_scene load_steps=8 format=3 uid="uid://b7hhni6y0e055"]
 
 [ext_resource type="Script" path="res://gui/GuiItem.gd" id="1_2xs5l"]
 [ext_resource type="Script" path="res://scripts/TransformedMeshInstance2D.gd" id="1_h37yb"]
+[ext_resource type="Script" path="res://gui/guiitembutton.gd" id="3_0vpiy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3uao"]
 
@@ -55,5 +56,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u28c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8tuvh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8tuvh")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_grmsk")
+script = ExtResource("3_0vpiy")
 
 [connection signal="pressed" from="button" to="." method="_on_button_pressed"]

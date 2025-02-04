@@ -1,14 +1,13 @@
-[gd_resource type="Theme" load_steps=25 format=3 uid="uid://eikvg3smmp6t"]
+[gd_resource type="Theme" load_steps=28 format=3 uid="uid://eikvg3smmp6t"]
 
 [ext_resource type="StyleBox" uid="uid://d2168jgf71u6p" path="res://textures/buttonDisabled.tres" id="1_qfc4k"]
-[ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://ClarenceOSTerminalNotMono.ttf" id="1_spyui"]
 [ext_resource type="Texture2D" uid="uid://qdn3gww1o4nt" path="res://textures/button4.png" id="1_y287y"]
-[ext_resource type="FontFile" uid="uid://bnl115joa8yxl" path="res://ClarenceOS_Terminal_Mono.ttf" id="2_0wk78"]
 [ext_resource type="StyleBox" uid="uid://bsg8aq0vtexuk" path="res://textures/focus.tres" id="2_3x48p"]
 [ext_resource type="StyleBox" uid="uid://dd6alv6631mim" path="res://textures/buttonHover.tres" id="2_vbr7h"]
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="3_y8rvq"]
 [ext_resource type="StyleBox" uid="uid://cebgf2dlcyhmf" path="res://textures/buttonPressed.tres" id="4_7wnnr"]
 [ext_resource type="Texture2D" uid="uid://kcvovhm6s1qv" path="res://textures/button1.png" id="5_gra7t"]
+[ext_resource type="FontFile" uid="uid://bnl115joa8yxl" path="res://font/ClarenceOS_Terminal_Mono.ttf" id="8_p0fqy"]
 [ext_resource type="Texture2D" uid="uid://co2wk0prsvefr" path="res://textures/button2.png" id="8_ut5b0"]
 [ext_resource type="StyleBox" uid="uid://blngadnrnv1r3" path="res://textures/textAxtive.tres" id="9_q5b1f"]
 [ext_resource type="StyleBox" uid="uid://b74iwbbde0bo6" path="res://textures/textDisabled.tres" id="10_iu1qr"]
@@ -16,7 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://oscnea5y3sh4" path="res://textures/radio1.png" id="13_71ett"]
 [ext_resource type="StyleBox" uid="uid://cnjonn6th6shm" path="res://textures/efbar0.tres" id="14_mkweh"]
 [ext_resource type="StyleBox" uid="uid://fanrvrspafel" path="res://textures/efbar1.tres" id="15_yk7w6"]
+[ext_resource type="FontVariation" uid="uid://bllgbj37qvuub" path="res://font/clos_bold.tres" id="16_js4qt"]
 [ext_resource type="StyleBox" uid="uid://rwdvuv6adrd1" path="res://textures/tooltipPanel.tres" id="16_rohjp"]
+[ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://font/ClarenceOSTerminalNotMono.ttf" id="17_ib73i"]
+[ext_resource type="FontVariation" uid="uid://cx1byasn8r5qi" path="res://font/clos_bold_italic.tres" id="17_jm33p"]
+[ext_resource type="FontVariation" uid="uid://ptod8l5ss5iu" path="res://font/clos_italic.tres" id="18_tutt5"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_m5jno"]
 color = Color(0.364706, 0.364706, 0.364706, 1)
@@ -43,7 +46,7 @@ thickness = 2
 vertical = true
 
 [resource]
-default_font = ExtResource("1_spyui")
+default_font = ExtResource("17_ib73i")
 Button/font_sizes/font_size = 20
 Button/styles/disabled = ExtResource("1_qfc4k")
 Button/styles/focus = ExtResource("2_3x48p")
@@ -64,7 +67,7 @@ CheckButton/icons/unchecked_disabled = ExtResource("1_y287y")
 CheckButton/icons/unchecked_disabled_mirrored = ExtResource("1_y287y")
 CheckButton/icons/unchecked_mirrored = ExtResource("1_y287y")
 CheckButton/styles/hover_pressed = ExtResource("4_7wnnr")
-CodeEdit/fonts/font = ExtResource("2_0wk78")
+CodeEdit/fonts/font = ExtResource("8_p0fqy")
 HScrollBar/styles/grabber = ExtResource("3_y8rvq")
 HScrollBar/styles/grabber_highlight = ExtResource("2_vbr7h")
 HScrollBar/styles/grabber_pressed = ExtResource("4_7wnnr")
@@ -105,6 +108,20 @@ PopupMenu/styles/separator = SubResource("StyleBoxLine_yx81x")
 ProgressBar/font_sizes/font_size = 20
 ProgressBar/styles/background = ExtResource("14_mkweh")
 ProgressBar/styles/fill = ExtResource("15_yk7w6")
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/shadow_offset_x = 2
+RichTextLabel/constants/shadow_offset_y = 2
+RichTextLabel/constants/shadow_outline_size = 0
+RichTextLabel/font_sizes/bold_font_size = 20
+RichTextLabel/font_sizes/bold_italics_font_size = 20
+RichTextLabel/font_sizes/italics_font_size = 20
+RichTextLabel/font_sizes/mono_font_size = 15
+RichTextLabel/font_sizes/normal_font_size = 20
+RichTextLabel/fonts/bold_font = ExtResource("16_js4qt")
+RichTextLabel/fonts/bold_italics_font = ExtResource("17_jm33p")
+RichTextLabel/fonts/italics_font = ExtResource("18_tutt5")
+RichTextLabel/fonts/mono_font = ExtResource("8_p0fqy")
 TabContainer/font_sizes/font_size = 20
 TabContainer/styles/panel = ExtResource("1_qfc4k")
 TabContainer/styles/tab_disabled = ExtResource("1_qfc4k")
@@ -140,3 +157,5 @@ VSlider/styles/grabber_area_highlight = ExtResource("2_3x48p")
 VSlider/styles/slider = ExtResource("1_qfc4k")
 Window/styles/embedded_border = ExtResource("3_y8rvq")
 Window/styles/embedded_unfocused_border = ExtResource("3_y8rvq")
+italicLabel/base_type = &"Label"
+italicLabel/fonts/font = ExtResource("18_tutt5")

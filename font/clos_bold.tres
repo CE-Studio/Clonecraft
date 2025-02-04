@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bllgbj37qvuub"]
+
+[ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://font/ClarenceOSTerminalNotMono.ttf" id="1_ua1e1"]
+
+[resource]
+base_font = ExtResource("1_ua1e1")
+variation_embolden = 0.5

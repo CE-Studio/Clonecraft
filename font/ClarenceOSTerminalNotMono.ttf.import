@@ -3,17 +3,17 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://df7j4qpomb6sn"
-path="res://.godot/imported/ClarenceOSTerminalNotMono.ttf-a915841a788b3cc0109fc642f33aee49.fontdata"
+path="res://.godot/imported/ClarenceOSTerminalNotMono.ttf-fdca9469aa9b5c6c035ba6935e00cfcd.fontdata"
 
 [deps]
 
-source_file="res://ClarenceOSTerminalNotMono.ttf"
-dest_files=["res://.godot/imported/ClarenceOSTerminalNotMono.ttf-a915841a788b3cc0109fc642f33aee49.fontdata"]
+source_file="res://font/ClarenceOSTerminalNotMono.ttf"
+dest_files=["res://.godot/imported/ClarenceOSTerminalNotMono.ttf-fdca9469aa9b5c6c035ba6935e00cfcd.fontdata"]
 
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
@@ -28,7 +28,12 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[]
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
 language_support={}
 script_support={}
 opentype_features={}

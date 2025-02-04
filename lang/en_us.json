@@ -11,7 +11,8 @@
 			"menu_quit": "Quit to Menu",
 			"pause_menu_title": "Game Menu",
 			"statistics": "Statistics...",
-			"wait_for_chunks": "Waiting for chunks to load..."
+			"wait_for_chunks": "Waiting for chunks to load...",
+			"ponder": "Hold [%s] to ponder"
 		},
 		"generic": {
 			"back": "Back",

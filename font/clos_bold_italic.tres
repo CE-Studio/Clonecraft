@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://cx1byasn8r5qi"]
+
+[ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://font/ClarenceOSTerminalNotMono.ttf" id="1_nkmad"]
+
+[resource]
+base_font = ExtResource("1_nkmad")
+variation_embolden = 0.5
+variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
