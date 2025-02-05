@@ -32,17 +32,26 @@ func _ready() -> void:
 	
 	$ItemTooltip/id.text = item.itemID
 	
-	var filler:String = ""
-	for i in InputMap.action_get_events("game_ponder"):
-		filler += " " + i.as_text()
-	filler = filler.strip_edges()
-	pondertext = Translator.translate(&"gui.gameplay.ponder") % [filler]
-	ponder.text = pondertext
+	
+	#if true:
+	if item.getItem().ponderScene != &"":
+		var filler:String = ""
+		for i in InputMap.action_get_events("game_ponder"):
+			filler += " " + i.as_text()
+		filler = filler.strip_edges()
+		filler = "[/color][color=#ffffff]" + filler + "[/color][color=#aaaaaa]"
+		pondertext = "[color=#aaaaaa]" + (Translator.translate(&"gui.gameplay.ponder") % [filler]) + "[/color]"
+		ponder.text = pondertext
+		ponder.show()
+	
 	
 	$ItemTooltip/modname.text = item.itemID.split(":")[0].capitalize()
 
 
 func _process(delta: float) -> void:
+	if not ponder.visible:
+		return
+	
 	if Input.is_action_pressed("game_ponder"):
 		pondertime = move_toward(pondertime, 1.5, delta)
 	else:
