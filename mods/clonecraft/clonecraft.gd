@@ -235,6 +235,18 @@ func _makeItems() -> void:
 
 
 func placelog(event:InputEvent) -> bool:
+	if event.is_action_pressed("game_place"):
+		if player.lookingAt != null:
+			var rel := player.lookingAt.previous_position - player.lookingAt.position
+			var id := &"clonecraft:logVertOak"
+			match rel.abs():
+				Vector3i(1, 0, 0):
+					id = &"clonecraft:logHoirz2Oak"
+				Vector3i(0, 0, 1):
+					id = &"clonecraft:logHoirz1Oak"
+				_:
+					pass
+			return man.setBlock(player.lookingAt.previous_position, id)
 	return false
 
 

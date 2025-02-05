@@ -64,6 +64,22 @@ static func dropInto(oinv:Inventory) -> bool:
 				BlockManager.glog("ItemManager", str(heldSourceInventory))
 				BlockManager.glog("ItemManager", str(oinv))
 				return false
+	var tempItem := heldItem.copy()
+	var c := tempItem.count
+	if oinv.addItemPartial(tempItem):
+		tempItem.count = c - tempItem.count
+		if heldSourceInventory.extractItem(tempItem):
+			holding = false
+			gHeldItem.queue_free()
+			return true
+		else:
+			if oinv.extractItem(tempItem):
+				return false
+			else:
+				BlockManager.glog("ItemManager", "!!! POSSIBLE ITEM DUPLICATION DETECTED !!!")
+				BlockManager.glog("ItemManager", str(heldSourceInventory))
+				BlockManager.glog("ItemManager", str(oinv))
+				return false
 	return false
 
 

@@ -40,11 +40,15 @@ class ItemStack extends RefCounted:
 			return ItemManager.simpleItem()
 		
 	## Checks if two ItemStacks are identical, ignoring count.
-	func compare(compTo: ItemStack) -> bool:
+	func compare(compTo: ItemStack, ignoreDamage := false, ignoreEnergy := false) -> bool:
 		if itemID != compTo.itemID:
 			return false
 		if compTo.metadata.has_all(metadata.keys()) && metadata.has_all(compTo.metadata.keys()):
 			for i in metadata.keys():
+				if ignoreDamage and i == "damage":
+					continue
+				if ignoreEnergy and i == "energy":
+					continue
 				if metadata[i] != compTo.metadata[i]:
 					return false
 		else:

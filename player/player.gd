@@ -97,7 +97,7 @@ func _loadHotbar(a:Array):
 	for i in a.size():
 		if a[i] is Array:
 			var h := ItemManager.ItemStack.new(a[i][0], 1, a[i][1])
-			hotbarItems[i] = inventory.getItemFromStack(h)
+			hotbarItems[i] = inventory.getItemFromStack(h, Inventory.ANY, true, true)
 
 
 func throwItem(item:ItemManager.ItemStack, strength := 10.0) -> void:

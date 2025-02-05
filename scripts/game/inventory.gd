@@ -127,9 +127,9 @@ func getItemFromID(sitem:StringName) -> ItemManager.ItemStack:
 	return null
 
 
-func getItemFromStack(item:ItemManager.ItemStack, countMode := ANY) -> ItemManager.ItemStack:
+func getItemFromStack(item:ItemManager.ItemStack, countMode := ANY, ignoreDamage := false, ignoreEnergy := false) -> ItemManager.ItemStack:
 	for i in container:
-		if item.compare(i):
+		if item.compare(i, ignoreDamage, ignoreEnergy):
 			match countMode:
 				ANY:
 					return i
