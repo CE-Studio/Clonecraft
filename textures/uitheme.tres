@@ -159,3 +159,5 @@ Window/styles/embedded_border = ExtResource("3_y8rvq")
 Window/styles/embedded_unfocused_border = ExtResource("3_y8rvq")
 italicLabel/base_type = &"Label"
 italicLabel/fonts/font = ExtResource("18_tutt5")
+lightpanel/base_type = &"Panel"
+lightpanel/styles/panel = ExtResource("3_y8rvq")

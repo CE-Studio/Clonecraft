@@ -55,6 +55,18 @@ var _savedata := {
 }
 
 
+static func _reset() -> void:
+	packedInv = preload("res://gui/Playerinv.tscn") 
+	seed = 0
+	generator = null
+	worldpath = ""
+	streamtype = ""
+	instance = null
+	metastream = null
+	localUsername = "__localplayer__"
+	dirtyChunks = []
+
+
 static func markDirty(pos:Vector3i) -> void:
 	mutex.lock()
 	if not dirtyChunks.has(pos):
@@ -171,6 +183,7 @@ func openInventory() -> void:
 func _ready() -> void:
 	instance = self
 	tree = get_tree()
+	tree.auto_accept_quit = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_p = $player
 	_terrain = BlockManager.terrain
@@ -240,6 +253,11 @@ func _on_setting_button_pressed():
 	SettingManager.spawnMenu()
 
 
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		_on_quit_desktop_button_pressed()
+
+
 func _on_quit_desktop_button_pressed():
 	saveworld()
 	get_tree().quit()
@@ -305,9 +323,23 @@ func saveMetaChunkContainingBlock(pos:Vector3i) -> void:
 
 
 func _on_voxel_terrain_mesh_block_entered(pos: Vector3i) -> void:
+	if metastream == null:
+		return
 	var buf := VoxelBuffer.new()
 	var s := metastream.get_block_size()
 	buf.create(s.x, s.y, s.z)
 	metastream.load_voxel_block(buf, pos, 0)
 	var aabb := AABB(Vector3(pos) * s, s)
 	$blockEntities._load(aabb, buf)
+
+
+func _on_quit_menu_button_pressed() -> void:
+	saveworld()
+	_reset()
+	BlockManager._reset()
+	CMDprocessor._reset()
+	EntityManager._reset()
+	SoundManager._reset()
+	ParticleManager._reset()
+	tree.paused = false
+	tree.change_scene_to_file("res://titlescreen/title.tscn")

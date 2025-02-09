@@ -6,6 +6,11 @@ static var instance:ParticleManager
 static var gpuEffects:Dictionary = {}
 
 
+static func _reset() -> void:
+	instance = null
+	gpuEffects = {}
+
+
 func _ready() -> void:
 	instance = self
 	registerGPUeffect("clonecraft:explosion", preload("res://components/explparticles.tscn"))

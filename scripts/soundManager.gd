@@ -6,6 +6,11 @@ static var instance:SoundManager
 static var sounds:Dictionary = {}
 
 
+static func _reset() -> void:
+	instance = null
+	sounds = {}
+
+
 func _ready() -> void:
 	instance = self
 	registerSound(&"clonecraft:explosion", preload("res://sounds/effect/explode.tres"))

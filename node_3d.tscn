@@ -852,6 +852,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_og0lq")
 [connection signal="pressed" from="Control/invlayer" to="Control/invlayer" method="_on_pressed"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pauseUnpause"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/quitTButton" to="." method="_on_quit_menu_button_pressed"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/quitDButton" to="." method="_on_quit_desktop_button_pressed"]
 [connection signal="mesh_block_entered" from="VoxelTerrain" to="." method="_on_voxel_terrain_mesh_block_entered"]
 [connection signal="mesh_block_exited" from="VoxelTerrain" to="." method="_on_voxel_terrain_mesh_block_exited"]

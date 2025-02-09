@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bskwsbaeexgu8"]
+[gd_scene load_steps=102 format=3 uid="uid://bskwsbaeexgu8"]
 
 [ext_resource type="Material" uid="uid://blu8to0ma63w2" path="res://titlescreen/title.tres" id="1_1krtb"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="3_7yac3"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://titlescreen/idLabel.gd" id="12_bmkwy"]
 [ext_resource type="VoxelStreamRegionFiles" uid="uid://c4sbfwi5j12ve" path="res://titlescreen/bgStream.tres" id="12_n2dnj"]
 [ext_resource type="ArrayMesh" uid="uid://dd3u5ku213cue" path="res://titlescreen/dergparts/derg_back_frill.obj" id="12_v56nc"]
+[ext_resource type="Texture2D" uid="uid://diifvmfx5qvl" path="res://textures/warning.png" id="12_w0cfv"]
 [ext_resource type="Material" uid="uid://5bha44xiqhrg" path="res://mods/clonecraft/baseblocksTransparent.tres" id="13_2nbak"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="13_8qgxy"]
 [ext_resource type="ArrayMesh" uid="uid://okvc8c54lgqu" path="res://titlescreen/dergparts/derg_head.obj" id="13_r2io5"]
@@ -2430,6 +2431,220 @@ text = "&&WorldFolder&&
 "
 
 [node name="backbutton" type="Button" parent="Control/singleplayerpanel/backingpanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&Back&&
+"
+
+[node name="createworldpanel" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+
+[node name="backingpanel" type="Panel" parent="Control/createworldpanel"]
+process_mode = 3
+layout_mode = 0
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_ot2wo")
+theme_override_styles/panel = ExtResource("7_mhwh7")
+
+[node name="Panel" type="Panel" parent="Control/createworldpanel/backingpanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="tabContainer" type="TabContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/side_margin = 0
+tab_alignment = 1
+current_tab = 1
+tab_focus_mode = 0
+
+[node name="mods" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer"]
+layout_mode = 2
+text = "&&Mods&&"
+horizontal_alignment = 1
+
+[node name="scrollContainer" type="ScrollContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="vSeparator" type="VSeparator" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods"]
+layout_mode = 2
+
+[node name="vBoxContainer2" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2"]
+layout_mode = 2
+text = "&&Modpacks&&"
+horizontal_alignment = 1
+
+[node name="scrollContainer" type="ScrollContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="gen" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_tab_index = 1
+
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer"]
+layout_mode = 2
+text = "&&Generators&&"
+horizontal_alignment = 1
+
+[node name="scrollContainer" type="ScrollContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="panel" type="Panel" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"lightpanel"
+
+[node name="marginContainer" type="MarginContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer"]
+layout_mode = 2
+
+[node name="hBoxContainer" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer"]
+layout_mode = 2
+text = "&&seed&&"
+
+[node name="lineEdit" type="LineEdit" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="hBoxContainer2" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
+layout_mode = 2
+text = "&&stream&&"
+
+[node name="optionButton" type="OptionButton" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 3
+popup/item_0/text = "&&region&&"
+popup/item_0/id = 0
+popup/item_1/text = "&&sql&&"
+popup/item_1/id = 1
+popup/item_2/text = "&&memory&&"
+popup/item_2/id = 2
+
+[node name="textureRect" type="TextureRect" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
+layout_mode = 2
+tooltip_text = "&&Memory stream type will not save your builds!&&"
+texture = ExtResource("12_w0cfv")
+
+[node name="final" type="Control" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="hBoxContainer" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="button" type="Button" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&prev&&"
+
+[node name="button2" type="Button" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&next&&"
+
+[node name="HBoxContainer" type="GridContainer" parent="Control/createworldpanel/backingpanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -36.4
+offset_right = -6.6
+offset_bottom = -5.4
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="backbutton" type="Button" parent="Control/createworldpanel/backingpanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2

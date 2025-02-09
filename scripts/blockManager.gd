@@ -60,6 +60,32 @@ static var _newmodel:VoxelBlockyModel
 static var _checkTileEntites := {}
 
 
+static func _reset() -> void:
+	modsToLoad = []
+	mods = []
+	blockList = []
+	blockIDlist = {}
+	blockLibrary = VoxelBlockyLibrary.new()
+	terrain = null
+	idCounter = 0
+	loadDone = false
+	instance = null
+	blockUpdates = []
+	pendingBlockUpdates = []
+	TICK_LENGTH = 0.05
+	_tickTime = 0.0
+	_updates = []
+	_physicsUpdates = []
+	_inputList = []
+	_uInputList = []
+	_addingBlock = false
+	_tdisp = preload("res://scripts/helpers/tickDisplay.tscn")
+	_udisp = preload("res://scripts/helpers/updateDisplay.tscn")
+	_tool = null
+	_newmodel = null
+	_checkTileEntites = {}
+
+
 ## Get the [BlockManager.BlockInfo] tied to a specific ID string.[br]
 ## Static
 static func getBlockID(id:StringName) -> BlockInfo:

@@ -10,6 +10,15 @@ static var _whyerr:String
 static var _calledByPlayer := false
 
 
+static func _reset() -> void:
+	instance = null
+	vars = {}
+	_thrown = false
+	_err = ""
+	_whyerr = ""
+	_calledByPlayer = false
+
+
 class Command extends RefCounted:
 	func getCommandInvocation() -> String:
 		return "__invalid__"

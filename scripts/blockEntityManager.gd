@@ -11,6 +11,13 @@ static var instance:BlockEntityManager
 @onready var terrain:VoxelTerrain = $"../VoxelTerrain"
 
 
+static func _reset() -> void:
+	TElist = {
+		&"null:null": preload("res://components/InvalidTileEntity.tscn")
+	}
+	instance = null
+
+
 func  _ready() -> void:
 	instance = self
 
