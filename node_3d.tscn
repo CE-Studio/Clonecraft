@@ -826,6 +826,7 @@ script = ExtResource("42_0hogo")
 script = ExtResource("44_fbb68")
 
 [node name="entities" type="Node3D" parent="."]
+process_mode = 1
 script = ExtResource("22_fexg8")
 
 [node name="blockEntities" type="Node3D" parent="."]

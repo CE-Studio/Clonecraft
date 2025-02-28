@@ -118,7 +118,7 @@ func _makeOL() -> void:
 	bi1.dropItem = &"clonecraft:logOak"
 	man.endBlockRegister(bi1)
 
-	var model2 = man.startBlockRegister("clonecraft:logHoirz1Oak", Voxdat.vox.GEOMETRY_CUBE)
+	var model2 = man.startBlockRegister(&"clonecraft:logHoriz1Oak", Voxdat.vox.GEOMETRY_CUBE)
 	model2.set_mesh_collision_enabled(0, true)
 	model2.transparency_index = 0
 	model2.tile_left   = Vector2(0, 3)
@@ -130,7 +130,7 @@ func _makeOL() -> void:
 	model2.set_material_override(0, mat1)
 	var bi2 = BlockManager.BlockInfo.new(
 			"clonecraft",
-			"logHoirz1Oak",
+			"logHoriz1Oak",
 			"clonecraft.block.oak_log_horiz_1",
 			model2,
 			3,
@@ -146,7 +146,7 @@ func _makeOL() -> void:
 	bi2.dropItem = &"clonecraft:logOak"
 	man.endBlockRegister(bi2)
 
-	var model3 = man.startBlockRegister("clonecraft:logHoirz2Oak", Voxdat.vox.GEOMETRY_CUBE)
+	var model3 = man.startBlockRegister(&"clonecraft:logHoriz2Oak", Voxdat.vox.GEOMETRY_CUBE)
 	model3.set_mesh_collision_enabled(0, true)
 	model3.transparency_index = 0
 	model3.tile_left   = Vector2(1, 3)
@@ -158,7 +158,7 @@ func _makeOL() -> void:
 	model3.set_material_override(0, mat1)
 	var bi3 = BlockManager.BlockInfo.new(
 			"clonecraft",
-			"logHoirz2Oak",
+			"logHoriz2Oak",
 			"clonecraft.block.oak_log_horiz_2",
 			model3,
 			3,
@@ -241,9 +241,9 @@ func placelog(event:InputEvent) -> bool:
 			var id := &"clonecraft:logVertOak"
 			match rel.abs():
 				Vector3i(1, 0, 0):
-					id = &"clonecraft:logHoirz2Oak"
+					id = &"clonecraft:logHoriz2Oak"
 				Vector3i(0, 0, 1):
-					id = &"clonecraft:logHoirz1Oak"
+					id = &"clonecraft:logHoriz1Oak"
 				_:
 					pass
 			return man.setBlock(player.lookingAt.previous_position, id)

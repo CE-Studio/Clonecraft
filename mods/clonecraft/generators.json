@@ -10,5 +10,11 @@
 		"icon" : "res://textures/pack.svg",
 		"name" : "gui.worlds.gen_name_debug",
 		"desc" : "gui.worlds.gen_desc_debug"
+	},
+	"clonecraft:biomes" : {
+		"path" : "res://mods/clonecraft/biome_terrain.tres",
+		"icon" : "res://textures/pack.svg",
+		"name" : "gui.worlds.gen_name_debug",
+		"desc" : "gui.worlds.gen_desc_debug"
 	}
 }

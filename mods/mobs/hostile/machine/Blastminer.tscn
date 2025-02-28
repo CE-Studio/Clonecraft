@@ -1,0 +1,514 @@
+[gd_scene load_steps=17 format=3 uid="uid://degip3wbc55a0"]
+
+[ext_resource type="Script" path="res://mods/mobs/hostile/machine/blastminer.gd" id="1_vc0ir"]
+[ext_resource type="PackedScene" uid="uid://c33rl0k3nkgxl" path="res://mods/mobs/hostile/machine/blastminer.glb" id="2_eoldf"]
+[ext_resource type="Script" path="res://mods/mobs/hostile/machine/blastminerbody.gd" id="3_drf02"]
+[ext_resource type="Material" uid="uid://dekiav0x8yhhh" path="res://mods/mobs/textures/hostile/machine/bbt.tres" id="3_tc3k8"]
+[ext_resource type="Script" path="res://mods/mobs/hostile/machine/legpoint.gd" id="4_q8uhp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_su40q"]
+size = Vector3(1, 1.78747, 1)
+
+[sub_resource type="Animation" id="Animation_mbf83"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blastminer/leg1point:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-0.5, 0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blastminer/leg2point:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0.5, 0, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blastminer/leg4point:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-0.5, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("blastminer/leg3point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0.5, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e840p"]
+resource_name = "new_animation"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blastminer/leg1point:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.5, 0, -1), Vector3(-0.5, 0, -0.8), Vector3(-0.5, 0.2, -1), Vector3(-0.5, 0, -1.2), Vector3(-0.5, 0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blastminer/leg2point:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.25, 0.75, 1),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.5, 0.2, -1), Vector3(0.5, 0, -1.2), Vector3(0.5, 0, -0.8), Vector3(0.5, 0.2, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blastminer/leg4point:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0, 0.25, 0.75, 1),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.5, 0.2, 1), Vector3(-0.5, 0, 0.8), Vector3(-0.5, 0, 1.2), Vector3(-0.5, 0.2, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("blastminer/leg3point:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.5, 0, 1), Vector3(0.5, 0, 1.2), Vector3(0.5, 0.2, 1), Vector3(0.5, 0, 0.8), Vector3(0.5, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0wrxu"]
+_data = {
+"RESET": SubResource("Animation_mbf83"),
+"new_animation": SubResource("Animation_e840p")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_atxph"]
+animation = &"new_animation"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yb8rv"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_rgp58"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_navea"]
+graph_offset = Vector2(-449.326, 119.976)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_yb8rv")
+nodes/Animation/position = Vector2(-260, 140)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_atxph")
+"nodes/Animation 2/position" = Vector2(-221.502, 314.94)
+nodes/blend/node = SubResource("AnimationNodeBlend2_rgp58")
+nodes/blend/position = Vector2(20, 120)
+node_connections = [&"blend", 0, &"Animation", &"blend", 1, &"Animation 2", &"output", 0, &"blend"]
+
+[sub_resource type="Animation" id="Animation_22h43"]
+resource_name = "reload"
+length = 3.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blastminer/headcenter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.5, 0.95, 1.25, 1.75, 1.95, 2.35, 2.75, 3.25),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0625, 1.5, 0.0625), Vector3(-0.0625, 1.5, 0.0625), Vector3(-0.0625, 1.5, 0.0625), Vector3(0.316033, 1.75013, -0.00341505), Vector3(0.253356, 1.39467, -0.00341505), Vector3(0.253356, 1.39467, -0.00341505), Vector3(0.308381, 1.70673, -0.00341505), Vector3(-0.0625, 1.79237, 0.0625), Vector3(-0.0625, 1.5, 0.0625)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blastminer/headcenter:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.5, 0.95, 1.25, 2.35, 2.75),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -1.5708, 0), Vector3(-1.74533, -1.5708, 0), Vector3(-1.74533, -1.5708, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blastminer:center")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0, 0.5, 2.75, 3.25),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("blastminer/body/head/cube_006:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0, 1.95, 3.25),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_q2r7p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blastminer/headcenter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-0.0625, 1.5, 0.0625)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blastminer/headcenter:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blastminer:center")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("blastminer/body/head/cube_006:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dummy"]
+_data = {
+"RESET": SubResource("Animation_q2r7p"),
+"reload": SubResource("Animation_22h43")
+}
+
+[node name="blastminer" type="CharacterBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_vc0ir")
+
+[node name="collisionShape3d" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_su40q")
+
+[node name="blastminer" parent="." instance=ExtResource("2_eoldf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.86854, 0)
+script = ExtResource("3_drf02")
+
+[node name="cube_030" parent="blastminer/body" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_031" parent="blastminer/body" index="1"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_032" parent="blastminer/body" index="2"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_033" parent="blastminer/body" index="3"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_034" parent="blastminer/body" index="4"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_035" parent="blastminer/body" index="5"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_036" parent="blastminer/body" index="6"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_037" parent="blastminer/body" index="7"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_038" parent="blastminer/body" index="8"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_039" parent="blastminer/body" index="9"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_040" parent="blastminer/body" index="10"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="head" parent="blastminer/body" index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 1.5, 0.0625)
+
+[node name="cube_006" parent="blastminer/body/head" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_007" parent="blastminer/body/head" index="1"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_008" parent="blastminer/body/head" index="2"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_009" parent="blastminer/body/head" index="3"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_010" parent="blastminer/body/head" index="4"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_011" parent="blastminer/body/head" index="5"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_012" parent="blastminer/body/head" index="6"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_013" parent="blastminer/body/head" index="7"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="neckrod" parent="blastminer/body/head" index="8"]
+transform = Transform3D(-1, -1.173e-16, 3.519e-17, 0, 0.287348, 0.957826, -1.22465e-16, 0.957826, -0.287348, 0, 0, 0)
+
+[node name="cube_005" parent="blastminer/body/head/neckrod" index="0"]
+transform = Transform3D(1, 0, 0, 0, 6.12323e-17, -1, 0, 1, 6.12323e-17, 0, 0, 0)
+material_override = ExtResource("3_tc3k8")
+
+[node name="leg1" parent="blastminer/body" index="12" node_paths=PackedStringArray("point", "lowerleg", "piston", "rod", "foot", "body")]
+transform = Transform3D(0.974158, 0.0173569, 0.225198, -0.225865, 0.0744485, 0.971311, 9.32946e-05, -0.997075, 0.0764449, -0.3125, 0.8125, -0.5625)
+script = ExtResource("4_q8uhp")
+point = NodePath("../../leg1point")
+kneeAngle = -1.2105
+lowerleg = NodePath("lowerleg")
+piston = NodePath("lowerleg/piston")
+rod = NodePath("lowerleg/piston/rod")
+foot = NodePath("lowerleg/piston/rod/foot")
+body = NodePath("..")
+
+[node name="cube_004" parent="blastminer/body/leg1" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="lowerleg" parent="blastminer/body/leg1" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.992787, -0.119888, 0, 0.119888, 0.992787, 0, 0.0625001, -0.5625)
+
+[node name="cube_003" parent="blastminer/body/leg1/lowerleg" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="piston" parent="blastminer/body/leg1/lowerleg" index="1"]
+transform = Transform3D(1.00008, -2.82688e-05, -0.000244626, 5.74189e-05, 0.992762, 0.11996, 0.000239503, -0.119966, 0.992714, -7.06657e-14, 0.3125, 1.66644e-13)
+
+[node name="cube_002" parent="blastminer/body/leg1/lowerleg/piston" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="rod" parent="blastminer/body/leg1/lowerleg/piston" index="1"]
+transform = Transform3D(1, 6.02059e-15, 3.45994e-14, 1.10521e-16, 1, 1.5557e-14, -6.2287e-14, -6.13398e-15, 1, 0, 0.078125, -0.339844)
+
+[node name="cube_001" parent="blastminer/body/leg1/lowerleg/piston/rod" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube" parent="blastminer/body/leg1/lowerleg/piston/rod/foot" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="leg2" parent="blastminer/body" index="13" node_paths=PackedStringArray("point", "lowerleg", "piston", "rod", "foot", "body")]
+transform = Transform3D(0.974409, -0.017154, -0.224129, 0.224784, 0.0741947, 0.971579, -3.72826e-05, -0.997097, 0.0761518, 0.3125, 0.8125, -0.5625)
+script = ExtResource("4_q8uhp")
+point = NodePath("../../leg2point")
+kneeAngle = -1.2105
+lowerleg = NodePath("lowerleg2")
+piston = NodePath("lowerleg2/piston2")
+rod = NodePath("lowerleg2/piston2/rod2")
+foot = NodePath("lowerleg2/piston2/rod2/foot2")
+body = NodePath("..")
+
+[node name="cube_019" parent="blastminer/body/leg2" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="lowerleg2" parent="blastminer/body/leg2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.99265, -0.121018, 0, 0.121018, 0.99265, 0, 0.0625, -0.5625)
+
+[node name="cube_018" parent="blastminer/body/leg2/lowerleg2" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="piston2" parent="blastminer/body/leg2/lowerleg2" index="1"]
+transform = Transform3D(1, 2.10682e-06, -2.46812e-05, 8.95298e-07, 0.992643, 0.121011, 2.47546e-05, -0.121009, 0.992658, 9.99201e-16, 0.3125, -9.54792e-14)
+
+[node name="cube_017" parent="blastminer/body/leg2/lowerleg2/piston2" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="rod2" parent="blastminer/body/leg2/lowerleg2/piston2" index="1"]
+transform = Transform3D(1, -6.12427e-15, -3.42082e-14, -6.25381e-17, 1, -1.23512e-14, 2.06944e-14, -1.88738e-14, 1, 0, 0.0781249, -0.340065)
+
+[node name="cube_016" parent="blastminer/body/leg2/lowerleg2/piston2/rod2" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_015" parent="blastminer/body/leg2/lowerleg2/piston2/rod2/foot2" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="leg3" parent="blastminer/body" index="14" node_paths=PackedStringArray("point", "lowerleg", "piston", "rod", "foot", "body")]
+transform = Transform3D(0.974383, -0.0171249, 0.224241, 0.224894, 0.0742413, -0.971551, -1.02968e-05, 0.997093, 0.0761908, 0.3125, 0.8125, 0.5625)
+script = ExtResource("4_q8uhp")
+back = true
+point = NodePath("../../leg3point")
+kneeAngle = 1.2105
+lowerleg = NodePath("lowerleg3")
+piston = NodePath("lowerleg3/piston3")
+rod = NodePath("lowerleg3/piston3/rod3")
+foot = NodePath("lowerleg3/piston3/rod3/foot3")
+body = NodePath("..")
+
+[node name="cube_024" parent="blastminer/body/leg3" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="lowerleg3" parent="blastminer/body/leg3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.992665, 0.120896, 0, -0.120896, 0.992665, 0, 0.0625, 0.5625)
+
+[node name="cube_023" parent="blastminer/body/leg3/lowerleg3" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="piston3" parent="blastminer/body/leg3/lowerleg3" index="1"]
+transform = Transform3D(1, -2.81496e-07, -1.07968e-05, -1.0259e-06, 0.992666, -0.1209, 1.07516e-05, 0.1209, 0.992662, 6.93889e-15, 0.3125, -1.18794e-14)
+
+[node name="cube_022" parent="blastminer/body/leg3/lowerleg3/piston3" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="rod3" parent="blastminer/body/leg3/lowerleg3/piston3" index="1"]
+transform = Transform3D(1, -4.71273e-15, 2.40531e-15, -3.19386e-16, 1, 1.1921e-14, 9.78239e-15, 1.04916e-14, 1, 0, 0.0781251, 0.340045)
+
+[node name="cube_021" parent="blastminer/body/leg3/lowerleg3/piston3/rod3" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_020" parent="blastminer/body/leg3/lowerleg3/piston3/rod3/foot3" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="leg4" parent="blastminer/body" index="15" node_paths=PackedStringArray("point", "lowerleg", "piston", "rod", "foot", "body")]
+transform = Transform3D(0.974383, 0.0171249, -0.224241, -0.224894, 0.0742413, -0.971551, 1.02493e-05, 0.997093, 0.0761908, -0.3125, 0.8125, 0.5625)
+script = ExtResource("4_q8uhp")
+back = true
+point = NodePath("../../leg4point")
+kneeAngle = 1.2105
+lowerleg = NodePath("lowerleg4")
+piston = NodePath("lowerleg4/piston4")
+rod = NodePath("lowerleg4/piston4/rod4")
+foot = NodePath("lowerleg4/piston4/rod4/foot4")
+body = NodePath("..")
+
+[node name="cube_029" parent="blastminer/body/leg4" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="lowerleg4" parent="blastminer/body/leg4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.992665, 0.120896, 0, -0.120896, 0.992665, 0, 0.0625, 0.5625)
+
+[node name="cube_028" parent="blastminer/body/leg4/lowerleg4" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="piston4" parent="blastminer/body/leg4/lowerleg4" index="1"]
+transform = Transform3D(1, 2.78823e-07, 1.07694e-05, 1.02524e-06, 0.992666, -0.1209, -1.07241e-05, 0.1209, 0.992662, 9.71445e-15, 0.3125, -6.88338e-15)
+
+[node name="cube_027" parent="blastminer/body/leg4/lowerleg4/piston4" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="rod4" parent="blastminer/body/leg4/lowerleg4/piston4" index="1"]
+transform = Transform3D(1, 6.21249e-15, -2.79514e-14, 1.74879e-15, 1, -2.45637e-15, 6.5323e-14, -8.53484e-15, 1, 0, 0.0781251, 0.340045)
+
+[node name="cube_026" parent="blastminer/body/leg4/lowerleg4/piston4/rod4" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="cube_025" parent="blastminer/body/leg4/lowerleg4/piston4/rod4/foot4" index="0"]
+material_override = ExtResource("3_tc3k8")
+
+[node name="neckpiston" parent="blastminer/body" index="16"]
+transform = Transform3D(1, 0, 0, 0, 0.287348, -0.957826, 0, 0.957826, 0.287348, -0.0625, 0.875, 0.25)
+
+[node name="cube_014" parent="blastminer/body/neckpiston" index="0"]
+transform = Transform3D(1, 0, 0, 0, 6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 0, 0)
+material_override = ExtResource("3_tc3k8")
+
+[node name="leg1point" type="Marker3D" parent="blastminer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1)
+
+[node name="leg2point" type="Marker3D" parent="blastminer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
+
+[node name="leg3point" type="Marker3D" parent="blastminer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+
+[node name="leg4point" type="Marker3D" parent="blastminer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1)
+
+[node name="headcenter" type="Marker3D" parent="blastminer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0625, 1.5, 0.0625)
+
+[node name="headtrack" type="Node3D" parent="blastminer/headcenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.28546e-14, 2.94792e-13)
+
+[node name="headspring" type="Marker3D" parent="blastminer/headcenter/headtrack"]
+
+[node name="animationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0wrxu")
+}
+
+[node name="animationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_navea")
+anim_player = NodePath("../animationPlayer")
+parameters/blend/blend_amount = 0.0
+
+[node name="animationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dummy")
+}
+
+[editable path="blastminer"]
