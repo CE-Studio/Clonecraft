@@ -109,23 +109,26 @@ class Item extends RefCounted:
 	
 	## Allows items to intercept place/break events.[br]
 	## Expects the function to return a [bool]. True to mark the event as handled, and false to continue processing the event normally.
-	func setInteractionOverride(i:Callable):
+	func setInteractionOverride(i:Callable) -> Item:
 		hasInteractionOverride = true
 		interactionOverride = i
+		return self
 	
 	
 	## Marks the item as a tool of the given type toolclass, for example: "tools:pickaxe"
-	func setToolClass(toolclass:StringName, power:float = 1, durability:float = -1):
+	func setToolClass(toolclass:StringName, power:float = 1, durability:float = -1) -> Item:
 		isTool = true
 		toolClass = toolclass
 		toolPower = power
 		toolBaseDurability = durability
+		return self
 	
 	
 	## Marks the item as being placable.
-	func setVoxel(vox:StringName):
+	func setVoxel(vox:StringName) -> Item:
 		isVoxel = true
 		voxel = vox
+		return self
 
 
 ## Sets up the buffer and block library for generating item models.

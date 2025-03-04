@@ -161,6 +161,7 @@ func updateAbilities() -> void:
 
 # TODO make inventory scale with ablilities.
 func _ready() -> void:
+	sleeping = false
 	hotbarItems.resize(40)
 	head = $"head"
 	cam = $"head/Camera3D"

@@ -5,6 +5,8 @@ class_name Entity
 var TERMINAL_VELOCITY:float = ProjectSettings.get_setting("gameplay/physics/terminal_velocity")
 var GRAVITY:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var sleeping := true
+
 ## Defines some basic abillities of the entity.[br]
 ## Scale is a multiplier, size is absolute.
 var abilities := {
@@ -114,6 +116,8 @@ func _movement_process(_delta:float) -> void:
 
 
 func _physics_process(delta:float) -> void:
+	if sleeping:
+		return
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
 
