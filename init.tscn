@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://2hmkpsfcmtek"]
 
-[ext_resource type="Script" path="res://scripts/init.gd" id="1_ll5v6"]
+[ext_resource type="Script" uid="uid://b7wtjsvwceoqw" path="res://scripts/init.gd" id="1_ll5v6"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="1_mjqfd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jmrau"]

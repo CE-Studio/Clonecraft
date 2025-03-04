@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://btoy0s4lki6im"]
 
-[ext_resource type="Script" path="res://player/default/derg.gd" id="1_hi4xf"]
+[ext_resource type="Script" uid="uid://b55y7qh5cvp1a" path="res://player/default/derg.gd" id="1_hi4xf"]
 [ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="2_pj874"]
 [ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="3_b4kjc"]
 [ext_resource type="ArrayMesh" uid="uid://dd3u5ku213cue" path="res://titlescreen/dergparts/derg_back_frill.obj" id="4_x7hsj"]

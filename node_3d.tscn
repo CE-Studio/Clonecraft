@@ -1,31 +1,31 @@
 [gd_scene load_steps=72 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
-[ext_resource type="Script" path="res://scripts/worldControl.gd" id="1_ug7a2"]
-[ext_resource type="Script" path="res://scripts/F3menu.gd" id="2_yvkcu"]
+[ext_resource type="Script" uid="uid://bfrvkpecmnu5u" path="res://scripts/worldControl.gd" id="1_ug7a2"]
+[ext_resource type="Script" uid="uid://bp2sn0vo8j0ce" path="res://scripts/F3menu.gd" id="2_yvkcu"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
-[ext_resource type="Script" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
+[ext_resource type="Script" uid="uid://diupuqsr0y2h1" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
-[ext_resource type="Script" path="res://scripts/game/hotbar.gd" id="5_7ch0y"]
-[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_i3vlu"]
-[ext_resource type="Script" path="res://scripts/chatControl.gd" id="6_efijs"]
+[ext_resource type="Script" uid="uid://cyie8cbdd62ix" path="res://scripts/game/hotbar.gd" id="5_7ch0y"]
+[ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="5_i3vlu"]
+[ext_resource type="Script" uid="uid://2j1llsequilb" path="res://scripts/chatControl.gd" id="6_efijs"]
 [ext_resource type="Texture2D" uid="uid://bo156172yuv48" path="res://gui/hotbar.png" id="6_garc0"]
 [ext_resource type="Texture2D" uid="uid://t3mnt7mdm64f" path="res://gui/hotbar_layers.png" id="6_v81ga"]
 [ext_resource type="Texture2D" uid="uid://dy0d23dqmbyhy" path="res://gui/hotbar_sel.png" id="7_rdery"]
 [ext_resource type="Texture2D" uid="uid://dgjlgaesep514" path="res://gui/statbars.png" id="9_ehm4h"]
 [ext_resource type="Texture2D" uid="uid://bnbw2v2p2r2uo" path="res://gui/statbar_glint.png" id="10_pvi8e"]
-[ext_resource type="Script" path="res://invbacking.gd" id="11_lbxo1"]
+[ext_resource type="Script" uid="uid://0pjl3hqvpdhv" path="res://invbacking.gd" id="11_lbxo1"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="12_8tndb"]
 [ext_resource type="PackedScene" uid="uid://cng7kfytaxygb" path="res://player/Player.tscn" id="13_0aat4"]
-[ext_resource type="Script" path="res://addons/auto_complete_menu_node/Scripts/auto_complete_assistant.gd" id="13_mc1q2"]
+[ext_resource type="Script" uid="uid://dtc0w5e1f03uu" path="res://addons/auto_complete_menu_node/Scripts/auto_complete_assistant.gd" id="13_mc1q2"]
 [ext_resource type="Shader" uid="uid://cpj3upr16hs25" path="res://textures/boundingBox.tres" id="15_ji8mt"]
-[ext_resource type="Script" path="res://scripts/blockEntityManager.gd" id="21_833sv"]
-[ext_resource type="Script" path="res://scripts/soundManager.gd" id="21_yqwpl"]
-[ext_resource type="Script" path="res://scripts/particleManager.gd" id="22_6fdpn"]
-[ext_resource type="Script" path="res://scripts/entityManager.gd" id="22_fexg8"]
-[ext_resource type="Script" path="res://scripts/helpers/debug_aabb.gd" id="26_2h1dw"]
-[ext_resource type="Script" path="res://scripts/blockManager.gd" id="42_0hogo"]
-[ext_resource type="Script" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
+[ext_resource type="Script" uid="uid://dj0hangjnr2ul" path="res://scripts/blockEntityManager.gd" id="21_833sv"]
+[ext_resource type="Script" uid="uid://b2itvfkxir1w2" path="res://scripts/soundManager.gd" id="21_yqwpl"]
+[ext_resource type="Script" uid="uid://eu8wa4obv0cj" path="res://scripts/particleManager.gd" id="22_6fdpn"]
+[ext_resource type="Script" uid="uid://ufatyhcr6y0v" path="res://scripts/entityManager.gd" id="22_fexg8"]
+[ext_resource type="Script" uid="uid://c5nx7ne30peyg" path="res://scripts/helpers/debug_aabb.gd" id="26_2h1dw"]
+[ext_resource type="Script" uid="uid://7nl2ddwmdise" path="res://scripts/blockManager.gd" id="42_0hogo"]
+[ext_resource type="Script" uid="uid://c7wryf0lnknqg" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
 
 [sub_resource type="Gradient" id="Gradient_gul6o"]
 interpolation_mode = 2
@@ -160,9 +160,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yauv8"]
 _data = {
-"RESET": SubResource("Animation_wflqv"),
-"drain": SubResource("Animation_t8kls"),
-"fill": SubResource("Animation_2ufv6")
+&"RESET": SubResource("Animation_wflqv"),
+&"drain": SubResource("Animation_t8kls"),
+&"fill": SubResource("Animation_2ufv6")
 }
 
 [sub_resource type="Animation" id="Animation_6p2mi"]
@@ -222,8 +222,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwc5v"]
 _data = {
-"RESET": SubResource("Animation_6p2mi"),
-"fade": SubResource("Animation_bvo25")
+&"RESET": SubResource("Animation_6p2mi"),
+&"fade": SubResource("Animation_bvo25")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_atfrb"]
@@ -297,8 +297,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7c41e"]
 _data = {
-"RESET": SubResource("Animation_fl42u"),
-"fade": SubResource("Animation_l5d6t")
+&"RESET": SubResource("Animation_fl42u"),
+&"fade": SubResource("Animation_l5d6t")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8l1xi"]
@@ -550,12 +550,12 @@ texture = ExtResource("10_pvi8e")
 
 [node name="animationPlayer" type="AnimationPlayer" parent="Control/GUIlayer/hotbar/progressBar/textureRect"]
 libraries = {
-"": SubResource("AnimationLibrary_yauv8")
+&"": SubResource("AnimationLibrary_yauv8")
 }
 
 [node name="animationPlayer" type="AnimationPlayer" parent="Control/GUIlayer/hotbar/progressBar"]
 libraries = {
-"": SubResource("AnimationLibrary_rwc5v")
+&"": SubResource("AnimationLibrary_rwc5v")
 }
 
 [node name="progressBar4" type="ProgressBar" parent="Control/GUIlayer/hotbar"]
@@ -577,7 +577,7 @@ anim_player = NodePath("../animationPlayer")
 
 [node name="animationPlayer" type="AnimationPlayer" parent="Control/GUIlayer/hotbar/progressBar4"]
 libraries = {
-"": SubResource("AnimationLibrary_7c41e")
+&"": SubResource("AnimationLibrary_7c41e")
 }
 
 [node name="progressBar2" type="ProgressBar" parent="Control/GUIlayer/hotbar"]

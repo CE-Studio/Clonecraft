@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_h51y0"]
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="1_hp8h7"]
-[ext_resource type="Script" path="res://gui/backingpanel.gd" id="3_fhmlp"]
+[ext_resource type="Script" uid="uid://hc4ej5cuy4tq" path="res://gui/backingpanel.gd" id="3_fhmlp"]
 
 [node name="backingpanel" type="Panel"]
 process_mode = 3

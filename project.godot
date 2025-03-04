@@ -16,7 +16,7 @@ config/name_localized={
 }
 run/main_scene="res://init.tscn"
 config/project_settings_override="user://settings.godot"
-config/features=PackedStringArray("4.3", "Double Precision")
+config/features=PackedStringArray("4.4", "Double Precision")
 config/icon="res://icon.png"
 
 [editor]

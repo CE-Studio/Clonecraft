@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci17ccbboffw4"]
 
-[ext_resource type="Script" path="res://gui/item_tooltip.gd" id="1_fdjay"]
+[ext_resource type="Script" uid="uid://bkxs5mf00hmgp" path="res://gui/item_tooltip.gd" id="1_fdjay"]
 
 [node name="ItemTooltip" type="MarginContainer"]
 offset_right = 108.0

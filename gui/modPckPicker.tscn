@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://co14tdsn0nouu"]
 
-[ext_resource type="Script" path="res://gui/modPckPicker.gd" id="1_8h5e5"]
+[ext_resource type="Script" uid="uid://57gbkmpwqoqp" path="res://gui/modPckPicker.gd" id="1_8h5e5"]
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="1_oo5i7"]
-[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="3_ksy2t"]
+[ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="3_ksy2t"]
 
 [node name="modPckPicker" type="HBoxContainer"]
 anchors_preset = 15

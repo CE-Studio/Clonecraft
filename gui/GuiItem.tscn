@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b7hhni6y0e055"]
 
-[ext_resource type="Script" path="res://gui/GuiItem.gd" id="1_2xs5l"]
-[ext_resource type="Script" path="res://scripts/TransformedMeshInstance2D.gd" id="1_h37yb"]
-[ext_resource type="Script" path="res://gui/guiitembutton.gd" id="3_0vpiy"]
+[ext_resource type="Script" uid="uid://dl4cqyy0pqcde" path="res://gui/GuiItem.gd" id="1_2xs5l"]
+[ext_resource type="Script" uid="uid://dkslbejrful6q" path="res://scripts/TransformedMeshInstance2D.gd" id="1_h37yb"]
+[ext_resource type="Script" uid="uid://bf1gm3fleff07" path="res://gui/guiitembutton.gd" id="3_0vpiy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3uao"]
 

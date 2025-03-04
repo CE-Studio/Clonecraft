@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://hkg5x05bsc50"]
 
-[ext_resource type="Script" path="res://scripts/helpers/settings/folderButton.gd" id="1_naddw"]
+[ext_resource type="Script" uid="uid://cbltrfphn6bv" path="res://scripts/helpers/settings/folderButton.gd" id="1_naddw"]
 
 [node name="folderButton" type="Button"]
 offset_right = 8.0

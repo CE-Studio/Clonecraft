@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cofn2oa8isw6o"]
 
-[ext_resource type="Script" path="res://scripts/helpers/settings/floatSetting.gd" id="1_dloqj"]
+[ext_resource type="Script" uid="uid://ch61c23tpktc8" path="res://scripts/helpers/settings/floatSetting.gd" id="1_dloqj"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_30jps"]
 

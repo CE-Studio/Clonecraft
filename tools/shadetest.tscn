@@ -48,7 +48,7 @@ code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
 uniform sampler2D Texture2DParameter : source_color;
-uniform float FloatParameter : hint_range(0, 1);
+uniform float FloatParameter : hint_range(0.0, 1.0);
 
 
 
@@ -131,8 +131,8 @@ noise = SubResource("FastNoiseLite_6cjoh")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i3sbc"]
 render_priority = 0
 shader = SubResource("VisualShader_xl7r7")
-shader_parameter/FloatParameter = 0.048
 shader_parameter/Texture2DParameter = SubResource("NoiseTexture2D_cbgrj")
+shader_parameter/FloatParameter = 0.048
 
 [node name="Node3D" type="Node3D"]
 

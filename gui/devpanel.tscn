@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ban3yil1lsv1b"]
 
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="1_wxxlo"]
-[ext_resource type="Script" path="res://gui/devpanel.gd" id="2_dwc44"]
+[ext_resource type="Script" uid="uid://bjkurs8o6i5x3" path="res://gui/devpanel.gd" id="2_dwc44"]
 [ext_resource type="Texture2D" uid="uid://dg33uhl5m1o60" path="res://textures/missing.png" id="2_dxrxv"]
-[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="4_1e43m"]
+[ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="4_1e43m"]
 
 [node name="devpanel" type="Panel"]
 custom_minimum_size = Vector2(1.45519e-11, 76)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5olmgemdsowf"]
 
-[ext_resource type="Script" path="res://mods/clonecraft/tileEntities/chest.gd" id="1_p3e2g"]
+[ext_resource type="Script" uid="uid://db50cdj2ot5fc" path="res://mods/clonecraft/tileEntities/chest.gd" id="1_p3e2g"]
 [ext_resource type="PackedScene" uid="uid://cve388dr83xw4" path="res://mods/clonecraft/models/chest.gltf" id="2_udqtn"]
 [ext_resource type="Material" uid="uid://c5j400b2sq22b" path="res://mods/clonecraft/textures/chest.tres" id="3_2x4sm"]
 
@@ -218,9 +218,9 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i1pfi"]
 _data = {
-"RESET": SubResource("Animation_rakhn"),
-"close": SubResource("Animation_tk35a"),
-"open": SubResource("Animation_d3yxt")
+&"RESET": SubResource("Animation_rakhn"),
+&"close": SubResource("Animation_tk35a"),
+&"open": SubResource("Animation_d3yxt")
 }
 
 [node name="chest" type="StaticBody3D"]

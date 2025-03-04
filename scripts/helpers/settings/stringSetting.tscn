@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://3mcff4n0wgtw"]
 
-[ext_resource type="Script" path="res://scripts/helpers/settings/stringSetting.gd" id="1_6soh0"]
+[ext_resource type="Script" uid="uid://cccij34b400ql" path="res://scripts/helpers/settings/stringSetting.gd" id="1_6soh0"]
 
 [node name="stringSetting" type="GridContainer"]
 anchors_preset = 15

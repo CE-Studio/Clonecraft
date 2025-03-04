@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bsjlth2tiyues"]
 
-[ext_resource type="Script" path="res://addons/clonecraft_documentation/dat/docdock.gd" id="1_5wytu"]
+[ext_resource type="Script" uid="uid://bsjfwsuiuof8t" path="res://addons/clonecraft_documentation/dat/docdock.gd" id="1_5wytu"]
 [ext_resource type="FontFile" uid="uid://dcrouiquj15wl" path="res://addons/clonecraft_documentation/dat/OpenSans-Regular.ttf" id="2_7ymho"]
 [ext_resource type="FontFile" uid="uid://bk758sppr77nk" path="res://addons/clonecraft_documentation/dat/OpenSans-Bold.ttf" id="3_cym0v"]
 [ext_resource type="FontFile" uid="uid://dkow08u7etsyb" path="res://addons/clonecraft_documentation/dat/OpenSans-Italic.ttf" id="4_vrxun"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnbkdrsk6miv4"]
 
-[ext_resource type="Script" path="res://gui/playerinv.gd" id="1_n3umw"]
+[ext_resource type="Script" uid="uid://nh3aa0hvhfrg" path="res://gui/playerinv.gd" id="1_n3umw"]
 [ext_resource type="Texture2D" uid="uid://bhxbhlufsuk2r" path="res://gui/hotbarinv.png" id="2_etwfy"]
-[ext_resource type="Script" path="res://gui/inventoryTabs.gd" id="2_ntsvs"]
+[ext_resource type="Script" uid="uid://ggccx18heypo" path="res://gui/inventoryTabs.gd" id="2_ntsvs"]
 [ext_resource type="PackedScene" uid="uid://b837w4xwagvvg" path="res://gui/PrimaryInventory.tscn" id="3_2ax4r"]
-[ext_resource type="Script" path="res://gui/hotbar_grid.gd" id="6_hog6f"]
+[ext_resource type="Script" uid="uid://bme8w7h2ylapt" path="res://gui/hotbar_grid.gd" id="6_hog6f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6suff"]
 

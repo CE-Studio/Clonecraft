@@ -2,22 +2,22 @@
 
 [ext_resource type="Material" uid="uid://blu8to0ma63w2" path="res://titlescreen/title.tres" id="1_1krtb"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="3_7yac3"]
-[ext_resource type="Script" path="res://titlescreen/derg.gd" id="4_m3okf"]
+[ext_resource type="Script" uid="uid://5yobw2qcke6b" path="res://titlescreen/derg.gd" id="4_m3okf"]
 [ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="4_q133x"]
-[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="5_runjh"]
-[ext_resource type="Script" path="res://titlescreen/supportButton.gd" id="6_4woye"]
-[ext_resource type="Script" path="res://titlescreen/infopanel.gd" id="6_iu8da"]
-[ext_resource type="Script" path="res://titlescreen/splash.gd" id="6_nhbko"]
+[ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="5_runjh"]
+[ext_resource type="Script" uid="uid://dynj18l7skyjb" path="res://titlescreen/supportButton.gd" id="6_4woye"]
+[ext_resource type="Script" uid="uid://doe4ycbobe5v7" path="res://titlescreen/infopanel.gd" id="6_iu8da"]
+[ext_resource type="Script" uid="uid://cp4ms4qh8s6bj" path="res://titlescreen/splash.gd" id="6_nhbko"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://font/ClarenceOSTerminalNotMono.ttf" id="6_site2"]
-[ext_resource type="Script" path="res://titlescreen/scalepanel.gd" id="7_g3200"]
+[ext_resource type="Script" uid="uid://bbs8a7s6r5120" path="res://titlescreen/scalepanel.gd" id="7_g3200"]
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="7_mhwh7"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="7_qty17"]
-[ext_resource type="Script" path="res://titlescreen/cloudmove.gd" id="8_xt62g"]
-[ext_resource type="Script" path="res://scripts/singleplayerpanel.gd" id="10_a4yy8"]
+[ext_resource type="Script" uid="uid://dykygxqiwnakt" path="res://titlescreen/cloudmove.gd" id="8_xt62g"]
+[ext_resource type="Script" uid="uid://bt3ughrraqupo" path="res://scripts/singleplayerpanel.gd" id="10_a4yy8"]
 [ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="10_ot2wo"]
 [ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="11_bylin"]
-[ext_resource type="Script" path="res://titlescreen/mainButtons.gd" id="11_j4u0l"]
-[ext_resource type="Script" path="res://titlescreen/idLabel.gd" id="12_bmkwy"]
+[ext_resource type="Script" uid="uid://c1b3i5oru3are" path="res://titlescreen/mainButtons.gd" id="11_j4u0l"]
+[ext_resource type="Script" uid="uid://cjt3nnjvds1uw" path="res://titlescreen/idLabel.gd" id="12_bmkwy"]
 [ext_resource type="VoxelStreamRegionFiles" uid="uid://c4sbfwi5j12ve" path="res://titlescreen/bgStream.tres" id="12_n2dnj"]
 [ext_resource type="ArrayMesh" uid="uid://dd3u5ku213cue" path="res://titlescreen/dergparts/derg_back_frill.obj" id="12_v56nc"]
 [ext_resource type="Texture2D" uid="uid://diifvmfx5qvl" path="res://textures/warning.png" id="12_w0cfv"]
@@ -26,7 +26,7 @@
 [ext_resource type="ArrayMesh" uid="uid://okvc8c54lgqu" path="res://titlescreen/dergparts/derg_head.obj" id="13_r2io5"]
 [ext_resource type="ArrayMesh" uid="uid://dx46ghs6st5mf" path="res://titlescreen/dergparts/derg_snout.obj" id="14_t8ufq"]
 [ext_resource type="ArrayMesh" uid="uid://ctt7g2gdeea1p" path="res://titlescreen/dergparts/derg_r_ear_frill.obj" id="15_nq5d8"]
-[ext_resource type="Script" path="res://titlescreen/VoxelSpin.gd" id="15_wlk0w"]
+[ext_resource type="Script" uid="uid://cxlxm25d07085" path="res://titlescreen/VoxelSpin.gd" id="15_wlk0w"]
 [ext_resource type="ArrayMesh" uid="uid://dcq0ai8gjbr2m" path="res://titlescreen/dergparts/derg_l_ear_frill.obj" id="16_mjuay"]
 [ext_resource type="ArrayMesh" uid="uid://codei873rk6ta" path="res://titlescreen/dergparts/derg_l_horn.obj" id="17_qxce1"]
 [ext_resource type="ArrayMesh" uid="uid://cv0vcb3w14e2j" path="res://titlescreen/dergparts/derg_r_horn.obj" id="18_r68pa"]
@@ -1320,8 +1320,8 @@ tracks/56/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i0ybq"]
 _data = {
-"RESET": SubResource("Animation_bx1ku"),
-"titlelean": SubResource("Animation_cp1hy")
+&"RESET": SubResource("Animation_bx1ku"),
+&"titlelean": SubResource("Animation_cp1hy")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5tr7"]
@@ -2118,8 +2118,8 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hfcju"]
 _data = {
-"RESET": SubResource("Animation_abuk8"),
-"logo appear": SubResource("Animation_lw4lh")
+&"RESET": SubResource("Animation_abuk8"),
+&"logo appear": SubResource("Animation_lw4lh")
 }
 
 [node name="title" type="Node3D"]

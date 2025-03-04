@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://lstjhr2aicy4"]
 
 [ext_resource type="Texture2D" uid="uid://diifvmfx5qvl" path="res://textures/warning.png" id="1_wwsq8"]
-[ext_resource type="Script" path="res://scripts/easyTranslatable.gd" id="2_mc6f5"]
+[ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="2_mc6f5"]
 
 [node name="warninglabel" type="HBoxContainer"]
 texture_filter = 1

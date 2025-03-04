@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cg0bskq24vtvg"]
 
 [ext_resource type="Texture2D" uid="uid://q6l8gu5hnobr" path="res://gui/invbacking.png" id="1_ro417"]
-[ext_resource type="Script" path="res://mods/gamemodes/creativeInvetory.gd" id="2_du0qi"]
+[ext_resource type="Script" uid="uid://do5780yru8bax" path="res://mods/gamemodes/creativeInvetory.gd" id="2_du0qi"]
 [ext_resource type="PackedScene" uid="uid://b837w4xwagvvg" path="res://gui/PrimaryInventory.tscn" id="3_tkv8r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2ahj"]

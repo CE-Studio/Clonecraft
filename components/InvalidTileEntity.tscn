@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4ka7k0fda5i"]
 
-[ext_resource type="Script" path="res://scripts/game/tileEntity.gd" id="1_wfcv3"]
+[ext_resource type="Script" uid="uid://uv0mrv4ts3a3" path="res://scripts/game/tileEntity.gd" id="1_wfcv3"]
 [ext_resource type="Texture2D" uid="uid://diifvmfx5qvl" path="res://textures/warning.png" id="2_yde6f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwvib"]

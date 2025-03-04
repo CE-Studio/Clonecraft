@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://degip3wbc55a0"]
 
-[ext_resource type="Script" path="res://mods/mobs/hostile/machine/blastminer.gd" id="1_vc0ir"]
+[ext_resource type="Script" uid="uid://b02llkn3yvfru" path="res://mods/mobs/hostile/machine/blastminer.gd" id="1_vc0ir"]
 [ext_resource type="PackedScene" uid="uid://c33rl0k3nkgxl" path="res://mods/mobs/hostile/machine/blastminer.glb" id="2_eoldf"]
-[ext_resource type="Script" path="res://mods/mobs/hostile/machine/blastminerbody.gd" id="3_drf02"]
+[ext_resource type="Script" uid="uid://d1hl6frw4j4r7" path="res://mods/mobs/hostile/machine/blastminerbody.gd" id="3_drf02"]
 [ext_resource type="Material" uid="uid://dekiav0x8yhhh" path="res://mods/mobs/textures/hostile/machine/bbt.tres" id="3_tc3k8"]
-[ext_resource type="Script" path="res://mods/mobs/hostile/machine/legpoint.gd" id="4_q8uhp"]
+[ext_resource type="Script" uid="uid://ycbhti3dle0i" path="res://mods/mobs/hostile/machine/legpoint.gd" id="4_q8uhp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_su40q"]
 size = Vector3(1, 1.78747, 1)
@@ -115,8 +115,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0wrxu"]
 _data = {
-"RESET": SubResource("Animation_mbf83"),
-"new_animation": SubResource("Animation_e840p")
+&"RESET": SubResource("Animation_mbf83"),
+&"new_animation": SubResource("Animation_e840p")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_atxph"]
@@ -136,6 +136,57 @@ nodes/Animation/position = Vector2(-260, 140)
 nodes/blend/node = SubResource("AnimationNodeBlend2_rgp58")
 nodes/blend/position = Vector2(20, 120)
 node_connections = [&"blend", 0, &"Animation", &"blend", 1, &"Animation 2", &"output", 0, &"blend"]
+
+[sub_resource type="Animation" id="Animation_q2r7p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blastminer/headcenter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-0.0625, 1.5, 0.0625)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blastminer/headcenter:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("blastminer:center")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("blastminer/body/head/cube_006:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_22h43"]
 resource_name = "reload"
@@ -190,61 +241,10 @@ tracks/3/keys = {
 "values": [false, true, true]
 }
 
-[sub_resource type="Animation" id="Animation_q2r7p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("blastminer/headcenter:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(-0.0625, 1.5, 0.0625)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("blastminer/headcenter:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("blastminer:center")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("blastminer/body/head/cube_006:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dummy"]
 _data = {
-"RESET": SubResource("Animation_q2r7p"),
-"reload": SubResource("Animation_22h43")
+&"RESET": SubResource("Animation_q2r7p"),
+&"reload": SubResource("Animation_22h43")
 }
 
 [node name="blastminer" type="CharacterBody3D"]

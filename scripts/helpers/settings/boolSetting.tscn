@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhmbr1yk44dn6"]
 
-[ext_resource type="Script" path="res://scripts/helpers/settings/boolSetting.gd" id="1_3yn1u"]
+[ext_resource type="Script" uid="uid://bl43vr53qrjoj" path="res://scripts/helpers/settings/boolSetting.gd" id="1_3yn1u"]
 
 [node name="boolSetting" type="GridContainer"]
 anchors_preset = 15

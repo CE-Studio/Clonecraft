@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rphyeuffx7cl"]
 
-[ext_resource type="Script" path="res://addons/auto_complete_menu_node/Scripts/option_button.gd" id="1_5a4qr"]
+[ext_resource type="Script" uid="uid://beh4so2qinsbn" path="res://addons/auto_complete_menu_node/Scripts/option_button.gd" id="1_5a4qr"]
 [ext_resource type="Theme" uid="uid://d1ff85lu8qqwm" path="res://addons/auto_complete_menu_node/Assets/base_theme.tres" id="1_d2uxr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_un4au"]

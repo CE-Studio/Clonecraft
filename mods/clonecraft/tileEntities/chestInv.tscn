@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://1c8qq2jk2c7i"]
 
 [ext_resource type="Texture2D" uid="uid://q6l8gu5hnobr" path="res://gui/invbacking.png" id="1_sf0wl"]
-[ext_resource type="Script" path="res://gui/guiinv.gd" id="2_jx3h4"]
+[ext_resource type="Script" uid="uid://bwkmfeshq72bu" path="res://gui/guiinv.gd" id="2_jx3h4"]
 [ext_resource type="PackedScene" uid="uid://b837w4xwagvvg" path="res://gui/PrimaryInventory.tscn" id="3_3kqnv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2ahj"]

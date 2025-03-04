@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpufysahna7oj"]
 
 [ext_resource type="Texture2D" uid="uid://cq111562ajry" path="res://textures/playleft.png" id="1_i6uqg"]
-[ext_resource type="Script" path="res://gui/modPckItem.gd" id="1_o4pxs"]
+[ext_resource type="Script" uid="uid://b2ay8hhremjvs" path="res://gui/modPckItem.gd" id="1_o4pxs"]
 [ext_resource type="Texture2D" uid="uid://b3dmd6r5y80je" path="res://textures/play.png" id="2_cc1r6"]
 
 [node name="modPckItem" type="Button"]
