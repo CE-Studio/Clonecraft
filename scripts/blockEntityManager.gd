@@ -2,7 +2,7 @@ extends Node3D
 class_name BlockEntityManager
 
 
-static var TElist:Dictionary = {
+static var TElist:Dictionary[StringName, PackedScene] = {
 	&"null:null": preload("res://components/InvalidTileEntity.tscn")
 }
 static var instance:BlockEntityManager

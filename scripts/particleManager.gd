@@ -3,7 +3,7 @@ class_name ParticleManager
 
 
 static var instance:ParticleManager
-static var gpuEffects:Dictionary = {}
+static var gpuEffects:Dictionary[StringName, PackedScene] = {}
 
 
 static func _reset() -> void:

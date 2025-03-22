@@ -8,7 +8,7 @@ const MODID:StringName = "mobs"
 var isprite0:Texture2D = load("res://mods/mobs/textures/item/items0.png")
 
 
-var mobs:Dictionary = {
+var mobs:Dictionary[StringName, PackedScene] = {
 	&"mobs:blastMiner": preload("res://mods/mobs/hostile/machine/Blastminer.tscn")
 }
 

@@ -3,7 +3,7 @@ class_name ItemManager
 ## Creates and manages items.
 
 ## A dictionary containing all registered items.
-static var items := {}
+static var items:Dictionary[StringName, Item] = {}
 ## A preloaded blank [WorldItem].
 static var witem:PackedScene = preload("res://scripts/itemAssets/worldItem.tscn")
 static var _buf := VoxelBuffer.new()
@@ -177,7 +177,7 @@ static func simpleItem() -> Item:
 ## Spawns an item entity in the world.
 static func spawnWorldItem(itemStack:ItemStack, pos:Vector3, vel:Vector3 = Vector3(0, 2, 0)) -> WorldItem:
 	var nitem:WorldItem = witem.instantiate()
-	nitem.position = pos
+	nitem.position = pos + (vel / 100)
 	nitem.apply_central_impulse(vel)
 	nitem.setItem(itemStack)
 	Statics.get_node("/root/Node3D").add_child(nitem)

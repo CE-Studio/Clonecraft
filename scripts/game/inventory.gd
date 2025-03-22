@@ -147,6 +147,14 @@ func getItemFromStack(item:ItemManager.ItemStack, countMode := ANY, ignoreDamage
 	return null
 
 
+func extractAll() -> Array[ItemManager.ItemStack]:
+	var out := container
+	container = []
+	consumption = 0
+	contentChanged.emit()
+	return out
+
+
 func containsItem(item:ItemManager.ItemStack, countMode := ANY) -> bool:
 	for i in container:
 		if item.compare(i):

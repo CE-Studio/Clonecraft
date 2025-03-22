@@ -3,7 +3,7 @@ class_name SoundManager
 
 
 static var instance:SoundManager
-static var sounds:Dictionary = {}
+static var sounds:Dictionary[StringName, AudioStream] = {}
 
 
 static func _reset() -> void:

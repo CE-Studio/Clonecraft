@@ -21,6 +21,11 @@ func animate(_delta:float) -> void:
 	pass
 
 
+## Called to animate one-time actions, like placing or damage.
+func animateAction(action:StringName) -> void:
+	pass
+
+
 ## Returns the first-person arm model. The default implementation should work for most cases.
 func getFPArm() -> Node3D:
 	var h := get_children()

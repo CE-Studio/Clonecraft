@@ -16,7 +16,7 @@ static var blockList:Array[BlockInfo] = []
 ## Numerical IDs will vary from world to world. Do not hardcode them.
 ## Caching, however, is strongly encuraged.[br]
 ## Static
-static var blockIDlist := {}
+static var blockIDlist:Dictionary[StringName, int] = {}
 ## The world's [VoxelBlockyLibrary].[br]
 ## Static
 static var blockLibrary := VoxelBlockyLibrary.new()
@@ -352,7 +352,10 @@ static func _setupplaceholders():
 				"default"
 			)
 			blockList[h[i]] = bi
-		blockIDlist = h
+		var out:Dictionary[StringName, int]
+		for i:String in h:
+			out[StringName(i)] = roundi(h[i])
+		blockIDlist = out
 
 
 # TODO finalize and document the loading order

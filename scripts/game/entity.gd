@@ -115,6 +115,36 @@ func _movement_process(_delta:float) -> void:
 	pass
 
 
+func getScaled(ability:String) -> float:
+	var v := 0.0
+	v = abilities.size
+	v *= abilities.scale[ability]
+	v *= abilities.scale.uniform
+	return v
+
+
+func damage(ammount:float) -> void:
+	if not abilities.immortal:
+		abilities.health -= ammount
+		animateDamage(ammount)
+	if abilities.health <= 0:
+		die()
+
+
+func heal(ammount:float) -> bool:
+	var mh := getScaled("health")
+	abilities.health = clampf(abilities.health + ammount, 0, mh)
+	return abilities.health == mh
+
+
+func die() -> void:
+	pass
+
+
+func animateDamage(ammount:float) -> void:
+	pass
+
+
 func _physics_process(delta:float) -> void:
 	if sleeping:
 		return
