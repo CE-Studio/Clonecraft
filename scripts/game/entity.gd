@@ -117,7 +117,7 @@ func _movement_process(_delta:float) -> void:
 
 func getScaled(ability:String) -> float:
 	var v := 0.0
-	v = abilities.size
+	v = abilities.size[ability]
 	v *= abilities.scale[ability]
 	v *= abilities.scale.uniform
 	return v
@@ -149,7 +149,7 @@ func _physics_process(delta:float) -> void:
 	if sleeping:
 		return
 	if not is_on_floor():
-		velocity.y -= GRAVITY * delta
+		velocity.y = max(velocity.y - (GRAVITY * delta), -TERMINAL_VELOCITY)
 
 	_movement_process(delta)
 
