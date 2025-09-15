@@ -4,12 +4,12 @@ extends TileEntity
 var inventory := Inventory.new()
 
 
-func getID() -> StringName:
+func get_id() -> StringName:
 	return &"clonecraft:chest"
 
 
 func _ready() -> void:
-	inventory.contentChanged.connect(markDirty)
+	inventory.content_changed.connect(markDirty)
 
 
 func save() -> Dictionary:

@@ -16,7 +16,7 @@ var container:Array[ItemManager.ItemStack]
 var consumption:int
 
 
-signal contentChanged
+signal content_changed
 
 
 func sort() -> void:
@@ -53,28 +53,28 @@ func restore(inp:Dictionary, emit := true) -> bool:
 		]):
 			return false
 		var istack = ItemManager.ItemStack.new(i.item, i.count, i.meta)
-		if !addItem(istack, emit):
+		if !add_item(istack, emit):
 			return false
 	return true
 
 
-func addItem(item:ItemManager.ItemStack, emit := true) -> bool:
+func add_item(item:ItemManager.ItemStack, emit := true) -> bool:
 	if (item.count + consumption) > space:
 		return false
 	consumption += item.count
 	for i in container:
 		if i.compare(item):
 			i.count += item.count
-			contentChanged.emit()
+			content_changed.emit()
 			return true
 	container.append(item)
 	sort()
 	if emit:
-		contentChanged.emit()
+		content_changed.emit()
 	return true
 
 
-func addItemPartial(item:ItemManager.ItemStack) -> bool:
+func add_item_partial(item:ItemManager.ItemStack) -> bool:
 	var c := space - consumption
 	if c < 1:
 		return false
@@ -92,42 +92,42 @@ func addItemPartial(item:ItemManager.ItemStack) -> bool:
 		consumption += c
 		container.append(ni)
 		sort()
-		contentChanged.emit()
+		content_changed.emit()
 		return true
 	consumption += item.count
 	for i in container:
 		if i.compare(item):
 			i.count += item.count
 			item.count = 0
-			contentChanged.emit()
+			content_changed.emit()
 			return true
 	container.append(item.copy())
 	item.count = 0
 	sort()
-	contentChanged.emit()
+	content_changed.emit()
 	return true
 
 
-func extractItem(item:ItemManager.ItemStack) -> bool:
+func extract_item(item:ItemManager.ItemStack) -> bool:
 	for i in container.size():
 		if (item.compare(container[i])) && (item.count <= container[i].count):
 			container[i].count -= item.count
 			if container[i].count <= 0:
 				container.remove_at(i)
 			consumption -= item.count
-			contentChanged.emit()
+			content_changed.emit()
 			return true
 	return false
 
 
-func getItemFromID(sitem:StringName) -> ItemManager.ItemStack:
+func get_item_from_id(sitem:StringName) -> ItemManager.ItemStack:
 	for i in container:
 		if i.itemID == sitem:
 			return i
 	return null
 
 
-func getItemFromStack(item:ItemManager.ItemStack, countMode := ANY, ignoreDamage := false, ignoreEnergy := false) -> ItemManager.ItemStack:
+func get_item_from_stack(item:ItemManager.ItemStack, countMode := ANY, ignoreDamage := false, ignoreEnergy := false) -> ItemManager.ItemStack:
 	for i in container:
 		if item.compare(i, ignoreDamage, ignoreEnergy):
 			match countMode:
@@ -147,15 +147,15 @@ func getItemFromStack(item:ItemManager.ItemStack, countMode := ANY, ignoreDamage
 	return null
 
 
-func extractAll() -> Array[ItemManager.ItemStack]:
+func extract_all() -> Array[ItemManager.ItemStack]:
 	var out := container
 	container = []
 	consumption = 0
-	contentChanged.emit()
+	content_changed.emit()
 	return out
 
 
-func containsItem(item:ItemManager.ItemStack, countMode := ANY) -> bool:
+func contains_item(item:ItemManager.ItemStack, countMode := ANY) -> bool:
 	for i in container:
 		if item.compare(i):
 			match countMode:

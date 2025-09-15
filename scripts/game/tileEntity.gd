@@ -9,11 +9,11 @@ var data:Dictionary
 var pos:Vector3i
 var ID:StringName:
 	get:
-		return getID()
+		return get_id()
 
 
 ## Override with your TileEntity's ID
-func getID() -> StringName:
+func get_id() -> StringName:
 	return &"null:null"
 
 

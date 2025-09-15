@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 
 
 func _setup():
-	player.inventory.contentChanged.connect(redraw)
+	player.inventory.content_changed.connect(redraw)
 	redraw()
 	timer.start()
 

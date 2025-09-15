@@ -34,5 +34,5 @@ func resize() -> void:
 		Hotbar.instance.deferRedraw()
 
 
-func _settingsChanged() -> void:
+func _settings_changed() -> void:
 	resize()

@@ -54,7 +54,7 @@ func addButton(name:StringName, cb:Callable, tooltip:String = "") -> Button:
 
 
 ## Add a [Control] to be displayed inside the panel.
-func addItem(item:Control) -> void:
+func add_item(item:Control) -> void:
 	$Panel/ScrollContainer/Container.add_child(item)
 
 

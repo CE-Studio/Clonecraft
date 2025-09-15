@@ -25,8 +25,8 @@ static func _sinit() -> void:
 
 
 static func _recur(n:Node) -> void:
-		if n.has_method("_settingsChanged"):
-			n._settingsChanged()
+		if n.has_method("_settings_changed"):
+			n._settings_changed()
 		for i in n.get_children():
 			_recur(i)
 
@@ -48,23 +48,23 @@ static func spawnMenu(content := settings) -> BackingPanel:
 		if i["type"] == "folder":
 			var c:SettingFolderButton = preload("res://scripts/helpers/settings/folderButton.tscn").instantiate()
 			c.init(i)
-			op.addItem(c)
+			op.add_item(c)
 		elif i["type"] == "float":
 			var c:FloatSetting = preload("res://scripts/helpers/settings/floatSetting.tscn").instantiate()
 			c.init(i)
-			op.addItem(c)
+			op.add_item(c)
 		elif i["type"] == "int":
 			var c:FloatSetting = preload("res://scripts/helpers/settings/intSetting.tscn").instantiate()
 			c.init(i)
-			op.addItem(c)
+			op.add_item(c)
 		elif i["type"] == "bool":
 			var c:BoolSetting = preload("res://scripts/helpers/settings/boolSetting.tscn").instantiate()
 			c.init(i)
-			op.addItem(c)
+			op.add_item(c)
 		elif i["type"] == "string":
 			var c:StringSetting = preload("res://scripts/helpers/settings/stringSetting.tscn").instantiate()
 			c.init(i)
-			op.addItem(c)
+			op.add_item(c)
 		else:
 			print("missing setting type: " + i["type"])
 	return op

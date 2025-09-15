@@ -44,7 +44,7 @@ func _process(_delta) -> void:
 	var v = "None"
 	if player.lookingAt != null:
 		pl = player.lookingAt.get_position()
-		v = BlockManager.blockList[player.voxelTool.get_voxel(pl)].fullID
+		v = BlockManager.block_list[player.voxelTool.get_voxel(pl)].full_id
 	text = LABEL1_TEXT % [
 		SettingManager.VERSION,
 		Engine.get_frames_per_second(),

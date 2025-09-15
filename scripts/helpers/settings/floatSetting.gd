@@ -23,13 +23,13 @@ func init(i:Dictionary) -> void:
 	$HSlider.max_value = maxv
 	$HSlider.value = current
 	$SpinBox.value = current
-	$HSlider.connect("value_changed", changeVal)
-	$SpinBox.connect("value_changed", changeVal)
+	$HSlider.connect("value_changed", change_val)
+	$SpinBox.connect("value_changed", change_val)
 	$Button.connect("pressed", reset)
 	$Button.disabled = (current == default)
 
 
-func changeVal(newval:float) -> void:
+func change_val(newval:float) -> void:
 	current = newval
 	$HSlider.value = newval
 	$SpinBox.value = newval
@@ -38,4 +38,4 @@ func changeVal(newval:float) -> void:
 
 
 func reset() -> void:
-	changeVal(default)
+	change_val(default)

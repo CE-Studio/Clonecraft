@@ -95,18 +95,18 @@ func restore(dict:Dictionary) -> bool:
 		position.x = dict["posx"]
 		position.y = dict["posy"]
 		position.z = dict["posz"]
-		updateAbilities()
+		update_abilities()
 		return true
 	return false
 	
 	
-func updateAbilities() -> void:
+func update_abilities() -> void:
 	scale.x = (abilities["size"]["x"] * abilities["scale"]["x"]) * abilities["scale"]["uniform"]
 	scale.y = (abilities["size"]["y"] * abilities["scale"]["y"]) * abilities["scale"]["uniform"]
 	scale.z = (abilities["size"]["z"] * abilities["scale"]["x"]) * abilities["scale"]["uniform"]
 	
 
-func _settingsChanged() -> void:
+func _settings_changed() -> void:
 	TERMINAL_VELOCITY = ProjectSettings.get_setting("gameplay/physics/terminal_velocity")
 	GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -115,7 +115,7 @@ func _movement_process(_delta:float) -> void:
 	pass
 
 
-func getScaled(ability:String) -> float:
+func get_scaled(ability:String) -> float:
 	var v := 0.0
 	v = abilities.size[ability]
 	v *= abilities.scale[ability]
@@ -123,17 +123,17 @@ func getScaled(ability:String) -> float:
 	return v
 
 
-func damage(ammount:float) -> void:
+func damage(amount:float) -> void:
 	if not abilities.immortal:
-		abilities.health -= ammount
-		animateDamage(ammount)
+		abilities.health -= amount
+		animate_damage(amount)
 	if abilities.health <= 0:
 		die()
 
 
-func heal(ammount:float) -> bool:
-	var mh := getScaled("health")
-	abilities.health = clampf(abilities.health + ammount, 0, mh)
+func heal(amount:float) -> bool:
+	var mh := get_scaled("health")
+	abilities.health = clampf(abilities.health + amount, 0, mh)
 	return abilities.health == mh
 
 
@@ -141,7 +141,7 @@ func die() -> void:
 	pass
 
 
-func animateDamage(ammount:float) -> void:
+func animate_damage(amount:float) -> void:
 	pass
 
 

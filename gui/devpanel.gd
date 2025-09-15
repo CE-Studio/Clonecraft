@@ -34,33 +34,33 @@ func populate(data:Dictionary) -> void:
 			content.append(Label.new())
 			content[-1].autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 			if dat["extra"] == "":
-				addExtract(Engine.get_license_text())
-				addExtract(Engine.get_license_info())
-				addExtract(Engine.get_copyright_info())
-				addExtract(Engine.get_author_info())
-				addExtract(Engine.get_donor_info())
+				add_extract(Engine.get_license_text())
+				add_extract(Engine.get_license_info())
+				add_extract(Engine.get_copyright_info())
+				add_extract(Engine.get_author_info())
+				add_extract(Engine.get_donor_info())
 			else:
-				addExtract(dat["extra"])
+				add_extract(dat["extra"])
 		elif ((dat["extra"] is Array) or (dat["extra"] is Dictionary)):
 			content.append(HSeparator.new())
 			content.append(Label.new())
 			content[-1].autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-			addExtract(dat["extra"])
+			add_extract(dat["extra"])
 		else:
 			print("the fucc is this???")
 
 
-func addExtract(obj, addRule := true) -> void:
+func add_extract(obj, addRule := true) -> void:
 	if obj is Dictionary:
 		for i in obj:
 			if obj[i] is String:
-				addExtract(i + ": " + obj[i], addRule)
+				add_extract(i + ": " + obj[i], addRule)
 			else:
-				addExtract(i, addRule)
-				addExtract(obj[i], false)
+				add_extract(i, addRule)
+				add_extract(obj[i], false)
 	elif obj is Array:
 		for i in obj:
-			addExtract(i, addRule)
+			add_extract(i, addRule)
 	elif obj is String:
 		if addRule:
 			content.append(HSeparator.new())
@@ -79,7 +79,7 @@ func _on_button_pressed() -> void:
 	for i in content:
 		h += 1
 		c += 1
-		op.addItem(i.duplicate())
+		op.add_item(i.duplicate())
 		if c > 10:
 			c = 0
 			op.getExitButton().text = "adding " + str(h) + j

@@ -41,10 +41,10 @@ func updatePlace() -> void:
 					for z in Statics.iRange(_placestart.z, at.z):
 						if placed >= maxc:
 							break
-						if BlockManager.setBlock(Vector3i(x, y, z), item.voxel):
+						if BlockManager.set_block(Vector3i(x, y, z), item.voxel):
 							placed += 1
 			if !inf:
-				player.inventory.extractItem(ItemManager.ItemStack.new(istack.itemID, placed, istack.metadata))
+				player.inventory.extract_item(ItemManager.ItemStack.new(istack.itemID, placed, istack.metadata))
 
 
 func consumeHeld(count:int) -> bool:
@@ -53,7 +53,7 @@ func consumeHeld(count:int) -> bool:
 	var istack:ItemManager.ItemStack = player.getSelectedItem()
 	istack = istack.copy()
 	istack.count = count
-	return player.inventory.extractItem(istack)
+	return player.inventory.extract_item(istack)
 
 
 func _process(_delta:float) -> void:
@@ -82,10 +82,10 @@ func _process(_delta:float) -> void:
 				if (breakPower == 1.0) and player.abilities["endlessInventory"]:
 					s = 0.2
 				else:
-					s = man.getBlock(_breakpos).breakStrength
+					s = man.get_block(_breakpos).break_strength
 				_break.material_override.set_shader_parameter(&"progress", round(remap(_breakprogress, 0, s, 0, 9)))
 				if _breakprogress >= s:
-					man.setBlock(_breakpos, &"clonecraft:air", not(player.abilities["endlessInventory"]))
+					man.set_block(_breakpos, &"clonecraft:air", not(player.abilities["endlessInventory"]))
 					_breakprogress = 0
 					_break.hide()
 					_break.material_override.set_shader_parameter(&"progress", 0)
@@ -182,7 +182,7 @@ func _ununhandled_input(event:InputEvent) -> void:
 				i = i.copy()
 				if not Input.is_action_pressed("game_sprint"):
 					i.count = 1
-				if player.inventory.extractItem(i):
+				if player.inventory.extract_item(i):
 					player.throwItem(i)
 		
 		if placing or breaking:
@@ -196,8 +196,8 @@ func _ununhandled_input(event:InputEvent) -> void:
 
 
 func registerPhase() -> void:
-	man.addUpdate(_process)
-	man.unhandledInputRegister(_ununhandled_input)
+	man.add_update(_process)
+	man.register_unhandled_input(_ununhandled_input)
 	_highlight = load("res://mods/interactions/highlight.tscn").instantiate()
 	_highlight.hide()
 	player.get_parent().add_child.call_deferred(_highlight)

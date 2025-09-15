@@ -15,8 +15,8 @@ static var sand:int
 static var clay:int
 
 
-func setupSeed(newSeed:int) -> void:
-	seed = newSeed
+func setup_seed(new_seed:int) -> void:
+	seed = new_seed
 	noise.seed = seed
 	noise2.seed = seed
 	noise.noise_type = FastNoise2.TYPE_CELLULAR
@@ -32,16 +32,16 @@ func setupSeed(newSeed:int) -> void:
 	caves.compile()
 
 
-func setupIDS() -> void:
-	air = BlockManager.blockIDlist["clonecraft:air"]
-	grass = BlockManager.blockIDlist["clonecraft:grassBlock"]
-	dirt = BlockManager.blockIDlist["clonecraft:dirt"]
-	stone = BlockManager.blockIDlist["clonecraft:stone"]
-	sand = BlockManager.blockIDlist["clonecraft:sand"]
-	clay = BlockManager.blockIDlist["clonecraft:clay"]
+func setup_ids() -> void:
+	air = BlockManager.block_id_list["clonecraft:air"]
+	grass = BlockManager.block_id_list["clonecraft:grassBlock"]
+	dirt = BlockManager.block_id_list["clonecraft:dirt"]
+	stone = BlockManager.block_id_list["clonecraft:stone"]
+	sand = BlockManager.block_id_list["clonecraft:sand"]
+	clay = BlockManager.block_id_list["clonecraft:clay"]
 
 
-func setSupBuf(x:int, y:int, z:int, val:int, supBuf:VoxelBuffer, pos:Vector3i, global := true) -> void:
+func set_sup_buf(x:int, y:int, z:int, val:int, supBuf:VoxelBuffer, pos:Vector3i, global := true) -> void:
 	if global:
 		x = (x) - pos.x
 		y = (y + MARGIN) - pos.y
@@ -49,7 +49,7 @@ func setSupBuf(x:int, y:int, z:int, val:int, supBuf:VoxelBuffer, pos:Vector3i, g
 	supBuf.set_voxel(val, x, y, z)
 
 
-func getSupBuf(x:int, y:int, z:int, supBuf:VoxelBuffer, pos:Vector3i, bounds:Vector3i, global := true) -> int:
+func get_sup_buf(x:int, y:int, z:int, supBuf:VoxelBuffer, pos:Vector3i, bounds:Vector3i, global := true) -> int:
 	if global:
 		x = (x) - pos.x
 		y = (y + MARGIN) - pos.y
@@ -69,7 +69,7 @@ func getSupBuf(x:int, y:int, z:int, supBuf:VoxelBuffer, pos:Vector3i, bounds:Vec
 	return supBuf.get_voxel(x, y, z)
 
 
-func genSolid(x:int, y:int, z:int, supBuf, pos, bounds) -> int:
+func gen_solid(x:int, y:int, z:int, supBuf, pos, bounds) -> int:
 	var pending:int = air
 	var smoothness = clampf((noise2.get_noise_2d_single(Vector2(x, z) * 0.4) * 2) - 1, 0, 1)
 	var density = noise.get_noise_3d_single(Vector3(x, y, z) * 0.3) * 30
@@ -81,7 +81,7 @@ func genSolid(x:int, y:int, z:int, supBuf, pos, bounds) -> int:
 	density += noise.get_noise_3d_single(Vector3(x, y, z) * 5) 
 	if y < remap(river, 0.5, 1, 0, density):
 		if river < 1:
-			if getSupBuf(x, y + 5, z, supBuf, pos, bounds) == 0:
+			if get_sup_buf(x, y + 5, z, supBuf, pos, bounds) == 0:
 				if noise.get_noise_3d_single(Vector3(x, y, z) * 3) < 0.3:
 					pending = clay
 				else:
@@ -89,9 +89,9 @@ func genSolid(x:int, y:int, z:int, supBuf, pos, bounds) -> int:
 			else:
 				pending = stone
 		else:
-			if getSupBuf(x, y + 1, z, supBuf, pos, bounds) == 0:
+			if get_sup_buf(x, y + 1, z, supBuf, pos, bounds) == 0:
 				pending = grass
-			elif getSupBuf(x, y + 5, z, supBuf, pos, bounds) == 0:
+			elif get_sup_buf(x, y + 5, z, supBuf, pos, bounds) == 0:
 				pending = dirt
 			else:
 				pending = stone
@@ -103,7 +103,7 @@ func iterate(supBuf:VoxelBuffer, pos:Vector3i, bounds:Vector3i) -> void:
 		for iz in bounds.z:
 			for iy in bounds.y:
 				var iiy = bounds.y - iy - 1
-				setSupBuf(ix, iiy, iz, genSolid(ix + (pos.x), iiy + (pos.y - MARGIN), iz + (pos.z), supBuf, pos, bounds), supBuf, pos, false)
+				set_sup_buf(ix, iiy, iz, gen_solid(ix + (pos.x), iiy + (pos.y - MARGIN), iz + (pos.z), supBuf, pos, bounds), supBuf, pos, false)
 
 
 func blit(buf:VoxelBuffer, supBuf:VoxelBuffer, bounds:Vector3i) -> void:

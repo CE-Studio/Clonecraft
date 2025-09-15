@@ -22,15 +22,15 @@ func runGrass(pos):
 	grassDirs.shuffle()
 	for i in [1, 0, -1]:
 		var rpos = (pos - Vector3i(grassDirs[0][0], i, grassDirs[0][1]))
-		if man.getBlock(rpos).fullID in canGrass:
-			if man.getBlock(rpos + Vector3i.UP).properties.has(&"air"):
-				man.setBlock(rpos, &"clonecraft:grassBlock", false, true, true)
-	if not(man.getBlock(pos + Vector3i.UP).properties.has(&"air")):
-		man.setBlock(pos, &"clonecraft:dirt", false, true, true)
+		if man.get_block(rpos).full_id in canGrass:
+			if man.get_block(rpos + Vector3i.UP).properties.has(&"air"):
+				man.set_block(rpos, &"clonecraft:grassBlock", false, true, true)
+	if not(man.get_block(pos + Vector3i.UP).properties.has(&"air")):
+		man.set_block(pos, &"clonecraft:dirt", false, true, true)
 
 
 func _makeGB() -> void:
-	var model = man.startBlockRegister("clonecraft:grassBlock", Voxdat.vox.GEOMETRY_CUBE)
+	var model = man.start_block_register("clonecraft:grassBlock", Voxdat.vox.GEOMETRY_CUBE)
 	model.set_mesh_collision_enabled(0, true)
 	model.transparency_index = 0
 	model.tile_left   = Vector2(2, 0)
@@ -55,13 +55,13 @@ func _makeGB() -> void:
 			"plant",
 			"plant"
 	)
-	bi.setTickable(runGrass)
-	bi.dropItem = &"clonecraft:dirt"
-	man.endBlockRegister(bi)
+	bi.set_tickable(runGrass)
+	bi.drop_item = &"clonecraft:dirt"
+	man.end_block_register(bi)
 
 
 func _makeCT() -> void:
-	var model = man.startBlockRegister("clonecraft:craftingBench", Voxdat.vox.GEOMETRY_CUBE)
+	var model = man.start_block_register("clonecraft:craftingBench", Voxdat.vox.GEOMETRY_CUBE)
 	model.set_mesh_collision_enabled(0, true)
 	model.transparency_index = 0
 	model.tile_left   = Vector2(3, 2)
@@ -86,11 +86,11 @@ func _makeCT() -> void:
 			"wood",
 			"wood"
 	)
-	man.endBlockRegister(bi)
+	man.end_block_register(bi)
 
 
 func _makeOL() -> void:
-	var model1 = man.startBlockRegister("clonecraft:logVertOak", Voxdat.vox.GEOMETRY_CUBE)
+	var model1 = man.start_block_register("clonecraft:logVertOak", Voxdat.vox.GEOMETRY_CUBE)
 	model1.set_mesh_collision_enabled(0, true)
 	model1.transparency_index = 0
 	model1.tile_left   = Vector2(5, 2)
@@ -115,10 +115,10 @@ func _makeOL() -> void:
 			"wood",
 			"wood"
 	)
-	bi1.dropItem = &"clonecraft:logOak"
-	man.endBlockRegister(bi1)
+	bi1.drop_item = &"clonecraft:logOak"
+	man.end_block_register(bi1)
 
-	var model2 = man.startBlockRegister(&"clonecraft:logHoriz1Oak", Voxdat.vox.GEOMETRY_CUBE)
+	var model2 = man.start_block_register(&"clonecraft:logHoriz1Oak", Voxdat.vox.GEOMETRY_CUBE)
 	model2.set_mesh_collision_enabled(0, true)
 	model2.transparency_index = 0
 	model2.tile_left   = Vector2(0, 3)
@@ -143,10 +143,10 @@ func _makeOL() -> void:
 			"wood",
 			"wood"
 	)
-	bi2.dropItem = &"clonecraft:logOak"
-	man.endBlockRegister(bi2)
+	bi2.drop_item = &"clonecraft:logOak"
+	man.end_block_register(bi2)
 
-	var model3 = man.startBlockRegister(&"clonecraft:logHoriz2Oak", Voxdat.vox.GEOMETRY_CUBE)
+	var model3 = man.start_block_register(&"clonecraft:logHoriz2Oak", Voxdat.vox.GEOMETRY_CUBE)
 	model3.set_mesh_collision_enabled(0, true)
 	model3.transparency_index = 0
 	model3.tile_left   = Vector2(1, 3)
@@ -171,8 +171,8 @@ func _makeOL() -> void:
 			"wood",
 			"wood"
 	)
-	bi3.dropItem = &"clonecraft:logOak"
-	man.endBlockRegister(bi3)
+	bi3.drop_item = &"clonecraft:logOak"
+	man.end_block_register(bi3)
 
 
 func _mitem(name:String, key:String, uv:Vector2i) -> ItemManager.Item:
@@ -246,7 +246,7 @@ func placelog(event:InputEvent) -> bool:
 					id = &"clonecraft:logHoriz1Oak"
 				_:
 					pass
-			return man.setBlock(player.lookingAt.previous_position, id)
+			return man.set_block(player.lookingAt.previous_position, id)
 	return false
 
 
@@ -260,7 +260,7 @@ func placete(event:InputEvent, id:StringName, meta := {}) -> bool:
 
 
 func blockFall(pos:Vector3) -> void:
-	if man.getBlock(pos + Vector3.DOWN).properties.has(&"air"):
+	if man.get_block(pos + Vector3.DOWN).properties.has(&"air"):
 		WorldControl.instance.spawnFallingBlock(pos)
 
 
@@ -269,36 +269,36 @@ func registerPhase() -> void:
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/give.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/editbar.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/tp.gd").new())
-	man.quickUniformBlock(MODID, "stone", "clonecraft.block.stone", Vector2(0, 0), mat1).dropItem = &"clonecraft:cobblestone"
-	man.quickUniformBlock(MODID, "dirt", "clonecraft.block.dirt", Vector2(1, 0), mat1, 1, 1, "tools:shovel")
+	man.quick_uniform_block(MODID, "stone", "clonecraft.block.stone", Vector2(0, 0), mat1).drop_item = &"clonecraft:cobblestone"
+	man.quick_uniform_block(MODID, "dirt", "clonecraft.block.dirt", Vector2(1, 0), mat1, 1, 1, "tools:shovel")
 	canGrass.append("clonecraft:dirt")
 	_makeGB()
-	man.quickUniformBlock(MODID, "cobblestone", "clonecraft.block.cobblestone", Vector2(4, 0), mat1)
-	man.quickUniformBlock(MODID, "oreCoal", "clonecraft.block.coal_ore", Vector2(5, 0), mat1)
-	man.quickUniformBlock(MODID, "oreIron", "clonecraft.block.iron_ore", Vector2(0, 1), mat1)
-	man.quickUniformBlock(MODID, "oreGold", "clonecraft.block.gold_ore", Vector2(1, 1), mat1)
-	man.quickUniformBlock(MODID, "oreDiamond", "clonecraft.block.diamond_ore", Vector2(2, 1), mat1).dropItem = &"clonecraft:diamond"
-	man.quickUniformBlock(MODID, "oreEnerstone", "clonecraft.block.enerstone_ore", Vector2(3, 1), mat1)
-	man.quickUniformBlock(MODID, "oreCopper", "clonecraft.block.copper_ore", Vector2(4, 1), mat1)
-	man.quickUniformBlock(MODID, "tileStone", "clonecraft.block.stone_tile", Vector2(5, 1), mat1)
-	man.quickUniformBlock(MODID, "brickStone", "clonecraft.block.stone_bricks", Vector2(0, 2), mat1)
-	man.quickUniformBlock(MODID, "plankOak", "clonecraft.block.oak_planks", Vector2(1, 2), mat1, 3, 6, "tools:axe")
-	man.quickUniformBlock(MODID, "tileOak", "clonecraft.block.oak_plank_tile", Vector2(2, 2), mat1, 3, 6, "tools:axe")
+	man.quick_uniform_block(MODID, "cobblestone", "clonecraft.block.cobblestone", Vector2(4, 0), mat1)
+	man.quick_uniform_block(MODID, "oreCoal", "clonecraft.block.coal_ore", Vector2(5, 0), mat1)
+	man.quick_uniform_block(MODID, "oreIron", "clonecraft.block.iron_ore", Vector2(0, 1), mat1)
+	man.quick_uniform_block(MODID, "oreGold", "clonecraft.block.gold_ore", Vector2(1, 1), mat1)
+	man.quick_uniform_block(MODID, "oreDiamond", "clonecraft.block.diamond_ore", Vector2(2, 1), mat1).drop_item = &"clonecraft:diamond"
+	man.quick_uniform_block(MODID, "oreEnerstone", "clonecraft.block.enerstone_ore", Vector2(3, 1), mat1)
+	man.quick_uniform_block(MODID, "oreCopper", "clonecraft.block.copper_ore", Vector2(4, 1), mat1)
+	man.quick_uniform_block(MODID, "tileStone", "clonecraft.block.stone_tile", Vector2(5, 1), mat1)
+	man.quick_uniform_block(MODID, "brickStone", "clonecraft.block.stone_bricks", Vector2(0, 2), mat1)
+	man.quick_uniform_block(MODID, "plankOak", "clonecraft.block.oak_planks", Vector2(1, 2), mat1, 3, 6, "tools:axe")
+	man.quick_uniform_block(MODID, "tileOak", "clonecraft.block.oak_plank_tile", Vector2(2, 2), mat1, 3, 6, "tools:axe")
 	_makeCT()
 	_makeOL()
-	man.quickUniformBlock(MODID, "barkOak", "clonecraft.block.oak_bark", Vector2(5, 2), mat1, 3, 6, "tools:axe")
-	man.quickUniformBlock(MODID, "knotOak", "clonecraft.block.oak_knot", Vector2(1, 3), mat1, 3, 6, "tools:axe")
-	man.quickUniformBlock(MODID, "leavesOak", "clonecraft.block.oak_leaves", Vector2(2, 3), mat2, 1, 1, "tools:shears", 1)
-	man.quickUniformBlock(MODID, "gravel", "clonecraft.block.gravel", Vector2(3, 3), mat1, 1, 1, "tools:shovel").setScripted(blockFall)
-	man.quickUniformBlock(MODID, "sand", "clonecraft.block.sand", Vector2(4, 3), mat1, 1, 1, "tools:shovel").setScripted(blockFall)
-	man.quickUniformBlock(MODID, "glass", "clonecraft.block.glass", Vector2(5, 3), mat2, 1, 1, "tools:pickaxe", 2)
-	man.quickUniformBlock(MODID, "brick", "clonecraft.block.brick", Vector2(0, 4), mat1)
-	man.quickUniformBlock(MODID, "clay", "clonecraft.block.clay", Vector2(1, 4), mat1, 1, 1, "tools:shovel")
-	man.quickUniformBlock(MODID, "blockCoal", "clonecraft.block.coal_block", Vector2(2, 4), mat1)
-	man.quickUniformBlock(MODID, "blockIron", "clonecraft.block.iron_block", Vector2(3, 4), mat1)
-	man.quickUniformBlock(MODID, "blockGold", "clonecraft.block.gold_block", Vector2(4, 4), mat1)
-	man.quickUniformBlock(MODID, "blockDiamond", "clonecraft.block.diamond_block", Vector2(5, 4), mat2, 3, 5, "tools:pickaxe", 2)
-	man.quickUniformBlock(MODID, "blockEnerstone", "clonecraft.block.enerstone_crate", Vector2(0, 5), mat1)
-	man.quickUniformBlock(MODID, "blockCopper", "clonecraft.block.copper_block", Vector2(1, 5), mat1)
-	BlockEntityManager.TElist[&"clonecraft:chest"] = preload("res://mods/clonecraft/tileEntities/chest.tscn")
+	man.quick_uniform_block(MODID, "barkOak", "clonecraft.block.oak_bark", Vector2(5, 2), mat1, 3, 6, "tools:axe")
+	man.quick_uniform_block(MODID, "knotOak", "clonecraft.block.oak_knot", Vector2(1, 3), mat1, 3, 6, "tools:axe")
+	man.quick_uniform_block(MODID, "leavesOak", "clonecraft.block.oak_leaves", Vector2(2, 3), mat2, 1, 1, "tools:shears", 1)
+	man.quick_uniform_block(MODID, "gravel", "clonecraft.block.gravel", Vector2(3, 3), mat1, 1, 1, "tools:shovel").set_scripted(blockFall)
+	man.quick_uniform_block(MODID, "sand", "clonecraft.block.sand", Vector2(4, 3), mat1, 1, 1, "tools:shovel").set_scripted(blockFall)
+	man.quick_uniform_block(MODID, "glass", "clonecraft.block.glass", Vector2(5, 3), mat2, 1, 1, "tools:pickaxe", 2)
+	man.quick_uniform_block(MODID, "brick", "clonecraft.block.brick", Vector2(0, 4), mat1)
+	man.quick_uniform_block(MODID, "clay", "clonecraft.block.clay", Vector2(1, 4), mat1, 1, 1, "tools:shovel")
+	man.quick_uniform_block(MODID, "blockCoal", "clonecraft.block.coal_block", Vector2(2, 4), mat1)
+	man.quick_uniform_block(MODID, "blockIron", "clonecraft.block.iron_block", Vector2(3, 4), mat1)
+	man.quick_uniform_block(MODID, "blockGold", "clonecraft.block.gold_block", Vector2(4, 4), mat1)
+	man.quick_uniform_block(MODID, "blockDiamond", "clonecraft.block.diamond_block", Vector2(5, 4), mat2, 3, 5, "tools:pickaxe", 2)
+	man.quick_uniform_block(MODID, "blockEnerstone", "clonecraft.block.enerstone_crate", Vector2(0, 5), mat1)
+	man.quick_uniform_block(MODID, "blockCopper", "clonecraft.block.copper_block", Vector2(1, 5), mat1)
+	BlockEntityManager.te_list[&"clonecraft:chest"] = preload("res://mods/clonecraft/tileEntities/chest.tscn")
 	_makeItems()

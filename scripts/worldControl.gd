@@ -277,10 +277,10 @@ static func explode(pos:Vector3, range:float, power:int, drop := true, bias := V
 		dir += bias
 		var hit := tool.raycast(pos, dir, range)
 		if hit != null:
-			var info := BlockManager.getBlock(hit.position)
-			if (info.fullID != replaceWith) and (info.explStrength < randf_range(0, 10)):
+			var info := BlockManager.get_block(hit.position)
+			if (info.full_id != replaceWith) and (info.expl_strength < randf_range(0, 10)):
 				didHit = true
-				BlockManager.setBlock(hit.position, replaceWith, drop)
+				BlockManager.set_block(hit.position, replaceWith, drop)
 	SoundManager.playSound3D(&"clonecraft:explosion", pos)
 	ParticleManager.spawnGPUeffect(&"clonecraft:explosion", pos)
 	return didHit
@@ -313,7 +313,7 @@ func saveMetaChunk(pos:Vector3i) -> void:
 	metastream.load_voxel_block(buf, pos, 0)
 	var vtool = buf.get_voxel_tool()
 	var aabb := AABB(Vector3(pos) * s, s)
-	$blockEntities._saveChunk(aabb, vtool)
+	$blockEntities._save_chunk(aabb, vtool)
 	metastream.save_voxel_block(buf, pos, 0)
 
 

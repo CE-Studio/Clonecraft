@@ -102,7 +102,7 @@ func _on_play_pressed():
 	else:
 		showerror(&"gui.worlds.generator_not_a_generator")
 		return
-	BlockManager.modsToLoad = data["mods"]
+	BlockManager.mods_to_load = data["mods"]
 	WorldControl.worldpath = fpath
 	WorldControl.streamtype = data["streamtype"]
 	WorldControl.seed = data["seed"]

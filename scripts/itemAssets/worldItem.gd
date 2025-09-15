@@ -48,7 +48,7 @@ func _process(delta) -> void:
 
 func _physics_process(delta: float) -> void:
 	var pos := Vector3i(global_position.floor())
-	if not BlockManager.getBlock(pos).properties.has(BlockManager.BlockInfo.INCOMPLETE_HITBOX):
+	if not BlockManager.get_block(pos).properties.has(BlockManager.BlockInfo.INCOMPLETE_HITBOX):
 		tryMove(pos, delta)
 	
 	
@@ -57,7 +57,7 @@ func tryMove(pos:Vector3i, delta:float) -> void:
 		for x in [0, 1, -1, 2, -2]:
 			for z in [0, 1, -1, 2, -2]:
 				var rel := Vector3i(x, y, z)
-				if BlockManager.getBlock(pos + rel).properties.has(BlockManager.BlockInfo.INCOMPLETE_HITBOX):
+				if BlockManager.get_block(pos + rel).properties.has(BlockManager.BlockInfo.INCOMPLETE_HITBOX):
 					newpos = global_position + Vector3(rel)
 					return
 	newpos = global_position + Vector3(0, 0.5 * delta, 0)

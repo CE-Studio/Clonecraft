@@ -24,7 +24,7 @@ func _pressed() -> void:
 	for i in credcontent:
 		var h = credcontent[i]
 		var k = dp.instantiate()
-		op.addItem(k)
+		op.add_item(k)
 		k.populate(h)
 
 

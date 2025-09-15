@@ -27,9 +27,9 @@ func openMods() -> void:
 	op.addButton(&"gui.mods.modfolder", _modfolder, ProjectSettings.globalize_path("user://mods/"))
 	op.addButton(&"gui.mods.gamefolder", _gamefolder, ProjectSettings.globalize_path("res://"))
 	op.addButton(&"gui.mods.download", _gamefolder)
-	op.addItem(preload("res://gui/warninglabel.tscn").instantiate())
+	op.add_item(preload("res://gui/warninglabel.tscn").instantiate())
 	var i = preload("res://gui/modPckPicker.tscn").instantiate()
-	op.addItem(i)
+	op.add_item(i)
 	op.addExit(i, &"save")
 
 

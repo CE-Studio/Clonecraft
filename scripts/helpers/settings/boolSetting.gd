@@ -16,12 +16,12 @@ func init(i:Dictionary) -> void:
 	path = i["path"]
 	current = ProjectSettings.get_setting_with_override(path)
 	$CheckButton.button_pressed = current
-	$CheckButton.connect("toggled", changeVal)
+	$CheckButton.connect("toggled", change_val)
 	$Button.connect("pressed", reset)
 	$Button.disabled = (current == default)
 
 
-func changeVal(newval:bool) -> void:
+func change_val(newval:bool) -> void:
 	current = newval
 	$CheckButton.button_pressed = newval
 	$Button.disabled = (current == default)
@@ -29,4 +29,4 @@ func changeVal(newval:bool) -> void:
 
 
 func reset() -> void:
-	changeVal(default)
+	change_val(default)

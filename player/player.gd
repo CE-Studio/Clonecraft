@@ -97,7 +97,7 @@ func _loadHotbar(a:Array):
 	for i in a.size():
 		if a[i] is Array:
 			var h := ItemManager.ItemStack.new(a[i][0], 1, a[i][1])
-			hotbarItems[i] = inventory.getItemFromStack(h, Inventory.ANY, true, true)
+			hotbarItems[i] = inventory.get_item_from_stack(h, Inventory.ANY, true, true)
 
 
 func throwItem(item:ItemManager.ItemStack, strength := 10.0) -> void:
@@ -136,7 +136,7 @@ func restore(dict:Dictionary) -> bool:
 		position.x = dict["posx"]
 		position.y = dict["posy"]
 		position.z = dict["posz"]
-		updateAbilities()
+		update_abilities()
 		extraSaveData = dict["extra"]
 		var h := inventory.restore(dict["inventory"])
 		_loadHotbar(dict["hotbar"])
@@ -154,7 +154,7 @@ func setModel(m:EntityModel):
 		model.hide()
 
 
-func updateAbilities() -> void:
+func update_abilities() -> void:
 	super()
 	raycast.target_position.z = -abilities.size.reach * abilities.scale.reach * abilities.scale.uniform
 
@@ -265,8 +265,8 @@ func ticks() -> void:
 		2 * Vector3(trange, trange, trange)
 	)
 	var tnum = ceili(pow(ceilf((trange * 2.0) / 16), 3) * tickNumber)
-	voxelTool.run_blocky_random_tick(area, tnum, BlockManager._tickBlock)
-	#voxelTool.for_each_voxel_metadata_in_area(area, BlockManager._tickMeta)
+	voxelTool.run_blocky_random_tick(area, tnum, BlockManager._tick_block)
+	#voxelTool.for_each_voxel_metadata_in_area(area, BlockManager._tick_meta)
 
 
 func _physics_process(delta) -> void:
@@ -328,7 +328,7 @@ func _physics_process(delta) -> void:
 	if is_on_floor():
 		var vhit = voxelTool.raycast(position, Vector3.DOWN)
 		if vhit != null:
-			tscalefactor = BlockManager.getBlock(vhit.position).traction
+			tscalefactor = BlockManager.get_block(vhit.position).traction
 	elif not abilities["isFlying"]:
 		tscalefactor = 0.1
 	if direction:
@@ -351,7 +351,7 @@ func _physics_process(delta) -> void:
 		#velocity = Vector3.ZERO
 		return
 
-	var h := BlockManager.getBlock(position + (velocity * delta))
+	var h := BlockManager.get_block(position + (velocity * delta))
 	if not h.properties.has(&"incompleteHitbox"):
 		if not world.raycheck(((velocity * delta) * 2)):
 			world.startWait(aabb, ((velocity * delta) * 2))
@@ -378,7 +378,7 @@ func _physics_process(delta) -> void:
 		blockOutline.hide()
 
 
-func _settingsChanged():
+func _settings_changed():
 	super()
 	$head/Camera3D/VoxelViewer.view_distance = 16 * ProjectSettings.get_setting("gameplay/video/render_distance")
 	cams[0].fov = ProjectSettings.get_setting("gameplay/video/fov")
@@ -389,7 +389,7 @@ func _settingsChanged():
 func _on_enter_item_range(body) -> void:
 	if body is WorldItem:
 		if body.canPickup():
-			if inventory.addItemPartial(body.iStack):
+			if inventory.add_item_partial(body.iStack):
 				SoundManager.playSound3D(&"clonecraft:pop", body.position)
 				if body.iStack.count == 0:
 					body.queue_free()

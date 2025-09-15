@@ -52,4 +52,4 @@ func execute(args:Array) -> Variant:
 		CMDprocessor.throw("cmd.error.too_many_args", "Expected 1-4 arguments, got " + str(l))
 		return false
 	
-	return p.inventory.addItem(ItemManager.ItemStack.new(str(args[0]), c))
+	return p.inventory.add_item(ItemManager.ItemStack.new(str(args[0]), c))

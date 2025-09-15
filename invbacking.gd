@@ -42,22 +42,22 @@ static func dropInto(oinv:Inventory) -> bool:
 		gHeldItem.queue_free()
 		return true
 	if heldSourceInventory == null:
-		if oinv.addItem(heldItem.copy()):
+		if oinv.add_item(heldItem.copy()):
 			holding = false
 			return true
 		return false
 	if oinv == null:
-		if heldSourceInventory.extractItem(heldItem):
+		if heldSourceInventory.extract_item(heldItem):
 			holding = false
 			return true
 		return false
-	if oinv.addItem(heldItem.copy()):
-		if heldSourceInventory.extractItem(heldItem):
+	if oinv.add_item(heldItem.copy()):
+		if heldSourceInventory.extract_item(heldItem):
 			holding = false
 			gHeldItem.queue_free()
 			return true
 		else:
-			if oinv.extractItem(heldItem):
+			if oinv.extract_item(heldItem):
 				return false
 			else:
 				BlockManager.glog("ItemManager", "!!! POSSIBLE ITEM DUPLICATION DETECTED !!!")
@@ -66,14 +66,14 @@ static func dropInto(oinv:Inventory) -> bool:
 				return false
 	var tempItem := heldItem.copy()
 	var c := tempItem.count
-	if oinv.addItemPartial(tempItem):
+	if oinv.add_item_partial(tempItem):
 		tempItem.count = c - tempItem.count
-		if heldSourceInventory.extractItem(tempItem):
+		if heldSourceInventory.extract_item(tempItem):
 			holding = false
 			gHeldItem.queue_free()
 			return true
 		else:
-			if oinv.extractItem(tempItem):
+			if oinv.extract_item(tempItem):
 				return false
 			else:
 				BlockManager.glog("ItemManager", "!!! POSSIBLE ITEM DUPLICATION DETECTED !!!")
@@ -122,6 +122,6 @@ func _input(event: InputEvent) -> void:
 func _on_pressed() -> void:
 	if holding:
 		var i := heldItem.copy()
-		if (heldSourceInventory == null) or (heldSourceInventory.extractItem(i)):
+		if (heldSourceInventory == null) or (heldSourceInventory.extract_item(i)):
 			WorldControl.instance._p.throwItem(i)
 			holding = false

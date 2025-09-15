@@ -3,37 +3,37 @@ extends VoxelGeneratorScript
 
 
 var seeed:int
-var biomeNoise := FastNoiseLite.new()
-var riverNoise := FastNoiseLite.new()
+var biome_noise := FastNoiseLite.new()
+var river_noise := FastNoiseLite.new()
 
 
 var riverwater:int = 0
 
 
-func setupSeed(newSeed:int) -> void:
+func setup_seed(new_seed:int) -> void:
 	print("setup")
-	seeed = newSeed
-	biomeNoise.seed = seeed
-	biomeNoise.fractal_type = FastNoiseLite.FRACTAL_NONE
-	biomeNoise.noise_type = FastNoiseLite.TYPE_CELLULAR
-	biomeNoise.cellular_return_type = FastNoiseLite.RETURN_CELL_VALUE
-	biomeNoise.domain_warp_enabled = true
-	biomeNoise.domain_warp_frequency = 0.018
-	biomeNoise.domain_warp_fractal_lacunarity = 2.0
-	biomeNoise.frequency = 0.001
+	seeed = new_seed
+	biome_noise.seed = seeed
+	biome_noise.fractal_type = FastNoiseLite.FRACTAL_NONE
+	biome_noise.noise_type = FastNoiseLite.TYPE_CELLULAR
+	biome_noise.cellular_return_type = FastNoiseLite.RETURN_CELL_VALUE
+	biome_noise.domain_warp_enabled = true
+	biome_noise.domain_warp_frequency = 0.018
+	biome_noise.domain_warp_fractal_lacunarity = 2.0
+	biome_noise.frequency = 0.001
 	
-	riverNoise.seed = seeed
-	riverNoise.fractal_type = FastNoiseLite.FRACTAL_NONE
-	riverNoise.noise_type = FastNoiseLite.TYPE_CELLULAR
-	riverNoise.cellular_return_type = FastNoiseLite.RETURN_DISTANCE2_SUB
-	riverNoise.domain_warp_enabled = true
-	riverNoise.domain_warp_frequency = 0.018
-	riverNoise.domain_warp_fractal_lacunarity = 2.0
-	riverNoise.frequency = 0.001
+	river_noise.seed = seeed
+	river_noise.fractal_type = FastNoiseLite.FRACTAL_NONE
+	river_noise.noise_type = FastNoiseLite.TYPE_CELLULAR
+	river_noise.cellular_return_type = FastNoiseLite.RETURN_DISTANCE2_SUB
+	river_noise.domain_warp_enabled = true
+	river_noise.domain_warp_frequency = 0.018
+	river_noise.domain_warp_fractal_lacunarity = 2.0
+	river_noise.frequency = 0.001
 
 
-func setupIDS() -> void:
-	riverwater = BlockManager.blockIDlist["clonecraft:glass"]
+func setup_ids() -> void:
+	riverwater = BlockManager.block_id_list["clonecraft:glass"]
 
 
 func _generate_block(out_buffer: VoxelBuffer, origin_in_voxels: Vector3i, lod: int) -> void:
@@ -47,14 +47,14 @@ func _generate_block(out_buffer: VoxelBuffer, origin_in_voxels: Vector3i, lod: i
 				var rz := z + origin_in_voxels.z
 				var nv := 0
 				var h := 2
-				var r := riverNoise.get_noise_2d(rx, rz)
+				var r := river_noise.get_noise_2d(rx, rz)
 				h = remap(
 					clampf(r, -1, -0.985),
 					-1, -0.985,
 					-8, h
 				)
 				if ry <= h:
-					var i = remap(biomeNoise.get_noise_2d(rx, rz), -1, 1, 0, 27)
+					var i = remap(biome_noise.get_noise_2d(rx, rz), -1, 1, 0, 27)
 					var v = roundi(i) + 2
 					assert(v >= 2)
 					nv = v

@@ -93,7 +93,7 @@ class Item extends RefCounted:
 
 
 	var isTool := false
-	var toolClass:StringName
+	var tool_class:StringName
 	var toolPower:float
 	var toolBaseDurability:float
 
@@ -118,7 +118,7 @@ class Item extends RefCounted:
 	## Marks the item as a tool of the given type toolclass, for example: "tools:pickaxe"
 	func setToolClass(toolclass:StringName, power:float = 1, durability:float = -1) -> Item:
 		isTool = true
-		toolClass = toolclass
+		tool_class = toolclass
 		toolPower = power
 		toolBaseDurability = durability
 		return self
@@ -134,13 +134,13 @@ class Item extends RefCounted:
 ## Sets up the buffer and block library for generating item models.
 static func getReady() -> void:
 	_buf.create(3, 3, 3)
-	_mesh.library = BlockManager.blockLibrary
+	_mesh.library = BlockManager.block_library
 
 
 ## Generates an item model for the given block.
 static func simpleBlockItemModel(bi:BlockManager.BlockInfo) -> Mesh:
-	_buf.set_voxel(BlockManager.blockIDlist[bi.fullID], 1, 1, 1)
-	#_buf.fill(BlockManager.blockIDlist[bi.fullID])
+	_buf.set_voxel(BlockManager.block_id_list[bi.full_id], 1, 1, 1)
+	#_buf.fill(BlockManager.block_id_list[bi.full_id])
 	var m:Mesh = _mesh.build_mesh(_buf, _mesh.library.get_materials())
 	return m
 
@@ -148,22 +148,22 @@ static func simpleBlockItemModel(bi:BlockManager.BlockInfo) -> Mesh:
 ## The easiest way to make an item for a block.[br]
 ## Gets called automatically if you haven't given your block an item on your own.
 static func simpleBlockItem(bi:BlockManager.BlockInfo) -> Item:
-	if items.has(bi.fullID):
-		return items[bi.fullID]
+	if items.has(bi.full_id):
+		return items[bi.full_id]
 	var m := simpleBlockItemModel(bi)
 	if m == null:
 		m = ArrayMesh.new()
 	var im := ItemModel.make3D(m)
-	var nitem := registerItem(bi.fullID, bi.nameReadable, im)
-	nitem.setVoxel(bi.fullID)
+	var nitem := registerItem(bi.full_id, bi.name_readable, im)
+	nitem.setVoxel(bi.full_id)
 	return nitem
 
 
-static func registerItem(id:StringName, nameReadable:StringName, model:ItemModel) -> Item:
+static func registerItem(id:StringName, name_readable:StringName, model:ItemModel) -> Item:
 	if items.has(id):
 		return items[id]
 	var nitem := Item.new(model)
-	nitem.name = nameReadable
+	nitem.name = name_readable
 	items[id] = nitem
 	return nitem
 

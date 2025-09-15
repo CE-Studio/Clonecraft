@@ -11,7 +11,7 @@ var inv:Inventory
 func _ready() -> void:
 	setup.call_deferred()
 	redraw.call_deferred()
-	inv.contentChanged.connect(redraw)
+	inv.content_changed.connect(redraw)
 
 
 func setup() -> void:

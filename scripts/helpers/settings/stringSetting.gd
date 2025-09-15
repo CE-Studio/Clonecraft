@@ -17,17 +17,17 @@ func init(i:Dictionary) -> void:
 	current = ProjectSettings.get_setting_with_override(path)
 	$lineEdit.text = current
 	$lineEdit.placeholder_text = default
-	$lineEdit.connect("text_submitted", changeVal)
+	$lineEdit.connect("text_submitted", change_val)
 	$lineEdit.connect("focus_exited", foc)
 	$Button.connect("pressed", reset)
 	$Button.disabled = (current == default)
 	
 	
 func foc():
-	changeVal($lineEdit.text)
+	change_val($lineEdit.text)
 
 
-func changeVal(newval:String) -> void:
+func change_val(newval:String) -> void:
 	current = newval
 	$lineEdit.text = newval
 	$Button.disabled = (current == default)
@@ -35,4 +35,4 @@ func changeVal(newval:String) -> void:
 
 
 func reset() -> void:
-	changeVal(default)
+	change_val(default)

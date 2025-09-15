@@ -10,7 +10,7 @@ var guii:PackedScene = preload("res://gui/GuiItem.tscn")
 func _ready() -> void:
 	setup.call_deferred()
 	redraw.call_deferred()
-	WorldControl.instance._p.inventory.contentChanged.connect(redraw)
+	WorldControl.instance._p.inventory.content_changed.connect(redraw)
 
 
 func setup() -> void:

@@ -42,5 +42,5 @@ func execute(args:Array) -> Variant:
 		return false
 
 	var p := WorldControl.getPlayer(WorldControl.localUsername)
-	p.hotbarItems[c] = p.inventory.getItemFromID(StringName(args[1]))
+	p.hotbarItems[c] = p.inventory.get_item_from_id(StringName(args[1]))
 	return true

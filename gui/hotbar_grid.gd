@@ -7,7 +7,7 @@ var guib:PackedScene = preload("res://gui/GuiItemBlank.tscn")
 
 func _ready() -> void:
 	redraw()
-	WorldControl.instance._p.inventory.contentChanged.connect(redraw)
+	WorldControl.instance._p.inventory.content_changed.connect(redraw)
 
 
 func slotClick(id:int) -> void:
@@ -15,7 +15,7 @@ func slotClick(id:int) -> void:
 		if InventoryLayer.heldSourceInventory != WorldControl.instance._p.inventory:
 			if not InventoryLayer.dropInto(WorldControl.instance._p.inventory):
 				return
-		WorldControl.instance._p.hotbarItems[id] = WorldControl.instance._p.inventory.getItemFromStack(InventoryLayer.heldItem)
+		WorldControl.instance._p.hotbarItems[id] = WorldControl.instance._p.inventory.get_item_from_stack(InventoryLayer.heldItem)
 		InventoryLayer.holding = false
 	else:
 		WorldControl.instance._p.hotbarItems[id] = null
