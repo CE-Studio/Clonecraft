@@ -19,7 +19,7 @@ func updatePlace() -> void:
 	if _oldplace != placing:
 		_oldplace = placing
 		_highlight.visible = placing
-		if !placing and (player.lookingAt != null):
+		if !placing:
 			var maxc:int = 1024
 			var inf:bool = player.abilities["endlessInventory"]
 			if !inf:
@@ -27,10 +27,16 @@ func updatePlace() -> void:
 			var istack:ItemManager.ItemStack = player.getSelectedItem()
 			var item:ItemManager.Item = istack.getItem()
 			var at:Vector3i
-			if Input.is_action_pressed("game_sneak"):
-				at = player.lookingAt.position
+			if player.lookingAt != null:
+				if Input.is_action_pressed("game_sneak"):
+					at = player.lookingAt.position
+				else:
+					at = player.lookingAt.previous_position
 			else:
-				at = player.lookingAt.previous_position
+				if Input.is_action_pressed("game_sneak"):
+					return
+				else:
+					at = player.get_reach_point().floor()
 			var placed:int = 0
 			for x in Statics.iRange(_placestart.x, at.x):
 				if placed >= maxc:
@@ -58,14 +64,17 @@ func consumeHeld(count:int) -> bool:
 
 func _process(_delta:float) -> void:
 	if !WorldControl.isPaused():
-		if placing and (player.lookingAt != null):
+		if placing:
 			if _breakprogress > 0:
 				_breakprogress = 0
 			var targpos:Vector3i
-			if Input.is_action_pressed("game_sneak"):
-				targpos = player.lookingAt.position
+			if  player.lookingAt != null:
+				if Input.is_action_pressed("game_sneak"):
+					targpos = player.lookingAt.position
+				else:
+					targpos = player.lookingAt.previous_position
 			else:
-				targpos = player.lookingAt.previous_position
+				targpos = player.get_reach_point().floor()
 			_highlight.position = ((_placestart + targpos) / 2.0) + Vector3(0.5, 0.5, 0.5)
 			_highlight.scale = Vector3((_placestart - targpos).abs()) + Vector3(1.05, 1.05, 1.05)
 		elif breaking and (player.lookingAt != null):

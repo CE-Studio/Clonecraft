@@ -413,3 +413,7 @@ func createStars(seed:int = 0, density:int = 300, star:PackedScene = preload("re
 		c.material_override = starmat
 		var sc = rng.randf_range(8, 11.274)
 		c.scale = Vector3(sc, sc, sc)
+
+
+func get_reach_point() -> Vector3:
+	return cam.to_global(Vector3(0, 0, -get_scaled("reach")))
