@@ -1,5 +1,5 @@
+@abstract class_name Entity
 extends CharacterBody3D
-class_name Entity
 
 
 var TERMINAL_VELOCITY:float = ProjectSettings.get_setting("gameplay/physics/terminal_velocity")
@@ -111,8 +111,7 @@ func _settings_changed() -> void:
 	GRAVITY = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
-func _movement_process(_delta:float) -> void:
-	pass
+@abstract func _movement_process(_delta:float) -> void
 
 
 func get_scaled(ability:String) -> float:
@@ -137,12 +136,10 @@ func heal(amount:float) -> bool:
 	return abilities.health == mh
 
 
-func die() -> void:
-	pass
+@abstract func die() -> void
 
 
-func animate_damage(amount:float) -> void:
-	pass
+@abstract func animate_damage(amount:float) -> void
 
 
 func _physics_process(delta:float) -> void:

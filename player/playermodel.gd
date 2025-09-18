@@ -1,5 +1,5 @@
+@abstract class_name EntityModel
 extends Node3D
-class_name EntityModel
 
 
 ## How fast the player is currently moving
@@ -17,13 +17,11 @@ var bodyRotation:float
 
 
 ## Called every frame to update the animations
-func animate(_delta:float) -> void:
-	pass
+@abstract func animate(_delta:float) -> void
 
 
 ## Called to animate one-time actions, like placing or damage.
-func animateAction(action:StringName) -> void:
-	pass
+@abstract func animateAction(action:StringName) -> void
 
 
 ## Returns the first-person arm model. The default implementation should work for most cases.

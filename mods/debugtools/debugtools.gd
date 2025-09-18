@@ -39,7 +39,7 @@ func input(event) -> void:
 				ItemManager.spawnWorldItem(ItemManager.ItemStack.new(man.block_list[bid].full_id, 1), player.position)
 
 
-func registerPhase() -> void:
+func register_phase() -> void:
 	man.log("debugtools", "This world is in debug mode! A lot of default features are overridden!")
 	tlabel = Label.new()
 	tlabel.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)

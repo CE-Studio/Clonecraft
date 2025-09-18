@@ -52,7 +52,10 @@ func restore(inp:Dictionary, emit := true) -> bool:
 			"meta",
 		]):
 			return false
-		var istack = ItemManager.ItemStack.new(i.item, i.count, i.meta)
+		var meta:Dictionary[String, Variant] = {}
+		for h in i.meta:
+			meta[str(h)] = i.meta[h]
+		var istack = ItemManager.ItemStack.new(i.item, i.count, meta)
 		if !add_item(istack, emit):
 			return false
 	return true

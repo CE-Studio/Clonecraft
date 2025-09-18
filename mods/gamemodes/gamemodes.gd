@@ -160,6 +160,6 @@ func shouldShowCreativeInv() -> bool:
 	return player.abilities["endlessInventory"]
 
 
-func registerPhase():
+func register_phase():
 	CMDprocessor.registerCommand(GamemodeCMD.new(self))
 	InventoryTabs.registerContextualTab(preload("res://mods/gamemodes/creativeInv.tscn"), shouldShowCreativeInv)

@@ -417,3 +417,15 @@ func createStars(seed:int = 0, density:int = 300, star:PackedScene = preload("re
 
 func get_reach_point() -> Vector3:
 	return cam.to_global(Vector3(0, 0, -get_scaled("reach")))
+
+
+func _movement_process(_delta:float) -> void:
+	pass
+
+
+func die() -> void:
+	pass
+
+
+func animate_damage(amount:float) -> void:
+	pass

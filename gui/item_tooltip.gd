@@ -33,7 +33,6 @@ func _ready() -> void:
 	$ItemTooltip/id.text = item.itemID
 	
 	
-	#if true:
 	if item.getItem().ponderScene != &"":
 		var filler:String = ""
 		for i in InputMap.action_get_events("game_ponder"):
@@ -46,6 +45,15 @@ func _ready() -> void:
 	
 	
 	$ItemTooltip/modname.text = item.itemID.split(":")[0].capitalize()
+	
+	if ProjectSettings.get_setting("gameplay/debug/show_item_metadata"):
+		var s := "{"
+		for i in item.metadata:
+			s += "\n  " + i + " : " + str(item.metadata[i] + ",")
+		s += "\n}"
+		$ItemTooltip/meta.text = s
+	else:
+		$ItemTooltip/meta.hide()
 
 
 func _process(delta: float) -> void:

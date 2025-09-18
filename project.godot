@@ -16,7 +16,7 @@ config/name_localized={
 }
 run/main_scene="res://init.tscn"
 config/project_settings_override="user://settings.godot"
-config/features=PackedStringArray("4.4", "Double Precision")
+config/features=PackedStringArray("4.5", "Double Precision")
 config/icon="res://icon.png"
 
 [editor]
@@ -48,6 +48,7 @@ mods/api_url="https://ce-studio.github.io/api/v1/clonecraft/modstore.json"
 video/render_distance=12
 ui/show_item_count=true
 ui/show_track_names=true
+debug/show_item_metadata=false
 
 [gui]
 

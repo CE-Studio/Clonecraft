@@ -40,3 +40,7 @@ func animate(delta:float) -> void:
 	tail2.rotation.z += sin(time * 1.024987) / 20
 	tail3.rotation.z += sin((time * 1.024987) - 0.5) / 20
 	tail4.rotation.z += sin((time * 1.024987) - 1) / 20
+
+
+func animateAction(action:StringName) -> void:
+	pass

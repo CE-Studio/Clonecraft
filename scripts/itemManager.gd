@@ -17,9 +17,9 @@ class ItemStack extends RefCounted:
 	## The number of items in the stack.
 	var count:int
 	## Generic data storage. Can contain anything.
-	var metadata:Dictionary
+	var metadata:Dictionary[String, Variant]
 	## a
-	func _init(iid:StringName, icount:int, imetadata:Dictionary = {}):
+	func _init(iid:StringName, icount:int, imetadata:Dictionary[String, Variant] = {}):
 		itemID = iid
 		count = icount
 		metadata = imetadata

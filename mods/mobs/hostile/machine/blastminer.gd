@@ -13,3 +13,15 @@ func _process(delta: float) -> void:
 
 func _movement_process(delta:float) -> void:
 	pass
+
+
+func damage(amount:float) -> void:
+	pass
+
+
+func die() -> void:
+	pass
+
+
+func animate_damage(amount:float) -> void:
+	pass

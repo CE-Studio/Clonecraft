@@ -422,8 +422,8 @@ static func setup() -> void:
 				"] [BlockManager] One of your mods has no mod ID! It can still load," +
 				"but this is bad practice. Register phase starting..."
 			)
-			if i.has_method("registerPhase"):
-				i.registerPhase()
+			if i.has_method("register_phase"):
+				i.register_phase()
 			print(
 				"[" + Time.get_datetime_string_from_system() +
 				"] [BlockManager] Register phase done!"
@@ -433,8 +433,8 @@ static func setup() -> void:
 				"[" + Time.get_datetime_string_from_system() +
 				"] [BlockManager] Beginning register phase for mod '" + i.MODID + "'..."
 			)
-			if i.has_method("registerPhase"):
-				i.registerPhase()
+			if i.has_method("register_phase"):
+				i.register_phase()
 			print(
 				"[" + Time.get_datetime_string_from_system() +
 				"] [BlockManager] Register phase for '" + i.MODID + "' done!"

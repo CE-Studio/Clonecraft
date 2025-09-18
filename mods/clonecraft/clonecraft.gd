@@ -195,16 +195,16 @@ func _makeItems() -> void:
 	_mitem("tntStick", "tnt_stick", Vector2i(7, 0))
 	_mitem("diamond", "diamond", Vector2i(8, 0))
 	_mitem("stonePickaxe", "stone_pickaxe", Vector2i(1, 1))
-	_mitem("copperPickaxe", "copper_pickaxe", Vector2i(2, 1))
-	_mitem("ironPickaxe", "iron_pickaxe", Vector2i(3, 1))
+	_mitem("ironPickaxe", "iron_pickaxe", Vector2i(2, 1))
+	_mitem("copperPickaxe", "copper_pickaxe", Vector2i(3, 1))
 	_mitem("diamondPickaxe", "diamond_pickaxe", Vector2i(8, 1))
 	_mitem("stoneAxe", "stone_axe", Vector2i(1, 2))
-	_mitem("copperAxe", "copper_axe", Vector2i(2, 2))
-	_mitem("ironAxe", "iron_axe", Vector2i(3, 2))
+	_mitem("ironAxe", "iron_axe", Vector2i(2, 2))
+	_mitem("copperAxe", "copper_axe", Vector2i(3, 2))
 	_mitem("diamondAxe", "diamond_axe", Vector2i(8, 2))
 	_mitem("stoneSword", "stone_sword", Vector2i(1, 3))
-	_mitem("copperSword", "copper_sword", Vector2i(2, 3))
-	_mitem("ironSword", "iron_sword", Vector2i(3, 3))
+	_mitem("ironSword", "iron_sword", Vector2i(2, 3))
+	_mitem("copperSword", "copper_sword", Vector2i(3, 3))
 	_mitem("diamondSword", "diamond_sword", Vector2i(8, 3))
 	var logitem := ItemManager.registerItem(
 		&"clonecraft:logOak",
@@ -264,7 +264,7 @@ func blockFall(pos:Vector3) -> void:
 		WorldControl.instance.spawnFallingBlock(pos)
 
 
-func registerPhase() -> void:
+func register_phase() -> void:
 	Translator.loadFromJson("res://mods/clonecraft/lang/en_us.json")
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/give.gd").new())
 	CMDprocessor.registerCommand(load("res://mods/clonecraft/cmd/editbar.gd").new())

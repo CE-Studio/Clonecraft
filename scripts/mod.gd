@@ -1,11 +1,11 @@
-class_name Mod
+@abstract class_name Mod
 extends RefCounted
 
 ## The base class for all mods.
 ##
 ## The base class that all gameplay mods should inherit from. It is loaded by [BlockManager] during world initialization.[br]
 ## [br]
-## Mods require a [code]registerPhase()[/code] function to load.
+## Mods require a [code]register_phase()[/code] function to load.
 
 ## A shorthand reference to BlockManager.
 static var man := BlockManager
@@ -30,3 +30,6 @@ static func refman() -> void:
 ## Use when you need a reference to a callable but don't want it to do anything.
 func noScript(_pos, _meta) -> void:
 	pass
+
+
+@abstract func register_phase() -> void

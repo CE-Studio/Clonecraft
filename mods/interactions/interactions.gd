@@ -204,7 +204,7 @@ func _ununhandled_input(event:InputEvent) -> void:
 				player.get_viewport().set_input_as_handled()
 
 
-func registerPhase() -> void:
+func register_phase() -> void:
 	man.add_update(_process)
 	man.register_unhandled_input(_ununhandled_input)
 	_highlight = load("res://mods/interactions/highlight.tscn").instantiate()

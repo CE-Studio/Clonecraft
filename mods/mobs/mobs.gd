@@ -26,7 +26,7 @@ func useSpawnItem(event:InputEvent, id:StringName) -> bool:
 
 
 # Mod initialization code goes here
-func registerPhase() -> void:
+func register_phase() -> void:
 	ItemManager.registerItem(
 		"mobs:cog",
 		"mobs.item.cog",

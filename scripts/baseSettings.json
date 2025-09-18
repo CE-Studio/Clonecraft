@@ -120,6 +120,12 @@
 						"type": "bool",
 						"default": false,
 						"path": "gameplay/debug/log_to_chat"
+					},
+					{
+						"name": "options.advanced.debug.show_item_metadata",
+						"type": "bool",
+						"default": false,
+						"path": "gameplay/debug/show_item_metadata"
 					}
 				]
 			},
