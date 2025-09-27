@@ -36,5 +36,5 @@ func generate(rng:RandomNumberGenerator) -> StringName:
 		total += types_and_chances[i]
 		if total >= value:
 			return i
-	return types_and_chances.keys()[rng.randi_range(0, types_and_chances.size())]
+	return types_and_chances.keys()[rng.randi_range(0, types_and_chances.size() - 1)]
 	
