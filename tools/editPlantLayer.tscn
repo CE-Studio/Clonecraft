@@ -14,8 +14,11 @@ force_native = true
 script = ExtResource("1_artka")
 
 [node name="marginContainer" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="vBoxContainer" type="VBoxContainer" parent="marginContainer"]
 layout_mode = 2
