@@ -11,7 +11,7 @@ var soilDepth:int
 var rocks:Array[StringName]
 
 
-var trees:Array[TreeDefinition]
+var trees:Array[BlockyPlant]
 var treeDensities:Array[float]
 
 var tempruature:float

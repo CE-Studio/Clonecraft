@@ -25,10 +25,10 @@ func normalize():
 			types_and_chances[i] = (types_and_chances[i] / total) * 100.0
 
 
-func generate() -> StringName:
+func generate(rng:RandomNumberGenerator) -> StringName:
 	if not_normalized:
 		normalize()
-	var value := randf_range(0, 100)
+	var value := rng.randf_range(0, 100)
 	var total := 0.0
 	if types_and_chances.size() == 0:
 		return &"clonecraft:air"
@@ -36,5 +36,5 @@ func generate() -> StringName:
 		total += types_and_chances[i]
 		if total >= value:
 			return i
-	return types_and_chances.keys().pick_random()
+	return types_and_chances.keys()[rng.randi_range(0, types_and_chances.size())]
 	
