@@ -341,5 +341,6 @@ func _on_quit_menu_button_pressed() -> void:
 	EntityManager._reset()
 	SoundManager._reset()
 	ParticleManager._reset()
+	InventoryTabs._reset()
 	tree.paused = false
 	tree.change_scene_to_file("res://titlescreen/title.tscn")

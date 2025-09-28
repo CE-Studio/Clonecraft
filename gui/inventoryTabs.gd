@@ -8,6 +8,13 @@ static var contextualConditions:Array[Callable] = []
 static var tempTabs:Array[Control] = []
 
 
+static func _reset() -> void:
+	tabs = []
+	contextualTabs = []
+	contextualConditions = []
+	tempTabs = []
+
+
 static func registerTab(tab:PackedScene) -> void:
 	tabs.append(tab)
 
