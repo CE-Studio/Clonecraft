@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="BlockyPlant" load_steps=14 format=3 uid="uid://cbphnq60kfi0l"]
+
+[ext_resource type="Script" uid="uid://cbdcvkv3uk2nk" path="res://scripts/generation/blockyPlantLayer.gd" id="1_fi6yb"]
+[ext_resource type="Script" uid="uid://b1p4nvcyvr3vx" path="res://scripts/generation/blockyPlant.gd" id="2_egwsh"]
+[ext_resource type="Script" uid="uid://006gqnyiwj5e" path="res://scripts/generation/blockyPlantBlock.gd" id="2_wgmco"]
+
+[sub_resource type="Resource" id="Resource_sbf11"]
+script = ExtResource("2_wgmco")
+types_and_chances = Dictionary[StringName, float]({
+&"clonecraft:logVertOak": 100.0
+})
+metadata/_custom_type_script = "uid://006gqnyiwj5e"
+
+[sub_resource type="Resource" id="Resource_pgj7p"]
+script = ExtResource("1_fi6yb")
+blocks = Array[ExtResource("2_wgmco")]([SubResource("Resource_sbf11")])
+layerdata = Array[int]([0])
+metadata/_custom_type_script = "uid://cbdcvkv3uk2nk"
+
+[sub_resource type="Resource" id="Resource_egwsh"]
+script = ExtResource("2_wgmco")
+types_and_chances = Dictionary[StringName, float]({
+&"clonecraft:logVertOak": 100.0
+})
+metadata/_custom_type_script = "uid://006gqnyiwj5e"
+
+[sub_resource type="Resource" id="Resource_wgmco"]
+script = ExtResource("2_wgmco")
+types_and_chances = Dictionary[StringName, float]({
+&"clonecraft:leavesOak": 100.0
+})
+metadata/_custom_type_script = "uid://006gqnyiwj5e"
+
+[sub_resource type="Resource" id="Resource_a10ec"]
+script = ExtResource("2_wgmco")
+types_and_chances = Dictionary[StringName, float]({
+&"clonecraft:air": 100.0,
+&"clonecraft:leavesOak": 100.0
+})
+metadata/_custom_type_script = "uid://006gqnyiwj5e"
+
+[sub_resource type="Resource" id="Resource_7rlsh"]
+script = ExtResource("1_fi6yb")
+size = Vector2i(5, 5)
+center = Vector2i(2, 2)
+min_count = 2
+max_count = 2
+blocks = Array[ExtResource("2_wgmco")]([SubResource("Resource_egwsh"), SubResource("Resource_wgmco"), SubResource("Resource_a10ec")])
+layerdata = Array[int]([2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2])
+metadata/_custom_type_script = "uid://cbdcvkv3uk2nk"
+
+[sub_resource type="Resource" id="Resource_2obk4"]
+script = ExtResource("1_fi6yb")
+size = Vector2i(3, 3)
+center = Vector2i(1, 1)
+max_count = 1
+blocks = Array[ExtResource("2_wgmco")]([SubResource("Resource_egwsh"), SubResource("Resource_wgmco"), SubResource("Resource_a10ec")])
+layerdata = Array[int]([2, 1, 2, 1, 0, 1, 2, 1, 2])
+metadata/_custom_type_script = "uid://cbdcvkv3uk2nk"
+
+[sub_resource type="Resource" id="Resource_epnew"]
+script = ExtResource("2_wgmco")
+metadata/_custom_type_script = "uid://006gqnyiwj5e"
+
+[sub_resource type="Resource" id="Resource_xuavt"]
+script = ExtResource("2_wgmco")
+types_and_chances = Dictionary[StringName, float]({
+&"clonecraft:leavesOak": 100.0
+})
+metadata/_custom_type_script = "uid://006gqnyiwj5e"
+
+[sub_resource type="Resource" id="Resource_a5utm"]
+script = ExtResource("1_fi6yb")
+size = Vector2i(3, 3)
+center = Vector2i(1, 1)
+max_count = 2
+blocks = Array[ExtResource("2_wgmco")]([SubResource("Resource_epnew"), SubResource("Resource_xuavt")])
+layerdata = Array[int]([0, 1, 0, 1, 1, 1, 0, 1, 0])
+metadata/_custom_type_script = "uid://cbdcvkv3uk2nk"
+
+[resource]
+script = ExtResource("2_egwsh")
+layers = Array[ExtResource("1_fi6yb")]([SubResource("Resource_pgj7p"), SubResource("Resource_7rlsh"), SubResource("Resource_2obk4"), SubResource("Resource_a5utm")])
+metadata/_custom_type_script = "uid://b1p4nvcyvr3vx"
