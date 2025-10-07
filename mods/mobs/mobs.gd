@@ -27,6 +27,7 @@ func useSpawnItem(event:InputEvent, id:StringName) -> bool:
 
 # Mod initialization code goes here
 func register_phase() -> void:
+	Translator.loadFromJson("res://mods/mobs/lang/en_us.json")
 	ItemManager.registerItem(
 		"mobs:cog",
 		"mobs.item.cog",

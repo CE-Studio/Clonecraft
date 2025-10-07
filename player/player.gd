@@ -96,7 +96,9 @@ func _saveHotbar() -> Array:
 func _loadHotbar(a:Array):
 	for i in a.size():
 		if a[i] is Array:
-			var h := ItemManager.ItemStack.new(a[i][0], 1, a[i][1])
+			var j:Dictionary[String, Variant] = {}
+			j.assign(a[i][1])
+			var h := ItemManager.ItemStack.new(a[i][0], 1, j)
 			hotbarItems[i] = inventory.get_item_from_stack(h, Inventory.ANY, true, true)
 
 

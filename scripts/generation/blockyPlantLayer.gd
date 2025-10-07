@@ -27,6 +27,10 @@ func generate(rng:RandomNumberGenerator) -> Dictionary[StringName, Variant]:
 	var dict:Dictionary[StringName, Variant] = {
 		&"size": Vector2i(size),
 		&"center": Vector2i(center),
+		&"drift": Vector2i(
+			rng.randi_range(-drift_range.x, drift_range.x),
+			rng.randi_range(-drift_range.y, drift_range.y),
+		),
 		&"data": [],
 	}
 	for i in layerdata:

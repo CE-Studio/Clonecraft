@@ -1,0 +1,10 @@
+{
+	"mobs": {
+		"spawn_item": {
+			"blast_miner": "Spawn Blast Miner"
+		},
+		"item": {
+			"cog": "Cog"
+		}
+	}
+}
