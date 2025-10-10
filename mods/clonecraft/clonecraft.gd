@@ -175,13 +175,17 @@ func _makeOL() -> void:
 	man.end_block_register(bi3)
 
 
-func _mitem(name:String, key:String, uv:Vector2i) -> ItemManager.Item:
-	return ItemManager.registerItem("clonecraft:" + name, "clonecraft.item." + key, ItemManager.ItemModel.make2D(
+func _mitem(name:String, key:String, uv:Vector2i, needs_uid := false) -> ItemManager.Item:
+	var nitem := ItemManager.registerItem("clonecraft:" + name, "clonecraft.item." + key, ItemManager.ItemModel.make2D(
 		_it,
 		_is,
 		uv
 	))
-	
+	if needs_uid:
+		nitem.static_meta = {
+			"udi": generate_item_uid
+		}
+	return nitem
 
 
 func _makeItems() -> void:
@@ -194,18 +198,18 @@ func _makeItems() -> void:
 	_mitem("brickItem", "brick", Vector2i(6, 0))
 	_mitem("tntStick", "tnt_stick", Vector2i(7, 0))
 	_mitem("diamond", "diamond", Vector2i(8, 0))
-	_mitem("stonePickaxe", "stone_pickaxe", Vector2i(1, 1))
-	_mitem("ironPickaxe", "iron_pickaxe", Vector2i(2, 1))
-	_mitem("copperPickaxe", "copper_pickaxe", Vector2i(3, 1))
-	_mitem("diamondPickaxe", "diamond_pickaxe", Vector2i(8, 1))
-	_mitem("stoneAxe", "stone_axe", Vector2i(1, 2))
-	_mitem("ironAxe", "iron_axe", Vector2i(2, 2))
-	_mitem("copperAxe", "copper_axe", Vector2i(3, 2))
-	_mitem("diamondAxe", "diamond_axe", Vector2i(8, 2))
-	_mitem("stoneSword", "stone_sword", Vector2i(1, 3))
-	_mitem("ironSword", "iron_sword", Vector2i(2, 3))
-	_mitem("copperSword", "copper_sword", Vector2i(3, 3))
-	_mitem("diamondSword", "diamond_sword", Vector2i(8, 3))
+	_mitem("stonePickaxe", "stone_pickaxe", Vector2i(1, 1), true)
+	_mitem("ironPickaxe", "iron_pickaxe", Vector2i(2, 1), true)
+	_mitem("copperPickaxe", "copper_pickaxe", Vector2i(3, 1), true)
+	_mitem("diamondPickaxe", "diamond_pickaxe", Vector2i(8, 1), true)
+	_mitem("stoneAxe", "stone_axe", Vector2i(1, 2), true)
+	_mitem("ironAxe", "iron_axe", Vector2i(2, 2), true)
+	_mitem("copperAxe", "copper_axe", Vector2i(3, 2), true)
+	_mitem("diamondAxe", "diamond_axe", Vector2i(8, 2), true)
+	_mitem("stoneSword", "stone_sword", Vector2i(1, 3), true)
+	_mitem("ironSword", "iron_sword", Vector2i(2, 3), true)
+	_mitem("copperSword", "copper_sword", Vector2i(3, 3), true)
+	_mitem("diamondSword", "diamond_sword", Vector2i(8, 3), true)
 	var logitem := ItemManager.registerItem(
 		&"clonecraft:logOak",
 		&"clonecraft.item.log_oak",

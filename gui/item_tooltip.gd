@@ -30,7 +30,7 @@ func _ready() -> void:
 		$ItemTooltip/damage.text = str(item.metadata[&"damage"]) + "/" + str(item.metadata[&"damageMax"]) + " &&damage&&"
 	
 	
-	$ItemTooltip/id.text = item.itemID
+	$ItemTooltip/id.text = item.item_ID
 	
 	
 	if item.getItem().ponderScene != &"":
@@ -44,12 +44,12 @@ func _ready() -> void:
 		ponder.show()
 	
 	
-	$ItemTooltip/modname.text = item.itemID.split(":")[0].capitalize()
+	$ItemTooltip/modname.text = item.item_ID.split(":")[0].capitalize()
 	
 	if ProjectSettings.get_setting("gameplay/debug/show_item_metadata"):
 		var s := "{"
 		for i in item.metadata:
-			s += "\n  " + i + " : " + str(item.metadata[i] + ",")
+			s += "\n  " + i + " : " + str(item.metadata[i]) + ","
 		s += "\n}"
 		$ItemTooltip/meta.text = s
 	else:

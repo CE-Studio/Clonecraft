@@ -30,7 +30,7 @@ func save() -> Dictionary:
 	var compcont = []
 	for i:ItemManager.ItemStack in container:
 		compcont.append({
-			"item": i.itemID,
+			"item": i.item_ID,
 			"count": i.count,
 			"meta": i.metadata,
 		})
@@ -125,7 +125,7 @@ func extract_item(item:ItemManager.ItemStack) -> bool:
 
 func get_item_from_id(sitem:StringName) -> ItemManager.ItemStack:
 	for i in container:
-		if i.itemID == sitem:
+		if i.item_ID == sitem:
 			return i
 	return null
 

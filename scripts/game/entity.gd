@@ -151,3 +151,12 @@ func _physics_process(delta:float) -> void:
 	_movement_process(delta)
 
 	move_and_slide()
+
+
+func interact(event:InputEvent) -> bool:
+	if event.is_action_pressed("game_break"):
+		damage(1)
+		return true
+	if event.is_action("game_place") or event.is_action("game_break"):
+		return true
+	return false

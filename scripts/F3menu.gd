@@ -1,12 +1,13 @@
 extends Label
 
 const LABEL1_TEXT := (
-	"Clonecraft %s" +
-	"\nFPS: %s" +
-	"\nX/Y/Z: %s, %s, %s" +
-	"\nRotation: %s, %s" +
-	"\nFacing: %s" +
-	"\nLooking at: %s, %s, %s: %s"
+"Clonecraft %s
+FPS: %s
+X/Y/Z: %s, %s, %s
+Rotation: %s, %s
+Facing: %s
+Looking at: %s, %s, %s: %s
+Draw calls: %s"
 )
 const LABEL2_TEXT := (
 	"%s %s"
@@ -40,8 +41,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _process(_delta) -> void:
-	var pl = Vector3i.ZERO
-	var v = "None"
+	if not is_visible_in_tree():
+		return
+	var pl := Vector3i.ZERO
+	var v := "None"
+	var dc := int(Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	if player.lookingAt != null:
 		pl = player.lookingAt.get_position()
 		v = BlockManager.block_list[player.voxelTool.get_voxel(pl)].full_id
@@ -58,6 +62,7 @@ func _process(_delta) -> void:
 		pl[1],
 		pl[2],
 		v,
+		dc,
 	]
 	other.text = LABEL2_TEXT % [
 		gpuinfo[0], gpuinfo[1],

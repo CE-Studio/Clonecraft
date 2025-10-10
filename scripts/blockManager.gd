@@ -577,15 +577,15 @@ static func set_block(
 			var item := ItemManager.ItemStack.new(old_block.full_id, 1)
 			ItemManager.spawnWorldItem(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
 		elif drop:
-			var itemID := old_block.drop_item
-			if itemID != &"null":
+			var item_ID := old_block.drop_item
+			if item_ID != &"null":
 				var item:Array[ItemManager.ItemStack]
-				if itemID == &"*":
+				if item_ID == &"*":
 					item = [ItemManager.ItemStack.new(old_block.full_id, 1)]
-				elif itemID == &"script":
+				elif item_ID == &"script":
 					item = old_block.drop_script.call()
 				else:
-					item = [ItemManager.ItemStack.new(itemID, 1)]
+					item = [ItemManager.ItemStack.new(item_ID, 1)]
 				for i in item:
 					ItemManager.spawnWorldItem(i, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
 

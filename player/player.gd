@@ -89,7 +89,7 @@ func _saveHotbar() -> Array:
 		if i == null:
 			h.append(null)
 		else:
-			h.append([i.itemID, i.metadata])
+			h.append([i.item_ID, i.metadata])
 	return h
 
 

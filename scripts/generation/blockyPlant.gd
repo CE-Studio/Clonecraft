@@ -15,9 +15,25 @@ func generate(seed:int) -> VoxelBuffer:
 	var size := Vector2i.ZERO
 	for i in outp:
 		size = size.max(Vector2i(
-			i[&"size"].x + absi(i[&"drift"].x),
-			i[&"size"].y + absi(i[&"drift"].y),
+			i[&"size"].x + (absi(i[&"drift"].x) * 2),
+			i[&"size"].y + (absi(i[&"drift"].y) * 2),
 		))
 	var buf := VoxelBuffer.new()
+	var center := Vector2i(
+		ceili(size.x / 2.0),
+		ceili(size.y / 2.0),
+	)
+	for y in outp.size():
+		var layer := outp[y]
+		var layerpos := Vector2i(
+			
+		)
+		for x in size.x:
+			for z in size.y:
+				var pos := Vector3i(
+					x - center.x,
+					y,
+					z - center.y
+				)
 	buf.create(size.x, outp.size(), size.y)
 	return buf

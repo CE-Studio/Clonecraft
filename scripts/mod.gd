@@ -32,4 +32,8 @@ func noScript(_pos, _meta) -> void:
 	pass
 
 
+func generate_item_uid(_item:ItemManager.ItemStack) -> int:
+	return Statics.generate_uid()
+
+
 @abstract func register_phase() -> void

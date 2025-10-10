@@ -40,7 +40,7 @@ func assign(iitem:ItemManager.ItemStack) -> void:
 	if n != "":
 		$button.tooltip_text = Translator.translate(n)
 	else:
-		$button.tooltip_text = item.itemID
+		$button.tooltip_text = item.item_ID
 
 
 func _on_button_pressed() -> void:

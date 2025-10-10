@@ -50,7 +50,7 @@ func updatePlace() -> void:
 						if BlockManager.set_block(Vector3i(x, y, z), item.voxel):
 							placed += 1
 			if !inf:
-				player.inventory.extract_item(ItemManager.ItemStack.new(istack.itemID, placed, istack.metadata))
+				player.inventory.extract_item(ItemManager.ItemStack.new(istack.item_ID, placed, istack.metadata))
 
 
 func consumeHeld(count:int) -> bool:
@@ -113,11 +113,15 @@ func _ununhandled_input(event:InputEvent) -> void:
 				if event.is_action_pressed("game_break"):
 					player._on_enter_item_range(c)
 					player.get_viewport().set_input_as_handled()
-					return
+				return
 			if c is TileEntity:
 				if c.interact(event):
 					player.get_viewport().set_input_as_handled()
-					return
+				return
+			if c is Entity:
+				if c.interact(event):
+					player.get_viewport().set_input_as_handled()
+				return
 		if event.is_action_pressed("game_place"):
 			var i := player.getSelectedItem()
 			if is_instance_valid(i):

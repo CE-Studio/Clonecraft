@@ -13,20 +13,24 @@ static var _mesh := VoxelMesherBlocky.new()
 ## A wrapper for items. 99% of the time you want to use this instead of an item object.
 class ItemStack extends RefCounted:
 	## The ID of the contained item(s) (mod:name)
-	var itemID:StringName
+	var item_ID:StringName
 	## The number of items in the stack.
 	var count:int
 	## Generic data storage. Can contain anything.
 	var metadata:Dictionary[String, Variant]
 	## a
 	func _init(iid:StringName, icount:int, imetadata:Dictionary[String, Variant] = {}):
-		itemID = iid
+		item_ID = iid
 		count = icount
-		metadata = imetadata
+		metadata.assign(getItem().static_meta.duplicate_deep(Resource.DeepDuplicateMode.DEEP_DUPLICATE_ALL))
+		for i in metadata:
+			if metadata[i] is Callable:
+				metadata[i] = metadata[i].call(self)
+		metadata.merge(imetadata, true)
 	
 	## Create a copy of this ItemStack
 	func copy() -> ItemStack:
-		return ItemStack.new(itemID, count, metadata)
+		return ItemStack.new(item_ID, count, metadata)
 	
 	## Return the model of the contained item.
 	func getModel() -> ItemModel:
@@ -34,14 +38,14 @@ class ItemStack extends RefCounted:
 		
 	## Return the contained item.
 	func getItem() -> Item:
-		if ItemManager.items.has(itemID):
-			return ItemManager.items[itemID]
+		if ItemManager.items.has(item_ID):
+			return ItemManager.items[item_ID]
 		else:
 			return ItemManager.simpleItem()
 		
 	## Checks if two ItemStacks are identical, ignoring count.
 	func compare(compTo: ItemStack, ignoreDamage := false, ignoreEnergy := false) -> bool:
-		if itemID != compTo.itemID:
+		if item_ID != compTo.item_ID:
 			return false
 		if compTo.metadata.has_all(metadata.keys()) && metadata.has_all(compTo.metadata.keys()):
 			for i in metadata.keys():
@@ -101,6 +105,7 @@ class Item extends RefCounted:
 	var isVoxel := false
 	var voxel:StringName
 	var ponderScene:StringName
+	var static_meta:Dictionary = {}
 
 
 	func _init(itemModel:ItemModel):

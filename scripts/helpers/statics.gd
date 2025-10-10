@@ -28,6 +28,10 @@ static func toNumber(inp:Variant, fallback:Variant = null) -> Variant:
 	return fallback
 
 
+static func generate_uid() -> int:
+	return hash(Time.get_unix_time_from_system())
+
+
 ## A reimplementaion of [method @GDScript.range] to be [b]inclusive[/b] of the second parameter.
 static func iRange(start:int, stop:int) -> Array:
 	var dir
