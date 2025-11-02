@@ -372,8 +372,12 @@ func _physics_process(delta) -> void:
 		)
 	else:
 		lookingAt = null
-
-	if lookingAt != null:
+	
+	if raycast.is_colliding() and (raycast.get_collider() is TileEntity):
+		var te:TileEntity = raycast.get_collider()
+		blockOutline.show()
+		blockOutline.position = te.global_position + Vector3(0.5, 0.5, 0.5)
+	elif lookingAt != null:
 		blockOutline.show()
 		blockOutline.position = Vector3(lookingAt.position) + Vector3(0.5, 0.5, 0.5)
 	else:

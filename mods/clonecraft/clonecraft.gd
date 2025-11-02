@@ -7,7 +7,7 @@ var canGrass = []
 var _it:Texture2D = load("res://mods/clonecraft/items.png")
 const _is:Vector2i = Vector2i(10, 10)
 
-var grassDirs = [
+var grass_dirs = [
 	[-1, 1],  [0, 1],  [1, 1],
 	[-1, 0],           [1, 0],
 	[-1, -1], [0, -1], [1, -1]
@@ -18,10 +18,10 @@ func _ready() -> void:
 	pass
 
 
-func runGrass(pos):
-	grassDirs.shuffle()
+func run_grass(pos):
+	grass_dirs.shuffle()
 	for i in [1, 0, -1]:
-		var rpos = (pos - Vector3i(grassDirs[0][0], i, grassDirs[0][1]))
+		var rpos = (pos - Vector3i(grass_dirs[0][0], i, grass_dirs[0][1]))
 		if man.get_block(rpos).full_id in canGrass:
 			if man.get_block(rpos + Vector3i.UP).properties.has(&"air"):
 				man.set_block(rpos, &"clonecraft:grassBlock", false, true, true)
@@ -29,7 +29,7 @@ func runGrass(pos):
 		man.set_block(pos, &"clonecraft:dirt", false, true, true)
 
 
-func _makeGB() -> void:
+func _make_gb() -> void:
 	var model = man.start_block_register("clonecraft:grassBlock", Voxdat.vox.GEOMETRY_CUBE)
 	model.set_mesh_collision_enabled(0, true)
 	model.transparency_index = 0
@@ -55,12 +55,12 @@ func _makeGB() -> void:
 			"plant",
 			"plant"
 	)
-	bi.set_tickable(runGrass)
+	bi.set_tickable(run_grass)
 	bi.drop_item = &"clonecraft:dirt"
 	man.end_block_register(bi)
 
 
-func _makeCT() -> void:
+func _make_ct() -> void:
 	var model = man.start_block_register("clonecraft:craftingBench", Voxdat.vox.GEOMETRY_CUBE)
 	model.set_mesh_collision_enabled(0, true)
 	model.transparency_index = 0
@@ -89,7 +89,36 @@ func _makeCT() -> void:
 	man.end_block_register(bi)
 
 
-func _makeOL() -> void:
+func _make_tnt() -> void:
+	var model = man.start_block_register("clonecraft:tnt", Voxdat.vox.GEOMETRY_CUBE)
+	model.set_mesh_collision_enabled(0, true)
+	model.transparency_index = 0
+	model.tile_left   = Vector2(1, 6)
+	model.tile_right  = Vector2(1, 6)
+	model.tile_bottom = Vector2(2, 6)
+	model.tile_top    = Vector2(2, 6)
+	model.tile_back   = Vector2(1, 6)
+	model.tile_front  = Vector2(1, 6)
+	model.set_material_override(0, mat1)
+	var bi = BlockManager.BlockInfo.new(
+			"clonecraft",
+			"tnt",
+			"clonecraft.block.tnt",
+			model,
+			1,
+			1,
+			false,
+			false,
+			noScript,
+			"tools:axe",
+			"grass",
+			"grass",
+			"grass"
+	)
+	man.end_block_register(bi)
+
+
+func _make_ol() -> void:
 	var model1 = man.start_block_register("clonecraft:logVertOak", Voxdat.vox.GEOMETRY_CUBE)
 	model1.set_mesh_collision_enabled(0, true)
 	model1.transparency_index = 0
@@ -183,7 +212,7 @@ func _mitem(name:String, key:String, uv:Vector2i, needs_uid := false) -> ItemMan
 	))
 	if needs_uid:
 		nitem.static_meta = {
-			"udi": generate_item_uid
+			"uid": generate_item_uid
 		}
 	return nitem
 
@@ -276,7 +305,7 @@ func register_phase() -> void:
 	man.quick_uniform_block(MODID, "stone", "clonecraft.block.stone", Vector2(0, 0), mat1).drop_item = &"clonecraft:cobblestone"
 	man.quick_uniform_block(MODID, "dirt", "clonecraft.block.dirt", Vector2(1, 0), mat1, 1, 1, "tools:shovel")
 	canGrass.append("clonecraft:dirt")
-	_makeGB()
+	_make_gb()
 	man.quick_uniform_block(MODID, "cobblestone", "clonecraft.block.cobblestone", Vector2(4, 0), mat1)
 	man.quick_uniform_block(MODID, "oreCoal", "clonecraft.block.coal_ore", Vector2(5, 0), mat1)
 	man.quick_uniform_block(MODID, "oreIron", "clonecraft.block.iron_ore", Vector2(0, 1), mat1)
@@ -288,8 +317,8 @@ func register_phase() -> void:
 	man.quick_uniform_block(MODID, "brickStone", "clonecraft.block.stone_bricks", Vector2(0, 2), mat1)
 	man.quick_uniform_block(MODID, "plankOak", "clonecraft.block.oak_planks", Vector2(1, 2), mat1, 3, 6, "tools:axe")
 	man.quick_uniform_block(MODID, "tileOak", "clonecraft.block.oak_plank_tile", Vector2(2, 2), mat1, 3, 6, "tools:axe")
-	_makeCT()
-	_makeOL()
+	_make_ct()
+	_make_ol()
 	man.quick_uniform_block(MODID, "barkOak", "clonecraft.block.oak_bark", Vector2(5, 2), mat1, 3, 6, "tools:axe")
 	man.quick_uniform_block(MODID, "knotOak", "clonecraft.block.oak_knot", Vector2(1, 3), mat1, 3, 6, "tools:axe")
 	man.quick_uniform_block(MODID, "leavesOak", "clonecraft.block.oak_leaves", Vector2(2, 3), mat2, 1, 1, "tools:shears", 1)
@@ -304,5 +333,7 @@ func register_phase() -> void:
 	man.quick_uniform_block(MODID, "blockDiamond", "clonecraft.block.diamond_block", Vector2(5, 4), mat2, 3, 5, "tools:pickaxe", 2)
 	man.quick_uniform_block(MODID, "blockEnerstone", "clonecraft.block.enerstone_crate", Vector2(0, 5), mat1)
 	man.quick_uniform_block(MODID, "blockCopper", "clonecraft.block.copper_block", Vector2(1, 5), mat1)
+	_make_tnt()
+	
 	BlockEntityManager.te_list[&"clonecraft:chest"] = preload("res://mods/clonecraft/tileEntities/chest.tscn")
 	_makeItems()
