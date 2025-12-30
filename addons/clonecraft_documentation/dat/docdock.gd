@@ -29,9 +29,9 @@ func ready():
 
 func _on_rich_text_label_meta_clicked(meta):
 	if _odoc == null:
-		_odoc = ep.get_editor_interface().get_script_editor().get_current_editor().go_to_help
+		_odoc = ep.get_editor_interface().get_script_editor().goto_help
 	var _m = meta.split(",")
 	if _m[0] == "cla":
-		_odoc.emit(_m[1])
+		_odoc.call("class_name:" + _m[1])
 	elif _m[0] == "doc":
 		maintext.text = opentext(_m[1])
