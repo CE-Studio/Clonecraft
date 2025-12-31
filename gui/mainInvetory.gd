@@ -3,7 +3,7 @@ extends PanelContainer
 
 var gui_item:PackedScene = preload("res://gui/GuiItem.tscn")
 @onready var fill_bar:ProgressBar = $vBoxContainer/fillBar
-@onready var grid:GridContainer = $vBoxContainer/scrollContainer/hBoxContainer/gridContainer
+@onready var grid:GridContainer = $vBoxContainer/scrollContainer/panelContainer/hBoxContainer/gridContainer
 
 
 # Called when the node enters the scene tree for the first time.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg0bskq24vtvg"]
+[gd_scene load_steps=17 format=3 uid="uid://cg0bskq24vtvg"]
 
 [ext_resource type="Texture2D" uid="uid://q6l8gu5hnobr" path="res://gui/invbacking.png" id="1_ro417"]
 [ext_resource type="Script" uid="uid://do5780yru8bax" path="res://mods/gamemodes/creativeInvetory.gd" id="2_du0qi"]
@@ -11,6 +11,8 @@ texture_margin_top = 8.0
 texture_margin_right = 8.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wtvl5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28qfk"]
 
@@ -35,6 +37,7 @@ axis_stretch_vertical = 1
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2br0k"]
 
 [node name="creativeInv" type="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
 theme_override_constants/separation = 0
 
 [node name="primaryInventory" type="PanelContainer" parent="."]
@@ -45,7 +48,19 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_c2ahj")
 script = ExtResource("2_du0qi")
 metadata/_tab_index = 0
 
-[node name="button" type="Button" parent="primaryInventory"]
+[node name="scrollContainer" type="ScrollContainer" parent="primaryInventory"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="container" type="PanelContainer" parent="primaryInventory/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wtvl5")
+
+[node name="button" type="Button" parent="primaryInventory/scrollContainer/container"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -61,33 +76,29 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_3otki")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3wena")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2br0k")
 
-[node name="scrollContainer" type="ScrollContainer" parent="primaryInventory"]
+[node name="hBoxContainer" type="HBoxContainer" parent="primaryInventory/scrollContainer/container"]
 layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+mouse_filter = 2
 
-[node name="hBoxContainer" type="HBoxContainer" parent="primaryInventory/scrollContainer"]
+[node name="control" type="Control" parent="primaryInventory/scrollContainer/container/hBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
-[node name="control" type="Control" parent="primaryInventory/scrollContainer/hBoxContainer"]
+[node name="gridContainer" type="GridContainer" parent="primaryInventory/scrollContainer/container/hBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
-
-[node name="gridContainer" type="GridContainer" parent="primaryInventory/scrollContainer/hBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 columns = 10
 
-[node name="control2" type="Control" parent="primaryInventory/scrollContainer/hBoxContainer"]
+[node name="control2" type="Control" parent="primaryInventory/scrollContainer/container/hBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 2
 
 [node name="primaryInventory2" parent="." instance=ExtResource("3_tkv8r")]
 layout_mode = 2
 size_flags_vertical = 3
 
-[connection signal="pressed" from="primaryInventory/button" to="primaryInventory" method="_on_button_pressed"]
+[connection signal="pressed" from="primaryInventory/scrollContainer/container/button" to="primaryInventory" method="_on_button_pressed"]

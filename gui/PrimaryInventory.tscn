@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b837w4xwagvvg"]
+[gd_scene load_steps=16 format=3 uid="uid://b837w4xwagvvg"]
 
 [ext_resource type="Texture2D" uid="uid://q6l8gu5hnobr" path="res://gui/invbacking.png" id="1_bu8c0"]
 [ext_resource type="Script" uid="uid://pwu178d3h02v" path="res://gui/mainInvetory.gd" id="2_nsl1h"]
@@ -10,6 +10,8 @@ texture_margin_top = 8.0
 texture_margin_right = 8.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qcxbc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4no4"]
 
@@ -39,7 +41,24 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_c2ahj")
 script = ExtResource("2_nsl1h")
 metadata/_tab_index = 0
 
-[node name="button" type="Button" parent="."]
+[node name="vBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="scrollContainer" type="ScrollContainer" parent="vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="panelContainer" type="PanelContainer" parent="vBoxContainer/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qcxbc")
+
+[node name="button" type="Button" parent="vBoxContainer/scrollContainer/panelContainer"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w4no4")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_1sdfw")
@@ -53,34 +72,25 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ph16a")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3w4ip")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wduxl")
 
-[node name="vBoxContainer" type="VBoxContainer" parent="."]
+[node name="hBoxContainer" type="HBoxContainer" parent="vBoxContainer/scrollContainer/panelContainer"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 0
 
-[node name="scrollContainer" type="ScrollContainer" parent="vBoxContainer"]
+[node name="control" type="Control" parent="vBoxContainer/scrollContainer/panelContainer/hBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+mouse_filter = 2
 
-[node name="hBoxContainer" type="HBoxContainer" parent="vBoxContainer/scrollContainer"]
-layout_mode = 2
-
-[node name="control" type="Control" parent="vBoxContainer/scrollContainer/hBoxContainer"]
+[node name="gridContainer" type="GridContainer" parent="vBoxContainer/scrollContainer/panelContainer/hBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
-
-[node name="gridContainer" type="GridContainer" parent="vBoxContainer/scrollContainer/hBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 columns = 10
 
-[node name="control2" type="Control" parent="vBoxContainer/scrollContainer/hBoxContainer"]
+[node name="control2" type="Control" parent="vBoxContainer/scrollContainer/panelContainer/hBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 2
 
 [node name="fillBar" type="ProgressBar" parent="vBoxContainer"]
@@ -88,4 +98,4 @@ custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 show_percentage = false
 
-[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="vBoxContainer/scrollContainer/panelContainer/button" to="." method="_on_button_pressed"]
