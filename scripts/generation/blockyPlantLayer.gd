@@ -8,9 +8,9 @@ extends Resource
 
 func _edit() -> void:
 	if Engine.is_editor_hint():
-		var editwindow:PlantLayerEditor = load("uid://p305vt6on8gu").instantiate()
-		EditorInterface.popup_dialog(editwindow)
-		editwindow.setup(self)
+		var edit_window:PlantLayerEditor = load("uid://p305vt6on8gu").instantiate()
+		EditorInterface.popup_dialog(edit_window)
+		edit_window.setup(self)
 
 
 @export var size:Vector2i = Vector2i.ONE
@@ -20,7 +20,7 @@ func _edit() -> void:
 @export var max_count:int = 3
 @export var drift_range:Vector2i = Vector2i.ZERO
 @export var blocks:Array[BlockyPlantBlock]
-@export_storage var layerdata:Array[int]
+@export_storage var layer_data:Array[int]
 
 
 func generate(rng:RandomNumberGenerator) -> Dictionary[StringName, Variant]:
@@ -33,6 +33,6 @@ func generate(rng:RandomNumberGenerator) -> Dictionary[StringName, Variant]:
 		),
 		&"data": [],
 	}
-	for i in layerdata:
+	for i in layer_data:
 		dict.data.append(blocks[i].generate(rng))
 	return dict

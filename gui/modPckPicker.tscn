@@ -13,11 +13,11 @@ grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_8h5e5")
 
-[node name="offlist" type="VBoxContainer" parent="."]
+[node name="offList" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="label" type="Label" parent="offlist"]
+[node name="label" type="Label" parent="offList"]
 layout_mode = 2
 theme_override_styles/normal = ExtResource("1_oo5i7")
 text = "&&Disabled Mods&&"
@@ -28,11 +28,11 @@ dictKey = &"gui.mods.disabled"
 [node name="vSeparator" type="VSeparator" parent="."]
 layout_mode = 2
 
-[node name="onlist" type="VBoxContainer" parent="."]
+[node name="onList" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="label" type="Label" parent="onlist"]
+[node name="label" type="Label" parent="onList"]
 layout_mode = 2
 theme_override_styles/normal = ExtResource("1_oo5i7")
 text = "&&Enabled Mods&&"

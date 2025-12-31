@@ -11,27 +11,27 @@ texture_margin_right = 8.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wduxl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w4ip"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ph16a"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1da5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ep1fd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7irx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvyya"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmrob"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50ne4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4no4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1sdfw"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4no4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50ne4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmrob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvyya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f7irx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ep1fd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1da5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ph16a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w4ip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wduxl"]
 
 [node name="primaryInventory" type="PanelContainer"]
 mouse_filter = 1
@@ -41,17 +41,17 @@ metadata/_tab_index = 0
 
 [node name="button" type="Button" parent="."]
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wduxl")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3w4ip")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ph16a")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g1da5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ep1fd")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_f7irx")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xvyya")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_kmrob")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_50ne4")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_1sdfw")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_w4no4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_1sdfw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_50ne4")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_kmrob")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xvyya")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_f7irx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ep1fd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g1da5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ph16a")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3w4ip")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wduxl")
 
 [node name="vBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -61,13 +61,11 @@ theme_override_constants/separation = 0
 [node name="scrollContainer" type="ScrollContainer" parent="vBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
 [node name="hBoxContainer" type="HBoxContainer" parent="vBoxContainer/scrollContainer"]
 layout_mode = 2
-mouse_filter = 2
 
 [node name="control" type="Control" parent="vBoxContainer/scrollContainer/hBoxContainer"]
 layout_mode = 2
@@ -77,7 +75,6 @@ mouse_filter = 2
 [node name="gridContainer" type="GridContainer" parent="vBoxContainer/scrollContainer/hBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-mouse_filter = 2
 theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 columns = 10

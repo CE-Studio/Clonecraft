@@ -30,7 +30,7 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 platform_on_leave = 1
 script = ExtResource("1_3ny33")
-starmat = SubResource("StandardMaterial3D_mjl1a")
+star_mat = SubResource("StandardMaterial3D_mjl1a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_0d76e")

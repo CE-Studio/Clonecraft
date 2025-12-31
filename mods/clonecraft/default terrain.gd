@@ -23,12 +23,12 @@ func setup_seed(new_seed:int) -> void:
 	noise.cellular_return_type = FastNoise2.CELLULAR_RETURN_INDEX_0_MUL_1
 	noise.update_generator()
 	noise2.update_generator()
-	var cavefunc := caves.get_main_function()
-	var n := cavefunc.find_node_by_name("carve0")
-	cavefunc.get_node_param(n, 0).seed = seed
-	assert(cavefunc.get_node_param(n, 0).seed == seed, "setting failed")
-	n = cavefunc.find_node_by_name("carve1")
-	cavefunc.get_node_param(n, 0).seed = seed + 1
+	var cave_func := caves.get_main_function()
+	var n := cave_func.find_node_by_name("carve0")
+	cave_func.get_node_param(n, 0).seed = seed
+	assert(cave_func.get_node_param(n, 0).seed == seed, "setting failed")
+	n = cave_func.find_node_by_name("carve1")
+	cave_func.get_node_param(n, 0).seed = seed + 1
 	caves.compile()
 
 
@@ -41,15 +41,15 @@ func setup_ids() -> void:
 	clay = BlockManager.block_id_list["clonecraft:clay"]
 
 
-func set_sup_buf(x:int, y:int, z:int, val:int, supBuf:VoxelBuffer, pos:Vector3i, global := true) -> void:
+func set_sup_buf(x:int, y:int, z:int, val:int, sup_buf:VoxelBuffer, pos:Vector3i, global := true) -> void:
 	if global:
 		x = (x) - pos.x
 		y = (y + MARGIN) - pos.y
 		z = (z) - pos.z
-	supBuf.set_voxel(val, x, y, z)
+	sup_buf.set_voxel(val, x, y, z)
 
 
-func get_sup_buf(x:int, y:int, z:int, supBuf:VoxelBuffer, pos:Vector3i, bounds:Vector3i, global := true) -> int:
+func get_sup_buf(x:int, y:int, z:int, sup_buf:VoxelBuffer, pos:Vector3i, bounds:Vector3i, global := true) -> int:
 	if global:
 		x = (x) - pos.x
 		y = (y + MARGIN) - pos.y
@@ -66,10 +66,10 @@ func get_sup_buf(x:int, y:int, z:int, supBuf:VoxelBuffer, pos:Vector3i, bounds:V
 		return 0
 	if z > bounds.z - 1:
 		return 0
-	return supBuf.get_voxel(x, y, z)
+	return sup_buf.get_voxel(x, y, z)
 
 
-func gen_solid(x:int, y:int, z:int, supBuf, pos, bounds) -> int:
+func gen_solid(x:int, y:int, z:int, sup_buf, pos, bounds) -> int:
 	var pending:int = air
 	var smoothness = clampf((noise2.get_noise_2d_single(Vector2(x, z) * 0.4) * 2) - 1, 0, 1)
 	var density = noise.get_noise_3d_single(Vector3(x, y, z) * 0.3) * 30
@@ -81,7 +81,7 @@ func gen_solid(x:int, y:int, z:int, supBuf, pos, bounds) -> int:
 	density += noise.get_noise_3d_single(Vector3(x, y, z) * 5) 
 	if y < remap(river, 0.5, 1, 0, density):
 		if river < 1:
-			if get_sup_buf(x, y + 5, z, supBuf, pos, bounds) == 0:
+			if get_sup_buf(x, y + 5, z, sup_buf, pos, bounds) == 0:
 				if noise.get_noise_3d_single(Vector3(x, y, z) * 3) < 0.3:
 					pending = clay
 				else:
@@ -89,26 +89,26 @@ func gen_solid(x:int, y:int, z:int, supBuf, pos, bounds) -> int:
 			else:
 				pending = stone
 		else:
-			if get_sup_buf(x, y + 1, z, supBuf, pos, bounds) == 0:
+			if get_sup_buf(x, y + 1, z, sup_buf, pos, bounds) == 0:
 				pending = grass
-			elif get_sup_buf(x, y + 5, z, supBuf, pos, bounds) == 0:
+			elif get_sup_buf(x, y + 5, z, sup_buf, pos, bounds) == 0:
 				pending = dirt
 			else:
 				pending = stone
 	return pending
 
 
-func iterate(supBuf:VoxelBuffer, pos:Vector3i, bounds:Vector3i) -> void:
+func iterate(sup_buf:VoxelBuffer, pos:Vector3i, bounds:Vector3i) -> void:
 	for ix in bounds.x:
 		for iz in bounds.z:
 			for iy in bounds.y:
 				var iiy = bounds.y - iy - 1
-				set_sup_buf(ix, iiy, iz, gen_solid(ix + (pos.x), iiy + (pos.y - MARGIN), iz + (pos.z), supBuf, pos, bounds), supBuf, pos, false)
+				set_sup_buf(ix, iiy, iz, gen_solid(ix + (pos.x), iiy + (pos.y - MARGIN), iz + (pos.z), sup_buf, pos, bounds), sup_buf, pos, false)
 
 
-func blit(buf:VoxelBuffer, supBuf:VoxelBuffer, bounds:Vector3i) -> void:
+func blit(buf:VoxelBuffer, sup_buf:VoxelBuffer, bounds:Vector3i) -> void:
 	buf.copy_channel_from_area(
-		supBuf,
+		sup_buf,
 		Vector3i(0, MARGIN, 0),
 		Vector3i(bounds.x, bounds.y - MARGIN, bounds.z),
 		Vector3i.ZERO,
@@ -117,20 +117,20 @@ func blit(buf:VoxelBuffer, supBuf:VoxelBuffer, bounds:Vector3i) -> void:
 
 
 func __generate_block(buf:VoxelBuffer, pos:Vector3i, _lod:int) -> void:
-	var supBuf := VoxelBuffer.new()
+	var sup_buf := VoxelBuffer.new()
 	var size := buf.get_size()
-	supBuf.create(size.x, size.y + (MARGIN * 2), size.z)
-	var bounds := supBuf.get_size()
-	iterate(supBuf, pos, bounds)
-	blit(buf, supBuf, bounds)
+	sup_buf.create(size.x, size.y + (MARGIN * 2), size.z)
+	var bounds := sup_buf.get_size()
+	iterate(sup_buf, pos, bounds)
+	blit(buf, sup_buf, bounds)
 
 
-func _generate_block(buf:VoxelBuffer, rpos:Vector3i, lod:int) -> void:
+func _generate_block(buf:VoxelBuffer, rel_pos:Vector3i, lod:int) -> void:
 	#var h:gen = gen.new()
-	__generate_block(buf, rpos, lod)
-	var cavebuf = VoxelBuffer.new()
-	var bufsize = buf.get_size()
-	cavebuf.create(bufsize.x, bufsize.y, bufsize.z)
-	caves.generate_block(cavebuf, rpos, lod)
+	__generate_block(buf, rel_pos, lod)
+	var cave_buf = VoxelBuffer.new()
+	var buf_size = buf.get_size()
+	cave_buf.create(buf_size.x, buf_size.y, buf_size.z)
+	caves.generate_block(cave_buf, rel_pos, lod)
 	var t := buf.get_voxel_tool()
-	t.paste_masked(Vector3i.ZERO, cavebuf, 1 << VoxelBuffer.CHANNEL_TYPE, VoxelBuffer.CHANNEL_TYPE, 1)
+	t.paste_masked(Vector3i.ZERO, cave_buf, 1 << VoxelBuffer.CHANNEL_TYPE, VoxelBuffer.CHANNEL_TYPE, 1)

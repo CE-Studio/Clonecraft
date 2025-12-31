@@ -27,11 +27,11 @@ func foc():
 	change_val($lineEdit.text)
 
 
-func change_val(newval:String) -> void:
-	current = newval
-	$lineEdit.text = newval
+func change_val(new_val:String) -> void:
+	current = new_val
+	$lineEdit.text = new_val
 	$Button.disabled = (current == default)
-	ProjectSettings.set_setting(path, newval)
+	ProjectSettings.set_setting(path, new_val)
 
 
 func reset() -> void:

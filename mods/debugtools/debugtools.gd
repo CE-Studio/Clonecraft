@@ -1,55 +1,55 @@
 extends Mod
 
 
-var tlabel:Label
-var bid:int : set = _bidSet
-var itemDisp:GUIItem
+var block_label:Label
+var block_id:int : set = _block_id_set
+var item_display:GUIItem
 
 
-func _bidSet(val:int) -> void:
-	bid = val
-	if bid < 0:
-		bid += man.block_list.size()
-	elif bid >= man.block_list.size():
-		bid -= man.block_list.size()
-	tlabel.text = man.block_list[bid].full_id
-	itemDisp.assign(ItemManager.ItemStack.new(tlabel.text, 0))
+func _block_id_set(val:int) -> void:
+	block_id = val
+	if block_id < 0:
+		block_id += man.block_list.size()
+	elif block_id >= man.block_list.size():
+		block_id -= man.block_list.size()
+	block_label.text = man.block_list[block_id].full_id
+	item_display.assign(ItemManager.ItemStack.new(block_label.text, 0))
 
 
 func input(event) -> void:
 	if event is InputEventMouseButton:
 		if (event.button_index == 4) && (event.pressed):
-			self.bid -= 1
+			self.block_id -= 1
 		elif (event.button_index == 5) && (event.pressed):
-			self.bid += 1
+			self.block_id += 1
 		elif (event.button_index == 2) && (event.pressed):
-			if player.lookingAt != null:
-				man.set_block(player.lookingAt.previous_position, man.block_list[bid].full_id, false)
+			if player.looking_at != null:
+				man.set_block(player.looking_at.previous_position, man.block_list[block_id].full_id, false)
 		elif (event.button_index == 1) && (event.pressed):
-			if player.lookingAt != null:
-				man.set_block(player.lookingAt.position, "clonecraft:air", false)
+			if player.looking_at != null:
+				man.set_block(player.looking_at.position, "clonecraft:air", false)
 		elif (event.button_index == 3) && (event.pressed):
-			if player.lookingAt != null:
-				var pl := player.lookingAt.position
-				self.bid = player.voxelTool.get_voxel(pl)
-				man.log("debugtools", "Block " + str(bid))
+			if player.looking_at != null:
+				var pl := player.looking_at.position
+				self.block_id = player.voxel_tool.get_voxel(pl)
+				man.log("debugtools", "Block " + str(block_id))
 	elif event is InputEventKey:
 		if event.pressed:
 			if event.as_text_keycode() == "Q":
-				ItemManager.spawnWorldItem(ItemManager.ItemStack.new(man.block_list[bid].full_id, 1), player.position)
+				ItemManager.spawn_world_item(ItemManager.ItemStack.new(man.block_list[block_id].full_id, 1), player.position)
 
 
 func register_phase() -> void:
 	man.log("debugtools", "This world is in debug mode! A lot of default features are overridden!")
-	tlabel = Label.new()
-	tlabel.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
-	tlabel.position.y -= 20
-	tlabel.text = man.block_list[bid].full_id
-	Statics.get_node("/root/Node3D/Control").add_child(tlabel)
+	block_label = Label.new()
+	block_label.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
+	block_label.position.y -= 20
+	block_label.text = man.block_list[block_id].full_id
+	Statics.get_node("/root/Node3D/Control").add_child(block_label)
 	man.register_input(input)
 	player.abilities["allowFlight"] = true
 	player.abilities["allowBuild"] = true
-	itemDisp = preload("res://gui/GuiItem.tscn").instantiate()
-	Statics.get_node("/root/Node3D/Control").add_child(itemDisp)
-	itemDisp.set_anchors_preset(Control.PRESET_BOTTOM_LEFT, true)
-	itemDisp.position.y -= (20 + 46)
+	item_display = preload("res://gui/GuiItem.tscn").instantiate()
+	Statics.get_node("/root/Node3D/Control").add_child(item_display)
+	item_display.set_anchors_preset(Control.PRESET_BOTTOM_LEFT, true)
+	item_display.position.y -= (20 + 46)

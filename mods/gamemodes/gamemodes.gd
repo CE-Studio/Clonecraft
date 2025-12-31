@@ -1,7 +1,7 @@
 extends Mod
 
 
-const MODID := &"gamemodes"
+const MOD_ID := &"gamemodes"
 
 
 var modes := {
@@ -110,17 +110,17 @@ class GamemodeCMD extends CMDprocessor.Command:
 	var _mod:Mod
 	
 	
-	func getCommandInvocation() -> String:
+	func get_command_invocation() -> String:
 		return "gamemode"
 	
 	
-	func getCommandArgList(index:int) -> Array:
+	func get_command_arg_list(index:int) -> Array:
 		if index == -1:
 			return ["<String Mode>", "[String Player]"]
 		elif index == 0:
 			return _mod.modes.get_keys()
 		elif index == 1:
-			return WorldControl.getPlayerList()
+			return WorldControl.get_player_list()
 		return []
 	
 	
@@ -132,9 +132,9 @@ class GamemodeCMD extends CMDprocessor.Command:
 			CMDprocessor.throw("cmd.error.missing_arg", "Game mode expected")
 			return false
 		elif l == 1:
-			p = WorldControl.getPlayer(WorldControl.localUsername)
+			p = WorldControl.get_player(WorldControl.local_username)
 		elif l == 2:
-			p = WorldControl.getPlayer(str(args[1]))
+			p = WorldControl.get_player(str(args[1]))
 		else:
 			CMDprocessor.throw("cmd.error.too_many_args", "2 arguments expected, got " + str(l))
 			return false
@@ -156,10 +156,10 @@ class GamemodeCMD extends CMDprocessor.Command:
 		_mod = mod
 
 
-func shouldShowCreativeInv() -> bool:
+func should_show_creative_inv() -> bool:
 	return player.abilities["endlessInventory"]
 
 
 func register_phase():
-	CMDprocessor.registerCommand(GamemodeCMD.new(self))
-	InventoryTabs.registerContextualTab(preload("res://mods/gamemodes/creativeInv.tscn"), shouldShowCreativeInv)
+	CMDprocessor.register_command(GamemodeCMD.new(self))
+	InventoryTabs.register_contextual_tab(preload("res://mods/gamemodes/creativeInv.tscn"), should_show_creative_inv)

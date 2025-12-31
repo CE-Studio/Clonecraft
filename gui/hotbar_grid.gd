@@ -1,24 +1,24 @@
 extends GridContainer
 
 
-var guii:PackedScene = preload("res://gui/GuiItem.tscn")
-var guib:PackedScene = preload("res://gui/GuiItemBlank.tscn")
+var gui_item:PackedScene = preload("res://gui/GuiItem.tscn")
+var gui_item_blank:PackedScene = preload("res://gui/GuiItemBlank.tscn")
 
 
 func _ready() -> void:
 	redraw()
-	WorldControl.instance._p.inventory.content_changed.connect(redraw)
+	WorldControl.instance._player.inventory.content_changed.connect(redraw)
 
 
 func slotClick(id:int) -> void:
 	if InventoryLayer.holding:
-		if InventoryLayer.heldSourceInventory != WorldControl.instance._p.inventory:
-			if not InventoryLayer.dropInto(WorldControl.instance._p.inventory):
+		if InventoryLayer.held_source_inventory != WorldControl.instance._player.inventory:
+			if not InventoryLayer.drop_into(WorldControl.instance._player.inventory):
 				return
-		WorldControl.instance._p.hotbarItems[id] = WorldControl.instance._p.inventory.get_item_from_stack(InventoryLayer.heldItem)
+		WorldControl.instance._player.hotbar_items[id] = WorldControl.instance._player.inventory.get_item_from_stack(InventoryLayer.held_item)
 		InventoryLayer.holding = false
 	else:
-		WorldControl.instance._p.hotbarItems[id] = null
+		WorldControl.instance._player.hotbar_items[id] = null
 	redraw()
 	Hotbar.instance.redraw()
 
@@ -27,12 +27,12 @@ func redraw() -> void:
 	for i in get_children():
 		i.queue_free()
 	var id = 0
-	for i in WorldControl.instance._p.hotbarItems:
+	for i in WorldControl.instance._player.hotbar_items:
 		var gi
 		if i == null:
-			gi = guib.instantiate()
+			gi = gui_item_blank.instantiate()
 		else:
-			gi = guii.instantiate()
+			gi = gui_item.instantiate()
 			gi.assign(i)
 		gi.slotID = id
 		add_child(gi)

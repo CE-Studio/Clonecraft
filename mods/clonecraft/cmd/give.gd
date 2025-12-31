@@ -1,11 +1,11 @@
 extends CMDprocessor.Command
 
 
-func getCommandInvocation() -> String:
+func get_command_invocation() -> String:
 	return "give"
 
 
-func getCommandArgList(index:int) -> Array:
+func get_command_arg_list(index:int) -> Array:
 	if index == -1:
 		return ["<String ID>", "[Int Count]", "[String Player]", "[Dict Metadata]"]
 	elif index == 0:
@@ -13,7 +13,7 @@ func getCommandArgList(index:int) -> Array:
 	elif index == 1:
 		return [1, 10, 100, 1000]
 	elif index == 2:
-		return [WorldControl.getPlayerList()]
+		return [WorldControl.get_player_list()]
 	return []
 
 
@@ -31,7 +31,7 @@ func execute(args:Array) -> Variant:
 		return false
 	
 	if l > 1:
-		var ct = Statics.toNumber(args[1])
+		var ct = Statics.to_number(args[1])
 		if ct == null:
 			CMDprocessor.throw("cmd.error.arg_invalid", "\"" + str(args[1]) + "\" is not a valid number")
 			return false
@@ -39,12 +39,12 @@ func execute(args:Array) -> Variant:
 	
 	
 	if l > 2:
-		p = WorldControl.getPlayer(str(args[2]))
+		p = WorldControl.get_player(str(args[2]))
 		if p == null:
 			CMDprocessor.throw("cmd.error.player_not_found", "Player \"" + str(args[2]) + "\" is not online")
 			return false
 	else:
-		p = WorldControl.getPlayer(WorldControl.localUsername)
+		p = WorldControl.get_player(WorldControl.local_username)
 			
 	# TODO implement metadata arg
 			

@@ -11,8 +11,8 @@ var slotID:int = 0
 var item:ItemManager.ItemStack
 
 
-func assign(iitem:ItemManager.ItemStack) -> void:
-	item = iitem
+func assign(_item:ItemManager.ItemStack) -> void:
+	item = _item
 	$label.mouse_filter = mouse_filter
 	$button.mouse_filter = mouse_filter
 	$label.text = str(item.count)
@@ -24,19 +24,19 @@ func assign(iitem:ItemManager.ItemStack) -> void:
 		$label.hide()
 	else:
 		$label.show()
-	var im := item.getModel()
-	if im.is3D:
+	var im := item.get_model()
+	if im.is_3D:
 		var m2d:TransformedMeshInstance2D = $transformedMeshInstance2d
-		m2d.baseMesh = im.mesh
+		m2d.base_mesh = im.mesh
 		if im.mesh.get_surface_count() != 0:
 			m2d.mat = im.mesh.surface_get_material(0)
 	else:
 		var s:Sprite2D = $sprite2d
 		s.texture = im.texture
-		s.hframes = im.atlasSize.x
-		s.vframes = im.atlasSize.y
+		s.hframes = im.atlas_size.x
+		s.vframes = im.atlas_size.y
 		s.frame_coords = im.frame
-	var n = item.getItem().name
+	var n = item.get_item().name
 	if n != "":
 		$button.tooltip_text = Translator.translate(n)
 	else:

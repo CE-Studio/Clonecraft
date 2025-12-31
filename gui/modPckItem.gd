@@ -1,44 +1,44 @@
 extends Button
 class_name ModPckItem
-## Used to display mods in the modpicker.
+## Used to display mods in the ModPicker.
 
 
-var loff:VBoxContainer
-var lon:VBoxContainer
-var onbutton:Button
-var offbutton:Button
-var modname:StringName
+var list_off:VBoxContainer
+var list_on:VBoxContainer
+var on_button:Button
+var off_button:Button
+var mod_name:StringName
 
 
-func init(off:VBoxContainer, on:VBoxContainer, state:bool, modn:StringName):
-	onbutton = $">"
-	offbutton = $"<"
-	loff = off
-	lon = on
+func init(off:VBoxContainer, on:VBoxContainer, state:bool, _mod_name:StringName):
+	on_button = $">"
+	off_button = $"<"
+	list_off = off
+	list_on = on
 	off.add_child(self)
 	if state:
 		_on_on_pressed()
 	else:
 		_on_off_pressed()
-	modname = modn
-	text = "  " + modn + "  "
+	mod_name = _mod_name
+	text = "  " + _mod_name + "  "
 
 
 
 func _on_off_pressed():
-	reparent(loff, false)
-	offbutton.disabled = true
-	onbutton.disabled = false
+	reparent(list_off, false)
+	off_button.disabled = true
+	on_button.disabled = false
 
 
 func _on_on_pressed():
-	reparent(lon, false)
-	offbutton.disabled = false
-	onbutton.disabled = true
+	reparent(list_on, false)
+	off_button.disabled = false
+	on_button.disabled = true
 
 
 func _on_pressed():
-	if onbutton.disabled:
+	if on_button.disabled:
 		_on_off_pressed()
 	else:
 		_on_on_pressed()

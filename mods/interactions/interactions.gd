@@ -1,101 +1,101 @@
 extends Mod
 
 
-const MODID:StringName = "interactions"
+const MOD_ID:StringName = "interactions"
 
 
 var placing := false
 var breaking := false
-var _oldplace := false
-var _placestart := Vector3i.ZERO
-var _breakpos:Vector3i
-var _breakprogress:float = 0
-var breakPower:float = 0
+var _old_place := false
+var _place_start := Vector3i.ZERO
+var _break_pos:Vector3i
+var _break_progress:float = 0
+var break_power:float = 0
 var _highlight:MeshInstance3D
 var _break:MeshInstance3D
 
 
-func updatePlace() -> void:
-	if _oldplace != placing:
-		_oldplace = placing
+func update_place() -> void:
+	if _old_place != placing:
+		_old_place = placing
 		_highlight.visible = placing
 		if !placing:
-			var maxc:int = 1024
+			var max_count:int = 1024
 			var inf:bool = player.abilities["endlessInventory"]
 			if !inf:
-				maxc = mini(maxc, player.getSelectedItem().count)
-			var istack:ItemManager.ItemStack = player.getSelectedItem()
-			var item:ItemManager.Item = istack.getItem()
+				max_count = mini(max_count, player.get_selected_item().count)
+			var item_stack:ItemManager.ItemStack = player.get_selected_item()
+			var item:ItemManager.Item = item_stack.get_item()
 			var at:Vector3i
-			if player.lookingAt != null:
+			if player.looking_at != null:
 				if Input.is_action_pressed("game_sneak"):
-					at = player.lookingAt.position
+					at = player.looking_at.position
 				else:
-					at = player.lookingAt.previous_position
+					at = player.looking_at.previous_position
 			else:
 				if Input.is_action_pressed("game_sneak"):
 					return
 				else:
 					at = player.get_reach_point().floor()
 			var placed:int = 0
-			for x in Statics.iRange(_placestart.x, at.x):
-				if placed >= maxc:
+			for x in Statics.iRange(_place_start.x, at.x):
+				if placed >= max_count:
 					break
-				for y in Statics.iRange(_placestart.y, at.y):
-					if placed >= maxc:
+				for y in Statics.iRange(_place_start.y, at.y):
+					if placed >= max_count:
 						break
-					for z in Statics.iRange(_placestart.z, at.z):
-						if placed >= maxc:
+					for z in Statics.iRange(_place_start.z, at.z):
+						if placed >= max_count:
 							break
 						if BlockManager.set_block(Vector3i(x, y, z), item.voxel):
 							placed += 1
 			if !inf:
-				player.inventory.extract_item(ItemManager.ItemStack.new(istack.item_ID, placed, istack.metadata))
+				player.inventory.extract_item(ItemManager.ItemStack.new(item_stack.item_ID, placed, item_stack.metadata))
 
 
-func consumeHeld(count:int) -> bool:
+func consume_held(count:int) -> bool:
 	if player.abilities.endlessInventory:
 		return true
-	var istack:ItemManager.ItemStack = player.getSelectedItem()
-	istack = istack.copy()
-	istack.count = count
-	return player.inventory.extract_item(istack)
+	var item_stack:ItemManager.ItemStack = player.get_selected_item()
+	item_stack = item_stack.copy()
+	item_stack.count = count
+	return player.inventory.extract_item(item_stack)
 
 
 func _process(_delta:float) -> void:
-	if !WorldControl.isPaused():
+	if !WorldControl.is_paused():
 		if placing:
-			if _breakprogress > 0:
-				_breakprogress = 0
-			var targpos:Vector3i
-			if  player.lookingAt != null:
+			if _break_progress > 0:
+				_break_progress = 0
+			var target_pos:Vector3i
+			if  player.looking_at != null:
 				if Input.is_action_pressed("game_sneak"):
-					targpos = player.lookingAt.position
+					target_pos = player.looking_at.position
 				else:
-					targpos = player.lookingAt.previous_position
+					target_pos = player.looking_at.previous_position
 			else:
-				targpos = player.get_reach_point().floor()
-			_highlight.position = ((_placestart + targpos) / 2.0) + Vector3(0.5, 0.5, 0.5)
-			_highlight.scale = Vector3((_placestart - targpos).abs()) + Vector3(1.05, 1.05, 1.05)
-		elif breaking and (player.lookingAt != null):
+				target_pos = player.get_reach_point().floor()
+			_highlight.position = ((_place_start + target_pos) / 2.0) + Vector3(0.5, 0.5, 0.5)
+			_highlight.scale = Vector3((_place_start - target_pos).abs()) + Vector3(1.05, 1.05, 1.05)
+		elif breaking and (player.looking_at != null):
 			_break.show()
-			_break.position = player.lookingAt.position
+			_break.position = player.looking_at.position
 			_break.position += Vector3(0.5, 0.5, 0.5)
-			if _breakpos != player.lookingAt.position:
-				_breakpos = player.lookingAt.position
-				_breakprogress = 0
+			if _break_pos != player.looking_at.position:
+				_break_pos = player.looking_at.position
+				_break_progress = 0
 				_break.material_override.set_shader_parameter(&"progress", 0)
 			else:
-				_breakprogress += _delta * breakPower * 2
+				_break_progress += _delta * break_power * 2
 				var s:float
-				if (breakPower == 1.0) and player.abilities["endlessInventory"]:
+				if (break_power == 1.0) and player.abilities["endlessInventory"]:
 					s = 0.2
 				else:
-					s = man.get_block(_breakpos).break_strength
-				_break.material_override.set_shader_parameter(&"progress", round(remap(_breakprogress, 0, s, 0, 9)))
-				if _breakprogress >= s:
-					man.set_block(_breakpos, &"clonecraft:air", not(player.abilities["endlessInventory"]))
-					_breakprogress = 0
+					s = man.get_block(_break_pos).break_strength
+				_break.material_override.set_shader_parameter(&"progress", round(remap(_break_progress, 0, s, 0, 9)))
+				if _break_progress >= s:
+					man.set_block(_break_pos, &"clonecraft:air", not(player.abilities["endlessInventory"]))
+					_break_progress = 0
 					_break.hide()
 					_break.material_override.set_shader_parameter(&"progress", 0)
 		elif breaking:
@@ -103,10 +103,10 @@ func _process(_delta:float) -> void:
 
 
 func _ununhandled_input(event:InputEvent) -> void:
-	if !WorldControl.isPaused():
+	if !WorldControl.is_paused():
 		if event.is_action_pressed("debug_action"):
-			if player.lookingAt != null:
-				WorldControl.explode(Vector3(player.lookingAt.previous_position) + Vector3(0.5, 0.5, 0.5), 8, 100)
+			if player.looking_at != null:
+				WorldControl.explode(Vector3(player.looking_at.previous_position) + Vector3(0.5, 0.5, 0.5), 8, 100)
 		if (not placing) and (not breaking) and player.raycast.is_colliding():
 			var c := player.raycast.get_collider()
 			if c is WorldItem:
@@ -123,80 +123,80 @@ func _ununhandled_input(event:InputEvent) -> void:
 					player.get_viewport().set_input_as_handled()
 				return
 		if event.is_action_pressed("game_place"):
-			var i := player.getSelectedItem()
-			if is_instance_valid(i):
-				var ii := i.getItem()
-				if ii.hasInteractionOverride:
-					if ii.interactionOverride.call(event):
-						if ii.consumeOnInteract > 0:
-							consumeHeld(ii.consumeOnInteract)
+			var held_item_stack := player.get_selected_item()
+			if is_instance_valid(held_item_stack):
+				var held_item := held_item_stack.get_item()
+				if held_item.has_interaction_override:
+					if held_item.interaction_override.call(event):
+						if held_item.consume_on_interact > 0:
+							consume_held(held_item.consume_on_interact)
 						player.get_viewport().set_input_as_handled()
 						return
-				if ii.isTool:
+				if held_item.is_tool:
 					# TODO implement tools
 					player.get_viewport().set_input_as_handled()
 					return
-				if ii.isVoxel and player.abilities["allowBuild"]:
-					if player.lookingAt != null:
+				if held_item.is_voxel and player.abilities["allowBuild"]:
+					if player.looking_at != null:
 						if Input.is_action_pressed("game_sneak"):
-							_placestart = player.lookingAt.position
+							_place_start = player.looking_at.position
 						else:
-							_placestart = player.lookingAt.previous_position
+							_place_start = player.looking_at.previous_position
 						placing = true
-						updatePlace()
+						update_place()
 		elif  event.is_action_released("game_place"):
 			placing = false
-			updatePlace()
-			var i := player.getSelectedItem()
-			if is_instance_valid(i):
-				var ii := i.getItem()
-				if ii.hasInteractionOverride:
-					if ii.interactionOverride.call(event):
-						if ii.consumeOnInteract > 0:
-							consumeHeld(ii.consumeOnInteract)
+			update_place()
+			var held_item_stack := player.get_selected_item()
+			if is_instance_valid(held_item_stack):
+				var held_item := held_item_stack.get_item()
+				if held_item.has_interaction_override:
+					if held_item.interaction_override.call(event):
+						if held_item.consume_on_interact > 0:
+							consume_held(held_item.consume_on_interact)
 						player.get_viewport().set_input_as_handled()
 						return
-				if ii.isTool:
+				if held_item.is_tool:
 					player.get_viewport().set_input_as_handled()
 					return
 		elif event.is_action_pressed("game_break"):
-			var i := player.getSelectedItem()
-			if is_instance_valid(i):
-				var ii := i.getItem()
-				if ii.hasInteractionOverride:
-					if ii.interactionOverride.call(event):
-						if ii.consumeOnInteract > 0:
-							consumeHeld(ii.consumeOnInteract)
+			var held_item_stack := player.get_selected_item()
+			if is_instance_valid(held_item_stack):
+				var held_item := held_item_stack.get_item()
+				if held_item.has_interaction_override:
+					if held_item.interaction_override.call(event):
+						if held_item.consume_on_interact > 0:
+							consume_held(held_item.consume_on_interact)
 						player.get_viewport().set_input_as_handled()
 						return
-				if ii.isTool:
+				if held_item.is_tool:
 					player.get_viewport().set_input_as_handled()
 					return
-			breakPower = 1.0
+			break_power = 1.0
 			breaking = true
 		elif event.is_action_released("game_break"):
 			breaking = false
 			_break.hide()
-			var i := player.getSelectedItem()
-			if is_instance_valid(i):
-				var ii := i.getItem()
-				if ii.hasInteractionOverride:
-					if ii.interactionOverride.call(event):
-						if ii.consumeOnInteract > 0:
-							consumeHeld(ii.consumeOnInteract)
+			var held_item_stack := player.get_selected_item()
+			if is_instance_valid(held_item_stack):
+				var held_item := held_item_stack.get_item()
+				if held_item.has_interaction_override:
+					if held_item.interaction_override.call(event):
+						if held_item.consume_on_interact > 0:
+							consume_held(held_item.consume_on_interact)
 						player.get_viewport().set_input_as_handled()
 						return
-				if ii.isTool:
+				if held_item.is_tool:
 					player.get_viewport().set_input_as_handled()
 					return
 		elif event.is_action_pressed("game_throw"):
-			var i := player.getSelectedItem()
+			var i := player.get_selected_item()
 			if is_instance_valid(i):
 				i = i.copy()
 				if not Input.is_action_pressed("game_sprint"):
 					i.count = 1
 				if player.inventory.extract_item(i):
-					player.throwItem(i)
+					player.throw_item(i)
 		
 		if placing or breaking:
 			if (

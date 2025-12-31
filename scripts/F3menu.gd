@@ -14,7 +14,7 @@ const LABEL2_TEXT := (
 )
 
 
-var gpuinfo := ["Unkown Driver", "0.0.0"]
+var gpu_info := ["Unknown Driver", "0.0.0"]
 
 
 @onready var player:Player = $"/root/Node3D/player"
@@ -27,7 +27,7 @@ func _ready() -> void:
 	var h = OS.get_video_adapter_driver_info()
 	if h.size() >= 2:
 		if h[0] != "":
-			gpuinfo = h
+			gpu_info = h
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -46,9 +46,9 @@ func _process(_delta) -> void:
 	var pl := Vector3i.ZERO
 	var v := "None"
 	var dc := int(Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
-	if player.lookingAt != null:
-		pl = player.lookingAt.get_position()
-		v = BlockManager.block_list[player.voxelTool.get_voxel(pl)].full_id
+	if player.looking_at != null:
+		pl = player.looking_at.get_position()
+		v = BlockManager.block_list[player.voxel_tool.get_voxel(pl)].full_id
 	text = LABEL1_TEXT % [
 		SettingManager.VERSION,
 		Engine.get_frames_per_second(),
@@ -65,5 +65,5 @@ func _process(_delta) -> void:
 		dc,
 	]
 	other.text = LABEL2_TEXT % [
-		gpuinfo[0], gpuinfo[1],
+		gpu_info[0], gpu_info[1],
 	]

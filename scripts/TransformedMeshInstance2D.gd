@@ -6,26 +6,26 @@ var xform:Transform3D
 var _rq := false
 
 
-@export var cullMode:BaseMaterial3D.CullMode:
+@export var cull_mode:BaseMaterial3D.CullMode:
 	set(value):
-		cullMode = value
-		queueRecalc()
-@export var baseMesh:Mesh:
+		cull_mode = value
+		queue_Recalc()
+@export var base_mesh:Mesh:
 	set(value):
-		baseMesh = value
-		queueRecalc()
-@export var xPosition:Vector3:
+		base_mesh = value
+		queue_Recalc()
+@export var x_position:Vector3:
 	set(value):
-		xPosition = value
-		queueRecalc()
-@export var xRotation:Vector3:
+		x_position = value
+		queue_Recalc()
+@export var x_rotation:Vector3:
 	set(value):
-		xRotation = value
-		queueRecalc()
-@export var xScale:Vector3:
+		x_rotation = value
+		queue_Recalc()
+@export var x_scale:Vector3:
 	set(value):
-		xScale = value
-		queueRecalc()
+		x_scale = value
+		queue_Recalc()
 @export var mat:Material:
 	set(value):
 		if value is BaseMaterial3D:
@@ -34,10 +34,10 @@ var _rq := false
 
 
 func _ready():
-	queueRecalc()
+	queue_Recalc()
 
 
-func queueRecalc():
+func queue_Recalc():
 	if not _rq:
 		_recalc.call_deferred()
 		_rq = true
@@ -49,7 +49,7 @@ func _comp(a:Array, b:Array) -> bool:
 	return h0 > h1
 
 
-func _normToCol(norm:Vector3) -> Color:
+func _norm_to_col(norm:Vector3) -> Color:
 	var d = Vector3(-0.57735026919, -0.57735026919, 0.57735026919).angle_to(norm)
 	d = 1 - (d / 10)
 	return Color(d, d, d)
@@ -58,22 +58,22 @@ func _normToCol(norm:Vector3) -> Color:
 func _recalc():
 	_rq = false
 	var err:Error
-	if (not is_instance_valid(baseMesh)) or (baseMesh.get_surface_count() == 0):
+	if (not is_instance_valid(base_mesh)) or (base_mesh.get_surface_count() == 0):
 		mesh = ArrayMesh.new()
 		return
 	var surface_tool := SurfaceTool.new()
-	surface_tool.create_from(baseMesh,0)
+	surface_tool.create_from(base_mesh,0)
 	var array_mesh := surface_tool.commit()
 	
 	xform = Transform3D()
 	
-	xform = xform.rotated(Vector3(0, 0, 1), deg_to_rad(xRotation.z))
-	xform = xform.rotated(Vector3(1, 0, 0), deg_to_rad(xRotation.x))
-	xform = xform.rotated(Vector3(0, 1, 0), deg_to_rad(xRotation.y))
+	xform = xform.rotated(Vector3(0, 0, 1), deg_to_rad(x_rotation.z))
+	xform = xform.rotated(Vector3(1, 0, 0), deg_to_rad(x_rotation.x))
+	xform = xform.rotated(Vector3(0, 1, 0), deg_to_rad(x_rotation.y))
 	
-	xform = xform.scaled(xScale)
+	xform = xform.scaled(x_scale)
 	
-	xform = xform.translated(xPosition)
+	xform = xform.translated(x_position)
 	
 	var _tool = MeshDataTool.new()
 	err = _tool.create_from_surface(array_mesh, 0)
@@ -92,7 +92,7 @@ func _recalc():
 	for i in _tool.get_face_count():
 		var norm := _tool.get_face_normal(i)
 		var cond:bool
-		match cullMode:
+		match cull_mode:
 			BaseMaterial3D.CullMode.CULL_BACK:
 				cond = Vector3.FORWARD.angle_to(norm) < (PI /  2)
 			BaseMaterial3D.CullMode.CULL_FRONT:
@@ -121,7 +121,7 @@ func _recalc():
 	verts.sort_custom(_comp)
 	
 	for i in verts:
-		st.set_color(_normToCol(i[3]))
+		st.set_color(_norm_to_col(i[3]))
 		
 		st.set_uv(i[4])
 		st.set_uv2(i[7])

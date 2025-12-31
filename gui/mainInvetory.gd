@@ -1,8 +1,8 @@
 extends PanelContainer
 
 
-var guii:PackedScene = preload("res://gui/GuiItem.tscn")
-@onready var fillbar:ProgressBar = $vBoxContainer/fillBar
+var gui_item:PackedScene = preload("res://gui/GuiItem.tscn")
+@onready var fill_bar:ProgressBar = $vBoxContainer/fillBar
 @onready var grid:GridContainer = $vBoxContainer/scrollContainer/hBoxContainer/gridContainer
 
 
@@ -10,7 +10,7 @@ var guii:PackedScene = preload("res://gui/GuiItem.tscn")
 func _ready() -> void:
 	setup.call_deferred()
 	redraw.call_deferred()
-	WorldControl.instance._p.inventory.content_changed.connect(redraw)
+	WorldControl.instance._player.inventory.content_changed.connect(redraw)
 
 
 func setup() -> void:
@@ -24,23 +24,23 @@ func setup() -> void:
 
 func pick(i:GUIItem) -> void:
 	if not InventoryLayer.holding:
-		InventoryLayer.hold(i.item, WorldControl.instance._p.inventory)
+		InventoryLayer.hold(i.item, WorldControl.instance._player.inventory)
 	else:
-		InventoryLayer.dropInto(WorldControl.instance._p.inventory)
+		InventoryLayer.drop_into(WorldControl.instance._player.inventory)
 
 
 func redraw() -> void:
-	var inv := WorldControl.instance._p.inventory
-	fillbar.max_value = inv.space
-	fillbar.value = inv.consumption
+	var inv := WorldControl.instance._player.inventory
+	fill_bar.max_value = inv.space
+	fill_bar.value = inv.consumption
 	for i in grid.get_children():
 		i.queue_free()
 	for i in inv.container:
-		var ngi:GUIItem = guii.instantiate()
+		var ngi:GUIItem = gui_item.instantiate()
 		ngi.clicked.connect(pick)
 		grid.add_child(ngi)
 		ngi.assign(i)
 
 
 func _on_button_pressed() -> void:
-	InventoryLayer.dropInto(WorldControl.instance._p.inventory)
+	InventoryLayer.drop_into(WorldControl.instance._player.inventory)

@@ -14,7 +14,6 @@ metadata/_custom_type_script = "uid://006gqnyiwj5e"
 [sub_resource type="Resource" id="Resource_pgj7p"]
 script = ExtResource("1_fi6yb")
 blocks = Array[ExtResource("2_wgmco")]([SubResource("Resource_sbf11")])
-layerdata = Array[int]([0])
 metadata/_custom_type_script = "uid://cbdcvkv3uk2nk"
 
 [sub_resource type="Resource" id="Resource_egwsh"]
@@ -46,7 +45,6 @@ center = Vector2i(2, 2)
 min_count = 2
 max_count = 2
 blocks = Array[ExtResource("2_wgmco")]([SubResource("Resource_egwsh"), SubResource("Resource_wgmco"), SubResource("Resource_a10ec")])
-layerdata = Array[int]([2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2])
 metadata/_custom_type_script = "uid://cbdcvkv3uk2nk"
 
 [sub_resource type="Resource" id="Resource_2obk4"]
@@ -55,7 +53,6 @@ size = Vector2i(3, 3)
 center = Vector2i(1, 1)
 max_count = 1
 blocks = Array[ExtResource("2_wgmco")]([SubResource("Resource_egwsh"), SubResource("Resource_wgmco"), SubResource("Resource_a10ec")])
-layerdata = Array[int]([2, 1, 2, 1, 0, 1, 2, 1, 2])
 metadata/_custom_type_script = "uid://cbdcvkv3uk2nk"
 
 [sub_resource type="Resource" id="Resource_epnew"]
@@ -75,7 +72,6 @@ size = Vector2i(3, 3)
 center = Vector2i(1, 1)
 max_count = 2
 blocks = Array[ExtResource("2_wgmco")]([SubResource("Resource_epnew"), SubResource("Resource_xuavt")])
-layerdata = Array[int]([0, 1, 0, 1, 1, 1, 0, 1, 0])
 metadata/_custom_type_script = "uid://cbdcvkv3uk2nk"
 
 [resource]

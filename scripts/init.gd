@@ -4,7 +4,7 @@ extends Node3D
 @onready var bar := $control/vBoxContainer/progressBar
 @onready var label := $control/vBoxContainer/label
 var step := 0
-var pckmods:Array = []
+var pck_mods:Array = []
 
 
 func _ready() -> void:
@@ -14,6 +14,7 @@ func _ready() -> void:
 	
 	
 func _process(_delta):
+	# TODO: make this a thread
 	match step:
 		0:
 			label.text = "Checking mod config..."
@@ -24,8 +25,8 @@ func _process(_delta):
 				var json = JSON.new()
 				var error = json.parse(content)
 				if (error == OK) && (json.data is Array):
-					pckmods = json.data
-					bar.max_value += pckmods.size()
+					pck_mods = json.data
+					bar.max_value += pck_mods.size()
 				else:
 					f = FileAccess.open("user://active_mods.json", FileAccess.WRITE)
 					f.store_string("[]")
@@ -46,20 +47,20 @@ func _process(_delta):
 				DirAccess.make_dir_absolute("user://modpacks")
 		2:
 			label.text = "Init translation..."
-			Translator._sinit()
+			Translator._s_init()
 		3:
 			label.text = "Init settings..."
-			SettingManager._sinit()
+			SettingManager._s_init()
 		_:
 			var substep = step - 4
-			if substep >= pckmods.size():
+			if substep >= pck_mods.size():
 				get_tree().change_scene_to_file("res://titlescreen/title.tscn")
 			else:
-				if pckmods[substep] is String:
-					var nextpck:String = "user://mods/" + pckmods[substep] + ".pck"
-					if FileAccess.file_exists(nextpck):
-						ProjectSettings.load_resource_pack(nextpck)
+				if pck_mods[substep] is String:
+					var next_pck:String = "user://mods/" + pck_mods[substep] + ".pck"
+					if FileAccess.file_exists(next_pck):
+						ProjectSettings.load_resource_pack(next_pck)
 					else:
-						print("Can't find mod: " + nextpck)
+						print("Can't find mod: " + next_pck)
 	bar.value = step
 	step += 1

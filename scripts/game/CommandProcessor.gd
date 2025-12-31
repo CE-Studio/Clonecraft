@@ -6,8 +6,8 @@ static var instance:CMDprocessor
 static var vars := {}
 static var _thrown := false
 static var _err:String
-static var _whyerr:String
-static var _calledByPlayer := false
+static var _why_err:String
+static var _called_by_player := false
 
 
 static func _reset() -> void:
@@ -15,16 +15,16 @@ static func _reset() -> void:
 	vars = {}
 	_thrown = false
 	_err = ""
-	_whyerr = ""
-	_calledByPlayer = false
+	_why_err = ""
+	_called_by_player = false
 
 
 class Command extends RefCounted:
-	func getCommandInvocation() -> String:
+	func get_command_invocation() -> String:
 		return "__invalid__"
 	
 	
-	func getCommandArgList(_index:int) -> Array:
+	func get_command_arg_list(_index:int) -> Array:
 		return []
 	
 	
@@ -37,23 +37,23 @@ static var commands:Array[Command] = []
 
 static func run(con:String) -> Variant:
 	con = con.strip_edges()
-	var scon:Array = con.split("\n")
-	if scon.size() == 0:
+	var split_con:Array = con.split("\n")
+	if split_con.size() == 0:
 		return
-	if scon.size() > 1:
+	if split_con.size() > 1:
 		var outs := []
-		for i in scon:
+		for i in split_con:
 			outs.append(run(i))
 		return outs
-	scon = scon[0].split(";")
-	if scon.size() > 1:
+	split_con = split_con[0].split(";")
+	if split_con.size() > 1:
 		var outs := []
-		for i in scon:
+		for i in split_con:
 			outs.append(run(i))
 		return outs
-	con = scon[0]
+	con = split_con[0]
 	
-	var tokens := _extTokens(con)
+	var tokens := _ext_tokens(con)
 	if _thrown:
 		_thrown = false
 		return
@@ -89,54 +89,54 @@ static func _run(tokens:Array) -> Variant:
 			return tokens[1]
 		else:
 			for i in commands:
-				if i.getCommandInvocation() == tokens[0]:
-					var outp = i.execute(tokens.slice(1))
+				if i.get_command_invocation() == tokens[0]:
+					var output = i.execute(tokens.slice(1))
 					if _thrown:
-						if _calledByPlayer:
-							Chat.pushText(
-								Translator.translate(_err) + ": " + _whyerr + "\n" +
+						if _called_by_player:
+							Chat.push_text(
+								Translator.translate(_err) + ": " + _why_err + "\n" +
 								"In command: " + str(tokens)
 							)
 						return
-					return outp
+					return output
 	else:
 		return tokens
 	return false
 
 
-static func _extTokens(con:String) -> Array:
+static func _ext_tokens(con:String) -> Array:
 	var tokens:Array = []
 	var depth:int = 0
-	var innerd := ""
+	var inner_data := ""
 	var insideStr := false
 	var escaped := false
 	for i in con.length():
 		if depth > 0:
 			if escaped:
 				escaped = false
-				innerd += con[i]
+				inner_data += con[i]
 			else: match con[i]:
 				"\"":
 					insideStr = !insideStr
 				"(" when !insideStr:
 					depth += 1
-					innerd += "("
+					inner_data += "("
 				")" when !insideStr:
 					depth -= 1
 					if depth == 0:
 						if (tokens.size() == 0) or (not (tokens[-1] is String)) or (tokens[-1] != ""):
-							tokens.append(_extTokens(innerd))
+							tokens.append(_ext_tokens(inner_data))
 						else:
-							tokens[-1] = _extTokens(innerd)
+							tokens[-1] = _ext_tokens(inner_data)
 						if _thrown:
 							return []
 					else:
-						innerd += ")"
+						inner_data += ")"
 				"\\" when !insideStr:
 					escaped = true
-					innerd += "\\"
+					inner_data += "\\"
 				_:
-					innerd += con[i]
+					inner_data += con[i]
 		elif escaped:
 			escaped = false
 			if tokens.size() == 0:
@@ -148,10 +148,10 @@ static func _extTokens(con:String) -> Array:
 			"\"":
 				insideStr = !insideStr
 			"(" when !insideStr:
-				innerd = ""
+				inner_data = ""
 				depth = 1
 			")" when !insideStr:
-				throw("cmd.error.unblanced", "Unexpected closing parenthesis in token set \"" + con + "\"")
+				throw("cmd.error.unbalanced", "Unexpected closing parenthesis in token set \"" + con + "\"")
 				return []
 			"\\":
 				escaped = true
@@ -173,22 +173,22 @@ static func _extTokens(con:String) -> Array:
 	return tokens
 
 
-static func registerCommand(command:Command) -> void:
+static func register_command(command:Command) -> void:
 	commands.append(command)
 
 
 static func throw(error:String, why:String) -> void:
 	_err = error
-	_whyerr = why
+	_why_err = why
 	_thrown = true
 	BlockManager.log("Command Processor", Translator.translate(error) + " For reason: " + why)
 
 
 class _helpCMD extends Command:
-	func getCommandInvocation() -> String:
+	func get_command_invocation() -> String:
 		return "help"
 		
-	func getCommandArgList(_index:int) -> Array:
+	func get_command_arg_list(_index:int) -> Array:
 		return []
 		
 	func execute(_args:Array) -> Variant:
@@ -196,12 +196,12 @@ class _helpCMD extends Command:
 			CMDprocessor.throw("cmd.error.too_many_args", "Expected 0 arguments, got " + str(_args.size()))
 		var h := "Help: " + str(CMDprocessor.commands.size()) + " command(s) found"
 		for i in CMDprocessor.commands:
-			h += "\n  - " + i.getCommandInvocation() + " "
-			for j in i.getCommandArgList(-1):
+			h += "\n  - " + i.get_command_invocation() + " "
+			for j in i.get_command_arg_list(-1):
 				h += str(j) + " "
 		return h
 
 
 func _ready():
 	instance = self
-	CMDprocessor.registerCommand(_helpCMD.new())
+	CMDprocessor.register_command(_helpCMD.new())

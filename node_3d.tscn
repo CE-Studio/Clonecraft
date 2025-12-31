@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" uid="uid://bfrvkpecmnu5u" path="res://scripts/worldControl.gd" id="1_ug7a2"]
 [ext_resource type="Script" uid="uid://bp2sn0vo8j0ce" path="res://scripts/F3menu.gd" id="2_yvkcu"]
-[ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="3_cx0vp"]
+[ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseBlocks.tres" id="3_cx0vp"]
 [ext_resource type="Script" uid="uid://diupuqsr0y2h1" path="res://VoxelTerrainSetup.gd" id="4_828ak"]
 [ext_resource type="ArrayMesh" uid="uid://dvuj1pq6hspdr" path="res://wireframe.obj" id="5_1o3wh"]
 [ext_resource type="Script" uid="uid://cyie8cbdd62ix" path="res://scripts/game/hotbar.gd" id="5_7ch0y"]

@@ -47,7 +47,7 @@ func populate(data:Dictionary) -> void:
 			content[-1].autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 			add_extract(dat["extra"])
 		else:
-			print("the fucc is this???")
+			print("the heck is this???")
 
 
 func add_extract(obj, addRule := true) -> void:
@@ -85,4 +85,4 @@ func _on_button_pressed() -> void:
 			op.getExitButton().text = "adding " + str(h) + j
 			await get_tree().process_frame
 	op.getExitButton().disabled = false
-	op.getExitButton().text = Translator.translate(op.exitName)
+	op.getExitButton().text = Translator.translate(op.exit_name)

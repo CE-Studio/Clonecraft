@@ -1,11 +1,11 @@
 extends CMDprocessor.Command
 
 
-func getCommandInvocation() -> String:
+func get_command_invocation() -> String:
 	return "hotbar"
 
 
-func getCommandArgList(index:int) -> Array:
+func get_command_arg_list(index:int) -> Array:
 	if index == -1:
 		return ["<Int Slot (0-39)>", "<String ID>", "[Dict Metadata]"]
 	elif index == 0:
@@ -41,6 +41,6 @@ func execute(args:Array) -> Variant:
 		CMDprocessor.throw("cmd.error.arg_below_range", "Slot number cannot be smaller than 0")
 		return false
 
-	var p := WorldControl.getPlayer(WorldControl.localUsername)
-	p.hotbarItems[c] = p.inventory.get_item_from_id(StringName(args[1]))
+	var p := WorldControl.get_player(WorldControl.local_username)
+	p.hotbar_items[c] = p.inventory.get_item_from_id(StringName(args[1]))
 	return true

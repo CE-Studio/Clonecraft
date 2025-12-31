@@ -31,8 +31,8 @@ func _tick(delta: float) -> void:
 	pass
 
 
-## Called whenever the TileEntity recives a block update.
-func _blockUpdate() -> void:
+## Called whenever the TileEntity receives a block update.
+func _block_update() -> void:
 	pass
 
 
@@ -50,5 +50,5 @@ func save() -> Dictionary:
 
 ## Call to flag that the TileEntity needs to be re-saved.[br]
 ## The TileEntity may still be re-saved even if you don't call this.
-func markDirty() -> void:
-	WorldControl.markDirty(Vector3i((pos / 16.0).floor()))
+func mark_dirty() -> void:
+	WorldControl.mark_dirty(Vector3i((pos / 16.0).floor()))

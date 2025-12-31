@@ -14,7 +14,7 @@ static var mods:Array[Mod] = []
 static var block_list:Array[BlockInfo] = []
 ## A dictionary to translate between a voxel's string name and numerical ID.[br]
 ## Numerical IDs will vary from world to world. Do not hardcode them.
-## Caching, however, is strongly encuraged.[br]
+## Caching, however, is strongly encouraged.[br]
 ## Static
 static var block_id_list:Dictionary[StringName, int] = {}
 ## The world's [VoxelBlockyLibrary].[br]
@@ -26,10 +26,10 @@ static var terrain:VoxelTerrain
 ## Counts the number of registered voxels.[br]
 ## Static
 static var id_counter := 0
-## Turns [code]true[/code] when the world is fully initalized.[br]
+## Turns [code]true[/code] when the world is fully initialized.[br]
 ## Static
 static var load_done := false
-## A static refrence to the BlockManager singleton.[br]
+## A static reference to the BlockManager singleton.[br]
 ## [code]null[/code] until the world scene loads.[br]
 ## You won't typically need to use this.[br]
 ## Static
@@ -51,13 +51,13 @@ static var _tick_time:float = 0.0
 static var _updates:Array[Callable] = []
 static var _physics_updates:Array[Callable] = []
 static var _input_list := []
-static var _u_input_list := []
+static var _unhandled_input_list := []
 static var _adding_block := false
-static var _tdisp:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
-static var _udisp:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
+static var _tick_display:PackedScene = preload("res://scripts/helpers/tickDisplay.tscn")
+static var _update_display:PackedScene = preload("res://scripts/helpers/updateDisplay.tscn")
 static var _tool:VoxelToolTerrain
-static var _newmodel:VoxelBlockyModel
-static var _check_tile_entites := {}
+static var _new_model:VoxelBlockyModel
+static var _check_tile_entities := {}
 
 
 static func _reset() -> void:
@@ -77,13 +77,13 @@ static func _reset() -> void:
 	_updates = []
 	_physics_updates = []
 	_input_list = []
-	_u_input_list = []
+	_unhandled_input_list = []
 	_adding_block = false
-	_tdisp = preload("res://scripts/helpers/tickDisplay.tscn")
-	_udisp = preload("res://scripts/helpers/updateDisplay.tscn")
+	_tick_display = preload("res://scripts/helpers/tickDisplay.tscn")
+	_update_display = preload("res://scripts/helpers/updateDisplay.tscn")
 	_tool = null
-	_newmodel = null
-	_check_tile_entites = {}
+	_new_model = null
+	_check_tile_entities = {}
 
 
 ## Get the [BlockManager.BlockInfo] tied to a specific ID string.[br]
@@ -106,7 +106,7 @@ static func add_physics_update(c:Callable) -> void:
 
 static func _tick_block(pos:Vector3i, rawID:int) -> void:
 	if ProjectSettings.get_setting("gameplay/debug/show_updates"):
-		var disp:MeshInstance3D = _tdisp.instantiate()
+		var disp:MeshInstance3D = _tick_display.instantiate()
 		disp.position = (Vector3(pos.x, pos.y, pos.z) + Vector3(0.5, 0.5, 0.5))
 		terrain.add_child(disp)
 
@@ -127,7 +127,7 @@ static func run_block_updates() -> void:
 	pending_block_updates = []
 	for i in block_updates:
 		if ProjectSettings.get_setting("gameplay/debug/show_updates"):
-			var disp:MeshInstance3D = _udisp.instantiate()
+			var disp:MeshInstance3D = _update_display.instantiate()
 			disp.position = (Vector3(i.x, i.y, i.z) + Vector3(0.5, 0.5, 0.5))
 			terrain.add_child(disp)
 		var bi := BlockManager.get_block(i)
@@ -153,7 +153,7 @@ class BlockInfo extends RefCounted:
 	## How hard the voxel is for the player to mine.
 	var break_strength:float
 	## How hard it is to destroy the voxel in an explosion.
-	var expl_strength:float
+	var explosion_strength:float
 	## If explosions or the player are completely unable to destroy the voxel.
 	var unbreakable:bool
 	## If the voxel has a custom script attached.
@@ -173,63 +173,63 @@ class BlockInfo extends RefCounted:
 	var step_sound:StringName
 	## The ID of the sound to be played when the voxel is placed.
 	var place_sound:StringName
-	## The ID of the sound to be played when the voxel is borken.
+	## The ID of the sound to be played when the voxel is broken.
 	var break_sound:StringName
 	## The ID of the item the voxel will drop when broken.
 	var drop_item:StringName
 	## The script used to determine dropped items, if DropItem is set to "script"[br]
-	## Return an aray of ItemStacks
+	## Return an array of ItemStacks
 	var drop_script:Callable
 	# TODO come up with and explain voxel properties
 	## A list of various unique properties the voxel may have.[br]
-	## The current options that have an effect are "air", "replacable", and "incompleteHitbox"
+	## The current options that have an effect are "air", "replaceable", and "incompleteHitbox"
 	var properties:Array[StringName]
 	## How slippery the voxel is when being walked on. Lower is more slippery, higher is less.
 	var traction:float = 1.0
 	
 	
 	const AIR := &"air"
-	const REPLACABLE := &"replacable"
+	const REPLACEABLE := &"replaceable"
 	const INCOMPLETE_HITBOX := &"incompleteHitbox"
 	
 
 	func _init(
-			fmod_id:StringName,
-			fname_id:StringName,
-			fname_readable:StringName,
-			fblock_model:VoxelBlockyModel,
-			fbreak_strength:float,
-			fexpl_strength:float,
-			funbreakable:bool,
-			fscripted:bool,
-			fscript:Callable,
-			ftool_class:StringName,
-			fstep_sound:StringName,
-			fplace_sound:StringName,
-			fbreak_sound:StringName,
-			fdrop_item := &"*"):
-		mod_id = fmod_id
-		name_id = fname_id
-		full_id = fmod_id + ":" + fname_id
-		name_readable = fname_readable
-		block_model = fblock_model
-		break_strength = fbreak_strength
-		expl_strength = fexpl_strength
-		unbreakable = funbreakable
-		scripted = fscripted
+			_mod_id:StringName,
+			_name_id:StringName,
+			_name_readable:StringName,
+			_block_model:VoxelBlockyModel,
+			_break_strength:float,
+			_explosion_strength:float,
+			_unbreakable:bool,
+			_scripted:bool,
+			_script:Callable,
+			_tool_class:StringName,
+			_step_sound:StringName,
+			_place_sound:StringName,
+			_break_sound:StringName,
+			_drop_item := &"*"):
+		mod_id = _mod_id
+		name_id = _name_id
+		full_id = _mod_id + ":" + _name_id
+		name_readable = _name_readable
+		block_model = _block_model
+		break_strength = _break_strength
+		explosion_strength = _explosion_strength
+		unbreakable = _unbreakable
+		scripted = _scripted
 		if scripted:
-			block_script = fscript
-		tool_class = ftool_class
-		step_sound = fstep_sound
-		place_sound = fplace_sound
-		break_sound = fbreak_sound
-		drop_item = fdrop_item
+			block_script = _script
+		tool_class = _tool_class
+		step_sound = _step_sound
+		place_sound = _place_sound
+		break_sound = _break_sound
+		drop_item = _drop_item
 
 
 	## Set the voxel to be able to be randomly ticked.
-	func set_tickable(ftickcb:Callable) -> void:
+	func set_tickable(_tick_callback:Callable) -> void:
 		tickable = true
-		tick_callback = ftickcb
+		tick_callback = _tick_callback
 		block_model.random_tickable = true
 	
 	
@@ -251,7 +251,7 @@ static func log(id:String, message:String) -> String:
 	var out:String = "[" + Time.get_datetime_string_from_system() + "] [Mod] [" + id + "] " + message
 	print(out)
 	if ProjectSettings.get_setting("gameplay/debug/log_to_chat"):
-		Chat.pushText(out)
+		Chat.push_text(out)
 	return out
 
 
@@ -259,7 +259,7 @@ static func glog(id:String, message:String) -> String:
 	var out:String = "[" + Time.get_datetime_string_from_system() + "] [" + id + "] " + message
 	print(out)
 	if ProjectSettings.get_setting("gameplay/debug/log_to_chat"):
-		Chat.pushText(out)
+		Chat.push_text(out)
 	return out
 
 
@@ -272,14 +272,14 @@ static func start_block_register(block_id:StringName, type:Voxdat.vox) -> VoxelB
 	id_counter += 1
 	match type:
 		Voxdat.vox.GEOMETRY_CUBE:
-			_newmodel = VoxelBlockyModelCube.new()
-			_newmodel.atlas_size_in_tiles = Vector2i(10, 10)
+			_new_model = VoxelBlockyModelCube.new()
+			_new_model.atlas_size_in_tiles = Vector2i(10, 10)
 		Voxdat.vox.GEOMETRY_MESH:
-			_newmodel = VoxelBlockyModelMesh.new()
+			_new_model = VoxelBlockyModelMesh.new()
 		Voxdat.vox.GEOMETRY_NONE:
-			_newmodel = VoxelBlockyModelEmpty.new()
+			_new_model = VoxelBlockyModelEmpty.new()
 
-	return(_newmodel)
+	return(_new_model)
 	
 
 ## Finish registering a voxel.[br]
@@ -309,20 +309,20 @@ static func register_input(callback:Callable) -> void:
 ## Analogous to [method Node._unhandled_input][br]
 ## Static
 static func register_unhandled_input(callback:Callable) -> void:
-	_u_input_list.append(callback)
+	_unhandled_input_list.append(callback)
 
 
 static func _setup_placeholders():
-	var regpath := WorldControl.worldpath + "/setupData/IDregistry.json"
-	if FileAccess.file_exists(regpath):
-		var f = FileAccess.open(regpath, FileAccess.READ)
+	var _registry_path := WorldControl.world_path + "/setupData/IDregistry.json"
+	if FileAccess.file_exists(_registry_path):
+		var f = FileAccess.open(_registry_path, FileAccess.READ)
 		var h = JSON.parse_string(f.get_as_text())
 		f.close()
 		var count:int = 0
 		for i in h:
 			count = maxi(count, h[i] + 1)
 		block_list.resize(count)
-		var mat:StandardMaterial3D = preload("res://mods/clonecraft/baseblocks.tres")
+		var mat:StandardMaterial3D = preload("res://mods/clonecraft/baseBlocks.tres")
 		var m := VoxelBlockyModelCube.new()
 		var v = Vector2(9, 9)
 		m.atlas_size_in_tiles = Vector2i(10, 10)
@@ -358,11 +358,11 @@ static func _setup_placeholders():
 
 
 # TODO finalize and document the loading order
-## Initalize the block manager.[br]
+## Initialize the block manager.[br]
 ## You probably don't want to call this.[br]
 ## Static
 static func setup() -> void:
-	var regpath := WorldControl.worldpath + "/setupData/"
+	var _registry_path := WorldControl.world_path + "/setupData/"
 	terrain = Statics.get_node("/root/Node3D/VoxelTerrain")
 	_tool = terrain.get_voxel_tool()
 	block_library.atlas_size = 10
@@ -408,7 +408,7 @@ static func setup() -> void:
 	tile_entity_block.properties.append(&"incompleteHitbox")
 	end_block_register(tile_entity_block)
 
-	Mod.refman()
+	Mod.reference_manager()
 	for i in mods_to_load:
 		print(
 			"[" + Time.get_datetime_string_from_system() +
@@ -416,7 +416,7 @@ static func setup() -> void:
 		)
 		mods.append(load("res://mods/" + i + "/" + i + ".gd").new())
 	for i in mods:
-		if i.get("MODID") == null:
+		if i.get("MOD_ID") == null:
 			print(
 				"[" + Time.get_datetime_string_from_system() +
 				"] [BlockManager] One of your mods has no mod ID! It can still load," +
@@ -431,13 +431,13 @@ static func setup() -> void:
 		else:
 			print(
 				"[" + Time.get_datetime_string_from_system() +
-				"] [BlockManager] Beginning register phase for mod '" + i.MODID + "'..."
+				"] [BlockManager] Beginning register phase for mod '" + i.MOD_ID + "'..."
 			)
 			if i.has_method("register_phase"):
 				i.register_phase()
 			print(
 				"[" + Time.get_datetime_string_from_system() +
-				"] [BlockManager] Register phase for '" + i.MODID + "' done!"
+				"] [BlockManager] Register phase for '" + i.MOD_ID + "' done!"
 			)
 	print(
 		"[" + Time.get_datetime_string_from_system() +
@@ -450,29 +450,29 @@ static func setup() -> void:
 	terrain.mesher.library = block_library
 	
 	#Write out the block registry to lock numerical block IDs
-	if !DirAccess.dir_exists_absolute(regpath):
-		DirAccess.make_dir_absolute(regpath)
-	var f = FileAccess.open(regpath + "IDregistry.json", FileAccess.WRITE)
+	if !DirAccess.dir_exists_absolute(_registry_path):
+		DirAccess.make_dir_absolute(_registry_path)
+	var f = FileAccess.open(_registry_path + "IDregistry.json", FileAccess.WRITE)
 	f.store_string(JSON.stringify(block_id_list, "  "))
 	f.close()
 
 	#Ensure every block has an item
-	ItemManager.getReady()
+	ItemManager.get_ready()
 	for i in block_list:
-		ItemManager.simpleBlockItem(i)
+		ItemManager.simple_block_item(i)
 
 	load_done = true
 
 
 func _process(delta) -> void:
-	if load_done and (not(WorldControl.isPaused())):
+	if load_done and (not(WorldControl.is_paused())):
 		BlockManager._tick_time += delta
 		if BlockManager._tick_time >= BlockManager.TICK_LENGTH:
 			BlockManager._tick_time -= BlockManager.TICK_LENGTH
 			for i in _updates:
 				i.call(delta)
 			BlockManager.run_block_updates()
-			WorldControl.instance._p.ticks()
+			WorldControl.instance._player.ticks()
 		
 
 
@@ -487,7 +487,7 @@ func _input(event) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	for i in _u_input_list:
+	for i in _unhandled_input_list:
 		i.call(event)
 
 
@@ -496,7 +496,7 @@ func _ready() -> void:
 
 
 # TODO abstract away VoxelBlockyModel to pin the features
-# TODO unit testing for abstractions ig??? feels like the right thing to do for compatibillity
+# TODO unit testing for abstractions ig??? feels like the right thing to do for compatibility
 ## Quickly and easily create a simple voxel that has the same texture on all sides.[br]
 ## [param mod_id] is typically the ID of your mod, but can be anything if needed.[br]
 ## [param block_name] is the ID of your voxel.[br]
@@ -553,7 +553,7 @@ static func quick_uniform_block(
 ## [param pos] is the position.[br]
 ## [param block_id] is the id of the voxel you want to place (in [code]mod_id:block_id[/code] format).[br]
 ## [param drop] determines if the voxel already at the position will drop an item when replaced.[br]
-## [param update] determines if the operation will send block updates to neighoring voxels.[br]
+## [param update] determines if the operation will send block updates to neighboring voxels.[br]
 ## [param force] forces the operation to replace any voxel, not just ones flagged as replaceable.[br]
 ## Returns [code]true[/code] if the operation succeeded.[br]
 ## Static
@@ -575,7 +575,7 @@ static func set_block(
 	if will_set:
 		if silky:
 			var item := ItemManager.ItemStack.new(old_block.full_id, 1)
-			ItemManager.spawnWorldItem(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
+			ItemManager.spawn_world_item(item, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
 		elif drop:
 			var item_ID := old_block.drop_item
 			if item_ID != &"null":
@@ -587,7 +587,7 @@ static func set_block(
 				else:
 					item = [ItemManager.ItemStack.new(item_ID, 1)]
 				for i in item:
-					ItemManager.spawnWorldItem(i, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
+					ItemManager.spawn_world_item(i, Vector3(pos.x + 0.5, pos.y + 0.5, pos.z + 0.5))
 
 		_tool.set_voxel(pos, block_id_list[block_id])
 
@@ -606,5 +606,5 @@ static func set_block(
 ## Gets the [BlockManager.BlockInfo] for the voxel at the specified position.[br]
 ## Static
 static func get_block(pos:Vector3) -> BlockInfo:
-	var npos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
-	return block_list[_tool.get_voxel(npos)]
+	var new_pos = Vector3i(floor(pos.x), floor(pos.y), floor(pos.z))
+	return block_list[_tool.get_voxel(new_pos)]

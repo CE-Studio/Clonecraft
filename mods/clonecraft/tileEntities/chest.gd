@@ -9,7 +9,7 @@ func get_id() -> StringName:
 
 
 func _ready() -> void:
-	inventory.content_changed.connect(markDirty)
+	inventory.content_changed.connect(mark_dirty)
 
 
 func save() -> Dictionary:
@@ -23,8 +23,8 @@ func interact(event:InputEvent) -> bool:
 		var t = preload("res://mods/clonecraft/tileEntities/chestInv.tscn").instantiate()
 		t.get_child(0).inv = inventory
 		InventoryTabs.registerTempTab(t)
-		InventoryLayer.instance.inventoryClosed.connect(close, CONNECT_ONE_SHOT)
-		WorldControl.instance.openInventory()
+		InventoryLayer.instance.inventory_closed.connect(close, CONNECT_ONE_SHOT)
+		WorldControl.instance.open_inventory()
 		return true
 	return false
 

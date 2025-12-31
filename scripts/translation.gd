@@ -22,7 +22,7 @@ static func _recurExtract(base:String, cont:Dictionary) -> void:
 			_recurExtract(base + i + ".", cont[i])
 
 
-static func loadFromJson(path:String) -> bool:
+static func load_from_json(path:String) -> bool:
 	var j := JSON.new()
 	var f := FileAccess.open(path, FileAccess.READ)
 	var stat := j.parse(f.get_as_text())
@@ -35,8 +35,8 @@ static func loadFromJson(path:String) -> bool:
 	return true
 
 
-static func _sinit() -> void:
-	if not loadFromJson(fallback):
+static func _s_init() -> void:
+	if not load_from_json(fallback):
 		slog("Error loading language!")
 
 

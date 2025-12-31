@@ -9,10 +9,10 @@ class_name BackingPanel
 ## A string to display on the panel's close button. Accepts a translation key.[br]
 ## Should only be set using [method setExit].[br]
 ## See [Translator].
-var exitName = "gui.gameplay.back"
+var exit_name = "gui.gameplay.back"
 ## A list of functions to call when the panel closes, and the objects to call them on.[br]
 ## A workaround for static callables not currently being possible.[br]
-## Should only be set using [method setExit] and [method addExit].
+## Should only be set using [method setExit] and [method add_exit].
 var closeCallbacks:Array[Array] = []
 ## If the panel should report to the [SettingManager] that it has been closed.[br]
 ## You probably don't need to touch this.[br]
@@ -21,15 +21,15 @@ var counted := true
 
 
 func _ready() -> void:
-	$HBoxContainer/Button.text = Translator.translate(exitName)
+	$HBoxContainer/Button.text = Translator.translate(exit_name)
 
 
 ## Configures how the panel will behave when closed.[br]
-## [param ename] sets the text on the exit button.[br]
+## [param _exit_name] sets the text on the exit button.[br]
 ## [param obj] and [param fun] are a workaround for static callables. Pass in an object, 
 ## and the name of the function to call on it.
-func setExit(ename:String, obj:Object = null, fun:StringName = &"", count = true) -> void:
-	exitName = ename
+func setExit(_exit_name:String, obj:Object = null, fun:StringName = &"", count = true) -> void:
+	exit_name = _exit_name
 	if obj != null:
 		closeCallbacks.append([obj, fun])
 	counted = count
@@ -38,12 +38,12 @@ func setExit(ename:String, obj:Object = null, fun:StringName = &"", count = true
 ## Adds a callback to be called when the panel closes.[br]
 ## [param obj] and [param fun] are a workaround for static callables. Pass in an object, 
 ## and the name of the function to call on it.
-func addExit(obj:Object, fun:StringName) -> void:
+func add_exit(obj:Object, fun:StringName) -> void:
 	closeCallbacks.append([obj, fun])
 
 
 ## Adds an additional button to the bottom of the panel
-func addButton(name:StringName, cb:Callable, tooltip:String = "") -> Button:
+func add_button(name:StringName, cb:Callable, tooltip:String = "") -> Button:
 	var b := Button.new()
 	b.text = Translator.translate(name)
 	b.pressed.connect(cb)

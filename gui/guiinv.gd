@@ -1,8 +1,8 @@
 extends PanelContainer
 
 
-var guii:PackedScene = preload("res://gui/GuiItem.tscn")
-@onready var fillbar:ProgressBar = $vBoxContainer/fillBar
+var gui_item:PackedScene = preload("res://gui/GuiItem.tscn")
+@onready var fill_bar:ProgressBar = $vBoxContainer/fillBar
 @onready var grid:GridContainer = $vBoxContainer/scrollContainer/hBoxContainer/gridContainer
 var inv:Inventory
 
@@ -27,20 +27,20 @@ func pick(i:GUIItem) -> void:
 	if not InventoryLayer.holding:
 		InventoryLayer.hold(i.item, inv)
 	else:
-		InventoryLayer.dropInto(inv)
+		InventoryLayer.drop_into(inv)
 
 
 func redraw() -> void:
-	fillbar.max_value = inv.space
-	fillbar.value = inv.consumption
+	fill_bar.max_value = inv.space
+	fill_bar.value = inv.consumption
 	for i in grid.get_children():
 		i.queue_free()
 	for i in inv.container:
-		var ngi:GUIItem = guii.instantiate()
+		var ngi:GUIItem = gui_item.instantiate()
 		ngi.clicked.connect(pick)
 		grid.add_child(ngi)
 		ngi.assign(i)
 
 
 func _on_button_pressed() -> void:
-	InventoryLayer.dropInto(inv)
+	InventoryLayer.drop_into(inv)

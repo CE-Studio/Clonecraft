@@ -2,12 +2,12 @@
 extends Node3D
 
 
-@export var runInEditor := false
+@export var run_in_editor := false
 @export var back := false
 @export var point:Node3D
-@export var kneeAngle:float
+@export var knee_angle:float
 
-@export var lowerleg:Node3D
+@export var lower_leg:Node3D
 @export var piston:Node3D
 @export var rod:Node3D
 @export var foot:Node3D
@@ -21,10 +21,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if runInEditor or not Engine.is_editor_hint():
+	if run_in_editor or not Engine.is_editor_hint():
 		var fd = clampf(delta * 10, 0, 0.1)
 		global_rotation = piston.global_rotation
-		lowerleg.rotation.x = kneeAngle - rotation.x
+		lower_leg.rotation.x = knee_angle - rotation.x
 		piston.global_rotation = global_rotation
 		var r = Vector3(piston.rotation)
 		if back:

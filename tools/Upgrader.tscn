@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://eara8kabkvxj" path="res://tools/upgrader.gd" id="1_nvj1y"]
 [ext_resource type="VoxelStreamRegionFiles" uid="uid://c4sbfwi5j12ve" path="res://titlescreen/bgStream.tres" id="1_pd3k0"]
-[ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseblocks.tres" id="2_tmjhf"]
-[ext_resource type="Material" uid="uid://5bha44xiqhrg" path="res://mods/clonecraft/baseblocksTransparent.tres" id="3_keybg"]
+[ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseBlocks.tres" id="2_tmjhf"]
+[ext_resource type="Material" uid="uid://5bha44xiqhrg" path="res://mods/clonecraft/baseBlocksTransparent.tres" id="3_keybg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_upk3o"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

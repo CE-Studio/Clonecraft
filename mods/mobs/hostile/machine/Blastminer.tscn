@@ -392,12 +392,12 @@ transform = Transform3D(1, 0, 0, 0, 6.12323e-17, -1, 0, 1, 6.12323e-17, 0, 0, 0)
 material_override = ExtResource("3_tc3k8")
 material_overlay = SubResource("StandardMaterial3D_na4wo")
 
-[node name="leg1" parent="blastminer/body" index="12" node_paths=PackedStringArray("point", "lowerleg", "piston", "rod", "foot", "body")]
+[node name="leg1" parent="blastminer/body" index="12" node_paths=PackedStringArray("point", "lower_leg", "piston", "rod", "foot", "body")]
 transform = Transform3D(0.974158, 0.0173569, 0.225198, -0.225865, 0.0744485, 0.971311, 9.32946e-05, -0.997075, 0.0764449, -0.3125, 0.8125, -0.5625)
 script = ExtResource("4_q8uhp")
 point = NodePath("../../leg1point")
-kneeAngle = -1.2105
-lowerleg = NodePath("lowerleg")
+knee_angle = -1.2105
+lower_leg = NodePath("lowerleg")
 piston = NodePath("lowerleg/piston")
 rod = NodePath("lowerleg/piston/rod")
 foot = NodePath("lowerleg/piston/rod/foot")
@@ -432,12 +432,12 @@ material_overlay = SubResource("StandardMaterial3D_na4wo")
 material_override = ExtResource("3_tc3k8")
 material_overlay = SubResource("StandardMaterial3D_na4wo")
 
-[node name="leg2" parent="blastminer/body" index="13" node_paths=PackedStringArray("point", "lowerleg", "piston", "rod", "foot", "body")]
+[node name="leg2" parent="blastminer/body" index="13" node_paths=PackedStringArray("point", "lower_leg", "piston", "rod", "foot", "body")]
 transform = Transform3D(0.974409, -0.017154, -0.224129, 0.224784, 0.0741947, 0.971579, -3.72826e-05, -0.997097, 0.0761518, 0.3125, 0.8125, -0.5625)
 script = ExtResource("4_q8uhp")
 point = NodePath("../../leg2point")
-kneeAngle = -1.2105
-lowerleg = NodePath("lowerleg2")
+knee_angle = -1.2105
+lower_leg = NodePath("lowerleg2")
 piston = NodePath("lowerleg2/piston2")
 rod = NodePath("lowerleg2/piston2/rod2")
 foot = NodePath("lowerleg2/piston2/rod2/foot2")
@@ -472,13 +472,13 @@ material_overlay = SubResource("StandardMaterial3D_na4wo")
 material_override = ExtResource("3_tc3k8")
 material_overlay = SubResource("StandardMaterial3D_na4wo")
 
-[node name="leg3" parent="blastminer/body" index="14" node_paths=PackedStringArray("point", "lowerleg", "piston", "rod", "foot", "body")]
+[node name="leg3" parent="blastminer/body" index="14" node_paths=PackedStringArray("point", "lower_leg", "piston", "rod", "foot", "body")]
 transform = Transform3D(0.974383, -0.0171249, 0.224241, 0.224894, 0.0742413, -0.971551, -1.02968e-05, 0.997093, 0.0761908, 0.3125, 0.8125, 0.5625)
 script = ExtResource("4_q8uhp")
 back = true
 point = NodePath("../../leg3point")
-kneeAngle = 1.2105
-lowerleg = NodePath("lowerleg3")
+knee_angle = 1.2105
+lower_leg = NodePath("lowerleg3")
 piston = NodePath("lowerleg3/piston3")
 rod = NodePath("lowerleg3/piston3/rod3")
 foot = NodePath("lowerleg3/piston3/rod3/foot3")
@@ -513,13 +513,13 @@ material_overlay = SubResource("StandardMaterial3D_na4wo")
 material_override = ExtResource("3_tc3k8")
 material_overlay = SubResource("StandardMaterial3D_na4wo")
 
-[node name="leg4" parent="blastminer/body" index="15" node_paths=PackedStringArray("point", "lowerleg", "piston", "rod", "foot", "body")]
+[node name="leg4" parent="blastminer/body" index="15" node_paths=PackedStringArray("point", "lower_leg", "piston", "rod", "foot", "body")]
 transform = Transform3D(0.974383, 0.0171249, -0.224241, -0.224894, 0.0742413, -0.971551, 1.02493e-05, 0.997093, 0.0761908, -0.3125, 0.8125, 0.5625)
 script = ExtResource("4_q8uhp")
 back = true
 point = NodePath("../../leg4point")
-kneeAngle = 1.2105
-lowerleg = NodePath("lowerleg4")
+knee_angle = 1.2105
+lower_leg = NodePath("lowerleg4")
 piston = NodePath("lowerleg4/piston4")
 rod = NodePath("lowerleg4/piston4/rod4")
 foot = NodePath("lowerleg4/piston4/rod4/foot4")

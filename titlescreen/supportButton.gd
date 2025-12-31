@@ -1,6 +1,6 @@
 extends Button
 
-var credcontent := {}
+var credit_content := {}
 var dp := preload("res://gui/devpanel.tscn")
 var op:BackingPanel
 
@@ -9,7 +9,7 @@ func _pressed() -> void:
 	op = preload("res://gui/backingpanel.tscn").instantiate()
 	$"/root".add_child(op)
 	disabled = true
-	op.addExit($"../settingpanel", &"hide")
+	op.add_exit($"../settingpanel", &"hide")
 
 	var dir := DirAccess.open("res://mods")
 	dir.include_navigational = false
@@ -20,9 +20,9 @@ func _pressed() -> void:
 				var f := FileAccess.open("res://mods/" + i + "/credits/content.json", FileAccess.READ)
 				if j.parse(f.get_as_text()) == OK:
 					var c = j.get_data()
-					credcontent[c["group"]] = c
-	for i in credcontent:
-		var h = credcontent[i]
+					credit_content[c["group"]] = c
+	for i in credit_content:
+		var h = credit_content[i]
 		var k = dp.instantiate()
 		op.add_item(k)
 		k.populate(h)

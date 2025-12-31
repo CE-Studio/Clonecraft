@@ -18,8 +18,8 @@ func setup(layer:BlockyPlantLayer) -> void:
 		for y in _layer.size.x:
 			var b := CycleButton.new()
 			b.max_value = optioncount
-			if incr < _layer.layerdata.size():
-				b.value = _layer.layerdata[incr]
+			if incr < _layer.layer_data.size():
+				b.value = _layer.layer_data[incr]
 			grid.add_child(b)
 			if Vector2i(x, y) == _layer.center:
 				b.self_modulate = Color(1.0, 0.541, 0.477, 1.0)
@@ -48,5 +48,5 @@ func accept() -> void:
 		if i is CycleButton:
 			outp.append(i.value)
 	assert(outp.size() == _layer.size.x * _layer.size.y)
-	_layer.layerdata = outp
+	_layer.layer_data = outp
 	queue_free()

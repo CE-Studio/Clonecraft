@@ -5,7 +5,7 @@ extends Node3D
 ## How fast the player is currently moving
 var speed:float
 ## The total distance the player has moved
-var moveDistance:float
+var move_distance:float
 ## The total time the player has been in motion
 var moveTime:float
 ## The total time the world has been loaded
@@ -13,7 +13,7 @@ var time:float
 ## The player's head direction
 var look:Vector2
 ## The player's body direction, relative to the head.
-var bodyRotation:float
+var body_rotation:float
 
 
 ## Called every frame to update the animations
@@ -21,11 +21,11 @@ var bodyRotation:float
 
 
 ## Called to animate one-time actions, like placing or damage.
-@abstract func animateAction(action:StringName) -> void
+@abstract func animate_action(action:StringName) -> void
 
 
 ## Returns the first-person arm model. The default implementation should work for most cases.
-func getFPArm() -> Node3D:
+func get_first_person_arm() -> Node3D:
 	var h := get_children()
 	for i in h:
 		if i.name == "arm":

@@ -5,11 +5,11 @@ extends Control
 static var instance:Hotbar
 @onready var player:Player = $"../../../player"
 @onready var timer:Timer = $timer
-var immcheck := false
+var immortal_check := false
 
-signal selectionChanged
+signal selection_changed
 
-@onready var layerLights:Array[Sprite2D] = [
+@onready var layer_lights:Array[Sprite2D] = [
 	$layer0,
 	$layer1,
 	$layer2,
@@ -49,9 +49,9 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	if player.abilities["immortal"] != immcheck:
-		immcheck = player.abilities["immortal"]
-		if immcheck:
+	if player.abilities["immortal"] != immortal_check:
+		immortal_check = player.abilities["immortal"]
+		if immortal_check:
 			$progressBar/animationPlayer.play("fade")
 		else:
 			$progressBar/animationPlayer.play_backwards("fade")
@@ -63,33 +63,33 @@ func _setup():
 	timer.start()
 
 
-func _reallyDeferRedraw():
+func _really_defer_redraw():
 	redraw()
 
 
-func deferRedraw():
-	call_deferred("redraw")
+func defer_redraw():
+	redraw.call_deferred()
 	timer.start()
 
 
 func redraw():
-	for i in layerLights:
+	for i in layer_lights:
 		i.frame = 1
-	layerLights[layer].frame = 0
+	layer_lights[layer].frame = 0
 	selector.position = slots[slot].position + Vector2.UP
 	for i in range(slots.size()):
 		for h in slots[i].get_children():
 			h.queue_free()
-		var j := player.hotbarItems[i + (10 * layer)]
+		var j := player.hotbar_items[i + (10 * layer)]
 		if is_instance_valid(j):
 			if j.count <= 0:
-				player.hotbarItems[i + (10 * layer)] = null
+				player.hotbar_items[i + (10 * layer)] = null
 				slots[i].frame = 0
 			else:
-				var gi:GUIItem = UiManager.createGuiItemstack(j)
+				var gi:GUIItem = UiManager.create_gui_item_stack(j)
 				slots[i].add_child(gi)
 				gi.position += Vector2(-23, -23)
 				slots[i].frame = 1
 		else:
 			slots[i].frame = 0
-	selectionChanged.emit()
+	selection_changed.emit()

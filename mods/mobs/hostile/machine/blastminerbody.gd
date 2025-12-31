@@ -2,8 +2,8 @@
 extends Node3D
 
 
-@export var runInEditor := false
-@export var trackpoint := Vector3(-0.062, 1.5, -5)
+@export var run_in_editor := false
+@export var track_point := Vector3(-0.062, 1.5, -5)
 @export_range(0, 1) var center:float = 0
 
 
@@ -12,21 +12,21 @@ extends Node3D
 @onready var neck2:Node3D = $body/neckpiston
 
 
-@onready var headtrack:Node3D = $headcenter/headtrack
-@onready var headspring:Marker3D = $headcenter/headtrack/headspring
+@onready var head_track:Node3D = $headcenter/headtrack
+@onready var head_spring:Marker3D = $headcenter/headtrack/headspring
 
 
-var lerpdir := Vector3.ZERO
+var lerp_dir := Vector3.ZERO
 
 
 func _process(delta: float) -> void:
-	if runInEditor or not Engine.is_editor_hint():
+	if run_in_editor or not Engine.is_editor_hint():
 		var fd = clampf(delta * 10, 0, 0.1)
-		headtrack.look_at(trackpoint)
-		lerpdir = lerpdir.lerp(headtrack.rotation, fd)
-		headtrack.rotation = lerpdir.lerp(Vector3.ZERO, center)
-		headtrack.position.x = sin(headtrack.rotation.y) / 10
-		head.global_rotation = headspring.global_rotation
-		head.global_position = headspring.global_position
+		head_track.look_at(track_point)
+		lerp_dir = lerp_dir.lerp(head_track.rotation, fd)
+		head_track.rotation = lerp_dir.lerp(Vector3.ZERO, center)
+		head_track.position.x = sin(head_track.rotation.y) / 10
+		head.global_rotation = head_spring.global_rotation
+		head.global_position = head_spring.global_position
 		neck1.look_at(neck2.global_position)
 		neck2.look_at(neck1.global_position)

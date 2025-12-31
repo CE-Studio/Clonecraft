@@ -10,7 +10,7 @@ extends RefCounted
 ## A shorthand reference to BlockManager.
 static var man := BlockManager
 ## A premade VoxelTool for the game world.
-# TODO dimenstion support?
+# TODO dimension support?
 static var tool:VoxelToolTerrain
 ## A reference to the player.
 static var player:Player
@@ -20,15 +20,15 @@ static var terrain:VoxelTerrain
 
 ## Used to initialize some variables before loading.[br]
 ## Do not override unless you know what you're doing.
-static func refman() -> void:
+static func reference_manager() -> void:
 	terrain = man.terrain
 	player = Statics.get_node("/root/Node3D/player")
 	tool = man._tool
 
 
-## An empty placehloder function.[br]
+## An empty placeholder function.[br]
 ## Use when you need a reference to a callable but don't want it to do anything.
-func noScript(_pos, _meta) -> void:
+func no_script(_pos, _meta) -> void:
 	pass
 
 

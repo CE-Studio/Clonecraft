@@ -3,9 +3,9 @@ extends Mod
 
 
 # Set to yor mod's ID
-const MODID:StringName = ""
+const MOD_ID:StringName = ""
 
 
 # Mod initialization code goes here
-func registerPhase() -> void:
+func register_phase() -> void:
 	pass

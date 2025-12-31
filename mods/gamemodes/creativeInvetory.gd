@@ -1,9 +1,9 @@
 extends PanelContainer
 
 
-var guii:PackedScene = preload("res://gui/GuiItem.tscn")
+var gui_item:PackedScene = preload("res://gui/GuiItem.tscn")
 @onready var grid:GridContainer = $scrollContainer/hBoxContainer/gridContainer
-var ignoreItems:Array[StringName] = [&"clonecraft:air", &"clonecraft:tileEntity"]
+var ignore_items:Array[StringName] = [&"clonecraft:air", &"clonecraft:tileEntity"]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,19 +25,19 @@ func pick(i:GUIItem) -> void:
 	if not InventoryLayer.holding:
 		InventoryLayer.hold(i.item, null)
 	else:
-		InventoryLayer.dropInto(null)
+		InventoryLayer.drop_into(null)
 
 
 func redraw() -> void:
 	for i in grid.get_children():
 		i.queue_free()
 	for i in ItemManager.items.keys():
-		if not (i in ignoreItems):
-			var ngi:GUIItem = guii.instantiate()
+		if not (i in ignore_items):
+			var ngi:GUIItem = gui_item.instantiate()
 			ngi.clicked.connect(pick)
 			grid.add_child(ngi)
 			ngi.assign(ItemManager.ItemStack.new(i, 1))
 
 
 func _on_button_pressed() -> void:
-	InventoryLayer.dropInto(null)
+	InventoryLayer.drop_into(null)

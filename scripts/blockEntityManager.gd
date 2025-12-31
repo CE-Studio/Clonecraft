@@ -36,55 +36,55 @@ func _clear(aabb:AABB) -> void:
 
 func _save_chunk(aabb:AABB, tool:VoxelTool) -> Array[TileEntity]:
 	#DebugAABB.instance.aabb = aabb
-	var tosave:Array[TileEntity] = []
+	var to_save:Array[TileEntity] = []
 	for i in get_children():
 		if i is TileEntity:
 			if aabb.has_point(Vector3(i.pos) + Vector3(0.5, 0.5, 0.5)):
-				tosave.append(i)
-	for i in tosave:
-		var rpos := Vector3i(
+				to_save.append(i)
+	for i in to_save:
+		var relative_pos := Vector3i(
 			posmod(i.pos.x, int(aabb.size.x)),
 			posmod(i.pos.y, int(aabb.size.y)),
 			posmod(i.pos.z, int(aabb.size.z)),
 		)
-		var md = tool.get_voxel_metadata(rpos)
-		if md is Dictionary:
-			md.merge({&"tileEntity": [i.get_id(), i.save()]}, true)
+		var metadata = tool.get_voxel_metadata(relative_pos)
+		if metadata is Dictionary:
+			metadata.merge({&"tileEntity": [i.get_id(), i.save()]}, true)
 		else:
-			md = {}
-			md.merge({&"tileEntity": [i.get_id(), i.save()]}, true)
-		tool.set_voxel_metadata(rpos, md)
-	return tosave
+			metadata = {}
+			metadata.merge({&"tileEntity": [i.get_id(), i.save()]}, true)
+		tool.set_voxel_metadata(relative_pos, metadata)
+	return to_save
 
 
-func _procload(pos:Vector3i, md, aabb:AABB):
-	var rpos := aabb.position + Vector3(pos)
-	var bi = BlockManager.get_block(rpos)
-	if bi.full_id == &"clonecraft:tileEntity":
-		if md is Dictionary:
-			if md.has(&"tileEntity"):
-				var te = md[&"tileEntity"]
+func _process_load(pos:Vector3i, metadata, aabb:AABB):
+	var relative_pos := aabb.position + Vector3(pos)
+	var block_info := BlockManager.get_block(relative_pos)
+	if block_info.full_id == &"clonecraft:tileEntity":
+		if metadata is Dictionary:
+			if metadata.has(&"tileEntity"):
+				var te = metadata[&"tileEntity"]
 				if te_list.has(te[0]):
 					var tile:TileEntity = te_list[te[0]].instantiate()
-					tile.position = rpos
+					tile.position = relative_pos
 					add_child(tile)
-					tile.setup(Vector3i(rpos), te[1])
+					tile.setup(Vector3i(relative_pos), te[1])
 
 
 func _load(aabb:AABB, buf:VoxelBuffer) -> void:
-	buf.for_each_voxel_metadata(_procload.bind(aabb))
+	buf.for_each_voxel_metadata(_process_load.bind(aabb))
 
 
 func place(id:StringName, pos:Vector3, meta := {}) -> bool:
 	if not te_list.has(id):
 		return false
-	var ipos := Vector3i(pos.floor())
-	if BlockManager.set_block(ipos, &"clonecraft:tileEntity"):
+	var int_pos := Vector3i(pos.floor())
+	if BlockManager.set_block(int_pos, &"clonecraft:tileEntity"):
 		var te:TileEntity = te_list[id].instantiate()
-		te.position = ipos
+		te.position = int_pos
 		add_child(te)
-		te.setup(ipos, meta)
-		te.markDirty()
+		te.setup(int_pos, meta)
+		te.mark_dirty()
 		return true
 	else:
 		return false

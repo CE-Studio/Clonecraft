@@ -7,7 +7,7 @@ var GRAVITY:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var sleeping := true
 
-## Defines some basic abillities of the entity.[br]
+## Defines some basic abilities of the entity.[br]
 ## Scale is a multiplier, size is absolute.
 var abilities := {
 	"allowFlight":false,

@@ -64,7 +64,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.42, 0.42, 0.42, 1)
 text = "&&item:id&&"
 
-[node name="modname" type="Label" parent="ItemTooltip"]
+[node name="modName" type="Label" parent="ItemTooltip"]
 layout_mode = 2
 theme_type_variation = &"italicLabel"
 theme_override_colors/font_color = Color(0.483132, 0.000136066, 0.471469, 1)

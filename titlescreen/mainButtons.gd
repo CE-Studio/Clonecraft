@@ -3,39 +3,40 @@ extends GridContainer
 
 func _ready() -> void:
 	$"Play".connect("pressed", play)
-	$"Options".connect("pressed", openOptions)
-	$"ModOpts".connect("pressed", openMods)
-	$"Quit".connect("pressed", get_tree().quit)
+	$"Options".pressed.connect(open_options)
+	$"ModOpts".pressed.connect(open_mods)
+	$"Quit".pressed.connect(get_tree().quit)
 
 
 func play() -> void:
 	$"../../singleplayerpanel".show()
 
 
-func openOptions() -> void:
+func open_options() -> void:
 	var op := SettingManager.spawnMenu()
 	$"../../settingpanel".show()
-	op.addExit($"../../settingpanel", &"hide")
+	op.add_exit($"../../settingpanel", &"hide")
 
 
-func openMods() -> void:
+func open_mods() -> void:
 	var op:BackingPanel = preload("res://gui/backingpanel.tscn").instantiate()
 	SettingManager._layers += 1
 	op.setExit(&"gui.generic.back")
 	$"/root/title/Control/modpanel".show()
 	$"/root/title/Control/modpanel".add_child(op)
-	op.addButton(&"gui.mods.modfolder", _modfolder, ProjectSettings.globalize_path("user://mods/"))
-	op.addButton(&"gui.mods.gamefolder", _gamefolder, ProjectSettings.globalize_path("res://"))
-	op.addButton(&"gui.mods.download", _gamefolder)
+	op.add_button(&"gui.mods.modfolder", _mod_folder, ProjectSettings.globalize_path("user://mods/"))
+	op.add_button(&"gui.mods.gamefolder", _game_folder, ProjectSettings.globalize_path("res://"))
+	# TODO: mod downloader
+	op.add_button(&"gui.mods.download", _game_folder)
 	op.add_item(preload("res://gui/warninglabel.tscn").instantiate())
 	var i = preload("res://gui/modPckPicker.tscn").instantiate()
 	op.add_item(i)
-	op.addExit(i, &"save")
+	op.add_exit(i, &"save")
 
 
-func _modfolder():
+func _mod_folder():
 	OS.shell_open("file://" + ProjectSettings.globalize_path("user://mods/"))
 
 
-func _gamefolder():
+func _game_folder():
 	OS.shell_open("file://" + ProjectSettings.globalize_path("res://"))

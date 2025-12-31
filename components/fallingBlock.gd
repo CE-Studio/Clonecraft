@@ -15,12 +15,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not BlockManager.get_block((position.floor()) + (Vector3.DOWN / 1.8)).properties.has(&"air"):
 		if not BlockManager.set_block(position.floor(), ID):
-			ItemManager.spawnWorldItem(ItemManager.ItemStack.new(ID, 1), position)
+			ItemManager.spawn_world_item(ItemManager.ItemStack.new(ID, 1), position)
 		queue_free()
 
 
 func _on_body_entered(body: Node) -> void:
 	if body is VoxelTerrain and not BlockManager.get_block((position.floor()) + Vector3.DOWN).properties.has(&"air"):
 		if not BlockManager.set_block(position.floor(), ID):
-			ItemManager.spawnWorldItem(ItemManager.ItemStack.new(ID, 1), position)
+			ItemManager.spawn_world_item(ItemManager.ItemStack.new(ID, 1), position)
 		queue_free()

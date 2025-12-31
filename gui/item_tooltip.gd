@@ -4,8 +4,8 @@ class_name ItemTooltip
 
 var item:ItemManager.ItemStack
 var text:String
-var pondertext:String
-var pondertime := 0.0
+var ponder_text:String
+var ponder_time := 0.0
 @onready var ponder:RichTextLabel = $ItemTooltip/ponder
 
 
@@ -33,18 +33,18 @@ func _ready() -> void:
 	$ItemTooltip/id.text = item.item_ID
 	
 	
-	if item.getItem().ponderScene != &"":
+	if item.get_item().ponder_scene != &"":
 		var filler:String = ""
 		for i in InputMap.action_get_events("game_ponder"):
 			filler += " " + i.as_text()
 		filler = filler.strip_edges()
 		filler = "[/color][color=#ffffff]" + filler + "[/color][color=#aaaaaa]"
-		pondertext = "[color=#aaaaaa]" + (Translator.translate(&"gui.gameplay.ponder") % [filler]) + "[/color]"
-		ponder.text = pondertext
+		ponder_text = "[color=#aaaaaa]" + (Translator.translate(&"gui.gameplay.ponder") % [filler]) + "[/color]"
+		ponder.text = ponder_text
 		ponder.show()
 	
 	
-	$ItemTooltip/modname.text = item.item_ID.split(":")[0].capitalize()
+	$ItemTooltip/modName.text = item.item_ID.split(":")[0].capitalize()
 	
 	if ProjectSettings.get_setting("gameplay/debug/show_item_metadata"):
 		var s := "{"
@@ -61,13 +61,13 @@ func _process(delta: float) -> void:
 		return
 	
 	if Input.is_action_pressed("game_ponder"):
-		pondertime = move_toward(pondertime, 1.5, delta)
+		ponder_time = move_toward(ponder_time, 1.5, delta)
 	else:
-		pondertime = move_toward(pondertime, 0, delta)
+		ponder_time = move_toward(ponder_time, 0, delta)
 	
-	if pondertime > 0:
+	if ponder_time > 0:
 		var pstr = "[color=#fbb8ec]"
-		var a = int(ceil(remap(pondertime, 0, 1.5, 0, 40)))
+		var a = int(ceil(remap(ponder_time, 0, 1.5, 0, 40)))
 		var b = 40 - a
 		for i in a:
 			pstr += "|"
@@ -76,4 +76,4 @@ func _process(delta: float) -> void:
 			pstr += "|"
 		ponder.text = pstr
 	else:
-		ponder.text = pondertext
+		ponder.text = ponder_text

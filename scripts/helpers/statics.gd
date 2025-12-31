@@ -11,7 +11,7 @@ static func get_node(path:NodePath) -> Node:
 	return Engine.get_main_loop().current_scene.get_node(path)
 
 
-static func toNumber(inp:Variant, fallback:Variant = null) -> Variant:
+static func to_number(inp:Variant, fallback:Variant = null) -> Variant:
 	if inp is float:
 		return inp
 	if inp is int:

@@ -24,18 +24,18 @@ func sort() -> void:
 
 
 func save() -> Dictionary:
-	var outp := {
+	var output := {
 		"space": space,
 	}
-	var compcont = []
+	var compiled_content = []
 	for i:ItemManager.ItemStack in container:
-		compcont.append({
+		compiled_content.append({
 			"item": i.item_ID,
 			"count": i.count,
 			"meta": i.metadata,
 		})
-	outp["container"] = compcont
-	return outp
+	output["container"] = compiled_content
+	return output
 
 
 func restore(inp:Dictionary, emit := true) -> bool:
@@ -55,8 +55,8 @@ func restore(inp:Dictionary, emit := true) -> bool:
 		var meta:Dictionary[String, Variant] = {}
 		for h in i.meta:
 			meta[str(h)] = i.meta[h]
-		var istack = ItemManager.ItemStack.new(i.item, i.count, meta)
-		if !add_item(istack, emit):
+		var item_stack = ItemManager.ItemStack.new(i.item, i.count, meta)
+		if !add_item(item_stack, emit):
 			return false
 	return true
 
@@ -123,17 +123,17 @@ func extract_item(item:ItemManager.ItemStack) -> bool:
 	return false
 
 
-func get_item_from_id(sitem:StringName) -> ItemManager.ItemStack:
+func get_item_from_id(string_item:StringName) -> ItemManager.ItemStack:
 	for i in container:
-		if i.item_ID == sitem:
+		if i.item_ID == string_item:
 			return i
 	return null
 
 
-func get_item_from_stack(item:ItemManager.ItemStack, countMode := ANY, ignoreDamage := false, ignoreEnergy := false) -> ItemManager.ItemStack:
+func get_item_from_stack(item:ItemManager.ItemStack, count_mode := ANY, ignore_damage := false, ignore_energy := false) -> ItemManager.ItemStack:
 	for i in container:
-		if item.compare(i, ignoreDamage, ignoreEnergy):
-			match countMode:
+		if item.compare(i, ignore_damage, ignore_energy):
+			match count_mode:
 				ANY:
 					return i
 				AT_LEAST:
@@ -158,10 +158,10 @@ func extract_all() -> Array[ItemManager.ItemStack]:
 	return out
 
 
-func contains_item(item:ItemManager.ItemStack, countMode := ANY) -> bool:
+func contains_item(item:ItemManager.ItemStack, count_mode := ANY) -> bool:
 	for i in container:
 		if item.compare(i):
-			match countMode:
+			match count_mode:
 				ANY:
 					return true
 				AT_LEAST:

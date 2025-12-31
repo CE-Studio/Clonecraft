@@ -21,11 +21,11 @@ func init(i:Dictionary) -> void:
 	$Button.disabled = (current == default)
 
 
-func change_val(newval:bool) -> void:
-	current = newval
-	$CheckButton.button_pressed = newval
+func change_val(new_val:bool) -> void:
+	current = new_val
+	$CheckButton.button_pressed = new_val
 	$Button.disabled = (current == default)
-	ProjectSettings.set_setting(path, newval)
+	ProjectSettings.set_setting(path, new_val)
 
 
 func reset() -> void:

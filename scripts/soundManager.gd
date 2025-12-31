@@ -30,7 +30,7 @@ static func playSound(ID:StringName) -> AudioStreamPlayer:
 	return player
 	
 	
-static func playSound3D(ID:StringName, pos:Vector3) -> AudioStreamPlayer3D:
+static func play_sound_3D(ID:StringName, pos:Vector3) -> AudioStreamPlayer3D:
 	var player := AudioStreamPlayer3D.new()
 	player.stream = sounds[ID]
 	player.finished.connect(player.queue_free)

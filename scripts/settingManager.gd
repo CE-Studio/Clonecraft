@@ -9,13 +9,13 @@ static var settings := []
 static var _layers:int = 0
 
 
-static func isIdle() -> bool:
+static func is_idle() -> bool:
 	if _layers < 0:
 		_layers = 0
 	return _layers == 0
 
 
-static func _sinit() -> void:
+static func _s_init() -> void:
 	var j := JSON.new()
 	var f := FileAccess.open("res://scripts/baseSettings.json", FileAccess.READ)
 	var stat := j.parse(f.get_as_text())

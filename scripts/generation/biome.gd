@@ -14,7 +14,7 @@ var rocks:Array[StringName]
 var trees:Array[BlockyPlant]
 var treeDensities:Array[float]
 
-var tempruature:float
+var temperature:float
 var height:float
 var roughness:float
 var crackle:float
