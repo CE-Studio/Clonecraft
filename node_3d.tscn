@@ -851,7 +851,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_og0lq")
 [connection signal="timeout" from="Control/GUIlayer/hotbar/timer" to="Control/GUIlayer/hotbar" method="_reallyDeferRedraw"]
 [connection signal="text_submitted" from="Control/chat/inpline" to="Control/chat" method="_on_inpline_text_submitted"]
 [connection signal="pressed" from="Control/invlayer" to="Control/invlayer" method="_on_pressed"]
-[connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pauseUnpause"]
+[connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/pauseButton" to="." method="pause_unpause"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/settingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/quitTButton" to="." method="_on_quit_menu_button_pressed"]
 [connection signal="pressed" from="Control/pausepanel/CenterContainer/VBoxContainer/quitDButton" to="." method="_on_quit_desktop_button_pressed"]
