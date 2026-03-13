@@ -1,3 +1,3 @@
 [submodule "addons/CE-Components"]
-	path = addons/CE-Components
+	path = addons/ce_components
 	url = git@github.com:CE-Studio/CE-Components.git
