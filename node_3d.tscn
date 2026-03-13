@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bj5cljiqvp47i"]
+[gd_scene load_steps=70 format=3 uid="uid://bj5cljiqvp47i"]
 
 [ext_resource type="Texture2D" uid="uid://8goft7kb5q8y" path="res://textures/crosshair.png" id="1_epwcq"]
 [ext_resource type="Script" uid="uid://bfrvkpecmnu5u" path="res://scripts/worldControl.gd" id="1_ug7a2"]
@@ -23,7 +23,7 @@
 [ext_resource type="Script" uid="uid://b2itvfkxir1w2" path="res://scripts/soundManager.gd" id="21_yqwpl"]
 [ext_resource type="Script" uid="uid://eu8wa4obv0cj" path="res://scripts/particleManager.gd" id="22_6fdpn"]
 [ext_resource type="Script" uid="uid://ufatyhcr6y0v" path="res://scripts/entityManager.gd" id="22_fexg8"]
-[ext_resource type="Script" uid="uid://c5nx7ne30peyg" path="res://scripts/helpers/debug_aabb.gd" id="26_2h1dw"]
+[ext_resource type="Script" uid="uid://c5nx7ne30peyg" path="res://addons/ce_components/classes/3d/debug/debug_aabb.gd" id="26_2h1dw"]
 [ext_resource type="Script" uid="uid://7nl2ddwmdise" path="res://scripts/blockManager.gd" id="42_0hogo"]
 [ext_resource type="Script" uid="uid://c7wryf0lnknqg" path="res://scripts/game/CommandProcessor.gd" id="44_fbb68"]
 
@@ -358,12 +358,6 @@ albedo_color = Color(0, 0, 0, 0.529412)
 [sub_resource type="BoxMesh" id="BoxMesh_ydc0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iabes"]
-render_priority = 0
-shader = ExtResource("15_ji8mt")
-
-[sub_resource type="BoxMesh" id="BoxMesh_7ky8g"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_og0lq"]
 render_priority = 0
 shader = ExtResource("15_ji8mt")
 
@@ -841,12 +835,6 @@ script = ExtResource("22_6fdpn")
 [node name="debugAABB" type="Node3D" parent="."]
 visible = false
 script = ExtResource("26_2h1dw")
-
-[node name="meshInstance3d2" type="MeshInstance3D" parent="debugAABB"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
-mesh = SubResource("BoxMesh_7ky8g")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("ShaderMaterial_og0lq")
 
 [connection signal="timeout" from="Control/GUIlayer/hotbar/timer" to="Control/GUIlayer/hotbar" method="_reallyDeferRedraw"]
 [connection signal="text_submitted" from="Control/chat/inpline" to="Control/chat" method="_on_inpline_text_submitted"]

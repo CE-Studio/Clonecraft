@@ -38,13 +38,13 @@ func update_place() -> void:
 				else:
 					at = player.get_reach_point().floor()
 			var placed:int = 0
-			for x in Statics.iRange(_place_start.x, at.x):
+			for x in Statics.inclusive_range(_place_start.x, at.x):
 				if placed >= max_count:
 					break
-				for y in Statics.iRange(_place_start.y, at.y):
+				for y in Statics.inclusive_range(_place_start.y, at.y):
 					if placed >= max_count:
 						break
-					for z in Statics.iRange(_place_start.z, at.z):
+					for z in Statics.inclusive_range(_place_start.z, at.z):
 						if placed >= max_count:
 							break
 						if BlockManager.set_block(Vector3i(x, y, z), item.voxel):
