@@ -42,7 +42,7 @@ func add_exit(obj:Object, fun:StringName) -> void:
 	close_callbacks.append([obj, fun])
 
 
-## Adds an additional button to the bottom of the panel
+## Adds an additional button to the bottom of the panel.
 func add_button(b_name:StringName, cb:Callable, tooltip:String = "") -> Button:
 	var b := Button.new()
 	b.text = Translator.translate(b_name)

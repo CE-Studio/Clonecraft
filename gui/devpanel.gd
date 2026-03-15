@@ -1,5 +1,9 @@
 extends Panel
 
+## A mod developer info panel.
+##
+## Displays information and credits about a mod.[br]
+## Dynamically generated from a mod's [code]credits/content.json[/code] file.
 
 var dat := {}
 var content:Array[Control] = []

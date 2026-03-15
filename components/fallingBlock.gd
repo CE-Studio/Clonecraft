@@ -1,7 +1,12 @@
 extends RigidBody3D
 class_name FallingBlock
 
+## A falling block. 
+##
+##Represents a gavity-effected, falling version of a block. Like sand.
 
+## The ID of the base block this falling block is based on.[br]
+## Should be set before the node is added to the scene.
 var ID:StringName
 
 
