@@ -1,26 +1,25 @@
-[gd_scene load_steps=102 format=3 uid="uid://bskwsbaeexgu8"]
+[gd_scene load_steps=101 format=3 uid="uid://bskwsbaeexgu8"]
 
 [ext_resource type="Material" uid="uid://blu8to0ma63w2" path="res://titlescreen/title.tres" id="1_1krtb"]
+[ext_resource type="PackedScene" uid="uid://bu55f5fw5topo" path="res://titlescreen/panels/MainButtons.tscn" id="2_mqn1h"]
 [ext_resource type="PackedScene" uid="uid://ddlfbj8s0xs4g" path="res://WorldEnvironment.res" id="3_7yac3"]
-[ext_resource type="Script" uid="uid://5yobw2qcke6b" path="res://titlescreen/derg.gd" id="4_m3okf"]
 [ext_resource type="Material" uid="uid://c56x1d0hd1f6k" path="res://titlescreen/dergmat2.tres" id="4_q133x"]
 [ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="5_runjh"]
 [ext_resource type="Script" uid="uid://dynj18l7skyjb" path="res://titlescreen/supportButton.gd" id="6_4woye"]
 [ext_resource type="Script" uid="uid://doe4ycbobe5v7" path="res://titlescreen/infopanel.gd" id="6_iu8da"]
 [ext_resource type="Script" uid="uid://cp4ms4qh8s6bj" path="res://titlescreen/splash.gd" id="6_nhbko"]
 [ext_resource type="FontFile" uid="uid://df7j4qpomb6sn" path="res://font/ClarenceOSTerminalNotMono.ttf" id="6_site2"]
-[ext_resource type="Script" uid="uid://bbs8a7s6r5120" path="res://titlescreen/scalepanel.gd" id="7_g3200"]
 [ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="7_mhwh7"]
 [ext_resource type="Material" uid="uid://b6aqoa1o4711r" path="res://textures/bettercloudmat.tres" id="7_qty17"]
 [ext_resource type="Script" uid="uid://dykygxqiwnakt" path="res://titlescreen/cloudmove.gd" id="8_xt62g"]
-[ext_resource type="Script" uid="uid://bt3ughrraqupo" path="res://scripts/singleplayerpanel.gd" id="10_a4yy8"]
-[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="10_ot2wo"]
+[ext_resource type="PackedScene" uid="uid://cve0ewx258kkv" path="res://titlescreen/panels/Scalepanel.tscn" id="9_rnox0"]
+[ext_resource type="PackedScene" uid="uid://cooyhrkxsyqis" path="res://titlescreen/panels/Singleplayerpanel.tscn" id="10_s5p3i"]
+[ext_resource type="PackedScene" uid="uid://b1vntxruwh3iq" path="res://titlescreen/panels/Createworldpanel.tscn" id="11_2vp6h"]
 [ext_resource type="ArrayMesh" uid="uid://dxebovctbox0s" path="res://titlescreen/dergparts/derg_body.obj" id="11_bylin"]
-[ext_resource type="Script" uid="uid://c1b3i5oru3are" path="res://titlescreen/mainButtons.gd" id="11_j4u0l"]
 [ext_resource type="Script" uid="uid://cjt3nnjvds1uw" path="res://titlescreen/idLabel.gd" id="12_bmkwy"]
 [ext_resource type="VoxelStreamRegionFiles" uid="uid://c4sbfwi5j12ve" path="res://titlescreen/bgStream.tres" id="12_n2dnj"]
 [ext_resource type="ArrayMesh" uid="uid://dd3u5ku213cue" path="res://titlescreen/dergparts/derg_back_frill.obj" id="12_v56nc"]
-[ext_resource type="Texture2D" uid="uid://diifvmfx5qvl" path="res://textures/warning.png" id="12_w0cfv"]
+[ext_resource type="PackedScene" uid="uid://d3s3auhqakexx" path="res://titlescreen/panels/Modpanel.tscn" id="12_wn2kn"]
 [ext_resource type="Material" uid="uid://5bha44xiqhrg" path="res://mods/clonecraft/baseBlocksTransparent.tres" id="13_2nbak"]
 [ext_resource type="Material" uid="uid://ccv16e2be3hls" path="res://mods/clonecraft/baseBlocks.tres" id="13_8qgxy"]
 [ext_resource type="ArrayMesh" uid="uid://okvc8c54lgqu" path="res://titlescreen/dergparts/derg_head.obj" id="13_r2io5"]
@@ -2126,12 +2125,12 @@ _data = {
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("3_7yac3")]
 
-[node name="derganim" type="AnimationPlayer" parent="."]
+[node name="DergAnim" type="AnimationPlayer" parent="."]
 root_node = NodePath("../spinpoint")
 libraries = {
 &"": SubResource("AnimationLibrary_i0ybq")
 }
-script = ExtResource("4_m3okf")
+autoplay = "titlelean"
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1
@@ -2158,39 +2157,13 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_layout_mode = 1
 
-[node name="GridContainer" type="GridContainer" parent="Control/CenterContainer"]
+[node name="MainButtons" parent="Control/CenterContainer" node_paths=PackedStringArray("singleplayer_panel", "setting_panel", "mod_panel") instance=ExtResource("2_mqn1h")]
 layout_mode = 2
-script = ExtResource("11_j4u0l")
+singleplayer_panel = NodePath("../../singleplayerpanel")
+setting_panel = NodePath("../../settingpanel")
+mod_panel = NodePath("../../modpanel")
 
-[node name="Play" type="Button" parent="Control/CenterContainer/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-text = "&&Singleplayer Game&&"
-script = ExtResource("5_runjh")
-dictKey = &"gui.title.singleplayer"
-
-[node name="Options" type="Button" parent="Control/CenterContainer/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-text = "&&Options...&&"
-script = ExtResource("5_runjh")
-dictKey = &"gui.generic.options"
-
-[node name="ModOpts" type="Button" parent="Control/CenterContainer/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-text = "&&Mod Manager...&&"
-script = ExtResource("5_runjh")
-dictKey = &"gui.title.mod_manager"
-
-[node name="Quit" type="Button" parent="Control/CenterContainer/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-text = "&&Quit to Desktop&&"
-script = ExtResource("5_runjh")
-dictKey = &"gui.title.quit"
-
-[node name="Label" type="Label" parent="Control"]
+[node name="CopyrightInfo" type="Label" parent="Control"]
 layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -2200,7 +2173,7 @@ offset_right = 466.0
 grow_vertical = 0
 text = "Clonecraft {version}
 Engine {version}
-(C) CE Studio 2024. GPLv3. Please distribute!"
+(C) CE Studio 2026. GPLv3. Please distribute!"
 script = ExtResource("12_bmkwy")
 metadata/_edit_layout_mode = 1
 
@@ -2265,433 +2238,17 @@ grow_vertical = 0
 text = "&&Support devs!&&"
 script = ExtResource("6_4woye")
 
-[node name="scalepanel" type="Panel" parent="Control"]
-visible = false
+[node name="scalepanel" parent="Control" instance=ExtResource("9_rnox0")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
-script = ExtResource("7_g3200")
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/scalepanel"]
+[node name="singleplayerpanel" parent="Control" instance=ExtResource("10_s5p3i")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -94.5
-offset_top = 10.0
-offset_right = 94.5
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/scalepanel/CenterContainer"]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("7_mhwh7")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/scalepanel/CenterContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "&&Large screen size detected!&&"
-horizontal_alignment = 1
-script = ExtResource("5_runjh")
-dictKey = &"scaling.line1"
-
-[node name="Label2" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "&&Would you like to enable automatic GUI scaling?&&"
-horizontal_alignment = 1
-script = ExtResource("5_runjh")
-dictKey = &"scaling.line2"
-
-[node name="Label4" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "&&This window is using the automatic scale&&"
-horizontal_alignment = 1
-script = ExtResource("5_runjh")
-dictKey = &"scaling.line3"
-
-[node name="Control" type="Control" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(1.45519e-11, 30)
-layout_mode = 2
-
-[node name="Label3" type="Label" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "&&Your choice can be changed later in settings&&"
-horizontal_alignment = 1
-script = ExtResource("5_runjh")
-dictKey = &"scaling.line4"
-
-[node name="Control2" type="Control" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(1.45519e-11, 30)
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "&&Enable&&"
-script = ExtResource("5_runjh")
-dictKey = &"gui.generic.enable"
-
-[node name="Button2" type="Button" parent="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "&&Disable&&"
-script = ExtResource("5_runjh")
-dictKey = &"gui.generic.disable"
-
-[node name="singleplayerpanel" type="Panel" parent="Control"]
-visible = false
+[node name="createworldpanel" parent="Control" instance=ExtResource("11_2vp6h")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
-script = ExtResource("10_a4yy8")
 
-[node name="backingpanel" type="Panel" parent="Control/singleplayerpanel"]
-process_mode = 3
-layout_mode = 0
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("10_ot2wo")
-theme_override_styles/panel = ExtResource("7_mhwh7")
-
-[node name="Panel" type="Panel" parent="Control/singleplayerpanel/backingpanel"]
+[node name="modpanel" parent="Control" instance=ExtResource("12_wn2kn")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = -39.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="worldlist" type="ScrollContainer" parent="Control/singleplayerpanel/backingpanel/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Container" type="VBoxContainer" parent="Control/singleplayerpanel/backingpanel/Panel/worldlist"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="GridContainer" parent="Control/singleplayerpanel/backingpanel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.8
-offset_top = -36.2
-offset_right = -7.8
-offset_bottom = -5.2
-grow_horizontal = 2
-grow_vertical = 0
-columns = 3
-
-[node name="newworld" type="Button" parent="Control/singleplayerpanel/backingpanel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_default_cursor_shape = 2
-text = "&&NewWorld&&
-"
-
-[node name="worldfolder" type="Button" parent="Control/singleplayerpanel/backingpanel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_default_cursor_shape = 2
-text = "&&WorldFolder&&
-"
-
-[node name="backbutton" type="Button" parent="Control/singleplayerpanel/backingpanel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_default_cursor_shape = 2
-text = "&&Back&&
-"
-
-[node name="createworldpanel" type="Panel" parent="Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
-
-[node name="backingpanel" type="Panel" parent="Control/createworldpanel"]
-process_mode = 3
-layout_mode = 0
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("10_ot2wo")
-theme_override_styles/panel = ExtResource("7_mhwh7")
-
-[node name="Panel" type="Panel" parent="Control/createworldpanel/backingpanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = -39.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-
-[node name="tabContainer" type="TabContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_constants/side_margin = 0
-tab_alignment = 1
-current_tab = 1
-tab_focus_mode = 0
-
-[node name="mods" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer"]
-layout_mode = 2
-text = "&&Mods&&"
-horizontal_alignment = 1
-
-[node name="scrollContainer" type="ScrollContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer/scrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="vSeparator" type="VSeparator" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods"]
-layout_mode = 2
-
-[node name="vBoxContainer2" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2"]
-layout_mode = 2
-text = "&&Modpacks&&"
-horizontal_alignment = 1
-
-[node name="scrollContainer" type="ScrollContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2/scrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="gen" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-metadata/_tab_index = 1
-
-[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer"]
-layout_mode = 2
-text = "&&Generators&&"
-horizontal_alignment = 1
-
-[node name="scrollContainer" type="ScrollContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer/scrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="panel" type="Panel" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_type_variation = &"lightpanel"
-
-[node name="marginContainer" type="MarginContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_top = 6
-theme_override_constants/margin_right = 6
-theme_override_constants/margin_bottom = 6
-
-[node name="vBoxContainer" type="VBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer"]
-layout_mode = 2
-
-[node name="hBoxContainer" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer"]
-layout_mode = 2
-
-[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer"]
-layout_mode = 2
-text = "&&seed&&"
-
-[node name="lineEdit" type="LineEdit" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "&&Leave blank for a random seed&&"
-
-[node name="hBoxContainer2" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer"]
-layout_mode = 2
-
-[node name="label" type="Label" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
-layout_mode = 2
-text = "&&stream&&"
-
-[node name="optionButton" type="OptionButton" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-selected = 0
-item_count = 3
-popup/item_0/text = "&&region&&"
-popup/item_0/id = 0
-popup/item_1/text = "&&sql&&"
-popup/item_1/id = 1
-popup/item_2/text = "&&memory&&"
-popup/item_2/id = 2
-
-[node name="textureRect" type="TextureRect" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
-layout_mode = 2
-tooltip_text = "&&Memory stream type will not save your builds!&&"
-texture = ExtResource("12_w0cfv")
-
-[node name="final" type="Control" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/tabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="hBoxContainer" type="HBoxContainer" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="button" type="Button" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/hBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_default_cursor_shape = 2
-text = "&&prev&&"
-
-[node name="button2" type="Button" parent="Control/createworldpanel/backingpanel/Panel/vBoxContainer/hBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_default_cursor_shape = 2
-text = "&&next&&"
-
-[node name="HBoxContainer" type="GridContainer" parent="Control/createworldpanel/backingpanel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = -36.4
-offset_right = -6.6
-offset_bottom = -5.4
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="backbutton" type="Button" parent="Control/createworldpanel/backingpanel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_default_cursor_shape = 2
-text = "&&Back&&
-"
-
-[node name="modpanel" type="Panel" parent="Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
-
-[node name="centerContainer" type="CenterContainer" parent="Control/modpanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="panelContainer" type="PanelContainer" parent="Control/modpanel/centerContainer"]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("7_mhwh7")
-
-[node name="vBoxContainer" type="VBoxContainer" parent="Control/modpanel/centerContainer/panelContainer"]
-layout_mode = 2
-
-[node name="label" type="Label" parent="Control/modpanel/centerContainer/panelContainer/vBoxContainer"]
-layout_mode = 2
-text = "&&Changes will not take effect
-until the game is restarted&&"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_runjh")
-dictKey = &"gui.mods.changes"
-
-[node name="button" type="Button" parent="Control/modpanel/centerContainer/panelContainer/vBoxContainer"]
-layout_mode = 2
-text = "&&ok&&"
-script = ExtResource("5_runjh")
-dictKey = &"gui.generic.ok"
 
 [node name="settingpanel" type="Panel" parent="Control"]
 visible = false
@@ -3045,13 +2602,5 @@ material_override = ExtResource("56_2pxnj")
 
 [node name="lid" parent="chest/Node_7/hinge" index="1"]
 material_override = ExtResource("56_2pxnj")
-
-[connection signal="pressed" from="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button" to="Control/scalepanel" method="_on_enable_pressed"]
-[connection signal="pressed" from="Control/scalepanel/CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button2" to="Control/scalepanel" method="_on_disabled_pressed"]
-[connection signal="visibility_changed" from="Control/singleplayerpanel" to="Control/singleplayerpanel" method="_on_visibility_changed"]
-[connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/newworld" to="Control/singleplayerpanel" method="_on_newworld_pressed"]
-[connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/worldfolder" to="Control/singleplayerpanel" method="_on_worldfolder_pressed"]
-[connection signal="pressed" from="Control/singleplayerpanel/backingpanel/HBoxContainer/backbutton" to="Control/singleplayerpanel" method="_on_backbutton_pressed"]
-[connection signal="pressed" from="Control/modpanel/centerContainer/panelContainer/vBoxContainer/button" to="Control/modpanel" method="hide"]
 
 [editable path="chest"]

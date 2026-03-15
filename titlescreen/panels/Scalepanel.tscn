@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://cve0ewx258kkv"]
+
+[ext_resource type="Script" uid="uid://bbs8a7s6r5120" path="res://titlescreen/scalepanel.gd" id="1_phffj"]
+[ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="2_g16p4"]
+[ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="3_367qn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5tr7"]
+bg_color = Color(0, 0, 0, 0.443137)
+
+[node name="scalepanel" type="Panel"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+script = ExtResource("1_phffj")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = 10.0
+offset_right = 94.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_g16p4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "&&Large screen size detected!&&"
+horizontal_alignment = 1
+script = ExtResource("3_367qn")
+dictKey = &"scaling.line1"
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "&&Would you like to enable automatic GUI scaling?&&"
+horizontal_alignment = 1
+script = ExtResource("3_367qn")
+dictKey = &"scaling.line2"
+
+[node name="Label4" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "&&This window is using the automatic scale&&"
+horizontal_alignment = 1
+script = ExtResource("3_367qn")
+dictKey = &"scaling.line3"
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1.45519e-11, 30)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "&&Your choice can be changed later in settings&&"
+horizontal_alignment = 1
+script = ExtResource("3_367qn")
+dictKey = &"scaling.line4"
+
+[node name="Control2" type="Control" parent="CenterContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1.45519e-11, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&Enable&&"
+script = ExtResource("3_367qn")
+dictKey = &"gui.generic.enable"
+
+[node name="Button2" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "&&Disable&&"
+script = ExtResource("3_367qn")
+dictKey = &"gui.generic.disable"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_enable_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_disabled_pressed"]

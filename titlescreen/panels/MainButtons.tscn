@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu55f5fw5topo"]
+
+[ext_resource type="Script" uid="uid://c1b3i5oru3are" path="res://titlescreen/mainButtons.gd" id="1_4vd4j"]
+[ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="2_lrn5b"]
+
+[node name="MainButtons" type="GridContainer"]
+script = ExtResource("1_4vd4j")
+
+[node name="Play" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "&&Singleplayer Game&&"
+script = ExtResource("2_lrn5b")
+dictKey = &"gui.title.singleplayer"
+
+[node name="Options" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "&&Options...&&"
+script = ExtResource("2_lrn5b")
+dictKey = &"gui.generic.options"
+
+[node name="ModOpts" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "&&Mod Manager...&&"
+script = ExtResource("2_lrn5b")
+dictKey = &"gui.title.mod_manager"
+
+[node name="Quit" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "&&Quit to Desktop&&"
+script = ExtResource("2_lrn5b")
+dictKey = &"gui.title.quit"

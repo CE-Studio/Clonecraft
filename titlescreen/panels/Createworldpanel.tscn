@@ -1,0 +1,223 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1vntxruwh3iq"]
+
+[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="1_206lo"]
+[ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="2_ahxl0"]
+[ext_resource type="Texture2D" uid="uid://diifvmfx5qvl" path="res://textures/warning.png" id="3_chaud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5tr7"]
+bg_color = Color(0, 0, 0, 0.443137)
+
+[node name="createworldpanel" type="Panel"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+
+[node name="backingpanel" type="Panel" parent="."]
+process_mode = 3
+layout_mode = 0
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_206lo")
+theme_override_styles/panel = ExtResource("2_ahxl0")
+
+[node name="Panel" type="Panel" parent="backingpanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vBoxContainer" type="VBoxContainer" parent="backingpanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="tabContainer" type="TabContainer" parent="backingpanel/Panel/vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/side_margin = 0
+tab_alignment = 1
+current_tab = 0
+tab_focus_mode = 0
+
+[node name="mods" type="HBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer"]
+layout_mode = 2
+text = "&&Mods&&"
+horizontal_alignment = 1
+
+[node name="scrollContainer" type="ScrollContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="vSeparator" type="VSeparator" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods"]
+layout_mode = 2
+
+[node name="vBoxContainer2" type="VBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2"]
+layout_mode = 2
+text = "&&Modpacks&&"
+horizontal_alignment = 1
+
+[node name="scrollContainer" type="ScrollContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/mods/vBoxContainer2/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="gen" type="HBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_tab_index = 1
+
+[node name="vBoxContainer" type="VBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="label" type="Label" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer"]
+layout_mode = 2
+text = "&&Generators&&"
+horizontal_alignment = 1
+
+[node name="scrollContainer" type="ScrollContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="vBoxContainer" type="VBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/vBoxContainer/scrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="panel" type="Panel" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"lightpanel"
+
+[node name="marginContainer" type="MarginContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="vBoxContainer" type="VBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer"]
+layout_mode = 2
+
+[node name="hBoxContainer" type="HBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer"]
+layout_mode = 2
+text = "&&seed&&"
+
+[node name="lineEdit" type="LineEdit" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "&&Leave blank for a random seed&&"
+
+[node name="hBoxContainer2" type="HBoxContainer" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
+layout_mode = 2
+text = "&&stream&&"
+
+[node name="optionButton" type="OptionButton" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 3
+popup/item_0/text = "&&region&&"
+popup/item_0/id = 0
+popup/item_1/text = "&&sql&&"
+popup/item_1/id = 1
+popup/item_2/text = "&&memory&&"
+popup/item_2/id = 2
+
+[node name="textureRect" type="TextureRect" parent="backingpanel/Panel/vBoxContainer/tabContainer/gen/panel/marginContainer/vBoxContainer/hBoxContainer2"]
+layout_mode = 2
+tooltip_text = "&&Memory stream type will not save your builds!&&"
+texture = ExtResource("3_chaud")
+
+[node name="final" type="Control" parent="backingpanel/Panel/vBoxContainer/tabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="hBoxContainer" type="HBoxContainer" parent="backingpanel/Panel/vBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="button" type="Button" parent="backingpanel/Panel/vBoxContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&prev&&"
+
+[node name="button2" type="Button" parent="backingpanel/Panel/vBoxContainer/hBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&next&&"
+
+[node name="HBoxContainer" type="GridContainer" parent="backingpanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -36.4
+offset_right = -6.6
+offset_bottom = -5.4
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="backbutton" type="Button" parent="backingpanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&Back&&
+"

@@ -40,9 +40,9 @@ static func spawnMenu(content := settings) -> BackingPanel:
 	_layers += 1
 	var op:BackingPanel = preload("res://gui/backingpanel.tscn").instantiate()
 	if content == settings:
-		op.setExit("gui.generic.back", SettingManager, &"broadcast")
+		op.set_exit("gui.generic.back", SettingManager, &"broadcast")
 	else:
-		op.setExit("gui.generic.back")
+		op.set_exit("gui.generic.back")
 	Statics.get_node("/root").add_child(op)
 	for i in content:
 		if i["type"] == "folder":

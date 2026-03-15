@@ -75,14 +75,14 @@ func _on_button_pressed() -> void:
 	var h := 0
 	var j := (" / " + str(content.size()))
 	var c := 0
-	op.getExitButton().disabled = true
+	op.get_exit_button().disabled = true
 	for i in content:
 		h += 1
 		c += 1
 		op.add_item(i.duplicate())
 		if c > 10:
 			c = 0
-			op.getExitButton().text = "adding " + str(h) + j
+			op.get_exit_button().text = "adding " + str(h) + j
 			await get_tree().process_frame
-	op.getExitButton().disabled = false
-	op.getExitButton().text = Translator.translate(op.exit_name)
+	op.get_exit_button().disabled = false
+	op.get_exit_button().text = Translator.translate(op.exit_name)

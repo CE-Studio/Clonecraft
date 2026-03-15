@@ -7,16 +7,16 @@ class_name BackingPanel
 ## In-game GUI elements should be created by using [UiManager] if possible.
 
 ## A string to display on the panel's close button. Accepts a translation key.[br]
-## Should only be set using [method setExit].[br]
+## Should only be set using [method set_exit].[br]
 ## See [Translator].
 var exit_name = "gui.gameplay.back"
 ## A list of functions to call when the panel closes, and the objects to call them on.[br]
 ## A workaround for static callables not currently being possible.[br]
-## Should only be set using [method setExit] and [method add_exit].
-var closeCallbacks:Array[Array] = []
+## Should only be set using [method set_exit] and [method add_exit].
+var close_callbacks:Array[Array] = []
 ## If the panel should report to the [SettingManager] that it has been closed.[br]
 ## You probably don't need to touch this.[br]
-## Should only be set using [method setExit].
+## Should only be set using [method set_exit].
 var counted := true
 
 
@@ -28,10 +28,10 @@ func _ready() -> void:
 ## [param _exit_name] sets the text on the exit button.[br]
 ## [param obj] and [param fun] are a workaround for static callables. Pass in an object, 
 ## and the name of the function to call on it.
-func setExit(_exit_name:String, obj:Object = null, fun:StringName = &"", count = true) -> void:
+func set_exit(_exit_name:String, obj:Object = null, fun:StringName = &"", count = true) -> void:
 	exit_name = _exit_name
 	if obj != null:
-		closeCallbacks.append([obj, fun])
+		close_callbacks.append([obj, fun])
 	counted = count
 	
 
@@ -39,13 +39,13 @@ func setExit(_exit_name:String, obj:Object = null, fun:StringName = &"", count =
 ## [param obj] and [param fun] are a workaround for static callables. Pass in an object, 
 ## and the name of the function to call on it.
 func add_exit(obj:Object, fun:StringName) -> void:
-	closeCallbacks.append([obj, fun])
+	close_callbacks.append([obj, fun])
 
 
 ## Adds an additional button to the bottom of the panel
-func add_button(name:StringName, cb:Callable, tooltip:String = "") -> Button:
+func add_button(b_name:StringName, cb:Callable, tooltip:String = "") -> Button:
 	var b := Button.new()
-	b.text = Translator.translate(name)
+	b.text = Translator.translate(b_name)
 	b.pressed.connect(cb)
 	b.tooltip_text = tooltip
 	$HBoxContainer.add_child(b)
@@ -60,7 +60,7 @@ func add_item(item:Control) -> void:
 
 ## Close and free the panel.
 func close() -> void:
-	for i in closeCallbacks:
+	for i in close_callbacks:
 		i[0].call(i[1])
 	if counted:
 		SettingManager._layers -= 1
@@ -71,5 +71,5 @@ func _on_button_pressed() -> void:
 	close()
 
 
-func getExitButton() -> Button:
+func get_exit_button() -> Button:
 	return get_node("HBoxContainer/Button")

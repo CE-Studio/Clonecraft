@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://cooyhrkxsyqis"]
+
+[ext_resource type="Script" uid="uid://bt3ughrraqupo" path="res://scripts/singleplayerpanel.gd" id="1_ayggm"]
+[ext_resource type="Theme" uid="uid://eikvg3smmp6t" path="res://textures/uitheme.tres" id="2_d0x3i"]
+[ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="3_sq1x0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5tr7"]
+bg_color = Color(0, 0, 0, 0.443137)
+
+[node name="singleplayerpanel" type="Panel"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+script = ExtResource("1_ayggm")
+
+[node name="backingpanel" type="Panel" parent="."]
+process_mode = 3
+layout_mode = 0
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d0x3i")
+theme_override_styles/panel = ExtResource("3_sq1x0")
+
+[node name="Panel" type="Panel" parent="backingpanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="worldlist" type="ScrollContainer" parent="backingpanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="backingpanel/Panel/worldlist"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="GridContainer" parent="backingpanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.8
+offset_top = -36.2
+offset_right = -7.8
+offset_bottom = -5.2
+grow_horizontal = 2
+grow_vertical = 0
+columns = 3
+
+[node name="newworld" type="Button" parent="backingpanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&NewWorld&&
+"
+
+[node name="worldfolder" type="Button" parent="backingpanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&WorldFolder&&
+"
+
+[node name="backbutton" type="Button" parent="backingpanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "&&Back&&
+"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="backingpanel/HBoxContainer/newworld" to="." method="_on_newworld_pressed"]
+[connection signal="pressed" from="backingpanel/HBoxContainer/worldfolder" to="." method="_on_worldfolder_pressed"]
+[connection signal="pressed" from="backingpanel/HBoxContainer/backbutton" to="." method="_on_backbutton_pressed"]

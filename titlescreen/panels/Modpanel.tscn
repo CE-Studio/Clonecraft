@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3s3auhqakexx"]
+
+[ext_resource type="StyleBox" uid="uid://dt264pw0wnuoc" path="res://textures/buttonNormal.tres" id="1_oonlv"]
+[ext_resource type="Script" uid="uid://degwtemupq8mu" path="res://scripts/easyTranslatable.gd" id="2_ntsms"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5tr7"]
+bg_color = Color(0, 0, 0, 0.443137)
+
+[node name="modpanel" type="Panel"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_f5tr7")
+
+[node name="centerContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panelContainer" type="PanelContainer" parent="centerContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_oonlv")
+
+[node name="vBoxContainer" type="VBoxContainer" parent="centerContainer/panelContainer"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="centerContainer/panelContainer/vBoxContainer"]
+layout_mode = 2
+text = "&&Changes will not take effect
+until the game is restarted&&"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_ntsms")
+dictKey = &"gui.mods.changes"
+
+[node name="button" type="Button" parent="centerContainer/panelContainer/vBoxContainer"]
+layout_mode = 2
+text = "&&ok&&"
+script = ExtResource("2_ntsms")
+dictKey = &"gui.generic.ok"
+
+[connection signal="pressed" from="centerContainer/panelContainer/vBoxContainer/button" to="." method="hide"]
