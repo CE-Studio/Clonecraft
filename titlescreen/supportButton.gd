@@ -16,7 +16,7 @@ func _pressed() -> void:
 	var j := JSON.new()
 	for i in dir.get_directories():
 		if dir.dir_exists( i + "/credits"):
-			if FileAccess.file_exists("res://mods/" + i + "/credits/content.json"):
+			if ResourceLoader.exists("res://mods/" + i + "/credits/content.json"):
 				var f := FileAccess.open("res://mods/" + i + "/credits/content.json", FileAccess.READ)
 				if j.parse(f.get_as_text()) == OK:
 					var c = j.get_data()

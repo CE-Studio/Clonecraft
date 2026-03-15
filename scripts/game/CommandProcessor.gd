@@ -19,17 +19,10 @@ static func _reset() -> void:
 	_called_by_player = false
 
 
-class Command extends RefCounted:
-	func get_command_invocation() -> String:
-		return "__invalid__"
-	
-	
-	func get_command_arg_list(_index:int) -> Array:
-		return []
-	
-	
-	func execute(_args:Array) -> Variant:
-		return null
+@abstract class Command extends RefCounted:
+	@abstract func get_command_invocation() -> String
+	@abstract func get_command_arg_list(_index:int) -> Array
+	@abstract func execute(_args:Array) -> Variant
 
 
 static var commands:Array[Command] = []

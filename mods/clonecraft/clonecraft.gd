@@ -248,9 +248,9 @@ func _make_items() -> void:
 	)
 	log_item.set_interaction_override(place_log)
 	log_item.consume_on_interact = 1
-	var chest_model:Mesh = preload("res://mods/clonecraft/models/chest.obj")
+	var chest_model:Mesh = load("res://mods/clonecraft/models/chest.obj")
 	for i in chest_model.get_surface_count():
-		chest_model.surface_set_material(i, preload("res://mods/clonecraft/textures/chest.tres"))
+		chest_model.surface_set_material(i, load("res://mods/clonecraft/textures/chest.tres"))
 	var chest_item := ItemManager.register_item(
 		&"clonecraft:chest",
 		&"clonecraft.item.chest",
@@ -330,5 +330,5 @@ func register_phase() -> void:
 	man.quick_uniform_block(MOD_ID, "blockCopper", "clonecraft.block.copper_block", Vector2(1, 5), mat1)
 	_make_tnt()
 	
-	BlockEntityManager.te_list[&"clonecraft:chest"] = preload("res://mods/clonecraft/tileEntities/chest.tscn")
+	BlockEntityManager.te_list[&"clonecraft:chest"] = load("res://mods/clonecraft/tileEntities/chest.tscn")
 	_make_items()

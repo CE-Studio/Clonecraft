@@ -2245,6 +2245,7 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="createworldpanel" parent="Control" instance=ExtResource("11_2vp6h")]
+visible = false
 layout_mode = 1
 
 [node name="modpanel" parent="Control" instance=ExtResource("12_wn2kn")]

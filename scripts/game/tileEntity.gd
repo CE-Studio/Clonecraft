@@ -27,7 +27,7 @@ func interact(event:InputEvent) -> bool:
 
 
 ## Called every world tick. 'delta' is the elapsed time since the previous tick.
-func _tick(delta: float) -> void:
+func _tick(delta:float) -> void:
 	pass
 
 

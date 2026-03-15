@@ -2,18 +2,19 @@ extends Button
 class_name SaveSlot
 
 
-@onready var name_label := $name
-@onready var sub_label := $sub
-@onready var time_label := $time
-@onready var play := $play
-@onready var edit := $edit
-@onready var backup := $backup
-@onready var warn := $warning
-@onready var error := $error
-@onready var save_icon := $icon
+@onready var name_label:Label = $name
+@onready var sub_label:Label = $sub
+@onready var time_label:Label = $time
+@onready var play:Button = $play
+@onready var edit:Button = $edit
+@onready var backup:Button = $backup
+@onready var warn:TextureRect = $warning
+@onready var error:TextureRect = $error
+@onready var save_icon:TextureRect = $icon
 var gens:Dictionary = {}
 var data:Dictionary
 var file_path:String
+
 
 const IMPORTANT_KEYS := [
 	"streamtype",
@@ -40,8 +41,8 @@ func _ready():
 	play.tooltip_text = Translator.translate(&"gui.worlds.play")
 	edit.tooltip_text = Translator.translate(&"gui.worlds.edit")
 	backup.tooltip_text = Translator.translate(&"gui.worlds.backup")
-	
-	
+
+
 func populate(data_in:Dictionary, filepath:String):
 	file_path = filepath
 	data = data_in
@@ -76,10 +77,10 @@ func populate(data_in:Dictionary, filepath:String):
 		warn.tooltip_text = Translator.translate(&"gui.worlds.versiondiff")
 	
 	for i in data["mods"]:
-		if not FileAccess.file_exists("res://mods/" + i + "/" + i + ".gd"):
+		if not ResourceLoader.exists("res://mods/" + i + "/" + i + ".gd"):
 			show_error(Translator.translate(&"gui.worlds.mod_missing") + ' "' + i + '"')
 			return
-		if FileAccess.file_exists("res://mods/" + i + "/generators.json"):
+		if ResourceLoader.exists("res://mods/" + i + "/generators.json"):
 			var f := FileAccess.open("res://mods/" + i + "/generators.json", FileAccess.READ)
 			var g = JSON.parse_string(f.get_as_text())
 			f.close()
@@ -90,7 +91,7 @@ func populate(data_in:Dictionary, filepath:String):
 		show_error(&"gui.worlds.generator_missing")
 		return
 		
-	if not FileAccess.file_exists(gens[data["generator"]]["path"]):
+	if not ResourceLoader.exists(gens[data["generator"]]["path"]):
 		show_error(&"gui.worlds.generator_code_missing")
 		return
 
